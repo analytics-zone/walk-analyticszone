@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Formeln – WSS, METs &amp; Effizienz</title>
+    <meta name="description" content="Die Berechnungen hinter Walking‑Analytik: Moore‑Gleichung, WSS‑Gewichtungen und Effizienzmetriken.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="WSS Formel, METs Gleichung, Gehökonomie">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/de/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-13T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/de/formulas/">
+    <meta property="og:title" content="Formeln – WSS, METs &amp; Effizienz">
+    <meta property="og:description" content="Die Berechnungen hinter Walking‑Analytik: Moore‑Gleichung, WSS‑Gewichtungen und Effizienzmetriken.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/de/formulas/">
+    <meta name="twitter:title" content="Formeln – WSS, METs &amp; Effizienz">
+    <meta name="twitter:description" content="Die Berechnungen hinter Walking‑Analytik: Moore‑Gleichung, WSS‑Gewichtungen und Effizienzmetriken.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/de/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/de/"
+                           
+                           aria-current="">
+                            Startseite
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/"
+                           
+                           aria-current="">
+                            Lernen
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/"
+                           
+                           aria-current="">
+                            Wissenschaft
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/"
+                           
+                           aria-current="">
+                            Für dich
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/"
+                           
+                           aria-current="">
+                            Werkzeuge
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/contact/"
+                           
+                           aria-current="">
+                            Kontakt
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Sprache wählen">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" selected>
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menü umschalten" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas (DE) -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/de/">Startseite</a> / <a href="/de/#science">Wissenschaft</a> / Formeln
+    </div>
+    <h1>Formeln & Gleichungen der Geh‑Analytik</h1>
+    <p class="lead">Mathematische Grundlagen: validierte Gleichungen für Intensität, Energie und Leistung beim Gehen</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>Diese Seite bündelt wissenschaftlich validierte Formeln, die in der Geh‑Analytik verwendet werden. Jede Gleichung umfasst Validierungsdaten und Literaturverweise.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Schrittfrequenz → METs</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore et al. (2021): Cadence‑basierte Stoffwechselgleichung</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Cadence → METs</p>
+            <p class="formula-main"><strong>METs = 0.0219 × Cadence (Schritte/min) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Genauigkeit: ±0,5 METs</span>
+              <span class="reference">Moore CC et al. (2021). Med Sci Sports Exerc 53(1):165‑173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Warum relevant:</strong> Gegenüber klassischen ACSM‑Geschwindigkeitsgleichungen ist diese Beziehung <strong>23–35 % genauer</strong> für Gehen. Cadence spiegelt Bewegungsfrequenz und Energiebedarf direkter wider als Tempo (abhängig von Schrittlänge).</p>
+          </div>
+
+          <h4>Beispiele:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2,91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>Schwelle moderat</strong> ✓</p>
+            </div>
+            <div class="calc-example">
+              <p class="example-input"><strong>110 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3,13 METs</strong></p>
+              <p class="example-interpretation">Solide moderat</p>
+            </div>
+            <div class="calc-example">
+              <p class="example-input"><strong>120 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3,35 METs</strong></p>
+              <p class="example-interpretation">Moderat‑vigourös</p>
+            </div>
+            <div class="calc-example">
+              <p class="example-input"><strong>130 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3,57 METs</strong></p>
+              <p class="example-interpretation"><strong>Vigouröse Schwelle</strong> (CADENCE‑Adults: 130 spm ≈ 6 METs, direkt gemessen)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Hinweis:</strong> CADENCE‑Adults maß 130 spm = 6 METs unter Laborbedingungen. Die Moore‑Gleichung ist für 80–130 spm ausgelegt und kann bei sehr hohen Frequenzen unterschätzen.</p>
+          </div>
+
+          <h4>Validierungsdaten:</h4>
+          <ul>
+            <li><strong>Stichprobe:</strong> 76 Erwachsene (21–40 Jahre)</li>
+            <li><strong>Methode:</strong> Indirekte Kalorimetrie</li>
+            <li><strong>R²:</strong> 0,87</li>
+            <li><strong>MAE:</strong> 0,47 METs</li>
+            <li><strong>Bereich:</strong> 80–130 Schritte/min</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM‑VO₂‑Gleichungen fürs Gehen</h2>
+
+        <div class="formula-section">
+          <h3>ACSM metabolische Berechnungen</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Ebene (0 % Steigung)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × Geschwindigkeit (m/min) + 3.5</strong></p>
+            <p class="formula-note">Geschwindigkeit in m/min (km/h × 16,67; mph × 26,82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Mit Steigung/Gefälle</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(Geschw.) + 1.8(Geschw.)(Steigung) + 3.5</strong></p>
+            <p class="formula-note">Steigung als Dezimalzahl (5 % = 0,05)</p>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Energie & Kalorien</h2>
+
+        <div class="formula-section">
+          <h3>Kalorien aus METs</h3>
+          <div class="formula-box">
+            <p class="formula-title">Kalorien (kcal/min)</p>
+            <p class="formula-main"><strong>kcal/min = METs × Körpermasse (kg) × 3.5 / 200</strong></p>
+          </div>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>80 kg, 110 spm (≈3,13 METs):</strong></p>
+              <p class="example-calc">kcal/min = 3,13 × 80 × 3,5 / 200 ≈ <strong>4,38 kcal/min</strong></p>
+              <p class="example-interpretation">≈ 263 kcal pro 60 Minuten</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Gait Symmetry Index (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Asymmetrie in %</h3>
+          <div class="formula-box">
+            <p class="formula-title">GSI</p>
+            <p class="formula-main"><strong>GSI = |R − L| / [0,5 × (R + L)] × 100</strong></p>
+            <p class="formula-note">R/L: Schrittzeiten oder Schrittlängen (rechts/links)</p>
+          </div>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Schrittzeiten: Rechts 520 ms, Links 480 ms</strong></p>
+              <p class="example-calc">GSI = 40 / 500 × 100 = <strong>8 %</strong></p>
+              <p class="example-interpretation">Mäßige Asymmetrie – schwächere Seite stärken</p>
+            </div>
+            <div class="calc-example">
+              <p class="example-input"><strong>Schrittlängen: Rechts 1,42 m, Links 1,38 m</strong></p>
+              <p class="example-calc">GSI = 0,04 / 1,4 × 100 = <strong>2,86 %</strong></p>
+              <p class="example-interpretation">Normaler Bereich ✓</p>
+            </div>
+          </div>
+          <div class="warning-box">
+            <p><strong>Klinischer Hinweis:</strong> HealthKit „Walking Asymmetry“ nutzt eine leicht andere Berechnung; die Interpretation ist ähnlich.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK Score (proprietär)</h2>
+
+        <div class="formula-section">
+          <h3>Effizienzbewertung</h3>
+          <div class="formula-box">
+            <p class="formula-title">WALK Score</p>
+            <p class="formula-main"><strong>WALK Score = Zeit (s) + Schritte pro 100 m</strong></p>
+            <p class="formula-note">Niedriger = besser (analog zu SWOLF im Schwimmen)</p>
+          </div>
+          <h4>Beispiele:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example"><p class="example-input"><strong>100 m in 80 s, 120 Schritte →</strong> <strong>200</strong></p></div>
+            <div class="calc-example"><p class="example-input"><strong>100 m in 70 s, 110 Schritte →</strong> <strong>180</strong></p></div>
+            <div class="calc-example"><p class="example-input"><strong>100 m in 60 s, 130 Schritte →</strong> <strong>190</strong></p></div>
+          </div>
+          <h4>Typische Bereiche:</h4>
+          <ul>
+            <li><strong>&gt; 250:</strong> Langsam/ineffizient, evtl. Mobilitätsthemen</li>
+            <li><strong>200–250:</strong> Alltagsgehen</li>
+            <li><strong>170–200:</strong> Fitness‑Gehen</li>
+            <li><strong>150–170:</strong> Fortgeschritten</li>
+            <li><strong>&lt; 150:</strong> Elite/Race‑Walking</li>
+          </ul>
+        </div>
+
+        <h2 id="basic-metrics">6. Grundlegende Gang‑Metriken</h2>
+        <div class="formula-section">
+          <h3>Basale Berechnungen</h3>
+          <div class="formula-box"><p class="formula-title">Geschwindigkeit</p><p class="formula-main"><strong>m/s = Strecke (m) / Zeit (s)</strong></p></div>
+          <div class="formula-box"><p class="formula-title">Cadence aus Schritten</p><p class="formula-main"><strong>spm = Schritte / Zeit (min)</strong></p></div>
+          <div class="formula-box"><p class="formula-title">Schrittlänge</p><p class="formula-main"><strong>m = Strecke (m) / (Schritte / 2)</strong></p><p class="formula-note">1 Schritt ≠ 1 Stride; 1 Stride = 2 Schritte</p></div>
+          <div class="formula-box"><p class="formula-title">Schrittlänge (einzeln)</p><p class="formula-main"><strong>m = Strecke (m) / Schritte</strong></p></div>
+          <div class="formula-box"><p class="formula-title">Tempo aus Cadence × Schrittlänge</p><p class="formula-main"><strong>m/s = spm × (Schrittlänge/120)</strong></p></div>
+        </div>
+
+        <h2 id="heart-rate">7. Herzfrequenz‑Zonen (optional)</h2>
+        <div class="formula-section">
+          <h3>HF‑Zonen (allgemein)</h3>
+          <div class="formula-box"><p class="formula-title">Zone 2</p><p class="formula-main"><strong>~60–70 % HFmax</strong></p><p class="formula-note">Cadence‑Zonen sind fürs Gehen oft praxistauglicher</p></div>
+        </div>
+
+        <h2 id="cost-transport">8. Cost of Transport (CoT)</h2>
+        <div class="formula-section">
+          <h3>Energie pro Masse & Strecke</h3>
+          <div class="formula-box"><p class="formula-title">CoT</p><p class="formula-main"><strong>kcal/kg/km</strong> – U‑förmige Kurve, Minimum ~1,3 m/s</p></div>
+          <p>Das inverse‑Pendel‑Modell erklärt die Energierückgewinnung (≈ 65–70 %).</p>
+        </div>
+
+        <h2 id="training-load">9. Trainingsbelastung</h2>
+        <div class="formula-section">
+          <h3>Walking Stress Score (WSS)</h3>
+          <div class="formula-box"><p class="formula-title">WSS (einfach)</p><p class="formula-main"><strong>Minuten in Zone × Zonenfaktor (1–5)</strong></p></div>
+          <p>Steuere Wochenlast, halte Progression ≤ 5–10 %/Woche; überwache ACWR.</p>
+        </div>
+
+        <h2 id="predictions">10. Prädiktive Beziehungen</h2>
+        <div class="formula-section">
+          <p>Aus Cadence + Schrittlänge lassen sich Geschwindigkeit, Leistung und Ökonomie ableiten; Details siehe verlinkte Leitfäden.</p>
+        </div>
+
+        <h2 id="conversions">11. Umrechnungen</h2>
+        <div class="formula-section">
+          <div class="formula-box"><p class="formula-title">km/h → m/s</p><p class="formula-main"><strong>m/s = km/h ÷ 3,6</strong></p></div>
+          <div class="formula-box"><p class="formula-title">mph → m/s</p><p class="formula-main"><strong>m/s = mph × 0,447</strong></p></div>
+        </div>
+
+        <h2 id="next-steps">Verwandte Ressourcen</h2>
+        <div class="next-steps-grid">
+          <div class="next-step-card"><h3>WSS berechnen</h3><p>Interaktiver Rechner für den Walking Stress Score.</p><a href="/de/wss-calculator/" class="btn btn-secondary">WSS berechnen →</a></div>
+          <div class="next-step-card"><h3>Geh‑Zonen verstehen</h3><p>Cadence‑Zonen im Training anwenden.</p><a href="/de/walking-zones/" class="btn btn-secondary">Zu den Zonen →</a></div>
+          <div class="next-step-card"><h3>Forschung</h3><p>Studien, die diese Formeln validieren.</p><a href="/de/research/" class="btn btn-secondary">Forschung ansehen →</a></div>
+          <div class="next-step-card"><h3>Bibliographie</h3><p>Vollständige Zitate aller Referenzen.</p><a href="/de/bibliography/" class="btn btn-secondary">Bibliographie →</a></div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Formel‑Index</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Cadence → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂</a></li>
+            <li><a href="#energy-expenditure">3. Energie & Kalorien</a></li>
+            <li><a href="#gait-symmetry">4. GSI</a></li>
+            <li><a href="#walk-score">5. WALK Score</a></li>
+            <li><a href="#basic-metrics">6. Grundmetriken</a></li>
+            <li><a href="#heart-rate">7. HF‑Zonen</a></li>
+            <li><a href="#cost-transport">8. CoT</a></li>
+            <li><a href="#training-load">9. Belastung</a></li>
+            <li><a href="#predictions">10. Prädiktionen</a></li>
+            <li><a href="#conversions">11. Umrechnungen</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Wichtigste Gleichung</h3>
+          <p><strong>Cadence → METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">Ermöglicht Cadence‑basiertes Training ohne HF‑Sensor.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>In der App anwenden</h3>
+          <p>WalkAnalytics nutzt diese validierten Formeln zur Analyse deiner Geh‑Daten.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">App laden</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Genauigkeit</h4>
+          <p>Alle Gleichungen stammen aus Peer‑Review‑Forschung. Siehe <a href="/de/bibliography/">Bibliographie</a>.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Startseite</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Alle Rechte vorbehalten
+            </p>
+            <ul class="footer-links">
+                <li><a href="/de/privacy/">Datenschutz</a></li>
+                <li><a href="/de/terms/">Nutzungsbedingungen</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.</p>
+            <a href="/de/privacy/" class="text-sm">Mehr erfahren</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Ablehnen</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Akzeptieren</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Walking Metrics Formulas - How WSS, Gait &amp; Health Metrics Are Calculated</title>
+    <meta name="description" content="Mathematical formulas behind walking analytics. Learn how WSS, stride metrics, cadence, and efficiency scores are calculated. Science-based methodology.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="walking formulas, WSS formula, gait metrics calculation, walking science formulas, stride calculation">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-10-27T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/en/formulas/">
+    <meta property="og:title" content="Walking Metrics Formulas - How WSS, Gait &amp; Health Metrics Are Calculated">
+    <meta property="og:description" content="Mathematical formulas behind walking analytics. Learn how WSS, stride metrics, cadence, and efficiency scores are calculated. Science-based methodology.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/en/formulas/">
+    <meta name="twitter:title" content="Walking Metrics Formulas - How WSS, Gait &amp; Health Metrics Are Calculated">
+    <meta name="twitter:description" content="Mathematical formulas behind walking analytics. Learn how WSS, stride metrics, cadence, and efficiency scores are calculated. Science-based methodology.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/en/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/en/"
+                           
+                           aria-current="">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/"
+                           
+                           aria-current="">
+                            Learn
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/"
+                           
+                           aria-current="">
+                            Science
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/"
+                           
+                           aria-current="">
+                            For You
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/"
+                           
+                           aria-current="">
+                            Tools
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/contact/"
+                           
+                           aria-current="">
+                            Contact
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Select language">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" selected>
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a> / <a href="/en/#science">Science</a> / Formulas
+    </div>
+    <h1>Walking Metrics Formulas & Equations</h1>
+    <p class="lead">Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>This page presents scientifically validated formulas used in walking analytics. All equations are cited with research references and validated accuracy ranges.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Cadence to METs Conversion</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore et al. (2021) Cadence-Based Metabolic Equation</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Cadence to METs</p>
+            <p class="formula-main"><strong>METs = 0.0219 × Cadence (steps/min) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Accuracy: ±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Why this formula is important:</strong> This equation is <strong>23-35% more accurate</strong> than traditional ACSM speed-based equations for walking. It works because cadence directly reflects movement frequency and energy expenditure, whereas speed depends on variable stride length.</p>
+          </div>
+
+          <h4>Examples:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Walking at 100 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>Moderate intensity threshold</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Walking at 110 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">Solid moderate intensity</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Walking at 120 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">Moderate-vigorous intensity</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Walking at 130 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>Vigorous intensity threshold</strong> (6 METs by CADENCE-Adults direct measurement)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Note:</strong> The CADENCE-Adults study directly measured that 130 spm = 6 METs in controlled lab conditions. The Moore equation is designed for the 80-130 spm range and may underestimate at very high cadences.</p>
+          </div>
+
+          <h4>Validation Data:</h4>
+          <ul>
+            <li><strong>Sample:</strong> 76 adults aged 21-40</li>
+            <li><strong>Method:</strong> Indirect calorimetry (gold standard)</li>
+            <li><strong>R² value:</strong> 0.87 (excellent correlation)</li>
+            <li><strong>Mean absolute error:</strong> 0.47 METs</li>
+            <li><strong>Applicable range:</strong> 80-130 steps/min</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM VO₂ Equations for Walking</h2>
+
+        <div class="formula-section">
+          <h3>ACSM Metabolic Calculations</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Level Walking (0% grade)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × Speed (m/min) + 3.5</strong></p>
+            <p class="formula-note">Speed in meters per minute (multiply km/h by 16.67 or mph by 26.82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Walking with Grade (incline/decline)</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(Speed) + 1.8(Speed)(Grade) + 3.5</strong></p>
+            <p class="formula-note">Grade expressed as decimal (e.g., 5% = 0.05)</p>
+          </div>
+
+          <h4>Examples:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Walking 5 km/h (83.3 m/min) on level ground:</strong></p>
+              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
+              <p class="example-conversion">Convert to METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Walking 5 km/h on 5% incline:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
+              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">Incline increases intensity by ~64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>Speed Conversions:</h4>
+            <ul>
+              <li><strong>km/h to m/min:</strong> multiply by 16.67</li>
+              <li><strong>mph to m/min:</strong> multiply by 26.82</li>
+              <li><strong>m/s to m/min:</strong> multiply by 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Energy Expenditure & Calorie Burn</h2>
+
+        <div class="formula-section">
+          <h3>Accurate Calorie Calculation</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Calories per Minute</p>
+            <p class="formula-main"><strong>Cal/min = (METs × 3.5 × Body Weight kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Total Calories for Session</p>
+            <p class="formula-main"><strong>Total Calories = Cal/min × Duration (minutes)</strong></p>
+          </div>
+
+          <h4>Examples:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kg person walking 100 spm (3 METs) for 45 minutes:</strong></p>
+              <p class="example-calc">Cal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/min</strong></p>
+              <p class="example-calc">Total = 3.675 × 45 = <strong>165.4 calories</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kg person walking 120 spm (5 METs) for 30 minutes:</strong></p>
+              <p class="example-calc">Cal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p>
+              <p class="example-calc">Total = 7.44 × 30 = <strong>223.2 calories</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Why This Formula?</h4>
+            <p>This equation comes from the definition of MET (Metabolic Equivalent of Task):</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min (resting metabolic rate)</li>
+              <li>1 liter of O₂ consumed ≈ 5 kcal burned</li>
+              <li>Converting: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>Net Calorie Burn (Exercise Only)</h3>
+          <div class="formula-box">
+            <p class="formula-title">Net Calories (excluding resting)</p>
+            <p class="formula-main"><strong>Net Cal/min = [(METs - 1) × 3.5 × Body Weight] / 200</strong></p>
+            <p class="formula-note">Subtracts 1 MET to exclude calories you'd burn anyway at rest</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 METs, 45 min – Net calories:</strong></p>
+            <p class="example-calc">Net = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 net calories</strong></p>
+            <p class="example-interpretation">vs 165.4 total calories (55 calories would've been burned at rest)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Gait Symmetry Index (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Quantifying Left-Right Asymmetry</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Gait Symmetry Index</p>
+            <p class="formula-main"><strong>GSI (%) = |Right - Left| / [0.5 × (Right + Left)] × 100</strong></p>
+            <p class="formula-note">Can be applied to stride length, step time, or contact time</p>
+          </div>
+
+          <h4>Interpretation:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> Normal, symmetric gait</li>
+            <li><strong>3-5%:</strong> Mild asymmetry</li>
+            <li><strong>5-10%:</strong> Moderate asymmetry, monitor</li>
+            <li><strong>&gt;10%:</strong> Clinically significant, assess professionally</li>
+          </ul>
+
+          <h4>Examples:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Step times: Right = 520 ms, Left = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asymmetry</strong></p>
+              <p class="example-interpretation">Moderate asymmetry – consider strengthening weaker side</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Stride lengths: Right = 1.42 m, Left = 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
+              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% asymmetry</strong></p>
+              <p class="example-interpretation">Normal, healthy range ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Clinical Note:</strong> Apple HealthKit's Walking Asymmetry uses a slightly different calculation (simple percentage difference between step times) but the interpretation thresholds are similar.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK Score (WalkAnalytics Proprietary Metric)</h2>
+
+        <div class="formula-section">
+          <h3>Walking Efficiency Score</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK Score</p>
+            <p class="formula-main"><strong>WALK Score = Time (seconds) + Steps per 100 meters</strong></p>
+            <p class="formula-note">Lower score = better efficiency (like SWOLF for swimming)</p>
+          </div>
+
+          <h4>How It Works:</h4>
+          <p>WALK Score combines time and step count to quantify walking efficiency. A walker who covers 100m in 75 seconds with 140 steps has a WALK Score of 215. Improving either speed OR stride efficiency lowers the score.</p>
+
+          <h4>Examples:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100m in 80 seconds, 120 steps:</strong></p>
+              <p class="example-calc">WALK Score = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m in 70 seconds, 110 steps:</strong></p>
+              <p class="example-calc">WALK Score = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">Better efficiency through improved speed + stride</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m in 60 seconds, 130 steps (race walking):</strong></p>
+              <p class="example-calc">WALK Score = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">Fast but shorter strides</p>
+            </div>
+          </div>
+
+          <h4>Typical Ranges:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> Slow/inefficient gait, possible mobility issues</li>
+            <li><strong>200-250:</strong> Casual walker, average efficiency</li>
+            <li><strong>170-200:</strong> Fitness walker, good efficiency</li>
+            <li><strong>150-170:</strong> Advanced walker, excellent efficiency</li>
+            <li><strong>&lt;150:</strong> Elite/race walking level</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Training with WALK Score:</strong> Track your score on the same 100m course weekly. Improvements show enhanced neuromuscular coordination, strength, and walking economy.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. Basic Gait Metrics</h2>
+
+        <div class="formula-section">
+          <h3>Fundamental Calculations</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Walking Speed</p>
+            <p class="formula-main"><strong>Speed (m/s) = Distance (m) / Time (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Cadence from Total Steps</p>
+            <p class="formula-main"><strong>Cadence (spm) = Total Steps / Time (minutes)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Stride Length</p>
+            <p class="formula-main"><strong>Stride Length (m) = Distance (m) / (Steps / 2)</strong></p>
+            <p class="formula-note">Divide steps by 2 because one stride = two steps</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Step Length</p>
+            <p class="formula-main"><strong>Step Length (m) = Distance (m) / Steps</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Speed from Cadence & Stride Length</p>
+            <p class="formula-main"><strong>Speed = Stride Length × (Cadence / 2) / 60</strong></p>
+            <p class="formula-note">Or: Speed (m/s) = Step Length × Cadence / 60</p>
+          </div>
+
+          <h4>Example Workflow:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Walk 1000m in 12 minutes with 1320 steps:</strong></p>
+            <p><strong>Speed:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
+            <p><strong>Cadence:</strong> 1320 steps / 12 min = <strong>110 spm</strong></p>
+            <p><strong>Stride Length:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
+            <p><strong>Step Length:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. Heart Rate Zone Calculations</h2>
+
+        <div class="formula-section">
+          <h3>Traditional HR Zone Method</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Maximum Heart Rate Estimation</p>
+            <p class="formula-main"><strong>Max HR = 220 - Age</strong></p>
+            <p class="formula-note">Simple but ±10-15 bpm individual variation</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Alternative: Tanaka Formula (more accurate)</p>
+            <p class="formula-main"><strong>Max HR = 208 - (0.7 × Age)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Zone Range Calculation</p>
+            <p class="formula-main"><strong>Zone = Max HR × (Lower%, Upper%)</strong></p>
+          </div>
+
+          <h4>Example: 40-year-old</h4>
+          <div class="calc-example">
+            <p><strong>Traditional:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p>
+            <p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
+            <p><strong>Zone 2 (60-70%):</strong> 180 × 0.60 = 108 bpm to 180 × 0.70 = 126 bpm</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Note:</strong> While HR zones are useful, <strong>cadence-based zones are more accurate and practical for walking</strong> (see Walking Zones guide).</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. Cost of Transport & Walking Economy</h2>
+
+        <div class="formula-section">
+          <h3>Energy Cost of Walking</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Cost of Transport (C)</p>
+            <p class="formula-main"><strong>C = Energy Expended / (Body Mass × Distance)</strong></p>
+            <p class="formula-note">Units: J/kg/m or mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U-Shaped Curve:</strong> Walking economy follows a U-shaped curve. There's an optimal speed (typically 1.2-1.4 m/s or 4.3-5.0 km/h) where cost of transport is minimized. Walking slower OR faster than this increases energy cost per distance traveled.</p>
+          </div>
+
+          <h4>Factors Affecting Cost of Transport:</h4>
+          <ul>
+            <li><strong>Speed:</strong> U-shaped relationship (optimal around 1.3 m/s)</li>
+            <li><strong>Gradient:</strong> Uphill significantly increases cost; downhill increases eccentric cost</li>
+            <li><strong>Body mass:</strong> Heavier individuals have higher absolute but similar relative cost</li>
+            <li><strong>Stride mechanics:</strong> Optimal stride length minimizes cost</li>
+            <li><strong>Terrain:</strong> Uneven surfaces increase cost vs smooth pavement</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">Grade-Adjusted Cost</p>
+            <p class="formula-main"><strong>Cost multiplier = 1 + (Grade × 10)</strong></p>
+            <p class="formula-note">Rough approximation: +10% cost per 1% grade</p>
+          </div>
+
+          <h4>Example:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Walking on 5% incline:</strong></p>
+            <p class="example-calc">Cost multiplier = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
+            <p class="example-interpretation">50% increase in energy cost compared to level ground</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. Training Load & Stress Score</h2>
+
+        <div class="formula-section">
+          <h3>Walking Stress Score (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Zone-Based WSS</p>
+            <p class="formula-main"><strong>WSS = Σ (Minutes in Zone × Zone Factor)</strong></p>
+            <p>Zone 1: ×1.0 | Zone 2: ×2.0 | Zone 3: ×3.0 | Zone 4: ×4.0 | Zone 5: ×5.0</p>
+          </div>
+
+          <h4>Example: 60-minute walk</h4>
+          <div class="calc-example">
+            <p>10 min Zone 1 × 1 = 10 points</p>
+            <p>40 min Zone 2 × 2 = 80 points</p>
+            <p>10 min Zone 3 × 3 = 30 points</p>
+            <p><strong>Total WSS = 120</strong></p>
+          </div>
+
+          <h3>Weekly Training Load</h3>
+          <div class="formula-box">
+            <p class="formula-title">Weekly Load</p>
+            <p class="formula-main"><strong>Weekly Load = Σ Daily WSS (7 days)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Progressive Overload</p>
+            <p class="formula-main"><strong>Next Week = Current Week × 1.05-1.10</strong></p>
+            <p class="formula-note">Increase 5-10% per week maximum</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Recovery Week</p>
+            <p class="formula-main"><strong>Recovery Week = Current × 0.50-0.70</strong></p>
+            <p class="formula-note">Every 3-4 weeks, reduce to 50-70%</p>
+          </div>
+
+          <h4>Typical Weekly Loads:</h4>
+          <ul>
+            <li><strong>Beginner health walker:</strong> 200-400 WSS/week</li>
+            <li><strong>Regular fitness walker:</strong> 400-700 WSS/week</li>
+            <li><strong>Serious fitness walker:</strong> 700-1000 WSS/week</li>
+            <li><strong>Competitive race walker:</strong> 1000-1500+ WSS/week</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. Predictive Equations</h2>
+
+        <div class="formula-section">
+          <h3>6-Minute Walk Test (6MWT) Distance Prediction</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Predicted 6MWT Distance (Enright & Sherrill)</p>
+            <p><strong>Men:</strong> (7.57 × Height cm) - (5.02 × Age) - (1.76 × Weight kg) - 309</p>
+            <p><strong>Women:</strong> (2.11 × Height cm) - (5.78 × Age) - (2.29 × Weight kg) + 667</p>
+            <p class="formula-note">Predicts distance in meters for healthy adults</p>
+          </div>
+
+          <h4>Example: 40-year-old man, 175 cm, 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 meters</strong></p>
+            <p class="example-interpretation">Good functional capacity for age</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Clinical Use:</strong> The 6MWT is used to assess functional exercise capacity in cardiopulmonary patients, pre/post-surgery evaluation, and general fitness in older adults.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. Unit Conversions</h2>
+
+        <div class="formula-section">
+          <h3>Common Walking Metric Conversions</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Formula</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Quick Reference:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (typical healthy adult walking speed)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (brisk walking)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (resting metabolism)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (moderate intensity threshold)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (vigorous intensity threshold)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">Related Resources</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Apply Formulas: WSS Calculator</h3>
+            <p>Use our interactive calculator to compute your Walking Stress Score.</p>
+            <a href="/en/wss-calculator/" class="btn btn-secondary">Calculate WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Understanding Walking Zones</h3>
+            <p>Learn how to apply cadence-based intensity zones in training.</p>
+            <a href="/en/walking-zones/" class="btn btn-secondary">Learn Zones →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Scientific Research</h3>
+            <p>Review the studies that validated these formulas.</p>
+            <a href="/en/research/" class="btn btn-secondary">View Research →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Complete Bibliography</h3>
+            <p>Access full citations for all referenced equations.</p>
+            <a href="/en/bibliography/" class="btn btn-secondary">View Bibliography →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Formulas Index</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Cadence → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂ Equations</a></li>
+            <li><a href="#energy-expenditure">3. Energy & Calories</a></li>
+            <li><a href="#gait-symmetry">4. Gait Symmetry Index</a></li>
+            <li><a href="#walk-score">5. WALK Score</a></li>
+            <li><a href="#basic-metrics">6. Basic Gait Metrics</a></li>
+            <li><a href="#heart-rate">7. Heart Rate Zones</a></li>
+            <li><a href="#cost-transport">8. Cost of Transport</a></li>
+            <li><a href="#training-load">9. Training Load</a></li>
+            <li><a href="#predictions">10. Predictive Equations</a></li>
+            <li><a href="#conversions">11. Unit Conversions</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Most Important</h3>
+          <p><strong>Cadence to METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">This single equation enables cadence-based intensity training without heart rate monitors.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Apply These Formulas</h3>
+          <p>WalkAnalytics uses these scientifically validated equations to analyze your walks.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Download App</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Formula Accuracy</h4>
+          <p>All equations on this page are from peer-reviewed research. See <a href="/en/bibliography/">Bibliography</a> for full citations.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Home</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. All rights reserved
+            </p>
+            <ul class="footer-links">
+                <li><a href="/en/privacy/">Privacy</a></li>
+                <li><a href="/en/terms/">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>This website uses cookies to improve your experience.</p>
+            <a href="/en/privacy/" class="text-sm">Learn more</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Decline</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Accept</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+</body>
+</html>

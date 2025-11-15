@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>步幅力学详解 - 生物力学、步频与步幅优化</title>
+    <meta name="description" content="深入了解步幅力学。理解步频、步幅长度、着地时间、对称性。优化步行姿态，提升表现。">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="步幅力学, 步行生物力学, 步幅优化, 步行步频, 步态生物力学">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/zh/stride-mechanics/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/zh/stride-mechanics/">
+    <meta property="og:title" content="步幅力学详解 - 生物力学、步频与步幅优化">
+    <meta property="og:description" content="深入了解步幅力学。理解步频、步幅长度、着地时间、对称性。优化步行姿态，提升表现。">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/zh/stride-mechanics/">
+    <meta name="twitter:title" content="步幅力学详解 - 生物力学、步频与步幅优化">
+    <meta name="twitter:description" content="深入了解步幅力学。理解步频、步幅长度、着地时间、对称性。优化步行姿态，提升表现。">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/stride-mechanics/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/stride-mechanics/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">跳至内容</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/zh/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            首页
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            学习
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            科学
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            为您服务
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            工具
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/contact/"
+                           
+                           aria-current="">
+                            联系我们
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="选择语言">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="zh" selected>
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="切换菜单" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Stride Mechanics Guide -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/zh/">首页</a> / <a href="/zh/#science">科学</a> / 步幅力学
+    </div>
+    <h1>行走步幅力学</h1>
+    <p class="lead">人类行走步态的科学生物力学</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="intro-box">
+      <p>行走是一项复杂的神经肌肉活动，涉及多个关节和肌肉群的协调运动。理解步幅力学可以优化效率、预防损伤并提高表现。本指南提供从正常步态到竞走技术的基于证据的行走生物力学分析。</p>
+    </div>
+
+    <!-- The Gait Cycle -->
+    <h2>行走步态周期</h2>
+
+    <p>一个完整的步态周期代表同一只脚的两次连续脚跟着地之间的时间。与跑步不同，行走保持<strong>连续地面接触</strong>，具有特征性的双支撑阶段，即两只脚同时着地。</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>阶段</th>
+            <th>周期百分比</th>
+            <th>关键事件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>站立阶段</strong></td>
+            <td>60%</td>
+            <td>脚与地面接触</td>
+          </tr>
+          <tr>
+            <td><strong>摆动阶段</strong></td>
+            <td>40%</td>
+            <td>脚在空中，向前推进</td>
+          </tr>
+          <tr>
+            <td><strong>双支撑</strong></td>
+            <td>20%</td>
+            <td>两只脚着地（行走独有）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>站立阶段细分（周期的 60%）</h3>
+
+    <p><strong>在地面接触期间发生五个不同的子阶段：</strong></p>
+
+    <ol>
+      <li>
+        <strong>初始接触（脚跟着地）：</strong>
+        <ul>
+          <li>脚跟以约 10° 背屈角度接触地面</li>
+          <li>膝关节相对伸展（约 180-175°）</li>
+          <li>髋关节屈曲约 30°</li>
+          <li>第一个垂直力峰值开始（约 110% 体重）</li>
+        </ul>
+      </li>
+      <li>
+        <strong>负重响应（全脚掌着地）：</strong>
+        <ul>
+          <li>在 50ms 内达到全脚接触</li>
+          <li>重量从脚跟转移到前脚掌</li>
+          <li>膝关节屈曲 15-20° 以吸收冲击</li>
+          <li>踝关节跖屈至平足位置</li>
+        </ul>
+      </li>
+      <li>
+        <strong>站立中期：</strong>
+        <ul>
+          <li>身体重心直接通过站立脚</li>
+          <li>对侧腿摆动通过</li>
+          <li>随着胫骨前移，踝关节背屈</li>
+          <li>最小垂直力（80-90% 体重）</li>
+        </ul>
+      </li>
+      <li>
+        <strong>站立末期（脚跟离地）：</strong>
+        <ul>
+          <li>脚跟开始从地面抬起</li>
+          <li>重量转移到前脚掌和脚趾</li>
+          <li>踝跖屈开始</li>
+          <li>髋伸展达到最大值（约 10-15°）</li>
+        </ul>
+      </li>
+      <li>
+        <strong>摆动前期（脚尖离地）：</strong>
+        <ul>
+          <li>从前脚掌的最后推进推动</li>
+          <li>第二个垂直力峰值（约 110-120% 体重）</li>
+          <li>快速踝跖屈（高达 20°）</li>
+          <li>接触时间：总共 200-300ms</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>摆动阶段细分（周期的 40%）</h3>
+
+    <p><strong>三个子阶段使腿向前推进：</strong></p>
+
+    <ol>
+      <li>
+        <strong>摆动初期：</strong>
+        <ul>
+          <li>脚趾离开地面</li>
+          <li>膝关节快速屈曲至约 60°（最大屈曲）</li>
+          <li>髋关节继续屈曲</li>
+          <li>脚离地 1-2cm</li>
+        </ul>
+      </li>
+      <li>
+        <strong>摆动中期：</strong>
+        <ul>
+          <li>摆动腿通过站立腿</li>
+          <li>膝关节开始伸展</li>
+          <li>踝背屈至中立位置</li>
+          <li>最小离地间隙</li>
+        </ul>
+      </li>
+      <li>
+        <strong>摆动末期：</strong>
+        <ul>
+          <li>腿伸展准备脚跟着地</li>
+          <li>膝关节接近完全伸展</li>
+          <li>腘绳肌激活以减速腿部</li>
+          <li>踝保持轻微背屈</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Key Biomechanical Parameters -->
+    <h2>基本生物力学参数</h2>
+
+    <h3>步幅长度与步长</h3>
+
+    <p><strong>关键区别：</strong></p>
+    <ul>
+      <li><strong>步长：</strong>从一只脚的脚跟到对侧脚的脚跟的距离（左→右或右→左）</li>
+      <li><strong>步幅长度：</strong>从一只脚的脚跟到同一只脚下次脚跟着地的距离（左→左或右→右）</li>
+      <li><strong>关系：</strong>一个步幅 = 两步</li>
+      <li><strong>对称性：</strong>在健康步态中，右侧和左侧步长应在彼此的 2-3% 内</li>
+    </ul>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>身高（cm）</th>
+            <th>最佳步幅长度（m）</th>
+            <th>身高百分比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>150</td>
+            <td>0.60-0.75</td>
+            <td>40-50%</td>
+          </tr>
+          <tr>
+            <td>160</td>
+            <td>0.64-0.80</td>
+            <td>40-50%</td>
+          </tr>
+          <tr>
+            <td>170</td>
+            <td>0.68-0.85</td>
+            <td>40-50%</td>
+          </tr>
+          <tr>
+            <td>180</td>
+            <td>0.72-0.90</td>
+            <td>40-50%</td>
+          </tr>
+          <tr>
+            <td>190</td>
+            <td>0.76-0.95</td>
+            <td>40-50%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>精英竞走者</strong>通过卓越的技术和髋灵活性达到高达身高 70% 的步幅长度。</p>
+
+    <h3>步频优化</h3>
+
+    <p>每分钟步数（spm）深刻影响生物力学、效率和损伤风险：</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>步频范围</th>
+            <th>分类</th>
+            <th>生物力学特征</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;90 spm</td>
+            <td>非常慢</td>
+            <td>长步幅，高冲击力，低效率</td>
+          </tr>
+          <tr>
+            <td>90-99 spm</td>
+            <td>慢速</td>
+            <td>低于中等强度阈值</td>
+          </tr>
+          <tr>
+            <td>100-110 spm</td>
+            <td>中等</td>
+            <td>平衡的步幅/步频，3-4 METs</td>
+          </tr>
+          <tr>
+            <td>110-120 spm</td>
+            <td>快速</td>
+            <td>中等至剧烈强度，最适合健身</td>
+          </tr>
+          <tr>
+            <td>120-130 spm</td>
+            <td>剧烈</td>
+            <td>快速行走，5-6 METs</td>
+          </tr>
+          <tr>
+            <td>130-160 spm</td>
+            <td>竞走</td>
+            <td>需要精英技术</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-finding">
+      <strong>研究发现：</strong>CADENCE-Adults 研究（Tudor-Locke 等，2019）确立了 100 spm 代表中等强度（3 METs）的阈值，在 21-85 岁成年人中灵敏度为 86%，特异度为 89.6%。
+    </div>
+
+    <h3>地面接触时间</h3>
+
+    <p><strong>总站立持续时间：200-300 毫秒</strong></p>
+
+    <ul>
+      <li><strong>正常步行（4 km/h）：</strong>约 300ms 接触时间</li>
+      <li><strong>快速步行（6 km/h）：</strong>约 230ms 接触时间</li>
+      <li><strong>非常快速步行（7+ km/h）：</strong>约 200ms 接触时间</li>
+      <li><strong>与跑步比较：</strong>跑步接触时间 <200ms，有腾空阶段</li>
+    </ul>
+
+    <p><strong>随着速度增加，接触时间减少</strong>，原因是：</p>
+    <ol>
+      <li>相对于周期持续时间的站立阶段更短</li>
+      <li>更快速的重量转移</li>
+      <li>接触前肌肉预激活增加</li>
+      <li>更大的弹性能量储存和返回</li>
+    </ol>
+
+    <h3>双支撑时间</h3>
+
+    <p>两只脚同时着地的时期是<strong>行走独有的</strong>，在跑步中消失（由腾空阶段取代）。</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>双支撑 %</th>
+            <th>分类</th>
+            <th>临床意义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15-20%</td>
+            <td>正常（快速步态）</td>
+            <td>健康、自信的行走</td>
+          </tr>
+          <tr>
+            <td>20-30%</td>
+            <td>正常（中等步态）</td>
+            <td>大多数速度的典型值</td>
+          </tr>
+          <tr>
+            <td>30-35%</td>
+            <td>谨慎步态</td>
+            <td>可能表明平衡担忧</td>
+          </tr>
+          <tr>
+            <td>&gt;35%</td>
+            <td>跌倒风险升高</td>
+            <td>建议临床干预</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Apple HealthKit 集成：</strong>iOS 15+ 将双支撑百分比作为移动性指标测量，数值 >35% 被标记为"低"行走稳定性。</p>
+
+    <h3>垂直振荡</h3>
+
+    <p>步态周期中身体重心的上下位移：</p>
+
+    <ul>
+      <li><strong>正常范围：</strong>4-8 cm</li>
+      <li><strong>最佳效率：</strong>约 5-6 cm</li>
+      <li><strong>过度（>8-10 cm）：</strong>不必要的垂直位移造成的能量浪费</li>
+      <li><strong>不足（<4 cm）：</strong>拖步步态，可能的病理</li>
+    </ul>
+
+    <p><strong>最小化垂直振荡的机制：</strong></p>
+    <ol>
+      <li>横向平面骨盆旋转（4-8°）</li>
+      <li>冠状面骨盆倾斜（5-7°）</li>
+      <li>站立阶段膝关节屈曲（15-20°）</li>
+      <li>踝跖屈-背屈协调</li>
+      <li>侧向骨盆移位（约 2-5 cm）</li>
+    </ol>
+
+    <!-- Advanced Biomechanics -->
+    <h2>高级生物力学成分</h2>
+
+    <h3>手臂摆动力学</h3>
+
+    <p>协调的手臂运动<strong>不是装饰性的</strong>——它提供关键的生物力学益处：</p>
+
+    <div class="key-finding">
+      <strong>能量节省：</strong>适当的手臂摆动与手臂保持静止相比，将代谢成本降低 10-12%（Collins 等，2009）。
+    </div>
+
+    <p><strong>最佳手臂摆动特征：</strong></p>
+    <ul>
+      <li><strong>模式：</strong>对侧协调（左臂向前配合右腿）</li>
+      <li><strong>范围：</strong>从垂直位置前后 15-20° 的移动</li>
+      <li><strong>肘角：</strong>快速行走时 90° 屈曲；正常行走时 110-120°</li>
+      <li><strong>手位置：</strong>放松，不跨越身体中线</li>
+      <li><strong>肩部运动：</strong>最小旋转，手臂从肩关节摆动</li>
+    </ul>
+
+    <p><strong>生物力学功能：</strong></p>
+    <ol>
+      <li><strong>角动量抵消：</strong>手臂抵消腿部旋转以最小化躯干扭曲</li>
+      <li><strong>垂直地面反作用力调制：</strong>降低峰值力</li>
+      <li><strong>协调增强：</strong>促进有节奏、稳定的步态</li>
+      <li><strong>能量转移：</strong>通过动力链辅助推进</li>
+    </ol>
+
+    <h3>脚着地模式</h3>
+
+    <p><strong>80% 的步行者</strong>自然采用脚跟着地模式（后脚着地）。其他模式存在但不太常见：</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>着地模式</th>
+            <th>流行率</th>
+            <th>特征</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>脚跟着地</strong></td>
+            <td>约 80%</td>
+            <td>初始接触在脚跟，约 10° 背屈，M 型力曲线</td>
+          </tr>
+          <tr>
+            <td><strong>中足着地</strong></td>
+            <td>约 15%</td>
+            <td>平足落地，减少冲击峰值，步幅较短</td>
+          </tr>
+          <tr>
+            <td><strong>前脚掌着地</strong></td>
+            <td>约 5%</td>
+            <td>行走中罕见，在非常快速的竞走过渡中见到</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>脚跟着地的地面反作用力：</strong></p>
+    <ul>
+      <li><strong>第一峰值（约 50ms）：</strong>冲击瞬态，110% 体重</li>
+      <li><strong>最小值（约 200ms）：</strong>站立中期谷值，80-90% 体重</li>
+      <li><strong>第二峰值（约 400ms）：</strong>蹬离推进，110-120% 体重</li>
+      <li><strong>总力-时间曲线：</strong>特征性"M"或双峰形状</li>
+    </ul>
+
+    <h3>骨盆和髋力学</h3>
+
+    <p>三个平面的骨盆运动使高效、平稳的步态成为可能：</p>
+
+    <p><strong>1. 骨盆旋转（横向平面）：</strong></p>
+    <ul>
+      <li><strong>正常步行：</strong>每个方向 4-8° 旋转</li>
+      <li><strong>竞走：</strong>8-15° 旋转（夸张以增加步幅长度）</li>
+      <li><strong>功能：</strong>延长功能腿长，增加步幅长度</li>
+      <li><strong>协调：</strong>骨盆随前进腿向前旋转</li>
+    </ul>
+
+    <p><strong>2. 骨盆倾斜（冠状面）：</strong></p>
+    <ul>
+      <li><strong>范围：</strong>摆动侧髋下降 5-7°</li>
+      <li><strong>Trendelenburg 步态：</strong>过度下降表明髋外展肌无力</li>
+      <li><strong>功能：</strong>降低重心轨迹，减少垂直振荡</li>
+    </ul>
+
+    <p><strong>3. 骨盆移位（冠状面）：</strong></p>
+    <ul>
+      <li><strong>侧向位移：</strong>向站立腿 2-5 cm</li>
+      <li><strong>功能：</strong>保持平衡，将体重对准支撑</li>
+    </ul>
+
+    <h3>躯干姿势和对齐</h3>
+
+    <p><strong>最佳行走姿势：</strong></p>
+    <ul>
+      <li><strong>躯干位置：</strong>垂直至从脚踝前倾 2-5°</li>
+      <li><strong>头部对齐：</strong>中立，耳朵在肩膀上方</li>
+      <li><strong>肩膀位置：</strong>放松，不抬高</li>
+      <li><strong>核心参与：</strong>中度激活以稳定躯干</li>
+      <li><strong>凝视方向：</strong>在平坦地形上向前 10-20 米</li>
+    </ul>
+
+    <p><strong>常见姿势错误：</strong></p>
+    <ul>
+      <li><strong>过度前倾：</strong>通常来自髋伸肌无力</li>
+      <li><strong>向后倾斜：</strong>在怀孕、肥胖或腹肌无力中见到</li>
+      <li><strong>侧向倾斜：</strong>髋外展肌无力或腿长差异</li>
+      <li><strong>头部前倾：</strong>科技颈姿势，降低平衡</li>
+    </ul>
+
+    <!-- Race Walking Biomechanics -->
+    <h2>竞走技术</h2>
+
+    <p>竞走受特定生物力学规则（世界田径规则 54.2）管辖，这些规则将其与跑步区分开来，同时在行走限制内最大化速度。</p>
+
+    <h3>两个基本规则</h3>
+
+    <p><strong>规则 1：连续接触</strong></p>
+    <ul>
+      <li>与地面无可见失去接触（无腾空阶段）</li>
+      <li>前进脚必须在后脚离开地面之前接触</li>
+      <li>裁判在 50m 裁判区视觉评估此项</li>
+      <li>精英竞走者在保持接触的同时达到 13-15 km/h 的速度</li>
+    </ul>
+
+    <p><strong>规则 2：直腿要求</strong></p>
+    <ul>
+      <li>支撑腿必须从初始接触到垂直直立位置伸直（不弯曲）</li>
+      <li>膝关节从脚跟着地到站立中期不得明显屈曲</li>
+      <li>允许自然 3-5° 屈曲，裁判看不见</li>
+      <li>此规则将竞走与正常或快速行走区分开来</li>
+    </ul>
+
+    <h3>速度的生物力学适应</h3>
+
+    <p><strong>为了在遵守规则的同时达到 130-160 spm 步频：</strong></p>
+
+    <ol>
+      <li>
+        <strong>夸张的骨盆旋转：</strong>
+        <ul>
+          <li>8-15° 旋转（与正常步行的 4-8° 相比）</li>
+          <li>增加功能腿长</li>
+          <li>允许更长步幅而不过度跨步</li>
+        </ul>
+      </li>
+      <li>
+        <strong>积极的髋伸展：</strong>
+        <ul>
+          <li>15-20° 髋伸展（与正常的 10-15° 相比）</li>
+          <li>从臀肌和腘绳肌的有力蹬离</li>
+          <li>最大化身体后方的步幅长度</li>
+        </ul>
+      </li>
+      <li>
+        <strong>快速手臂驱动：</strong>
+        <ul>
+          <li>肘部弯曲至 90°（更短的杠杆 = 更快的运动）</li>
+          <li>有力的向后驱动辅助推进</li>
+          <li>与腿步频 1:1 协调</li>
+          <li>手可能向前上升到肩高</li>
+        </ul>
+      </li>
+      <li>
+        <strong>增加的地面反作用力：</strong>
+        <ul>
+          <li>峰值力达到 130-150% 体重</li>
+          <li>快速加载和卸载</li>
+          <li>对髋和踝肌肉组织的高要求</li>
+        </ul>
+      </li>
+      <li>
+        <strong>最小垂直振荡：</strong>
+        <ul>
+          <li>精英竞走者：3-5 cm（与正常的 5-6 cm 相比）</li>
+          <li>最大化前向动量</li>
+          <li>需要卓越的髋灵活性和核心稳定性</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>代谢需求</h3>
+
+    <p>以 13 km/h 竞走需要：</p>
+    <ul>
+      <li><strong>VO₂：</strong>约 40-50 mL/kg/min（类似于 9-10 km/h 跑步）</li>
+      <li><strong>METs：</strong>10-12 METs（剧烈至非常剧烈强度）</li>
+      <li><strong>能量成本：</strong>约 1.2-1.5 kcal/kg/km（比相同速度跑步高）</li>
+      <li><strong>乳酸：</strong>比赛中可达 4-8 mmol/L</li>
+    </ul>
+
+    <!-- Walking vs Running Biomechanics -->
+    <h2>行走与跑步：根本差异</h2>
+
+    <p>尽管表面相似，但行走和跑步采用不同的生物力学策略：</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>参数</th>
+            <th>行走</th>
+            <th>跑步</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>地面接触</strong></td>
+            <td>连续，有双支撑</td>
+            <td>间歇性，有腾空阶段</td>
+          </tr>
+          <tr>
+            <td><strong>站立时间</strong></td>
+            <td>周期的约 62%（4 km/h 时约 300ms）</td>
+            <td>周期的约 31%（150-200ms）</td>
+          </tr>
+          <tr>
+            <td><strong>双支撑</strong></td>
+            <td>周期的 20%</td>
+            <td>0%（腾空阶段代替）</td>
+          </tr>
+          <tr>
+            <td><strong>峰值垂直力</strong></td>
+            <td>110-120% 体重</td>
+            <td>200-300% 体重</td>
+          </tr>
+          <tr>
+            <td><strong>能量机制</strong></td>
+            <td>倒摆（势能↔动能）</td>
+            <td>弹簧-质量系统（弹性储存）</td>
+          </tr>
+          <tr>
+            <td><strong>接触时膝屈曲</strong></td>
+            <td>几乎伸展（约 5-10°）</td>
+            <td>屈曲（约 20-30°）</td>
+          </tr>
+          <tr>
+            <td><strong>重心轨迹</strong></td>
+            <td>平滑弧线，最小垂直位移</td>
+            <td>更大的垂直振荡</td>
+          </tr>
+          <tr>
+            <td><strong>过渡速度</strong></td>
+            <td>高效至约 7-8 km/h</td>
+            <td>高于约 8 km/h 更有效</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>步行到跑步的过渡</strong>在约 7-8 km/h（2.0-2.2 m/s）自然发生，因为：</p>
+    <ol>
+      <li>超过此速度行走在代谢上变得低效</li>
+      <li>保持接触需要过度步频</li>
+      <li>跑步的弹性能量储存提供优势</li>
+      <li>快速行走的峰值力接近跑步水平</li>
+    </ol>
+
+    <div class="key-finding">
+      <strong>研究发现：</strong>行走的代谢成本在 7 km/h 以上呈指数增长，而跑步成本随速度线性增加（Margaria 等，1963）。这创造了一个交叉点，即跑步变得比行走更经济。
+    </div>
+
+    <!-- Common Gait Deviations -->
+    <h2>常见步态偏差和纠正</h2>
+
+    <h3>1. 过度跨步</h3>
+
+    <p><strong>问题：</strong>脚跟着地位置过于远离身体重心</p>
+
+    <p><strong>生物力学后果：</strong></p>
+    <ul>
+      <li>制动力高达 20-30% 体重</li>
+      <li>增加峰值冲击力（130-150% 对比正常的 110%）</li>
+      <li>膝关节和髋关节负荷增加</li>
+      <li>推进效率降低</li>
+      <li>损伤风险增加（胫骨夹板、足底筋膜炎）</li>
+    </ul>
+
+    <p><strong>解决方案：</strong></p>
+    <ul>
+      <li><strong>增加步频：</strong>当前 spm 增加 5-10%</li>
+      <li><strong>提示"在髋下着地"：</strong>专注于脚放置在身体下方</li>
+      <li><strong>缩短步幅：</strong>迈更小、更快的步伐</li>
+      <li><strong>前倾：</strong>从脚踝轻微前倾 2-3°</li>
+    </ul>
+
+    <h3>2. 不对称步态</h3>
+
+    <p><strong>问题：</strong>两腿之间步幅长度、时间或地面反作用力不相等</p>
+
+    <p><strong>使用步态对称指数（GSI）评估：</strong></p>
+    <pre><code>GSI（%）= |右 - 左| / [0.5 × (右 + 左)] × 100</code></pre>
+
+    <p><strong>解读：</strong></p>
+    <ul>
+      <li><strong>&lt;3%：</strong>正常，临床不显著的不对称</li>
+      <li><strong>3-5%：</strong>轻度不对称，监测变化</li>
+      <li><strong>5-10%：</strong>中度不对称，可能受益于干预</li>
+      <li><strong>&gt;10%：</strong>有临床意义，建议专业评估</li>
+    </ul>
+
+    <p><strong>常见原因：</strong></p>
+    <ul>
+      <li>既往损伤或手术（偏向一条腿）</li>
+      <li>腿长差异（>1 cm）</li>
+      <li>单侧无力（髋外展肌、臀肌）</li>
+      <li>神经系统疾病（中风、帕金森病）</li>
+      <li>疼痛回避行为</li>
+    </ul>
+
+    <p><strong>解决方案：</strong></p>
+    <ul>
+      <li><strong>力量训练：</strong>较弱侧的单腿练习</li>
+      <li><strong>平衡工作：</strong>单腿站立、稳定性练习</li>
+      <li><strong>步态再训练：</strong>节拍器节奏步行、镜像反馈</li>
+      <li><strong>专业评估：</strong>物理治疗、足病学、骨科</li>
+    </ul>
+
+    <h3>3. 过度垂直振荡</h3>
+
+    <p><strong>问题：</strong>重心上下移动超过 8-10 cm</p>
+
+    <p><strong>生物力学后果：</strong></p>
+    <ul>
+      <li>垂直位移（而非前向推进）上浪费的能量</li>
+      <li>代谢成本增加高达 15-20%</li>
+      <li>更高的峰值地面反作用力</li>
+      <li>下肢关节负荷增加</li>
+    </ul>
+
+    <p><strong>解决方案：</strong></p>
+    <ul>
+      <li><strong>提示"向前滑行"：</strong>最小化上下弹跳</li>
+      <li><strong>核心强化：</strong>平板支撑、抗旋转练习</li>
+      <li><strong>髋灵活性：</strong>改善骨盆旋转和倾斜</li>
+      <li><strong>视频反馈：</strong>经过水平参考线行走</li>
+    </ul>
+
+    <h3>4. 手臂摆动差</h3>
+
+    <p><strong>问题：</strong></p>
+    <ul>
+      <li><strong>跨越中线：</strong>手臂跨越身体中心摆动</li>
+      <li><strong>过度旋转：</strong>肩膀和躯干扭曲</li>
+      <li><strong>僵硬的手臂：</strong>最小或缺乏手臂摆动</li>
+      <li><strong>不对称摆动：</strong>左右范围不同</li>
+    </ul>
+
+    <p><strong>生物力学后果：</strong></p>
+    <ul>
+      <li>能量成本增加 10-12%（僵硬的手臂）</li>
+      <li>过度躯干旋转和不稳定</li>
+      <li>行走速度和效率降低</li>
+      <li>可能的颈部和背部劳损</li>
+    </ul>
+
+    <p><strong>解决方案：</strong></p>
+    <ul>
+      <li><strong>保持手臂平行：</strong>前后摆动，而非内外侧摆动</li>
+      <li><strong>弯曲肘部至 90°：</strong>用于快速行走</li>
+      <li><strong>放松肩膀：</strong>避免抬高和紧张</li>
+      <li><strong>匹配腿步频：</strong>1:1 协调</li>
+      <li><strong>使用杖练习：</strong>北欧行走训练适当模式</li>
+    </ul>
+
+    <h3>5. 拖步步态</h3>
+
+    <p><strong>问题：</strong>脚几乎不离开地面，最小脚离地间隙（<1 cm）</p>
+
+    <p><strong>生物力学特征：</strong></p>
+    <ul>
+      <li>摆动期间髋和膝屈曲减少</li>
+      <li>最小踝背屈</li>
+      <li>步幅长度减少</li>
+      <li>双支撑时间增加（>35%）</li>
+      <li>绊倒导致的高跌倒风险</li>
+    </ul>
+
+    <p><strong>常见于：</strong></p>
+    <ul>
+      <li>帕金森病</li>
+      <li>正常压力脑积水</li>
+      <li>老年人（害怕跌倒）</li>
+      <li>下肢无力</li>
+    </ul>
+
+    <p><strong>解决方案：</strong></p>
+    <ul>
+      <li><strong>加强髋屈肌：</strong>髂腰肌、股直肌</li>
+      <li><strong>改善踝灵活性：</strong>背屈拉伸和练习</li>
+      <li><strong>提示"高抬膝"：</strong>摆动期间夸张抬膝</li>
+      <li><strong>视觉标记：</strong>跨越线条或障碍物</li>
+      <li><strong>专业评估：</strong>排除神经系统原因</li>
+    </ul>
+
+    <!-- Optimization Strategies -->
+    <h2>优化行走力学</h2>
+
+    <h3>高效行走的形式提示</h3>
+
+    <p><strong>下半身：</strong></p>
+    <ul>
+      <li><strong>"在髋下着地"：</strong>脚着地在重心下方</li>
+      <li><strong>"用脚趾蹬离"：</strong>主动的站立末期推进</li>
+      <li><strong>"快脚"：</strong>快速转换，不拖脚</li>
+      <li><strong>"髋向前"：</strong>驱动骨盆通过，不坐回</li>
+      <li><strong>"支撑腿伸直"：</strong>仅用于快速行走/竞走</li>
+    </ul>
+
+    <p><strong>上半身：</strong></p>
+    <ul>
+      <li><strong>"站直"：</strong>拉长脊柱，耳朵在肩膀上方</li>
+      <li><strong>"胸部向上"：</strong>打开胸部，放松肩膀</li>
+      <li><strong>"手臂向后驱动"：</strong>强调后摆</li>
+      <li><strong>"肘部 90°"：</strong>速度高于 6 km/h</li>
+      <li><strong>"向前看"：</strong>凝视向前 10-20 米</li>
+    </ul>
+
+    <h3>更好力学的训练</h3>
+
+    <p><strong>1. 高步频行走（转换训练）</strong></p>
+    <ul>
+      <li><strong>持续时间：</strong>3-5 分钟</li>
+      <li><strong>目标：</strong>130-140 spm（使用节拍器）</li>
+      <li><strong>重点：</strong>快速脚转换，更短步幅</li>
+      <li><strong>益处：</strong>减少过度跨步，改善效率</li>
+    </ul>
+
+    <p><strong>2. 单要素重点步行</strong></p>
+    <ul>
+      <li><strong>持续时间：</strong>每个要素 5 分钟</li>
+      <li><strong>轮换：</strong>手臂摆动 → 脚着地 → 姿势 → 呼吸</li>
+      <li><strong>益处：</strong>隔离和改善特定组件</li>
+    </ul>
+
+    <p><strong>3. 爬坡行走</strong></p>
+    <ul>
+      <li><strong>上坡：</strong>改善髋伸展力量和力量</li>
+      <li><strong>下坡：</strong>挑战离心肌肉控制</li>
+      <li><strong>坡度：</strong>技术工作 5-10%</li>
+      <li><strong>益处：</strong>在强化适当力学的同时建立力量</li>
+    </ul>
+
+    <p><strong>4. 向后行走</strong></p>
+    <ul>
+      <li><strong>持续时间：</strong>1-2 分钟（在平坦、安全的表面上）</li>
+      <li><strong>重点：</strong>脚趾-球-脚跟接触模式</li>
+      <li><strong>益处：</strong>加强股四头肌，改善本体感觉</li>
+      <li><strong>安全：</strong>在跑道或带扶手的跑步机上使用</li>
+    </ul>
+
+    <p><strong>5. 侧向拖步行走</strong></p>
+    <ul>
+      <li><strong>持续时间：</strong>每个方向 30-60 秒</li>
+      <li><strong>重点：</strong>侧向移动，髋外展肌</li>
+      <li><strong>益处：</strong>加强臀中肌，改善稳定性</li>
+    </ul>
+
+    <p><strong>6. 竞走技术练习</strong></p>
+    <ul>
+      <li><strong>持续时间：</strong>5-10 分钟</li>
+      <li><strong>重点：</strong>接触时直腿，夸张的髋旋转</li>
+      <li><strong>速度：</strong>慢速开始（5-6 km/h），随技术改善而进步</li>
+      <li><strong>益处：</strong>发展高级力学，增加速度能力</li>
+    </ul>
+
+    <!-- Technology and Measurement -->
+    <h2>技术和步态测量</h2>
+
+    <h3>现代可穿戴设备测量的内容</h3>
+
+    <p><strong>Apple Watch（iOS 15+）与 HealthKit：</strong></p>
+    <ul>
+      <li><strong>行走稳定性：</strong>速度、步长、双支撑、不对称的综合评分</li>
+      <li><strong>行走速度：</strong>平地上的平均速度（米/秒）</li>
+      <li><strong>行走不对称：</strong>左右步之间的百分比差异</li>
+      <li><strong>双支撑时间：</strong>两脚着地的步态周期百分比</li>
+      <li><strong>步长：</strong>平均步长（厘米）</li>
+      <li><strong>步频：</strong>瞬时每分钟步数</li>
+      <li><strong>VO₂max 估计：</strong>在相对平坦地形的户外步行锻炼期间</li>
+    </ul>
+
+    <p><strong>Android Health Connect：</strong></p>
+    <ul>
+      <li><strong>步数和步频</strong></li>
+      <li><strong>距离和速度</strong></li>
+      <li><strong>行走持续时间和回合</strong></li>
+      <li><strong>行走期间的心率</strong></li>
+    </ul>
+
+    <p><strong>专业步态分析系统：</strong></p>
+    <ul>
+      <li><strong>测力板：</strong>3D 地面反作用力，压力中心</li>
+      <li><strong>运动捕捉：</strong>3D 运动学，整个周期的关节角度</li>
+      <li><strong>压力垫（GAITRite）：</strong>时空参数，足印分析</li>
+      <li><strong>IMU 传感器阵列：</strong>所有平面的加速度、角速度</li>
+    </ul>
+
+    <h3>准确性和局限性</h3>
+
+    <p><strong>消费可穿戴设备：</strong></p>
+    <ul>
+      <li><strong>计步：</strong>正常速度行走的准确性 ±3-5%</li>
+      <li><strong>步频：</strong>典型误差 ±1-2 spm</li>
+      <li><strong>距离（GPS）：</strong>良好卫星条件下 ±2-5%</li>
+      <li><strong>不对称检测：</strong>可以可靠地识别中度至严重（>8-10%）</li>
+      <li><strong>VO₂max 估计：</strong>与实验室测试相比 ±10-15%</li>
+    </ul>
+
+    <p><strong>局限性：</strong></p>
+    <ul>
+      <li>单个手腕传感器无法捕获所有步态参数</li>
+      <li>非稳态行走（开始/停止、转弯）准确性降低</li>
+      <li>环境因素影响 GPS（城市峡谷、树荫）</li>
+      <li>手臂摆动模式影响基于手腕的测量</li>
+      <li>个体校准显著提高准确性</li>
+    </ul>
+
+    <h3>使用数据改善您的步态</h3>
+
+    <p><strong>跟踪随时间的趋势：</strong></p>
+    <ul>
+      <li>监测平均行走速度（应保持稳定或改善）</li>
+      <li>注意不对称增加（可能表明正在发展的问题）</li>
+      <li>跟踪不同速度下的步频一致性</li>
+      <li>观察双支撑趋势（增加可能表明平衡担忧）</li>
+    </ul>
+
+    <p><strong>设定生物力学目标：</strong></p>
+    <ul>
+      <li>中等强度步行目标步频 100+ spm</li>
+      <li>保持步幅长度在身高的 40-50% 内</li>
+      <li>保持不对称低于 5%</li>
+      <li>保持行走速度高于 1.0 m/s（健康阈值）</li>
+    </ul>
+
+    <p><strong>识别模式：</strong></p>
+    <ul>
+      <li>步频随疲劳下降吗？（常见且预期）</li>
+      <li>不对称在某些地形上恶化吗？</li>
+      <li>形式如何在不同速度下变化？</li>
+      <li>步态质量有一天中的时间效应吗？</li>
+    </ul>
+
+    <!-- Clinical Applications -->
+    <h2>步态分析的临床应用</h2>
+
+    <h3>步态速度作为生命体征</h3>
+
+    <p>行走速度越来越被认可为<strong>"第六生命体征"</strong>，具有强大的预测价值：</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>步态速度（m/s）</th>
+            <th>分类</th>
+            <th>临床意义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;0.6</td>
+            <td>严重受损</td>
+            <td>高死亡风险，需要干预</td>
+          </tr>
+          <tr>
+            <td>0.6-0.8</td>
+            <td>中度受损</td>
+            <td>跌倒风险升高，虚弱担忧</td>
+          </tr>
+          <tr>
+            <td>0.8-1.0</td>
+            <td>轻度受损</td>
+            <td>建议监测</td>
+          </tr>
+          <tr>
+            <td>1.0-1.3</td>
+            <td>正常</td>
+            <td>健康社区步行</td>
+          </tr>
+          <tr>
+            <td>&gt;1.3</td>
+            <td>强健</td>
+            <td>低死亡风险，良好功能储备</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-finding">
+      <strong>研究发现：</strong>步态速度每增加 0.1 m/s 与老年人死亡风险降低 12% 相关（Studenski 等，JAMA 2011）。
+    </div>
+
+    <h3>跌倒风险评估</h3>
+
+    <p><strong>预测跌倒风险的步态参数：</strong></p>
+    <ol>
+      <li><strong>步态变异性增加：</strong>步时 CV >2.5%</li>
+      <li><strong>步态速度慢：</strong>&lt;0.8 m/s</li>
+      <li><strong>过度双支撑：</strong>周期 >35%</li>
+      <li><strong>不对称：</strong>GSI >10%</li>
+      <li><strong>步长减少：</strong>&lt;身高的 40%</li>
+    </ol>
+
+    <h3>神经系统步态模式</h3>
+
+    <p><strong>帕金森病：</strong></p>
+    <ul>
+      <li>拖步步态，步幅长度减少</li>
+      <li>手臂摆动减少（通常不对称）</li>
+      <li>急行步态（加速，前倾）</li>
+      <li>步态冻结（FOG）发作</li>
+      <li>启动步伐困难</li>
+    </ul>
+
+    <p><strong>中风（偏瘫步态）：</strong></p>
+    <ul>
+      <li>受影响侧和未受影响侧之间明显不对称</li>
+      <li>受影响腿的环绕</li>
+      <li>受影响侧站立时间减少</li>
+      <li>蹬离力量降低</li>
+      <li>双支撑时间增加</li>
+    </ul>
+
+    <!-- Summary and Practical Takeaways -->
+    <h2>总结：关键生物力学原则</h2>
+
+    <div class="key-finding">
+      <strong>高效行走力学的五大支柱：</strong>
+      <ol>
+        <li><strong>连续地面接触：</strong>始终一只脚接触（行走的定义特征）</li>
+        <li><strong>最佳步频：</strong>中等强度 100+ spm，剧烈行走 120+</li>
+        <li><strong>协调手臂摆动：</strong>节省 10-12% 能量成本</li>
+        <li><strong>最小垂直振荡：</strong>4-8 cm 保持能量向前移动</li>
+        <li><strong>对称性：</strong>两腿之间步幅长度和时间平衡（<5% 不对称）</li>
+      </ol>
+    </div>
+
+    <p><strong>对于一般健康和健身：</strong></p>
+    <ul>
+      <li>专注于自然、舒适的步幅长度（不过度跨步）</li>
+      <li>快走时瞄准 100-120 spm 步频</li>
+      <li>保持直立姿势，轻微前倾</li>
+      <li>允许自然手臂摆动（不限制或夸张）</li>
+      <li>脚跟着地，滚动到脚尖蹬离</li>
+    </ul>
+
+    <p><strong>对于表现和竞走：</strong></p>
+    <ul>
+      <li>发展夸张的髋旋转（8-15°）</li>
+      <li>练习接触时的直腿技术</li>
+      <li>建立有力的手臂驱动，90° 肘屈曲</li>
+      <li>目标 130-160 spm，最小垂直振荡</li>
+      <li>专门训练髋灵活性和核心稳定性</li>
+    </ul>
+
+    <p><strong>对于损伤预防：</strong></p>
+    <ul>
+      <li>监测不对称性——保持低于 5% GSI</li>
+      <li>如果经历冲击疼痛，稍微增加步频（5-10%）</li>
+      <li>加强髋外展肌和臀肌以稳定骨盆</li>
+      <li>通过专业帮助解决任何持续的步态偏差</li>
+      <li>跟踪步态速度作为健康生命体征（保持 >1.0 m/s）</li>
+    </ul>
+
+    <!-- Bibliography Section -->
+    <h2>科学参考文献</h2>
+
+    <p>本指南基于同行评审的生物力学研究。有关详细引文和其他研究，请参阅：</p>
+
+    <ul>
+      <li><a href="/zh/bibliography/">完整科学参考文献</a></li>
+      <li><a href="/zh/research/">最新行走研究</a></li>
+      <li><a href="/zh/gait-analysis/">详细步态分析指标</a></li>
+    </ul>
+
+    <p><strong>引用的关键生物力学资源：</strong></p>
+    <ul>
+      <li>Tudor-Locke C 等（2019）。CADENCE-Adults 研究。<em>Int J Behav Nutr Phys Act</em> 16:8。</li>
+      <li>Fukuchi RK 等（2019）。行走速度对步态生物力学的影响。<em>Systematic Reviews</em> 8:153。</li>
+      <li>Collins SH 等（2009）。滚动脚的优势。<em>J Exp Biol</em> 212:2555-2559。</li>
+      <li>Whittle MW 等（2023）。<em>Whittle 步态分析</em>（第 6 版）。Elsevier。</li>
+      <li>Studenski S 等（2011）。步态速度与老年人生存。<em>JAMA</em> 305:50-58。</li>
+      <li>世界田径（2023）。竞赛规则（规则 54：竞走）。</li>
+    </ul>
+
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">首页</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. 版权所有
+            </p>
+            <ul class="footer-links">
+                <li><a href="/zh/privacy/">隐私政策</a></li>
+                <li><a href="/zh/terms/">使用条款</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>本网站使用cookies以改善您的体验。</p>
+            <a href="/zh/privacy/" class="text-sm">了解更多</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">拒绝</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">接受</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+</body>
+</html>

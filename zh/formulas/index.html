@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>步行指标计算公式 - WSS、步态与健康指标如何计算</title>
+    <meta name="description" content="步行分析背后的数学公式。了解WSS、步幅指标、步频和效率评分的计算方法。基于科学的方法论。">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="步行公式, WSS公式, 步态指标计算, 步行科学公式, 步幅计算">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/zh/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/zh/formulas/">
+    <meta property="og:title" content="步行指标计算公式 - WSS、步态与健康指标如何计算">
+    <meta property="og:description" content="步行分析背后的数学公式。了解WSS、步幅指标、步频和效率评分的计算方法。基于科学的方法论。">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/zh/formulas/">
+    <meta name="twitter:title" content="步行指标计算公式 - WSS、步态与健康指标如何计算">
+    <meta name="twitter:description" content="步行分析背后的数学公式。了解WSS、步幅指标、步频和效率评分的计算方法。基于科学的方法论。">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">跳至内容</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/zh/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            首页
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            学习
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            科学
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            为您服务
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/"
+                           
+                           aria-current="">
+                            工具
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/contact/"
+                           
+                           aria-current="">
+                            联系我们
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="选择语言">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="zh" selected>
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="切换菜单" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/zh/">首页</a> / <a href="/zh/#science">科学</a> / 公式
+    </div>
+    <h1>步行指标公式与方程</h1>
+    <p class="lead">步行分析的数学基础 — 经科学验证的强度、能量和表现方程</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>本页面展示步行分析中使用的经科学验证的公式。所有方程均附有研究参考文献和验证的准确性范围。</p>
+        </div>
+
+        <h2 id="cadence-mets">1. 步频到 METs 转换</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore et al. (2021) 基于步频的代谢方程</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">步频到 METs</p>
+            <p class="formula-main"><strong>METs = 0.0219 × 步频(步/分钟)+ 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">准确度:±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>为什么这个公式重要:</strong>该方程比传统的 ACSM 基于速度的方程<strong>准确 23-35%</strong>。它有效是因为步频直接反映运动频率和能量消耗,而速度取决于可变的步幅长度。</p>
+          </div>
+
+          <h4>示例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>以 100 spm 步行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>中等强度阈值</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>以 110 spm 步行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">稳定的中等强度</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>以 120 spm 步行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">中等-剧烈强度</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>以 130 spm 步行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>剧烈强度阈值</strong>(CADENCE-Adults 直接测量为 6 METs)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>注意:</strong>CADENCE-Adults 研究在受控实验室条件下直接测量出 130 spm = 6 METs。Moore 方程设计用于 80-130 spm 范围,在非常高的步频时可能会低估。</p>
+          </div>
+
+          <h4>验证数据:</h4>
+          <ul>
+            <li><strong>样本:</strong>76 名 21-40 岁成人</li>
+            <li><strong>方法:</strong>间接量热法(金标准)</li>
+            <li><strong>R² 值:</strong>0.87(优秀相关性)</li>
+            <li><strong>平均绝对误差:</strong>0.47 METs</li>
+            <li><strong>适用范围:</strong>80-130 步/分钟</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM VO₂ 步行方程</h2>
+
+        <div class="formula-section">
+          <h3>ACSM 代谢计算</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">平地步行(0% 坡度)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × 速度(m/min)+ 3.5</strong></p>
+            <p class="formula-note">速度单位为米/分钟(km/h 乘以 16.67 或 mph 乘以 26.82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">坡度步行(上坡/下坡)</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(速度)+ 1.8(速度)(坡度)+ 3.5</strong></p>
+            <p class="formula-note">坡度以小数表示(例如,5% = 0.05)</p>
+          </div>
+
+          <h4>示例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>在平地上以 5 km/h(83.3 m/min)步行:</strong></p>
+              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
+              <p class="example-conversion">转换为 METs:11.83 / 3.5 = <strong>3.38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>在 5% 坡度上以 5 km/h 步行:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.3)+ 1.8(83.3)(0.05)+ 3.5</p>
+              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">坡度使强度增加约 64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>速度转换:</h4>
+            <ul>
+              <li><strong>km/h 到 m/min:</strong>乘以 16.67</li>
+              <li><strong>mph 到 m/min:</strong>乘以 26.82</li>
+              <li><strong>m/s 到 m/min:</strong>乘以 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. 能量消耗与卡路里燃烧</h2>
+
+        <div class="formula-section">
+          <h3>准确的卡路里计算</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">每分钟卡路里</p>
+            <p class="formula-main"><strong>Cal/min = (METs × 3.5 × 体重 kg)/ 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">单次训练总卡路里</p>
+            <p class="formula-main"><strong>总卡路里 = Cal/min × 时长(分钟)</strong></p>
+          </div>
+
+          <h4>示例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kg 的人以 100 spm(3 METs)步行 45 分钟:</strong></p>
+              <p class="example-calc">Cal/min = (3 × 3.5 × 70)/ 200 = 735 / 200 = <strong>3.675 cal/min</strong></p>
+              <p class="example-calc">总计 = 3.675 × 45 = <strong>165.4 卡路里</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kg 的人以 120 spm(5 METs)步行 30 分钟:</strong></p>
+              <p class="example-calc">Cal/min = (5 × 3.5 × 85)/ 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p>
+              <p class="example-calc">总计 = 7.44 × 30 = <strong>223.2 卡路里</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>为什么使用这个公式?</h4>
+            <p>这个方程来自 MET(Metabolic Equivalent of Task,代谢当量)的定义:</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min(静息代谢率)</li>
+              <li>消耗 1 升 O₂ ≈ 燃烧 5 kcal</li>
+              <li>转换:(METs × 3.5 × kg × 5)/ 1000 = (METs × 3.5 × kg)/ 200</li>
+            </ul>
+          </div>
+
+          <h3>净卡路里燃烧(仅运动)</h3>
+          <div class="formula-box">
+            <p class="formula-title">净卡路里(不包括静息)</p>
+            <p class="formula-main"><strong>净 Cal/min = [(METs - 1)× 3.5 × 体重]/ 200</strong></p>
+            <p class="formula-note">减去 1 MET 以排除您在静息时也会燃烧的卡路里</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg,3 METs,45 分钟 – 净卡路里:</strong></p>
+            <p class="example-calc">净 = [(3 - 1)× 3.5 × 70]/ 200 × 45 = 2.45 × 45 = <strong>110.3 净卡路里</strong></p>
+            <p class="example-interpretation">相比 165.4 总卡路里(55 卡路里会在静息时燃烧)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. 步态对称指数(GSI)</h2>
+
+        <div class="formula-section">
+          <h3>量化左右不对称</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">步态对称指数</p>
+            <p class="formula-main"><strong>GSI (%) = |右 - 左|/ [0.5 × (右 + 左)]× 100</strong></p>
+            <p class="formula-note">可应用于步幅长度、步时间或接触时间</p>
+          </div>
+
+          <h4>解释:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong>正常、对称的步态</li>
+            <li><strong>3-5%:</strong>轻度不对称</li>
+            <li><strong>5-10%:</strong>中度不对称,需监测</li>
+            <li><strong>&gt;10%:</strong>具有临床意义,需专业评估</li>
+          </ul>
+
+          <h4>示例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>步时间:右 = 520 ms,左 = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480|/ [0.5 × (520 + 480)]× 100</p>
+              <p class="example-calc">= 40 / [0.5 × 1000]× 100 = 40 / 500 × 100 = <strong>8% 不对称</strong></p>
+              <p class="example-interpretation">中度不对称 – 考虑加强较弱一侧</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>步幅长度:右 = 1.42 m,左 = 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38|/ [0.5 × (1.42 + 1.38)]× 100</p>
+              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% 不对称</strong></p>
+              <p class="example-interpretation">正常、健康范围 ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>临床注意:</strong>Apple HealthKit 的步行不对称使用略有不同的计算方法(步时间之间的简单百分比差异),但解释阈值相似。</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK 分数(WalkAnalytics 专有指标)</h2>
+
+        <div class="formula-section">
+          <h3>步行效率分数</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK 分数</p>
+            <p class="formula-main"><strong>WALK 分数 = 时间(秒)+ 每 100 米步数</strong></p>
+            <p class="formula-note">分数越低 = 效率越好(类似游泳的 SWOLF)</p>
+          </div>
+
+          <h4>工作原理:</h4>
+          <p>WALK 分数结合时间和步数来量化步行效率。在 75 秒内以 140 步完成 100 米的步行者,WALK 分数为 215。提高速度或步幅效率都会降低分数。</p>
+
+          <h4>示例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 米用 80 秒,120 步:</strong></p>
+              <p class="example-calc">WALK 分数 = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 米用 70 秒,110 步:</strong></p>
+              <p class="example-calc">WALK 分数 = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">通过提高速度 + 步幅获得更好的效率</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 米用 60 秒,130 步(竞走):</strong></p>
+              <p class="example-calc">WALK 分数 = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">速度快但步幅较短</p>
+            </div>
+          </div>
+
+          <h4>典型范围:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong>缓慢/低效步态,可能有行动问题</li>
+            <li><strong>200-250:</strong>休闲步行者,平均效率</li>
+            <li><strong>170-200:</strong>健身步行者,良好效率</li>
+            <li><strong>150-170:</strong>高级步行者,优秀效率</li>
+            <li><strong>&lt;150:</strong>精英/竞走水平</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>使用 WALK 分数训练:</strong>每周在相同的 100 米路线上跟踪您的分数。改善显示增强的神经肌肉协调、力量和步行经济性。</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. 基本步态指标</h2>
+
+        <div class="formula-section">
+          <h3>基础计算</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">步行速度</p>
+            <p class="formula-main"><strong>速度(m/s)= 距离(m)/ 时间(s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">从总步数计算步频</p>
+            <p class="formula-main"><strong>步频(spm)= 总步数 / 时间(分钟)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">步幅长度</p>
+            <p class="formula-main"><strong>步幅长度(m)= 距离(m)/(步数 / 2)</strong></p>
+            <p class="formula-note">将步数除以 2,因为一个步幅 = 两步</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">步长</p>
+            <p class="formula-main"><strong>步长(m)= 距离(m)/ 步数</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">从步频和步幅长度计算速度</p>
+            <p class="formula-main"><strong>速度 = 步幅长度 ×(步频 / 2)/ 60</strong></p>
+            <p class="formula-note">或:速度(m/s)= 步长 × 步频 / 60</p>
+          </div>
+
+          <h4>示例工作流程:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>12 分钟内走 1000 米,共 1320 步:</strong></p>
+            <p><strong>速度:</strong>1000m / 720s = <strong>1.39 m/s</strong></p>
+            <p><strong>步频:</strong>1320 步 / 12 分 = <strong>110 spm</strong></p>
+            <p><strong>步幅长度:</strong>1000m / (1320/2)= 1000 / 660 = <strong>1.52 m</strong></p>
+            <p><strong>步长:</strong>1000m / 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. 心率区间计算</h2>
+
+        <div class="formula-section">
+          <h3>传统心率区间方法</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">最大心率估算</p>
+            <p class="formula-main"><strong>最大心率 = 220 - 年龄</strong></p>
+            <p class="formula-note">简单但有 ±10-15 bpm 的个体差异</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">替代方案:Tanaka 公式(更准确)</p>
+            <p class="formula-main"><strong>最大心率 = 208 - (0.7 × 年龄)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">区间范围计算</p>
+            <p class="formula-main"><strong>区间 = 最大心率 ×(下限%,上限%)</strong></p>
+          </div>
+
+          <h4>示例:40 岁</h4>
+          <div class="calc-example">
+            <p><strong>传统:</strong>最大心率 = 220 - 40 = <strong>180 bpm</strong></p>
+            <p><strong>Tanaka:</strong>最大心率 = 208 - (0.7 × 40)= 208 - 28 = <strong>180 bpm</strong></p>
+            <p><strong>区间 2(60-70%):</strong>180 × 0.60 = 108 bpm 至 180 × 0.70 = 126 bpm</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>注意:</strong>虽然心率区间有用,但<strong>基于步频的区间对步行来说更准确和实用</strong>(请参阅步行区间指南)。</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. 运输成本与步行经济性</h2>
+
+        <div class="formula-section">
+          <h3>步行能量成本</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">运输成本(C)</p>
+            <p class="formula-main"><strong>C = 消耗能量 /(体重 × 距离)</strong></p>
+            <p class="formula-note">单位:J/kg/m 或 mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U 型曲线:</strong>步行经济性遵循 U 型曲线。存在一个最佳速度(通常为 1.2-1.4 m/s 或 4.3-5.0 km/h),在此速度下运输成本最小化。比这更慢或更快的步行都会增加每距离的能量成本。</p>
+          </div>
+
+          <h4>影响运输成本的因素:</h4>
+          <ul>
+            <li><strong>速度:</strong>U 型关系(最佳约 1.3 m/s)</li>
+            <li><strong>坡度:</strong>上坡显著增加成本;下坡增加离心成本</li>
+            <li><strong>体重:</strong>较重个体的绝对成本较高,但相对成本相似</li>
+            <li><strong>步幅机制:</strong>最佳步幅长度可最小化成本</li>
+            <li><strong>地形:</strong>不平整表面比光滑路面增加成本</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">坡度调整成本</p>
+            <p class="formula-main"><strong>成本乘数 = 1 +(坡度 × 10)</strong></p>
+            <p class="formula-note">粗略近似:每 1% 坡度增加 10% 成本</p>
+          </div>
+
+          <h4>示例:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>在 5% 坡度上步行:</strong></p>
+            <p class="example-calc">成本乘数 = 1 +(0.05 × 10)= <strong>1.5×</strong></p>
+            <p class="example-interpretation">与平地相比能量成本增加 50%</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. 训练负荷与压力分数</h2>
+
+        <div class="formula-section">
+          <h3>步行压力分数(WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">基于区间的 WSS</p>
+            <p class="formula-main"><strong>WSS = Σ(区间分钟数 × 区间系数)</strong></p>
+            <p>区间 1:×1.0 | 区间 2:×2.0 | 区间 3:×3.0 | 区间 4:×4.0 | 区间 5:×5.0</p>
+          </div>
+
+          <h4>示例:60 分钟步行</h4>
+          <div class="calc-example">
+            <p>10 分钟区间 1 × 1 = 10 点</p>
+            <p>40 分钟区间 2 × 2 = 80 点</p>
+            <p>10 分钟区间 3 × 3 = 30 点</p>
+            <p><strong>总 WSS = 120</strong></p>
+          </div>
+
+          <h3>每周训练负荷</h3>
+          <div class="formula-box">
+            <p class="formula-title">每周负荷</p>
+            <p class="formula-main"><strong>每周负荷 = Σ 每日 WSS(7 天)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">渐进超负荷</p>
+            <p class="formula-main"><strong>下周 = 本周 × 1.05-1.10</strong></p>
+            <p class="formula-note">每周最多增加 5-10%</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">恢复周</p>
+            <p class="formula-main"><strong>恢复周 = 当前 × 0.50-0.70</strong></p>
+            <p class="formula-note">每 3-4 周,减少至 50-70%</p>
+          </div>
+
+          <h4>典型每周负荷:</h4>
+          <ul>
+            <li><strong>初级健康步行者:</strong>200-400 WSS/周</li>
+            <li><strong>常规健身步行者:</strong>400-700 WSS/周</li>
+            <li><strong>认真的健身步行者:</strong>700-1000 WSS/周</li>
+            <li><strong>竞技竞走者:</strong>1000-1500+ WSS/周</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. 预测方程</h2>
+
+        <div class="formula-section">
+          <h3>6 分钟步行测试(6MWT)距离预测</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">预测 6MWT 距离(Enright & Sherrill)</p>
+            <p><strong>男性:</strong>(7.57 × 身高 cm)-(5.02 × 年龄)-(1.76 × 体重 kg)- 309</p>
+            <p><strong>女性:</strong>(2.11 × 身高 cm)-(5.78 × 年龄)-(2.29 × 体重 kg)+ 667</p>
+            <p class="formula-note">预测健康成人的距离(米)</p>
+          </div>
+
+          <h4>示例:40 岁男性,175 cm,75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175)-(5.02 × 40)-(1.76 × 75)- 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 米</strong></p>
+            <p class="example-interpretation">年龄良好的功能能力</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>临床用途:</strong>6MWT 用于评估心肺患者的功能运动能力、术前/术后评估以及老年人的一般健身。</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. 单位转换</h2>
+
+        <div class="formula-section">
+          <h3>常见步行指标转换</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>从</th>
+                  <th>到</th>
+                  <th>公式</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>快速参考:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph(典型健康成人步行速度)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph(快步行走)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min(静息代谢)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min(中等强度阈值)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min(剧烈强度阈值)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">相关资源</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>应用公式:WSS 计算器</h3>
+            <p>使用我们的交互式计算器计算您的步行压力分数。</p>
+            <a href="/zh/wss-calculator/" class="btn btn-secondary">计算 WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>理解步行区间</h3>
+            <p>学习如何在训练中应用基于步频的强度区间。</p>
+            <a href="/zh/walking-zones/" class="btn btn-secondary">学习区间 →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>科学研究</h3>
+            <p>查看验证这些公式的研究。</p>
+            <a href="/zh/research/" class="btn btn-secondary">查看研究 →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>完整参考文献</h3>
+            <p>访问所有引用方程的完整引文。</p>
+            <a href="/zh/bibliography/" class="btn btn-secondary">查看参考文献 →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>公式索引</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. 步频 → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂ 方程</a></li>
+            <li><a href="#energy-expenditure">3. 能量与卡路里</a></li>
+            <li><a href="#gait-symmetry">4. 步态对称指数</a></li>
+            <li><a href="#walk-score">5. WALK 分数</a></li>
+            <li><a href="#basic-metrics">6. 基本步态指标</a></li>
+            <li><a href="#heart-rate">7. 心率区间</a></li>
+            <li><a href="#cost-transport">8. 运输成本</a></li>
+            <li><a href="#training-load">9. 训练负荷</a></li>
+            <li><a href="#predictions">10. 预测方程</a></li>
+            <li><a href="#conversions">11. 单位转换</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ 最重要</h3>
+          <p><strong>步频到 METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">这个单一方程使基于步频的强度训练无需心率监测器即可实现。</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>应用这些公式</h3>
+          <p>WalkAnalytics 使用这些经科学验证的方程来分析您的步行。</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">下载应用</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 公式准确性</h4>
+          <p>本页面上的所有方程均来自同行评审的研究。完整引文请参见<a href="/zh/bibliography/">参考文献</a>。</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">首页</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. 版权所有
+            </p>
+            <ul class="footer-links">
+                <li><a href="/zh/privacy/">隐私政策</a></li>
+                <li><a href="/zh/terms/">使用条款</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>本网站使用cookies以改善您的体验。</p>
+            <a href="/zh/privacy/" class="text-sm">了解更多</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">拒绝</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">接受</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+</body>
+</html>

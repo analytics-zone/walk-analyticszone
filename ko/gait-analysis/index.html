@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표</title>
+    <meta name="description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="보행 분석, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표, 걷기 생체역학">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/ko/gait-analysis/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/ko/gait-analysis/">
+    <meta property="og:title" content="보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표">
+    <meta property="og:description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/ko/gait-analysis/">
+    <meta name="twitter:title" content="보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표">
+    <meta name="twitter:description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/gait-analysis/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/gait-analysis/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/gait-analysis/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/gait-analysis/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/gait-analysis/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/gait-analysis/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/gait-analysis/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/gait-analysis/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/ko/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/ko/"
+                           
+                           aria-current="">
+                            홈
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/"
+                           
+                           aria-current="">
+                            학습
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/"
+                           
+                           aria-current="">
+                            과학
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/"
+                           
+                           aria-current="">
+                            사용자 맞춤
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/"
+                           
+                           aria-current="">
+                            도구
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/contact/"
+                           
+                           aria-current="">
+                            문의
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="언어 선택">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" selected>
+                        한국어
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="메뉴 토글" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Gait Analysis Guide -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/ko/">홈</a> / <a href="/ko/#learn">학습</a> / 보행 분석
+    </div>
+    <h1>걷기 보행 분석</h1>
+    <p class="lead">더 나은 성능, 건강 및 부상 예방을 위해 과학 기반 지표를 사용하여 걷기 생체역학을 분석하는 방법 배우기</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="what-is-gait">보행 분석이란?</h2>
+
+        <p>보행 분석은 걷기 패턴과 생체역학에 대한 체계적인 연구입니다. 걷는 동안 신체가 어떻게 움직이는지를 검사하여 비효율성, 비대칭성 및 잠재적인 부상 위험을 식별합니다.</p>
+
+        <div class="key-insight">
+          <p><strong>왜 중요한가:</strong> 보행 분석은 전문 실험실에서만 사용되는 임상 도구에서 스마트워치와 스마트폰을 통해 접근 가능한 소비자 기술로 진화했습니다. 연구에 따르면 걷기 패턴 분석은 건강 결과를 예측하고 신경학적 상태의 초기 징후를 감지하며 걷기 효율성을 최적화할 수 있습니다.</p>
+        </div>
+
+        <p>WalkAnalytics는 Apple HealthKit과 통합되어 iPhone과 Apple Watch에서 수동적으로 수집된 걷기 지표를 분석하여 보행 품질에 대한 임상 수준의 통찰력을 제공합니다.</p>
+
+        <h2 id="key-metrics">필수 보행 지표</h2>
+
+        <h3 id="cadence">1. 케이던스(분당 걸음 수)</h3>
+
+        <div class="metric-detail">
+          <p><strong>정의:</strong> 분당 걸음 수(spm)</p>
+
+          <p><strong>가장 중요한 걷기 지표인 이유:</strong> 케이던스는 걷기 강도와 에너지 소비의 가장 좋은 예측 변수입니다. 보폭(보폭에 따라 달라짐)과 달리 케이던스는 움직임 빈도와 대사 요구량을 직접 반영합니다.</p>
+
+          <div class="science-box">
+            <h4>과학적 증거: 100 spm 기준점</h4>
+            <p>획기적인 CADENCE-Adults 연구(Tudor-Locke et al., 2019)는 76명의 성인을 테스트하여 다음을 확립했습니다:</p>
+            <ul>
+              <li><strong>100 걸음/분 = 3 METs</strong>(중등도 강도) 민감도 86%, 특이도 89.6%</li>
+              <li><strong>110 spm ≈ 4 METs</strong>(중등도-격렬)</li>
+              <li><strong>120 spm ≈ 5 METs</strong>(격렬)</li>
+              <li><strong>130 spm = 6 METs</strong>(매우 격렬한 강도 기준점)</li>
+            </ul>
+            <p>이 관계는 <strong>21-85세에 걸쳐 놀라울 정도로 일관되어</strong> 케이던스를 보편적인 강도 지표로 만듭니다.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>케이던스 범위 및 적용</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>케이던스(spm)</th>
+                  <th>범주</th>
+                  <th>적용</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>60-90</td>
+                  <td>매우 느림</td>
+                  <td>회복, 이동 장애</td>
+                </tr>
+                <tr>
+                  <td>90-100</td>
+                  <td>가벼운 강도</td>
+                  <td>부드러운 활동, 워밍업</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>100-110</strong></td>
+                  <td><strong>중등도 강도</strong></td>
+                  <td><strong>건강상의 이점, 지방 연소, 권장 기준선</strong></td>
+                </tr>
+                <tr>
+                  <td>110-120</td>
+                  <td>중등도-격렬</td>
+                  <td>심혈관 건강, 빠른 걷기</td>
+                </tr>
+                <tr>
+                  <td>120-130</td>
+                  <td>격렬</td>
+                  <td>파워 워킹, 피트니스 트레이닝</td>
+                </tr>
+                <tr>
+                  <td>130-140</td>
+                  <td>매우 격렬</td>
+                  <td>고급 피트니스, 인터벌 트레이닝</td>
+                </tr>
+                <tr>
+                  <td>140-180</td>
+                  <td>경보</td>
+                  <td>경쟁 걷기, 엘리트 선수</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>측정 방법:</strong> Apple Watch와 대부분의 피트니스 트래커는 케이던스를 자동으로 계산합니다. 30초 동안 걸음을 세고 2를 곱할 수도 있습니다.</p>
+
+          <p><strong>목표 케이던스:</strong></p>
+          <ul>
+            <li><strong>일반 건강:</strong> 중등도 강도를 달성하기 위해 걷기 중 ≥100 spm 목표</li>
+            <li><strong>피트니스 개선:</strong> 유산소 발달을 위해 110-120 spm 목표</li>
+            <li><strong>성능 트레이닝:</strong> 120-130+ spm에서 인터벌 연습</li>
+          </ul>
+        </div>
+
+        <h3 id="stride-length">2. 보폭</h3>
+
+        <div class="metric-detail">
+          <p><strong>정의:</strong> 한 번의 완전한 보폭 주기에서 이동한 거리(한 발의 뒤꿈치 착지에서 같은 발의 다음 뒤꿈치 착지까지)</p>
+
+          <p><strong>최적 보폭:</strong> 연구에 따르면 최적 보폭은 정상 걷기 중 <strong>신장의 40-50%</strong>입니다.</p>
+
+          <div class="data-table">
+            <h4>보폭 벤치마크</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>신장</th>
+                  <th>최적 보폭(신장의 40-50%)</th>
+                  <th>엘리트 워커(최대 70%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5'0" (152 cm)</td>
+                  <td>0.61-0.76 m (24-30")</td>
+                  <td>최대 1.06 m (42")</td>
+                </tr>
+                <tr>
+                  <td>5'6" (168 cm)</td>
+                  <td>0.67-0.84 m (26-33")</td>
+                  <td>최대 1.18 m (46")</td>
+                </tr>
+                <tr>
+                  <td>6'0" (183 cm)</td>
+                  <td>0.73-0.91 m (29-36")</td>
+                  <td>최대 1.28 m (50")</td>
+                </tr>
+                <tr>
+                  <td>6'6" (198 cm)</td>
+                  <td>0.79-0.99 m (31-39")</td>
+                  <td>최대 1.39 m (55")</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>주요 관계:</strong> 속도 = 보폭 × 케이던스</p>
+          <p>이것은 더 긴 보폭을 취하거나 케이던스를 증가시켜 걷기 속도를 높일 수 있음을 의미합니다. 그러나 <strong>케이던스를 증가시키는 것이 일반적으로 과보폭보다 더 효율적이고 안전합니다</strong>.</p>
+
+          <div class="warning-box">
+            <h4>⚠️ 과보폭 피하기</h4>
+            <p><strong>과보폭</strong>은 발이 무게 중심에서 너무 멀리 앞에 착지할 때 발생합니다. 이것은:</p>
+            <ul>
+              <li>제동력과 지면 반력을 증가시킵니다</li>
+              <li>걷기 효율성을 감소시킵니다(각 걸음마다 "제동")</li>
+              <li>무릎과 엉덩이에 스트레스를 증가시킵니다</li>
+              <li>부상 위험을 높입니다</li>
+            </ul>
+            <p><strong>해결책:</strong> 신체의 무게 중심에 더 가깝게 발을 착지하는 데 집중하고 뒷발에서 강력하게 밀어내세요.</p>
+          </div>
+
+          <p><strong>Apple HealthKit 지표:</strong> iOS 14+는 iPhone이 주머니/가방에 있을 때 수동적으로 <code>walkingStepLength</code>를 측정합니다.</p>
+        </div>
+
+        <h3 id="ground-contact">3. 지면 접촉 시간</h3>
+
+        <div class="metric-detail">
+          <p><strong>정의:</strong> 보폭 동안 각 발이 지면과 접촉한 상태로 유지되는 시간</p>
+
+          <p><strong>걷기 관련 값:</strong> 걸음당 200-300밀리초(러닝의 <200ms보다 훨씬 길음)</p>
+
+          <div class="science-box">
+            <h4>걷기 접촉의 5단계</h4>
+            <p>각 걸음은 5가지 뚜렷한 단계로 구성됩니다:</p>
+            <ol>
+              <li><strong>초기 접촉(뒤꿈치 착지):</strong> 뒤꿈치가 ~10° 발등 굽힘에서 지면에 닿음</li>
+              <li><strong>하중 반응(발 평평):</strong> 전체 발 접촉, 체중 수용</li>
+              <li><strong>중간 입각기:</strong> 지지 발 위로 체중이 이동</li>
+              <li><strong>말기 입각기(뒤꿈치 들림):</strong> 뒤꿈치가 들리기 시작, 체중이 앞으로 이동</li>
+              <li><strong>전유각기(발가락 떼기):</strong> 앞발에서 밀어내기, 추진 단계</li>
+            </ol>
+          </div>
+
+          <p><strong>지면 접촉 시간에 영향을 미치는 것:</strong></p>
+          <ul>
+            <li><strong>속도:</strong> 더 빠른 걷기 = 더 짧은 접촉 시간</li>
+            <li><strong>케이던스:</strong> 더 높은 케이던스 = 걸음당 더 짧은 접촉 시간</li>
+            <li><strong>지형:</strong> 오르막은 접촉 시간을 증가시키고 내리막은 감소시킬 수 있음</li>
+            <li><strong>피로:</strong> 피곤한 근육 = 더 긴 접촉 시간</li>
+          </ul>
+
+          <p><strong>러닝과 비교:</strong></p>
+          <ul>
+            <li>걷기: 200-300ms 접촉, 보행 주기의 62%가 지지 단계</li>
+            <li>러닝: <200ms 접촉, 보행 주기의 31%만 지지 단계</li>
+            <li>이 근본적인 차이는 걷기가 <strong>더 낮은 충격력</strong>을 가지며 부상 회복에 적합한 이유를 설명합니다</li>
+          </ul>
+        </div>
+
+        <h3 id="double-support">4. 이중 지지 시간</h3>
+
+        <div class="metric-detail">
+          <p><strong>정의:</strong> 두 발이 동시에 지면과 접촉할 때 보행 주기의 부분</p>
+
+          <p><strong>걷기의 주요 구별 특징:</strong> 걷기는 항상 이중 지지 단계(보행 주기의 20-30%)를 가지지만, 러닝은 지면 접촉이 없는 비행 단계를 가집니다.</p>
+
+          <div class="key-insight">
+            <p><strong>임상적 중요성:</strong> 이중 지지 비율은 특히 노인에서 낙상 위험과 균형 신뢰도의 강력한 예측 변수입니다.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>이중 지지 해석</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>이중 지지 %</th>
+                  <th>해석</th>
+                  <th>조치</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;15%</td>
+                  <td>매우 낮음(러닝 보행에 접근)</td>
+                  <td>안전을 위해 너무 빨리 걷고 있을 수 있음</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>20-30%</strong></td>
+                  <td><strong>정상, 건강한 범위</strong></td>
+                  <td><strong>최적의 균형과 효율성</strong></td>
+                </tr>
+                <tr>
+                  <td>30-35%</td>
+                  <td>높음, 경미한 우려</td>
+                  <td>변화 모니터링, 균형 운동 고려</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;35%</strong></td>
+                  <td><strong>높은 낙상 위험 지표</strong></td>
+                  <td><strong>의료 서비스 제공자 상담, 균형 트레이닝 시작</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>높은 이중 지지를 유발하는 것:</strong></p>
+          <ul>
+            <li>낙상 두려움 또는 균형 신뢰도 감소</li>
+            <li>신경학적 상태(파킨슨병, 뇌졸중, 신경병증)</li>
+            <li>근육 약화(특히 고관절 외전근과 발목 배측 굴곡근)</li>
+            <li>관절 통증 또는 경직</li>
+            <li>시각 장애</li>
+          </ul>
+
+          <p><strong>Apple HealthKit 지표:</strong> iOS 14+의 iPhone 8+에서 수동적으로 측정되는 <code>walkingDoubleSupportPercentage</code>. 이 지표는 Apple의 걷기 안정성 평가의 일부입니다.</p>
+        </div>
+
+        <h3 id="asymmetry">5. 걷기 비대칭성</h3>
+
+        <div class="metric-detail">
+          <p><strong>정의:</strong> 왼쪽과 오른쪽 걸음 시간, 보폭 또는 접촉 시간 사이의 차이</p>
+
+          <div class="science-box">
+            <h4>보행 대칭 지수(GSI) 공식</h4>
+            <p>보행 비대칭성을 정량화하는 표준 공식:</p>
+            <div class="formula-box">
+              <p><strong>GSI = |오른쪽 - 왼쪽| / [0.5 × (오른쪽 + 왼쪽)] × 100</strong></p>
+            </div>
+            <p>예: 오른쪽 걸음 시간 = 520ms, 왼쪽 걸음 시간 = 480ms인 경우:</p>
+            <p>GSI = |520 - 480| / [0.5 × (520 + 480)] × 100 = 40 / 500 × 100 = <strong>8% 비대칭성</strong></p>
+          </div>
+
+          <div class="data-table">
+            <h4>비대칭성 분류</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>비대칭성 %</th>
+                  <th>분류</th>
+                  <th>임상적 중요성</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>&lt;2-3%</strong></td>
+                  <td><strong>정상, 대칭</strong></td>
+                  <td>건강한 보행 패턴</td>
+                </tr>
+                <tr>
+                  <td>3-5%</td>
+                  <td>경미한 비대칭성</td>
+                  <td>모니터링, 경미한 약화 또는 습관을 나타낼 수 있음</td>
+                </tr>
+                <tr>
+                  <td>5-10%</td>
+                  <td>중등도 비대칭성</td>
+                  <td>전문 평가 고려</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;10%</strong></td>
+                  <td><strong>임상적으로 중요</strong></td>
+                  <td><strong>부상, 약화 또는 신경학적 문제를 나타낼 가능성</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>비대칭성의 일반적인 원인:</strong></p>
+          <ul>
+            <li><strong>이전 부상 보상:</strong> 부상 후 한쪽 다리 선호</li>
+            <li><strong>근육 불균형:</strong> 한쪽의 고관절, 무릎 또는 발목 약화</li>
+            <li><strong>다리 길이 불일치:</strong> 실제 또는 기능적 다리 길이 차이</li>
+            <li><strong>관절 문제:</strong> 관절염, 고관절/무릎/발목의 ROM 감소</li>
+            <li><strong>신경학적 상태:</strong> 뇌졸중, 파킨슨병, MS</li>
+            <li><strong>신발:</strong> 고르지 않은 신발 마모 또는 잘못된 착용감</li>
+          </ul>
+
+          <p><strong>Apple HealthKit 지표:</strong> <code>walkingAsymmetryPercentage</code>는 왼쪽과 오른쪽 걸음 시간 사이의 차이를 측정합니다. >10% 값은 알림을 트리거합니다.</p>
+
+          <div class="tip-box">
+            <h4>💡 대칭성 개선</h4>
+            <ul>
+              <li>한발 균형 운동(다리당 30-60초)</li>
+              <li>일측 근력 트레이닝(약한 쪽에 집중)</li>
+              <li>시각/청각 피드백으로 보행 재훈련</li>
+              <li>기저 부상 또는 상태 해결</li>
+              <li>비대칭성이 >5% 지속되면 전문 보행 평가</li>
+            </ul>
+          </div>
+        </div>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">홈</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. 모든 권리 보유
+            </p>
+            <ul class="footer-links">
+                <li><a href="/ko/privacy/">개인정보 보호</a></li>
+                <li><a href="/ko/terms/">이용약관</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>이 웹사이트는 사용자 경험을 개선하기 위해 쿠키를 사용합니다.</p>
+            <a href="/ko/privacy/" class="text-sm">자세히 알아보기</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">거부</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">수락</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+</body>
+</html>

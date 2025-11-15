@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ca" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Analítica de Caminar Privada - Anàlisi de la Marxa, WSS, Mètriques de Salut per iOS</title>
+    <meta name="description" content="App iOS privada de caminar amb anàlisi avançada de la marxa. Segueix mètriques de zancada, zones de caminar, WSS localment. Informació basada en ciència. Prova gratuïta de 7 dies.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="app analítica caminar, app anàlisi marxa, app iOS privada, mètriques salut caminar, anàlisi zancada">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/ca/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-10-27T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://walk.analyticszone.app/ca/">
+    <meta property="og:title" content="Analítica de Caminar Privada - Anàlisi de la Marxa, WSS, Mètriques de Salut per iOS">
+    <meta property="og:description" content="App iOS privada de caminar amb anàlisi avançada de la marxa. Segueix mètriques de zancada, zones de caminar, WSS localment. Informació basada en ciència. Prova gratuïta de 7 dies.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/ca/">
+    <meta name="twitter:title" content="Analítica de Caminar Privada - Anàlisi de la Marxa, WSS, Mètriques de Salut per iOS">
+    <meta name="twitter:description" content="App iOS privada de caminar amb anàlisi avançada de la marxa. Segueix mètriques de zancada, zones de caminar, WSS localment. Informació basada en ciència. Prova gratuïta de 7 dies.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+      "url": "https://walk.analyticszone.app",
+      "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+      "description": "Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+      "author": "Albert Arno",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "analyticszone@onmedic.org"
+      },
+      "sameAs": [
+        "https://twitter.com/runanalytics",
+        "https://apps.apple.com/app/runanalytics/id6737283749"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RunAnalytics",
+      "description": "Scientific running analytics app with Critical Run Speed (CRS), Training Stress Score (TSS), and CTL/ATL/TSB metrics. Privacy-first app processes all data locally on iPhone.",
+      "url": "https://walk.analyticszone.app",
+      "applicationCategory": ["HealthApplication", "FitnessApplication"],
+      "operatingSystem": "iOS",
+      "softwareVersion": "Latest",
+      "author": {
+        "@type": "Organization",
+        "name": "Albert Arno"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Trial",
+          "description": "7-day free trial of RunAnalytics premium features",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "category": "Trial Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription",
+          "description": "Monthly access to all RunAnalytics premium features",
+          "price": "3.99",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1M",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Subscription",
+          "description": "Annual access to all RunAnalytics premium features at 18% discount",
+          "price": "39",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/app/walkanalytics/id0000000000",
+      "featureList": [
+        "Critical Run Speed (CRS) calculation",
+        "Training Stress Score (TSS) tracking",
+        "CTL (Chronic Training Load) metrics",
+        "ATL (Acute Training Load) metrics",
+        "TSB (Training Stress Balance) indicators",
+        "7 personalized training zones",
+        "Kilometer-by-kilometer analysis",
+        "Weekly, monthly, and yearly comparisons",
+        "Running efficiency tracking",
+        "Personal records (PR) detection",
+        "Apple Health app integration",
+        "Export in JSON, CSV, HTML, PDF formats",
+        "100% local data processing",
+        "Privacy-first architecture",
+        "Native SwiftUI interface"
+      ],
+      "screenshot": [
+        "https://walk.analyticszone.app/assets/images/screenshots/workouts-list.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/workout-detail.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/analytics.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/performance.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/training-zones.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/export-options.png"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RunAnalytics",
+      "description": "Professional running analytics app with science-based metrics, personalized training zones, and privacy-first data processing",
+      "url": "https://walk.analyticszone.app",
+      "image": "https://walk.analyticszone.app/assets/images/logo.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "RunAnalytics"
+      },
+      "category": "Fitness & Health Software",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "0",
+        "highPrice": "39",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "7-Day Free Trial",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Plan",
+            "price": "3.99",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1M",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Annual Plan",
+            "price": "39",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1Y",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          }
+        ]
+      }
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does RunAnalytics get my running data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RunAnalytics syncs with Apple Health to import running workouts recorded by any compatible device or app. This includes smart watches, fitness trackers, and manual entries. The app processes this data locally to calculate advanced metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the CRS test and how do I perform it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CRS (Critical Run Speed) is a scientific protocol using 2 maximum effort runs: 5K and 3K with 10-20 minutes rest between. The app calculates your aerobic threshold from these times and automatically adjusts all training zones. Repeat every 6-8 weeks to track progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data uploaded to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RunAnalytics processes all data locally on your iPhone. There are no external servers, no cloud accounts, no data transfers. You control exports: generate JSON, CSV, HTML, or PDF files and share them however you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use RunAnalytics for trail running?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. RunAnalytics works with any running workout in Apple Health, including trail running. The app adapts to available metrics whether you're on a track or trail, providing relevant analysis for each environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between monthly and annual plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both plans offer identical features: all metrics, unlimited zones, temporal comparisons, multiple exports, and free updates. The only difference is price: annual saves 18% (equivalent to €3.25/month vs €3.99/month)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my subscription anytime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Subscriptions are managed through the App Store, so you can cancel anytime from Settings → [Your Name] → Subscriptions. If you cancel, you'll maintain access until the end of your current billing period."
+          }
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://walk.analyticszone.app/ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Running Analytics",
+          "item": "https://walk.analyticszone.app/ca/#features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pricing",
+          "item": "https://walk.analyticszone.app/ca/#pricing"
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Analítica de Caminar Privada - Anàlisi de la Marxa, WSS, Mètriques de Salut per iOS",
+      "description": "App iOS privada de caminar amb anàlisi avançada de la marxa. Segueix mètriques de zancada, zones de caminar, WSS localment. Informació basada en ciència. Prova gratuïta de 7 dies.",
+      "url": "https://walk.analyticszone.app/ca/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+        "url": "https://walk.analyticszone.app"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "RunAnalytics"
+      }
+    }
+    </script>
+
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Saltar al contingut</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/ca/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/ca/"
+                           
+                           aria-current="">
+                            Inici
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/"
+                           
+                           aria-current="">
+                            Aprèn
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/"
+                           
+                           aria-current="">
+                            Ciència
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/"
+                           
+                           aria-current="">
+                            Per a Tu
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/"
+                           
+                           aria-current="">
+                            Eines
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/contact/"
+                           
+                           aria-current="">
+                            Contacte
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Seleccionar idioma">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ca" selected>
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Alternar menú" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WalkAnalytics App Landing Page - Pàgina Principal -->
+
+<!-- Secció Hero amb Introducció de l'App -->
+<section class="app-hero">
+  <div class="container">
+    <div class="app-hero-content">
+      <div class="app-hero-text">
+        <div class="app-hero-badge">
+          <span>🚶</span>
+          <span>Analítica Professional de Caminar</span>
+        </div>
+        <h1>Camina Més Intel·ligent, Viu Més Saludable</h1>
+        <p class="app-hero-subtitle">
+          App iOS prioritzant la privacitat amb anàlisi avançada de la marxa, zones personalitzades de caminar i seguiment complet de la salut.
+          Tot processat localment al teu iPhone amb privacitat de dades completa.
+        </p>
+        <div class="app-hero-cta">
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+            Descarrega a l'App Store
+          </a>
+          <a href="#features" class="btn btn-large btn-secondary">
+            Explora Funcions
+          </a>
+        </div>
+        <p class="mt-6 text-sm-muted">
+          ✓ Prova gratuïta de 7 dies &nbsp;&nbsp; ✓ No cal compte &nbsp;&nbsp; ✓ Dades 100% locals
+        </p>
+      </div>
+      <div class="app-hero-mockup">
+        <div class="mockup-phone">
+          <img src="/assets/images/screenshots/workouts-list.png" alt="App iOS WalkAnalytics mostrant entrenaments de caminar amb mètriques de marxa i dades de salut a l'iPhone" width="400" height="auto" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secció de Funcions Clau -->
+<section id="features" class="app-features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Funcions</div>
+      <h2 class="section-title">Mètriques Avançades de Rendiment de Caminar</h2>
+      <p class="section-subtitle">Analítica de marxa de qualitat professional dissenyada per a caminadors de tots els nivells</p>
+    </div>
+    <div class="app-features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-chart"></use>
+          </svg>
+        </div>
+        <h3>Anàlisi Avançada de la Marxa</h3>
+        <p><a href="/ca/gait-analysis/">Anàlisi completa de la marxa</a> seguint longitud de zancada, cadència, simetria i temps de contacte amb el terra. Identifica patrons de caminar i millora l'eficiència amb mètriques basades en ciència.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-zones"></use>
+          </svg>
+        </div>
+        <h3>Zones Personalitzades de Caminar</h3>
+        <p>Entrena a la intensitat adequada amb <a href="/ca/walking-zones/">5 zones personalitzades de caminar</a>. Zones basades en freqüència cardíaca optimitzen la salut cardiovascular, la crema de greixos i la construcció de resistència.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-load"></use>
+          </svg>
+        </div>
+        <h3>Puntuació d'Estrès de Caminar (WSS)</h3>
+        <p>Quantifica la intensitat de l'entrenament amb <a href="/ca/training-load/">Walking Stress Score (WSS)</a>. Segueix la càrrega d'entrenament, monitoritza la recuperació i optimitza el teu programa de caminar amb precisió científica.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-stride"></use>
+          </svg>
+        </div>
+        <h3>Anàlisi de la Mecànica de la Zancada</h3>
+        <p>Informació profunda sobre la <a href="/ca/stride-mechanics/">biomecànica de caminar</a>. Analitza la simetria de la zancada, la distribució de l'equilibri i el temps de contacte per prevenir lesions i millorar l'eficiència de caminar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-privacy"></use>
+          </svg>
+        </div>
+        <h3>Privacitat Completa</h3>
+        <p>Totes les teves dades de caminar es queden al teu iPhone. Sense sincronització al núvol, sense comptes, sense seguiment. Les teves mètriques de salut són 100% privades i segures amb processament local.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-health"></use>
+          </svg>
+        </div>
+        <h3>Integració amb Salut</h3>
+        <p>Integració perfecta amb Apple Health. Importa entrenaments de caminar automàticament i sincronitza freqüència cardíaca, distància i mètriques de salut per un seguiment complet del benestar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secció Com Funciona -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Com Funciona</div>
+      <h2 class="section-title">Comença a Caminar Més Intel·ligent en 3 Passos</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Connecta Apple Health</h3>
+        <p>Importa els teus entrenaments de caminar automàticament des d'Apple Health. WalkAnalytics analitza les teves dades històriques per establir mètriques base.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Analitza la Teva Marxa</h3>
+        <p>Obté anàlisi completa de la marxa incloent simetria de zancada, cadència i mètriques d'equilibri. Entén els teus patrons de caminar i eficiència.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Segueix el Progrés</h3>
+        <p>Monitoritza la teva Puntuació d'Estrès de Caminar (WSS), càrrega d'entrenament i millores de la marxa al llarg del temps. Pren decisions basades en dades per millorar la salut.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secció Per a Qui És -->
+<section class="target-audience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Per a Qui És</div>
+      <h2 class="section-title">Perfecte per a Cada Caminador</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <h3>Entusiastes de la Salut</h3>
+        <p>Segueix els passos diaris, optimitza la intensitat de caminar i monitoritza la salut cardiovascular amb anàlisi precisa de la marxa i zones de freqüència cardíaca.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Caminadors Fitness</h3>
+        <p>Millora el rendiment de caminar, construeix resistència i entrena científicament amb seguiment de WSS i zones d'entrenament personalitzades.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Pacients en Rehabilitació</h3>
+        <p>Monitoritza la simetria de la marxa i l'equilibri durant la recuperació. Segueix el progrés objectivament amb mecànica de zancada i mètriques d'eficiència de caminar.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Gent Gran</h3>
+        <p>Manté la mobilitat i prevé caigudes amb seguiment de l'equilibri. Monitoritza la salut de la marxa i identifica problemes potencials amb antelació.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secció de Preus -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Preus</div>
+      <h2 class="section-title">Preus Simples i Transparents</h2>
+      <p class="section-subtitle">Prova WalkAnalytics gratis durant 7 dies. No cal targeta de crèdit.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="price-header">
+        <h3>WalkAnalytics Premium</h3>
+        <div class="price">
+          <span class="amount">4,99€</span>
+          <span class="period">/mes</span>
+        </div>
+      </div>
+      <ul class="features-list">
+        <li>Anàlisi de marxa il·limitada</li>
+        <li>Mecànica avançada de zancada</li>
+        <li>Puntuació d'Estrès de Caminar (WSS)</li>
+        <li>5 zones d'entrenament personalitzades</li>
+        <li>Seguiment de càrrega d'entrenament</li>
+        <li>Privacitat de dades completa</li>
+        <li>Integració amb Apple Health</li>
+        <li>Sense anuncis, mai</li>
+      </ul>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        Comença Prova Gratuïta
+      </a>
+      <p class="trial-note">Prova gratuïta de 7 dies • Cancel·la quan vulguis • No cal targeta de crèdit</p>
+    </div>
+  </div>
+</section>
+
+<!-- Secció FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">FAQ</div>
+      <h2 class="section-title">Preguntes Freqüents</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>Què és l'anàlisi de la marxa?</h3>
+        <p>L'anàlisi de la marxa examina els teus patrons de caminar, incloent longitud de zancada, cadència (passos per minut), simetria entre cames esquerra i dreta, i temps de contacte amb el terra. Això ajuda a identificar ineficiències i riscos potencials de lesió.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Com protegeix WalkAnalytics la meva privacitat?</h3>
+        <p>Totes les teves dades es queden al teu iPhone. No utilitzem sincronització al núvol, no creem comptes ni seguim la teva activitat. Les teves mètriques de caminar es processen localment i romanen completament privades.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Què és la Puntuació d'Estrès de Caminar (WSS)?</h3>
+        <p>El WSS quantifica la intensitat i durada dels teus entrenaments de caminar en un sol número. T'ajuda a equilibrar la càrrega d'entrenament amb la recuperació, assegurant que camines prou sense sobreentrenar.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Necessito equip especial?</h3>
+        <p>No cal equip especial. WalkAnalytics funciona amb el teu Apple Watch o iPhone per seguir mètriques de caminar. Per a zones de freqüència cardíaca, es recomana un Apple Watch o monitor de freqüència cardíaca compatible.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Pot WalkAnalytics ajudar a prevenir caigudes?</h3>
+        <p>Sí. Monitoritzant la simetria de la marxa i la distribució de l'equilibri, WalkAnalytics pot ajudar a identificar irregularitats de caminar que poden augmentar el risc de caigudes, permetent-te abordar-les de manera proactiva.</p>
+      </div>
+      <div class="faq-item">
+        <h3>És WalkAnalytics adequat per a rehabilitació?</h3>
+        <p>Absolutament. Molts pacients en rehabilitació utilitzen WalkAnalytics per seguir millores de la marxa objectivament durant la recuperació. L'anàlisi de mecànica de zancada ajuda a monitoritzar el progrés i identificar àrees que necessiten atenció.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secció CTA Final -->
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Preparat per Caminar Més Intel·ligent?</h2>
+      <p>Uneix-te a milers de caminadors millorant la seva salut amb anàlisi de marxa basada en ciència</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        Descarrega WalkAnalytics
+      </a>
+      <p class="cta-note">Prova gratuïta de 7 dies • iOS 16+ • Compatible amb Apple Health</p>
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Inici</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Tots els drets reservats
+            </p>
+            <ul class="footer-links">
+                <li><a href="/ca/privacy/">Privacitat</a></li>
+                <li><a href="/ca/terms/">Termes</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Aquest lloc web utilitza cookies per millorar la vostra experiència.</p>
+            <a href="/ca/privacy/" class="text-sm">Saber-ne més</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Rebutjar</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Acceptar</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+</body>
+</html>
