@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Начало работы с WalkAnalytics - Полное руководство по настройке</title>
+    <meta name="description" content="Полное руководство по WalkAnalytics для начинающих. Учебник по анализу походки, настройка отслеживания ходьбы, объяснение WSS. Пошаговая интеграция + 7 дней бесплатно.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="руководство WalkAnalytics, учебник анализа походки, учебник приложения ходьбы, как использовать WalkAnalytics, руководство аналитики ходьбы">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/ru/getting-started/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-01-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/ru/getting-started/">
+    <meta property="og:title" content="Начало работы с WalkAnalytics - Полное руководство по настройке">
+    <meta property="og:description" content="Полное руководство по WalkAnalytics для начинающих. Учебник по анализу походки, настройка отслеживания ходьбы, объяснение WSS. Пошаговая интеграция + 7 дней бесплатно.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/ru/getting-started/">
+    <meta name="twitter:title" content="Начало работы с WalkAnalytics - Полное руководство по настройке">
+    <meta name="twitter:description" content="Полное руководство по WalkAnalytics для начинающих. Учебник по анализу походки, настройка отслеживания ходьбы, объяснение WSS. Пошаговая интеграция + 7 дней бесплатно.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/getting-started/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/getting-started/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/getting-started/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/getting-started/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/getting-started/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/getting-started/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/getting-started/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/getting-started/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/getting-started/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/getting-started/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/getting-started/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/getting-started/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/getting-started/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/getting-started/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/getting-started/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/getting-started/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/getting-started/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/getting-started/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/getting-started/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/ru/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Главная
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Обучение
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Наука
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Для вас
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Инструменты
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/contact/"
+                           
+                           aria-current="">
+                            Контакты
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Выбрать язык">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" selected>
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Переключить меню" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Getting Started with WalkAnalytics -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/ru/">Главная</a> / <a href="/ru/#learn">Обучение</a> / Начало работы
+    </div>
+    <h1>Начало работы с WalkAnalytics</h1>
+    <p class="lead">Полное руководство по настройке WalkAnalytics и освоению аналитики ходьбы</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="quick-start">Краткое руководство по началу работы</h2>
+        <p>Добро пожаловать в WalkAnalytics! Это руководство поможет вам начать работу с продвинутым анализом походки и отслеживанием эффективности ходьбы всего за несколько минут.</p>
+
+        <h3>Шаг 1: Скачивание и установка</h3>
+        <ol>
+          <li>Скачайте WalkAnalytics из <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener">App Store</a></li>
+          <li>Откройте приложение на своем iPhone или iPad</li>
+          <li>Предоставьте разрешение на доступ к Apple Health при появлении запроса</li>
+          <li>Начните 7-дневный бесплатный пробный период (кредитная карта не требуется)</li>
+        </ol>
+
+        <h3>Шаг 2: Подключение Apple Health</h3>
+        <p>WalkAnalytics анализирует ваши прогулки из Apple Health:</p>
+        <ul>
+          <li><strong>Автоматический импорт:</strong> Ваши существующие прогулки импортируются автоматически</li>
+          <li><strong>Синхронизация в реальном времени:</strong> Новые прогулки с Apple Watch или iPhone анализируются мгновенно</li>
+          <li><strong>Приоритет конфиденциальности:</strong> Все данные остаются на вашем устройстве - без загрузки в облако</li>
+        </ul>
+
+        <h3>Шаг 3: Знакомство с панелью управления</h3>
+        <p>Главная панель показывает ваши ключевые метрики ходьбы:</p>
+        <ul>
+          <li><strong>Последние прогулки:</strong> Ваши последние тренировки ходьбы с ключевыми показателями</li>
+          <li><strong>Недельная сводка:</strong> Общая дистанция, время и показатель стресса ходьбы (WSS)</li>
+          <li><strong>Метрики походки:</strong> Симметрия шага, каденс и показатели эффективности</li>
+          <li><strong>Тренировочные зоны:</strong> Время, проведенное в каждой зоне пульса</li>
+        </ul>
+
+        <h2 id="key-concepts">Ключевые концепции</h2>
+
+        <h3>Анализ походки</h3>
+        <p>Анализ походки изучает, как вы ходите. WalkAnalytics отслеживает:</p>
+        <ul>
+          <li><strong>Длина шага:</strong> Расстояние, пройденное за один шаг</li>
+          <li><strong>Каденс:</strong> Шагов в минуту</li>
+          <li><strong>Симметрия шага:</strong> Баланс между левой и правой ногой</li>
+          <li><strong>Время контакта с землей:</strong> Как долго ваша стопа касается земли</li>
+          <li><strong>Время двойной опоры:</strong> Когда обе стопы одновременно находятся на земле</li>
+        </ul>
+        <p>Узнайте больше об <a href="/ru/gait-analysis/">основах анализа походки</a>.</p>
+
+        <h3>Зоны ходьбы</h3>
+        <p>Тренировки в разных зонах интенсивности обеспечивают специфические преимущества для здоровья:</p>
+        <ul>
+          <li><strong>Зона 1 (Восстановление):</strong> Очень легкая ходьба для восстановления</li>
+          <li><strong>Зона 2 (Сжигание жира):</strong> Оптимальна для сжигания жира и аэробной базы</li>
+          <li><strong>Зона 3 (Аэробная):</strong> Улучшение сердечно-сосудистой выносливости</li>
+          <li><strong>Зона 4 (Порог):</strong> Высокоинтенсивная аэробная емкость</li>
+          <li><strong>Зона 5 (Пик):</strong> Максимальное усилие для коротких интервалов</li>
+        </ul>
+        <p>Изучите полное <a href="/ru/walking-zones/">руководство по зонам ходьбы</a>.</p>
+
+        <h3>Показатель стресса ходьбы (WSS)</h3>
+        <p>WSS количественно оценивает физиологический стресс каждой прогулки:</p>
+        <ul>
+          <li>Основан на интенсивности пульса и продолжительности</li>
+          <li>Помогает балансировать тренировочную нагрузку с восстановлением</li>
+          <li>Предотвращает перетренированность и оптимизирует прогресс</li>
+          <li>Отслеживайте недельные и месячные тенденции</li>
+        </ul>
+        <p>Рассчитайте свой WSS с помощью нашего <a href="/ru/wss-calculator/">калькулятора WSS</a>.</p>
+
+        <h2 id="first-walk">Запись вашей первой прогулки</h2>
+
+        <h3>Использование Apple Watch</h3>
+        <ol>
+          <li>Начните тренировку «Ходьба» на своих Apple Watch</li>
+          <li>Идите естественно - не нужно менять свою форму</li>
+          <li>Завершите тренировку по окончании</li>
+          <li>WalkAnalytics автоматически импортирует и проанализирует её</li>
+        </ol>
+
+        <h3>Использование только iPhone</h3>
+        <ol>
+          <li>Включите «Отслеживание фитнеса» в настройках iPhone</li>
+          <li>Носите iPhone во время прогулок</li>
+          <li>Активности ходьбы регистрируются автоматически</li>
+          <li>Просматривайте их в WalkAnalytics для анализа</li>
+        </ol>
+
+        <h2 id="interpreting-metrics">Интерпретация ваших метрик</h2>
+
+        <h3>Хорошие и тревожные признаки</h3>
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Метрика</th>
+              <th>Хороший диапазон</th>
+              <th>Что это значит</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Симметрия шага</td>
+              <td>&gt; 95%</td>
+              <td>Сбалансированная походка, низкий риск травм</td>
+            </tr>
+            <tr>
+              <td>Каденс</td>
+              <td>100-130 шагов/мин</td>
+              <td>Эффективный темп ходьбы</td>
+            </tr>
+            <tr>
+              <td>Недельный WSS</td>
+              <td>200-500</td>
+              <td>Здоровая тренировочная нагрузка</td>
+            </tr>
+            <tr>
+              <td>Время в зоне 2</td>
+              <td>60-80% от общего</td>
+              <td>Сильная аэробная база</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="tips">Профессиональные советы для успеха</h2>
+
+        <h3>1. Начните с базовой оценки</h3>
+        <p>Запишите 2-3 обычные прогулки сначала, чтобы установить базовые метрики перед внесением изменений.</p>
+
+        <h3>2. Сосредоточьтесь на ходьбе в зоне 2</h3>
+        <p>Проводите 60-80% времени ходьбы в зоне 2 для оптимальной пользы для здоровья и сжигания жира.</p>
+
+        <h3>3. Отслеживайте симметрию походки</h3>
+        <p>Если симметрия падает ниже 90%, рассмотрите работу над техникой или консультацию со специалистом для предотвращения травм.</p>
+
+        <h3>4. Наращивайте постепенно</h3>
+        <p>Увеличивайте недельный WSS не более чем на 10% в неделю, чтобы избежать перетренированности.</p>
+
+        <h3>5. Постоянство важнее интенсивности</h3>
+        <p>Регулярная умеренная ходьба превосходит редкие интенсивные прогулки для долгосрочного здоровья.</p>
+
+        <h2 id="troubleshooting">Устранение неполадок</h2>
+
+        <h3>Метрики не отображаются</h3>
+        <ul>
+          <li>Убедитесь, что разрешения Apple Health предоставлены</li>
+          <li>Проверьте, что тренировки правильно помечены как «Ходьба» в приложении Здоровье</li>
+          <li>Для зон пульса убедитесь, что данные пульса записываются</li>
+        </ul>
+
+        <h3>Неточные метрики шага</h3>
+        <ul>
+          <li>Откалибруйте Apple Watch, гуляя по маршрутам на открытом воздухе с точным GPS</li>
+          <li>Убедитесь в правильной посадке часов (плотно, но комфортно)</li>
+          <li>Ходите с естественным движением рук для лучшего определения движения</li>
+        </ul>
+
+        <h2 id="next-steps">Следующие шаги</h2>
+        <ul>
+          <li>Узнайте о <a href="/ru/walking-zones/">тренировочных зонах</a> для оптимальной интенсивности</li>
+          <li>Изучите <a href="/ru/gait-analysis/">метрики анализа походки</a> подробно</li>
+          <li>Рассчитайте свой <a href="/ru/wss-calculator/">показатель стресса ходьбы</a></li>
+          <li>Исследуйте <a href="/ru/research/">науку, лежащую в основе аналитики ходьбы</a></li>
+        </ul>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Содержание</h3>
+          <ul>
+            <li><a href="#quick-start">Краткое руководство по началу работы</a></li>
+            <li><a href="#key-concepts">Ключевые концепции</a></li>
+            <li><a href="#first-walk">Запись вашей первой прогулки</a></li>
+            <li><a href="#interpreting-metrics">Интерпретация ваших метрик</a></li>
+            <li><a href="#tips">Профессиональные советы для успеха</a></li>
+            <li><a href="#troubleshooting">Устранение неполадок</a></li>
+            <li><a href="#next-steps">Следующие шаги</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Начните свой путь</h3>
+          <p>Скачайте WalkAnalytics и начните отслеживать свою походку сегодня.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Скачать приложение</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Главная</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Все права защищены
+            </p>
+            <ul class="footer-links">
+                <li><a href="/ru/privacy/">Конфиденциальность</a></li>
+                <li><a href="/ru/terms/">Условия</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Этот сайт использует cookies для улучшения вашего опыта.</p>
+            <a href="/ru/privacy/" class="text-sm">Узнать больше</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Отклонить</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Принять</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>হাঁটার মেট্রিক্স সূত্র - কিভাবে WSS, গেইট এবং স্বাস্থ্য মেট্রিক্স গণনা করা হয়</title>
+    <meta name="description" content="হাঁটার বিশ্লেষণের পিছনে গাণিতিক সূত্র। WSS, স্ট্রাইড মেট্রিক্স, ক্যাডেন্স এবং দক্ষতা স্কোর কিভাবে গণনা করা হয় তা শিখুন। বিজ্ঞান-ভিত্তিক পদ্ধতি।">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="হাঁটার সূত্র, WSS সূত্র, গেইট মেট্রিক্স গণনা, স্ট্রাইড গণনা, বায়োমেকানিক্স সূত্র">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/bn/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/bn/formulas/">
+    <meta property="og:title" content="হাঁটার মেট্রিক্স সূত্র - কিভাবে WSS, গেইট এবং স্বাস্থ্য মেট্রিক্স গণনা করা হয়">
+    <meta property="og:description" content="হাঁটার বিশ্লেষণের পিছনে গাণিতিক সূত্র। WSS, স্ট্রাইড মেট্রিক্স, ক্যাডেন্স এবং দক্ষতা স্কোর কিভাবে গণনা করা হয় তা শিখুন। বিজ্ঞান-ভিত্তিক পদ্ধতি।">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="bn_BD">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/bn/formulas/">
+    <meta name="twitter:title" content="হাঁটার মেট্রিক্স সূত্র - কিভাবে WSS, গেইট এবং স্বাস্থ্য মেট্রিক্স গণনা করা হয়">
+    <meta name="twitter:description" content="হাঁটার বিশ্লেষণের পিছনে গাণিতিক সূত্র। WSS, স্ট্রাইড মেট্রিক্স, ক্যাডেন্স এবং দক্ষতা স্কোর কিভাবে গণনা করা হয় তা শিখুন। বিজ্ঞান-ভিত্তিক পদ্ধতি।">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/formulas/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/formulas/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/formulas/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/formulas/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/formulas/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">কন্টেন্টে যান</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/bn/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            হোম
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            শিখুন
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            বিজ্ঞান
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            আপনার জন্য
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            সরঞ্জাম
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/contact/"
+                           
+                           aria-current="">
+                            যোগাযোগ
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="ভাষা নির্বাচন করুন">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" selected>
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="মেনু টগল করুন" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/bn/">হোম</a> / <a href="/bn/#science">বিজ্ঞান</a> / সূত্র
+    </div>
+    <h1>হাঁটার মেট্রিক্স সূত্র এবং সমীকরণ</h1>
+    <p class="lead">হাঁটার বিশ্লেষণের গাণিতিক ভিত্তি – তীব্রতা, শক্তি এবং পারফরম্যান্সের জন্য বৈজ্ঞানিকভাবে যাচাইকৃত সমীকরণ</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>এই পৃষ্ঠাটি হাঁটার বিশ্লেষণে ব্যবহৃত বৈজ্ঞানিকভাবে যাচাইকৃত সূত্র উপস্থাপন করে। সমস্ত সমীকরণ গবেষণা রেফারেন্স এবং যাচাইকৃত নির্ভুলতা পরিসর সহ উদ্ধৃত করা হয়েছে।</p>
+        </div>
+
+        <h2 id="cadence-mets">১. ক্যাডেন্স থেকে METs রূপান্তর</h2>
+
+        <div class="formula-section featured">
+          <h3>মুর এট আল. (২০২১) ক্যাডেন্স-ভিত্তিক বিপাকীয় সমীকরণ</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">ক্যাডেন্স থেকে METs</p>
+            <p class="formula-main"><strong>METs = ০.০২১৯ × ক্যাডেন্স (পদক্ষেপ/মিনিট) + ০.৭২</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">নির্ভুলতা: ±০.৫ METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>এই সূত্র কেন গুরুত্বপূর্ণ:</strong> এই সমীকরণটি হাঁটার জন্য ঐতিহ্যবাহী ACSM গতি-ভিত্তিক সমীকরণের চেয়ে <strong>২৩-৩৫% বেশি নির্ভুল</strong>। এটি কাজ করে কারণ ক্যাডেন্স সরাসরি চলাচলের ফ্রিকোয়েন্সি এবং শক্তি ব্যয়কে প্রতিফলিত করে, যেখানে গতি পরিবর্তনশীল স্ট্রাইড দৈর্ঘ্যের উপর নির্ভর করে।</p>
+          </div>
+
+          <h4>উদাহরণ:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>১০০ spm এ হাঁটা:</strong></p>
+              <p class="example-calc">METs = ০.০২১৯ × ১০০ + ০.৭২ = ২.১৯ + ০.৭২ = <strong>২.৯১ METs</strong></p>
+              <p class="example-interpretation">≈ ৩ METs = <strong>মাঝারি তীব্রতার থ্রেশহোল্ড</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>১১০ spm এ হাঁটা:</strong></p>
+              <p class="example-calc">METs = ০.০২১৯ × ১১০ + ০.৭২ = ২.৪০৯ + ০.৭২ = <strong>৩.১৩ METs</strong></p>
+              <p class="example-interpretation">শক্ত মাঝারি তীব্রতা</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>১২০ spm এ হাঁটা:</strong></p>
+              <p class="example-calc">METs = ০.০২১৯ × ১২০ + ০.৭২ = ২.৬২৮ + ০.৭২ = <strong>৩.৩৫ METs</strong></p>
+              <p class="example-interpretation">মাঝারি-তীব্র তীব্রতা</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>১৩০ spm এ হাঁটা:</strong></p>
+              <p class="example-calc">METs = ০.০২১৯ × ১৩০ + ০.৭২ = ২.৮৪৭ + ০.৭২ = <strong>৩.৫৭ METs</strong></p>
+              <p class="example-interpretation"><strong>তীব্র তীব্রতার থ্রেশহোল্ড</strong> (CADENCE-Adults সরাসরি পরিমাপ দ্বারা ৬ METs)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>দ্রষ্টব্য:</strong> CADENCE-Adults অধ্যয়ন সরাসরি পরিমাপ করেছে যে নিয়ন্ত্রিত ল্যাব অবস্থায় ১৩০ spm = ৬ METs। মুর সমীকরণ ৮০-১৩০ spm পরিসরের জন্য ডিজাইন করা হয়েছে এবং খুব উচ্চ ক্যাডেন্সে অবমূল্যায়ন করতে পারে।</p>
+          </div>
+
+          <h4>যাচাইকরণ ডেটা:</h4>
+          <ul>
+            <li><strong>নমুনা:</strong> ২১-৪০ বছর বয়সী ৭৬ জন প্রাপ্তবয়স্ক</li>
+            <li><strong>পদ্ধতি:</strong> পরোক্ষ ক্যালোরিমেট্রি (সোনালী মান)</li>
+            <li><strong>R² মান:</strong> ০.৮৭ (চমৎকার সম্পর্ক)</li>
+            <li><strong>গড় পরম ত্রুটি:</strong> ০.৪৭ METs</li>
+            <li><strong>প্রযোজ্য পরিসর:</strong> ৮০-১৩০ পদক্ষেপ/মিনিট</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">২. হাঁটার জন্য ACSM VO₂ সমীকরণ</h2>
+
+        <div class="formula-section">
+          <h3>ACSM বিপাকীয় গণনা</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">সমতল হাঁটা (০% গ্রেড)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = ০.১ × গতি (m/min) + ৩.৫</strong></p>
+            <p class="formula-note">মিটার প্রতি মিনিটে গতি (km/h কে ১৬.৬৭ দ্বারা বা mph কে ২৬.৮২ দ্বারা গুণ করুন)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">গ্রেড সহ হাঁটা (ঢাল/পতন)</p>
+            <p class="formula-main"><strong>VO₂ = ০.১(গতি) + ১.৮(গতি)(গ্রেড) + ৩.৫</strong></p>
+            <p class="formula-note">গ্রেড দশমিক হিসাবে প্রকাশ করা হয় (যেমন, ৫% = ০.০৫)</p>
+          </div>
+
+          <h4>উদাহরণ:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>সমতল মাটিতে ৫ km/h (৮৩.৩ m/min) হাঁটা:</strong></p>
+              <p class="example-calc">VO₂ = ০.১ × ৮৩.৩ + ৩.৫ = ৮.৩৩ + ৩.৫ = <strong>১১.৮৩ mL/kg/min</strong></p>
+              <p class="example-conversion">METs এ রূপান্তর: ১১.৮৩ / ৩.৫ = <strong>৩.৩৮ METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>৫% ঢালে ৫ km/h হাঁটা:</strong></p>
+              <p class="example-calc">VO₂ = ০.১(৮৩.৩) + ১.৮(৮৩.৩)(০.০৫) + ৩.৫</p>
+              <p class="example-calc">= ৮.৩৩ + ৭.৪৯৭ + ৩.৫ = <strong>১৯.৩৩ mL/kg/min</strong></p>
+              <p class="example-conversion">= ১৯.৩৩ / ৩.৫ = <strong>৫.৫২ METs</strong></p>
+              <p class="example-interpretation">ঢাল তীব্রতা ~৬৪% বৃদ্ধি করে!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>গতি রূপান্তর:</h4>
+            <ul>
+              <li><strong>km/h থেকে m/min:</strong> ১৬.৬৭ দ্বারা গুণ করুন</li>
+              <li><strong>mph থেকে m/min:</strong> ২৬.৮২ দ্বারা গুণ করুন</li>
+              <li><strong>m/s থেকে m/min:</strong> ৬০ দ্বারা গুণ করুন</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">৩. শক্তি ব্যয় এবং ক্যালরি বার্ন</h2>
+
+        <div class="formula-section">
+          <h3>সঠিক ক্যালরি গণনা</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">প্রতি মিনিটে ক্যালরি</p>
+            <p class="formula-main"><strong>Cal/min = (METs × ৩.৫ × দেহ ওজন kg) / ২০০</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">সেশনের জন্য মোট ক্যালরি</p>
+            <p class="formula-main"><strong>মোট ক্যালরি = Cal/min × সময়কাল (মিনিট)</strong></p>
+          </div>
+
+          <h4>উদাহরণ:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>৪৫ মিনিটের জন্য ১০০ spm (৩ METs) হাঁটছে ৭০ kg ব্যক্তি:</strong></p>
+              <p class="example-calc">Cal/min = (৩ × ৩.৫ × ৭০) / ২০০ = ৭৩৫ / ২০০ = <strong>৩.৬৭৫ cal/min</strong></p>
+              <p class="example-calc">মোট = ৩.৬৭৫ × ৪৫ = <strong>১৬৫.৪ ক্যালরি</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>৩০ মিনিটের জন্য ১২০ spm (৫ METs) হাঁটছে ৮৫ kg ব্যক্তি:</strong></p>
+              <p class="example-calc">Cal/min = (৫ × ৩.৫ × ৮৫) / ২০০ = ১৪৮৭.৫ / ২০০ = <strong>৭.৪৪ cal/min</strong></p>
+              <p class="example-calc">মোট = ৭.৪৪ × ৩০ = <strong>২২৩.২ ক্যালরি</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>এই সূত্র কেন?</h4>
+            <p>এই সমীকরণটি MET (Metabolic Equivalent of Task) এর সংজ্ঞা থেকে আসে:</p>
+            <ul>
+              <li>১ MET = ৩.৫ mL O₂/kg/min (বিশ্রামকালীন বিপাকীয় হার)</li>
+              <li>১ লিটার O₂ ব্যবহৃত ≈ ৫ kcal পোড়ানো</li>
+              <li>রূপান্তর: (METs × ৩.৫ × kg × ৫) / ১০০০ = (METs × ৩.৫ × kg) / ২০০</li>
+            </ul>
+          </div>
+
+          <h3>নিট ক্যালরি বার্ন (শুধুমাত্র ব্যায়াম)</h3>
+          <div class="formula-box">
+            <p class="formula-title">নিট ক্যালরি (বিশ্রাম বাদে)</p>
+            <p class="formula-main"><strong>নিট Cal/min = [(METs - ১) × ৩.৫ × দেহ ওজন] / ২০০</strong></p>
+            <p class="formula-note">বিশ্রামে যে ক্যালরি পোড়ানো হত তা বাদ দিতে ১ MET বিয়োগ করে</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>৭০ kg, ৩ METs, ৪৫ মিনিট – নিট ক্যালরি:</strong></p>
+            <p class="example-calc">নিট = [(৩ - ১) × ৩.৫ × ৭০] / ২০০ × ৪৫ = ২.৪৫ × ৪৫ = <strong>১১০.৩ নিট ক্যালরি</strong></p>
+            <p class="example-interpretation">বনাম ১৬৫.৪ মোট ক্যালরি (৫৫ ক্যালরি বিশ্রামে পোড়ানো হত)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">৪. গেইট সিমেট্রি ইনডেক্স (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>বাম-ডান অসাম্যের পরিমাপ</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">গেইট সিমেট্রি ইনডেক্স</p>
+            <p class="formula-main"><strong>GSI (%) = |ডান - বাম| / [০.৫ × (ডান + বাম)] × ১০০</strong></p>
+            <p class="formula-note">স্ট্রাইড দৈর্ঘ্য, স্টেপ সময় বা যোগাযোগ সময়ে প্রয়োগ করা যেতে পারে</p>
+          </div>
+
+          <h4>ব্যাখ্যা:</h4>
+          <ul>
+            <li><strong>&lt;২-৩%:</strong> স্বাভাবিক, প্রতিসম গেইট</li>
+            <li><strong>৩-৫%:</strong> হালকা অসাম্য</li>
+            <li><strong>৫-১০%:</strong> মাঝারি অসাম্য, পর্যবেক্ষণ করুন</li>
+            <li><strong>&gt;১০%:</strong> ক্লিনিক্যালি উল্লেখযোগ্য, পেশাগতভাবে মূল্যায়ন করুন</li>
+          </ul>
+
+          <h4>উদাহরণ:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>স্টেপ সময়: ডান = ৫২০ ms, বাম = ৪৮০ ms</strong></p>
+              <p class="example-calc">GSI = |৫২০ - ৪৮০| / [০.৫ × (৫২০ + ৪৮০)] × ১০০</p>
+              <p class="example-calc">= ৪০ / [০.৫ × ১০০০] × ১০০ = ৪০ / ৫০০ × ১০০ = <strong>৮% অসাম্য</strong></p>
+              <p class="example-interpretation">মাঝারি অসাম্য – দুর্বল দিক শক্তিশালী করার বিবেচনা করুন</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>স্ট্রাইড দৈর্ঘ্য: ডান = ১.৪২ m, বাম = ১.৩৮ m</strong></p>
+              <p class="example-calc">GSI = |১.৪২ - ১.৩৮| / [০.৫ × (১.৪২ + ১.৩৮)] × ১০০</p>
+              <p class="example-calc">= ০.০৪ / ১.৪ × ১০০ = <strong>২.৮৬% অসাম্য</strong></p>
+              <p class="example-interpretation">স্বাভাবিক, স্বাস্থ্যকর পরিসর ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>ক্লিনিক্যাল দ্রষ্টব্য:</strong> Apple HealthKit এর ওয়াকিং অসাম্য একটি সামান্য ভিন্ন গণনা ব্যবহার করে (স্টেপ সময়ের মধ্যে সরল শতাংশ পার্থক্য) কিন্তু ব্যাখ্যা থ্রেশহোল্ড অনুরূপ।</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">৫. WALK স্কোর (WalkAnalytics মালিকানা মেট্রিক)</h2>
+
+        <div class="formula-section">
+          <h3>হাঁটার দক্ষতা স্কোর</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK স্কোর</p>
+            <p class="formula-main"><strong>WALK স্কোর = সময় (সেকেন্ড) + প্রতি ১০০ মিটারে পদক্ষেপ</strong></p>
+            <p class="formula-note">কম স্কোর = ভাল দক্ষতা (সাঁতারের জন্য SWOLF এর মতো)</p>
+          </div>
+
+          <h4>এটি কীভাবে কাজ করে:</h4>
+          <p>WALK স্কোর হাঁটার দক্ষতা পরিমাপ করতে সময় এবং পদক্ষেপ গণনা একত্রিত করে। একজন হাঁটার যিনি ১৪০ পদক্ষেপ সহ ৭৫ সেকেন্ডে ১০০m কভার করেন তার WALK স্কোর ২১৫। গতি বা স্ট্রাইড দক্ষতা উন্নত করলে স্কোর কমে।</p>
+
+          <h4>উদাহরণ:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>৮০ সেকেন্ডে ১০০m, ১২০ পদক্ষেপ:</strong></p>
+              <p class="example-calc">WALK স্কোর = ৮০ + ১২০ = <strong>২০০</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>৭০ সেকেন্ডে ১০০m, ১১০ পদক্ষেপ:</strong></p>
+              <p class="example-calc">WALK স্কোর = ৭০ + ১১০ = <strong>১৮০</strong></p>
+              <p class="example-interpretation">উন্নত গতি + স্ট্রাইডের মাধ্যমে ভাল দক্ষতা</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>৬০ সেকেন্ডে ১০০m, ১৩০ পদক্ষেপ (রেস ওয়াকিং):</strong></p>
+              <p class="example-calc">WALK স্কোর = ৬০ + ১৩০ = <strong>১৯০</strong></p>
+              <p class="example-interpretation">দ্রুত কিন্তু ছোট স্ট্রাইড</p>
+            </div>
+          </div>
+
+          <h4>সাধারণ পরিসর:</h4>
+          <ul>
+            <li><strong>&gt;২৫০:</strong> ধীর/অদক্ষ গেইট, সম্ভাব্য গতিশীলতা সমস্যা</li>
+            <li><strong>২০০-২৫০:</strong> নৈমিত্তিক হাঁটার, গড় দক্ষতা</li>
+            <li><strong>১৭০-২০০:</strong> ফিটনেস হাঁটার, ভাল দক্ষতা</li>
+            <li><strong>১৫০-১৭০:</strong> উন্নত হাঁটার, চমৎকার দক্ষতা</li>
+            <li><strong>&lt;১৫০:</strong> অভিজাত/রেস ওয়াকিং লেভেল</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>WALK স্কোর দিয়ে প্রশিক্ষণ:</strong> সাপ্তাহিক একই ১০০m কোর্সে আপনার স্কোর ট্র্যাক করুন। উন্নতি বর্ধিত নিউরোমাসকুলার সমন্বয়, শক্তি এবং হাঁটার অর্থনীতি দেখায়।</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">৬. মৌলিক গেইট মেট্রিক্স</h2>
+
+        <div class="formula-section">
+          <h3>মৌলিক গণনা</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">হাঁটার গতি</p>
+            <p class="formula-main"><strong>গতি (m/s) = দূরত্ব (m) / সময় (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">মোট পদক্ষেপ থেকে ক্যাডেন্স</p>
+            <p class="formula-main"><strong>ক্যাডেন্স (spm) = মোট পদক্ষেপ / সময় (মিনিট)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">স্ট্রাইড দৈর্ঘ্য</p>
+            <p class="formula-main"><strong>স্ট্রাইড দৈর্ঘ্য (m) = দূরত্ব (m) / (পদক্ষেপ / ২)</strong></p>
+            <p class="formula-note">পদক্ষেপকে ২ দ্বারা ভাগ করুন কারণ এক স্ট্রাইড = দুই পদক্ষেপ</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">স্টেপ দৈর্ঘ্য</p>
+            <p class="formula-main"><strong>স্টেপ দৈর্ঘ্য (m) = দূরত্ব (m) / পদক্ষেপ</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ক্যাডেন্স এবং স্ট্রাইড দৈর্ঘ্য থেকে গতি</p>
+            <p class="formula-main"><strong>গতি = স্ট্রাইড দৈর্ঘ্য × (ক্যাডেন্স / ২) / ৬০</strong></p>
+            <p class="formula-note">অথবা: গতি (m/s) = স্টেপ দৈর্ঘ্য × ক্যাডেন্স / ৬০</p>
+          </div>
+
+          <h4>উদাহরণ ওয়ার্কফ্লো:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>১৩২০ পদক্ষেপ সহ ১২ মিনিটে ১০০০m হাঁটুন:</strong></p>
+            <p><strong>গতি:</strong> ১০০০m / ৭২০s = <strong>১.৩৯ m/s</strong></p>
+            <p><strong>ক্যাডেন্স:</strong> ১৩২০ পদক্ষেপ / ১২ মিনিট = <strong>১১০ spm</strong></p>
+            <p><strong>স্ট্রাইড দৈর্ঘ্য:</strong> ১০০০m / (১৩২০/২) = ১০০০ / ৬৬০ = <strong>১.৫২ m</strong></p>
+            <p><strong>স্টেপ দৈর্ঘ্য:</strong> ১০০০m / ১৩২০ = <strong>০.৭৬ m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">৭. হৃদস্পন্দন জোন গণনা</h2>
+
+        <div class="formula-section">
+          <h3>ঐতিহ্যবাহী HR জোন পদ্ধতি</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">সর্বোচ্চ হৃদস্পন্দন অনুমান</p>
+            <p class="formula-main"><strong>সর্বোচ্চ HR = ২২০ - বয়স</strong></p>
+            <p class="formula-note">সরল কিন্তু ±১০-১৫ bpm ব্যক্তিগত পরিবর্তন</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">বিকল্প: তানাকা সূত্র (আরও নির্ভুল)</p>
+            <p class="formula-main"><strong>সর্বোচ্চ HR = ২০৮ - (০.৭ × বয়স)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">জোন রেঞ্জ গণনা</p>
+            <p class="formula-main"><strong>জোন = সর্বোচ্চ HR × (নিম্ন%, উপরের%)</strong></p>
+          </div>
+
+          <h4>উদাহরণ: ৪০-বছর-বয়সী</h4>
+          <div class="calc-example">
+            <p><strong>ঐতিহ্যবাহী:</strong> সর্বোচ্চ HR = ২২০ - ৪০ = <strong>১৮০ bpm</strong></p>
+            <p><strong>তানাকা:</strong> সর্বোচ্চ HR = ২০৮ - (০.৭ × ৪০) = ২০৮ - ২৮ = <strong>১৮০ bpm</strong></p>
+            <p><strong>জোন ২ (৬০-৭০%):</strong> ১৮০ × ০.৬০ = ১০৮ bpm থেকে ১৮০ × ০.৭০ = ১২৬ bpm</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>দ্রষ্টব্য:</strong> যদিও HR জোন উপযোগী, <strong>হাঁটার জন্য ক্যাডেন্স-ভিত্তিক জোন আরও নির্ভুল এবং ব্যবহারিক</strong> (ওয়াকিং জোন গাইড দেখুন)।</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">৮. পরিবহনের খরচ এবং হাঁটার অর্থনীতি</h2>
+
+        <div class="formula-section">
+          <h3>হাঁটার শক্তি খরচ</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">পরিবহনের খরচ (C)</p>
+            <p class="formula-main"><strong>C = ব্যয়িত শক্তি / (দেহ ভর × দূরত্ব)</strong></p>
+            <p class="formula-note">একক: J/kg/m বা mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U-আকৃতির বক্ররেখা:</strong> হাঁটার অর্থনীতি একটি U-আকৃতির বক্ররেখা অনুসরণ করে। একটি সর্বোত্তম গতি আছে (সাধারণত ১.২-১.৪ m/s বা ৪.৩-৫.০ km/h) যেখানে পরিবহনের খরচ সর্বনিম্ন। এর চেয়ে ধীর বা দ্রুত হাঁটা প্রতি দূরত্বে ভ্রমণকৃত শক্তি খরচ বৃদ্ধি করে।</p>
+          </div>
+
+          <h4>পরিবহনের খরচকে প্রভাবিত করার কারণ:</h4>
+          <ul>
+            <li><strong>গতি:</strong> U-আকৃতির সম্পর্ক (প্রায় ১.৩ m/s এ সর্বোত্তম)</li>
+            <li><strong>গ্রেডিয়েন্ট:</strong> উর্ধ্বগামী খরচ উল্লেখযোগ্যভাবে বৃদ্ধি করে; নিম্নগামী বৈকল্পিক খরচ বৃদ্ধি করে</li>
+            <li><strong>দেহ ভর:</strong> ভারী ব্যক্তিদের উচ্চ পরম কিন্তু অনুরূপ আপেক্ষিক খরচ আছে</li>
+            <li><strong>স্ট্রাইড মেকানিক্স:</strong> সর্বোত্তম স্ট্রাইড দৈর্ঘ্য খরচ কমায়</li>
+            <li><strong>ভূখণ্ড:</strong> অসম পৃষ্ঠ মসৃণ ফুটপাথের বনাম খরচ বৃদ্ধি করে</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">গ্রেড-সমন্বিত খরচ</p>
+            <p class="formula-main"><strong>খরচ গুণক = ১ + (গ্রেড × ১০)</strong></p>
+            <p class="formula-note">মোটামুটি আনুমানিক: প্রতি ১% গ্রেডে +১০% খরচ</p>
+          </div>
+
+          <h4>উদাহরণ:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>৫% ঢালে হাঁটা:</strong></p>
+            <p class="example-calc">খরচ গুণক = ১ + (০.০৫ × ১০) = <strong>১.৫×</strong></p>
+            <p class="example-interpretation">সমতল মাটির তুলনায় শক্তি খরচে ৫০% বৃদ্ধি</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">৯. প্রশিক্ষণ লোড এবং স্ট্রেস স্কোর</h2>
+
+        <div class="formula-section">
+          <h3>ওয়াকিং স্ট্রেস স্কোর (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">জোন-ভিত্তিক WSS</p>
+            <p class="formula-main"><strong>WSS = Σ (জোনে মিনিট × জোন ফ্যাক্টর)</strong></p>
+            <p>জোন ১: ×১.০ | জোন ২: ×২.০ | জোন ৩: ×৩.০ | জোন ৪: ×৪.০ | জোন ৫: ×৫.০</p>
+          </div>
+
+          <h4>উদাহরণ: ৬০-মিনিট হাঁটা</h4>
+          <div class="calc-example">
+            <p>১০ মিনিট জোন ১ × ১ = ১০ পয়েন্ট</p>
+            <p>৪০ মিনিট জোন ২ × ২ = ৮০ পয়েন্ট</p>
+            <p>১০ মিনিট জোন ৩ × ৩ = ৩০ পয়েন্ট</p>
+            <p><strong>মোট WSS = ১২০</strong></p>
+          </div>
+
+          <h3>সাপ্তাহিক প্রশিক্ষণ লোড</h3>
+          <div class="formula-box">
+            <p class="formula-title">সাপ্তাহিক লোড</p>
+            <p class="formula-main"><strong>সাপ্তাহিক লোড = Σ দৈনিক WSS (৭ দিন)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">প্রগ্রেসিভ ওভারলোড</p>
+            <p class="formula-main"><strong>পরবর্তী সপ্তাহ = বর্তমান সপ্তাহ × ১.০৫-১.১০</strong></p>
+            <p class="formula-note">সর্বোচ্চ সপ্তাহে ৫-১০% বৃদ্ধি</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">পুনরুদ্ধার সপ্তাহ</p>
+            <p class="formula-main"><strong>পুনরুদ্ধার সপ্তাহ = বর্তমান × ০.৫০-০.৭০</strong></p>
+            <p class="formula-note">প্রতি ৩-৪ সপ্তাহে, ৫০-৭০% এ হ্রাস করুন</p>
+          </div>
+
+          <h4>সাধারণ সাপ্তাহিক লোড:</h4>
+          <ul>
+            <li><strong>শিক্ষানবিস স্বাস্থ্য হাঁটার:</strong> সপ্তাহে ২০০-৪০০ WSS</li>
+            <li><strong>নিয়মিত ফিটনেস হাঁটার:</strong> সপ্তাহে ৪০০-৭০০ WSS</li>
+            <li><strong>গুরুতর ফিটনেস হাঁটার:</strong> সপ্তাহে ৭০০-১০০০ WSS</li>
+            <li><strong>প্রতিযোগিতামূলক রেস ওয়াকার:</strong> সপ্তাহে ১০০০-১৫০০+ WSS</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">১০. পূর্বাভাস সমীকরণ</h2>
+
+        <div class="formula-section">
+          <h3>৬-মিনিট ওয়াক টেস্ট (6MWT) দূরত্ব পূর্বাভাস</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">পূর্বাভাসিত 6MWT দূরত্ব (এনরাইট অ্যান্ড শেরিল)</p>
+            <p><strong>পুরুষ:</strong> (৭.৫৭ × উচ্চতা cm) - (৫.০২ × বয়স) - (১.৭৬ × ওজন kg) - ৩০৯</p>
+            <p><strong>মহিলা:</strong> (২.১১ × উচ্চতা cm) - (৫.৭৮ × বয়স) - (২.২৯ × ওজন kg) + ৬৬৭</p>
+            <p class="formula-note">সুস্থ প্রাপ্তবয়স্কদের জন্য মিটারে দূরত্ব পূর্বাভাস করে</p>
+          </div>
+
+          <h4>উদাহরণ: ৪০-বছর-বয়সী পুরুষ, ১৭৫ cm, ৭৫ kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (৭.৫৭ × ১৭৫) - (৫.০২ × ৪০) - (১.৭৬ × ৭৫) - ৩০৯</p>
+            <p>= ১৩২৪.৭৫ - ২০০.৮ - ১৩২ - ৩০৯ = <strong>৬৮২.৯৫ মিটার</strong></p>
+            <p class="example-interpretation">বয়সের জন্য ভাল কার্যকরী ক্ষমতা</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>ক্লিনিক্যাল ব্যবহার:</strong> 6MWT কার্ডিওপালমোনারি রোগীদের মধ্যে কার্যকরী ব্যায়াম ক্ষমতা মূল্যায়ন, প্রাক/পোস্ট-সার্জারি মূল্যায়ন এবং বয়স্ক প্রাপ্তবয়স্কদের সাধারণ ফিটনেস মূল্যায়ন করতে ব্যবহৃত হয়।</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">১১. একক রূপান্তর</h2>
+
+        <div class="formula-section">
+          <h3>সাধারণ হাঁটার মেট্রিক রূপান্তর</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>থেকে</th>
+                  <th>প্রতি</th>
+                  <th>সূত্র</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ ৩.৬</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × ০.৪৪৭</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × ৩.৬</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × ২.২৩৭</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × ১৬.৬৭</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × ২৬.৮২</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × ৩.৫</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ ৩.৫</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>দ্রুত রেফারেন্স:</h4>
+          <ul>
+            <li><strong>১.০ m/s =</strong> ৩.৬ km/h = ২.২৪ mph (সাধারণ সুস্থ প্রাপ্তবয়স্ক হাঁটার গতি)</li>
+            <li><strong>১.৪ m/s =</strong> ৫.০ km/h = ৩.১ mph (দ্রুত হাঁটা)</li>
+            <li><strong>১ MET =</strong> ৩.৫ mL O₂/kg/min (বিশ্রামকালীন বিপাক)</li>
+            <li><strong>৩ METs =</strong> ১০.৫ mL O₂/kg/min (মাঝারি তীব্রতা থ্রেশহোল্ড)</li>
+            <li><strong>৬ METs =</strong> ২১ mL O₂/kg/min (তীব্র তীব্রতা থ্রেশহোল্ড)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">সম্পর্কিত সম্পদ</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>সূত্র প্রয়োগ করুন: WSS ক্যালকুলেটর</h3>
+            <p>আপনার ওয়াকিং স্ট্রেস স্কোর গণনা করতে আমাদের ইন্টারঅ্যাক্টিভ ক্যালকুলেটর ব্যবহার করুন।</p>
+            <a href="/bn/wss-calculator/" class="btn btn-secondary">WSS গণনা করুন →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>ওয়াকিং জোন বোঝা</h3>
+            <p>প্রশিক্ষণে ক্যাডেন্স-ভিত্তিক তীব্রতা জোন কীভাবে প্রয়োগ করতে হয় তা শিখুন।</p>
+            <a href="/bn/walking-zones/" class="btn btn-secondary">জোন শিখুন →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>বৈজ্ঞানিক গবেষণা</h3>
+            <p>এই সূত্রগুলি যাচাই করেছে এমন অধ্যয়ন পর্যালোচনা করুন।</p>
+            <a href="/bn/research/" class="btn btn-secondary">গবেষণা দেখুন →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>সম্পূর্ণ গ্রন্থপঞ্জি</h3>
+            <p>সমস্ত উল্লেখিত সমীকরণের জন্য সম্পূর্ণ উদ্ধৃতি অ্যাক্সেস করুন।</p>
+            <a href="/bn/bibliography/" class="btn btn-secondary">গ্রন্থপঞ্জি দেখুন →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>সূত্র সূচি</h3>
+          <ul>
+            <li><a href="#cadence-mets">১. ক্যাডেন্স → METs</a></li>
+            <li><a href="#acsm-vo2">২. ACSM VO₂ সমীকরণ</a></li>
+            <li><a href="#energy-expenditure">৩. শক্তি এবং ক্যালরি</a></li>
+            <li><a href="#gait-symmetry">৪. গেইট সিমেট্রি ইনডেক্স</a></li>
+            <li><a href="#walk-score">৫. WALK স্কোর</a></li>
+            <li><a href="#basic-metrics">৬. মৌলিক গেইট মেট্রিক্স</a></li>
+            <li><a href="#heart-rate">৭. হৃদস্পন্দন জোন</a></li>
+            <li><a href="#cost-transport">৮. পরিবহনের খরচ</a></li>
+            <li><a href="#training-load">৯. প্রশিক্ষণ লোড</a></li>
+            <li><a href="#predictions">১০. পূর্বাভাস সমীকরণ</a></li>
+            <li><a href="#conversions">১১. একক রূপান্তর</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ সবচেয়ে গুরুত্বপূর্ণ</h3>
+          <p><strong>ক্যাডেন্স থেকে METs</strong></p>
+          <p class="formula-compact">METs = ০.০২১৯ × spm + ০.৭২</p>
+          <p class="small-text">এই একক সমীকরণ হৃদস্পন্দন মনিটর ছাড়াই ক্যাডেন্স-ভিত্তিক তীব্রতা প্রশিক্ষণ সক্ষম করে।</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>এই সূত্রগুলি প্রয়োগ করুন</h3>
+          <p>WalkAnalytics আপনার হাঁটা বিশ্লেষণ করতে এই বৈজ্ঞানিকভাবে যাচাইকৃত সমীকরণ ব্যবহার করে।</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">অ্যাপ ডাউনলোড করুন</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 সূত্র নির্ভুলতা</h4>
+          <p>এই পৃষ্ঠার সমস্ত সমীকরণ সমকক্ষ-পর্যালোচিত গবেষণা থেকে। সম্পূর্ণ উদ্ধৃতির জন্য <a href="/bn/bibliography/">গ্রন্থপঞ্জি</a> দেখুন।</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">হোম</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. সর্বস্বত্ব সংরক্ষিত
+            </p>
+            <ul class="footer-links">
+                <li><a href="/bn/privacy/">গোপনীয়তা</a></li>
+                <li><a href="/bn/terms/">শর্তাবলী</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>এই ওয়েবসাইট আপনার অভিজ্ঞতা উন্নত করতে কুকি ব্যবহার করে।</p>
+            <a href="/bn/privacy/" class="text-sm">আরও জানুন</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">প্রত্যাখ্যান করুন</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">গ্রহণ করুন</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

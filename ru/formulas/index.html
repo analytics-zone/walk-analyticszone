@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Формулы метрик ходьбы - Как рассчитываются WSS, походка и метрики здоровья</title>
+    <meta name="description" content="Математические формулы аналитики ходьбы. Узнайте, как рассчитываются WSS, метрики шага, каденс и оценки эффективности. Научная методология.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="формулы ходьбы, формула WSS, расчет метрик походки, математика ходьбы, формулы каденса">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/ru/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-01-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/ru/formulas/">
+    <meta property="og:title" content="Формулы метрик ходьбы - Как рассчитываются WSS, походка и метрики здоровья">
+    <meta property="og:description" content="Математические формулы аналитики ходьбы. Узнайте, как рассчитываются WSS, метрики шага, каденс и оценки эффективности. Научная методология.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/ru/formulas/">
+    <meta name="twitter:title" content="Формулы метрик ходьбы - Как рассчитываются WSS, походка и метрики здоровья">
+    <meta name="twitter:description" content="Математические формулы аналитики ходьбы. Узнайте, как рассчитываются WSS, метрики шага, каденс и оценки эффективности. Научная методология.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/formulas/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/formulas/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/formulas/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/formulas/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/formulas/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/ru/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Главная
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Обучение
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Наука
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Для вас
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Инструменты
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/contact/"
+                           
+                           aria-current="">
+                            Контакты
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Выбрать язык">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" selected>
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Переключить меню" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Формулы метрик ходьбы -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/ru/">Главная</a> / <a href="/ru/#science">Наука</a> / Формулы
+    </div>
+    <h1>Формулы и уравнения метрик ходьбы</h1>
+    <p class="lead">Математические основы аналитики ходьбы – научно подтверждённые уравнения для интенсивности, энергии и производительности</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>На этой странице представлены научно подтверждённые формулы, используемые в аналитике ходьбы. Все уравнения снабжены ссылками на исследования и проверенными диапазонами точности.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Преобразование каденса в METs</h2>
+
+        <div class="formula-section featured">
+          <h3>Метаболическое уравнение на основе каденса (Moore et al., 2021)</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Каденс в METs</p>
+            <p class="formula-main"><strong>METs = 0,0219 × Каденс (шагов/мин) + 0,72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Точность: ±0,5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Почему эта формула важна:</strong> Это уравнение <strong>на 23-35% точнее</strong> традиционных уравнений ACSM на основе скорости для ходьбы. Оно работает, потому что каденс напрямую отражает частоту движений и расход энергии, в то время как скорость зависит от переменной длины шага.</p>
+          </div>
+
+          <h4>Примеры:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Ходьба при 100 шаг/мин:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>Порог умеренной интенсивности</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Ходьба при 110 шаг/мин:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 METs</strong></p>
+              <p class="example-interpretation">Стабильная умеренная интенсивность</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Ходьба при 120 шаг/мин:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 METs</strong></p>
+              <p class="example-interpretation">Интенсивность от умеренной до высокой</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Ходьба при 130 шаг/мин:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 METs</strong></p>
+              <p class="example-interpretation"><strong>Порог высокой интенсивности</strong> (6 METs по прямому измерению CADENCE-Adults)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Примечание:</strong> Исследование CADENCE-Adults напрямую измерило, что 130 шаг/мин = 6 METs в контролируемых лабораторных условиях. Уравнение Мура разработано для диапазона 80-130 шаг/мин и может занижать значения при очень высоких каденсах.</p>
+          </div>
+
+          <h4>Данные валидации:</h4>
+          <ul>
+            <li><strong>Выборка:</strong> 76 взрослых в возрасте 21-40 лет</li>
+            <li><strong>Метод:</strong> Непрямая калориметрия (золотой стандарт)</li>
+            <li><strong>Значение R²:</strong> 0,87 (отличная корреляция)</li>
+            <li><strong>Средняя абсолютная погрешность:</strong> 0,47 METs</li>
+            <li><strong>Применимый диапазон:</strong> 80-130 шагов/мин</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. Уравнения VO₂ ACSM для ходьбы</h2>
+
+        <div class="formula-section">
+          <h3>Метаболические расчёты ACSM</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Ходьба по горизонтали (0% уклон)</p>
+            <p class="formula-main"><strong>VO₂ (мл/кг/мин) = 0,1 × Скорость (м/мин) + 3,5</strong></p>
+            <p class="formula-note">Скорость в метрах в минуту (умножьте км/ч на 16,67 или миль/ч на 26,82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Ходьба с уклоном (подъём/спуск)</p>
+            <p class="formula-main"><strong>VO₂ = 0,1(Скорость) + 1,8(Скорость)(Уклон) + 3,5</strong></p>
+            <p class="formula-note">Уклон выражен в десятичных дробях (например, 5% = 0,05)</p>
+          </div>
+
+          <h4>Примеры:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Ходьба 5 км/ч (83,3 м/мин) по ровной поверхности:</strong></p>
+              <p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 мл/кг/мин</strong></p>
+              <p class="example-conversion">Перевод в METs: 11,83 / 3,5 = <strong>3,38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Ходьба 5 км/ч на 5% подъёме:</strong></p>
+              <p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p>
+              <p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 мл/кг/мин</strong></p>
+              <p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 METs</strong></p>
+              <p class="example-interpretation">Подъём увеличивает интенсивность на ~64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>Преобразование скорости:</h4>
+            <ul>
+              <li><strong>км/ч в м/мин:</strong> умножить на 16,67</li>
+              <li><strong>миль/ч в м/мин:</strong> умножить на 26,82</li>
+              <li><strong>м/с в м/мин:</strong> умножить на 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Расход энергии и сжигание калорий</h2>
+
+        <div class="formula-section">
+          <h3>Точный расчёт калорий</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Калории в минуту</p>
+            <p class="formula-main"><strong>Кал/мин = (METs × 3,5 × Вес тела кг) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Общие калории за сессию</p>
+            <p class="formula-main"><strong>Общие калории = Кал/мин × Продолжительность (минуты)</strong></p>
+          </div>
+
+          <h4>Примеры:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Человек 70 кг идёт при 100 шаг/мин (3 METs) в течение 45 минут:</strong></p>
+              <p class="example-calc">Кал/мин = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 кал/мин</strong></p>
+              <p class="example-calc">Всего = 3,675 × 45 = <strong>165,4 калории</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Человек 85 кг идёт при 120 шаг/мин (5 METs) в течение 30 минут:</strong></p>
+              <p class="example-calc">Кал/мин = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 кал/мин</strong></p>
+              <p class="example-calc">Всего = 7,44 × 30 = <strong>223,2 калории</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Почему эта формула?</h4>
+            <p>Это уравнение происходит из определения MET (Метаболический эквивалент задачи):</p>
+            <ul>
+              <li>1 MET = 3,5 мл O₂/кг/мин (скорость метаболизма в покое)</li>
+              <li>1 литр потреблённого O₂ ≈ 5 ккал сожжено</li>
+              <li>Преобразование: (METs × 3,5 × кг × 5) / 1000 = (METs × 3,5 × кг) / 200</li>
+            </ul>
+          </div>
+
+          <h3>Чистое сжигание калорий (только упражнение)</h3>
+          <div class="formula-box">
+            <p class="formula-title">Чистые калории (исключая состояние покоя)</p>
+            <p class="formula-main"><strong>Чистые кал/мин = [(METs - 1) × 3,5 × Вес тела] / 200</strong></p>
+            <p class="formula-note">Вычитает 1 MET для исключения калорий, которые вы бы сожгли в покое</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 кг, 3 METs, 45 мин – Чистые калории:</strong></p>
+            <p class="example-calc">Чистые = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3 чистых калорий</strong></p>
+            <p class="example-interpretation">по сравнению со 165,4 общими калориями (55 калорий были бы сожжены в покое)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Индекс симметрии походки (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Количественная оценка асимметрии правой-левой стороны</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Индекс симметрии походки</p>
+            <p class="formula-main"><strong>GSI (%) = |Правая - Левая| / [0,5 × (Правая + Левая)] × 100</strong></p>
+            <p class="formula-note">Может применяться к длине шага, времени шага или времени контакта</p>
+          </div>
+
+          <h4>Интерпретация:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> Нормальная, симметричная походка</li>
+            <li><strong>3-5%:</strong> Лёгкая асимметрия</li>
+            <li><strong>5-10%:</strong> Умеренная асимметрия, требует наблюдения</li>
+            <li><strong>&gt;10%:</strong> Клинически значимая, требует профессиональной оценки</li>
+          </ul>
+
+          <h4>Примеры:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Время шага: Правая = 520 мс, Левая = 480 мс</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% асимметрия</strong></p>
+              <p class="example-interpretation">Умеренная асимметрия – рассмотрите укрепление более слабой стороны</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Длины шага: Правая = 1,42 м, Левая = 1,38 м</strong></p>
+              <p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p>
+              <p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% асимметрия</strong></p>
+              <p class="example-interpretation">Нормальный, здоровый диапазон ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Клиническое примечание:</strong> Асимметрия ходьбы Apple HealthKit использует немного другой расчёт (простая процентная разница между временем шагов), но пороги интерпретации схожи.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. Показатель WALK (проприетарная метрика WalkAnalytics)</h2>
+
+        <div class="formula-section">
+          <h3>Показатель эффективности ходьбы</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Показатель WALK</p>
+            <p class="formula-main"><strong>Показатель WALK = Время (секунды) + Шаги на 100 метров</strong></p>
+            <p class="formula-note">Меньший показатель = лучшая эффективность (как SWOLF для плавания)</p>
+          </div>
+
+          <h4>Как это работает:</h4>
+          <p>Показатель WALK объединяет время и количество шагов для количественной оценки эффективности ходьбы. Ходок, который преодолевает 100 м за 75 секунд со 140 шагами, имеет показатель WALK 215. Улучшение скорости ИЛИ эффективности шага снижает показатель.</p>
+
+          <h4>Примеры:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 м за 80 секунд, 120 шагов:</strong></p>
+              <p class="example-calc">Показатель WALK = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 м за 70 секунд, 110 шагов:</strong></p>
+              <p class="example-calc">Показатель WALK = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">Лучшая эффективность благодаря улучшенной скорости + шагу</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 м за 60 секунд, 130 шагов (спортивная ходьба):</strong></p>
+              <p class="example-calc">Показатель WALK = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">Быстро, но с более короткими шагами</p>
+            </div>
+          </div>
+
+          <h4>Типичные диапазоны:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> Медленная/неэффективная походка, возможные проблемы с подвижностью</li>
+            <li><strong>200-250:</strong> Обычный ходок, средняя эффективность</li>
+            <li><strong>170-200:</strong> Фитнес-ходок, хорошая эффективность</li>
+            <li><strong>150-170:</strong> Продвинутый ходок, отличная эффективность</li>
+            <li><strong>&lt;150:</strong> Уровень элитной/спортивной ходьбы</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Тренировка с показателем WALK:</strong> Отслеживайте свой показатель на одном и том же 100-метровом маршруте еженедельно. Улучшения показывают повышенную нервно-мышечную координацию, силу и экономичность ходьбы.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. Базовые метрики походки</h2>
+
+        <div class="formula-section">
+          <h3>Фундаментальные расчёты</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Скорость ходьбы</p>
+            <p class="formula-main"><strong>Скорость (м/с) = Расстояние (м) / Время (с)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Каденс из общего количества шагов</p>
+            <p class="formula-main"><strong>Каденс (шаг/мин) = Общие шаги / Время (минуты)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Длина шага</p>
+            <p class="formula-main"><strong>Длина шага (м) = Расстояние (м) / (Шаги / 2)</strong></p>
+            <p class="formula-note">Делите шаги на 2, потому что один шаг = два шага</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Длина одиночного шага</p>
+            <p class="formula-main"><strong>Длина шага (м) = Расстояние (м) / Шаги</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Скорость из каденса и длины шага</p>
+            <p class="formula-main"><strong>Скорость = Длина шага × (Каденс / 2) / 60</strong></p>
+            <p class="formula-note">Или: Скорость (м/с) = Длина шага × Каденс / 60</p>
+          </div>
+
+          <h4>Пример расчёта:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Пройдено 1000 м за 12 минут с 1320 шагами:</strong></p>
+            <p><strong>Скорость:</strong> 1000м / 720с = <strong>1,39 м/с</strong></p>
+            <p><strong>Каденс:</strong> 1320 шагов / 12 мин = <strong>110 шаг/мин</strong></p>
+            <p><strong>Длина шага:</strong> 1000м / (1320/2) = 1000 / 660 = <strong>1,52 м</strong></p>
+            <p><strong>Длина одиночного шага:</strong> 1000м / 1320 = <strong>0,76 м</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. Расчёты зон пульса</h2>
+
+        <div class="formula-section">
+          <h3>Традиционный метод зон ЧСС</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Оценка максимального пульса</p>
+            <p class="formula-main"><strong>Макс ЧСС = 220 - Возраст</strong></p>
+            <p class="formula-note">Простая, но ±10-15 уд/мин индивидуальной вариации</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Альтернатива: Формула Танака (более точная)</p>
+            <p class="formula-main"><strong>Макс ЧСС = 208 - (0,7 × Возраст)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Расчёт диапазона зоны</p>
+            <p class="formula-main"><strong>Зона = Макс ЧСС × (Нижний%, Верхний%)</strong></p>
+          </div>
+
+          <h4>Пример: 40-летний человек</h4>
+          <div class="calc-example">
+            <p><strong>Традиционная:</strong> Макс ЧСС = 220 - 40 = <strong>180 уд/мин</strong></p>
+            <p><strong>Танака:</strong> Макс ЧСС = 208 - (0,7 × 40) = 208 - 28 = <strong>180 уд/мин</strong></p>
+            <p><strong>Зона 2 (60-70%):</strong> 180 × 0,60 = 108 уд/мин до 180 × 0,70 = 126 уд/мин</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Примечание:</strong> Хотя зоны ЧСС полезны, <strong>зоны на основе каденса более точны и практичны для ходьбы</strong> (см. руководство по зонам ходьбы).</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. Стоимость транспортировки и экономичность ходьбы</h2>
+
+        <div class="formula-section">
+          <h3>Энергетическая стоимость ходьбы</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Стоимость транспортировки (C)</p>
+            <p class="formula-main"><strong>C = Затраченная энергия / (Масса тела × Расстояние)</strong></p>
+            <p class="formula-note">Единицы: Дж/кг/м или мл O₂/кг/м</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U-образная кривая:</strong> Экономичность ходьбы следует U-образной кривой. Существует оптимальная скорость (обычно 1,2-1,4 м/с или 4,3-5,0 км/ч), при которой стоимость транспортировки минимизируется. Ходьба медленнее ИЛИ быстрее этого увеличивает энергетические затраты на пройденное расстояние.</p>
+          </div>
+
+          <h4>Факторы, влияющие на стоимость транспортировки:</h4>
+          <ul>
+            <li><strong>Скорость:</strong> U-образная зависимость (оптимум около 1,3 м/с)</li>
+            <li><strong>Градиент:</strong> Подъём значительно увеличивает стоимость; спуск увеличивает эксцентрическую стоимость</li>
+            <li><strong>Масса тела:</strong> Более тяжёлые люди имеют более высокую абсолютную, но схожую относительную стоимость</li>
+            <li><strong>Механика шага:</strong> Оптимальная длина шага минимизирует стоимость</li>
+            <li><strong>Местность:</strong> Неровные поверхности увеличивают стоимость по сравнению с гладким тротуаром</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">Стоимость с учётом уклона</p>
+            <p class="formula-main"><strong>Множитель стоимости = 1 + (Уклон × 10)</strong></p>
+            <p class="formula-note">Грубая аппроксимация: +10% стоимости на 1% уклона</p>
+          </div>
+
+          <h4>Пример:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Ходьба на 5% подъёме:</strong></p>
+            <p class="example-calc">Множитель стоимости = 1 + (0,05 × 10) = <strong>1,5×</strong></p>
+            <p class="example-interpretation">50% увеличение энергетических затрат по сравнению с ровной поверхностью</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. Тренировочная нагрузка и показатель стресса</h2>
+
+        <div class="formula-section">
+          <h3>Показатель стресса ходьбы (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WSS на основе зон</p>
+            <p class="formula-main"><strong>WSS = Σ (Минуты в зоне × Фактор зоны)</strong></p>
+            <p>Зона 1: ×1,0 | Зона 2: ×2,0 | Зона 3: ×3,0 | Зона 4: ×4,0 | Зона 5: ×5,0</p>
+          </div>
+
+          <h4>Пример: 60-минутная прогулка</h4>
+          <div class="calc-example">
+            <p>10 мин Зона 1 × 1 = 10 баллов</p>
+            <p>40 мин Зона 2 × 2 = 80 баллов</p>
+            <p>10 мин Зона 3 × 3 = 30 баллов</p>
+            <p><strong>Итого WSS = 120</strong></p>
+          </div>
+
+          <h3>Недельная тренировочная нагрузка</h3>
+          <div class="formula-box">
+            <p class="formula-title">Недельная нагрузка</p>
+            <p class="formula-main"><strong>Недельная нагрузка = Σ Ежедневный WSS (7 дней)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Прогрессивная перегрузка</p>
+            <p class="formula-main"><strong>Следующая неделя = Текущая неделя × 1,05-1,10</strong></p>
+            <p class="formula-note">Увеличивать на 5-10% в неделю максимум</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Неделя восстановления</p>
+            <p class="formula-main"><strong>Неделя восстановления = Текущая × 0,50-0,70</strong></p>
+            <p class="formula-note">Каждые 3-4 недели, снижать до 50-70%</p>
+          </div>
+
+          <h4>Типичные недельные нагрузки:</h4>
+          <ul>
+            <li><strong>Начинающий оздоровительный ходок:</strong> 200-400 WSS/неделю</li>
+            <li><strong>Регулярный фитнес-ходок:</strong> 400-700 WSS/неделю</li>
+            <li><strong>Серьёзный фитнес-ходок:</strong> 700-1000 WSS/неделю</li>
+            <li><strong>Соревнующийся спортивный ходок:</strong> 1000-1500+ WSS/неделю</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. Прогнозные уравнения</h2>
+
+        <div class="formula-section">
+          <h3>Прогноз расстояния 6-минутного теста ходьбы (6MWT)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Прогнозируемое расстояние 6MWT (Enright & Sherrill)</p>
+            <p><strong>Мужчины:</strong> (7,57 × Рост см) - (5,02 × Возраст) - (1,76 × Вес кг) - 309</p>
+            <p><strong>Женщины:</strong> (2,11 × Рост см) - (5,78 × Возраст) - (2,29 × Вес кг) + 667</p>
+            <p class="formula-note">Прогнозирует расстояние в метрах для здоровых взрослых</p>
+          </div>
+
+          <h4>Пример: 40-летний мужчина, 175 см, 75 кг</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p>
+            <p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 метров</strong></p>
+            <p class="example-interpretation">Хорошая функциональная способность для возраста</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Клиническое применение:</strong> 6MWT используется для оценки функциональной физической способности у пациентов с кардиопульмональными заболеваниями, оценки до/после операции и общей физической формы у пожилых людей.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. Преобразование единиц</h2>
+
+        <div class="formula-section">
+          <h3>Распространённые преобразования метрик ходьбы</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Из</th>
+                  <th>В</th>
+                  <th>Формула</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>км/ч</td>
+                  <td>м/с</td>
+                  <td>км/ч ÷ 3,6</td>
+                </tr>
+                <tr>
+                  <td>миль/ч</td>
+                  <td>м/с</td>
+                  <td>миль/ч × 0,447</td>
+                </tr>
+                <tr>
+                  <td>м/с</td>
+                  <td>км/ч</td>
+                  <td>м/с × 3,6</td>
+                </tr>
+                <tr>
+                  <td>м/с</td>
+                  <td>миль/ч</td>
+                  <td>м/с × 2,237</td>
+                </tr>
+                <tr>
+                  <td>км/ч</td>
+                  <td>м/мин</td>
+                  <td>км/ч × 16,67</td>
+                </tr>
+                <tr>
+                  <td>миль/ч</td>
+                  <td>м/мин</td>
+                  <td>миль/ч × 26,82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>мл/кг/мин</td>
+                  <td>METs × 3,5</td>
+                </tr>
+                <tr>
+                  <td>мл/кг/мин</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3,5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Краткая справка:</h4>
+          <ul>
+            <li><strong>1,0 м/с =</strong> 3,6 км/ч = 2,24 миль/ч (типичная скорость ходьбы здорового взрослого)</li>
+            <li><strong>1,4 м/с =</strong> 5,0 км/ч = 3,1 миль/ч (быстрая ходьба)</li>
+            <li><strong>1 MET =</strong> 3,5 мл O₂/кг/мин (метаболизм покоя)</li>
+            <li><strong>3 METs =</strong> 10,5 мл O₂/кг/мин (порог умеренной интенсивности)</li>
+            <li><strong>6 METs =</strong> 21 мл O₂/кг/мин (порог высокой интенсивности)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">Связанные ресурсы</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Применить формулы: Калькулятор WSS</h3>
+            <p>Используйте наш интерактивный калькулятор для вычисления вашего показателя стресса ходьбы.</p>
+            <a href="/ru/wss-calculator/" class="btn btn-secondary">Рассчитать WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Понимание зон ходьбы</h3>
+            <p>Узнайте, как применять зоны интенсивности на основе каденса в тренировках.</p>
+            <a href="/ru/walking-zones/" class="btn btn-secondary">Изучить зоны →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Научные исследования</h3>
+            <p>Ознакомьтесь с исследованиями, подтвердившими эти формулы.</p>
+            <a href="/ru/research/" class="btn btn-secondary">Смотреть исследования →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Полная библиография</h3>
+            <p>Доступ к полным цитатам всех упомянутых уравнений.</p>
+            <a href="/ru/bibliography/" class="btn btn-secondary">Смотреть библиографию →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Индекс формул</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Каденс → METs</a></li>
+            <li><a href="#acsm-vo2">2. Уравнения VO₂ ACSM</a></li>
+            <li><a href="#energy-expenditure">3. Энергия и калории</a></li>
+            <li><a href="#gait-symmetry">4. Индекс симметрии походки</a></li>
+            <li><a href="#walk-score">5. Показатель WALK</a></li>
+            <li><a href="#basic-metrics">6. Базовые метрики походки</a></li>
+            <li><a href="#heart-rate">7. Зоны пульса</a></li>
+            <li><a href="#cost-transport">8. Стоимость транспортировки</a></li>
+            <li><a href="#training-load">9. Тренировочная нагрузка</a></li>
+            <li><a href="#predictions">10. Прогнозные уравнения</a></li>
+            <li><a href="#conversions">11. Преобразование единиц</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Наиболее важная</h3>
+          <p><strong>Каденс в METs</strong></p>
+          <p class="formula-compact">METs = 0,0219 × шаг/мин + 0,72</p>
+          <p class="small-text">Это единственное уравнение позволяет проводить тренировки на основе интенсивности каденса без мониторов пульса.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Применить эти формулы</h3>
+          <p>WalkAnalytics использует эти научно подтверждённые уравнения для анализа ваших прогулок.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Скачать приложение</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Точность формул</h4>
+          <p>Все уравнения на этой странице взяты из рецензируемых исследований. См. <a href="/ru/bibliography/">Библиографию</a> для полных цитат.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Главная</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Все права защищены
+            </p>
+            <ul class="footer-links">
+                <li><a href="/ru/privacy/">Конфиденциальность</a></li>
+                <li><a href="/ru/terms/">Условия</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Этот сайт использует cookies для улучшения вашего опыта.</p>
+            <a href="/ru/privacy/" class="text-sm">Узнать больше</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Отклонить</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Принять</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

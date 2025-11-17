@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Yürüyenler İçin Yürüyüş Analizi - Adım Simetrisi, Kadans ve Denge Metrikleri</title>
+    <meta name="description" content="Kapsamlı yürüyüş analizi kılavuzu. Adım uzunluğu, kadans, simetri ve denge metriklerini anlayın. Yürüyüş verimliliğini artırın ve yaralanmaları önleyin.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="yürüyüş analizi, adım simetrisi, yürüyüş kadansı, yürüyüş denge metrikleri, yürüyüş biyomekaniği">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/tr/gait-analysis/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-16T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/tr/gait-analysis/">
+    <meta property="og:title" content="Yürüyenler İçin Yürüyüş Analizi - Adım Simetrisi, Kadans ve Denge Metrikleri">
+    <meta property="og:description" content="Kapsamlı yürüyüş analizi kılavuzu. Adım uzunluğu, kadans, simetri ve denge metriklerini anlayın. Yürüyüş verimliliğini artırın ve yaralanmaları önleyin.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/tr/gait-analysis/">
+    <meta name="twitter:title" content="Yürüyenler İçin Yürüyüş Analizi - Adım Simetrisi, Kadans ve Denge Metrikleri">
+    <meta name="twitter:description" content="Kapsamlı yürüyüş analizi kılavuzu. Adım uzunluğu, kadans, simetri ve denge metriklerini anlayın. Yürüyüş verimliliğini artırın ve yaralanmaları önleyin.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/gait-analysis/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/gait-analysis/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/gait-analysis/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/gait-analysis/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/gait-analysis/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/gait-analysis/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/gait-analysis/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/gait-analysis/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/gait-analysis/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/gait-analysis/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/gait-analysis/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">İçeriğe atla</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/tr/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Ana Sayfa
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Öğren
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Bilim
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Senin İçin
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Araçlar
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/contact/"
+                           
+                           aria-current="">
+                            İletişim
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Dil seçin">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="tr" selected>
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Yürüyüş Analizi Rehberi -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/tr/">Ana Sayfa</a> / <a href="/tr/#learn">Öğren</a> / Yürüyüş Analizi
+    </div>
+    <h1>Yürüyüş Biomekanik Analizi</h1>
+    <p class="lead">Daha iyi performans, sağlık ve yaralanma önleme için bilim temelli metrikler kullanarak yürüyüş biyomekaniğinizi nasıl analiz edeceğinizi öğrenin</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="what-is-gait">Yürüyüş Analizi Nedir?</h2>
+
+        <p>Yürüyüş analizi, yürüyüş deseninizin ve biyomekaniğinizin sistematik incelemesidir. Yürürken vücudunuzun nasıl hareket ettiğini inceler, verimsizlikleri, asimetrileri ve potansiyel yaralanma risklerini tespit eder.</p>
+
+        <div class="key-insight">
+          <p><strong>Neden önemlidir:</strong> Yürüyüş analizi, yalnızca özel laboratuvarlarda kullanılan klinik bir araçtan akıllı saatler ve akıllı telefonlar aracılığıyla erişilebilir bir tüketici teknolojisine evrilmiştir. Araştırmalar, yürüyüş deseni analizinin sağlık sonuçlarını tahmin edebildiğini, nörolojik durumların erken belirtilerini tespit edebildiğini ve yürüme verimliliğini optimize edebildiğini göstermektedir.</p>
+        </div>
+
+        <p>WalkAnalytics, iPhone ve Apple Watch tarafından pasif olarak toplanan yürüyüş metriklerini analiz etmek için Apple HealthKit ile entegre olur ve yürüyüş kaliteniz hakkında klinik düzeyde içgörüler sağlar.</p>
+
+        <h2 id="key-metrics">Temel Yürüyüş Metrikleri</h2>
+
+        <h3 id="cadence">1. Kadans (Dakikada Adım Sayısı)</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Dakikada atılan adım sayısı (spm)</p>
+
+          <p><strong>Neden en önemli yürüyüş metriğidir:</strong> Kadans, yürüyüş yoğunluğu ve enerji harcamasının en iyi tek belirleyicisidir. Hız'ın (adım uzunluğuna bağlıdır) aksine, kadans doğrudan hareket frekansını ve metabolik talebi yansıtır.</p>
+
+          <div class="science-box">
+            <h4>Bilimsel Kanıt: 100 spm Eşiği</h4>
+            <p>Dönüm noktası niteliğindeki CADENCE-Adults çalışması (Tudor-Locke ve ark., 2019) 76 yetişkini test etti ve şunları belirledi:</p>
+            <ul>
+              <li><strong>100 adım/dak = 3 MET</strong> (orta yoğunluk) %86 duyarlılık ve %89.6 özgüllük ile</li>
+              <li><strong>110 spm ≈ 4 MET</strong> (orta-yüksek yoğunluk)</li>
+              <li><strong>120 spm ≈ 5 MET</strong> (yüksek yoğunluk)</li>
+              <li><strong>130 spm = 6 MET</strong> (çok yüksek yoğunluk eşiği)</li>
+            </ul>
+            <p>Bu ilişki <strong>21-85 yaş arası oldukça tutarlıdır</strong>, bu da kadansı evrensel bir yoğunluk metriği yapar.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Kadans Aralıkları ve Uygulamalar</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Kadans (spm)</th>
+                  <th>Kategori</th>
+                  <th>Uygulama</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>60-90</td>
+                  <td>Çok yavaş</td>
+                  <td>İyileşme, mobilite bozukluğu</td>
+                </tr>
+                <tr>
+                  <td>90-100</td>
+                  <td>Hafif yoğunluk</td>
+                  <td>Hafif aktivite, ısınma</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>100-110</strong></td>
+                  <td><strong>Orta yoğunluk</strong></td>
+                  <td><strong>Sağlık faydaları, yağ yakımı, önerilen temel seviye</strong></td>
+                </tr>
+                <tr>
+                  <td>110-120</td>
+                  <td>Orta-yüksek yoğunluk</td>
+                  <td>Kardiyovasküler kondisyon, hızlı yürüyüş</td>
+                </tr>
+                <tr>
+                  <td>120-130</td>
+                  <td>Yüksek yoğunluk</td>
+                  <td>Güç yürüyüşü, kondisyon antrenmanı</td>
+                </tr>
+                <tr>
+                  <td>130-140</td>
+                  <td>Çok yüksek yoğunluk</td>
+                  <td>İleri seviye kondisyon, interval antrenmanı</td>
+                </tr>
+                <tr>
+                  <td>140-180</td>
+                  <td>Yarış yürüyüşü</td>
+                  <td>Yarışmacı yürüyüş, elit sporcular</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Nasıl ölçülür:</strong> Apple Watch ve çoğu fitness izleyici kadansı otomatik olarak hesaplar. Ayrıca 30 saniye boyunca adımları sayıp 2 ile çarpabilirsiniz.</p>
+
+          <p><strong>Hedef kadans:</strong></p>
+          <ul>
+            <li><strong>Genel sağlık:</strong> Orta yoğunluğa ulaşmak için yürüyüşler sırasında ≥100 spm'yi hedefleyin</li>
+            <li><strong>Kondisyon gelişimi:</strong> Aerobik gelişim için 110-120 spm'yi hedefleyin</li>
+            <li><strong>Performans antrenmanı:</strong> 120-130+ spm'de interval antrenmanları yapın</li>
+          </ul>
+        </div>
+
+        <h3 id="stride-length">2. Adım Uzunluğu</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Bir tam adım döngüsünde kat edilen mesafe (bir ayağın topuk vuruşundan aynı ayağın bir sonraki topuk vuruşuna)</p>
+
+          <p><strong>Optimal adım uzunluğu:</strong> Araştırmalar, normal yürüyüş sırasında optimal adım uzunluğunun <strong>vücut boyunun %40-50'si</strong> olduğunu göstermektedir.</p>
+
+          <div class="data-table">
+            <h4>Adım Uzunluğu Kıyaslamaları</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Boy</th>
+                  <th>Optimal Adım (boyun %40-50'si)</th>
+                  <th>Elite Yürüyücü (%70'e kadar)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5'0" (152 cm)</td>
+                  <td>0,61-0,76 m (24-30")</td>
+                  <td>1,06 m'ye kadar (42")</td>
+                </tr>
+                <tr>
+                  <td>5'6" (168 cm)</td>
+                  <td>0,67-0,84 m (26-33")</td>
+                  <td>1,18 m'ye kadar (46")</td>
+                </tr>
+                <tr>
+                  <td>6'0" (183 cm)</td>
+                  <td>0,73-0,91 m (29-36")</td>
+                  <td>1,28 m'ye kadar (50")</td>
+                </tr>
+                <tr>
+                  <td>6'6" (198 cm)</td>
+                  <td>0,79-0,99 m (31-39")</td>
+                  <td>1,39 m'ye kadar (55")</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Temel ilişki:</strong> Hız = Adım Uzunluğu × Kadans</p>
+          <p>Bu, yürüme hızını ya daha uzun adımlar atarak YA DA kadansı artırarak artırabileceğiniz anlamına gelir. Ancak, <strong>kadansı artırmak genellikle aşırı uzun adım atmaktan daha verimli ve güvenlidir</strong>.</p>
+
+          <div class="warning-box">
+            <h4>⚠️ Aşırı Uzun Adım Atmaktan Kaçının</h4>
+            <p><strong>Aşırı uzun adım atma</strong>, ayağınız kütle merkezinizin çok ilerisine bastığında meydana gelir. Bu:</p>
+            <ul>
+              <li>Frenleme kuvvetlerini ve zemin tepki kuvvetlerini artırır</li>
+              <li>Yürüme verimliliğini azaltır (her adımda "frenleme" yapıyorsunuz)</li>
+              <li>Diz ve kalçalar üzerindeki stresi artırır</li>
+              <li>Yaralanma riskini yükseltir</li>
+            </ul>
+            <p><strong>Çözüm:</strong> Ayağınızı vücudunuzun kütle merkezine daha yakın basmaya odaklanın ve arka ayağınızdan güçlü bir şekilde itme yapın.</p>
+          </div>
+
+          <p><strong>Apple HealthKit metriği:</strong> iOS 14+ iPhone cebinizde/çantanızda taşındığında <code>walkingStepLength</code>'i pasif olarak ölçer.</p>
+        </div>
+
+        <h3 id="ground-contact">3. Yer Temas Süresi</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Her ayağın bir adım sırasında yerle temas halinde kaldığı süre</p>
+
+          <p><strong>Yürüyüşe özgü değerler:</strong> Adım başına 200-300 milisaniye (koşunun <200ms'sinden önemli ölçüde daha uzun)</p>
+
+          <div class="science-box">
+            <h4>Yürüyüş Temasının 5 Fazı</h4>
+            <p>Her adım 5 farklı fazdan oluşur:</p>
+            <ol>
+              <li><strong>İlk temas (topuk vuruşu):</strong> Topuk ~10° dorsifleksiyonda yere değer</li>
+              <li><strong>Yükleme tepkisi (ayak düz):</strong> Tam ayak teması, ağırlık kabulü</li>
+              <li><strong>Orta duruş:</strong> Vücut ağırlığı destekleyen ayak üzerinden geçer</li>
+              <li><strong>Terminal duruş (topuk kalkışı):</strong> Topuk kalkışa başlar, ağırlık öne kayar</li>
+              <li><strong>Salınım öncesi (ayak parmağı kalkışı):</strong> Ön ayaktan itme, itki fazı</li>
+            </ol>
+          </div>
+
+          <p><strong>Yer temas süresini etkileyen faktörler:</strong></p>
+          <ul>
+            <li><strong>Hız:</strong> Daha hızlı yürüyüş = daha kısa temas süresi</li>
+            <li><strong>Kadans:</strong> Daha yüksek kadans = adım başına daha kısa temas süresi</li>
+            <li><strong>Arazi:</strong> Yokuş yukarı temas süresini artırır, yokuş aşağı azaltabilir</li>
+            <li><strong>Yorgunluk:</strong> Yorgun kaslar = daha uzun temas süresi</li>
+          </ul>
+
+          <p><strong>Koşu ile karşılaştırma:</strong></p>
+          <ul>
+            <li>Yürüyüş: 200-300ms temas, yürüyüş döngüsünün %62'si destek fazında</li>
+            <li>Koşu: <200ms temas, yürüyüş döngüsünün yalnızca %31'i destek fazında</li>
+            <li>Bu temel fark, yürüyüşün neden <strong>daha düşük darbe kuvvetlerine</strong> sahip olduğunu ve yaralanma iyileşmesi için uygun olduğunu açıklar</li>
+          </ul>
+        </div>
+
+        <h3 id="double-support">4. Çift Destek Süresi</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Her iki ayağın aynı anda yerle temas halinde olduğu yürüyüş döngüsünün bölümü</p>
+
+          <p><strong>Yürüyüşün temel ayırt edici özelliği:</strong> Yürüyüş her zaman bir çift destek fazına sahipken (yürüyüş döngüsünün %20-30'u), koşuda yer temasının olmadığı uçuş fazı vardır.</p>
+
+          <div class="key-insight">
+            <p><strong>Klinik önemi:</strong> Çift destek yüzdesi, özellikle yaşlı yetişkinlerde düşme riski ve denge güveninin güçlü bir göstergesidir.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Çift Destek Yorumlaması</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Çift Destek %</th>
+                  <th>Yorum</th>
+                  <th>Eylem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;15%</td>
+                  <td>Çok düşük (koşu yürüyüşüne yaklaşıyor)</td>
+                  <td>Güvenlik için çok hızlı yürüyor olabilir</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>20-30%</strong></td>
+                  <td><strong>Normal, sağlıklı aralık</strong></td>
+                  <td><strong>Optimal denge ve verimlilik</strong></td>
+                </tr>
+                <tr>
+                  <td>30-35%</td>
+                  <td>Yüksek, hafif endişe</td>
+                  <td>Değişiklikleri izleyin, denge egzersizlerini düşünün</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;35%</strong></td>
+                  <td><strong>Yüksek düşme riski göstergesi</strong></td>
+                  <td><strong>Sağlık uzmanına danışın, denge antrenmanına başlayın</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Yüksek çift desteğe neden olan faktörler:</strong></p>
+          <ul>
+            <li>Düşme korkusu veya azalmış denge güveni</li>
+            <li>Nörolojik durumlar (Parkinson, inme, nöropati)</li>
+            <li>Kas zayıflığı (özellikle kalça abduktörleri ve ayak bileği dorsifleksörleri)</li>
+            <li>Eklem ağrısı veya sertliği</li>
+            <li>Görme bozukluğu</li>
+          </ul>
+
+          <p><strong>Apple HealthKit metriği:</strong> <code>walkingDoubleSupportPercentage</code> iPhone 8+ ile iOS 14+ tarafından pasif olarak ölçülür. Bu metrik, Apple'ın Yürüyüş Kararlılığı değerlendirmesinin bir parçasıdır.</p>
+        </div>
+
+        <h3 id="asymmetry">5. Yürüyüş Asimetrisi</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Sol ve sağ adım süreleri, adım uzunlukları veya temas süreleri arasındaki fark</p>
+
+          <div class="science-box">
+            <h4>Yürüyüş Simetri İndeksi (GSI) Formülü</h4>
+            <p>Yürüyüş asimetrisini ölçmek için standart formül:</p>
+            <div class="formula-box">
+              <p><strong>GSI = |Sağ - Sol| / [0,5 × (Sağ + Sol)] × 100</strong></p>
+            </div>
+            <p>Örnek: Sağ adım süresi = 520ms ve sol adım süresi = 480ms ise:</p>
+            <p>GSI = |520 - 480| / [0,5 × (520 + 480)] × 100 = 40 / 500 × 100 = <strong>%8 asimetri</strong></p>
+          </div>
+
+          <div class="data-table">
+            <h4>Asimetri Sınıflandırması</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Asimetri %</th>
+                  <th>Sınıflandırma</th>
+                  <th>Klinik Önem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>&lt;2-3%</strong></td>
+                  <td><strong>Normal, simetrik</strong></td>
+                  <td>Sağlıklı yürüyüş deseni</td>
+                </tr>
+                <tr>
+                  <td>3-5%</td>
+                  <td>Hafif asimetri</td>
+                  <td>İzleyin, küçük zayıflık veya alışkanlık gösterebilir</td>
+                </tr>
+                <tr>
+                  <td>5-10%</td>
+                  <td>Orta düzey asimetri</td>
+                  <td>Profesyonel değerlendirme düşünün</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;10%</strong></td>
+                  <td><strong>Klinik olarak anlamlı</strong></td>
+                  <td><strong>Muhtemelen yaralanma, zayıflık veya nörolojik sorun gösterir</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Asimetrinin yaygın nedenleri:</strong></p>
+          <ul>
+            <li><strong>Önceki yaralanma telafisi:</strong> Yaralanma sonrası bir bacağı kayırma</li>
+            <li><strong>Kas dengesizlikleri:</strong> Bir taraftaki kalça, diz veya ayak bileğinde zayıflık</li>
+            <li><strong>Bacak uzunluğu farkı:</strong> Bacak uzunluğunda gerçek veya fonksiyonel fark</li>
+            <li><strong>Eklem sorunları:</strong> Artrit, kalça/diz/ayak bileğinde azalmış hareket açıklığı</li>
+            <li><strong>Nörolojik durumlar:</strong> İnme, Parkinson, MS</li>
+            <li><strong>Ayakkabı:</strong> Eşit olmayan ayakkabı aşınması veya yanlış uyum</li>
+          </ul>
+
+          <p><strong>Apple HealthKit metriği:</strong> <code>walkingAsymmetryPercentage</code> sol ve sağ adım süreleri arasındaki farkı ölçer. %10'dan büyük değerler bildirimleri tetikler.</p>
+
+          <div class="tip-box">
+            <h4>💡 Simetriyi İyileştirme</h4>
+            <ul>
+              <li>Tek bacak denge egzersizleri (bacak başına 30-60 saniye)</li>
+              <li>Tek taraflı güç antrenmanı (zayıf tarafa odaklanın)</li>
+              <li>Görsel/işitsel geri bildirimle yürüyüş yeniden antrenmanı</li>
+              <li>Temel yaralanma veya durumları ele alın</li>
+              <li>Asimetri %5'in üzerinde devam ederse profesyonel yürüyüş değerlendirmesi</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="walking-speed">6. Yürüme Hızı</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Ortalama yürüme hızınız, tipik olarak saniyede metre (m/s) veya saatte mil (mph) cinsinden ölçülür</p>
+
+          <div class="key-insight">
+            <p><strong>Hız neden "yaşamsal bir belirti"dir:</strong> 34.485 yaşlı yetişkin üzerinde yapılan dönüm noktası niteliğindeki 2011 JAMA çalışması, yürüyüş hızının ölüm oranının en güçlü tek belirleyicilerinden biri olduğunu ve klinik bir "yaşamsal belirti" olarak tanımlanmasını sağladığını buldu (Studenski ve ark., 2011).</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Yürüme Hızı Sağlık Kıyaslamaları</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Hız</th>
+                  <th>Sınıflandırma</th>
+                  <th>Sağlık Göstergesi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="warning-row">
+                  <td><strong>&lt;0,6 m/s (1,3 mph)</strong></td>
+                  <td><strong>Ciddi şekilde bozulmuş</strong></td>
+                  <td>Yüksek ölüm riski, sağlık uzmanına danışın</td>
+                </tr>
+                <tr>
+                  <td>0,6-0,8 m/s (1,3-1,8 mph)</td>
+                  <td>Mobilite sınırlı</td>
+                  <td>Artan sağlık riskleri, fonksiyonel sınırlamalar</td>
+                </tr>
+                <tr>
+                  <td>0,8-1,0 m/s (1,8-2,2 mph)</td>
+                  <td>Normal altı</td>
+                  <td>Orta risk, iyileştirme için alan var</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>1,0-1,3 m/s (2,2-2,9 mph)</strong></td>
+                  <td><strong>İyi fonksiyonel sağlık</strong></td>
+                  <td>Normal sağlık göstergeleri</td>
+                </tr>
+                <tr>
+                  <td>1,3-1,5 m/s (2,9-3,4 mph)</td>
+                  <td>Ortalama üstü</td>
+                  <td>Mükemmel sağlık göstergesi, düşük ölüm riski</td>
+                </tr>
+                <tr>
+                  <td>&gt;1,5 m/s (&gt;3,4 mph)</td>
+                  <td>Kondisyon yürüyüşü</td>
+                  <td>Atletik yetenek, çok düşük sağlık riskleri</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="science-box">
+            <h4>Hız-Hayatta Kalma Gradyanı</h4>
+            <p>Araştırmalar, <strong>yürüme hızındaki her 0,1 m/s artışın ölüm riskinde ~%12 azalma ile ilişkili olduğunu</strong> göstermektedir. Bu ilişki popülasyonlar arasında oldukça doğrusaldır.</p>
+          </div>
+
+          <p><strong>Apple HealthKit metriği:</strong> <code>walkingSpeed</code> iPhone hareket sensörlerinden hesaplanır (iOS 14+ ile iPhone 8+). Doğrulama çalışmaları, klinik zamanlı yürüyüş testleri ile r=0,86-0,91 korelasyon gösterir.</p>
+        </div>
+
+        <h3 id="vertical-oscillation">7. Dikey Salınım</h3>
+
+        <div class="metric-detail">
+          <p><strong>Nedir:</strong> Yürüyüş döngüsü sırasında kütle merkezinizin dikey deplasmanı</p>
+
+          <p><strong>Normal aralık:</strong> 4-8 cm dikey hareket</p>
+
+          <div class="data-table">
+            <h4>Dikey Salınım Yorumlaması</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Salınım</th>
+                  <th>Değerlendirme</th>
+                  <th>Sonuç</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;4 cm</td>
+                  <td>Çok az (sürüklenen yürüyüş)</td>
+                  <td>Zayıflık, nörolojik sorunlar veya düşme korkusu gösterebilir</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>4-8 cm</strong></td>
+                  <td><strong>Normal, verimli aralık</strong></td>
+                  <td>Optimal enerji harcaması</td>
+                </tr>
+                <tr>
+                  <td>&gt;8-10 cm</td>
+                  <td>Aşırı (zıplayan yürüyüş)</td>
+                  <td>Enerji israfı, verimsiz mekanik</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Neden önemlidir:</strong> Aşırı dikey salınım, her adımda çok fazla "zıpladığınız" ve yerçekimine karşı mücadele ederek enerji israf ettiğiniz anlamına gelir. Minimal salınım, Parkinson veya düşme korkusu ile ilişkili sürüklenme yürüyüş desenini gösterebilir.</p>
+
+          <p><strong>Nasıl optimize edilir:</strong></p>
+          <ul>
+            <li>Yukarı değil, ileriye hareket etmeye odaklanın</li>
+            <li>Ayak bileklerinden hafif ileri eğilim (2-5°) koruyun</li>
+            <li>Başı düz ve gözleri ileriye tutun</li>
+            <li>Adımlar arasında yumuşak ağırlık transferi uygulayın</li>
+          </ul>
+        </div>
+
+        <h2 id="apple-metrics">Apple HealthKit Yürüyüş Metrikleri</h2>
+
+        <div class="tech-section">
+          <p>Apple, iOS 14'te (2020) iPhone hareket sensörlerinden pasif olarak klinik düzeyde yürüyüş verisi toplayan gelişmiş yürüyüş metriklerini tanıttı. Bu metrikler <strong>araştırma düzeyinde değerlendirmelere karşı doğrulanmıştır</strong> ve artık tıbbi araştırmalarda kullanılmaktadır.</p>
+
+          <h3>Yürüyüş Kararlılığı</h3>
+
+          <p>Apple'ın özel <strong>Yürüyüş Kararlılığı</strong> metriği şunları birleştiren bir kompozit ölçüdür:</p>
+          <ul>
+            <li>Yürüme hızı</li>
+            <li>Adım uzunluğu</li>
+            <li>Çift destek yüzdesi</li>
+            <li>Yürüyüş asimetrisi</li>
+            <li>Yürüme hızı değişkenliği</li>
+            <li>Adım uzunluğu değişkenliği</li>
+          </ul>
+
+          <div class="data-table">
+            <h4>Yürüyüş Kararlılığı Sınıflandırması</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Sınıflandırma</th>
+                  <th>Düşme Riski</th>
+                  <th>Eylem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>Tamam</strong></td>
+                  <td>Yıllık %1'den az düşme riski</td>
+                  <td>Mevcut aktivite seviyesini sürdürün</td>
+                </tr>
+                <tr>
+                  <td><strong>Düşük</strong></td>
+                  <td>Yıllık %1-5 düşme riski</td>
+                  <td>Denge egzersizlerini düşünün, eğilimleri izleyin</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>Çok Düşük</strong></td>
+                  <td>Yıllık %5'ten fazla düşme riski</td>
+                  <td><strong>iPhone bildirimi gönderildi, sağlık uzmanına danışın</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>6 Dakikalık Yürüme Testi (6MWT)</h3>
+
+          <p>Apple Watch Series 3+, geçmiş yürüyüş verilerinden <strong>6 Dakikalık Yürüme Testi Mesafesini</strong> tahmin edebilir. 6MWT, fonksiyonel egzersiz kapasitesinin altın standart klinik değerlendirmesidir.</p>
+
+          <div class="science-box">
+            <h4>6MWT Yorumlaması</h4>
+            <ul>
+              <li><strong>&lt;350 metre:</strong> Önemli fonksiyonel sınırlama</li>
+              <li><strong>350-450 metre:</strong> Orta düzey sınırlama</li>
+              <li><strong>450-550 metre:</strong> Hafif sınırlama veya yaşlı yetişkin</li>
+              <li><strong>&gt;550 metre:</strong> İyi fonksiyonel kapasite</li>
+              <li><strong>&gt;650 metre:</strong> Mükemmel kapasite</li>
+            </ul>
+            <p><em>Not: Değerler yaş, cinsiyet ve boya göre değişir. Bunlar genel kılavuzlardır.</em></p>
+          </div>
+
+          <h3>Veri Gizliliği</h3>
+
+          <p>Tüm Apple HealthKit yürüyüş metrikleri:</p>
+          <ul>
+            <li><strong>Cihazda işlenir:</strong> Asla Apple sunucularına gönderilmez</li>
+            <li><strong>Kullanıcı kontrollü:</strong> Hangi uygulamaların verilerinize erişebileceğine siz karar verirsiniz</li>
+            <li><strong>Şifrelenmiş:</strong> iOS şifrelemesi ile korunur</li>
+            <li><strong>Silinebilir:</strong> Tüm sağlık verilerini silme konusunda tam kontrol</li>
+          </ul>
+        </div>
+
+        <h2 id="interpreting">Yürüyüş Analizinizi Yorumlama</h2>
+
+        <h3>Sağlıklı Yürüyüşün İşaretleri</h3>
+        <ul>
+          <li><strong>Kadans:</strong> Amaçlı yürüyüş sırasında ≥100 spm</li>
+          <li><strong>Hız:</strong> Alışılmış yürüme hızı ≥1,0 m/s (2,2 mph)</li>
+          <li><strong>Simetri:</strong> Sol ve sağ arasında %3'ten az asimetri</li>
+          <li><strong>Çift destek:</strong> Yürüyüş döngüsünün %20-30'u</li>
+          <li><strong>Tutarlılık:</strong> Birden fazla günde benzer metrikler</li>
+          <li><strong>Yürüyüş Kararlılığı:</strong> "Tamam" sınıflandırması</li>
+        </ul>
+
+        <h3>Dikkat Gerektiren Uyarı İşaretleri</h3>
+        <div class="warning-box">
+          <ul>
+            <li><strong>Ani asimetri artışı:</strong> Akut yaralanmayı gösterebilir</li>
+            <li><strong>Zaman içinde hız düşüşü:</strong> Fonksiyonel düşüş, özellikle yılda &gt;0,05 m/s ise</li>
+            <li><strong>Artan çift destek:</strong> Azalmış denge güveni veya kuvvet</li>
+            <li><strong>Yürüyüş Kararlılığı "Düşük" veya "Çok Düşük"e düşer:</strong> Artan düşme riski</li>
+            <li><strong>Kalıcı asimetri &gt;%10:</strong> Profesyonel değerlendirme gerektirir</li>
+            <li><strong>Hız &lt;0,8 m/s:</strong> Yüksek sağlık riski, hekime danışın</li>
+          </ul>
+        </div>
+
+        <h2 id="improving">Yürüyüşünüzü Nasıl İyileştirirsiniz</h2>
+
+        <h3>Kadans Antrenmanı</h3>
+        <p><strong>Hedef:</strong> Yürüyüşler sırasında ≥100 spm'ye ulaşmak</p>
+        <p><strong>Yöntemler:</strong></p>
+        <ul>
+          <li>100-120 BPM'ye ayarlanmış metronom uygulaması kullanın</li>
+          <li>100-120 BPM temposunda müzik eşliğinde yürüyün</li>
+          <li>"Hızlı ayaklar" matkap pratik yapın: kısa, hızlı adımlar</li>
+          <li>Adım uzunluğu değil, devir hızına odaklanın</li>
+          <li>Kadans hedefin altına düştüğünde Apple Watch uyarıları ayarlayın</li>
+        </ul>
+
+        <h3>Simetriyi İyileştirme</h3>
+        <p><strong>Egzersizler:</strong></p>
+        <ul>
+          <li><strong>Tek bacak duruşları:</strong> Bacak başına 30-60 saniye, önce gözler açık sonra kapalı</li>
+          <li><strong>Tek taraflı kuvvet:</strong> Tek bacak deadlift'ler, step-up'lar, lunge'lar</li>
+          <li><strong>Denge tahtası antrenmanı:</strong> Sallanma tahtası veya BOSU topu</li>
+          <li><strong>Ayna yürüyüşü:</strong> Farklılıkları belirlemek için yansımanızı izleyerek yürüyün</li>
+          <li><strong>Video analizi:</strong> Kendinizi önden ve arkadan yürürken çekin</li>
+        </ul>
+
+        <h3>Yürüme Hızını Güvenli Şekilde Artırma</h3>
+        <p><strong>Aşamalı yaklaşım:</strong></p>
+        <ol>
+          <li><strong>Önce kadansı artırın:</strong> Adım uzunluğuna odaklanmadan önce 110-120 spm'ye çalışın</li>
+          <li><strong>İnterval antrenmanı:</strong> 2 dakika hızlı + 2 dakika normal tempo arasında geçiş yapın</li>
+          <li><strong>Güç antrenmanı:</strong> Kalça ve ayak bileği gücü doğrudan yürüme hızını artırır</li>
+          <li><strong>Kademeli ilerleme:</strong> Hızı ayda ~0,1 m/s artırın</li>
+        </ol>
+
+        <h3>Çift Desteği Azaltma (yüksekse)</h3>
+        <p><strong>Denge egzersizleri:</strong></p>
+        <ul>
+          <li>Tandem yürüyüş (topuk-parmak)</li>
+          <li>Kol hareketleriyle tek bacak duruşları</li>
+          <li>Başlangıçta daha geniş destek tabanıyla yürüyüş deseni egzersizleri</li>
+          <li>Güç antrenmanı: kalça abduktörleri, ayak bileği dorsifleksörleri, kor</li>
+          <li>Tai Chi veya denge odaklı grup dersleri</li>
+        </ul>
+
+        <h2 id="special-populations">Özel Popülasyonlar İçin Yürüyüş Analizi</h2>
+
+        <h3>Yaşlı Yetişkinler (65+)</h3>
+        <p><strong>Öncelikli metrikler:</strong></p>
+        <ul>
+          <li><strong>Yürüme hızı:</strong> Yıllık takip edin; yılda &gt;0,05 m/s düşüş riski gösterir</li>
+          <li><strong>Çift destek:</strong> Düşme riskini gösteren artışları izleyin</li>
+          <li><strong>Yürüyüş Kararlılığı:</strong> "Düşük" veya "Çok Düşük" için bildirimleri etkinleştirin</li>
+          <li><strong>Asimetri:</strong> Gelişmekte olan nörolojik sorunları gösterebilir</li>
+        </ul>
+
+        <p><strong>Hedefler:</strong></p>
+        <ul>
+          <li>Hızı ≥1,0 m/s'de koruyun</li>
+          <li>Çift desteği %30'un altında tutun</li>
+          <li>Yürüyüş Kararlılığı "Tamam"</li>
+          <li>Asimetri %5'in altında</li>
+        </ul>
+
+        <h3>Rehabilitasyon Hastaları</h3>
+        <p><strong>İyileşme ilerlemesini takip edin:</strong></p>
+        <ul>
+          <li><strong>Simetri normalleşmesi:</strong> %3'ten az asimetriye dönme hedefi</li>
+          <li><strong>Hız iyileşmesi:</strong> Yaralanma öncesi temel değere doğru haftalık iyileştirmeleri izleyin</li>
+          <li><strong>Kadans tutarlılığı:</strong> ≥100 spm'yi sürdürme yeteneği normal aktiviteye hazır olduğunuzu gösterir</li>
+          <li><strong>Telafi kalıpları:</strong> Yeni asimetrilerin gelişimini izleyin</li>
+        </ul>
+
+        <h3>Kondisyon Yürüyücüleri ve Sporcular</h3>
+        <p><strong>Performans hedefleri:</strong></p>
+        <ul>
+          <li><strong>Kadans:</strong> Kondisyon yürüyüşü için 120-140 spm; yarış yürüyüşü için 140-180 spm</li>
+          <li><strong>Hız:</strong> Kondisyon için &gt;1,5 m/s (3,4 mph); yarışmacı için &gt;2,0 m/s (4,5 mph)</li>
+          <li><strong>Simetri:</strong> &gt;%97 (çok düşük asimetri)</li>
+          <li><strong>Çift destek:</strong> Verimlilik için %15-20'ye minimize edin</li>
+        </ul>
+
+        <h2 id="limitations">Teknoloji Doğruluğu ve Sınırlamalar</h2>
+
+        <h3>Tüketici Cihazlarının İyi Yaptıkları</h3>
+        <ul>
+          <li><strong>Adım sayımı:</strong> Araştırma pedometre cihazlarına karşı %95-99 doğruluk</li>
+          <li><strong>Kadans:</strong> ±2-3 spm hata</li>
+          <li><strong>Yürüme hızı:</strong> Klinik testlerle r=0,86-0,91 korelasyon</li>
+          <li><strong>Trend tespiti:</strong> Zaman içindeki değişiklikleri izlemede mükemmel</li>
+        </ul>
+
+        <h3>Anlaşılması Gereken Sınırlamalar</h3>
+        <ul>
+          <li><strong>Teşhis koyucu değil:</strong> Tüketici cihazları tarama araçlarıdır, tıbbi teşhis değildir</li>
+          <li><strong>Yerleşim önemlidir:</strong> iPhone cebinizde/çantanızda taşınmalıdır; Apple Watch bileğinizde</li>
+          <li><strong>İç mekan vs dış mekan:</strong> GPS doğruluğu dış mekan ölçümlerini etkiler</li>
+          <li><strong>Bireysel varyasyon:</strong> "Normal" aralıklar popülasyon ortalamasıdır</li>
+          <li><strong>Klinik yürüyüş laboratuvarlarının yerini alamaz:</strong> Ayrıntılı 3D kinematik, kuvvet plakaları, EMG için gereklidir</li>
+        </ul>
+
+        <h3>Ne Zaman Profesyonel Yürüyüş Analizine Başvurulmalı</h3>
+        <ul>
+          <li>Kalıcı asimetri &gt;%10</li>
+          <li>Bilinen bir neden olmaksızın yürüme hızı &lt;0,8 m/s</li>
+          <li>Sık düşmeler veya neredeyse düşmeler</li>
+          <li>Yürüme sırasında veya sonrasında kronik ağrı</li>
+          <li>Yürüyüş metriklerinde ani değişiklikler</li>
+          <li>Nörolojik semptomlar (uyuşma, karıncalanma, koordinasyon sorunları)</li>
+        </ul>
+
+        <h2 id="next-steps">Sonraki Adımlar</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Yürüyüş Bölgeleri</h3>
+            <p>Sağlık ve kondisyon için optimal yoğunluk bölgelerinde antrenman yapmak üzere kadansı nasıl kullanacağınızı öğrenin.</p>
+            <a href="/tr/walking-zones/" class="btn btn-secondary">Bölgeler Hakkında Bilgi Alın →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Adım Mekaniği</h3>
+            <p>Yürüyüş biyomekaniği, duruş, kol salınımı ve ayak vuruş desenlerine derinlemesine dalın.</p>
+            <a href="/tr/stride-mechanics/" class="btn btn-secondary">Mekaniği Keşfedin →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Bilimsel Araştırma</h3>
+            <p>Yürüyüş analizini ve yürüyüş metriklerini destekleyen bilimsel kanıtları gözden geçirin.</p>
+            <a href="/tr/research/" class="btn btn-secondary">Araştırmayı Görüntüle →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Tam Kaynakça</h3>
+            <p>Yayınlara doğrudan bağlantılarla hakemli referanslara erişin.</p>
+            <a href="/tr/bibliography/" class="btn btn-secondary">Kaynakçayı Görüntüle →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>İçindekiler</h3>
+          <ul>
+            <li><a href="#what-is-gait">Yürüyüş Analizi Nedir?</a></li>
+            <li><a href="#key-metrics">Temel Metrikler</a>
+              <ul>
+                <li><a href="#cadence">Kadans</a></li>
+                <li><a href="#stride-length">Adım Uzunluğu</a></li>
+                <li><a href="#ground-contact">Yer Teması</a></li>
+                <li><a href="#double-support">Çift Destek</a></li>
+                <li><a href="#asymmetry">Asimetri</a></li>
+                <li><a href="#walking-speed">Yürüme Hızı</a></li>
+                <li><a href="#vertical-oscillation">Dikey Salınım</a></li>
+              </ul>
+            </li>
+            <li><a href="#apple-metrics">Apple HealthKit Metrikleri</a></li>
+            <li><a href="#interpreting">Analizi Yorumlama</a></li>
+            <li><a href="#improving">Yürüyüşünüzü İyileştirme</a></li>
+            <li><a href="#special-populations">Özel Popülasyonlar</a></li>
+            <li><a href="#limitations">Doğruluk ve Sınırlamalar</a></li>
+            <li><a href="#next-steps">Sonraki Adımlar</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Yürüyüşünüzü Analiz Edin</h3>
+          <p>WalkAnalytics kullanarak bilim temelli metriklerle yürüyüş mekaniğinizi takip edin.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Uygulamayı İndir</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📊 Önemli Çıkarım</h4>
+          <p>Birincil hedefleriniz olarak <strong>kadans ≥100 spm</strong> ve <strong>hız ≥1,0 m/s</strong>'ye odaklanın. Bu iki metrik, sağlık sonuçlarının en güçlü belirleyicileridir.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Ana Sayfa</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Tüm hakları saklıdır
+            </p>
+            <ul class="footer-links">
+                <li><a href="/tr/privacy/">Gizlilik</a></li>
+                <li><a href="/tr/terms/">Koşullar</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Bu web sitesi deneyiminizi iyileştirmek için çerezler kullanır.</p>
+            <a href="/tr/privacy/" class="text-sm">Daha fazla bilgi</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Reddet</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Kabul Et</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

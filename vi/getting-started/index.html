@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Bắt đầu với WalkAnalytics - Hướng dẫn thiết lập | Tutorial phân tích dáng đi</title>
+    <meta name="description" content="Hướng dẫn WalkAnalytics đầy đủ cho người mới. Tutorial phân tích dáng đi, thiết lập theo dõi đi bộ, giải thích WSS. Hướng dẫn từng bước + 7 ngày dùng thử.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="hướng dẫn WalkAnalytics, tutorial phân tích dáng đi, tutorial ứng dụng đi bộ, cách sử dụng WalkAnalytics, hướng dẫn phân tích đi bộ">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/vi/getting-started/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-16T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/vi/getting-started/">
+    <meta property="og:title" content="Bắt đầu với WalkAnalytics - Hướng dẫn thiết lập | Tutorial phân tích dáng đi">
+    <meta property="og:description" content="Hướng dẫn WalkAnalytics đầy đủ cho người mới. Tutorial phân tích dáng đi, thiết lập theo dõi đi bộ, giải thích WSS. Hướng dẫn từng bước + 7 ngày dùng thử.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/vi/getting-started/">
+    <meta name="twitter:title" content="Bắt đầu với WalkAnalytics - Hướng dẫn thiết lập | Tutorial phân tích dáng đi">
+    <meta name="twitter:description" content="Hướng dẫn WalkAnalytics đầy đủ cho người mới. Tutorial phân tích dáng đi, thiết lập theo dõi đi bộ, giải thích WSS. Hướng dẫn từng bước + 7 ngày dùng thử.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/getting-started/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/getting-started/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/getting-started/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/getting-started/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/getting-started/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/getting-started/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/getting-started/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/getting-started/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/getting-started/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/getting-started/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/getting-started/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/getting-started/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/getting-started/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/getting-started/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/getting-started/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/getting-started/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/getting-started/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/getting-started/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/getting-started/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/vi/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Trang chủ
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Học tập
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Khoa học
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Dành cho bạn
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Công cụ
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/contact/"
+                           
+                           aria-current="">
+                            Liên hệ
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Chọn ngôn ngữ">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" selected>
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Chuyển đổi menu" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Getting Started with WalkAnalytics -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/vi/">Trang Chủ</a> / <a href="/vi/#learn">Tìm Hiểu</a> / Bắt Đầu
+    </div>
+    <h1>Bắt Đầu với WalkAnalytics</h1>
+    <p class="lead">Hướng dẫn đầy đủ để thiết lập WalkAnalytics và hiểu hành trình phân tích đi bộ của bạn</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="quick-start">Hướng Dẫn Nhanh</h2>
+        <p>Chào mừng bạn đến với WalkAnalytics! Hướng dẫn này sẽ giúp bạn bắt đầu với phân tích dáng đi tiên tiến và theo dõi hiệu suất đi bộ chỉ trong vài phút.</p>
+
+        <h3>Bước 1: Tải và Cài Đặt</h3>
+        <ol>
+          <li>Tải WalkAnalytics từ <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener">App Store</a></li>
+          <li>Mở ứng dụng trên iPhone hoặc iPad của bạn</li>
+          <li>Cấp quyền truy cập Apple Health khi được yêu cầu</li>
+          <li>Bắt đầu dùng thử miễn phí 7 ngày (không cần thẻ tín dụng)</li>
+        </ol>
+
+        <h3>Bước 2: Kết Nối Apple Health</h3>
+        <p>WalkAnalytics phân tích các bài tập đi bộ của bạn từ Apple Health:</p>
+        <ul>
+          <li><strong>Nhập Tự Động:</strong> Các bài tập đi bộ hiện có của bạn được nhập tự động</li>
+          <li><strong>Đồng Bộ Thời Gian Thực:</strong> Các bài đi bộ mới từ Apple Watch hoặc iPhone được phân tích ngay lập tức</li>
+          <li><strong>Ưu Tiên Quyền Riêng Tư:</strong> Tất cả dữ liệu được lưu trên thiết bị của bạn - không tải lên đám mây</li>
+        </ul>
+
+        <h3>Bước 3: Hiểu Bảng Điều Khiển Của Bạn</h3>
+        <p>Bảng điều khiển chính hiển thị các chỉ số đi bộ chính của bạn:</p>
+        <ul>
+          <li><strong>Bài Đi Bộ Gần Đây:</strong> Các bài tập đi bộ mới nhất của bạn với thống kê chính</li>
+          <li><strong>Tóm Tắt Hàng Tuần:</strong> Tổng quãng đường, thời gian và Chỉ Số Căng Thẳng Đi Bộ (WSS)</li>
+          <li><strong>Chỉ Số Dáng Đi:</strong> Đối xứng bước, nhịp bước và điểm hiệu quả</li>
+          <li><strong>Vùng Tập Luyện:</strong> Thời gian ở mỗi vùng nhịp tim</li>
+        </ul>
+
+        <h2 id="key-concepts">Các Khái Niệm Chính</h2>
+
+        <h3>Phân Tích Dáng Đi</h3>
+        <p>Phân tích dáng đi xem xét cách bạn đi bộ. WalkAnalytics theo dõi:</p>
+        <ul>
+          <li><strong>Chiều Dài Bước:</strong> Quãng đường mỗi bước đi</li>
+          <li><strong>Nhịp Bước:</strong> Số bước mỗi phút</li>
+          <li><strong>Đối Xứng Bước:</strong> Sự cân bằng giữa chân trái và chân phải</li>
+          <li><strong>Thời Gian Chạm Đất:</strong> Thời gian bàn chân của bạn chạm đất</li>
+          <li><strong>Thời Gian Hỗ Trợ Kép:</strong> Khi cả hai bàn chân đều chạm đất cùng lúc</li>
+        </ul>
+        <p>Tìm hiểu thêm về <a href="/vi/gait-analysis/">các nguyên tắc cơ bản của phân tích dáng đi</a>.</p>
+
+        <h3>Các Vùng Đi Bộ</h3>
+        <p>Tập luyện ở các vùng cường độ khác nhau mang lại những lợi ích sức khỏe cụ thể:</p>
+        <ul>
+          <li><strong>Vùng 1 (Phục Hồi):</strong> Đi bộ rất nhẹ nhàng để phục hồi</li>
+          <li><strong>Vùng 2 (Đốt Cháy Mỡ):</strong> Tối ưu cho việc đốt cháy mỡ và nền tảng aerobic</li>
+          <li><strong>Vùng 3 (Aerobic):</strong> Cải thiện thể lực tim mạch</li>
+          <li><strong>Vùng 4 (Ngưỡng):</strong> Năng lực aerobic cường độ cao</li>
+          <li><strong>Vùng 5 (Đỉnh Cao):</strong> Nỗ lực tối đa trong thời gian ngắn</li>
+        </ul>
+        <p>Khám phá <a href="/vi/walking-zones/">hướng dẫn đầy đủ về các vùng đi bộ</a>.</p>
+
+        <h3>Chỉ Số Căng Thẳng Đi Bộ (WSS)</h3>
+        <p>WSS định lượng mức độ căng thẳng sinh lý của mỗi bài đi bộ:</p>
+        <ul>
+          <li>Dựa trên cường độ nhịp tim và thời gian</li>
+          <li>Giúp cân bằng tải lượng tập luyện với sự phục hồi</li>
+          <li>Ngăn ngừa tập luyện quá mức và tối ưu hóa tiến bộ</li>
+          <li>Theo dõi xu hướng hàng tuần và hàng tháng</li>
+        </ul>
+        <p>Tính WSS của bạn với <a href="/vi/wss-calculator/">công cụ tính WSS</a> của chúng tôi.</p>
+
+        <h2 id="first-walk">Ghi Lại Bài Đi Bộ Đầu Tiên Của Bạn</h2>
+
+        <h3>Sử Dụng Apple Watch</h3>
+        <ol>
+          <li>Bắt đầu bài tập "Walking" trên Apple Watch của bạn</li>
+          <li>Đi bộ tự nhiên - không cần thay đổi tư thế</li>
+          <li>Kết thúc bài tập khi hoàn thành</li>
+          <li>WalkAnalytics tự động nhập và phân tích</li>
+        </ol>
+
+        <h3>Chỉ Sử Dụng iPhone</h3>
+        <ol>
+          <li>Bật "Fitness Tracking" trong Cài Đặt iPhone</li>
+          <li>Mang iPhone khi đi bộ</li>
+          <li>Hoạt động đi bộ được ghi lại tự động</li>
+          <li>Xem lại trong WalkAnalytics để phân tích</li>
+        </ol>
+
+        <h2 id="interpreting-metrics">Diễn Giải Các Chỉ Số Của Bạn</h2>
+
+        <h3>Dấu Hiệu Tốt vs. Đáng Quan Ngại</h3>
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Chỉ Số</th>
+              <th>Phạm Vi Tốt</th>
+              <th>Ý Nghĩa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Đối Xứng Bước</td>
+              <td>&gt; 95%</td>
+              <td>Dáng đi cân bằng, nguy cơ chấn thương thấp</td>
+            </tr>
+            <tr>
+              <td>Nhịp Bước</td>
+              <td>100-130 bước/phút</td>
+              <td>Tốc độ đi bộ hiệu quả</td>
+            </tr>
+            <tr>
+              <td>WSS Hàng Tuần</td>
+              <td>200-500</td>
+              <td>Tải lượng tập luyện lành mạnh</td>
+            </tr>
+            <tr>
+              <td>Thời Gian Vùng 2</td>
+              <td>60-80% tổng số</td>
+              <td>Nền tảng aerobic vững chắc</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="tips">Mẹo Chuyên Nghiệp Để Thành Công</h2>
+
+        <h3>1. Bắt Đầu với Đánh Giá Cơ Bản</h3>
+        <p>Ghi lại 2-3 bài đi bộ bình thường trước để thiết lập các chỉ số cơ bản của bạn trước khi thay đổi.</p>
+
+        <h3>2. Tập Trung vào Đi Bộ Vùng 2</h3>
+        <p>Dành 60-80% thời gian đi bộ của bạn ở Vùng 2 để có lợi ích sức khỏe tối ưu và đốt cháy mỡ.</p>
+
+        <h3>3. Theo Dõi Đối Xứng Dáng Đi</h3>
+        <p>Nếu đối xứng giảm xuống dưới 90%, hãy xem xét điều chỉnh tư thế hoặc tham khảo ý kiến chuyên gia để ngăn ngừa chấn thương.</p>
+
+        <h3>4. Xây Dựng Dần Dần</h3>
+        <p>Tăng WSS hàng tuần không quá 10% mỗi tuần để tránh tập luyện quá mức.</p>
+
+        <h3>5. Tính Nhất Quán Hơn Cường Độ</h3>
+        <p>Đi bộ vừa phải đều đặn tốt hơn đi bộ cường độ cao thỉnh thoảng cho sức khỏe lâu dài.</p>
+
+        <h2 id="troubleshooting">Khắc Phục Sự Cố</h2>
+
+        <h3>Chỉ Số Không Hiển Thị</h3>
+        <ul>
+          <li>Đảm bảo quyền truy cập Apple Health đã được cấp</li>
+          <li>Kiểm tra xem các bài tập có được gắn nhãn đúng là "Walking" trong ứng dụng Health không</li>
+          <li>Đối với các vùng nhịp tim, xác minh dữ liệu nhịp tim đang được ghi lại</li>
+        </ul>
+
+        <h3>Chỉ Số Bước Không Chính Xác</h3>
+        <ul>
+          <li>Hiệu chỉnh Apple Watch bằng cách đi bộ trên các tuyến đường ngoài trời có GPS chính xác</li>
+          <li>Đảm bảo đồng hồ vừa vặn (chặt nhưng thoải mái)</li>
+          <li>Đi bộ với cánh tay vung tự nhiên để phát hiện chuyển động tốt hơn</li>
+        </ul>
+
+        <h2 id="next-steps">Các Bước Tiếp Theo</h2>
+        <ul>
+          <li>Tìm hiểu về <a href="/vi/walking-zones/">các vùng tập luyện</a> để có cường độ tối ưu</li>
+          <li>Hiểu rõ về <a href="/vi/gait-analysis/">các chỉ số phân tích dáng đi</a></li>
+          <li>Tính <a href="/vi/wss-calculator/">Chỉ Số Căng Thẳng Đi Bộ</a> của bạn</li>
+          <li>Khám phá <a href="/vi/research/">khoa học đằng sau phân tích đi bộ</a></li>
+        </ul>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Mục Lục</h3>
+          <ul>
+            <li><a href="#quick-start">Hướng Dẫn Nhanh</a></li>
+            <li><a href="#key-concepts">Các Khái Niệm Chính</a></li>
+            <li><a href="#first-walk">Ghi Lại Bài Đi Bộ Đầu Tiên Của Bạn</a></li>
+            <li><a href="#interpreting-metrics">Diễn Giải Các Chỉ Số Của Bạn</a></li>
+            <li><a href="#tips">Mẹo Chuyên Nghiệp Để Thành Công</a></li>
+            <li><a href="#troubleshooting">Khắc Phục Sự Cố</a></li>
+            <li><a href="#next-steps">Các Bước Tiếp Theo</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Bắt Đầu Hành Trình Của Bạn</h3>
+          <p>Tải WalkAnalytics và bắt đầu theo dõi dáng đi của bạn ngay hôm nay.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Tải Ứng Dụng</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Trang chủ</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Bảo lưu mọi quyền
+            </p>
+            <ul class="footer-links">
+                <li><a href="/vi/privacy/">Quyền riêng tư</a></li>
+                <li><a href="/vi/terms/">Điều khoản</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Trang web này sử dụng cookie để cải thiện trải nghiệm của bạn.</p>
+            <a href="/vi/privacy/" class="text-sm">Tìm hiểu thêm</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Từ chối</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Chấp nhận</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

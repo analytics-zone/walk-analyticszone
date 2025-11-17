@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Gizlilik Odaklı Yürüyüş Analizi - Yürüyüş Analizi, WSS, iOS Sağlık Metrikleri</title>
+    <meta name="description" content="Gelişmiş yürüyüş analizi ile gizlilik odaklı iOS uygulaması. Adım metriklerini, yürüyüş bölgelerini, WSS&#39;yi yerel olarak takip edin. Bilime dayalı içgörüler. 7 gün ücretsiz deneme.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="yürüyüş analizi uygulaması, yürüyüş analizi uygulaması, gizlilik odaklı iOS uygulaması, yürüyüş sağlık metrikleri, adım analizi">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/tr/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-16T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://walk.analyticszone.app/tr/">
+    <meta property="og:title" content="Gizlilik Odaklı Yürüyüş Analizi - Yürüyüş Analizi, WSS, iOS Sağlık Metrikleri">
+    <meta property="og:description" content="Gelişmiş yürüyüş analizi ile gizlilik odaklı iOS uygulaması. Adım metriklerini, yürüyüş bölgelerini, WSS&#39;yi yerel olarak takip edin. Bilime dayalı içgörüler. 7 gün ücretsiz deneme.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/tr/">
+    <meta name="twitter:title" content="Gizlilik Odaklı Yürüyüş Analizi - Yürüyüş Analizi, WSS, iOS Sağlık Metrikleri">
+    <meta name="twitter:description" content="Gelişmiş yürüyüş analizi ile gizlilik odaklı iOS uygulaması. Adım metriklerini, yürüyüş bölgelerini, WSS&#39;yi yerel olarak takip edin. Bilime dayalı içgörüler. 7 gün ücretsiz deneme.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+      "url": "https://walk.analyticszone.app",
+      "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+      "description": "Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+      "author": "Albert Arno",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "analyticszone@onmedic.org"
+      },
+      "sameAs": [
+        "https://twitter.com/runanalytics",
+        "https://apps.apple.com/app/runanalytics/id6737283749"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RunAnalytics",
+      "description": "Scientific running analytics app with Critical Run Speed (CRS), Training Stress Score (TSS), and CTL/ATL/TSB metrics. Privacy-first app processes all data locally on iPhone.",
+      "url": "https://walk.analyticszone.app",
+      "applicationCategory": ["HealthApplication", "FitnessApplication"],
+      "operatingSystem": "iOS",
+      "softwareVersion": "Latest",
+      "author": {
+        "@type": "Organization",
+        "name": "Albert Arno"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Trial",
+          "description": "7-day free trial of RunAnalytics premium features",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "category": "Trial Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription",
+          "description": "Monthly access to all RunAnalytics premium features",
+          "price": "3.99",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1M",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Subscription",
+          "description": "Annual access to all RunAnalytics premium features at 18% discount",
+          "price": "39",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/app/walkanalytics/id0000000000",
+      "featureList": [
+        "Critical Run Speed (CRS) calculation",
+        "Training Stress Score (TSS) tracking",
+        "CTL (Chronic Training Load) metrics",
+        "ATL (Acute Training Load) metrics",
+        "TSB (Training Stress Balance) indicators",
+        "7 personalized training zones",
+        "Kilometer-by-kilometer analysis",
+        "Weekly, monthly, and yearly comparisons",
+        "Running efficiency tracking",
+        "Personal records (PR) detection",
+        "Apple Health app integration",
+        "Export in JSON, CSV, HTML, PDF formats",
+        "100% local data processing",
+        "Privacy-first architecture",
+        "Native SwiftUI interface"
+      ],
+      "screenshot": [
+        "https://walk.analyticszone.app/assets/images/screenshots/workouts-list.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/workout-detail.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/analytics.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/performance.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/training-zones.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/export-options.png"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RunAnalytics",
+      "description": "Professional running analytics app with science-based metrics, personalized training zones, and privacy-first data processing",
+      "url": "https://walk.analyticszone.app",
+      "image": "https://walk.analyticszone.app/assets/images/logo.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "RunAnalytics"
+      },
+      "category": "Fitness & Health Software",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "0",
+        "highPrice": "39",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "7-Day Free Trial",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Plan",
+            "price": "3.99",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1M",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Annual Plan",
+            "price": "39",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1Y",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          }
+        ]
+      }
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does RunAnalytics get my running data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RunAnalytics syncs with Apple Health to import running workouts recorded by any compatible device or app. This includes smart watches, fitness trackers, and manual entries. The app processes this data locally to calculate advanced metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the CRS test and how do I perform it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CRS (Critical Run Speed) is a scientific protocol using 2 maximum effort runs: 5K and 3K with 10-20 minutes rest between. The app calculates your aerobic threshold from these times and automatically adjusts all training zones. Repeat every 6-8 weeks to track progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data uploaded to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RunAnalytics processes all data locally on your iPhone. There are no external servers, no cloud accounts, no data transfers. You control exports: generate JSON, CSV, HTML, or PDF files and share them however you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use RunAnalytics for trail running?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. RunAnalytics works with any running workout in Apple Health, including trail running. The app adapts to available metrics whether you're on a track or trail, providing relevant analysis for each environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between monthly and annual plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both plans offer identical features: all metrics, unlimited zones, temporal comparisons, multiple exports, and free updates. The only difference is price: annual saves 18% (equivalent to €3.25/month vs €3.99/month)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my subscription anytime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Subscriptions are managed through the App Store, so you can cancel anytime from Settings → [Your Name] → Subscriptions. If you cancel, you'll maintain access until the end of your current billing period."
+          }
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://walk.analyticszone.app/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Running Analytics",
+          "item": "https://walk.analyticszone.app/tr/#features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pricing",
+          "item": "https://walk.analyticszone.app/tr/#pricing"
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Gizlilik Odaklı Yürüyüş Analizi - Yürüyüş Analizi, WSS, iOS Sağlık Metrikleri",
+      "description": "Gelişmiş yürüyüş analizi ile gizlilik odaklı iOS uygulaması. Adım metriklerini, yürüyüş bölgelerini, WSS&#39;yi yerel olarak takip edin. Bilime dayalı içgörüler. 7 gün ücretsiz deneme.",
+      "url": "https://walk.analyticszone.app/tr/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+        "url": "https://walk.analyticszone.app"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "RunAnalytics"
+      }
+    }
+    </script>
+
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">İçeriğe atla</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/tr/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Ana Sayfa
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Öğren
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Bilim
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Senin İçin
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/"
+                           
+                           aria-current="">
+                            Araçlar
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/contact/"
+                           
+                           aria-current="">
+                            İletişim
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Dil seçin">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="tr" selected>
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WalkAnalytics Uygulaması Açılış Sayfası - Ana Sayfa -->
+
+<!-- Uygulama Tanıtımı ile Hero Bölümü -->
+<section class="app-hero">
+  <div class="container">
+    <div class="app-hero-content">
+      <div class="app-hero-text">
+        <div class="app-hero-badge">
+          <span>🚶</span>
+          <span>Bilimsel Temelli Yürüyüş Analitiği</span>
+        </div>
+        <h1>Daha Akıllı Yürü, Daha Sağlıklı Yaşa</h1>
+        <p class="app-hero-subtitle">
+          Araştırma destekli yürüyüş analizi, kadans temelli antrenman bölgeleri ve kapsamlı sağlık takibi sunan, gizlilik öncelikli iOS uygulaması.
+          CADENCE-Adults, Peak-30 araştırması ve biyomekanik bilimi dahil hakemli çalışmalarla desteklenmektedir.
+        </p>
+        <div class="app-hero-cta">
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+            App Store'dan İndir
+          </a>
+          <a href="#science" class="btn btn-large btn-secondary">
+            Bilimi Keşfedin
+          </a>
+        </div>
+        <p class="mt-6 text-sm-muted">
+          ✓ 7 günlük ücretsiz deneme &nbsp;&nbsp; ✓ Hesap gerekmez &nbsp;&nbsp; ✓ %100 yerel veri
+        </p>
+      </div>
+      <div class="app-hero-mockup">
+        <div class="mockup-phone">
+          <img src="/assets/images/screenshots/workouts-list.png" alt="iPhone'da yürüyüş egzersizlerini yürüyüş metrikleri ve sağlık verileriyle gösteren WalkAnalytics iOS uygulaması" width="400" height="auto" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bilimsel Temel Bölümü - YENİ -->
+<section id="science" class="scientific-foundation">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Araştırma Destekli</div>
+      <h2 class="section-title">Bilimsel Kanıtlar Üzerine Kurulu</h2>
+      <p class="section-subtitle">Her metrik ve öneri, hakemli araştırmalarla desteklenir</p>
+    </div>
+    <div class="science-highlights">
+      <div class="science-card">
+        <div class="science-number">78,500</div>
+        <h3>Peak-30 Kadans Araştırması</h3>
+        <p>30 dakika boyunca ≥100 adım/dk kadansın bağımsız olarak %40-50 daha düşük ölüm riski öngördüğünü gösteren UK Biobank çalışmasına dayanır (Del Pozo-Cruz ve ark., JAMA 2022)</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">100 adım/dk</div>
+        <h3>Orta Yoğunluk Eşiği</h3>
+        <p>CADENCE-Adults çalışması (Tudor-Locke ve ark., 2019) 100 adım/dakika = 3 MET eşitliğini %86 duyarlılık, %89,6 özgüllük ile belirledi—kadans bölgelerimizin temeli</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">2-4×</div>
+        <h3>ACWR Sakatlık Önleme</h3>
+        <p>Akut:Kronik Yük Oranı >1.50 sakatlık riskini 2-4 kat artırır (Gabbett, Br J Sports Med 2016)—güvenliğiniz için bunu otomatik olarak takip ediyoruz</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">11</div>
+        <h3>Doğrulanmış Formüller</h3>
+        <p>Moore'un kadans→MET denkleminden Taşıma Maliyeti hesaplamalarına kadar, <a href="/tr/formulas/">her formül</a> doğrulama verisi ve klinik yorumlama içerir</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/tr/bibliography/" class="btn btn-secondary">50+ Bilimsel Kaynağı Görüntüle →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Ana Özellikler Bölümü -->
+<section id="features" class="app-features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Özellikler</div>
+      <h2 class="section-title">İleri Düzey Yürüyüş Performans Metrikleri</h2>
+      <p class="section-subtitle">Her seviyedeki yürüyüşçü için tasarlanmış profesyonel düzey analiz</p>
+    </div>
+    <div class="app-features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-zones"></use>
+          </svg>
+        </div>
+        <h3>Kadans Temelli Antrenman Bölgeleri</h3>
+        <p>CADENCE-Adults çalışmasına dayanan <a href="/tr/walking-zones/">5 araştırma destekli bölge</a> (60-99 adım/dk'dan 130+ adım/dk'ya) ile antrenman yapın. Kalp atış hızı bölgelerinden daha pratik—göğüs kemeri gerekmez. Günlük Peak-30 kadansını takip edin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-chart"></use>
+          </svg>
+        </div>
+        <h3>Kapsamlı Yürüyüş Analizi</h3>
+        <p><a href="/tr/gait-analysis/">7 temel yürüyüş metriği</a> takip edin: kadans, adım uzunluğu (boy uzunluğunun %40-50'si), zemin temas süresi (200-300ms), çift destek (%20-30), asimetri (GSI formülü), hız ve dikey salınım (4-8cm).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-load"></use>
+          </svg>
+        </div>
+        <h3>Antrenman Yükü Yönetimi</h3>
+        <p><a href="/tr/training-load/">Yürüyüş Stres Skoru (WSS)</a> ve ACWR takibi ile aşırı antrenmandan kaçının. Akut:kronik oranını izleyin (0,80-1,30 arasında tutun) ve yükünüze göre kişiselleştirilmiş toparlanma önerileri alın.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-stride"></use>
+          </svg>
+        </div>
+        <h3>Biyomekanik ve Verimlilik</h3>
+        <p>Derinlemesine <a href="/tr/stride-mechanics/">adım mekaniği analizi</a> ve <a href="/tr/gait-efficiency/">yürüyüş ekonomisi</a> takibi. Taşıma Maliyetini optimize edin (~0,48-0,55 kcal/kg/km, 1,3 m/s hızda), yürüyüş sapmalarını tespit edin, verimliliği %10-15 artırın.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-health"></use>
+          </svg>
+        </div>
+        <h3>Sağlık Entegrasyonu</h3>
+        <p>Sorunsuz Apple Health entegrasyonu. Yürüyüş egzersizlerini otomatik olarak içe aktarın ve kalp hızı, mesafe, adımlar ve sağlık metriklerini senkronize edin. Apple Watch mobilite metrikleriyle uyumlu (Yürüyüş Dengesi, Çift Destek %, Asimetri).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-privacy"></use>
+          </svg>
+        </div>
+        <h3>Tam Gizlilik</h3>
+        <p>Tüm yürüyüş verileriniz iPhone'unuzda kalır. Bulut senkronizasyonu yok, hesap yok, takip yok. Sağlık metrikleriniz yerel işleme ile %100 özel ve güvenlidir. GDPR ve HIPAA felsefesiyle uyumludur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bilimsel Farklılaştırıcılar Bölümü - YENİ -->
+<section class="differentiators">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Neden WalkAnalytics</div>
+      <h2 class="section-title">Bilim Üzerine Kurulu Tek Yürüyüş Uygulaması</h2>
+      <p class="section-subtitle">Sadece adım sayımı değil—biyomekanik araştırmasıyla desteklenen kapsamlı analitik</p>
+    </div>
+    <div class="differentiator-list">
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>Kalp Hızı Yerine Kadans</h3>
+          <p><strong>Neden önemli:</strong> Kalp hızı sıcaklık, stres, kafein, hastalıkla değişir. Kadans güvenilir, pratik ve kanıtlanmıştır. CADENCE-Adults çalışması 100 adım/dk = orta yoğunluk eşitliğini %86 duyarlılıkla gösterdi—kalp hızı tahmininden daha doğru.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>Peak-30 Kadans Takibi</h3>
+          <p><strong>Çığır açan metrik:</strong> Günlük en iyi 30 dakikalık ardışık yürüyüşünüz kardiyovasküler sağlığı ve ölüm oranını bağımsız olarak öngörür (78.500 UK Biobank katılımcısı). Bunu günlük takip ediyoruz—başka hiçbir yürüyüş uygulaması yapmaz.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>ACWR ile Sakatlık Önleme</h3>
+          <p><strong>Yürüyüş için uyarlanmış spor bilimi:</strong> Aşırı kullanım sakatlıklarını önlemek için Akut:Kronik Yük Oranınızı izleyin. Araştırmalar ACWR >1,50'nin 2-4 kat sakatlık riski getirdiğini gösteriyor. Tehlikeli artışlar olmadan sizi uyarıyoruz.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>Yürüyüş Ekonomisi Optimizasyonu</h3>
+          <p><strong>Enerji verimliliği:</strong> Taşıma Maliyeti ve yürüyüş verimliliğini (WEI, WALK Skoru) takip edin. Bölge 2 antrenmanı, adım optimizasyonu ve kuvvet çalışmasıyla ekonomiyi %10-15 artırın—spesifik rehberlikle.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>Yürüyüş Simetrisi ve Düşme Riski</h3>
+          <p><strong>Klinik düzey metrikler:</strong> Asimetriyi tespit etmek için Yürüyüş Simetri İndeksi'ni (GSI) hesaplayın. %35'ten fazla çift destek ve 0,8 m/s'den düşük yürüyüş hızı yüksek düşme riski gösterir—yaşlı yetişkinler ve rehabilitasyon için kritik.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>50+ Hakemli Alıntı</h3>
+          <p><strong>Kanıta dayalı rehberlik:</strong> Her öneri <a href="/tr/bibliography/">yayınlanmış araştırmalara</a> bağlanır. Tudor-Locke'un kadans eşiklerinden Studenski'nin yürüyüş hızı vital bulgusu—bilimde şeffaflık.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nasıl Çalışır Bölümü -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Nasıl Çalışır</div>
+      <h2 class="section-title">3 Adımda Daha Akıllı Yürümeye Başlayın</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Apple Health'i Bağlayın</h3>
+        <p>Yürüyüş egzersizlerinizi Apple Health'ten otomatik olarak içe aktarın. WalkAnalytics temel metrikleri oluşturmak ve kronik antrenman yükünüzü (28 günlük ortalama) hesaplamak için geçmiş verilerinizi analiz eder.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Kanıta Dayalı İçgörüler Alın</h3>
+        <p>Peak-30 kadans, yürüyüş metrikleri, yürüyüş ekonomisi (Taşıma Maliyeti) ve ACWR dahil kapsamlı analiz alın. Araştırma destekli eşiklerle desenlerinizi anlayın.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Bilimsel Antrenman Yapın</h3>
+        <p>Kadans bölgeleri, antrenman yükü ilerlemesi (haftalık %5-10) ve toparlanma için kişiselleştirilmiş önerileri takip edin. Zaman içinde verimlilik, hız ve sağlık sonuçlarındaki iyileşmeleri izleyin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kimler İçin Bölümü -->
+<section class="target-audience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Kimler İçin</div>
+      <h2 class="section-title">Her Yürüyüşçü İçin Mükemmel</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <h3>Sağlık Meraklıları</h3>
+        <p>Haftalık 150 dakika orta aktivite (100+ adım/dk) kılavuzuna ulaşın. Kardiyovasküler sağlık için Peak-30 kadansını takip edin. WHO/CDC önerilerini hassasiyetle karşılayın—sadece adım saymaktan fazlası.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Fitness Yürüyüşçüleri</h3>
+        <p>Kadans bölgeleriyle antrenman yapın (aerobik temel için Bölge 2'de 100-110 adım/dk, intervaller 120-130 adım/dk'da). Sistematik antrenmanla yürüyüş ekonomisini %10-15 artırın. Yükü optimize etmek için WSS'yi takip edin.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Yarış Yürüyüşçüleri</h3>
+        <p><a href="/tr/stride-mechanics/#race-walking">Yarış yürüyüşü tekniğinde</a> ustalaşın (130-160 adım/dk, düz bacak, abartılı kalça rotasyonu). Biyomekaniği takip edin, antrenman yükünü izleyin, ACWR ile aşırı antrenmandan kaçının.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Yaşlı Yetişkinler (65+)</h3>
+        <p><a href="/tr/gait-analysis/#gait-speed">Yürüyüş hızını vital bulgu olarak</a> izleyin (>1,0 m/s'yi koruyun). Çift destek yüzdesini (<%35 = iyi denge), asimetriyi ve düşme riski göstergelerini takip edin. Mobilite düşüşünün erken tespiti.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Rehabilitasyon Hastaları</h3>
+        <p>GSI formülü (asimetri <%5 = iyi), adım uzunluğu iyileşmesi ve yürüyüş hızı ilerlemesiyle yürüyüş iyileşmelerini objektif olarak takip edin. Sağlık hizmeti sağlayıcılarınız için sonuçları belgeleyin.</p>
+      </div>
+      <div class="audience-card">
+        <h3>Kilo Kaybı ve Sağlık</h3>
+        <p>Bölge antrenmanıyla kalori yakımını optimize edin. Moore'un kadans→MET denklemiyle enerji harcamasını doğru hesaplayın. Kademeli yük ilerlemesiyle sürdürülebilir egzersiz alışkanlıkları oluşturun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Öğrenme Kaynakları Bölümü - YENİ -->
+<section class="learning-resources">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Öğrenin</div>
+      <h2 class="section-title">Derinlemesine Bilimsel Bilgi</h2>
+      <p class="section-subtitle">Her metriğin arkasındaki bilimi açıklayan kapsamlı rehberler</p>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="resource-category">Temel Bilgiler</div>
+        <h3><a href="/tr/walking-zones/">Kadans Temelli Antrenman Bölgeleri</a></h3>
+        <p>Kalp hızından kadansa tam paradigma değişimi. 5 bölgeyi (60-99'dan 130+ adım/dk'ya), CADENCE-Adults araştırmasını, Peak-30 konseptini ve IWT protokollerini öğrenin.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">Biyomekanik</div>
+        <h3><a href="/tr/stride-mechanics/">Yürüyüş Adım Mekaniği</a></h3>
+        <p>Yürüyüş döngüsü evreleri, yarış yürüyüşü tekniği (World Athletics kuralları), yürüyüş vs koşu farkları. Asimetri için GSI formülü, zemin reaksiyon kuvvetleri.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">Performans</div>
+        <h3><a href="/tr/gait-efficiency/">Yürüyüş Ekonomisi ve CoT</a></h3>
+        <p>Taşıma Maliyeti optimizasyonu, ters sarkaç modeli (%65-70 enerji geri kazanımı), Froude sayısı, U-şekilli ekonomi eğrisi, 2,2 m/s'de yürüyüş-koşu geçişi.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">Antrenman</div>
+        <h3><a href="/tr/training-load/">Antrenman Yükü Yönetimi</a></h3>
+        <p>Peak-30 kadans (Del Pozo-Cruz 2022), hızlı patlamalar konsepti, ACWR sakatlık önleme, 3:1 periyotlama, polarize vs piramidal yoğunluk dağılımı.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">Metrikler</div>
+        <h3><a href="/tr/gait-analysis/">Yürüyüş Analizi Metrikleri</a></h3>
+        <p>Klinik eşiklerle 7 temel metrik: kadans (100 adım/dk = 3 MET), adım uzunluğu (boyun %40-50'si), çift destek (>%35 = düşme riski), asimetri, hız.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">Formüller</div>
+        <h3><a href="/tr/formulas/">Bilimsel Formüller</a></h3>
+        <p>11 doğrulanmış denklem: Moore kadans→MET (R²=0,87), ACSM VO₂, enerji harcaması, GSI, WALK Skoru, Taşıma Maliyeti, antrenman yükü, 6MWT tahmini.</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/tr/research/" class="btn btn-secondary">Tüm Araştırma Makalelerini Keşfedin →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Fiyatlandırma Bölümü -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Fiyatlandırma</div>
+      <h2 class="section-title">Basit, Şeffaf Fiyatlandırma</h2>
+      <p class="section-subtitle">WalkAnalytics'i 7 gün ücretsiz deneyin. Kredi kartı gerekmez.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="price-header">
+        <h3>WalkAnalytics Premium</h3>
+        <div class="price">
+          <span class="amount">$4,99</span>
+          <span class="period">/ay</span>
+        </div>
+      </div>
+      <ul class="features-list">
+        <li>Peak-30 kadans takibi</li>
+        <li>Kadans temelli antrenman bölgeleri</li>
+        <li>İleri düzey yürüyüş analizi (GSI, CoT, WEI)</li>
+        <li>Yürüyüş Stres Skoru (WSS)</li>
+        <li>ACWR sakatlık önleme</li>
+        <li>11 doğrulanmış formül</li>
+        <li>Tam veri gizliliği (yerel işleme)</li>
+        <li>Apple Health entegrasyonu</li>
+        <li>Hiç reklam yok</li>
+      </ul>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        Ücretsiz Denemeyi Başlat
+      </a>
+      <p class="trial-note">7 günlük ücretsiz deneme • İstediğiniz zaman iptal edin • Kredi kartı gerekmez</p>
+    </div>
+  </div>
+</section>
+
+<!-- SSS Bölümü -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">SSS</div>
+      <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>WalkAnalytics'i diğer yürüyüş uygulamalarından farklı kılan nedir?</h3>
+        <p>Hakemli araştırma üzerine kurulu tek yürüyüş uygulamasıyız. Her metrik—Peak-30 kadans, ACWR, Taşıma Maliyeti—yayınlanmış çalışmalardan gelir. 50'den fazla bilimsel makaleye atıfta bulunuyoruz ve her önerinin arkasındaki kanıtları açıklıyoruz. Bu sadece adım saymak değil; yürüyüşe uygulanmış biyomekanik ve egzersiz fizyolojisidir.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Peak-30 kadans nedir ve neden önemlidir?</h3>
+        <p>Peak-30 kadans, her gün en iyi 30 ardışık dakikalık yürüyüş sırasındaki ortalama dakika başına adımınızdır. 78.500 kişilik çığır açan bir çalışma (Del Pozo-Cruz, JAMA 2022), bunun toplam günlük adımlardan bağımsız olarak ölüm riskini öngördüğünü gösterdi. Bunu otomatik olarak takip ediyoruz, başka hiçbir uygulama yapmıyor.</p>
+      </div>
+      <div class="faq-item">
+        <h3>ACWR sakatlıkları nasıl önler?</h3>
+        <p>Akut:Kronik Yük Oranı, son antrenmanınızı (son 7 gün) daha uzun vadeli ortalamanızla (28 gün) karşılaştırır. Araştırmalar ACWR >1,50'nin sakatlık riskini 2-4 kat artırdığını gösteriyor. Bunu günlük hesaplıyoruz ve tehlikeli artışlardan önce sizi uyarıyoruz, haftalık %5-10 artışlarla güvenli ilerlemenize yardımcı oluyoruz.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Kalp hızı bölgeleri yerine neden kadans bölgeleri?</h3>
+        <p>Kadans daha güvenilir ve pratiktir. CADENCE-Adults çalışması 100 adım/dk = orta yoğunluk (3 MET) eşitliğini %86 duyarlılık ve %90 özgüllükle kanıtladı. Kalp hızı sıcaklık, stres, hastalık, kafeinle değişir—kadans değişmez. Ayrıca göğüs kemeri veya saate ihtiyacınız yok; sadece adımları sayın.</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics düşme önlemede yardımcı olabilir mi?</h3>
+        <p>Evet. Klinik düşme riski göstergelerini takip ediyoruz: yürüyüş hızı <0,8 m/s, çift destek >%35, asimetri (GSI) >%10 ve yürüyüş dengesi. Bunlar geriatrik araştırmasından kanıta dayalı eşiklerdir. Erken tespit, düşmeler olmadan önce müdahale sağlar—65 yaş üstü yetişkinler için kritik.</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics gizliliğimi nasıl korur?</h3>
+        <p>Tüm veriler iPhone'unuzda kalır—nokta. Bulut senkronizasyonu yok, hesap yok, sağlık verilerinizi alan sunucu yok. Her şeyi cihaz üzerindeki algoritmalarla yerel olarak işliyoruz. Yürüyüş metrikleriniz, konumunuz, kalp hızınız—tamamen özel. Yasal olarak gerekli olmamasına rağmen GDPR ve HIPAA felsefesini takip ediyoruz (çünkü verilerinizi asla görmüyoruz).</p>
+      </div>
+      <div class="faq-item">
+        <h3>Özel ekipman gerekli mi?</h3>
+        <p>Hayır. WalkAnalytics iPhone veya Apple Watch ile çalışır. Temel metrikler için (kadans, mesafe, adımlar) sadece telefonunuz yeterli. Kalp hızı verisi ve daha doğru metrikler için Apple Watch yardımcı olur ama gerekli değil. Apple Health ile entegre olduğumuz için uyumlu herhangi bir cihaz çalışır.</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics rehabilitasyon için uygun mu?</h3>
+        <p>Kesinlikle. İyileşmeyi objektif olarak takip eden rehabilitasyon hastaları tarafından kullanılıyoruz. Yürüyüş Simetri İndeksi (GSI) formülü sol-sağ farkları ölçer (<%3 normal, >%10 klinik olarak anlamlı). Adım uzunluğu iyileşmesini, yürüyüş hızı gelişimini ve asimetri azalmasını izleyin. Objektif verileri fizyoterapistiniz veya hekiminizle paylaşın.</p>
+      </div>
+      <div class="faq-item">
+        <h3>11 formülün bilimsel temeli nedir?</h3>
+        <p>Her <a href="/tr/formulas/">formül</a> doğrulama verisi ve orijinal araştırma alıntısı içerir. Örnek: Moore'un kadans→MET denklemi (R²=0,87, ±0,5 MET doğruluğu, 76 yetişkin) eski ACSM denklemlerinden %23-35 daha doğrudur. Sadece kara kutu hesaplamalar değil, bilimi gösteriyoruz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bölümü -->
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Daha Akıllı Yürümeye Hazır mısınız?</h2>
+      <p>Araştırma destekli yürüyüş analizi ve antrenman bilimiyle sağlığını geliştiren yürüyüşçülere katılın</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        WalkAnalytics'i İndirin
+      </a>
+      <p class="cta-note">7 günlük ücretsiz deneme • iOS 16+ • Apple Health uyumlu • Kredi kartı gerekmez</p>
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Ana Sayfa</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Tüm hakları saklıdır
+            </p>
+            <ul class="footer-links">
+                <li><a href="/tr/privacy/">Gizlilik</a></li>
+                <li><a href="/tr/terms/">Koşullar</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Bu web sitesi deneyiminizi iyileştirmek için çerezler kullanır.</p>
+            <a href="/tr/privacy/" class="text-sm">Daha fazla bilgi</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Reddet</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Kabul Et</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>WalkAnalytics দিয়ে শুরু করা - সম্পূর্ণ সেটআপ গাইড | গেইট বিশ্লেষণ টিউটোরিয়াল</title>
+    <meta name="description" content="নতুনদের জন্য সম্পূর্ণ WalkAnalytics গাইড। গেইট বিশ্লেষণ টিউটোরিয়াল, হাঁটা ট্র্যাকিং সেটআপ, WSS ব্যাখ্যা। ধাপে ধাপে ইন্টিগ্রেশন + ৭ দিনের বিনামূল্যে ট্রায়াল।">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="WalkAnalytics গাইড, গেইট বিশ্লেষণ টিউটোরিয়াল, হাঁটার অ্যাপ টিউটোরিয়াল, কিভাবে WalkAnalytics ব্যবহার করবেন, হাঁটার বিশ্লেষণ গাইড">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/bn/getting-started/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/bn/getting-started/">
+    <meta property="og:title" content="WalkAnalytics দিয়ে শুরু করা - সম্পূর্ণ সেটআপ গাইড | গেইট বিশ্লেষণ টিউটোরিয়াল">
+    <meta property="og:description" content="নতুনদের জন্য সম্পূর্ণ WalkAnalytics গাইড। গেইট বিশ্লেষণ টিউটোরিয়াল, হাঁটা ট্র্যাকিং সেটআপ, WSS ব্যাখ্যা। ধাপে ধাপে ইন্টিগ্রেশন + ৭ দিনের বিনামূল্যে ট্রায়াল।">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="bn_BD">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/bn/getting-started/">
+    <meta name="twitter:title" content="WalkAnalytics দিয়ে শুরু করা - সম্পূর্ণ সেটআপ গাইড | গেইট বিশ্লেষণ টিউটোরিয়াল">
+    <meta name="twitter:description" content="নতুনদের জন্য সম্পূর্ণ WalkAnalytics গাইড। গেইট বিশ্লেষণ টিউটোরিয়াল, হাঁটা ট্র্যাকিং সেটআপ, WSS ব্যাখ্যা। ধাপে ধাপে ইন্টিগ্রেশন + ৭ দিনের বিনামূল্যে ট্রায়াল।">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/getting-started/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/getting-started/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/getting-started/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/getting-started/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/getting-started/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/getting-started/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/getting-started/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/getting-started/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/getting-started/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/getting-started/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/getting-started/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/getting-started/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/getting-started/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/getting-started/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/getting-started/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/getting-started/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/getting-started/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/getting-started/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/getting-started/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">কন্টেন্টে যান</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/bn/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            হোম
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            শিখুন
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            বিজ্ঞান
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            আপনার জন্য
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/"
+                           
+                           aria-current="">
+                            সরঞ্জাম
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/contact/"
+                           
+                           aria-current="">
+                            যোগাযোগ
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="ভাষা নির্বাচন করুন">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" selected>
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="মেনু টগল করুন" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Getting Started with WalkAnalytics -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/bn/">হোম</a> / <a href="/bn/#learn">শিখুন</a> / শুরু করা
+    </div>
+    <h1>WalkAnalytics দিয়ে শুরু করা</h1>
+    <p class="lead">WalkAnalytics সেটআপ এবং আপনার হাঁটার বিশ্লেষণ যাত্রা বোঝার সম্পূর্ণ গাইড</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="quick-start">দ্রুত শুরুর গাইড</h2>
+        <p>WalkAnalytics-এ স্বাগতম! এই গাইডটি আপনাকে মাত্র কয়েক মিনিটে উন্নত চলন বিশ্লেষণ এবং হাঁটার পারফরম্যান্স ট্র্যাকিং শুরু করতে সাহায্য করবে।</p>
+
+        <h3>ধাপ ১: ডাউনলোড এবং ইনস্টল</h3>
+        <ol>
+          <li><a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener">App Store</a> থেকে WalkAnalytics ডাউনলোড করুন</li>
+          <li>আপনার iPhone বা iPad-এ অ্যাপটি খুলুন</li>
+          <li>অনুরোধ করা হলে Apple Health অ্যাক্সেস করার অনুমতি দিন</li>
+          <li>আপনার ৭-দিনের বিনামূল্যে ট্রায়াল শুরু করুন (কোনো ক্রেডিট কার্ড প্রয়োজন নেই)</li>
+        </ol>
+
+        <h3>ধাপ ২: Apple Health সংযুক্ত করুন</h3>
+        <p>WalkAnalytics Apple Health থেকে আপনার হাঁটার ওয়ার্কআউট বিশ্লেষণ করে:</p>
+        <ul>
+          <li><strong>স্বয়ংক্রিয় আমদানি:</strong> আপনার বিদ্যমান হাঁটার ওয়ার্কআউট স্বয়ংক্রিয়ভাবে আমদানি করা হয়</li>
+          <li><strong>রিয়েল-টাইম সিঙ্ক:</strong> Apple Watch বা iPhone থেকে নতুন হাঁটা তাৎক্ষণিকভাবে বিশ্লেষণ করা হয়</li>
+          <li><strong>গোপনীয়তা প্রথম:</strong> সমস্ত ডেটা আপনার ডিভাইসে থাকে - কোনো ক্লাউড আপলোড নেই</li>
+        </ul>
+
+        <h3>ধাপ ৩: আপনার ড্যাশবোর্ড বুঝুন</h3>
+        <p>প্রধান ড্যাশবোর্ড আপনার প্রধান হাঁটার মেট্রিক্স দেখায়:</p>
+        <ul>
+          <li><strong>সাম্প্রতিক হাঁটা:</strong> প্রধান পরিসংখ্যান সহ আপনার সর্বশেষ হাঁটার ওয়ার্কআউট</li>
+          <li><strong>সাপ্তাহিক সারাংশ:</strong> মোট দূরত্ব, সময় এবং Walking Stress Score (WSS)</li>
+          <li><strong>চলন মেট্রিক্স:</strong> স্ট্রাইড প্রতিসাম্য, ক্যাডেন্স এবং দক্ষতা স্কোর</li>
+          <li><strong>প্রশিক্ষণ জোন:</strong> প্রতিটি হৃদস্পন্দন জোনে কাটানো সময়</li>
+        </ul>
+
+        <h2 id="key-concepts">মূল ধারণাসমূহ</h2>
+
+        <h3>চলন বিশ্লেষণ</h3>
+        <p>চলন বিশ্লেষণ পরীক্ষা করে আপনি কীভাবে হাঁটেন। WalkAnalytics ট্র্যাক করে:</p>
+        <ul>
+          <li><strong>স্ট্রাইড দৈর্ঘ্য:</strong> প্রতি স্ট্রাইডে অতিক্রান্ত দূরত্ব</li>
+          <li><strong>ক্যাডেন্স:</strong> প্রতি মিনিটে পদক্ষেপ</li>
+          <li><strong>স্ট্রাইড প্রতিসাম্য:</strong> বাম এবং ডান পায়ের মধ্যে ভারসাম্য</li>
+          <li><strong>মাটির সংস্পর্শ সময়:</strong> আপনার পা মাটি স্পর্শ করে কতক্ষণ</li>
+          <li><strong>ডবল সাপোর্ট সময়:</strong> যখন উভয় পা একসাথে মাটিতে থাকে</li>
+        </ul>
+        <p><a href="/bn/gait-analysis/">চলন বিশ্লেষণ মূলনীতি</a> সম্পর্কে আরও জানুন।</p>
+
+        <h3>হাঁটার জোন</h3>
+        <p>বিভিন্ন তীব্রতার জোনে প্রশিক্ষণ নির্দিষ্ট স্বাস্থ্য সুবিধা প্রদান করে:</p>
+        <ul>
+          <li><strong>জোন ১ (পুনরুদ্ধার):</strong> পুনরুদ্ধারের জন্য খুব হালকা হাঁটা</li>
+          <li><strong>জোন ২ (ফ্যাট বার্ন):</strong> ফ্যাট বার্ন এবং অ্যারোবিক বেসের জন্য সর্বোত্তম</li>
+          <li><strong>জোন ৩ (অ্যারোবিক):</strong> হৃদরোগ ফিটনেস উন্নতি</li>
+          <li><strong>জোন ৪ (থ্রেশহোল্ড):</strong> উচ্চ-তীব্রতা অ্যারোবিক ক্ষমতা</li>
+          <li><strong>জোন ৫ (পিক):</strong> সংক্ষিপ্ত বিস্ফোরণের জন্য সর্বোচ্চ প্রচেষ্টা</li>
+        </ul>
+        <p>সম্পূর্ণ <a href="/bn/walking-zones/">হাঁটার জোন গাইড</a> অন্বেষণ করুন।</p>
+
+        <h3>Walking Stress Score (WSS)</h3>
+        <p>WSS প্রতিটি হাঁটার শারীরবৃত্তীয় চাপ পরিমাপ করে:</p>
+        <ul>
+          <li>হৃদস্পন্দনের তীব্রতা এবং সময়কালের উপর ভিত্তিযুক্ত</li>
+          <li>পুনরুদ্ধারের সাথে প্রশিক্ষণ লোড ভারসাম্য করতে সাহায্য করে</li>
+          <li>অতিরিক্ত প্রশিক্ষণ প্রতিরোধ করে এবং অগ্রগতি অপ্টিমাইজ করে</li>
+          <li>সাপ্তাহিক এবং মাসিক প্রবণতা ট্র্যাক করুন</li>
+        </ul>
+        <p>আমাদের <a href="/bn/wss-calculator/">WSS ক্যালকুলেটর</a> দিয়ে আপনার WSS গণনা করুন।</p>
+
+        <h2 id="first-walk">আপনার প্রথম হাঁটা রেকর্ড করা</h2>
+
+        <h3>Apple Watch ব্যবহার করে</h3>
+        <ol>
+          <li>আপনার Apple Watch-এ একটি "Walking" ওয়ার্কআউট শুরু করুন</li>
+          <li>স্বাভাবিকভাবে হাঁটুন - আপনার ফর্ম পরিবর্তন করার প্রয়োজন নেই</li>
+          <li>শেষ হলে ওয়ার্কআউট শেষ করুন</li>
+          <li>WalkAnalytics স্বয়ংক্রিয়ভাবে এটি আমদানি এবং বিশ্লেষণ করে</li>
+        </ol>
+
+        <h3>শুধুমাত্র iPhone ব্যবহার করে</h3>
+        <ol>
+          <li>iPhone সেটিংসে "Fitness Tracking" সক্ষম করুন</li>
+          <li>হাঁটার সময় আপনার iPhone বহন করুন</li>
+          <li>হাঁটার কার্যকলাপ স্বয়ংক্রিয়ভাবে লগ করা হয়</li>
+          <li>বিশ্লেষণের জন্য WalkAnalytics-এ পর্যালোচনা করুন</li>
+        </ol>
+
+        <h2 id="interpreting-metrics">আপনার মেট্রিক্স ব্যাখ্যা করা</h2>
+
+        <h3>ভালো বনাম উদ্বেগজনক চিহ্ন</h3>
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>মেট্রিক</th>
+              <th>ভালো পরিসীমা</th>
+              <th>এর মানে কী</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>স্ট্রাইড প্রতিসাম্য</td>
+              <td>&gt; ৯৫%</td>
+              <td>সুষম চলন, কম আঘাতের ঝুঁকি</td>
+            </tr>
+            <tr>
+              <td>ক্যাডেন্স</td>
+              <td>১০০-১৩০ পদক্ষেপ/মিনিট</td>
+              <td>দক্ষ হাঁটার গতি</td>
+            </tr>
+            <tr>
+              <td>সাপ্তাহিক WSS</td>
+              <td>২০০-৫০০</td>
+              <td>স্বাস্থ্যকর প্রশিক্ষণ লোড</td>
+            </tr>
+            <tr>
+              <td>জোন ২ সময়</td>
+              <td>মোটের ৬০-৮০%</td>
+              <td>শক্তিশালী অ্যারোবিক বেস</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="tips">সফলতার জন্য প্রো টিপস</h2>
+
+        <h3>১. বেসলাইন মূল্যায়ন দিয়ে শুরু করুন</h3>
+        <p>পরিবর্তন করার আগে আপনার বেসলাইন মেট্রিক্স প্রতিষ্ঠা করতে প্রথমে ২-৩টি সাধারণ হাঁটা রেকর্ড করুন।</p>
+
+        <h3>২. জোন ২ হাঁটার উপর ফোকাস করুন</h3>
+        <p>সর্বোত্তম স্বাস্থ্য সুবিধা এবং ফ্যাট বার্নিংয়ের জন্য জোন ২-তে আপনার হাঁটার সময়ের ৬০-৮০% ব্যয় করুন।</p>
+
+        <h3>৩. চলন প্রতিসাম্য পর্যবেক্ষণ করুন</h3>
+        <p>যদি প্রতিসাম্য ৯০%-এর নিচে চলে যায়, তাহলে আঘাত প্রতিরোধের জন্য ফর্ম কাজ বিবেচনা করুন বা একজন পেশাদারের সাথে পরামর্শ করুন।</p>
+
+        <h3>৪. ধীরে ধীরে তৈরি করুন</h3>
+        <p>অতিরিক্ত প্রশিক্ষণ এড়াতে সাপ্তাহিক WSS প্রতি সপ্তাহে সর্বাধিক ১০% বৃদ্ধি করুন।</p>
+
+        <h3>৫. তীব্রতার উপর ধারাবাহিকতা</h3>
+        <p>দীর্ঘমেয়াদী স্বাস্থ্যের জন্য নিয়মিত মাঝারি হাঁটা মাঝে মাঝে তীব্র হাঁটাকে পরাজিত করে।</p>
+
+        <h2 id="troubleshooting">সমস্যা সমাধান</h2>
+
+        <h3>মেট্রিক্স দেখাচ্ছে না</h3>
+        <ul>
+          <li>নিশ্চিত করুন Apple Health অনুমতি দেওয়া হয়েছে</li>
+          <li>পরীক্ষা করুন যে ওয়ার্কআউটগুলি Health অ্যাপে সঠিকভাবে "Walking" হিসাবে লেবেল করা আছে</li>
+          <li>হৃদস্পন্দন জোনের জন্য, যাচাই করুন যে হৃদস্পন্দন ডেটা রেকর্ড করা হচ্ছে</li>
+        </ul>
+
+        <h3>ভুল স্ট্রাইড মেট্রিক্স</h3>
+        <ul>
+          <li>সঠিক GPS সহ বহিরঙ্গন রুট হেঁটে Apple Watch ক্যালিব্রেট করুন</li>
+          <li>সঠিক ঘড়ি ফিট নিশ্চিত করুন (আরামদায়ক কিন্তু শক্ত)</li>
+          <li>ভালো মোশন সনাক্তকরণের জন্য প্রাকৃতিক হাত দোলানোর সাথে হাঁটুন</li>
+        </ul>
+
+        <h2 id="next-steps">পরবর্তী ধাপ</h2>
+        <ul>
+          <li>সর্বোত্তম তীব্রতার জন্য <a href="/bn/walking-zones/">প্রশিক্ষণ জোন</a> সম্পর্কে জানুন</li>
+          <li>গভীরভাবে <a href="/bn/gait-analysis/">চলন বিশ্লেষণ মেট্রিক্স</a> বুঝুন</li>
+          <li>আপনার <a href="/bn/wss-calculator/">Walking Stress Score</a> গণনা করুন</li>
+          <li><a href="/bn/research/">হাঁটার বিশ্লেষণের পিছনে বিজ্ঞান</a> অন্বেষণ করুন</li>
+        </ul>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>বিষয়বস্তু সূচি</h3>
+          <ul>
+            <li><a href="#quick-start">দ্রুত শুরুর গাইড</a></li>
+            <li><a href="#key-concepts">মূল ধারণাসমূহ</a></li>
+            <li><a href="#first-walk">আপনার প্রথম হাঁটা রেকর্ড করা</a></li>
+            <li><a href="#interpreting-metrics">আপনার মেট্রিক্স ব্যাখ্যা করা</a></li>
+            <li><a href="#tips">সফলতার জন্য প্রো টিপস</a></li>
+            <li><a href="#troubleshooting">সমস্যা সমাধান</a></li>
+            <li><a href="#next-steps">পরবর্তী ধাপ</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>আপনার যাত্রা শুরু করুন</h3>
+          <p>WalkAnalytics ডাউনলোড করুন এবং আজই আপনার চলন ট্র্যাক করা শুরু করুন।</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">অ্যাপ ডাউনলোড করুন</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">হোম</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. সর্বস্বত্ব সংরক্ষিত
+            </p>
+            <ul class="footer-links">
+                <li><a href="/bn/privacy/">গোপনীয়তা</a></li>
+                <li><a href="/bn/terms/">শর্তাবলী</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>এই ওয়েবসাইট আপনার অভিজ্ঞতা উন্নত করতে কুকি ব্যবহার করে।</p>
+            <a href="/bn/privacy/" class="text-sm">আরও জানুন</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">প্রত্যাখ্যান করুন</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">গ্রহণ করুন</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

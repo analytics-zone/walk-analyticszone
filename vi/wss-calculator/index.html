@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Máy tính điểm stress đi bộ miễn phí - Tính WSS cho buổi đi bộ của bạn</title>
+    <meta name="description" content="Máy tính điểm stress đi bộ MIỄN PHÍ. Định lượng cường độ tập luyện bằng nhịp tim + thời lượng. Nhận điểm WSS, hướng dẫn tuần, theo dõi tiến trình.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="máy tính điểm stress đi bộ, máy tính WSS, máy tính cường độ đi bộ, máy tính tải lượng tập đi bộ, WSS miễn phí">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/vi/wss-calculator/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-16T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/vi/wss-calculator/">
+    <meta property="og:title" content="Máy tính điểm stress đi bộ miễn phí - Tính WSS cho buổi đi bộ của bạn">
+    <meta property="og:description" content="Máy tính điểm stress đi bộ MIỄN PHÍ. Định lượng cường độ tập luyện bằng nhịp tim + thời lượng. Nhận điểm WSS, hướng dẫn tuần, theo dõi tiến trình.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/vi/wss-calculator/">
+    <meta name="twitter:title" content="Máy tính điểm stress đi bộ miễn phí - Tính WSS cho buổi đi bộ của bạn">
+    <meta name="twitter:description" content="Máy tính điểm stress đi bộ MIỄN PHÍ. Định lượng cường độ tập luyện bằng nhịp tim + thời lượng. Nhận điểm WSS, hướng dẫn tuần, theo dõi tiến trình.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/wss-calculator/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/wss-calculator/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/wss-calculator/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/wss-calculator/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/wss-calculator/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/wss-calculator/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/wss-calculator/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/wss-calculator/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/wss-calculator/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/wss-calculator/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/wss-calculator/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/vi/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Trang chủ
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Học tập
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Khoa học
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Dành cho bạn
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/"
+                           
+                           aria-current="">
+                            Công cụ
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/contact/"
+                           
+                           aria-current="">
+                            Liên hệ
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Chọn ngôn ngữ">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" selected>
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Chuyển đổi menu" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WSS Calculator -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/vi/">Trang chủ</a> / <a href="/vi/#learn">Học hỏi</a> / Máy tính WSS
+    </div>
+    <h1>Máy Tính Chỉ Số Căng Thẳng Đi Bộ</h1>
+    <p class="lead">Máy tính miễn phí để định lượng cường độ tập luyện đi bộ của bạn bằng cách sử dụng vùng nhịp tim</p>
+  </div>
+</section>
+
+<section class="calculator-section">
+  <div class="container">
+    <div class="calculator-intro">
+      <h2>Tính Toán WSS Của Bạn</h2>
+      <p>Nhập thời gian bạn dành trong mỗi vùng nhịp tim trong khi đi bộ để tính toán Chỉ Số Căng Thẳng Đi Bộ (WSS). Chỉ số này giúp bạn hiểu cường độ tập luyện và quản lý tải tập luyện.</p>
+    </div>
+
+    <div class="calculator-tool">
+      <div class="calculator-inputs">
+        <h3>Thời Gian Trong Mỗi Vùng (phút)</h3>
+
+        <div class="input-group">
+          <label for="zone1">Vùng 1 (Phục Hồi) - 50-60% Max HR</label>
+          <input type="number" id="zone1" min="0" value="0" />
+          <span class="multiplier">× 1 điểm/phút</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone2">Vùng 2 (Đốt Mỡ) - 60-70% Max HR</label>
+          <input type="number" id="zone2" min="0" value="0" />
+          <span class="multiplier">× 2 điểm/phút</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone3">Vùng 3 (Hiếu Khí) - 70-80% Max HR</label>
+          <input type="number" id="zone3" min="0" value="0" />
+          <span class="multiplier">× 3 điểm/phút</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone4">Vùng 4 (Ngưỡng) - 80-90% Max HR</label>
+          <input type="number" id="zone4" min="0" value="0" />
+          <span class="multiplier">× 4 điểm/phút</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone5">Vùng 5 (Đỉnh) - 90-100% Max HR</label>
+          <input type="number" id="zone5" min="0" value="0" />
+          <span class="multiplier">× 5 điểm/phút</span>
+        </div>
+
+        <button id="calculateBtn" class="btn btn-accent">Tính Toán WSS</button>
+      </div>
+
+      <div class="calculator-results">
+        <h3>Kết Quả Của Bạn</h3>
+        <div id="results" class="results-box">
+          <div class="result-item">
+            <span class="result-label">Tổng Thời Gian:</span>
+            <span class="result-value" id="totalTime">0 phút</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">Chỉ Số Căng Thẳng Đi Bộ:</span>
+            <span class="result-value" id="wssScore">0</span>
+          </div>
+          <div class="result-interpretation">
+            <h4>Giải Thích:</h4>
+            <p id="interpretation">Nhập thời gian từng vùng để tính toán WSS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <h2>Hiểu Về WSS</h2>
+
+    <h3>WSS Của Tôi Có Ý Nghĩa Gì?</h3>
+    <ul>
+      <li><strong>0-40:</strong> Đi bộ phục hồi nhẹ - căng thẳng tập luyện tối thiểu</li>
+      <li><strong>40-80:</strong> Tập luyện hiếu khí vừa phải - tốt cho xây dựng nền tảng</li>
+      <li><strong>80-150:</strong> Đi bộ sức bền vững chắc - lợi ích tập luyện đáng kể</li>
+      <li><strong>150-250:</strong> Tập luyện nặng - căng thẳng tập luyện cao, cần phục hồi</li>
+      <li><strong>250+:</strong> Rất khắc nghiệt - nỗ lực thi đấu hoặc đi bộ rất dài</li>
+    </ul>
+
+    <h3>Hướng Dẫn WSS Hàng Tuần</h3>
+    <ul>
+      <li><strong>Người mới bắt đầu:</strong> 150-300 tổng mỗi tuần</li>
+      <li><strong>Trung cấp:</strong> 300-500 tổng mỗi tuần</li>
+      <li><strong>Nâng cao:</strong> 500-800+ tổng mỗi tuần</li>
+    </ul>
+
+    <h3>Cách Sử Dụng WSS</h3>
+    <ol>
+      <li><strong>Theo dõi hàng ngày:</strong> Tính toán WSS cho mỗi lần đi bộ</li>
+      <li><strong>Tổng hợp hàng tuần:</strong> Cộng dồn WSS của 7 ngày</li>
+      <li><strong>Giám sát xu hướng:</strong> Chú ý các mức tăng quá mức</li>
+      <li><strong>Cân bằng tải:</strong> Bao gồm cả ngày dễ và ngày khó</li>
+      <li><strong>Tiến bộ dần dần:</strong> Tăng WSS hàng tuần tối đa 10%</li>
+    </ol>
+
+    <h2>Ví Dụ Bài Tập</h2>
+
+    <h3>Đi Bộ Phục Hồi Dễ</h3>
+    <ul>
+      <li>30 phút trong Vùng 1-2</li>
+      <li>WSS ≈ 40-50</li>
+      <li>Sử dụng cho các ngày phục hồi tích cực</li>
+    </ul>
+
+    <h3>Đi Bộ Xây Dựng Nền Tảng Vừa Phải</h3>
+    <ul>
+      <li>60 phút trong Vùng 2</li>
+      <li>WSS ≈ 120</li>
+      <li>Nền tảng của kế hoạch tập luyện</li>
+    </ul>
+
+    <h3>Bài Tập Ngắt Quãng</h3>
+    <ul>
+      <li>10 phút khởi động Vùng 1</li>
+      <li>20 phút ngắt quãng Vùng 3-4</li>
+      <li>10 phút hồi phục Vùng 1</li>
+      <li>WSS ≈ 100-120</li>
+      <li>Cường độ cao, thời gian ngắn hơn</li>
+    </ul>
+
+    <h3>Đi Bộ Sức Bền Dài</h3>
+    <ul>
+      <li>120 phút trong Vùng 2</li>
+      <li>WSS ≈ 240</li>
+      <li>Một lần mỗi tuần để tăng sức bền</li>
+    </ul>
+
+    <h2>Lấy Dữ Liệu Nhịp Tim Của Bạn</h2>
+
+    <h3>Sử Dụng Apple Watch</h3>
+    <ol>
+      <li>Mở ứng dụng Sức Khỏe trên iPhone</li>
+      <li>Điều hướng đến Duyệt → Tim → Nhịp Tim</li>
+      <li>Chọn bài tập đi bộ của bạn</li>
+      <li>Xem thời gian trong mỗi vùng</li>
+      <li>Nhập vào máy tính ở trên</li>
+    </ol>
+
+    <h3>Sử Dụng WalkAnalytics</h3>
+    <p>WalkAnalytics tự động tính toán WSS cho mỗi lần đi bộ. Không cần tính toán thủ công!</p>
+    <ul>
+      <li>Nhập bài tập từ Apple Health</li>
+      <li>Phân tích vùng nhịp tim tự động</li>
+      <li>Tính toán WSS ngay lập tức</li>
+      <li>Theo dõi xu hướng hàng tuần</li>
+      <li>Cung cấp đề xuất phục hồi</li>
+    </ul>
+
+    <div class="cta-section">
+      <h3>Theo Dõi WSS Tự Động</h3>
+      <p>Ngừng tính toán thủ công. WalkAnalytics tính toán WSS tự động cho mỗi lần đi bộ.</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">Tải WalkAnalytics</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// WSS Calculator Logic
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  const zone1 = parseFloat(document.getElementById('zone1').value) || 0;
+  const zone2 = parseFloat(document.getElementById('zone2').value) || 0;
+  const zone3 = parseFloat(document.getElementById('zone3').value) || 0;
+  const zone4 = parseFloat(document.getElementById('zone4').value) || 0;
+  const zone5 = parseFloat(document.getElementById('zone5').value) || 0;
+
+  const totalTime = zone1 + zone2 + zone3 + zone4 + zone5;
+  const wss = (zone1 * 1) + (zone2 * 2) + (zone3 * 3) + (zone4 * 4) + (zone5 * 5);
+
+  document.getElementById('totalTime').textContent = totalTime + ' phút';
+  document.getElementById('wssScore').textContent = Math.round(wss);
+
+  let interpretation = '';
+  if (wss === 0) {
+    interpretation = 'Nhập thời gian từng vùng để tính toán WSS';
+  } else if (wss < 40) {
+    interpretation = 'Đi bộ phục hồi nhẹ - căng thẳng tập luyện tối thiểu. Hoàn hảo cho các ngày nghỉ hoặc phục hồi tích cực.';
+  } else if (wss < 80) {
+    interpretation = 'Tập luyện hiếu khí vừa phải - tốt cho việc xây dựng nền tảng hiếu khí của bạn. Có thể thực hiện thường xuyên.';
+  } else if (wss < 150) {
+    interpretation = 'Đi bộ sức bền vững chắc - lợi ích tập luyện đáng kể. Cung cấp kích thích tốt cho sự cải thiện.';
+  } else if (wss < 250) {
+    interpretation = 'Tập luyện nặng - căng thẳng tập luyện cao. Theo sau với các ngày dễ hơn để phục hồi.';
+  } else {
+    interpretation = 'Tập luyện rất khắc nghiệt - nỗ lực thi đấu hoặc thời gian rất dài. Yêu cầu thời gian phục hồi đáng kể.';
+  }
+
+  document.getElementById('interpretation').textContent = interpretation;
+});
+</script>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Trang chủ</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Bảo lưu mọi quyền
+            </p>
+            <ul class="footer-links">
+                <li><a href="/vi/privacy/">Quyền riêng tư</a></li>
+                <li><a href="/vi/terms/">Điều khoản</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Trang web này sử dụng cookie để cải thiện trải nghiệm của bạn.</p>
+            <a href="/vi/privacy/" class="text-sm">Tìm hiểu thêm</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Từ chối</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Chấp nhận</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

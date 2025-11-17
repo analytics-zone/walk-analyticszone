@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Бесплатный калькулятор оценки стресса ходьбы - Рассчитайте WSS для ваших прогулок</title>
+    <meta name="description" content="БЕСПЛАТНЫЙ калькулятор оценки стресса ходьбы. Количественно оцените интенсивность тренировки используя ЧСС + продолжительность. Получите оценку WSS, недельные рекомендации, отслеживайте прогресс.">
+    <meta name="author" content="Albert Arno">
+
+    
+    
+    <meta name="keywords" content="калькулятор оценки стресса ходьбы, калькулятор WSS, калькулятор интенсивности ходьбы, калькулятор тренировочной нагрузки ходьбы, бесплатный WSS">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/ru/wss-calculator/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-01-15T14:30:00Z">
+    <meta property="article:author" content="Albert Arno">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/ru/wss-calculator/">
+    <meta property="og:title" content="Бесплатный калькулятор оценки стресса ходьбы - Рассчитайте WSS для ваших прогулок">
+    <meta property="og:description" content="БЕСПЛАТНЫЙ калькулятор оценки стресса ходьбы. Количественно оцените интенсивность тренировки используя ЧСС + продолжительность. Получите оценку WSS, недельные рекомендации, отслеживайте прогресс.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/ru/wss-calculator/">
+    <meta name="twitter:title" content="Бесплатный калькулятор оценки стресса ходьбы - Рассчитайте WSS для ваших прогулок">
+    <meta name="twitter:description" content="БЕСПЛАТНЫЙ калькулятор оценки стресса ходьбы. Количественно оцените интенсивность тренировки используя ЧСС + продолжительность. Получите оценку WSS, недельные рекомендации, отслеживайте прогресс.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/wss-calculator/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/wss-calculator/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/wss-calculator/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/wss-calculator/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/wss-calculator/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/wss-calculator/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/wss-calculator/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/wss-calculator/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/wss-calculator/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/wss-calculator/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/wss-calculator/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/ru/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Главная
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Обучение
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Наука
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Для вас
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/"
+                           
+                           aria-current="">
+                            Инструменты
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/contact/"
+                           
+                           aria-current="">
+                            Контакты
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="search"
+                        id="site-search"
+                        class="search-input"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Выбрать язык">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" selected>
+                        Русский
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Переключить меню" aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WSS Calculator -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/ru/">Главная</a> / <a href="/ru/#learn">Обучение</a> / Калькулятор WSS
+    </div>
+    <h1>Калькулятор стрессового балла ходьбы</h1>
+    <p class="lead">Бесплатный калькулятор для количественной оценки интенсивности вашей пешей тренировки на основе пульсовых зон</p>
+  </div>
+</section>
+
+<section class="calculator-section">
+  <div class="container">
+    <div class="calculator-intro">
+      <h2>Рассчитайте ваш WSS</h2>
+      <p>Введите время, проведенное в каждой пульсовой зоне во время прогулки, чтобы рассчитать стрессовый балл ходьбы (WSS). Этот показатель помогает понять интенсивность тренировки и управлять тренировочной нагрузкой.</p>
+    </div>
+
+    <div class="calculator-tool">
+      <div class="calculator-inputs">
+        <h3>Время в каждой зоне (минуты)</h3>
+
+        <div class="input-group">
+          <label for="zone1">Зона 1 (Восстановление) - 50-60% Макс ЧСС</label>
+          <input type="number" id="zone1" min="0" value="0" />
+          <span class="multiplier">× 1 балл/мин</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone2">Зона 2 (Сжигание жира) - 60-70% Макс ЧСС</label>
+          <input type="number" id="zone2" min="0" value="0" />
+          <span class="multiplier">× 2 балла/мин</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone3">Зона 3 (Аэробная) - 70-80% Макс ЧСС</label>
+          <input type="number" id="zone3" min="0" value="0" />
+          <span class="multiplier">× 3 балла/мин</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone4">Зона 4 (Порог) - 80-90% Макс ЧСС</label>
+          <input type="number" id="zone4" min="0" value="0" />
+          <span class="multiplier">× 4 балла/мин</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone5">Зона 5 (Пиковая) - 90-100% Макс ЧСС</label>
+          <input type="number" id="zone5" min="0" value="0" />
+          <span class="multiplier">× 5 баллов/мин</span>
+        </div>
+
+        <button id="calculateBtn" class="btn btn-accent">Рассчитать WSS</button>
+      </div>
+
+      <div class="calculator-results">
+        <h3>Ваши результаты</h3>
+        <div id="results" class="results-box">
+          <div class="result-item">
+            <span class="result-label">Общая продолжительность:</span>
+            <span class="result-value" id="totalTime">0 минут</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">Стрессовый балл ходьбы:</span>
+            <span class="result-value" id="wssScore">0</span>
+          </div>
+          <div class="result-interpretation">
+            <h4>Интерпретация:</h4>
+            <p id="interpretation">Введите время в зонах для расчета WSS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <h2>Понимание WSS</h2>
+
+    <h3>Что означает мой WSS?</h3>
+    <ul>
+      <li><strong>0-40:</strong> Легкая восстановительная прогулка - минимальный тренировочный стресс</li>
+      <li><strong>40-80:</strong> Умеренная аэробная тренировка - хорошо для базового развития</li>
+      <li><strong>80-150:</strong> Качественная прогулка на выносливость - значительный тренировочный эффект</li>
+      <li><strong>150-250:</strong> Тяжелая тренировка - высокий тренировочный стресс, требуется восстановление</li>
+      <li><strong>250+:</strong> Очень требовательная - гоночный темп или очень длительная прогулка</li>
+    </ul>
+
+    <h3>Недельные рекомендации по WSS</h3>
+    <ul>
+      <li><strong>Новичок:</strong> 150-300 в неделю</li>
+      <li><strong>Средний уровень:</strong> 300-500 в неделю</li>
+      <li><strong>Продвинутый:</strong> 500-800+ в неделю</li>
+    </ul>
+
+    <h3>Как использовать WSS</h3>
+    <ol>
+      <li><strong>Отслеживайте ежедневно:</strong> Рассчитывайте WSS для каждой прогулки</li>
+      <li><strong>Суммируйте за неделю:</strong> Складывайте WSS за 7 дней</li>
+      <li><strong>Отслеживайте тенденции:</strong> Следите за чрезмерным увеличением</li>
+      <li><strong>Балансируйте нагрузку:</strong> Включайте легкие и тяжелые дни</li>
+      <li><strong>Прогрессируйте постепенно:</strong> Увеличивайте недельный WSS максимум на 10%</li>
+    </ol>
+
+    <h2>Примеры тренировок</h2>
+
+    <h3>Легкая восстановительная прогулка</h3>
+    <ul>
+      <li>30 минут в зоне 1-2</li>
+      <li>WSS ≈ 40-50</li>
+      <li>Используйте в дни активного восстановления</li>
+    </ul>
+
+    <h3>Умеренная базовая прогулка</h3>
+    <ul>
+      <li>60 минут в зоне 2</li>
+      <li>WSS ≈ 120</li>
+      <li>Основа тренировочного плана</li>
+    </ul>
+
+    <h3>Интервальная тренировка</h3>
+    <ul>
+      <li>10 мин зона 1 разминка</li>
+      <li>20 мин зона 3-4 интервалы</li>
+      <li>10 мин зона 1 заминка</li>
+      <li>WSS ≈ 100-120</li>
+      <li>Высокая интенсивность, короткая продолжительность</li>
+    </ul>
+
+    <h3>Длительная прогулка на выносливость</h3>
+    <ul>
+      <li>120 минут в зоне 2</li>
+      <li>WSS ≈ 240</li>
+      <li>Раз в неделю для развития выносливости</li>
+    </ul>
+
+    <h2>Получение данных о пульсе</h2>
+
+    <h3>Использование Apple Watch</h3>
+    <ol>
+      <li>Откройте приложение Здоровье на iPhone</li>
+      <li>Перейдите в Обзор → Сердце → Пульс</li>
+      <li>Выберите вашу тренировку ходьбы</li>
+      <li>Просмотрите время в каждой зоне</li>
+      <li>Введите в калькулятор выше</li>
+    </ol>
+
+    <h3>Использование WalkAnalytics</h3>
+    <p>WalkAnalytics автоматически рассчитывает WSS для каждой прогулки. Ручной расчет не требуется!</p>
+    <ul>
+      <li>Импортирует тренировки из Apple Health</li>
+      <li>Автоматически анализирует пульсовые зоны</li>
+      <li>Мгновенно рассчитывает WSS</li>
+      <li>Отслеживает недельные тенденции</li>
+      <li>Предоставляет рекомендации по восстановлению</li>
+    </ul>
+
+    <div class="cta-section">
+      <h3>Автоматическое отслеживание WSS</h3>
+      <p>Прекратите ручные расчеты. WalkAnalytics вычисляет WSS автоматически для каждой прогулки.</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">Скачать WalkAnalytics</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// WSS Calculator Logic
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  const zone1 = parseFloat(document.getElementById('zone1').value) || 0;
+  const zone2 = parseFloat(document.getElementById('zone2').value) || 0;
+  const zone3 = parseFloat(document.getElementById('zone3').value) || 0;
+  const zone4 = parseFloat(document.getElementById('zone4').value) || 0;
+  const zone5 = parseFloat(document.getElementById('zone5').value) || 0;
+
+  const totalTime = zone1 + zone2 + zone3 + zone4 + zone5;
+  const wss = (zone1 * 1) + (zone2 * 2) + (zone3 * 3) + (zone4 * 4) + (zone5 * 5);
+
+  document.getElementById('totalTime').textContent = totalTime + ' минут';
+  document.getElementById('wssScore').textContent = Math.round(wss);
+
+  let interpretation = '';
+  if (wss === 0) {
+    interpretation = 'Введите время в зонах для расчета WSS';
+  } else if (wss < 40) {
+    interpretation = 'Легкая восстановительная прогулка - минимальный тренировочный стресс. Идеально для дней отдыха или активного восстановления.';
+  } else if (wss < 80) {
+    interpretation = 'Умеренная аэробная тренировка - хорошо для построения аэробной базы. Можно выполнять часто.';
+  } else if (wss < 150) {
+    interpretation = 'Качественная прогулка на выносливость - значительный тренировочный эффект. Обеспечивает хороший стимул для улучшения.';
+  } else if (wss < 250) {
+    interpretation = 'Тяжелая тренировка - высокий тренировочный стресс. После нее необходимы более легкие дни для восстановления.';
+  } else {
+    interpretation = 'Очень требовательная тренировка - гоночный темп или очень длительная продолжительность. Требуется существенное время на восстановление.';
+  }
+
+  document.getElementById('interpretation').textContent = interpretation;
+});
+</script>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Главная</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Все права защищены
+            </p>
+            <ul class="footer-links">
+                <li><a href="/ru/privacy/">Конфиденциальность</a></li>
+                <li><a href="/ru/terms/">Условия</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Этот сайт использует cookies для улучшения вашего опыта.</p>
+            <a href="/ru/privacy/" class="text-sm">Узнать больше</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Отклонить</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Принять</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>
