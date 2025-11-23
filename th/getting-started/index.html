@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>เริ่มต้นใช้งาน WalkAnalytics - คู่มือตั้งค่าครบถ้วน | บทเรียนวิเคราะห์ท่าเดิน</title>
+    <meta name="description" content="คู่มือ WalkAnalytics ฉบับสมบูรณ์สำหรับผู้เริ่มต้น บทเรียนการวิเคราะห์ท่าเดิน การตั้งค่าติดตามการเดิน คำอธิบาย WSS ขั้นตอนการตั้งค่าทีละขั้นตอน พร้อมทดลองใช้ฟรี 7 วัน">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="คู่มือ WalkAnalytics, บทเรียนวิเคราะห์ท่าเดิน, บทเรียนแอปเดิน, วิธีใช้ WalkAnalytics, คู่มือการวิเคราะห์การเดิน">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/th/getting-started/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/th/getting-started/">
+    <meta property="og:title" content="เริ่มต้นใช้งาน WalkAnalytics - คู่มือตั้งค่าครบถ้วน | บทเรียนวิเคราะห์ท่าเดิน">
+    <meta property="og:description" content="คู่มือ WalkAnalytics ฉบับสมบูรณ์สำหรับผู้เริ่มต้น บทเรียนการวิเคราะห์ท่าเดิน การตั้งค่าติดตามการเดิน คำอธิบาย WSS ขั้นตอนการตั้งค่าทีละขั้นตอน พร้อมทดลองใช้ฟรี 7 วัน">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/th/getting-started/">
+    <meta name="twitter:title" content="เริ่มต้นใช้งาน WalkAnalytics - คู่มือตั้งค่าครบถ้วน | บทเรียนวิเคราะห์ท่าเดิน">
+    <meta name="twitter:description" content="คู่มือ WalkAnalytics ฉบับสมบูรณ์สำหรับผู้เริ่มต้น บทเรียนการวิเคราะห์ท่าเดิน การตั้งค่าติดตามการเดิน คำอธิบาย WSS ขั้นตอนการตั้งค่าทีละขั้นตอน พร้อมทดลองใช้ฟรี 7 วัน">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/getting-started/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/getting-started/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/getting-started/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/getting-started/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/getting-started/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/getting-started/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/getting-started/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/getting-started/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/getting-started/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/getting-started/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/getting-started/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/getting-started/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/getting-started/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/getting-started/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/getting-started/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/getting-started/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/getting-started/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/getting-started/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/getting-started/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/getting-started/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/getting-started/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/getting-started/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/getting-started/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/getting-started/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/getting-started/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/getting-started/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/getting-started/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/getting-started/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/getting-started/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/getting-started/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/getting-started/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/getting-started/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/getting-started/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/getting-started/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหา</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/th/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/th/"  aria-current="">
+                            หน้าแรก
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เรียนรู้</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/getting-started/" class="active" 
+                                    aria-current="page">
+                                    เริ่มต้นใช้งาน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-zones/" 
+                                    aria-current="">
+                                    โซนการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-analysis/" 
+                                    aria-current="">
+                                    การวิเคราะห์ท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/training-load/" 
+                                    aria-current="">
+                                    ภาระการฝึก
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/wss-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">วิทยาศาสตร์</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/research/" 
+                                    aria-current="">
+                                    การวิจัย
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/formulas/" 
+                                    aria-current="">
+                                    สูตรคำนวณ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-efficiency/" 
+                                    aria-current="">
+                                    ประสิทธิภาพการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/stride-mechanics/" 
+                                    aria-current="">
+                                    กลศาสตร์ก้าวเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-vs-running/" 
+                                    aria-current="">
+                                    เดินเทียบกับวิ่ง
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/benchmarks/" 
+                                    aria-current="">
+                                    มาตรฐานประสิทธิภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/bibliography/" 
+                                    aria-current="">
+                                    บรรณานุกรม
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">สำหรับคุณ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/for-health/" 
+                                    aria-current="">
+                                    สำหรับสุขภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-fitness/" 
+                                    aria-current="">
+                                    สำหรับฟิตเนส
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-seniors/" 
+                                    aria-current="">
+                                    สำหรับผู้สูงอายุ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-rehabilitation/" 
+                                    aria-current="">
+                                    สำหรับการฟื้นฟู
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เครื่องมือ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/cadence-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณจังหวะก้าว
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-assessment/" 
+                                    aria-current="">
+                                    การประเมินท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/vo2max-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/th/contact/"  aria-current="">
+                            ติดต่อเรา
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="เลือกภาษา">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" selected>
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="สลับเมนู"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Getting Started with WalkAnalytics -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/th/">หน้าแรก</a> / <a href="/th/#learn">เรียนรู้</a> / เริ่มต้นใช้งาน
+    </div>
+    <h1>เริ่มต้นใช้งาน WalkAnalytics</h1>
+    <p class="lead">คู่มือฉบับสมบูรณ์สำหรับการตั้งค่า WalkAnalytics และทำความเข้าใจเส้นทางการวิเคราะห์การเดินของคุณ</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="quick-start">คู่มือเริ่มต้นอย่างรวดเร็ว</h2>
+        <p>ยินดีต้อนรับสู่ WalkAnalytics! คู่มือนี้จะช่วยให้คุณเริ่มต้นใช้งานการวิเคราะห์ท่าเดินขั้นสูงและการติดตามประสิทธิภาพการเดินได้ในไม่กี่นาที</p>
+
+        <h3>ขั้นตอนที่ 1: ดาวน์โหลดและติดตั้ง</h3>
+        <ol>
+          <li>ดาวน์โหลด WalkAnalytics จาก <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener">App Store</a></li>
+          <li>เปิดแอปบน iPhone หรือ iPad ของคุณ</li>
+          <li>อนุญาตให้เข้าถึง Apple Health เมื่อมีการแจ้งเตือน</li>
+          <li>เริ่มทดลองใช้งานฟรี 7 วัน (ไม่ต้องใช้บัตรเครดิต)</li>
+        </ol>
+
+        <h3>ขั้นตอนที่ 2: เชื่อมต่อ Apple Health</h3>
+        <p>WalkAnalytics วิเคราะห์เซสชันการเดินของคุณจาก Apple Health:</p>
+        <ul>
+          <li><strong>นำเข้าอัตโนมัติ:</strong> เซสชันการเดินที่มีอยู่ของคุณจะถูกนำเข้าโดยอัตโนมัติ</li>
+          <li><strong>ซิงค์แบบเรียลไทม์:</strong> การเดินใหม่จาก Apple Watch หรือ iPhone จะถูกวิเคราะห์ทันที</li>
+          <li><strong>ความเป็นส่วนตัวเป็นสำคัญ:</strong> ข้อมูลทั้งหมดจะอยู่บนอุปกรณ์ของคุณ - ไม่มีการอัปโหลดไปยังคลาวด์</li>
+        </ul>
+
+        <h3>ขั้นตอนที่ 3: ทำความเข้าใจแดชบอร์ดของคุณ</h3>
+        <p>แดชบอร์ดหลักแสดงเมตริกการเดินที่สำคัญของคุณ:</p>
+        <ul>
+          <li><strong>การเดินล่าสุด:</strong> เซสชันการเดินล่าสุดของคุณพร้อมสถิติสำคัญ</li>
+          <li><strong>สรุปรายสัปดาห์:</strong> ระยะทางรวม เวลา และคะแนนความเครียดจากการเดิน (WSS)</li>
+          <li><strong>เมตริกท่าเดิน:</strong> ความสมมาตรของก้าวย่าง จังหวะก้าว และคะแนนประสิทธิภาพ</li>
+          <li><strong>โซนการฝึก:</strong> เวลาที่ใช้ในแต่ละโซนอัตราการเต้นของหัวใจ</li>
+        </ul>
+
+        <h2 id="key-concepts">แนวคิดหลัก</h2>
+
+        <h3>การวิเคราะห์ท่าเดิน</h3>
+        <p>การวิเคราะห์ท่าเดินตรวจสอบวิธีที่คุณเดิน WalkAnalytics ติดตาม:</p>
+        <ul>
+          <li><strong>ความยาวก้าวย่าง:</strong> ระยะทางที่ครอบคลุมต่อก้าวย่าง</li>
+          <li><strong>จังหวะก้าว:</strong> จำนวนก้าวต่อนาที</li>
+          <li><strong>ความสมมาตรของก้าวย่าง:</strong> สมดุลระหว่างขาซ้ายและขวา</li>
+          <li><strong>เวลาสัมผัสพื้น:</strong> ระยะเวลาที่เท้าของคุณสัมผัสพื้น</li>
+          <li><strong>เวลาค้ำยันคู่:</strong> เมื่อเท้าทั้งสองข้างอยู่บนพื้นพร้อมกัน</li>
+        </ul>
+        <p>เรียนรู้เพิ่มเติมเกี่ยวกับ <a href="/th/gait-analysis/">พื้นฐานการวิเคราะห์ท่าเดิน</a></p>
+
+        <h3>โซนการเดิน</h3>
+        <p>การฝึกในโซนความเข้มข้นที่แตกต่างกันให้ประโยชน์ต่อสุขภาพเฉพาะ:</p>
+        <ul>
+          <li><strong>โซน 1 (การฟื้นตัว):</strong> การเดินเบามากสำหรับการฟื้นตัว</li>
+          <li><strong>โซน 2 (การเผาผลาญไขมัน):</strong> เหมาะสมที่สุดสำหรับการเผาผลาญไขมันและฐานแอโรบิก</li>
+          <li><strong>โซน 3 (แอโรบิก):</strong> การปรับปรุงสมรรถภาพหัวใจและหลอดเลือด</li>
+          <li><strong>โซน 4 (เกณฑ์):</strong> ความสามารถแอโรบิกความเข้มข้นสูง</li>
+          <li><strong>โซน 5 (สูงสุด):</strong> ความพยายามสูงสุดสำหรับช่วงสั้น ๆ</li>
+        </ul>
+        <p>สำรวจ<a href="/th/walking-zones/">คู่มือโซนการเดิน</a>ฉบับสมบูรณ์</p>
+
+        <h3>คะแนนความเครียดจากการเดิน (WSS)</h3>
+        <p>WSS วัดปริมาณความเครียดทางสรีรวิทยาของแต่ละครั้งที่เดิน:</p>
+        <ul>
+          <li>อิงจากความเข้มข้นของอัตราการเต้นของหัวใจและระยะเวลา</li>
+          <li>ช่วยสมดุลภาระการฝึกกับการฟื้นตัว</li>
+          <li>ป้องกันการฝึกหักโหมและเพิ่มประสิทธิภาพความก้าวหน้า</li>
+          <li>ติดตามแนวโน้มรายสัปดาห์และรายเดือน</li>
+        </ul>
+        <p>คำนวณ WSS ของคุณด้วย <a href="/th/wss-calculator/">เครื่องคำนวณ WSS</a> ของเรา</p>
+
+        <h2 id="first-walk">บันทึกการเดินครั้งแรกของคุณ</h2>
+
+        <h3>การใช้ Apple Watch</h3>
+        <ol>
+          <li>เริ่มเซสชัน "Walking" บน Apple Watch ของคุณ</li>
+          <li>เดินตามธรรมชาติ - ไม่จำเป็นต้องเปลี่ยนท่าของคุณ</li>
+          <li>สิ้นสุดเซสชันเมื่อเสร็จสิ้น</li>
+          <li>WalkAnalytics นำเข้าและวิเคราะห์โดยอัตโนมัติ</li>
+        </ol>
+
+        <h3>การใช้ iPhone เพียงอย่างเดียว</h3>
+        <ol>
+          <li>เปิดใช้งาน "Fitness Tracking" ใน iPhone Settings</li>
+          <li>พก iPhone ของคุณระหว่างเดิน</li>
+          <li>กิจกรรมการเดินจะถูกบันทึกโดยอัตโนมัติ</li>
+          <li>ตรวจสอบใน WalkAnalytics เพื่อการวิเคราะห์</li>
+        </ol>
+
+        <h2 id="interpreting-metrics">การตีความเมตริกของคุณ</h2>
+
+        <h3>สัญญาณที่ดีเทียบกับสัญญาณที่น่ากังวล</h3>
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>เมตริก</th>
+              <th>ช่วงที่ดี</th>
+              <th>ความหมาย</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ความสมมาตรของก้าวย่าง</td>
+              <td>&gt; 95%</td>
+              <td>ท่าเดินสมดุล ความเสี่ยงการบาดเจ็บต่ำ</td>
+            </tr>
+            <tr>
+              <td>จังหวะก้าว</td>
+              <td>100-130 ก้าว/นาที</td>
+              <td>จังหวะการเดินที่มีประสิทธิภาพ</td>
+            </tr>
+            <tr>
+              <td>WSS รายสัปดาห์</td>
+              <td>200-500</td>
+              <td>ภาระการฝึกที่ดีต่อสุขภาพ</td>
+            </tr>
+            <tr>
+              <td>เวลาโซน 2</td>
+              <td>60-80% ของทั้งหมด</td>
+              <td>ฐานแอโรบิกที่แข็งแรง</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="tips">เคลิดลับมืออาชีพเพื่อความสำเร็จ</h2>
+
+        <h3>1. เริ่มต้นด้วยการประเมินพื้นฐาน</h3>
+        <p>บันทึกการเดินปกติ 2-3 ครั้งก่อนเพื่อสร้างเมตริกพื้นฐานของคุณก่อนที่จะทำการเปลี่ยนแปลง</p>
+
+        <h3>2. มุ่งเน้นการเดินโซน 2</h3>
+        <p>ใช้เวลา 60-80% ของเวลาเดินของคุณในโซน 2 เพื่อประโยชน์ต่อสุขภาพที่เหมาะสมที่สุดและการเผาผลาญไขมัน</p>
+
+        <h3>3. ตรวจสอบความสมมาตรของท่าเดิน</h3>
+        <p>หากความสมมาตรลดลงต่ำกว่า 90% ให้พิจารณาฝึกท่าทางหรือปรึกษาผู้เชี่ยวชาญเพื่อป้องกันการบาดเจ็บ</p>
+
+        <h3>4. สร้างค่อย ๆ</h3>
+        <p>เพิ่ม WSS รายสัปดาห์ไม่เกิน 10% ต่อสัปดาห์เพื่อหลีกเลี่ยงการฝึกหักโหม</p>
+
+        <h3>5. ความสม่ำเสมอสำคัญกว่าความเข้มข้น</h3>
+        <p>การเดินปานกลางอย่างสม่ำเสมอดีกว่าการเดินหนักเป็นครั้งคราวสำหรับสุขภาพในระยะยาว</p>
+
+        <h2 id="troubleshooting">การแก้ไขปัญหา</h2>
+
+        <h3>เมตริกไม่แสดง</h3>
+        <ul>
+          <li>ตรวจสอบให้แน่ใจว่าได้รับอนุญาต Apple Health แล้ว</li>
+          <li>ตรวจสอบว่าเซสชันถูกติดป้ายกำกับเป็น "Walking" ในแอป Health อย่างถูกต้อง</li>
+          <li>สำหรับโซนอัตราการเต้นของหัวใจ ให้ตรวจสอบว่ากำลังบันทึกข้อมูลอัตราการเต้นของหัวใจอยู่</li>
+        </ul>
+
+        <h3>เมตริกก้าวย่างไม่ถูกต้อง</h3>
+        <ul>
+          <li>สอบเทียบ Apple Watch โดยการเดินบนเส้นทางกลางแจ้งที่มี GPS ที่แม่นยำ</li>
+          <li>ตรวจสอบให้แน่ใจว่านาฬิกาสวมพอดี (แน่นแต่สบาย)</li>
+          <li>เดินโดยแกว่งแขนตามธรรมชาติเพื่อการตรวจจับการเคลื่อนไหวที่ดีขึ้น</li>
+        </ul>
+
+        <h2 id="next-steps">ขั้นตอนถัดไป</h2>
+        <ul>
+          <li>เรียนรู้เกี่ยวกับ <a href="/th/walking-zones/">โซนการฝึก</a> สำหรับความเข้มข้นที่เหมาะสม</li>
+          <li>ทำความเข้าใจ <a href="/th/gait-analysis/">เมตริกการวิเคราะห์ท่าเดิน</a> อย่างลึกซึ้ง</li>
+          <li>คำนวณ <a href="/th/wss-calculator/">คะแนนความเครียดจากการเดิน</a> ของคุณ</li>
+          <li>สำรวจ <a href="/th/research/">วิทยาศาสตร์เบื้องหลังการวิเคราะห์การเดิน</a></li>
+        </ul>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>สารบัญ</h3>
+          <ul>
+            <li><a href="#quick-start">คู่มือเริ่มต้นอย่างรวดเร็ว</a></li>
+            <li><a href="#key-concepts">แนวคิดหลัก</a></li>
+            <li><a href="#first-walk">บันทึกการเดินครั้งแรกของคุณ</a></li>
+            <li><a href="#interpreting-metrics">การตีความเมตริกของคุณ</a></li>
+            <li><a href="#tips">เคลิดลับมืออาชีพเพื่อความสำเร็จ</a></li>
+            <li><a href="#troubleshooting">การแก้ไขปัญหา</a></li>
+            <li><a href="#next-steps">ขั้นตอนถัดไป</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>เริ่มต้นเส้นทางของคุณ</h3>
+          <p>ดาวน์โหลด WalkAnalytics และเริ่มติดตามท่าเดินของคุณวันนี้</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">ดาวน์โหลดแอป</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">หน้าแรก</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. สงวนลิขสิทธิ์
+            </p>
+            <ul class="footer-links">
+                <li><a href="/th/privacy/">ความเป็นส่วนตัว</a></li>
+                <li><a href="/th/terms/">ข้อกำหนด</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>เว็บไซต์นี้ใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ</p>
+            <a href="/th/privacy/" class="text-sm">เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">ปฏิเสธ</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">ยอมรับ</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

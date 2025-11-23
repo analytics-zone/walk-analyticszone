@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>การวิเคราะห์ท่าเดิน - เข้าใจรูปแบบการเดินและกลศาสตร์ของคุณ</title>
+    <meta name="description" content="คู่มือการวิเคราะห์ท่าเดินฉบับสมบูรณ์ เรียนรู้เกี่ยวกับความยาวก้าว จังหวะก้าว เวลาสัมผัสพื้น และตัวชี้วัดประสิทธิภาพ ปรับปรุงรูปแบบการเดินด้วยข้อมูลเชิงลึกที่ใช้หลักวิทยาศาสตร์">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="การวิเคราะห์ท่าเดิน, กลศาสตร์การเดิน, ความยาวก้าวเดิน, จังหวะก้าว, การวิเคราะห์รูปแบบการเดิน, gait analysis, stride length">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/th/gait-analysis/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/th/gait-analysis/">
+    <meta property="og:title" content="การวิเคราะห์ท่าเดิน - เข้าใจรูปแบบการเดินและกลศาสตร์ของคุณ">
+    <meta property="og:description" content="คู่มือการวิเคราะห์ท่าเดินฉบับสมบูรณ์ เรียนรู้เกี่ยวกับความยาวก้าว จังหวะก้าว เวลาสัมผัสพื้น และตัวชี้วัดประสิทธิภาพ ปรับปรุงรูปแบบการเดินด้วยข้อมูลเชิงลึกที่ใช้หลักวิทยาศาสตร์">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/th/gait-analysis/">
+    <meta name="twitter:title" content="การวิเคราะห์ท่าเดิน - เข้าใจรูปแบบการเดินและกลศาสตร์ของคุณ">
+    <meta name="twitter:description" content="คู่มือการวิเคราะห์ท่าเดินฉบับสมบูรณ์ เรียนรู้เกี่ยวกับความยาวก้าว จังหวะก้าว เวลาสัมผัสพื้น และตัวชี้วัดประสิทธิภาพ ปรับปรุงรูปแบบการเดินด้วยข้อมูลเชิงลึกที่ใช้หลักวิทยาศาสตร์">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/gait-analysis/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/gait-analysis/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/gait-analysis/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/gait-analysis/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/gait-analysis/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/gait-analysis/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/gait-analysis/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/gait-analysis/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/gait-analysis/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/gait-analysis/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/gait-analysis/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/gait-analysis/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/gait-analysis/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/gait-analysis/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/gait-analysis/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/gait-analysis/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/gait-analysis/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/gait-analysis/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/gait-analysis/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/gait-analysis/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/gait-analysis/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/gait-analysis/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/gait-analysis/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหา</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/th/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/th/"  aria-current="">
+                            หน้าแรก
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เรียนรู้</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/getting-started/" 
+                                    aria-current="">
+                                    เริ่มต้นใช้งาน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-zones/" 
+                                    aria-current="">
+                                    โซนการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-analysis/" class="active" 
+                                    aria-current="page">
+                                    การวิเคราะห์ท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/training-load/" 
+                                    aria-current="">
+                                    ภาระการฝึก
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/wss-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">วิทยาศาสตร์</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/research/" 
+                                    aria-current="">
+                                    การวิจัย
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/formulas/" 
+                                    aria-current="">
+                                    สูตรคำนวณ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-efficiency/" 
+                                    aria-current="">
+                                    ประสิทธิภาพการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/stride-mechanics/" 
+                                    aria-current="">
+                                    กลศาสตร์ก้าวเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-vs-running/" 
+                                    aria-current="">
+                                    เดินเทียบกับวิ่ง
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/benchmarks/" 
+                                    aria-current="">
+                                    มาตรฐานประสิทธิภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/bibliography/" 
+                                    aria-current="">
+                                    บรรณานุกรม
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">สำหรับคุณ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/for-health/" 
+                                    aria-current="">
+                                    สำหรับสุขภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-fitness/" 
+                                    aria-current="">
+                                    สำหรับฟิตเนส
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-seniors/" 
+                                    aria-current="">
+                                    สำหรับผู้สูงอายุ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-rehabilitation/" 
+                                    aria-current="">
+                                    สำหรับการฟื้นฟู
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เครื่องมือ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/cadence-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณจังหวะก้าว
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-assessment/" 
+                                    aria-current="">
+                                    การประเมินท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/vo2max-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/th/contact/"  aria-current="">
+                            ติดต่อเรา
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="เลือกภาษา">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" selected>
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="สลับเมนู"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Gait Analysis Guide -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/th/">หน้าแรก</a> / <a href="/th/#learn">เรียนรู้</a> / การวิเคราะห์ท่าทางการเดิน
+    </div>
+    <h1>การวิเคราะห์ท่าทางการเดิน</h1>
+    <p class="lead">เรียนรู้วิธีวิเคราะห์กลศาสตร์ชีวภาพการเดินของคุณด้วยตัวชี้วัดที่อ้างอิงทางวิทยาศาสตร์ เพื่อประสิทธิภาพ สุขภาพ และการป้องกันการบาดเจ็บที่ดีขึ้น</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="what-is-gait">การวิเคราะห์ท่าทางการเดินคืออะไร?</h2>
+
+        <p>การวิเคราะห์ท่าทางการเดินคือการศึกษาอย่างเป็นระบบเกี่ยวกับรูปแบบการเดินและกลศาสตร์ชีวภาพของคุณ การวิเคราะห์นี้จะตรวจสอบว่าร่างกายของคุณเคลื่อนไหวอย่างไรขณะเดิน ระบุความไม่มีประสิทธิภาพ ความไม่สมมาตร และความเสี่ยงที่อาจเกิดการบาดเจ็บ</p>
+
+        <div class="key-insight">
+          <p><strong>เหตุใดจึงสำคัญ:</strong> การวิเคราะห์ท่าทางการเดินได้พัฒนาจากเครื่องมือทางคลินิกที่ใช้เฉพาะในห้องปฏิบัติการพิเศษ มาเป็นเทคโนโลยีสำหรับผู้บริโภคที่เข้าถึงได้ผ่านสมารต์วอทช์และสมารต์โฟน งานวิจัยแสดงให้เห็นว่าการวิเคราะห์รูปแบบการเดินสามารถทำนายผลลัพธ์ด้านสุขภาพ ตรวจจับสัญญาณเตือนภายในของภาวะทางระบบประสาท และเพิ่มประสิทธิภาพการเดินได้</p>
+        </div>
+
+        <p>WalkAnalytics ผสานการทำงานกับ Apple HealthKit เพื่อวิเคราะห์ตัวชี้วัดการเดินที่รวบรวมโดยอัตโนมัติจาก iPhone และ Apple Watch ของคุณ โดยให้ข้อมูลเชิงลึกในระดับทางคลินิกเกี่ยวกับคุณภาพท่าทางการเดินของคุณ</p>
+
+        <h2 id="key-metrics">ตัวชี้วัดท่าทางการเดินที่สำคัญ</h2>
+
+        <h3 id="cadence">1. จังหวะก้าว (ก้าวต่อนาที)</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> จำนวนก้าวที่ก้าวต่อนาที (spm)</p>
+
+          <p><strong>เหตุใดจึงเป็นตัวชี้วัดการเดินที่สำคัญที่สุด:</strong> จังหวะก้าวเป็นตัวทำนายที่ดีที่สุดเพียงตัวเดียวของความเข้มการเดินและการใช้พลังงาน ไม่เหมือนกับความเร็ว (ซึ่งขึ้นอยู่กับความยาวก้าว) จังหวะก้าวสะท้อนความถี่การเคลื่อนไหวและความต้องการพลังงานจากการเผาผลาญโดยตรง</p>
+
+          <div class="science-box">
+            <h4>หลักฐานทางวิทยาศาสตร์: เกณฑ์ 100 spm</h4>
+            <p>การศึกษา CADENCE-Adults ที่สำคัญ (Tudor-Locke et al., 2019) ทดสอบผู้ใหญ่ 76 คน และสรุปว่า:</p>
+            <ul>
+              <li><strong>100 ก้าว/นาที = 3 METs</strong> (ความเข้มปานกลาง) โดยมีความไวร้อยละ 86 และความจำเพาะร้อยละ 89.6</li>
+              <li><strong>110 spm ≈ 4 METs</strong> (ปานกลาง-หนัก)</li>
+              <li><strong>120 spm ≈ 5 METs</strong> (หนัก)</li>
+              <li><strong>130 spm = 6 METs</strong> (เกณฑ์ความเข้มหนักมาก)</li>
+            </ul>
+            <p>ความสัมพันธ์นี้<strong>สอดคล้องกันอย่างน่าทึ่งในช่วงอายุ 21-85 ปี</strong> ทำให้จังหวะก้าวเป็นตัวชี้วัดความเข้มที่เป็นสากล</p>
+          </div>
+
+          <div class="data-table">
+            <h4>ช่วงจังหวะก้าวและการประยุกต์ใช้</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>จังหวะก้าว (spm)</th>
+                  <th>หมวดหมู่</th>
+                  <th>การประยุกต์ใช้</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>60-90</td>
+                  <td>ช้ามาก</td>
+                  <td>การฟื้นตัว ความบกพร่องด้านการเคลื่อนไหว</td>
+                </tr>
+                <tr>
+                  <td>90-100</td>
+                  <td>ความเข้มเบา</td>
+                  <td>กิจกรรมเบา อบอุ่นร่างกาย</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>100-110</strong></td>
+                  <td><strong>ความเข้มปานกลาง</strong></td>
+                  <td><strong>ประโยชน์ต่อสุขภาพ การเผาผลาญไขมัน แนะนำเป็นพื้นฐาน</strong></td>
+                </tr>
+                <tr>
+                  <td>110-120</td>
+                  <td>ปานกลาง-หนัก</td>
+                  <td>สมรรถภาพหัวใจและหลอดเลือด การเดินเร็ว</td>
+                </tr>
+                <tr>
+                  <td>120-130</td>
+                  <td>หนัก</td>
+                  <td>การเดินอย่างมีพลัง การฝึกสมรรถภาพ</td>
+                </tr>
+                <tr>
+                  <td>130-140</td>
+                  <td>หนักมาก</td>
+                  <td>สมรรถภาพขั้นสูง การฝึกแบบอินเตอร์วัล</td>
+                </tr>
+                <tr>
+                  <td>140-180</td>
+                  <td>การเดินแข่งขัน</td>
+                  <td>การเดินแบบแข่งขัน นักกีฬาระดับสูง</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>วิธีการวัด:</strong> Apple Watch และอุปกรณ์ติดตามสมรรถภาพส่วนใหญ่คำนวณจังหวะก้าวโดยอัตโนมัติ คุณยังสามารถนับก้าวเป็นเวลา 30 วินาทีและคูณด้วย 2</p>
+
+          <p><strong>เป้าหมายจังหวะก้าว:</strong></p>
+          <ul>
+            <li><strong>สุขภาพทั่วไป:</strong> ตั้งเป้าหมาย ≥100 spm ระหว่างการเดินเพื่อให้ได้ความเข้มปานกลาง</li>
+            <li><strong>การพัฒนาสมรรถภาพ:</strong> ตั้งเป้าหมาย 110-120 spm เพื่อการพัฒนาแอโรบิก</li>
+            <li><strong>การฝึกเพื่อประสิทธิภาพ:</strong> ฝึกช่วงสั้น ๆ ที่ 120-130+ spm</li>
+          </ul>
+        </div>
+
+        <h3 id="stride-length">2. ความยาวก้าว</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> ระยะทางที่ครอบคลุมในหนึ่งรอบก้าวที่สมบูรณ์ (จากส้นเท้าข้างหนึ่งแตะพื้นไปยังส้นเท้าเดียวกันแตะพื้นครั้งถัดไป)</p>
+
+          <p><strong>ความยาวก้าวที่เหมาะสม:</strong> งานวิจัยแสดงให้เห็นว่าความยาวก้าวที่เหมาะสมคือ<strong>ร้อยละ 40-50 ของส่วนสูง</strong>ระหว่างการเดินปกติ</p>
+
+          <div class="data-table">
+            <h4>มาตรฐานความยาวก้าว</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>ส่วนสูง</th>
+                  <th>ก้าวที่เหมาะสม (40-50% ของส่วนสูง)</th>
+                  <th>นักเดินระดับสูง (สูงถึง 70%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5'0" (152 ซม.)</td>
+                  <td>0.61-0.76 ม. (24-30")</td>
+                  <td>สูงถึง 1.06 ม. (42")</td>
+                </tr>
+                <tr>
+                  <td>5'6" (168 ซม.)</td>
+                  <td>0.67-0.84 ม. (26-33")</td>
+                  <td>สูงถึง 1.18 ม. (46")</td>
+                </tr>
+                <tr>
+                  <td>6'0" (183 ซม.)</td>
+                  <td>0.73-0.91 ม. (29-36")</td>
+                  <td>สูงถึง 1.28 ม. (50")</td>
+                </tr>
+                <tr>
+                  <td>6'6" (198 ซม.)</td>
+                  <td>0.79-0.99 ม. (31-39")</td>
+                  <td>สูงถึง 1.39 ม. (55")</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>ความสัมพันธ์สำคัญ:</strong> ความเร็ว = ความยาวก้าว × จังหวะก้าว</p>
+          <p>ซึ่งหมายความว่าคุณสามารถเพิ่มความเร็วในการเดินได้โดยการก้าวให้ยาวขึ้น หรือการเพิ่มจังหวะก้าว อย่างไรก็ตาม <strong>การเพิ่มจังหวะก้าวโดยทั่วไปมีประสิทธิภาพและปลอดภัยกว่า</strong>การก้าวข้ามไกลเกินไป</p>
+
+          <div class="warning-box">
+            <h4>⚠️ หลีกเลี่ยงการก้าวข้ามไกลเกินไป</h4>
+            <p><strong>การก้าวข้ามไกลเกินไป</strong>เกิดขึ้นเมื่อเท้าของคุณลงพื้นไกลเกินไปจากจุดศูนย์กลางมวลของคุณ สิ่งนี้:</p>
+            <ul>
+              <li>เพิ่มแรงเบรกและแรงปฏิกิริยาจากพื้น</li>
+              <li>ลดประสิทธิภาพการเดิน (คุณกำลัง "เบรก" ในแต่ละก้าว)</li>
+              <li>เพิ่มความเครียดต่อเข่าและสะโพก</li>
+              <li>เพิ่มความเสี่ยงการบาดเจ็บ</li>
+            </ul>
+            <p><strong>วิธีแก้ไข:</strong> มุ่งเน้นที่การลงพื้นด้วยเท้าให้ใกล้กับจุดศูนย์กลางมวลของร่างกายและดันออกอย่างมีพลังจากเท้าหลัง</p>
+          </div>
+
+          <p><strong>ตัวชี้วัด Apple HealthKit:</strong> iOS 14+ วัด <code>walkingStepLength</code> โดยอัตโนมัติเมื่อ iPhone อยู่ในกระเป๋ากางเกง/กระเป๋า</p>
+        </div>
+
+        <h3 id="ground-contact">3. ระยะเวลาสัมผัสพื้น</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> ระยะเวลาที่เท้าแต่ละข้างอยู่ในการสัมผัสกับพื้นระหว่างก้าว</p>
+
+          <p><strong>ค่าเฉพาะสำหรับการเดิน:</strong> 200-300 มิลลิวินาทีต่อก้าว (ยาวนานกว่าการวิ่งที่ <200ms อย่างมีนัยสำคัญ)</p>
+
+          <div class="science-box">
+            <h4>5 ระยะของการสัมผัสพื้นขณะเดิน</h4>
+            <p>แต่ละก้าวประกอบด้วย 5 ระยะที่แตกต่างกัน:</p>
+            <ol>
+              <li><strong>การสัมผัสเริ่มต้น (ส้นเท้าแตะพื้น):</strong> ส้นเท้าสัมผัสพื้นที่ ~10° dorsiflexion</li>
+              <li><strong>การตอบสนองน้ำหนัก (ฝ่าเท้าแบน):</strong> การสัมผัสฝ่าเท้าเต็ม รับน้ำหนัก</li>
+              <li><strong>กลางท่าทาง:</strong> น้ำหนักตัวผ่านเท้าที่รองรับ</li>
+              <li><strong>ท่าทางสุดท้าย (ส้นเท้ายก):</strong> ส้นเท้าเริ่มยก น้ำหนักเคลื่อนไปข้างหน้า</li>
+              <li><strong>ก่อนแกว่ง (ปลายเท้าออก):</strong> ดันออกจากฝ่าเท้าหน้า ระยะผลักดัน</li>
+            </ol>
+          </div>
+
+          <p><strong>สิ่งที่มีผลต่อระยะเวลาสัมผัสพื้น:</strong></p>
+          <ul>
+            <li><strong>ความเร็ว:</strong> การเดินเร็ว = เวลาสัมผัสสั้นลง</li>
+            <li><strong>จังหวะก้าว:</strong> จังหวะก้าวสูง = เวลาสัมผัสสั้นลงต่อก้าว</li>
+            <li><strong>ภูมิประเทศ:</strong> ขึ้นเนินเพิ่มเวลาสัมผัส ลงเนินอาจลดเวลาสัมผัส</li>
+            <li><strong>ความเหนื่อยล้า:</strong> กล้ามเนื้อเหนื่อย = เวลาสัมผัสนานขึ้น</li>
+          </ul>
+
+          <p><strong>เปรียบเทียบกับการวิ่ง:</strong></p>
+          <ul>
+            <li>การเดิน: การสัมผัส 200-300ms, ร้อยละ 62 ของรอบท่าทางในระยะรองรับ</li>
+            <li>การวิ่ง: การสัมผัส <200ms, เพียงร้อยละ 31 ของรอบท่าทางในระยะรองรับ</li>
+            <li>ความแตกต่างพื้นฐานนี้อธิบายว่าทำไมการเดินมี<strong>แรงกระแทกต่ำกว่า</strong>และเหมาะสำหรับการฟื้นตัวจากการบาดเจ็บ</li>
+          </ul>
+        </div>
+
+        <h3 id="double-support">4. เวลาค้ำจุนสองเท้า</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> ส่วนของรอบท่าทางเมื่อเท้าทั้งสองข้างสัมผัสพื้นพร้อมกัน</p>
+
+          <p><strong>ลักษณะสำคัญที่แยกการเดินออกจากการวิ่ง:</strong> การเดินมีระยะค้ำจุนสองเท้าเสมอ (ร้อยละ 20-30 ของรอบท่าทาง) ในขณะที่การวิ่งมีระยะลอยที่ไม่มีการสัมผัสพื้น</p>
+
+          <div class="key-insight">
+            <p><strong>ความสำคัญทางคลินิก:</strong> เปอร์เซ็นต์การค้ำจุนสองเท้าเป็นตัวทำนายที่มีประสิทธิภาพของความเสี่ยงการล้มและความมั่นใจในการทรงตัว โดยเฉพาะในผู้สูงอายุ</p>
+          </div>
+
+          <div class="data-table">
+            <h4>การตีความการค้ำจุนสองเท้า</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>การค้ำจุนสองเท้า %</th>
+                  <th>การตีความ</th>
+                  <th>การดำเนินการ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;15%</td>
+                  <td>ต่ำมาก (ใกล้เคียงท่าทางวิ่ง)</td>
+                  <td>อาจเดินเร็วเกินไปสำหรับความปลอดภัย</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>20-30%</strong></td>
+                  <td><strong>ช่วงปกติ สุขภาพดี</strong></td>
+                  <td><strong>สมดุลและประสิทธิภาพที่เหมาะสม</strong></td>
+                </tr>
+                <tr>
+                  <td>30-35%</td>
+                  <td>สูงขึ้น ควรระวัง</td>
+                  <td>ติดตามการเปลี่ยนแปลง พิจารณาการออกกำลังกายสมดุล</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;35%</strong></td>
+                  <td><strong>ตัวบ่งชี้ความเสี่ยงการล้มสูง</strong></td>
+                  <td><strong>ปรึกษาผู้ให้บริการสุขภาพ เริ่มการฝึกสมดุล</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>สิ่งที่ทำให้การค้ำจุนสองเท้าสูงขึ้น:</strong></p>
+          <ul>
+            <li>ความกลัวการล้มหรือความมั่นใจในการทรงตัวลดลง</li>
+            <li>ภาวะทางระบบประสาท (โรคพาร์กินสัน โรคหลอดเลือดสมอง โรคประสาท)</li>
+            <li>กล้ามเนื้ออ่อนแรง (โดยเฉพาะกล้ามเนื้อ hip abductors และ ankle dorsiflexors)</li>
+            <li>อาการปวดหรือแข็งของข้อต่อ</li>
+            <li>ความบกพร่องทางสายตา</li>
+          </ul>
+
+          <p><strong>ตัวชี้วัด Apple HealthKit:</strong> <code>walkingDoubleSupportPercentage</code> วัดโดยอัตโนมัติโดย iPhone 8+ กับ iOS 14+ ตัวชี้วัดนี้เป็นส่วนหนึ่งของการประเมิน Walking Steadiness ของ Apple</p>
+        </div>
+
+        <h3 id="asymmetry">5. ความไม่สมมาตรในการเดิน</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> ความแตกต่างระหว่างเวลาก้าว ความยาวก้าว หรือเวลาสัมผัสของขาซ้ายและขวา</p>
+
+          <div class="science-box">
+            <h4>สูตรดัชนีความสมมาตรท่าทาง (GSI)</h4>
+            <p>สูตรมาตรฐานสำหรับการวัดความไม่สมมาตรของท่าทาง:</p>
+            <div class="formula-box">
+              <p><strong>GSI = |ขวา - ซ้าย| / [0.5 × (ขวา + ซ้าย)] × 100</strong></p>
+            </div>
+            <p>ตัวอย่าง: หากเวลาก้าวขวา = 520ms และเวลาก้าวซ้าย = 480ms:</p>
+            <p>GSI = |520 - 480| / [0.5 × (520 + 480)] × 100 = 40 / 500 × 100 = <strong>ความไม่สมมาตรร้อยละ 8</strong></p>
+          </div>
+
+          <div class="data-table">
+            <h4>การจำแนกความไม่สมมาตร</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>ความไม่สมมาตร %</th>
+                  <th>การจำแนก</th>
+                  <th>ความสำคัญทางคลินิก</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>&lt;2-3%</strong></td>
+                  <td><strong>ปกติ สมมาตร</strong></td>
+                  <td>รูปแบบท่าทางที่แข็งแรง</td>
+                </tr>
+                <tr>
+                  <td>3-5%</td>
+                  <td>ความไม่สมมาตรเล็กน้อย</td>
+                  <td>ติดตาม อาจบ่งชี้ความอ่อนแรงเล็กน้อยหรือนิสัย</td>
+                </tr>
+                <tr>
+                  <td>5-10%</td>
+                  <td>ความไม่สมมาตรปานกลาง</td>
+                  <td>พิจารณาการประเมินจากผู้เชี่ยวชาญ</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;10%</strong></td>
+                  <td><strong>มีนัยสำคัญทางคลินิก</strong></td>
+                  <td><strong>น่าจะบ่งชี้การบาดเจ็บ ความอ่อนแรง หรือปัญหาทางระบบประสาท</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>สาเหตุทั่วไปของความไม่สมมาตร:</strong></p>
+          <ul>
+            <li><strong>การชดเชยการบาดเจ็บก่อนหน้า:</strong> การพึ่งพาขาข้างหนึ่งหลังจากบาดเจ็บ</li>
+            <li><strong>ความไม่สมดุลของกล้ามเนื้อ:</strong> ความอ่อนแรงในสะโพก เข่า หรือข้อเท้าข้างหนึ่ง</li>
+            <li><strong>ความแตกต่างของความยาวขา:</strong> ความแตกต่างที่แท้จริงหรือความแตกต่างการทำงานของความยาวขา</li>
+            <li><strong>ปัญหาข้อต่อ:</strong> ข้ออักเสบ ช่วงการเคลื่อนไหวที่ลดลงในสะโพก/เข่า/ข้อเท้า</li>
+            <li><strong>ภาวะทางระบบประสาท:</strong> โรคหลอดเลือดสมอง โรคพาร์กินสัน MS</li>
+            <li><strong>รองเท้า:</strong> การสึกหรอของรองเท้าที่ไม่สม่ำเสมอหรือไม่พอดี</li>
+          </ul>
+
+          <p><strong>ตัวชี้วัด Apple HealthKit:</strong> <code>walkingAsymmetryPercentage</code> วัดความแตกต่างระหว่างเวลาก้าวซ้ายและขวา ค่า >10% จะกระตุ้นการแจ้งเตือน</p>
+
+          <div class="tip-box">
+            <h4>💡 การปรับปรุงความสมมาตร</h4>
+            <ul>
+              <li>การออกกำลังกายสมดุลขาเดียว (30-60 วินาทีต่อขา)</li>
+              <li>การฝึกความแข็งแรงข้างเดียว (มุ่งเน้นที่ด้านอ่อนแอ)</li>
+              <li>การฝึกท่าทางใหม่ด้วยการตอบรับทางสายตา/เสียง</li>
+              <li>จัดการกับการบาดเจ็บหรือภาวะพื้นฐาน</li>
+              <li>การประเมินท่าทางจากผู้เชี่ยวชาญหากความไม่สมมาตรยังคงอยู่ >5%</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="walking-speed">6. ความเร็วในการเดิน</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> ความเร็วการเดินเฉลี่ยของคุณ โดยปกติวัดเป็นเมตรต่อวินาที (m/s) หรือไมล์ต่อชั่วโมง (mph)</p>
+
+          <div class="key-insight">
+            <p><strong>เหตุใดความเร็วจึงเป็น "สัญญาณชีพ":</strong> การศึกษาสำคัญ JAMA ปี 2011 ของผู้สูงอายุ 34,485 คนพบว่าความเร็วในการเดินเป็นหนึ่งในตัวทำนายเดียวที่แข็งแกร่งที่สุดของการเสียชีวิต ทำให้ได้รับการกำหนดเป็น "สัญญาณชีพ" ทางคลินิก (Studenski et al., 2011)</p>
+          </div>
+
+          <div class="data-table">
+            <h4>มาตรฐานสุขภาพความเร็วในการเดิน</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>ความเร็ว</th>
+                  <th>การจำแนก</th>
+                  <th>การบ่งชี้สุขภาพ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="warning-row">
+                  <td><strong>&lt;0.6 m/s (1.3 mph)</strong></td>
+                  <td><strong>บกพร่องอย่างรุนแรง</strong></td>
+                  <td>ความเสี่ยงการเสียชีวิตสูง ปรึกษาผู้ให้บริการสุขภาพ</td>
+                </tr>
+                <tr>
+                  <td>0.6-0.8 m/s (1.3-1.8 mph)</td>
+                  <td>การเคลื่อนไหวจำกัด</td>
+                  <td>ความเสี่ยงด้านสุขภาพเพิ่มขึ้น ข้อจำกัดการทำงาน</td>
+                </tr>
+                <tr>
+                  <td>0.8-1.0 m/s (1.8-2.2 mph)</td>
+                  <td>ต่ำกว่าปกติ</td>
+                  <td>ความเสี่ยงปานกลาง มีที่ว่างสำหรับการปรับปรุง</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>1.0-1.3 m/s (2.2-2.9 mph)</strong></td>
+                  <td><strong>สุขภาพการทำงานดี</strong></td>
+                  <td>ตัวบ่งชี้สุขภาพปกติ</td>
+                </tr>
+                <tr>
+                  <td>1.3-1.5 m/s (2.9-3.4 mph)</td>
+                  <td>สูงกว่าค่าเฉลี่ย</td>
+                  <td>ตัวบ่งชี้สุขภาพดีเยี่ยม ความเสี่ยงการเสียชีวิตต่ำ</td>
+                </tr>
+                <tr>
+                  <td>&gt;1.5 m/s (&gt;3.4 mph)</td>
+                  <td>การเดินเพื่อสมรรถภาพ</td>
+                  <td>ความสามารถระดับนักกีฬา ความเสี่ยงด้านสุขภาพต่ำมาก</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="science-box">
+            <h4>การไล่ระดับความเร็ว-การอยู่รอด</h4>
+            <p>งานวิจัยแสดงให้เห็นว่า<strong>การเพิ่มความเร็วในการเดินทุก ๆ 0.1 m/s มีความสัมพันธ์กับการลดความเสี่ยงการเสียชีวิต ~12%</strong> ความสัมพันธ์นี้เป็นเส้นตรงอย่างน่าทึ่งในทุกประชากร</p>
+          </div>
+
+          <p><strong>ตัวชี้วัด Apple HealthKit:</strong> <code>walkingSpeed</code> คำนวณจากเซ็นเซอร์การเคลื่อนไหวของ iPhone (iPhone 8+ กับ iOS 14+) การศึกษาที่ได้รับการตรวจสอบแสดงความสัมพันธ์ r=0.86-0.91 กับการทดสอบการเดินจับเวลาทางคลินิก</p>
+        </div>
+
+        <h3 id="vertical-oscillation">7. การแกว่งขึ้นลง</h3>
+
+        <div class="metric-detail">
+          <p><strong>คืออะไร:</strong> การเคลื่อนที่ในแนวตั้งของจุดศูนย์กลางมวลของคุณระหว่างรอบท่าทาง</p>
+
+          <p><strong>ช่วงปกติ:</strong> การเคลื่อนไหวในแนวตั้ง 4-8 ซม.</p>
+
+          <div class="data-table">
+            <h4>การตีความการแกว่งขึ้นลง</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>การแกว่ง</th>
+                  <th>การประเมิน</th>
+                  <th>ความหมาย</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;4 ซม.</td>
+                  <td>น้อยเกินไป (ท่าทางเดินเซ)</td>
+                  <td>อาจบ่งชี้ความอ่อนแรง ปัญหาทางระบบประสาท หรือความกลัวการล้ม</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>4-8 ซม.</strong></td>
+                  <td><strong>ช่วงปกติ มีประสิทธิภาพ</strong></td>
+                  <td>การใช้พลังงานที่เหมาะสม</td>
+                </tr>
+                <tr>
+                  <td>&gt;8-10 ซม.</td>
+                  <td>มากเกินไป (ท่าทางเดินกระเด้ง)</td>
+                  <td>สิ้นเปลืองพลังงาน กลไกไม่มีประสิทธิภาพ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>เหตุใดจึงสำคัญ:</strong> การแกว่งขึ้นลงที่มากเกินไปหมายความว่าคุณ "กระเด้ง" มากเกินไปในแต่ละก้าว สิ้นเปลืองพลังงานต่อสู้กับแรงโน้มถ่วง การแกว่งน้อยที่สุดอาจบ่งชี้รูปแบบท่าทางเดินเซที่เกี่ยวข้องกับโรคพาร์กินสันหรือความกลัวการล้ม</p>
+
+          <p><strong>วิธีการเพิ่มประสิทธิภาพ:</strong></p>
+          <ul>
+            <li>มุ่งเน้นการเคลื่อนที่ไปข้างหน้า ไม่ใช่ขึ้นข้างบน</li>
+            <li>รักษาการเอนไปข้างหน้าเล็กน้อย (2-5°) จากข้อเท้า</li>
+            <li>รักษาระดับศีรษะและมองไปข้างหน้า</li>
+            <li>ฝึกการถ่ายโอนน้ำหนักที่นุ่มนวลระหว่างก้าว</li>
+          </ul>
+        </div>
+
+        <h2 id="apple-metrics">ตัวชี้วัดการเดินของ Apple HealthKit</h2>
+
+        <div class="tech-section">
+          <p>Apple เปิดตัวตัวชี้วัดการเดินขั้นสูงใน iOS 14 (2020) ที่รวบรวมข้อมูลท่าทางในระดับทางคลินิกโดยอัตโนมัติจากเซ็นเซอร์การเคลื่อนไหวของ iPhone ตัวชี้วัดเหล่านี้ได้รับการ<strong>ตรวจสอบกับการประเมินระดับการวิจัย</strong>และใช้ในการวิจัยทางการแพทย์ในปัจจุบัน</p>
+
+          <h3>ความมั่นคงในการเดิน</h3>
+
+          <p>ตัวชี้วัด<strong>Walking Steadiness</strong> เฉพาะของ Apple เป็นการวัดรวมที่ประกอบด้วย:</p>
+          <ul>
+            <li>ความเร็วในการเดิน</li>
+            <li>ความยาวก้าว</li>
+            <li>เปอร์เซ็นต์การค้ำจุนสองเท้า</li>
+            <li>ความไม่สมมาตรในการเดิน</li>
+            <li>ความแปรผันของความเร็วในการเดิน</li>
+            <li>ความแปรผันของความยาวก้าว</li>
+          </ul>
+
+          <div class="data-table">
+            <h4>การจำแนกความมั่นคงในการเดิน</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>การจำแนก</th>
+                  <th>ความเสี่ยงการล้ม</th>
+                  <th>การดำเนินการ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>OK</strong></td>
+                  <td>ความเสี่ยงการล้มต่อปี &lt;1%</td>
+                  <td>รักษาระดับกิจกรรมปัจจุบัน</td>
+                </tr>
+                <tr>
+                  <td><strong>Low</strong></td>
+                  <td>ความเสี่ยงการล้มต่อปี 1-5%</td>
+                  <td>พิจารณาการออกกำลังกายสมดุล ติดตามแนวโน้ม</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>Very Low</strong></td>
+                  <td>ความเสี่ยงการล้มต่อปี &gt;5%</td>
+                  <td><strong>ส่งการแจ้งเตือน iPhone ปรึกษาผู้ให้บริการสุขภาพ</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>การทดสอบการเดิน 6 นาที (6MWT)</h3>
+
+          <p>Apple Watch Series 3+ สามารถประมาณ<strong>ระยะทางการทดสอบการเดิน 6 นาที</strong>จากข้อมูลการเดินในอดีต 6MWT เป็นการประเมินมาตรฐานทองคำทางคลินิกของความสามารถในการออกกำลังกายเชิงหน้าที่</p>
+
+          <div class="science-box">
+            <h4>การตีความ 6MWT</h4>
+            <ul>
+              <li><strong>&lt;350 เมตร:</strong> ข้อจำกัดการทำงานที่สำคัญ</li>
+              <li><strong>350-450 เมตร:</strong> ข้อจำกัดปานกลาง</li>
+              <li><strong>450-550 เมตร:</strong> ข้อจำกัดเล็กน้อยหรือผู้สูงอายุ</li>
+              <li><strong>&gt;550 เมตร:</strong> ความสามารถการทำงานดี</li>
+              <li><strong>&gt;650 เมตร:</strong> ความสามารถดีเยี่ยม</li>
+            </ul>
+            <p><em>หมายเหตุ: ค่าจะแตกต่างกันตามอายุ เพศ และส่วนสูง นี่เป็นแนวทางทั่วไป</em></p>
+          </div>
+
+          <h3>ความเป็นส่วนตัวของข้อมูล</h3>
+
+          <p>ตัวชี้วัดการเดินของ Apple HealthKit ทั้งหมดคือ:</p>
+          <ul>
+            <li><strong>ประมวลผลบนอุปกรณ์:</strong> ไม่ส่งไปยังเซิร์ฟเวอร์ของ Apple</li>
+            <li><strong>ควบคุมโดยผู้ใช้:</strong> คุณตัดสินใจว่าแอปใดสามารถเข้าถึงข้อมูลของคุณ</li>
+            <li><strong>เข้ารหัส:</strong> ป้องกันโดยการเข้ารหัสของ iOS</li>
+            <li><strong>ลบได้:</strong> ควบคุมเต็มที่ในการลบข้อมูลสุขภาพทั้งหมด</li>
+          </ul>
+        </div>
+
+        <h2 id="interpreting">การตีความการวิเคราะห์ท่าทางของคุณ</h2>
+
+        <h3>สัญญาณของท่าทางที่แข็งแรง</h3>
+        <ul>
+          <li><strong>จังหวะก้าว:</strong> ≥100 spm ระหว่างการเดินตั้งใจ</li>
+          <li><strong>ความเร็ว:</strong> ≥1.0 m/s (2.2 mph) ความเร็วการเดินตามปกติ</li>
+          <li><strong>ความสมมาตร:</strong> ความไม่สมมาตร &lt;3% ระหว่างซ้ายและขวา</li>
+          <li><strong>การค้ำจุนสองเท้า:</strong> ร้อยละ 20-30 ของรอบท่าทาง</li>
+          <li><strong>ความสม่ำเสมอ:</strong> ตัวชี้วัดคล้ายกันในหลายวัน</li>
+          <li><strong>ความมั่นคงในการเดิน:</strong> การจำแนก "OK"</li>
+        </ul>
+
+        <h3>สัญญาณเตือนที่ต้องให้ความสนใจ</h3>
+        <div class="warning-box">
+          <ul>
+            <li><strong>ความไม่สมมาตรเพิ่มขึ้นอย่างกะทันหัน:</strong> อาจบ่งชี้การบาดเจ็บเฉียบพลัน</li>
+            <li><strong>ความเร็วลดลงตามเวลา:</strong> การลดลงของการทำงาน โดยเฉพาะถ้า &gt;0.05 m/s ต่อปี</li>
+            <li><strong>การค้ำจุนสองเท้าเพิ่มขึ้น:</strong> ความมั่นใจในการทรงตัวหรือความแข็งแรงลดลง</li>
+            <li><strong>ความมั่นคงในการเดินลดลงเป็น "Low" หรือ "Very Low":</strong> ความเสี่ยงการล้มเพิ่มขึ้น</li>
+            <li><strong>ความไม่สมมาตรต่อเนื่อง &gt;10%:</strong> สมควรได้รับการประเมินจากผู้เชี่ยวชาญ</li>
+            <li><strong>ความเร็ว &lt;0.8 m/s:</strong> ความเสี่ยงด้านสุขภาพสูง ปรึกษาแพทย์</li>
+          </ul>
+        </div>
+
+        <h2 id="improving">วิธีปรับปรุงท่าทางของคุณ</h2>
+
+        <h3>การฝึกจังหวะก้าว</h3>
+        <p><strong>เป้าหมาย:</strong> บรรลุ ≥100 spm ระหว่างการเดิน</p>
+        <p><strong>วิธีการ:</strong></p>
+        <ul>
+          <li>ใช้แอปเมโทรโนมตั้งค่าที่ 100-120 BPM</li>
+          <li>เดินตามเพลงที่มีจังหวะ 100-120 BPM</li>
+          <li>ฝึก "เท้าเร็ว" ก้าวสั้น รวดเร็ว</li>
+          <li>มุ่งเน้นอัตราการหมุนเวียน ไม่ใช่ความยาวก้าว</li>
+          <li>ตั้งการแจ้งเตือน Apple Watch เมื่อจังหวะก้าวต่ำกว่าเป้าหมาย</li>
+        </ul>
+
+        <h3>การปรับปรุงความสมมาตร</h3>
+        <p><strong>การออกกำลังกาย:</strong></p>
+        <ul>
+          <li><strong>การยืนขาเดียว:</strong> 30-60 วินาทีต่อขา ตาเปิดแล้วปิด</li>
+          <li><strong>ความแข็งแรงข้างเดียว:</strong> ยกน้ำหนักตายขาเดียว การก้าวขึ้น การก้าวกระโดด</li>
+          <li><strong>การฝึกกระดานสมดุล:</strong> กระดานโยกหรือลูก BOSU</li>
+          <li><strong>การเดินส่องกระจก:</strong> เดินดูภาพสะท้อนของคุณเพื่อระบุความแตกต่าง</li>
+          <li><strong>การวิเคราะห์วิดีโอ:</strong> ถ่ายวิดีโอตัวเองเดินจากด้านหน้าและด้านหลัง</li>
+        </ul>
+
+        <h3>การเพิ่มความเร็วในการเดินอย่างปลอดภัย</h3>
+        <p><strong>แนวทางแบบก้าวหน้า:</strong></p>
+        <ol>
+          <li><strong>เพิ่มจังหวะก้าวก่อน:</strong> ทำงานขึ้นไปที่ 110-120 spm ก่อนที่จะมุ่งเน้นความยาวก้าว</li>
+          <li><strong>การฝึกแบบอินเตอร์วัล:</strong> สลับ 2 นาทีเร็ว + 2 นาทีจังหวะปกติ</li>
+          <li><strong>การฝึกความแข็งแรง:</strong> ความแข็งแรงของสะโพกและข้อเท้าปรับปรุงความเร็วในการเดินโดยตรง</li>
+          <li><strong>ความก้าวหน้าแบบค่อยเป็นค่อยไป:</strong> เพิ่มความเร็วโดย ~0.1 m/s ต่อเดือน</li>
+        </ol>
+
+        <h3>การลดการค้ำจุนสองเท้า (หากสูงขึ้น)</h3>
+        <p><strong>การออกกำลังกายสมดุล:</strong></p>
+        <ul>
+          <li>การเดินแบบ tandem (ส้น-ปลายเท้า)</li>
+          <li>การยืนขาเดียวพร้อมการเคลื่อนไหวแขน</li>
+          <li>การออกกำลังกายรูปแบบท่าทางด้วยฐานรองรับที่กว้างขึ้นในตอนแรก</li>
+          <li>การฝึกความแข็งแรง: hip abductors, ankle dorsiflexors, แกนกลาง</li>
+          <li>ไทเก็กหรือชั้นเรียนกลุ่มที่มุ่งเน้นสมดุล</li>
+        </ul>
+
+        <h2 id="special-populations">การวิเคราะห์ท่าทางสำหรับกลุ่มประชากรพิเศษ</h2>
+
+        <h3>ผู้สูงอายุ (65+)</h3>
+        <p><strong>ตัวชี้วัดสำคัญ:</strong></p>
+        <ul>
+          <li><strong>ความเร็วในการเดิน:</strong> ติดตามรายปี การลดลง &gt;0.05 m/s/ปี บ่งชี้ความเสี่ยง</li>
+          <li><strong>การค้ำจุนสองเท้า:</strong> ติดตามการเพิ่มขึ้นที่บ่งชี้ความเสี่ยงการล้ม</li>
+          <li><strong>ความมั่นคงในการเดิน:</strong> เปิดการแจ้งเตือนสำหรับ "Low" หรือ "Very Low"</li>
+          <li><strong>ความไม่สมมาตร:</strong> สามารถบ่งชี้ปัญหาทางระบบประสาทที่กำลังพัฒนา</li>
+        </ul>
+
+        <p><strong>เป้าหมาย:</strong></p>
+        <ul>
+          <li>รักษาความเร็ว ≥1.0 m/s</li>
+          <li>รักษาการค้ำจุนสองเท้า &lt;30%</li>
+          <li>ความมั่นคงในการเดิน "OK"</li>
+          <li>ความไม่สมมาตร &lt;5%</li>
+        </ul>
+
+        <h3>ผู้ป่วยฟื้นฟูสภาพ</h3>
+        <p><strong>ติดตามความคืบหน้าการฟื้นตัว:</strong></p>
+        <ul>
+          <li><strong>การปกติของความสมมาตร:</strong> เป้าหมายกลับสู่ความไม่สมมาตร &lt;3%</li>
+          <li><strong>การฟื้นตัวของความเร็ว:</strong> ติดตามการปรับปรุงรายสัปดาห์เพื่อกลับสู่พื้นฐานก่อนบาดเจ็บ</li>
+          <li><strong>ความสม่ำเสมอของจังหวะก้าว:</strong> ความสามารถในการรักษา ≥100 spm บ่งชี้ความพร้อมสำหรับกิจกรรมปกติ</li>
+          <li><strong>รูปแบบการชดเชย:</strong> ดูการพัฒนาของความไม่สมมาตรใหม่</li>
+        </ul>
+
+        <h3>นักเดินเพื่อสมรรถภาพและนักกีฬา</h3>
+        <p><strong>เป้าหมายประสิทธิภาพ:</strong></p>
+        <ul>
+          <li><strong>จังหวะก้าว:</strong> 120-140 spm สำหรับการเดินเพื่อสมรรถภาพ 140-180 spm สำหรับการเดินแข่งขัน</li>
+          <li><strong>ความเร็ว:</strong> &gt;1.5 m/s (3.4 mph) สำหรับสมรรถภาพ &gt;2.0 m/s (4.5 mph) สำหรับการแข่งขัน</li>
+          <li><strong>ความสมมาตร:</strong> &gt;97% (ความไม่สมมาตรต่ำมาก)</li>
+          <li><strong>การค้ำจุนสองเท้า:</strong> ลดให้น้อยที่สุดเป็น 15-20% เพื่อประสิทธิภาพ</li>
+        </ul>
+
+        <h2 id="limitations">ความถูกต้องและข้อจำกัดของเทคโนโลยี</h2>
+
+        <h3>สิ่งที่อุปกรณ์สำหรับผู้บริโภคทำได้ดี</h3>
+        <ul>
+          <li><strong>การนับก้าว:</strong> ความถูกต้องร้อยละ 95-99 เทียบกับเครื่องวัดก้าวเดินเพื่อการวิจัย</li>
+          <li><strong>จังหวะก้าว:</strong> ข้อผิดพลาด ±2-3 spm</li>
+          <li><strong>ความเร็วในการเดิน:</strong> ความสัมพันธ์ r=0.86-0.91 กับการทดสอบทางคลินิก</li>
+          <li><strong>การตรวจจับแนวโน้ม:</strong> ยอดเยี่ยมสำหรับการติดตามการเปลี่ยนแปลงตามเวลา</li>
+        </ul>
+
+        <h3>ข้อจำกัดที่ควรเข้าใจ</h3>
+        <ul>
+          <li><strong>ไม่ใช่การวินิจฉัย:</strong> อุปกรณ์สำหรับผู้บริโภคเป็นเครื่องมือคัดกรอง ไม่ใช่การวินิจฉัยทางการแพทย์</li>
+          <li><strong>การวางตำแหน่งสำคัญ:</strong> iPhone ต้องอยู่ในกระเป๋ากางเกง/กระเป๋า Apple Watch บนข้อมือ</li>
+          <li><strong>ในร่มกับกลางแจ้ง:</strong> ความถูกต้องของ GPS ส่งผลต่อการวัดกลางแจ้ง</li>
+          <li><strong>ความแปรปรวนของแต่ละบุคคล:</strong> ช่วง "ปกติ" เป็นค่าเฉลี่ยของประชากร</li>
+          <li><strong>ไม่สามารถแทนห้องปฏิบัติการท่าทางทางคลินิก:</strong> สำหรับจลนศาสตร์ 3D โดยละเอียด แผ่นแรง EMG จำเป็น</li>
+        </ul>
+
+        <h3>เมื่อใดควรขอการวิเคราะห์ท่าทางจากผู้เชี่ยวชาญ</h3>
+        <ul>
+          <li>ความไม่สมมาตรต่อเนื่อง &gt;10%</li>
+          <li>ความเร็วในการเดิน &lt;0.8 m/s โดยไม่ทราบสาเหตุ</li>
+          <li>การล้มหรือเกือบล้มบ่อย ๆ</li>
+          <li>อาการปวดเรื้อรังระหว่างหรือหลังการเดิน</li>
+          <li>การเปลี่ยนแปลงตัวชี้วัดท่าทางอย่างกะทันหัน</li>
+          <li>อาการทางระบบประสาท (ชา รู้สึกเสียว ปัญหาการประสานงาน)</li>
+        </ul>
+
+        <h2 id="next-steps">ขั้นตอนถัดไป</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>โซนการเดิน</h3>
+            <p>เรียนรู้วิธีใช้จังหวะก้าวเพื่อฝึกในโซนความเข้มที่เหมาะสมสำหรับสุขภาพและสมรรถภาพ</p>
+            <a href="/th/walking-zones/" class="btn btn-secondary">เรียนรู้เกี่ยวกับโซน →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>กลศาสตร์ก้าว</h3>
+            <p>ศึกษาอย่างลึกซึ้งเกี่ยวกับกลศาสตร์ชีวภาพการเดิน ท่าทาง การแกว่งแขน และรูปแบบการลงส้นเท้า</p>
+            <a href="/th/stride-mechanics/" class="btn btn-secondary">สำรวจกลศาสตร์ →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>งานวิจัยทางวิทยาศาสตร์</h3>
+            <p>ทบทวนหลักฐานทางวิทยาศาสตร์ที่สนับสนุนการวิเคราะห์ท่าทางและตัวชี้วัดการเดิน</p>
+            <a href="/th/research/" class="btn btn-secondary">ดูงานวิจัย →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>บรรณานุกรมฉบับสมบูรณ์</h3>
+            <p>เข้าถึงเอกสารอ้างอิงที่ผ่านการตรวจสอบโดยผู้ทรงคุณวุฒิพร้อมลิงก์โดยตรงไปยังสิ่งพิมพ์</p>
+            <a href="/th/bibliography/" class="btn btn-secondary">ดูบรรณานุกรม →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>สารบัญ</h3>
+          <ul>
+            <li><a href="#what-is-gait">การวิเคราะห์ท่าทางการเดินคืออะไร?</a></li>
+            <li><a href="#key-metrics">ตัวชี้วัดสำคัญ</a>
+              <ul>
+                <li><a href="#cadence">จังหวะก้าว</a></li>
+                <li><a href="#stride-length">ความยาวก้าว</a></li>
+                <li><a href="#ground-contact">การสัมผัสพื้น</a></li>
+                <li><a href="#double-support">การค้ำจุนสองเท้า</a></li>
+                <li><a href="#asymmetry">ความไม่สมมาตร</a></li>
+                <li><a href="#walking-speed">ความเร็วในการเดิน</a></li>
+                <li><a href="#vertical-oscillation">การแกว่งขึ้นลง</a></li>
+              </ul>
+            </li>
+            <li><a href="#apple-metrics">ตัวชี้วัดของ Apple HealthKit</a></li>
+            <li><a href="#interpreting">การตีความการวิเคราะห์</a></li>
+            <li><a href="#improving">การปรับปรุงท่าทางของคุณ</a></li>
+            <li><a href="#special-populations">กลุ่มประชากรพิเศษ</a></li>
+            <li><a href="#limitations">ความถูกต้องและข้อจำกัด</a></li>
+            <li><a href="#next-steps">ขั้นตอนถัดไป</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>วิเคราะห์ท่าทางของคุณ</h3>
+          <p>ติดตามกลศาสตร์การเดินของคุณด้วยตัวชี้วัดที่อ้างอิงทางวิทยาศาสตร์โดยใช้ WalkAnalytics</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">ดาวน์โหลดแอป</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📊 ประเด็นสำคัญ</h4>
+          <p>มุ่งเน้นที่<strong>จังหวะก้าว ≥100 spm</strong> และ<strong>ความเร็ว ≥1.0 m/s</strong> เป็นเป้าหมายหลักของคุณ ตัวชี้วัดทั้งสองนี้เป็นตัวทำนายที่แข็งแกร่งที่สุดของผลลัพธ์ด้านสุขภาพ</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">หน้าแรก</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. สงวนลิขสิทธิ์
+            </p>
+            <ul class="footer-links">
+                <li><a href="/th/privacy/">ความเป็นส่วนตัว</a></li>
+                <li><a href="/th/terms/">ข้อกำหนด</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>เว็บไซต์นี้ใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ</p>
+            <a href="/th/privacy/" class="text-sm">เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">ปฏิเสธ</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">ยอมรับ</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

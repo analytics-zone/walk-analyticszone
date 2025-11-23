@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Kalkulator WSS - Wynik Stresu Chodzenia &amp; Intensywność Treningu</title>
+    <meta name="description" content="Bezpłatny kalkulator WSS do obliczania intensywności treningu chodzenia. Określ obciążenie treningowe na podstawie stref tętna. Przykłady + wytyczne tygodniowe.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="kalkulator WSS, wynik stresu chodzenia, intensywność treningu, obciążenie treningowe, strefy tętna">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/pl/wss-calculator/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-01-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/pl/wss-calculator/">
+    <meta property="og:title" content="Kalkulator WSS - Wynik Stresu Chodzenia &amp; Intensywność Treningu">
+    <meta property="og:description" content="Bezpłatny kalkulator WSS do obliczania intensywności treningu chodzenia. Określ obciążenie treningowe na podstawie stref tętna. Przykłady + wytyczne tygodniowe.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/pl/wss-calculator/">
+    <meta name="twitter:title" content="Kalkulator WSS - Wynik Stresu Chodzenia &amp; Intensywność Treningu">
+    <meta name="twitter:description" content="Bezpłatny kalkulator WSS do obliczania intensywności treningu chodzenia. Określ obciążenie treningowe na podstawie stref tętna. Przykłady + wytyczne tygodniowe.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/wss-calculator/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/wss-calculator/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/wss-calculator/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/wss-calculator/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/wss-calculator/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/wss-calculator/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/wss-calculator/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/wss-calculator/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/wss-calculator/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/wss-calculator/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/wss-calculator/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/wss-calculator/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/wss-calculator/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/wss-calculator/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/wss-calculator/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/wss-calculator/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/wss-calculator/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/wss-calculator/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/wss-calculator/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/wss-calculator/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/wss-calculator/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/wss-calculator/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/wss-calculator/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Przejdź do treści</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/pl/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/pl/"  aria-current="">
+                            Start
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Ucz się</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/pl/getting-started/" 
+                                    aria-current="">
+                                    Pierwsze kroki
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/walking-zones/" 
+                                    aria-current="">
+                                    Strefy chodzenia
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/gait-analysis/" 
+                                    aria-current="">
+                                    Analiza chodu
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/training-load/" 
+                                    aria-current="">
+                                    Obciążenie treningowe
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/wss-calculator/" class="active" 
+                                    aria-current="page">
+                                    Kalkulator WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Nauka</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/pl/research/" 
+                                    aria-current="">
+                                    Badania
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/formulas/" 
+                                    aria-current="">
+                                    Wzory
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/gait-efficiency/" 
+                                    aria-current="">
+                                    Wydajność chodu
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/stride-mechanics/" 
+                                    aria-current="">
+                                    Mechanika kroku
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/walking-vs-running/" 
+                                    aria-current="">
+                                    Chodzenie vs bieganie
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/benchmarks/" 
+                                    aria-current="">
+                                    Wzorce wydajności
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/bibliography/" 
+                                    aria-current="">
+                                    Bibliografia
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Dla Ciebie</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/pl/for-health/" 
+                                    aria-current="">
+                                    Dla zdrowia
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/for-fitness/" 
+                                    aria-current="">
+                                    Dla kondycji
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/for-seniors/" 
+                                    aria-current="">
+                                    Dla seniorów
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/for-rehabilitation/" 
+                                    aria-current="">
+                                    Dla rehabilitacji
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Narzędzia</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/pl/cadence-calculator/" 
+                                    aria-current="">
+                                    Kalkulator kadencji
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/gait-assessment/" 
+                                    aria-current="">
+                                    Ocena chodu
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/pl/vo2max-calculator/" 
+                                    aria-current="">
+                                    Kalkulator VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/pl/contact/"  aria-current="">
+                            Kontakt
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Wybierz język">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" selected>
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Przełącz menu"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WSS Calculator -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/pl/">Strona główna</a> / <a href="/pl/#learn">Nauka</a> / Kalkulator WSS
+    </div>
+    <h1>Kalkulator Wyniku Obciążenia Marszem</h1>
+    <p class="lead">Darmowy kalkulator do kwantyfikacji intensywności treningu marszowego przy użyciu stref tętna</p>
+  </div>
+</section>
+
+<section class="calculator-section">
+  <div class="container">
+    <div class="calculator-intro">
+      <h2>Oblicz swój WSS</h2>
+      <p>Wprowadź czas spędzony w każdej strefie tętna podczas marszu, aby obliczyć Wynik Obciążenia Marszem (WSS). Ten wskaźnik pomaga zrozumieć intensywność treningu i zarządzać obciążeniem treningowym.</p>
+    </div>
+
+    <div class="calculator-tool">
+      <div class="calculator-inputs">
+        <h3>Czas w każdej strefie (minuty)</h3>
+
+        <div class="input-group">
+          <label for="zone1">Strefa 1 (Regeneracja) - 50-60% Maks. HR</label>
+          <input type="number" id="zone1" min="0" value="0" />
+          <span class="multiplier">× 1 punkt/min</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone2">Strefa 2 (Spalanie tłuszczu) - 60-70% Maks. HR</label>
+          <input type="number" id="zone2" min="0" value="0" />
+          <span class="multiplier">× 2 punkty/min</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone3">Strefa 3 (Tlenowa) - 70-80% Maks. HR</label>
+          <input type="number" id="zone3" min="0" value="0" />
+          <span class="multiplier">× 3 punkty/min</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone4">Strefa 4 (Progowa) - 80-90% Maks. HR</label>
+          <input type="number" id="zone4" min="0" value="0" />
+          <span class="multiplier">× 4 punkty/min</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone5">Strefa 5 (Szczytowa) - 90-100% Maks. HR</label>
+          <input type="number" id="zone5" min="0" value="0" />
+          <span class="multiplier">× 5 punktów/min</span>
+        </div>
+
+        <button id="calculateBtn" class="btn btn-accent">Oblicz WSS</button>
+      </div>
+
+      <div class="calculator-results">
+        <h3>Twoje wyniki</h3>
+        <div id="results" class="results-box">
+          <div class="result-item">
+            <span class="result-label">Całkowity czas:</span>
+            <span class="result-value" id="totalTime">0 minut</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">Wynik Obciążenia Marszem:</span>
+            <span class="result-value" id="wssScore">0</span>
+          </div>
+          <div class="result-interpretation">
+            <h4>Interpretacja:</h4>
+            <p id="interpretation">Wprowadź czasy stref, aby obliczyć WSS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <h2>Zrozumienie WSS</h2>
+
+    <h3>Co oznacza mój WSS?</h3>
+    <ul>
+      <li><strong>0-40:</strong> Lekki marsz regeneracyjny - minimalne obciążenie treningowe</li>
+      <li><strong>40-80:</strong> Umiarkowany trening tlenowy - dobry do budowania bazy</li>
+      <li><strong>80-150:</strong> Solidny marsz wytrzymałościowy - znacząca korzyść treningowa</li>
+      <li><strong>150-250:</strong> Ciężki trening - wysokie obciążenie treningowe, wymaga regeneracji</li>
+      <li><strong>250+:</strong> Bardzo wymagający - wysiłek startowy lub bardzo długi marsz</li>
+    </ul>
+
+    <h3>Wytyczne tygodniowego WSS</h3>
+    <ul>
+      <li><strong>Początkujący:</strong> 150-300 łącznie na tydzień</li>
+      <li><strong>Średnio zaawansowany:</strong> 300-500 łącznie na tydzień</li>
+      <li><strong>Zaawansowany:</strong> 500-800+ łącznie na tydzień</li>
+    </ul>
+
+    <h3>Jak używać WSS</h3>
+    <ol>
+      <li><strong>Śledź codziennie:</strong> Obliczaj WSS dla każdego marszu</li>
+      <li><strong>Sumuj tygodniowo:</strong> Dodaj WSS z 7 dni</li>
+      <li><strong>Monitoruj trendy:</strong> Obserwuj nadmierne wzrosty</li>
+      <li><strong>Balansuj obciążenie:</strong> Uwzględnij dni łatwe i trudne</li>
+      <li><strong>Postępuj stopniowo:</strong> Zwiększaj tygodniowy WSS maksymalnie o 10%</li>
+    </ol>
+
+    <h2>Przykładowe treningi</h2>
+
+    <h3>Łatwy marsz regeneracyjny</h3>
+    <ul>
+      <li>30 minut w Strefie 1-2</li>
+      <li>WSS ≈ 40-50</li>
+      <li>Użyj w dni aktywnej regeneracji</li>
+    </ul>
+
+    <h3>Umiarkowany marsz budujący bazę</h3>
+    <ul>
+      <li>60 minut w Strefie 2</li>
+      <li>WSS ≈ 120</li>
+      <li>Fundament planu treningowego</li>
+    </ul>
+
+    <h3>Trening interwałowy</h3>
+    <ul>
+      <li>10 min Strefa 1 rozgrzewka</li>
+      <li>20 min Strefa 3-4 interwały</li>
+      <li>10 min Strefa 1 schłodzenie</li>
+      <li>WSS ≈ 100-120</li>
+      <li>Wysoka intensywność, krótszy czas trwania</li>
+    </ul>
+
+    <h3>Długi marsz wytrzymałościowy</h3>
+    <ul>
+      <li>120 minut w Strefie 2</li>
+      <li>WSS ≈ 240</li>
+      <li>Raz w tygodniu dla wytrzymałości</li>
+    </ul>
+
+    <h2>Uzyskiwanie danych tętna</h2>
+
+    <h3>Używanie Apple Watch</h3>
+    <ol>
+      <li>Otwórz aplikację Zdrowie na iPhone</li>
+      <li>Przejdź do Przeglądaj → Serce → Tętno</li>
+      <li>Wybierz swój trening marszowy</li>
+      <li>Zobacz czas w każdej strefie</li>
+      <li>Wprowadź do kalkulatora powyżej</li>
+    </ol>
+
+    <h3>Używanie WalkAnalytics</h3>
+    <p>WalkAnalytics automatycznie oblicza WSS dla każdego marszu. Nie wymaga ręcznych obliczeń!</p>
+    <ul>
+      <li>Importuje treningi z Apple Health</li>
+      <li>Automatycznie analizuje strefy tętna</li>
+      <li>Natychmiast oblicza WSS</li>
+      <li>Śledzi trendy tygodniowe</li>
+      <li>Zapewnia rekomendacje regeneracyjne</li>
+    </ul>
+
+    <div class="cta-section">
+      <h3>Automatyczne śledzenie WSS</h3>
+      <p>Koniec z ręcznymi obliczeniami. WalkAnalytics oblicza WSS automatycznie dla każdego marszu.</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">Pobierz WalkAnalytics</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Logika kalkulatora WSS
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  const zone1 = parseFloat(document.getElementById('zone1').value) || 0;
+  const zone2 = parseFloat(document.getElementById('zone2').value) || 0;
+  const zone3 = parseFloat(document.getElementById('zone3').value) || 0;
+  const zone4 = parseFloat(document.getElementById('zone4').value) || 0;
+  const zone5 = parseFloat(document.getElementById('zone5').value) || 0;
+
+  const totalTime = zone1 + zone2 + zone3 + zone4 + zone5;
+  const wss = (zone1 * 1) + (zone2 * 2) + (zone3 * 3) + (zone4 * 4) + (zone5 * 5);
+
+  document.getElementById('totalTime').textContent = totalTime + ' minut';
+  document.getElementById('wssScore').textContent = Math.round(wss);
+
+  let interpretation = '';
+  if (wss === 0) {
+    interpretation = 'Wprowadź czasy stref, aby obliczyć WSS';
+  } else if (wss < 40) {
+    interpretation = 'Lekki marsz regeneracyjny - minimalne obciążenie treningowe. Idealny na dni odpoczynku lub aktywnej regeneracji.';
+  } else if (wss < 80) {
+    interpretation = 'Umiarkowany trening tlenowy - dobry do budowania bazy tlenowej. Można wykonywać regularnie.';
+  } else if (wss < 150) {
+    interpretation = 'Solidny marsz wytrzymałościowy - znacząca korzyść treningowa. Zapewnia dobry bodziec do poprawy.';
+  } else if (wss < 250) {
+    interpretation = 'Ciężki trening - wysokie obciążenie treningowe. Po nim należy zastosować łatwiejsze dni dla regeneracji.';
+  } else {
+    interpretation = 'Bardzo wymagający trening - wysiłek startowy lub bardzo długi czas trwania. Wymaga znacznej regeneracji.';
+  }
+
+  document.getElementById('interpretation').textContent = interpretation;
+});
+</script>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Start</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Wszelkie prawa zastrzeżone
+            </p>
+            <ul class="footer-links">
+                <li><a href="/pl/privacy/">Prywatność</a></li>
+                <li><a href="/pl/terms/">Warunki</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Ta strona wykorzystuje pliki cookie w celu poprawy jakości korzystania z serwisu.</p>
+            <a href="/pl/privacy/" class="text-sm">Dowiedz się więcej</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Odrzuć</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Akceptuję</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

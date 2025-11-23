@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Kävelymittareiden Kaavat - Kuinka Laskea WSS, Kävely &amp; Terveysmittarit</title>
+    <meta name="description" content="Matemaattiset kaavat kävelyanalyysin takana. Opi laskemaan WSS, askelmittarit, askelfrekvenssi ja tehokkuuspisteet. Tieteeseen perustuva metodologia.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="kävelykaavat, WSS kaava, kävelymittarit laskenta, tieteelliset kävelykaavat, askellaskenta">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/fi/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/fi/formulas/">
+    <meta property="og:title" content="Kävelymittareiden Kaavat - Kuinka Laskea WSS, Kävely &amp; Terveysmittarit">
+    <meta property="og:description" content="Matemaattiset kaavat kävelyanalyysin takana. Opi laskemaan WSS, askelmittarit, askelfrekvenssi ja tehokkuuspisteet. Tieteeseen perustuva metodologia.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="fi_FI">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/fi/formulas/">
+    <meta name="twitter:title" content="Kävelymittareiden Kaavat - Kuinka Laskea WSS, Kävely &amp; Terveysmittarit">
+    <meta name="twitter:description" content="Matemaattiset kaavat kävelyanalyysin takana. Opi laskemaan WSS, askelmittarit, askelfrekvenssi ja tehokkuuspisteet. Tieteeseen perustuva metodologia.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/formulas/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/formulas/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/formulas/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/formulas/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/formulas/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/formulas/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/formulas/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/formulas/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/formulas/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/formulas/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/formulas/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/formulas/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/formulas/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/formulas/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/formulas/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/formulas/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/formulas/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Siirry sisältöön</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/fi/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/fi/"  aria-current="">
+                            Etusivu
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Opi</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fi/getting-started/" 
+                                    aria-current="">
+                                    Aloitus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/walking-zones/" 
+                                    aria-current="">
+                                    Kävelyvyöhykkeet
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/gait-analysis/" 
+                                    aria-current="">
+                                    Kävelyanalyysi
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/training-load/" 
+                                    aria-current="">
+                                    Harjoituskuorma
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/wss-calculator/" 
+                                    aria-current="">
+                                    WSS-laskin
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Tiede</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fi/research/" 
+                                    aria-current="">
+                                    Tutkimus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/formulas/" class="active" 
+                                    aria-current="page">
+                                    Kaavat
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/gait-efficiency/" 
+                                    aria-current="">
+                                    Kävelytehokkuus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/stride-mechanics/" 
+                                    aria-current="">
+                                    Askeleen mekaniikka
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/walking-vs-running/" 
+                                    aria-current="">
+                                    Kävely vs. juoksu
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/benchmarks/" 
+                                    aria-current="">
+                                    Suorituskykyvertailut
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/bibliography/" 
+                                    aria-current="">
+                                    Lähdeluettelo
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Sinulle</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fi/for-health/" 
+                                    aria-current="">
+                                    Terveydelle
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/for-fitness/" 
+                                    aria-current="">
+                                    Kunnolle
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/for-seniors/" 
+                                    aria-current="">
+                                    Ikääntyneille
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/for-rehabilitation/" 
+                                    aria-current="">
+                                    Kuntoutukseen
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Työkalut</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fi/cadence-calculator/" 
+                                    aria-current="">
+                                    Askeltiheyslaskin
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/gait-assessment/" 
+                                    aria-current="">
+                                    Kävelyarviointi
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fi/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max-laskin
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/fi/contact/"  aria-current="">
+                            Yhteystiedot
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Valitse kieli">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" selected>
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Valikko"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/fi/">Etusivu</a> / <a href="/fi/#science">Tiede</a> / Kaavat
+    </div>
+    <h1>Kävelymittareiden kaavat ja yhtälöt</h1>
+    <p class="lead">Kävelyn analytiikan matemaattiset perusteet – tieteellisesti validoidut yhtälöt intensiteetille, energialle ja suorituskyvylle</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>Tämä sivu esittelee tieteellisesti validoituja kaavoja, joita käytetään kävelyn analytiikassa. Kaikki yhtälöt on viitattu tutkimusviittein ja validoiduin tarkkuusaluein.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Askelfrekvenssin muuntaminen MET-arvoiksi</h2>
+
+        <div class="formula-section featured">
+          <h3>Mooren ym. (2021) askelfrekvenssipohjäinen aineenvaihduntayhtälö</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Askelfrekvenssi MET-arvoiksi</p>
+            <p class="formula-main"><strong>METs = 0,0219 × Askelfrekvenssi (askelta/min) + 0,72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Tarkkuus: ±0,5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Miksi tämä kaava on tärkeä:</strong> Tämä yhtälö on <strong>23-35% tarkempi</strong> kuin perinteiset ACSM:n nopeuspohjaiset yhtälöt kävelylle. Se toimii, koska askelfrekvenssi heijastaa suoraan liikkeen tiheyttä ja energiankulutusta, kun taas nopeus riippuu vaihtelevasta askelenpituudesta.</p>
+          </div>
+
+          <h4>Esimerkkejä:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Kävely 100 askelta/min:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>Kohtuullisen intensiteetin kynnys</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kävely 110 askelta/min:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 METs</strong></p>
+              <p class="example-interpretation">Hyvä kohtuullinen intensiteetti</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kävely 120 askelta/min:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 METs</strong></p>
+              <p class="example-interpretation">Kohtuullisen ja rasittavan intensiteetin välillä</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kävely 130 askelta/min:</strong></p>
+              <p class="example-calc">METs = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 METs</strong></p>
+              <p class="example-interpretation"><strong>Rasittavan intensiteetin kynnys</strong> (6 METs CADENCE-Adults-tutkimuksen suoralla mittauksella)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Huomautus:</strong> CADENCE-Adults-tutkimus mittasi suoraan, että 130 askelta/min = 6 METs kontrolloiduissa laboratorio-olosuhteissa. Mooren yhtälö on suunniteltu 80-130 askelta/min alueelle ja saattaa aliarvioida erittäin korkeilla askelfrekvensseillä.</p>
+          </div>
+
+          <h4>Validointitiedot:</h4>
+          <ul>
+            <li><strong>Otos:</strong> 76 aikuista, ikä 21-40 vuotta</li>
+            <li><strong>Menetelmä:</strong> Epäsuora kalorimetria (kultainen standardi)</li>
+            <li><strong>R²-arvo:</strong> 0,87 (erinomainen korrelaatio)</li>
+            <li><strong>Keskimääräinen absoluuttinen virhe:</strong> 0,47 METs</li>
+            <li><strong>Sovellettava alue:</strong> 80-130 askelta/min</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM VO₂-yhtälöt kävelylle</h2>
+
+        <div class="formula-section">
+          <h3>ACSM:n aineenvaihduntalaskelmat</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Tasakäävely (0% kaltevuus)</p>
+            <p class="formula-main"><strong>VO₂ (ml/kg/min) = 0,1 × Nopeus (m/min) + 3,5</strong></p>
+            <p class="formula-note">Nopeus metreinä minuutissa (kerro km/h luvulla 16,67 tai mph luvulla 26,82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Kävely kaltevuudella (ylä-/alamäki)</p>
+            <p class="formula-main"><strong>VO₂ = 0,1(Nopeus) + 1,8(Nopeus)(Kaltevuus) + 3,5</strong></p>
+            <p class="formula-note">Kaltevuus desimaalina (esim. 5% = 0,05)</p>
+          </div>
+
+          <h4>Esimerkkejä:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Kävely 5 km/h (83,3 m/min) tasaisella:</strong></p>
+              <p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 ml/kg/min</strong></p>
+              <p class="example-conversion">Muunnos MET-arvoiksi: 11,83 / 3,5 = <strong>3,38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kävely 5 km/h 5% kaltevuudella:</strong></p>
+              <p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p>
+              <p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 ml/kg/min</strong></p>
+              <p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 METs</strong></p>
+              <p class="example-interpretation">Kaltevuus lisää intensiteettiä noin 64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>Nopeusmuunnokset:</h4>
+            <ul>
+              <li><strong>km/h → m/min:</strong> kerro 16,67:llä</li>
+              <li><strong>mph → m/min:</strong> kerro 26,82:lla</li>
+              <li><strong>m/s → m/min:</strong> kerro 60:llä</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Energiankulutus ja kalorinkulutus</h2>
+
+        <div class="formula-section">
+          <h3>Tarkka kalorilaskenta</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kalorit minuutissa</p>
+            <p class="formula-main"><strong>Kal/min = (METs × 3,5 × Paino kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Kokonaiskalorit harjoitukselle</p>
+            <p class="formula-main"><strong>Kokonaiskalorit = Kal/min × Kesto (minuutit)</strong></p>
+          </div>
+
+          <h4>Esimerkkejä:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kg henkilö kävelee 100 askelta/min (3 METs) 45 minuuttia:</strong></p>
+              <p class="example-calc">Kal/min = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 kal/min</strong></p>
+              <p class="example-calc">Yhteensä = 3,675 × 45 = <strong>165,4 kaloria</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kg henkilö kävelee 120 askelta/min (5 METs) 30 minuuttia:</strong></p>
+              <p class="example-calc">Kal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 kal/min</strong></p>
+              <p class="example-calc">Yhteensä = 7,44 × 30 = <strong>223,2 kaloria</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Miksi tämä kaava?</h4>
+            <p>Tämä yhtälö perustuu MET-yksikön (Metabolic Equivalent of Task) määritelmään:</p>
+            <ul>
+              <li>1 MET = 3,5 ml O₂/kg/min (lepovaihdunta)</li>
+              <li>1 litra kulutettua O₂ ≈ 5 kcal poltettu</li>
+              <li>Muunnos: (METs × 3,5 × kg × 5) / 1000 = (METs × 3,5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>Nettokalorinkulutus (vain liikunta)</h3>
+          <div class="formula-box">
+            <p class="formula-title">Nettokalorit (ilman lepovaihduntaa)</p>
+            <p class="formula-main"><strong>Netto kal/min = [(METs - 1) × 3,5 × Paino] / 200</strong></p>
+            <p class="formula-note">Vähentää 1 MET:n jättääkseen pois kalorit, jotka polttuisit muutenkin levossa</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 METs, 45 min – Nettokalorit:</strong></p>
+            <p class="example-calc">Netto = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3 nettokaloria</strong></p>
+            <p class="example-interpretation">vs 165,4 kokonaiskaloria (55 kaloria olisi palanut levossa)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Kävelysymmetrian indeksi (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Oikean-vasemman epäsymmetrian kvantifiointi</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kävelysymmetrian indeksi</p>
+            <p class="formula-main"><strong>GSI (%) = |Oikea - Vasen| / [0,5 × (Oikea + Vasen)] × 100</strong></p>
+            <p class="formula-note">Voidaan soveltaa askelenpituuteen, askeleen kestoon tai kontaktiaikaan</p>
+          </div>
+
+          <h4>Tulkinta:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> Normaali, symmetrinen kävely</li>
+            <li><strong>3-5%:</strong> Lievä epäsymmetria</li>
+            <li><strong>5-10%:</strong> Kohtalainen epäsymmetria, seurattava</li>
+            <li><strong>&gt;10%:</strong> Kliinisesti merkittävä, ammattimainen arviointi suositeltava</li>
+          </ul>
+
+          <h4>Esimerkkejä:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Askeleen kestot: Oikea = 520 ms, Vasen = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% epäsymmetria</strong></p>
+              <p class="example-interpretation">Kohtalainen epäsymmetria – harkitse heikomman puolen vahvistamista</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Askelenpituudet: Oikea = 1,42 m, Vasen = 1,38 m</strong></p>
+              <p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p>
+              <p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% epäsymmetria</strong></p>
+              <p class="example-interpretation">Normaali, terve alue ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Kliininen huomautus:</strong> Apple HealthKitin Walking Asymmetry käyttää hieman erilaista laskentaa (yksinkertainen prosentuaalinen ero askeleen kestojen välillä), mutta tulkintarajat ovat samankaltaiset.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK Score (WalkAnalyticsin oma mittari)</h2>
+
+        <div class="formula-section">
+          <h3>Kävelytehokkuuspisteet</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK Score</p>
+            <p class="formula-main"><strong>WALK Score = Aika (sekuntit) + Askeleet per 100 metriä</strong></p>
+            <p class="formula-note">Alhaisempi pistemäärä = parempi tehokkuus (kuten SWOLF uinnissa)</p>
+          </div>
+
+          <h4>Miten se toimii:</h4>
+          <p>WALK Score yhdistää ajan ja askeelmäärän kävelyn tehokkuuden kvantifioimiseksi. Kävelijällä, joka kulkee 100 m 75 sekunnissa 140 askeleella, on WALK Score 215. Nopeuden TAI askeltehokkuuden parantaminen alentaa pistemäärää.</p>
+
+          <h4>Esimerkkejä:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 m 80 sekunnissa, 120 askelta:</strong></p>
+              <p class="example-calc">WALK Score = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 m 70 sekunnissa, 110 askelta:</strong></p>
+              <p class="example-calc">WALK Score = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">Parempi tehokkuus parannetun nopeuden + askelparin kautta</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 m 60 sekunnissa, 130 askelta (kilpakävely):</strong></p>
+              <p class="example-calc">WALK Score = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">Nopea mutta lyhyemmät askelpituudet</p>
+            </div>
+          </div>
+
+          <h4>Tyypilliset alueet:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> Hidas/tehoton kävely, mahdollisia liikkuvuusongelmia</li>
+            <li><strong>200-250:</strong> Rento kävelijä, keskimääräinen tehokkuus</li>
+            <li><strong>170-200:</strong> Kuntokävelijä, hyvä tehokkuus</li>
+            <li><strong>150-170:</strong> Edistynyt kävelijä, erinomainen tehokkuus</li>
+            <li><strong>&lt;150:</strong> Eliitti-/kilpakävelytaso</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Harjoittelu WALK Scoren kanssa:</strong> Seuraa pistemäärääsi samalla 100 m reitillä viikoittain. Parannukset osoittavat tehostunutta neuromuskulaarista koordinaatiota, voimaa ja kävelyekonomiaa.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. Peruskävelymittarit</h2>
+
+        <div class="formula-section">
+          <h3>Peruslaskelmat</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kävelynopeus</p>
+            <p class="formula-main"><strong>Nopeus (m/s) = Matka (m) / Aika (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Askelfrekvenssi kokonaisaskeleista</p>
+            <p class="formula-main"><strong>Askelfrekvenssi (askelta/min) = Kokonaisaskeleet / Aika (minuutit)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Askelparin pituus</p>
+            <p class="formula-main"><strong>Askelparin pituus (m) = Matka (m) / (Askeleet / 2)</strong></p>
+            <p class="formula-note">Jaa askeleet kahdella, koska yksi askelpari = kaksi askelta</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Askelen pituus</p>
+            <p class="formula-main"><strong>Askelen pituus (m) = Matka (m) / Askeleet</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Nopeus askelfrekvensistä ja askelparin pituudesta</p>
+            <p class="formula-main"><strong>Nopeus = Askelparin pituus × (Askelfrekvenssi / 2) / 60</strong></p>
+            <p class="formula-note">Tai: Nopeus (m/s) = Askelen pituus × Askelfrekvenssi / 60</p>
+          </div>
+
+          <h4>Esimerkkityönkulku:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Kävele 1000 m 12 minuutissa 1320 askeleella:</strong></p>
+            <p><strong>Nopeus:</strong> 1000 m / 720 s = <strong>1,39 m/s</strong></p>
+            <p><strong>Askelfrekvenssi:</strong> 1320 askelta / 12 min = <strong>110 askelta/min</strong></p>
+            <p><strong>Askelparin pituus:</strong> 1000 m / (1320/2) = 1000 / 660 = <strong>1,52 m</strong></p>
+            <p><strong>Askelen pituus:</strong> 1000 m / 1320 = <strong>0,76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. Sykevyöhykelaskelmat</h2>
+
+        <div class="formula-section">
+          <h3>Perinteinen sykevyöhykemenetelmä</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Maksimisykkeen arvio</p>
+            <p class="formula-main"><strong>Maksimisyke = 220 - Ikä</strong></p>
+            <p class="formula-note">Yksinkertainen, mutta ±10-15 lyöntiä/min yksilöllinen vaihtelu</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Vaihtoehto: Tanakan kaava (tarkempi)</p>
+            <p class="formula-main"><strong>Maksimisyke = 208 - (0,7 × Ikä)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Vyöhykealueen laskenta</p>
+            <p class="formula-main"><strong>Vyöhyke = Maksimisyke × (Alaraja%, Yläraja%)</strong></p>
+          </div>
+
+          <h4>Esimerkki: 40-vuotias</h4>
+          <div class="calc-example">
+            <p><strong>Perinteinen:</strong> Maksimisyke = 220 - 40 = <strong>180 lyöntiä/min</strong></p>
+            <p><strong>Tanaka:</strong> Maksimisyke = 208 - (0,7 × 40) = 208 - 28 = <strong>180 lyöntiä/min</strong></p>
+            <p><strong>Vyöhyke 2 (60-70%):</strong> 180 × 0,60 = 108 lyöntiä/min - 180 × 0,70 = 126 lyöntiä/min</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Huomautus:</strong> Vaikka sykevyöhykkeet ovat hyödyllisiä, <strong>askelfrekvenssipohjaiset vyöhykkeet ovat tarkempia ja käytännöllisempiä kävelylle</strong> (katso Kävelyvyöhykkeet-opas).</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. Kuljetuskustannus ja kävelyekonomisuus</h2>
+
+        <div class="formula-section">
+          <h3>Kävelyn energiakustannus</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kuljetuskustannus (C)</p>
+            <p class="formula-main"><strong>C = Kulutettu energia / (Kehonpaino × Matka)</strong></p>
+            <p class="formula-note">Yksiköt: J/kg/m tai ml O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U-muotoinen käyrä:</strong> Kävelyekonomisuus noudattaa U-muotoista käyrää. On olemassa optimaalinen nopeus (tyypillisesti 1,2-1,4 m/s tai 4,3-5,0 km/h), jossa kuljetuskustannus on minimoitu. Hitaampi TAI nopeampi kävely kuin tämä lisää energiakustannusta kuljetun matkan suhteen.</p>
+          </div>
+
+          <h4>Kuljetuskustannukseen vaikuttavat tekijät:</h4>
+          <ul>
+            <li><strong>Nopeus:</strong> U-muotoinen suhde (optimaalinen noin 1,3 m/s)</li>
+            <li><strong>Kaltevuus:</strong> Ylämäki lisää merkittävästi kustannusta; alamäki lisää eksentrista kustannusta</li>
+            <li><strong>Kehonpaino:</strong> Raskaammilla yksilöillä korkeammat absoluuttiset mutta samankaltaiset suhteelliset kustannukset</li>
+            <li><strong>Askelmekaniikka:</strong> Optimaalinen askelenpituus minimoi kustannuksen</li>
+            <li><strong>Maasto:</strong> Epätasainen pinta lisää kustannusta vs. sileä asfaltti</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">Kaltevuuteen mukautettu kustannus</p>
+            <p class="formula-main"><strong>Kustannuskerroin = 1 + (Kaltevuus × 10)</strong></p>
+            <p class="formula-note">Karkea arvio: +10% kustannus per 1% kaltevuus</p>
+          </div>
+
+          <h4>Esimerkki:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Kävely 5% kaltevuudella:</strong></p>
+            <p class="example-calc">Kustannuskerroin = 1 + (0,05 × 10) = <strong>1,5×</strong></p>
+            <p class="example-interpretation">50% lisäys energiakustannuksessa verrattuna tasaiseen maahan</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. Harjoituskuorma ja stressipisteet</h2>
+
+        <div class="formula-section">
+          <h3>Walking Stress Score (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Vyöhykepohjainen WSS</p>
+            <p class="formula-main"><strong>WSS = Σ (Minuutit vyöhykkeessä × Vyöhykekerroin)</strong></p>
+            <p>Vyöhyke 1: ×1,0 | Vyöhyke 2: ×2,0 | Vyöhyke 3: ×3,0 | Vyöhyke 4: ×4,0 | Vyöhyke 5: ×5,0</p>
+          </div>
+
+          <h4>Esimerkki: 60 minuutin kävely</h4>
+          <div class="calc-example">
+            <p>10 min Vyöhyke 1 × 1 = 10 pistettä</p>
+            <p>40 min Vyöhyke 2 × 2 = 80 pistettä</p>
+            <p>10 min Vyöhyke 3 × 3 = 30 pistettä</p>
+            <p><strong>WSS yhteensä = 120</strong></p>
+          </div>
+
+          <h3>Viikoittainen harjoituskuorma</h3>
+          <div class="formula-box">
+            <p class="formula-title">Viikkokuorma</p>
+            <p class="formula-main"><strong>Viikkokuorma = Σ Päivittäinen WSS (7 päivää)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Progressiivinen ylikuormitus</p>
+            <p class="formula-main"><strong>Seuraava viikko = Tämä viikko × 1,05-1,10</strong></p>
+            <p class="formula-note">Lisää 5-10% per viikko maksimissaan</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Palautumisviikko</p>
+            <p class="formula-main"><strong>Palautumisviikko = Tämä × 0,50-0,70</strong></p>
+            <p class="formula-note">Joka 3.-4. viikko, vähennä 50-70%:iin</p>
+          </div>
+
+          <h4>Tyypilliset viikkokuormat:</h4>
+          <ul>
+            <li><strong>Aloitteleva terveyskävelijä:</strong> 200-400 WSS/viikko</li>
+            <li><strong>Säännöllinen kuntokävelijä:</strong> 400-700 WSS/viikko</li>
+            <li><strong>Vakava kuntokävelijä:</strong> 700-1000 WSS/viikko</li>
+            <li><strong>Kilpailullinen kilpakävelijä:</strong> 1000-1500+ WSS/viikko</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. Ennusteyhtälöt</h2>
+
+        <div class="formula-section">
+          <h3>6 minuutin kävelytesti (6MWT) matka-arvio</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Ennustettu 6MWT-matka (Enright & Sherrill)</p>
+            <p><strong>Miehet:</strong> (7,57 × Pituus cm) - (5,02 × Ikä) - (1,76 × Paino kg) - 309</p>
+            <p><strong>Naiset:</strong> (2,11 × Pituus cm) - (5,78 × Ikä) - (2,29 × Paino kg) + 667</p>
+            <p class="formula-note">Ennustaa matkan metreinä terveille aikuisille</p>
+          </div>
+
+          <h4>Esimerkki: 40-vuotias mies, 175 cm, 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p>
+            <p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 metriä</strong></p>
+            <p class="example-interpretation">Hyvä toiminnallinen kapasiteetti ikään nähden</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Kliininen käyttö:</strong> 6MWT:tä käytetään arvioimaan toiminnallista harjoituskapasiteettia kardiopulmonaarisilla potilailla, pre-/postoperatiivisessa arvioinnissa ja yleisessä kunnossa vanhemmilla aikuisilla.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. Yksikkömuunnokset</h2>
+
+        <div class="formula-section">
+          <h3>Yleiset kävelymittarin muunnokset</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Lähtöarvo</th>
+                  <th>Tavoitearvo</th>
+                  <th>Kaava</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3,6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0,447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3,6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2,237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × 16,67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26,82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>ml/kg/min</td>
+                  <td>METs × 3,5</td>
+                </tr>
+                <tr>
+                  <td>ml/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3,5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Pikaviite:</h4>
+          <ul>
+            <li><strong>1,0 m/s =</strong> 3,6 km/h = 2,24 mph (tyypillinen terveen aikuisen kävelynopeus)</li>
+            <li><strong>1,4 m/s =</strong> 5,0 km/h = 3,1 mph (reipas kävely)</li>
+            <li><strong>1 MET =</strong> 3,5 ml O₂/kg/min (lepovaihdunta)</li>
+            <li><strong>3 METs =</strong> 10,5 ml O₂/kg/min (kohtuullisen intensiteetin kynnys)</li>
+            <li><strong>6 METs =</strong> 21 ml O₂/kg/min (rasittavan intensiteetin kynnys)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">Liittyvät resurssit</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Käytä kaavoja: WSS-laskin</h3>
+            <p>Käytä interaktiivista laskuriamme laskemaan Walking Stress Score -pisteesi.</p>
+            <a href="/fi/wss-calculator/" class="btn btn-secondary">Laske WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Kävelyvyöhykkeiden ymmärtäminen</h3>
+            <p>Opi soveltamaan askelfrekvenssipohjäisia intensiteettivyöhykkeitä harjoittelussa.</p>
+            <a href="/fi/walking-zones/" class="btn btn-secondary">Opi vyöhykkeistä →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Tieteellinen tutkimus</h3>
+            <p>Tutustu tutkimuksiin, jotka validoivat nämä kaavat.</p>
+            <a href="/fi/research/" class="btn btn-secondary">Katso tutkimusta →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Täydellinen lähdeluettelo</h3>
+            <p>Tutki täydelliset lähdeviitteet kaikille viitatuille yhtälöille.</p>
+            <a href="/fi/bibliography/" class="btn btn-secondary">Katso lähdeluettelo →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Kaavahakemisto</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Askelfrekvenssi → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂-yhtälöt</a></li>
+            <li><a href="#energy-expenditure">3. Energia ja kalorit</a></li>
+            <li><a href="#gait-symmetry">4. Kävelysymmetrian indeksi</a></li>
+            <li><a href="#walk-score">5. WALK Score</a></li>
+            <li><a href="#basic-metrics">6. Peruskävelymittarit</a></li>
+            <li><a href="#heart-rate">7. Sykevyöhykkeet</a></li>
+            <li><a href="#cost-transport">8. Kuljetuskustannus</a></li>
+            <li><a href="#training-load">9. Harjoituskuorma</a></li>
+            <li><a href="#predictions">10. Ennusteyhtälöt</a></li>
+            <li><a href="#conversions">11. Yksikkömuunnokset</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Tärkein</h3>
+          <p><strong>Askelfrekvenssi MET-arvoiksi</strong></p>
+          <p class="formula-compact">METs = 0,0219 × askelta/min + 0,72</p>
+          <p class="small-text">Tämä yksittäinen yhtälö mahdollistaa askelfrekvenssipohjäisen intensiteettiharjoittelun ilman sykemittaria.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Käytä näitä kaavoja</h3>
+          <p>WalkAnalytics käyttää näitä tieteellisesti validoituja yhtälöitä kävelyjesi analysointiin.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Lataa sovellus</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Kaavojen tarkkuus</h4>
+          <p>Kaikki tämän sivun yhtälöt ovat vertaisarvioidusta tutkimuksesta. Katso <a href="/fi/bibliography/">Lähdeluettelo</a> täydellisistä lähdeviitteistä.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Etusivu</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Kaikki oikeudet pidätetään
+            </p>
+            <ul class="footer-links">
+                <li><a href="/fi/privacy/">Tietosuoja</a></li>
+                <li><a href="/fi/terms/">Käyttöehdot</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Tämä verkkosivusto käyttää evästeitä parantaakseen käyttökokemustasi.</p>
+            <a href="/fi/privacy/" class="text-sm">Lue lisää</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Hylkää</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Hyväksy</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

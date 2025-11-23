@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>WalkAnalytics - แอปวิเคราะห์การเดิน | วิเคราะห์ท่าเดิน โซนการเดิน สำหรับ iOS</title>
+    <meta name="description" content="ติดตามข้อมูลท่าเดิน โซนการเดิน และการวิเคราะห์สุขภาพด้วย WalkAnalytics แอป iOS ที่ใช้หลักวิทยาศาสตร์สำหรับผู้เดิน นักปีนเขา และผู้สนใจสุขภาพ ทดลองใช้ฟรี 7 วัน">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="แอปวิเคราะห์การเดิน, แอปวิเคราะห์ท่าเดิน, แอป iOS เดิน, การวัดสุขภาพจากการเดิน, การวิเคราะห์ก้าวเดิน, walking analytics, gait analysis">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/th/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://walk.analyticszone.app/th/">
+    <meta property="og:title" content="WalkAnalytics - แอปวิเคราะห์การเดิน | วิเคราะห์ท่าเดิน โซนการเดิน สำหรับ iOS">
+    <meta property="og:description" content="ติดตามข้อมูลท่าเดิน โซนการเดิน และการวิเคราะห์สุขภาพด้วย WalkAnalytics แอป iOS ที่ใช้หลักวิทยาศาสตร์สำหรับผู้เดิน นักปีนเขา และผู้สนใจสุขภาพ ทดลองใช้ฟรี 7 วัน">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/th/">
+    <meta name="twitter:title" content="WalkAnalytics - แอปวิเคราะห์การเดิน | วิเคราะห์ท่าเดิน โซนการเดิน สำหรับ iOS">
+    <meta name="twitter:description" content="ติดตามข้อมูลท่าเดิน โซนการเดิน และการวิเคราะห์สุขภาพด้วย WalkAnalytics แอป iOS ที่ใช้หลักวิทยาศาสตร์สำหรับผู้เดิน นักปีนเขา และผู้สนใจสุขภาพ ทดลองใช้ฟรี 7 วัน">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+      "url": "https://walk.analyticszone.app",
+      "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+      "description": "Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+      "author": "Albert Arnó",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "analyticszone@onmedic.org"
+      },
+      "sameAs": [
+        "https://twitter.com/runanalytics",
+        "https://apps.apple.com/app/runanalytics/id6737283749"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RunAnalytics",
+      "description": "Scientific running analytics app with Critical Run Speed (CRS), Training Stress Score (TSS), and CTL/ATL/TSB metrics. Privacy-first app processes all data locally on iPhone.",
+      "url": "https://walk.analyticszone.app",
+      "applicationCategory": ["HealthApplication", "FitnessApplication"],
+      "operatingSystem": "iOS",
+      "softwareVersion": "Latest",
+      "author": {
+        "@type": "Organization",
+        "name": "Albert Arnó"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Trial",
+          "description": "7-day free trial of RunAnalytics premium features",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "category": "Trial Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription",
+          "description": "Monthly access to all RunAnalytics premium features",
+          "price": "3.99",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1M",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Subscription",
+          "description": "Annual access to all RunAnalytics premium features at 18% discount",
+          "price": "39",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/app/walkanalytics/id0000000000",
+      "featureList": [
+        "Critical Run Speed (CRS) calculation",
+        "Training Stress Score (TSS) tracking",
+        "CTL (Chronic Training Load) metrics",
+        "ATL (Acute Training Load) metrics",
+        "TSB (Training Stress Balance) indicators",
+        "7 personalized training zones",
+        "Kilometer-by-kilometer analysis",
+        "Weekly, monthly, and yearly comparisons",
+        "Running efficiency tracking",
+        "Personal records (PR) detection",
+        "Apple Health app integration",
+        "Export in JSON, CSV, HTML, PDF formats",
+        "100% local data processing",
+        "Privacy-first architecture",
+        "Native SwiftUI interface"
+      ],
+      "screenshot": [
+        "https://walk.analyticszone.app/assets/images/screenshots/workouts-list.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/workout-detail.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/analytics.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/performance.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/training-zones.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/export-options.png"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RunAnalytics",
+      "description": "Professional running analytics app with science-based metrics, personalized training zones, and privacy-first data processing",
+      "url": "https://walk.analyticszone.app",
+      "image": "https://walk.analyticszone.app/assets/images/logo.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "RunAnalytics"
+      },
+      "category": "Fitness & Health Software",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "0",
+        "highPrice": "39",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "7-Day Free Trial",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Plan",
+            "price": "3.99",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1M",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Annual Plan",
+            "price": "39",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1Y",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          }
+        ]
+      }
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does RunAnalytics get my running data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RunAnalytics syncs with Apple Health to import running workouts recorded by any compatible device or app. This includes smart watches, fitness trackers, and manual entries. The app processes this data locally to calculate advanced metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the CRS test and how do I perform it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CRS (Critical Run Speed) is a scientific protocol using 2 maximum effort runs: 5K and 3K with 10-20 minutes rest between. The app calculates your aerobic threshold from these times and automatically adjusts all training zones. Repeat every 6-8 weeks to track progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data uploaded to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RunAnalytics processes all data locally on your iPhone. There are no external servers, no cloud accounts, no data transfers. You control exports: generate JSON, CSV, HTML, or PDF files and share them however you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use RunAnalytics for trail running?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. RunAnalytics works with any running workout in Apple Health, including trail running. The app adapts to available metrics whether you're on a track or trail, providing relevant analysis for each environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between monthly and annual plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both plans offer identical features: all metrics, unlimited zones, temporal comparisons, multiple exports, and free updates. The only difference is price: annual saves 18% (equivalent to €3.25/month vs €3.99/month)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my subscription anytime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Subscriptions are managed through the App Store, so you can cancel anytime from Settings → [Your Name] → Subscriptions. If you cancel, you'll maintain access until the end of your current billing period."
+          }
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://walk.analyticszone.app/th/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Running Analytics",
+          "item": "https://walk.analyticszone.app/th/#features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pricing",
+          "item": "https://walk.analyticszone.app/th/#pricing"
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "WalkAnalytics - แอปวิเคราะห์การเดิน | วิเคราะห์ท่าเดิน โซนการเดิน สำหรับ iOS",
+      "description": "ติดตามข้อมูลท่าเดิน โซนการเดิน และการวิเคราะห์สุขภาพด้วย WalkAnalytics แอป iOS ที่ใช้หลักวิทยาศาสตร์สำหรับผู้เดิน นักปีนเขา และผู้สนใจสุขภาพ ทดลองใช้ฟรี 7 วัน",
+      "url": "https://walk.analyticszone.app/th/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+        "url": "https://walk.analyticszone.app"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "RunAnalytics"
+      }
+    }
+    </script>
+
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหา</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/th/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/th/"  aria-current="">
+                            หน้าแรก
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เรียนรู้</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/getting-started/" 
+                                    aria-current="">
+                                    เริ่มต้นใช้งาน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-zones/" 
+                                    aria-current="">
+                                    โซนการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-analysis/" 
+                                    aria-current="">
+                                    การวิเคราะห์ท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/training-load/" 
+                                    aria-current="">
+                                    ภาระการฝึก
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/wss-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">วิทยาศาสตร์</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/research/" 
+                                    aria-current="">
+                                    การวิจัย
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/formulas/" 
+                                    aria-current="">
+                                    สูตรคำนวณ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-efficiency/" 
+                                    aria-current="">
+                                    ประสิทธิภาพการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/stride-mechanics/" 
+                                    aria-current="">
+                                    กลศาสตร์ก้าวเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-vs-running/" 
+                                    aria-current="">
+                                    เดินเทียบกับวิ่ง
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/benchmarks/" 
+                                    aria-current="">
+                                    มาตรฐานประสิทธิภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/bibliography/" 
+                                    aria-current="">
+                                    บรรณานุกรม
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">สำหรับคุณ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/for-health/" 
+                                    aria-current="">
+                                    สำหรับสุขภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-fitness/" 
+                                    aria-current="">
+                                    สำหรับฟิตเนส
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-seniors/" 
+                                    aria-current="">
+                                    สำหรับผู้สูงอายุ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-rehabilitation/" 
+                                    aria-current="">
+                                    สำหรับการฟื้นฟู
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เครื่องมือ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/cadence-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณจังหวะก้าว
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-assessment/" 
+                                    aria-current="">
+                                    การประเมินท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/vo2max-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/th/contact/"  aria-current="">
+                            ติดต่อเรา
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="เลือกภาษา">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" selected>
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="สลับเมนู"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WalkAnalytics App Landing Page - Homepage -->
+
+<!-- Hero Section with App Introduction -->
+<section class="app-hero">
+  <div class="container">
+    <div class="app-hero-content">
+      <div class="app-hero-text">
+        <div class="app-hero-badge">
+          <span>🚶</span>
+          <span>การวิเคราะห์การเดินที่อิงหลักวิทยาศาสตร์</span>
+        </div>
+        <h1>เดินอย่างฉลาด มีสุขภาพดีกว่า</h1>
+        <p class="app-hero-subtitle">
+          แอปพลิเคชัน iOS ที่เน้นความเป็นส่วนตัวพร้อมการวิเคราะห์ท่าเดินที่ได้รับการสนับสนุนจากงานวิจัย โซนการฝึกฝนตาม cadence และการติดตามสุขภาพอย่างครอบคลุม
+          ขับเคลื่อนด้วยการศึกษาที่ผ่านการตรวจสอบโดยผู้เชี่ยวชาญ รวมถึง CADENCE-Adults, งานวิจัย Peak-30 และวิทยาศาสตร์ชีวกลศาสตร์
+        </p>
+        <div class="app-hero-cta">
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+            ดาวน์โหลดบน App Store
+          </a>
+          <a href="#science" class="btn btn-large btn-secondary">
+            สำรวจวิทยาศาสตร์
+          </a>
+        </div>
+        <p class="mt-6 text-sm-muted">
+          ✓ ทดลองใช้ฟรี 7 วัน &nbsp;&nbsp; ✓ ไม่ต้องสร้างบัญชี &nbsp;&nbsp; ✓ ข้อมูลเก็บบนเครื่อง 100%
+        </p>
+      </div>
+      <div class="app-hero-mockup">
+        <div class="mockup-phone">
+          <img src="/assets/images/screenshots/workouts-list.png" alt="แอป WalkAnalytics บน iOS แสดงการออกกำลังกายการเดินพร้อมเมตริกท่าเดินและข้อมูลสุขภาพบน iPhone" width="400" height="auto" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scientific Foundation Section - NEW -->
+<section id="science" class="scientific-foundation">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">สนับสนุนด้วยงานวิจัย</div>
+      <h2 class="section-title">สร้างขึ้นจากหลักฐานทางวิทยาศาสตร์</h2>
+      <p class="section-subtitle">ทุกเมตริกและคำแนะนำตั้งอยู่บนงานวิจัยที่ผ่านการตรวจสอบโดยผู้เชี่ยวชาญ</p>
+    </div>
+    <div class="science-highlights">
+      <div class="science-card">
+        <div class="science-number">78,500</div>
+        <h3>งานวิจัย Peak-30 Cadence</h3>
+        <p>อิงจากการศึกษา UK Biobank ที่แสดงให้เห็นว่า ≥100 spm เป็นเวลา 30 นาทีทำนายความเสี่ยงการเสียชีวิตที่ต่ำกว่า 40-50% โดยเป็นอิสระ (Del Pozo-Cruz et al., JAMA 2022)</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">100 spm</div>
+        <h3>เกณฑ์ความเข้มข้นปานกลาง</h3>
+        <p>การศึกษา CADENCE-Adults (Tudor-Locke et al., 2019) กำหนดว่า 100 ก้าว/นาที = 3 METs ด้วยความไว 86% ความจำเพาะ 89.6%—รากฐานของโซน cadence ของเรา</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">2-4×</div>
+        <h3>การป้องกันการบาดเจ็บด้วย ACWR</h3>
+        <p>อัตราส่วนภาระงานเฉียบพลัน:เรื้อรัง (ACWR) >1.50 เพิ่มความเสี่ยงการบาดเจ็บ 2-4 เท่า (Gabbett, Br J Sports Med 2016)—เราติดตามสิ่งนี้โดยอัตโนมัติเพื่อความปลอดภัยของคุณ</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">11</div>
+        <h3>สูตรที่ผ่านการตรวจสอบ</h3>
+        <p>จากสมการ cadence→METs ของ Moore ไปจนถึงการคำนวณ Cost of Transport <a href="/th/formulas/">ทุกสูตร</a>มีข้อมูลการตรวจสอบและการตีความทางคลินิก</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/th/bibliography/" class="btn btn-secondary">ดูเอกสารอ้างอิงทางวิทยาศาสตร์ 50+ รายการ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features Section -->
+<section id="features" class="app-features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">ฟีเจอร์</div>
+      <h2 class="section-title">เมตริกประสิทธิภาพการเดินขั้นสูง</h2>
+      <p class="section-subtitle">การวิเคราะห์ระดับมืออาชีพที่ออกแบบมาสำหรับนักเดินทุกระดับ</p>
+    </div>
+    <div class="app-features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-zones"></use>
+          </svg>
+        </div>
+        <h3>โซนการฝึกฝนตาม Cadence</h3>
+        <p>ฝึกฝนด้วย<a href="/th/walking-zones/">5 โซนที่สนับสนุนด้วยงานวิจัย</a> (60-99 spm ถึง 130+ spm) อิงจากการศึกษา CADENCE-Adults ใช้งานได้จริงกว่าโซนอัตราการเต้นหัวใจ—ไม่ต้องใช้สายรัดหน้าอก ติดตาม Peak-30 cadence รายวัน</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-chart"></use>
+          </svg>
+        </div>
+        <h3>การวิเคราะห์ท่าเดินอย่างครอบคลุม</h3>
+        <p>ติดตาม<a href="/th/gait-analysis/">เมตริกท่าเดินที่สำคัญ 7 ตัว</a>: cadence, ความยาวก้าวย่าง (40-50% ของส่วนสูง), ระยะเวลาสัมผัสพื้น (200-300ms), การค้ำจุนสองขา (20-30%), ความไม่สมมาตร (สูตร GSI), ความเร็ว และการแกว่งในแนวตั้ง (4-8cm)</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-load"></use>
+          </svg>
+        </div>
+        <h3>การจัดการภาระการฝึก</h3>
+        <p>ป้องกันการฝึกมากเกินไปด้วย<a href="/th/training-load/">คะแนนความเครียดจากการเดิน (WSS)</a> และการติดตาม ACWR ติดตามอัตราส่วนเฉียบพลัน:เรื้อรัง (รักษาที่ 0.80-1.30) และรับคำแนะนำการฟื้นฟูส่วนบุคคลตามภาระของคุณ</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-stride"></use>
+          </svg>
+        </div>
+        <h3>ชีวกลศาสตร์และประสิทธิภาพ</h3>
+        <p><a href="/th/stride-mechanics/">การวิเคราะห์กลไกก้าวย่าง</a>แบบลึกและการติดตาม<a href="/th/gait-efficiency/">ประสิทธิภาพการเดิน</a> เพิ่มประสิทธิภาพ Cost of Transport (~0.48-0.55 kcal/kg/km ที่ 1.3 m/s), ระบุความผิดปกติของท่าเดิน, ปรับปรุงประสิทธิภาพ 10-15%</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-health"></use>
+          </svg>
+        </div>
+        <h3>การเชื่อมต่อสุขภาพ</h3>
+        <p>เชื่อมต่อกับ Apple Health อย่างราบรื่น นำเข้าการออกกำลังกายการเดินโดยอัตโนมัติและซิงค์อัตราการเต้นหัวใจ ระยะทาง ก้าว และเมตริกสุขภาพ เข้ากันได้กับเมตริกความคล่องแคล่วของ Apple Watch (ความมั่นคงในการเดิน, เปอร์เซ็นต์การค้ำจุนสองขา, ความไม่สมมาตร)</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-privacy"></use>
+          </svg>
+        </div>
+        <h3>ความเป็นส่วนตัวสมบูรณ์</h3>
+        <p>ข้อมูลการเดินทั้งหมดของคุณจะอยู่บน iPhone ของคุณ ไม่มีการซิงค์คลาวด์ ไม่มีบัญชี ไม่มีการติดตาม เมตริกสุขภาพของคุณเป็นความลับและปลอดภัย 100% ด้วยการประมวลผลภายในเครื่อง สอดคล้องปรัชญา GDPR และ HIPAA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scientific Differentiators Section - NEW -->
+<section class="differentiators">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">ทำไมต้อง WalkAnalytics</div>
+      <h2 class="section-title">แอปการเดินเพียงตัวเดียวที่สร้างขึ้นจากวิทยาศาสตร์</h2>
+      <p class="section-subtitle">ไม่ใช่แค่การนับก้าว—การวิเคราะห์ที่ครอบคลุมซึ่งสนับสนุนด้วยงานวิจัยชีวกลศาสตร์</p>
+    </div>
+    <div class="differentiator-list">
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>Cadence เหนืออัตราการเต้นหัวใจ</h3>
+          <p><strong>ทำไมถึงสำคัญ:</strong> อัตราการเต้นหัวใจแปรผันตามความร้อน ความเครียด คาเฟอีน ความเจ็บป่วย Cadence มีความน่าเชื่อถือ ใช้งานได้จริง และมีหลักฐานยืนยัน การศึกษา CADENCE-Adults แสดงให้เห็นว่า 100 spm = ความเข้มข้นปานกลางด้วยความไว 86%—แม่นยำกว่าการประมาณจาก HR</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>การติดตาม Peak-30 Cadence</h3>
+          <p><strong>เมตริกที่เป็นก้าวหน้า:</strong> 30 นาทีติดต่อกันที่ดีที่สุดของการเดินของคุณต่อวันทำนายสุขภาพหัวใจและหลอดเลือดและการเสียชีวิตโดยเป็นอิสระ (ผู้เข้าร่วม UK Biobank 78,500 คน) เราติดตามสิ่งนี้รายวัน—ไม่มีแอปการเดินอื่นทำ</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>การป้องกันการบาดเจ็บด้วย ACWR</h3>
+          <p><strong>วิทยาศาสตร์การกีฬาปรับใช้กับการเดิน:</strong> ติดตามอัตราส่วนภาระงานเฉียบพลัน:เรื้อรังเพื่อป้องกันการบาดเจ็บจากการใช้งานมากเกินไป งานวิจัยแสดงให้เห็นว่า ACWR >1.50 = ความเสี่ยงการบาดเจ็บ 2-4 เท่า เราเตือนคุณก่อนที่จะเกิดการเพิ่มขึ้นอย่างอันตราย</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>การเพิ่มประสิทธิภาพการเดิน</h3>
+          <p><strong>ประสิทธิภาพพลังงาน:</strong> ติดตาม Cost of Transport และประสิทธิภาพการเดิน (WEI, WALK Score) ปรับปรุงประสิทธิภาพ 10-15% ผ่านการฝึกโซน 2, การเพิ่มประสิทธิภาพก้าวย่าง และการฝึกความแข็งแรง—พร้อมคำแนะนำเฉพาะเจาะจง</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>ความสมมาตรของท่าเดินและความเสี่ยงการหกล้ม</h3>
+          <p><strong>เมตริกระดับคลินิก:</strong> คำนวณดัชนีความสมมาตรของท่าเดิน (GSI) เพื่อตรวจจับความไม่สมมาตร การค้ำจุนสองขา >35% และความเร็วการเดิน <0.8 m/s บ่งชี้ความเสี่ยงการหกล้มที่สูงขึ้น—สำคัญสำหรับผู้สูงอายุและการฟื้นฟู</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>การอ้างอิงที่ผ่านการตรวจสอบโดยผู้เชี่ยวชาญ 50+ รายการ</h3>
+          <p><strong>คำแนะนำที่อิงหลักฐาน:</strong> ทุกคำแนะนำลิงก์ไปยัง<a href="/th/bibliography/">งานวิจัยที่ตีพิมพ์</a> จากเกณฑ์ cadence ของ Tudor-Locke ไปจนถึงสัญญาณชีพความเร็วท่าเดินของ Studenski—ความโปร่งใสในวิทยาศาสตร์</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">วิธีการทำงาน</div>
+      <h2 class="section-title">เริ่มเดินอย่างฉลาดใน 3 ขั้นตอน</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>เชื่อมต่อ Apple Health</h3>
+        <p>นำเข้าการออกกำลังกายการเดินของคุณโดยอัตโนมัติจาก Apple Health WalkAnalytics วิเคราะห์ข้อมูลในอดีตของคุณเพื่อกำหนดเมตริกพื้นฐานและคำนวณภาระการฝึกเรื้อรังของคุณ (ค่าเฉลี่ย 28 วัน)</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>รับข้อมูลเชิงลึกที่อิงหลักฐาน</h3>
+        <p>รับการวิเคราะห์ที่ครอบคลุมรวมถึง Peak-30 cadence, เมตริกท่าเดิน, ประสิทธิภาพการเดิน (Cost of Transport) และ ACWR เข้าใจรูปแบบของคุณด้วยเกณฑ์ที่สนับสนุนด้วยงานวิจัย</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>ฝึกฝนอย่างเป็นวิทยาศาสตร์</h3>
+        <p>ปฏิบัติตามคำแนะนำส่วนบุคคลสำหรับโซน cadence, การก้าวหน้าของภาระการฝึก (5-10% รายสัปดาห์) และการฟื้นฟู ติดตามการปรับปรุงในด้านประสิทธิภาพ ความเร็ว และผลลัพธ์ด้านสุขภาพเมื่อเวลาผ่านไป</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who It's For Section -->
+<section class="target-audience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">เหมาะสำหรับใคร</div>
+      <h2 class="section-title">เหมาะกับนักเดินทุกคน</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <h3>ผู้ใส่ใจสุขภาพ</h3>
+        <p>บรรลุแนวทาง 150 นาที/สัปดาห์กิจกรรมความเข้มข้นปานกลาง (100+ spm) ติดตาม Peak-30 cadence เพื่อสุขภาพหัวใจและหลอดเลือด ปฏิบัติตามคำแนะนำของ WHO/CDC อย่างแม่นยำ—ไม่ใช่แค่การนับก้าว</p>
+      </div>
+      <div class="audience-card">
+        <h3>นักเดินเพื่อฟิตเนส</h3>
+        <p>ฝึกฝนด้วยโซน cadence (โซน 2 ที่ 100-110 spm สำหรับฐานแอโรบิก, อินเทอร์วัลที่ 120-130 spm) ปรับปรุงประสิทธิภาพการเดิน 10-15% ผ่านการฝึกอย่างเป็นระบบ ติดตาม WSS เพื่อเพิ่มประสิทธิภาพภาระ</p>
+      </div>
+      <div class="audience-card">
+        <h3>นักเดินแข่งขัน</h3>
+        <p>ฝึกฝน<a href="/th/stride-mechanics/#race-walking">เทคนิคการเดินแข่งขัน</a> (130-160 spm, ขาตรง, การหมุนสะโพกที่เกินจริง) ติดตามชีวกลศาสตร์ ติดตามภาระการฝึก ป้องกันการฝึกมากเกินไปด้วย ACWR</p>
+      </div>
+      <div class="audience-card">
+        <h3>ผู้สูงอายุ (65+)</h3>
+        <p>ติดตาม<a href="/th/gait-analysis/#gait-speed">ความเร็วท่าเดินเป็นสัญญาณชีพ</a> (รักษาที่ >1.0 m/s) ติดตามเปอร์เซ็นต์การค้ำจุนสองขา (<35% = ความมั่นคงดี), ความไม่สมมาตร และตัวบ่งชี้ความเสี่ยงการหกล้ม การตรวจจับการลดลงของความคล่องแคล่วตั้งแต่เนิ่นๆ</p>
+      </div>
+      <div class="audience-card">
+        <h3>ผู้ป่วยในการฟื้นฟู</h3>
+        <p>ติดตามการปรับปรุงท่าเดินอย่างเป็นรูปธรรมด้วยสูตร GSI (ความไม่สมมาตร <5% = ดี), การฟื้นฟูความยาวก้าวย่าง และความก้าวหน้าความเร็วการเดิน บันทึกผลลัพธ์สำหรับผู้ให้บริการด้านการดูแลสุขภาพ</p>
+      </div>
+      <div class="audience-card">
+        <h3>การลดน้ำหนักและสุขภาพ</h3>
+        <p>เพิ่มประสิทธิภาพการเผาผลาญแคลอรีด้วยการฝึกแบบโซน คำนวณการใช้พลังงานอย่างแม่นยำด้วยสมการ cadence→METs ของ Moore สร้างนิสัยการออกกำลังกายที่ยั่งยืนด้วยการก้าวหน้าของภาระอย่างค่อยเป็นค่อยไป</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Learning Resources Section - NEW -->
+<section class="learning-resources">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">เรียนรู้</div>
+      <h2 class="section-title">ความรู้ทางวิทยาศาสตร์เชิงลึก</h2>
+      <p class="section-subtitle">คู่มือที่ครอบคลุมอธิบายวิทยาศาสตร์เบื้องหลังทุกเมตริก</p>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="resource-category">พื้นฐาน</div>
+        <h3><a href="/th/walking-zones/">โซนการฝึกฝนตาม Cadence</a></h3>
+        <p>การเปลี่ยนแปลงกระบวนทัศน์อย่างสมบูรณ์จาก HR ไปยัง cadence เรียนรู้ 5 โซน (60-99 ถึง 130+ spm), งานวิจัย CADENCE-Adults, แนวคิด Peak-30 และโปรโตคอล IWT</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">ชีวกลศาสตร์</div>
+        <h3><a href="/th/stride-mechanics/">กลไกก้าวย่างการเดิน</a></h3>
+        <p>ระยะวัฏจักรท่าเดิน, เทคนิคการเดินแข่งขัน (กฎ World Athletics), ความแตกต่างระหว่างการเดินกับการวิ่ง สูตร GSI สำหรับความไม่สมมาตร, แรงปฏิกิริยาจากพื้น</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">ประสิทธิภาพ</div>
+        <h3><a href="/th/gait-efficiency/">ประสิทธิภาพการเดินและ CoT</a></h3>
+        <p>การเพิ่มประสิทธิภาพ Cost of Transport, โมเดลลูกตุ้มกลับหัว (การกู้คืนพลังงาน 65-70%), ตัวเลข Froude, เส้นโค้งประสิทธิภาพรูปตัว U, การเปลี่ยนจากเดินเป็นวิ่งที่ 2.2 m/s</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">การฝึก</div>
+        <h3><a href="/th/training-load/">การจัดการภาระการฝึก</a></h3>
+        <p>Peak-30 cadence (Del Pozo-Cruz 2022), แนวคิดการเดินจังหวะรวดเร็ว, การป้องกันการบาดเจ็บด้วย ACWR, การแบ่งช่วง 3:1, การกระจายความเข้มข้นแบบแยกขั้วเทียบกับแบบปิรามิด</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">เมตริก</div>
+        <h3><a href="/th/gait-analysis/">เมตริกการวิเคราะห์ท่าเดิน</a></h3>
+        <p>7 เมตริกที่สำคัญพร้อมเกณฑ์ทางคลินิก: cadence (100 spm = 3 METs), ความยาวก้าวย่าง (40-50% ของส่วนสูง), การค้ำจุนสองขา (>35% = ความเสี่ยงการหกล้ม), ความไม่สมมาตร, ความเร็ว</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">สูตร</div>
+        <h3><a href="/th/formulas/">สูตรทางวิทยาศาสตร์</a></h3>
+        <p>สมการที่ผ่านการตรวจสอบ 11 สมการ: Moore cadence→METs (R²=0.87), ACSM VO₂, การใช้พลังงาน, GSI, WALK Score, Cost of Transport, ภาระการฝึก, การทำนาย 6MWT</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/th/research/" class="btn btn-secondary">สำรวจบทความวิจัยทั้งหมด →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">ราคา</div>
+      <h2 class="section-title">ราคาที่เรียบง่ายและโปร่งใส</h2>
+      <p class="section-subtitle">ทดลองใช้ WalkAnalytics ฟรี 7 วัน ไม่ต้องใช้บัตรเครดิต</p>
+    </div>
+    <div class="pricing-card">
+      <div class="price-header">
+        <h3>WalkAnalytics Premium</h3>
+        <div class="price">
+          <span class="amount">$4.99</span>
+          <span class="period">/เดือน</span>
+        </div>
+      </div>
+      <ul class="features-list">
+        <li>การติดตาม Peak-30 cadence</li>
+        <li>โซนการฝึกฝนตาม Cadence</li>
+        <li>การวิเคราะห์ท่าเดินขั้นสูง (GSI, CoT, WEI)</li>
+        <li>คะแนนความเครียดจากการเดิน (WSS)</li>
+        <li>การป้องกันการบาดเจ็บด้วย ACWR</li>
+        <li>สูตรที่ผ่านการตรวจสอบ 11 สูตร</li>
+        <li>ความเป็นส่วนตัวของข้อมูลอย่างสมบูรณ์ (การประมวลผลภายในเครื่อง)</li>
+        <li>การเชื่อมต่อ Apple Health</li>
+        <li>ไม่มีโฆษณาเลย</li>
+      </ul>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        เริ่มทดลองใช้ฟรี
+      </a>
+      <p class="trial-note">ทดลองใช้ฟรี 7 วัน • ยกเลิกได้ตลอดเวลา • ไม่ต้องใช้บัตรเครดิต</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">คำถามที่พบบ่อย</div>
+      <h2 class="section-title">คำถามที่พบบ่อย</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>อะไรทำให้ WalkAnalytics แตกต่างจากแอปการเดินอื่นๆ</h3>
+        <p>เราเป็นแอปการเดินเพียงตัวเดียวที่สร้างขึ้นจากงานวิจัยที่ผ่านการตรวจสอบโดยผู้เชี่ยวชาญ ทุกเมตริก—Peak-30 cadence, ACWR, Cost of Transport—มาจากการศึกษาที่ตีพิมพ์ เราอ้างอิงบทความทางวิทยาศาสตร์ 50+ บทความและอธิบายหลักฐานเบื้องหลังคำแนะนำแต่ละข้อ มันไม่ใช่การนับก้าว; มันคือชีวกลศาสตร์และสรีรวิทยาการออกกำลังกายที่ประยุกต์ใช้กับการเดิน</p>
+      </div>
+      <div class="faq-item">
+        <h3>Peak-30 cadence คืออะไรและทำไมถึงสำคัญ</h3>
+        <p>Peak-30 cadence คือจำนวนก้าวต่อนาทีเฉลี่ยของคุณในช่วง 30 นาทีติดต่อกันที่ดีที่สุดของการเดินในแต่ละวัน การศึกษาที่เป็นนวัตกรรมใหม่ของผู้คน 78,500 คน (Del Pozo-Cruz, JAMA 2022) แสดงให้เห็นว่ามันทำนายความเสี่ยงการเสียชีวิตโดยเป็นอิสระ—แม้หลังจากควบคุมจำนวนก้าวรวมรายวัน เราติดตามสิ่งนี้โดยอัตโนมัติ สิ่งที่ไม่มีแอปอื่นทำ</p>
+      </div>
+      <div class="faq-item">
+        <h3>ACWR ป้องกันการบาดเจ็บได้อย่างไร</h3>
+        <p>อัตราส่วนภาระงานเฉียบพลัน:เรื้อรัง (ACWR) เปรียบเทียบการฝึกล่าสุดของคุณ (7 วันที่ผ่านมา) กับค่าเฉลี่ยระยะยาวของคุณ (28 วัน) งานวิจัยแสดงให้เห็นว่า ACWR >1.50 เพิ่มความเสี่ยงการบาดเจ็บ 2-4 เท่า เราคำนวณสิ่งนี้รายวันและเตือนคุณก่อนที่จะเกิดการเพิ่มขึ้นอย่างอันตราย ช่วยให้คุณก้าวหน้าอย่างปลอดภัยด้วยการเพิ่มขึ้น 5-10% ต่อสัปดาห์</p>
+      </div>
+      <div class="faq-item">
+        <h3>ทำไมโซน cadence แทนที่โซนอัตราการเต้นหัวใจ</h3>
+        <p>Cadence มีความน่าเชื่อถือและใช้งานได้จริงมากกว่า การศึกษา CADENCE-Adults พิสูจน์แล้วว่า 100 spm = ความเข้มข้นปานกลาง (3 METs) ด้วยความไว 86% และความจำเพาะ 90% อัตราการเต้นหัวใจแปรผันตามความร้อน ความเครียด ความเจ็บป่วย คาเฟอีน—cadence ไม่เป็นเช่นนั้น นอกจากนี้ คุณไม่ต้องใช้สายรัดหน้าอกหรือนาฬิกา; เพียงนับก้าว</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics ช่วยในการป้องกันการหกล้มได้หรือไม่</h3>
+        <p>ได้ เราติดตามตัวบ่งชี้ความเสี่ยงการหกล้มทางคลินิก: ความเร็วท่าเดิน <0.8 m/s, การค้ำจุนสองขา >35%, ความไม่สมมาตร (GSI) >10% และความมั่นคงในการเดิน นี่คือเกณฑ์ที่อิงหลักฐานจากงานวิจัยผู้สูงอายุ การตรวจจับตั้งแต่เนิ่นๆช่วยให้สามารถแทรกแซงได้ก่อนที่จะเกิดการหกล้ม—สำคัญสำหรับผู้ใหญ่ 65+</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics ปกป้องความเป็นส่วนตัวของฉันอย่างไร</h3>
+        <p>ข้อมูลทั้งหมดอยู่บน iPhone ของคุณ—เท่านั้น ไม่มีการซิงค์คลาวด์ ไม่มีบัญชี ไม่มีเซิร์ฟเวอร์รับข้อมูลสุขภาพของคุณ เราประมวลผลทุกอย่างภายในเครื่องโดยใช้อัลกอริทึมบนอุปกรณ์ เมตริกการเดิน ตำแหน่ง อัตราการเต้นหัวใจของคุณ—เป็นความลับอย่างสมบูรณ์ เราปฏิบัติตามปรัชญา GDPR และ HIPAA แม้ว่าเราไม่ได้ถูกกำหนดตามกฎหมาย (เนื่องจากเราไม่เคยเห็นข้อมูลของคุณ)</p>
+      </div>
+      <div class="faq-item">
+        <h3>ฉันต้องใช้อุปกรณ์พิเศษหรือไม่</h3>
+        <p>ไม่ WalkAnalytics ทำงานกับ iPhone หรือ Apple Watch สำหรับเมตริกพื้นฐาน (cadence, ระยะทาง, ก้าว) เพียงโทรศัพท์ของคุณ สำหรับข้อมูลอัตราการเต้นหัวใจและเมตริกที่แม่นยำกว่า Apple Watch ช่วยได้แต่ไม่จำเป็น เราเชื่อมต่อกับ Apple Health ดังนั้นอุปกรณ์ที่เข้ากันได้ใดๆจะทำงาน</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics เหมาะสำหรับการฟื้นฟูหรือไม่</h3>
+        <p>อย่างแน่นอน เราถูกใช้งานโดยผู้ป่วยฟื้นฟูที่ติดตามการฟื้นตัวอย่างเป็นรูปธรรม ดัชนีความสมมาตรของท่าเดิน (GSI) วัดความแตกต่างซ้าย-ขวา (<3% ปกติ, >10% มีความหมายทางคลินิก) ติดตามการฟื้นฟูความยาวก้าวย่าง การปรับปรุงความเร็วการเดิน และการลดความไม่สมมาตร แบ่งปันข้อมูลเป็นรูปธรรมกับนักกายภาพบำบัดหรือแพทย์ของคุณ</p>
+      </div>
+      <div class="faq-item">
+        <h3>ฐานทางวิทยาศาสตร์สำหรับสูตร 11 สูตรคืออะไร</h3>
+        <p>แต่ละ<a href="/th/formulas/">สูตร</a>มีข้อมูลการตรวจสอบและการอ้างอิงงานวิจัยต้นฉบับ ตัวอย่าง: สมการ cadence→METs ของ Moore (R²=0.87, ความแม่นยำ ±0.5 METs, ผู้ใหญ่ 76 คน) แม่นยำกว่าสมการ ACSM เก่า 23-35% เราแสดงวิทยาศาสตร์ ไม่ใช่แค่การคำนวณแบล็กบ็อกซ์</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>พร้อมที่จะเดินอย่างฉลาดหรือยัง?</h2>
+      <p>เข้าร่วมกับนักเดินที่กำลังปรับปรุงสุขภาพด้วยการวิเคราะห์ท่าเดินและวิทยาศาสตร์การฝึกฝนที่อิงหลักฐาน</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        ดาวน์โหลด WalkAnalytics
+      </a>
+      <p class="cta-note">ทดลองใช้ฟรี 7 วัน • iOS 16+ • เข้ากันได้กับ Apple Health • ไม่ต้องใช้บัตรเครดิต</p>
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">หน้าแรก</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. สงวนลิขสิทธิ์
+            </p>
+            <ul class="footer-links">
+                <li><a href="/th/privacy/">ความเป็นส่วนตัว</a></li>
+                <li><a href="/th/terms/">ข้อกำหนด</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>เว็บไซต์นี้ใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ</p>
+            <a href="/th/privacy/" class="text-sm">เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">ปฏิเสธ</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">ยอมรับ</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Τύποι Βάδισης - Εξισώσεις για WSS, TRIMP, VO₂max &amp; Μετρήσεις Βηματισμού</title>
+    <meta name="description" content="Μαθηματικοί τύποι για ανάλυση βάδισης: υπολογισμοί WSS, εξισώσεις TRIMP, εκτιμήσεις VO₂max, μετρήσεις μηχανικής βήματος. Τεχνικές αναφορές για επιστήμονες δεδομένων.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="τύποι βάδισης, υπολογισμός WSS, εξίσωση TRIMP, τύπος VO₂max, υπολογισμοί βηματισμού">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/el/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/el/formulas/">
+    <meta property="og:title" content="Τύποι Βάδισης - Εξισώσεις για WSS, TRIMP, VO₂max &amp; Μετρήσεις Βηματισμού">
+    <meta property="og:description" content="Μαθηματικοί τύποι για ανάλυση βάδισης: υπολογισμοί WSS, εξισώσεις TRIMP, εκτιμήσεις VO₂max, μετρήσεις μηχανικής βήματος. Τεχνικές αναφορές για επιστήμονες δεδομένων.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/el/formulas/">
+    <meta name="twitter:title" content="Τύποι Βάδισης - Εξισώσεις για WSS, TRIMP, VO₂max &amp; Μετρήσεις Βηματισμού">
+    <meta name="twitter:description" content="Μαθηματικοί τύποι για ανάλυση βάδισης: υπολογισμοί WSS, εξισώσεις TRIMP, εκτιμήσεις VO₂max, μετρήσεις μηχανικής βήματος. Τεχνικές αναφορές για επιστήμονες δεδομένων.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/formulas/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/formulas/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/formulas/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/formulas/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/formulas/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/formulas/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/formulas/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/formulas/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/formulas/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/formulas/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/formulas/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/formulas/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/formulas/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/formulas/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/formulas/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/formulas/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/formulas/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Μετάβαση στο περιεχόμενο</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/el/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/el/"  aria-current="">
+                            Αρχική
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Μάθετε</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/getting-started/" 
+                                    aria-current="">
+                                    Ξεκινώντας
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/walking-zones/" 
+                                    aria-current="">
+                                    Ζώνες Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-analysis/" 
+                                    aria-current="">
+                                    Ανάλυση Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/training-load/" 
+                                    aria-current="">
+                                    Φόρτος Προπόνησης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/wss-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Επιστήμη</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/research/" 
+                                    aria-current="">
+                                    Έρευνα
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/formulas/" class="active" 
+                                    aria-current="page">
+                                    Τύποι
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-efficiency/" 
+                                    aria-current="">
+                                    Αποδοτικότητα Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/stride-mechanics/" 
+                                    aria-current="">
+                                    Μηχανική Βήματος
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/walking-vs-running/" 
+                                    aria-current="">
+                                    Βάδιση vs Τρέξιμο
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/benchmarks/" 
+                                    aria-current="">
+                                    Δείκτες Απόδοσης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/bibliography/" 
+                                    aria-current="">
+                                    Βιβλιογραφία
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Για Εσάς</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/for-health/" 
+                                    aria-current="">
+                                    Για την Υγεία
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-fitness/" 
+                                    aria-current="">
+                                    Για τη Φυσική Κατάσταση
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-seniors/" 
+                                    aria-current="">
+                                    Για Ηλικιωμένους
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-rehabilitation/" 
+                                    aria-current="">
+                                    Για Αποκατάσταση
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Εργαλεία</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/cadence-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής Ρυθμού
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-assessment/" 
+                                    aria-current="">
+                                    Αξιολόγηση Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/vo2max-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/el/contact/"  aria-current="">
+                            Επικοινωνία
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Επιλογή γλώσσας">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" selected>
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Εναλλαγή μενού"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/el/">Αρχική</a> / <a href="/el/#science">Επιστήμη</a> / Τύποι
+    </div>
+    <h1>Τύποι & Εξισώσεις Μετρήσεων Βάδισης</h1>
+    <p class="lead">Μαθηματικά θεμέλια της αναλυτικής βάδισης – επιστημονικά επικυρωμένες εξισώσεις για ένταση, ενέργεια και απόδοση</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>Αυτή η σελίδα παρουσιάζει επιστημονικά επικυρωμένους τύπους που χρησιμοποιούνται στην αναλυτική βάδισης. Όλες οι εξισώσεις παρατίθενται με ερευνητικές αναφορές και επικυρωμένα εύρη ακρίβειας.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Μετατροπή Ρυθμού Βημάτων σε METs</h2>
+
+        <div class="formula-section featured">
+          <h3>Μεταβολική Εξίσωση Βασισμένη σε Ρυθμό Βημάτων του Moore et al. (2021)</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Ρυθμός Βημάτων σε METs</p>
+            <p class="formula-main"><strong>METs = 0.0219 × Ρυθμός (βήματα/λεπτό) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Ακρίβεια: ±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Γιατί αυτός ο τύπος είναι σημαντικός:</strong> Αυτή η εξίσωση είναι <strong>23-35% πιο ακριβής</strong> από τις παραδοσιακές εξισώσεις του ACSM που βασίζονται στην ταχύτητα για τη βάδιση. Λειτουργεί επειδή ο ρυθμός βημάτων αντανακλά άμεσα τη συχνότητα κίνησης και την ενεργειακή δαπάνη, ενώ η ταχύτητα εξαρτάται από το μεταβλητό μήκος βηματισμού.</p>
+          </div>
+
+          <h4>Παραδείγματα:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Βάδιση στα 100 βήματα/λεπτό:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>Κατώφλι μέτριας έντασης</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Βάδιση στα 110 βήματα/λεπτό:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">Σταθερή μέτρια ένταση</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Βάδιση στα 120 βήματα/λεπτό:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">Μέτρια-έντονη ένταση</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Βάδιση στα 130 βήματα/λεπτό:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>Κατώφλι έντονης έντασης</strong> (6 METs με άμεση μέτρηση CADENCE-Adults)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Σημείωση:</strong> Η μελέτη CADENCE-Adults μέτρησε άμεσα ότι 130 βήματα/λεπτό = 6 METs σε ελεγχόμενες εργαστηριακές συνθήκες. Η εξίσωση Moore έχει σχεδιαστεί για το εύρος 80-130 βημάτων/λεπτό και μπορεί να υποεκτιμά σε πολύ υψηλούς ρυθμούς βημάτων.</p>
+          </div>
+
+          <h4>Δεδομένα Επικύρωσης:</h4>
+          <ul>
+            <li><strong>Δείγμα:</strong> 76 ενήλικες ηλικίας 21-40</li>
+            <li><strong>Μέθοδος:</strong> Έμμεση θερμιδομετρία (χρυσό πρότυπο)</li>
+            <li><strong>Τιμή R²:</strong> 0.87 (εξαιρετική συσχέτιση)</li>
+            <li><strong>Μέσο απόλυτο σφάλμα:</strong> 0.47 METs</li>
+            <li><strong>Εφαρμόσιμο εύρος:</strong> 80-130 βήματα/λεπτό</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. Εξισώσεις ACSM VO₂ για Βάδιση</h2>
+
+        <div class="formula-section">
+          <h3>Μεταβολικοί Υπολογισμοί ACSM</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Βάδιση σε Επίπεδο Έδαφος (0% κλίση)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × Ταχύτητα (m/λεπτό) + 3.5</strong></p>
+            <p class="formula-note">Ταχύτητα σε μέτρα ανά λεπτό (πολλαπλασιάστε km/h επί 16.67 ή mph επί 26.82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Βάδιση με Κλίση (ανηφόρα/κατηφόρα)</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(Ταχύτητα) + 1.8(Ταχύτητα)(Κλίση) + 3.5</strong></p>
+            <p class="formula-note">Κλίση εκφρασμένη ως δεκαδικός αριθμός (π.χ., 5% = 0.05)</p>
+          </div>
+
+          <h4>Παραδείγματα:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Βάδιση 5 km/h (83.3 m/λεπτό) σε επίπεδο έδαφος:</strong></p>
+              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
+              <p class="example-conversion">Μετατροπή σε METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Βάδιση 5 km/h σε κλίση 5%:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
+              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">Η κλίση αυξάνει την ένταση κατά ~64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>Μετατροπές Ταχύτητας:</h4>
+            <ul>
+              <li><strong>km/h σε m/λεπτό:</strong> πολλαπλασιάστε επί 16.67</li>
+              <li><strong>mph σε m/λεπτό:</strong> πολλαπλασιάστε επί 26.82</li>
+              <li><strong>m/s σε m/λεπτό:</strong> πολλαπλασιάστε επί 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Ενεργειακή Δαπάνη & Κατανάλωση Θερμίδων</h2>
+
+        <div class="formula-section">
+          <h3>Ακριβής Υπολογισμός Θερμίδων</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Θερμίδες ανά Λεπτό</p>
+            <p class="formula-main"><strong>Θερμίδες/λεπτό = (METs × 3.5 × Βάρος Σώματος kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Συνολικές Θερμίδες για Συνεδρία</p>
+            <p class="formula-main"><strong>Συνολικές Θερμίδες = Θερμίδες/λεπτό × Διάρκεια (λεπτά)</strong></p>
+          </div>
+
+          <h4>Παραδείγματα:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Άτομο 70 kg που βαδίζει στα 100 βήματα/λεπτό (3 METs) για 45 λεπτά:</strong></p>
+              <p class="example-calc">Θερμίδες/λεπτό = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 θερμίδες/λεπτό</strong></p>
+              <p class="example-calc">Σύνολο = 3.675 × 45 = <strong>165.4 θερμίδες</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Άτομο 85 kg που βαδίζει στα 120 βήματα/λεπτό (5 METs) για 30 λεπτά:</strong></p>
+              <p class="example-calc">Θερμίδες/λεπτό = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 θερμίδες/λεπτό</strong></p>
+              <p class="example-calc">Σύνολο = 7.44 × 30 = <strong>223.2 θερμίδες</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Γιατί Αυτός ο Τύπος;</h4>
+            <p>Αυτή η εξίσωση προέρχεται από τον ορισμό του MET (Metabolic Equivalent of Task):</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min (μεταβολικός ρυθμός ηρεμίας)</li>
+              <li>1 λίτρο O₂ που καταναλώνεται ≈ 5 kcal που καίγονται</li>
+              <li>Μετατροπή: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>Καθαρή Κατανάλωση Θερμίδων (Μόνο Άσκηση)</h3>
+          <div class="formula-box">
+            <p class="formula-title">Καθαρές Θερμίδες (εξαιρουμένης της ηρεμίας)</p>
+            <p class="formula-main"><strong>Καθαρές Θερμίδες/λεπτό = [(METs - 1) × 3.5 × Βάρος Σώματος] / 200</strong></p>
+            <p class="formula-note">Αφαιρεί 1 MET για να εξαιρέσει θερμίδες που θα καίγατε ούτως ή άλλως σε ηρεμία</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 METs, 45 λεπτά – Καθαρές θερμίδες:</strong></p>
+            <p class="example-calc">Καθαρές = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 καθαρές θερμίδες</strong></p>
+            <p class="example-interpretation">έναντι 165.4 συνολικών θερμίδων (55 θερμίδες θα είχαν καεί σε ηρεμία)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Δείκτης Συμμετρίας Βαδίσματος (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Ποσοτικοποίηση Ασυμμετρίας Δεξιάς-Αριστεράς</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Δείκτης Συμμετρίας Βαδίσματος</p>
+            <p class="formula-main"><strong>GSI (%) = |Δεξιά - Αριστερά| / [0.5 × (Δεξιά + Αριστερά)] × 100</strong></p>
+            <p class="formula-note">Μπορεί να εφαρμοστεί σε μήκος βηματισμού, χρόνο βήματος ή χρόνο επαφής</p>
+          </div>
+
+          <h4>Ερμηνεία:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> Φυσιολογικό, συμμετρικό βάδισμα</li>
+            <li><strong>3-5%:</strong> Ήπια ασυμμετρία</li>
+            <li><strong>5-10%:</strong> Μέτρια ασυμμετρία, παρακολούθηση</li>
+            <li><strong>&gt;10%:</strong> Κλινικά σημαντική, επαγγελματική αξιολόγηση</li>
+          </ul>
+
+          <h4>Παραδείγματα:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Χρόνοι βήματος: Δεξιά = 520 ms, Αριστερά = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% ασυμμετρία</strong></p>
+              <p class="example-interpretation">Μέτρια ασυμμετρία – εξετάστε ενίσχυση της αδύναμης πλευράς</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Μήκη βηματισμού: Δεξιά = 1.42 m, Αριστερά = 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
+              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% ασυμμετρία</strong></p>
+              <p class="example-interpretation">Φυσιολογικό, υγιές εύρος ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Κλινική Σημείωση:</strong> Η Ασυμμετρία Βάδισης του Apple HealthKit χρησιμοποιεί έναν ελαφρώς διαφορετικό υπολογισμό (απλή ποσοστιαία διαφορά μεταξύ χρόνων βήματος) αλλά τα κατώφλια ερμηνείας είναι παρόμοια.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK Score (Ιδιόκτητη Μέτρηση WalkAnalytics)</h2>
+
+        <div class="formula-section">
+          <h3>Βαθμολογία Αποδοτικότητας Βάδισης</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK Score</p>
+            <p class="formula-main"><strong>WALK Score = Χρόνος (δευτερόλεπτα) + Βήματα ανά 100 μέτρα</strong></p>
+            <p class="formula-note">Χαμηλότερη βαθμολογία = καλύτερη αποδοτικότητα (όπως το SWOLF για κολύμβηση)</p>
+          </div>
+
+          <h4>Πώς Λειτουργεί:</h4>
+          <p>Το WALK Score συνδυάζει χρόνο και αριθμό βημάτων για να ποσοτικοποιήσει την αποδοτικότητα βάδισης. Ένας βαδιστής που καλύπτει 100m σε 75 δευτερόλεπτα με 140 βήματα έχει WALK Score 215. Η βελτίωση είτε της ταχύτητας ΕΊΤΕ της αποδοτικότητας βηματισμού μειώνει τη βαθμολογία.</p>
+
+          <h4>Παραδείγματα:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100m σε 80 δευτερόλεπτα, 120 βήματα:</strong></p>
+              <p class="example-calc">WALK Score = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m σε 70 δευτερόλεπτα, 110 βήματα:</strong></p>
+              <p class="example-calc">WALK Score = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">Καλύτερη αποδοτικότητα μέσω βελτιωμένης ταχύτητας + βηματισμού</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m σε 60 δευτερόλεπτα, 130 βήματα (αγωνιστική βάδιση):</strong></p>
+              <p class="example-calc">WALK Score = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">Γρήγορη αλλά μικρότερα βήματα</p>
+            </div>
+          </div>
+
+          <h4>Τυπικά Εύρη:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> Αργό/αναποτελεσματικό βάδισμα, πιθανά προβλήματα κινητικότητας</li>
+            <li><strong>200-250:</strong> Περιστασιακός βαδιστής, μέση αποδοτικότητα</li>
+            <li><strong>170-200:</strong> Βαδιστής φυσικής κατάστασης, καλή αποδοτικότητα</li>
+            <li><strong>150-170:</strong> Προχωρημένος βαδιστής, εξαιρετική αποδοτικότητα</li>
+            <li><strong>&lt;150:</strong> Επίπεδο άλμπιτ/αγωνιστικής βάδισης</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Προπόνηση με WALK Score:</strong> Παρακολουθήστε τη βαθμολογία σας στην ίδια διαδρομή 100m εβδομαδιαίως. Οι βελτιώσεις δείχνουν ενισχυμένο νευρομυϊκό συντονισμό, δύναμη και οικονομία βάδισης.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. Βασικές Μετρήσεις Βαδίσματος</h2>
+
+        <div class="formula-section">
+          <h3>Θεμελιώδεις Υπολογισμοί</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Ταχύτητα Βάδισης</p>
+            <p class="formula-main"><strong>Ταχύτητα (m/s) = Απόσταση (m) / Χρόνος (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Ρυθμός Βημάτων από Συνολικά Βήματα</p>
+            <p class="formula-main"><strong>Ρυθμός (βήματα/λεπτό) = Συνολικά Βήματα / Χρόνος (λεπτά)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Μήκος Βηματισμού</p>
+            <p class="formula-main"><strong>Μήκος Βηματισμού (m) = Απόσταση (m) / (Βήματα / 2)</strong></p>
+            <p class="formula-note">Διαιρέστε τα βήματα με 2 επειδή ένας βηματισμός = δύο βήματα</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Μήκος Βήματος</p>
+            <p class="formula-main"><strong>Μήκος Βήματος (m) = Απόσταση (m) / Βήματα</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Ταχύτητα από Ρυθμό Βημάτων & Μήκος Βηματισμού</p>
+            <p class="formula-main"><strong>Ταχύτητα = Μήκος Βηματισμού × (Ρυθμός / 2) / 60</strong></p>
+            <p class="formula-note">Ή: Ταχύτητα (m/s) = Μήκος Βήματος × Ρυθμός / 60</p>
+          </div>
+
+          <h4>Παράδειγμα Ροής Εργασίας:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Βάδιση 1000m σε 12 λεπτά με 1320 βήματα:</strong></p>
+            <p><strong>Ταχύτητα:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
+            <p><strong>Ρυθμός:</strong> 1320 βήματα / 12 λεπτά = <strong>110 βήματα/λεπτό</strong></p>
+            <p><strong>Μήκος Βηματισμού:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
+            <p><strong>Μήκος Βήματος:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. Υπολογισμοί Ζωνών Καρδιακού Ρυθμού</h2>
+
+        <div class="formula-section">
+          <h3>Παραδοσιακή Μέθοδος Ζωνών Καρδιακού Ρυθμού</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Εκτίμηση Μέγιστου Καρδιακού Ρυθμού</p>
+            <p class="formula-main"><strong>Μέγιστος ΚΡ = 220 - Ηλικία</strong></p>
+            <p class="formula-note">Απλή αλλά με ατομική διακύμανση ±10-15 παλμών/λεπτό</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Εναλλακτικός: Τύπος Tanaka (πιο ακριβής)</p>
+            <p class="formula-main"><strong>Μέγιστος ΚΡ = 208 - (0.7 × Ηλικία)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Υπολογισμός Εύρους Ζώνης</p>
+            <p class="formula-main"><strong>Ζώνη = Μέγιστος ΚΡ × (Κατώτερο%, Ανώτερο%)</strong></p>
+          </div>
+
+          <h4>Παράδειγμα: 40χρονος</h4>
+          <div class="calc-example">
+            <p><strong>Παραδοσιακός:</strong> Μέγιστος ΚΡ = 220 - 40 = <strong>180 παλμοί/λεπτό</strong></p>
+            <p><strong>Tanaka:</strong> Μέγιστος ΚΡ = 208 - (0.7 × 40) = 208 - 28 = <strong>180 παλμοί/λεπτό</strong></p>
+            <p><strong>Ζώνη 2 (60-70%):</strong> 180 × 0.60 = 108 παλμοί/λεπτό έως 180 × 0.70 = 126 παλμοί/λεπτό</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Σημείωση:</strong> Ενώ οι ζώνες καρδιακού ρυθμού είναι χρήσιμες, <strong>οι ζώνες βασισμένες σε ρυθμό βημάτων είναι πιο ακριβείς και πρακτικές για βάδιση</strong> (δείτε τον οδηγό Ζωνών Βάδισης).</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. Κόστος Μεταφοράς & Οικονομία Βάδισης</h2>
+
+        <div class="formula-section">
+          <h3>Ενεργειακό Κόστος Βάδισης</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Κόστος Μεταφοράς (C)</p>
+            <p class="formula-main"><strong>C = Ενέργεια που Δαπανήθηκε / (Μάζα Σώματος × Απόσταση)</strong></p>
+            <p class="formula-note">Μονάδες: J/kg/m ή mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Καμπύλη σε Σχήμα U:</strong> Η οικονομία βάδισης ακολουθεί καμπύλη σε σχήμα U. Υπάρχει μια βέλτιστη ταχύτητα (συνήθως 1.2-1.4 m/s ή 4.3-5.0 km/h) όπου το κόστος μεταφοράς ελαχιστοποιείται. Η βάδιση πιο αργή Ή πιο γρήγορη από αυτό αυξάνει το ενεργειακό κόστος ανά απόσταση που διανύεται.</p>
+          </div>
+
+          <h4>Παράγοντες που Επηρεάζουν το Κόστος Μεταφοράς:</h4>
+          <ul>
+            <li><strong>Ταχύτητα:</strong> Σχέση σε σχήμα U (βέλτιστη γύρω στο 1.3 m/s)</li>
+            <li><strong>Κλίση:</strong> Η ανηφόρα αυξάνει σημαντικά το κόστος· η κατηφόρα αυξάνει το έκκεντρο κόστος</li>
+            <li><strong>Μάζα σώματος:</strong> Τα βαρύτερα άτομα έχουν υψηλότερο απόλυτο αλλά παρόμοιο σχετικό κόστος</li>
+            <li><strong>Μηχανική βηματισμού:</strong> Το βέλτιστο μήκος βηματισμού ελαχιστοποιεί το κόστος</li>
+            <li><strong>Έδαφος:</strong> Οι ανώμαλες επιφάνειες αυξάνουν το κόστος έναντι του λείου πεζοδρομίου</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">Κόστος Προσαρμοσμένο σε Κλίση</p>
+            <p class="formula-main"><strong>Πολλαπλασιαστής κόστους = 1 + (Κλίση × 10)</strong></p>
+            <p class="formula-note">Χονδρική προσέγγιση: +10% κόστος ανά 1% κλίσης</p>
+          </div>
+
+          <h4>Παράδειγμα:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Βάδιση σε κλίση 5%:</strong></p>
+            <p class="example-calc">Πολλαπλασιαστής κόστους = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
+            <p class="example-interpretation">50% αύξηση στο ενεργειακό κόστος σε σχέση με επίπεδο έδαφος</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. Φόρτος Προπόνησης & Βαθμολογία Στρες</h2>
+
+        <div class="formula-section">
+          <h3>Βαθμολογία Στρες Βάδισης (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WSS Βασισμένο σε Ζώνες</p>
+            <p class="formula-main"><strong>WSS = Σ (Λεπτά σε Ζώνη × Παράγοντας Ζώνης)</strong></p>
+            <p>Ζώνη 1: ×1.0 | Ζώνη 2: ×2.0 | Ζώνη 3: ×3.0 | Ζώνη 4: ×4.0 | Ζώνη 5: ×5.0</p>
+          </div>
+
+          <h4>Παράδειγμα: Βάδιση 60 λεπτών</h4>
+          <div class="calc-example">
+            <p>10 λεπτά Ζώνη 1 × 1 = 10 πόντοι</p>
+            <p>40 λεπτά Ζώνη 2 × 2 = 80 πόντοι</p>
+            <p>10 λεπτά Ζώνη 3 × 3 = 30 πόντοι</p>
+            <p><strong>Σύνολο WSS = 120</strong></p>
+          </div>
+
+          <h3>Εβδομαδιαίος Φόρτος Προπόνησης</h3>
+          <div class="formula-box">
+            <p class="formula-title">Εβδομαδιαίος Φόρτος</p>
+            <p class="formula-main"><strong>Εβδομαδιαίος Φόρτος = Σ Ημερήσιο WSS (7 ημέρες)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Προοδευτική Υπερφόρτωση</p>
+            <p class="formula-main"><strong>Επόμενη Εβδομάδα = Τρέχουσα Εβδομάδα × 1.05-1.10</strong></p>
+            <p class="formula-note">Αύξηση 5-10% ανά εβδομάδα μέγιστο</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Εβδομάδα Ανάρρωσης</p>
+            <p class="formula-main"><strong>Εβδομάδα Ανάρρωσης = Τρέχουσα × 0.50-0.70</strong></p>
+            <p class="formula-note">Κάθε 3-4 εβδομάδες, μείωση στο 50-70%</p>
+          </div>
+
+          <h4>Τυπικοί Εβδομαδιαίοι Φόρτοι:</h4>
+          <ul>
+            <li><strong>Αρχάριος βαδιστής υγείας:</strong> 200-400 WSS/εβδομάδα</li>
+            <li><strong>Τακτικός βαδιστής φυσικής κατάστασης:</strong> 400-700 WSS/εβδομάδα</li>
+            <li><strong>Σοβαρός βαδιστής φυσικής κατάστασης:</strong> 700-1000 WSS/εβδομάδα</li>
+            <li><strong>Ανταγωνιστικός αθλητής άλμπιτ:</strong> 1000-1500+ WSS/εβδομάδα</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. Εξισώσεις Πρόβλεψης</h2>
+
+        <div class="formula-section">
+          <h3>Πρόβλεψη Απόστασης Δοκιμασίας 6 Λεπτών Βάδισης (6MWT)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Προβλεπόμενη Απόσταση 6MWT (Enright & Sherrill)</p>
+            <p><strong>Άνδρες:</strong> (7.57 × Ύψος cm) - (5.02 × Ηλικία) - (1.76 × Βάρος kg) - 309</p>
+            <p><strong>Γυναίκες:</strong> (2.11 × Ύψος cm) - (5.78 × Ηλικία) - (2.29 × Βάρος kg) + 667</p>
+            <p class="formula-note">Προβλέπει απόσταση σε μέτρα για υγιείς ενήλικες</p>
+          </div>
+
+          <h4>Παράδειγμα: 40χρονος άνδρας, 175 cm, 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 μέτρα</strong></p>
+            <p class="example-interpretation">Καλή λειτουργική ικανότητα για την ηλικία</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Κλινική Χρήση:</strong> Η 6MWT χρησιμοποιείται για την αξιολόγηση της λειτουργικής ικανότητας άσκησης σε καρδιοαναπνευστικούς ασθενείς, προ/μετεγχειρητική αξιολόγηση και γενική φυσική κατάσταση σε ηλικιωμένους.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. Μετατροπές Μονάδων</h2>
+
+        <div class="formula-section">
+          <h3>Κοινές Μετατροπές Μετρήσεων Βάδισης</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Από</th>
+                  <th>Σε</th>
+                  <th>Τύπος</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/λεπτό</td>
+                  <td>km/h × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/λεπτό</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Γρήγορη Αναφορά:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (τυπική ταχύτητα βάδισης υγιούς ενήλικα)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (γρήγορη βάδιση)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (μεταβολισμός ηρεμίας)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (κατώφλι μέτριας έντασης)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (κατώφλι έντονης έντασης)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">Σχετικοί Πόροι</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Εφαρμόστε Τύπους: Υπολογιστής WSS</h3>
+            <p>Χρησιμοποιήστε τον διαδραστικό μας υπολογιστή για να υπολογίσετε τη Βαθμολογία Στρες Βάδισης.</p>
+            <a href="/el/wss-calculator/" class="btn btn-secondary">Υπολογισμός WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Κατανοώντας τις Ζώνες Βάδισης</h3>
+            <p>Μάθετε πώς να εφαρμόζετε ζώνες έντασης βασισμένες σε ρυθμό βημάτων στην προπόνηση.</p>
+            <a href="/el/walking-zones/" class="btn btn-secondary">Μάθετε για τις Ζώνες →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Επιστημονική Έρευνα</h3>
+            <p>Ελέγξτε τις μελέτες που επικύρωσαν αυτούς τους τύπους.</p>
+            <a href="/el/research/" class="btn btn-secondary">Δείτε την Έρευνα →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Πλήρης Βιβλιογραφία</h3>
+            <p>Πρόσβαση σε πλήρεις αναφορές για όλες τις εξισώσεις που αναφέρονται.</p>
+            <a href="/el/bibliography/" class="btn btn-secondary">Δείτε τη Βιβλιογραφία →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Ευρετήριο Τύπων</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Ρυθμός Βημάτων → METs</a></li>
+            <li><a href="#acsm-vo2">2. Εξισώσεις ACSM VO₂</a></li>
+            <li><a href="#energy-expenditure">3. Ενέργεια & Θερμίδες</a></li>
+            <li><a href="#gait-symmetry">4. Δείκτης Συμμετρίας Βαδίσματος</a></li>
+            <li><a href="#walk-score">5. WALK Score</a></li>
+            <li><a href="#basic-metrics">6. Βασικές Μετρήσεις Βαδίσματος</a></li>
+            <li><a href="#heart-rate">7. Ζώνες Καρδιακού Ρυθμού</a></li>
+            <li><a href="#cost-transport">8. Κόστος Μεταφοράς</a></li>
+            <li><a href="#training-load">9. Φόρτος Προπόνησης</a></li>
+            <li><a href="#predictions">10. Εξισώσεις Πρόβλεψης</a></li>
+            <li><a href="#conversions">11. Μετατροπές Μονάδων</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Πιο Σημαντικό</h3>
+          <p><strong>Ρυθμός Βημάτων σε METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × βήματα/λεπτό + 0.72</p>
+          <p class="small-text">Αυτή η μοναδική εξίσωση καθιστά δυνατή την προπόνηση έντασης βασισμένη σε ρυθμό χωρίς μετρητές καρδιακού ρυθμού.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Εφαρμόστε Αυτούς τους Τύπους</h3>
+          <p>Το WalkAnalytics χρησιμοποιεί αυτές τις επιστημονικά επικυρωμένες εξισώσεις για να αναλύσει τις βαδίσεις σας.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Λήψη Εφαρμογής</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Ακρίβεια Τύπων</h4>
+          <p>Όλες οι εξισώσεις σε αυτή τη σελίδα προέρχονται από έρευνα με κριτική αξιολόγηση. Δείτε τη <a href="/el/bibliography/">Βιβλιογραφία</a> για πλήρεις αναφορές.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Αρχική</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Με επιφύλαξη κάθε δικαιώματος
+            </p>
+            <ul class="footer-links">
+                <li><a href="/el/privacy/">Απόρρητο</a></li>
+                <li><a href="/el/terms/">Όροι</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Αυτός ο ιστότοπος χρησιμοποιεί cookies για τη βελτίωση της εμπειρίας σας.</p>
+            <a href="/el/privacy/" class="text-sm">Μάθετε περισσότερα</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Απόρριψη</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Αποδοχή</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

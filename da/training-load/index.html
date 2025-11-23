@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Gangtræningsbelastning - WSS, træningsplanlægning &amp; restitution</title>
+    <meta name="description" content="Forstå gangtræningsbelastning: WSS-beregning, træningsbelastningsstyring, restitutionsplanlægning. Optimer træningsvolumen for bedre resultater og skadeforebyggelse.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="træningsbelastning gang, WSS score, træningsplanlægning, restitution gang, træningsvolumenstyring">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/da/training-load/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/da/training-load/">
+    <meta property="og:title" content="Gangtræningsbelastning - WSS, træningsplanlægning &amp; restitution">
+    <meta property="og:description" content="Forstå gangtræningsbelastning: WSS-beregning, træningsbelastningsstyring, restitutionsplanlægning. Optimer træningsvolumen for bedre resultater og skadeforebyggelse.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/da/training-load/">
+    <meta name="twitter:title" content="Gangtræningsbelastning - WSS, træningsplanlægning &amp; restitution">
+    <meta name="twitter:description" content="Forstå gangtræningsbelastning: WSS-beregning, træningsbelastningsstyring, restitutionsplanlægning. Optimer træningsvolumen for bedre resultater og skadeforebyggelse.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/training-load/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/training-load/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/training-load/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/training-load/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/training-load/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/training-load/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/training-load/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/training-load/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/training-load/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/training-load/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/training-load/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/training-load/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/training-load/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/training-load/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/training-load/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/training-load/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/training-load/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/training-load/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/training-load/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/training-load/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/training-load/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/training-load/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/training-load/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/training-load/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/training-load/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/training-load/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/training-load/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/training-load/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/training-load/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/training-load/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/training-load/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/training-load/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/training-load/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/training-load/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Spring til indhold</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/da/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/da/"  aria-current="">
+                            Hjem
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Lær</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/getting-started/" 
+                                    aria-current="">
+                                    Kom i gang
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/walking-zones/" 
+                                    aria-current="">
+                                    Gangzoner
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/gait-analysis/" 
+                                    aria-current="">
+                                    Ganganalyse
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/training-load/" class="active" 
+                                    aria-current="page">
+                                    Træningsbelastning
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/wss-calculator/" 
+                                    aria-current="">
+                                    WSS-beregner
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Videnskab</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/research/" 
+                                    aria-current="">
+                                    Forskning
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/formulas/" 
+                                    aria-current="">
+                                    Formler
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/gait-efficiency/" 
+                                    aria-current="">
+                                    Gangeffektivitet
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/stride-mechanics/" 
+                                    aria-current="">
+                                    Skridtmekanik
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/walking-vs-running/" 
+                                    aria-current="">
+                                    Gang vs løb
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/benchmarks/" 
+                                    aria-current="">
+                                    Præstationsreferencer
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/bibliography/" 
+                                    aria-current="">
+                                    Bibliografi
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Til dig</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/for-health/" 
+                                    aria-current="">
+                                    Til sundhed
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/for-fitness/" 
+                                    aria-current="">
+                                    Til fitness
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/for-seniors/" 
+                                    aria-current="">
+                                    Til seniorer
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/for-rehabilitation/" 
+                                    aria-current="">
+                                    Til genoptræning
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Værktøjer</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/cadence-calculator/" 
+                                    aria-current="">
+                                    Kadenceberegner
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/gait-assessment/" 
+                                    aria-current="">
+                                    Gangvurdering
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max-beregner
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/da/contact/"  aria-current="">
+                            Kontakt
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Vælg sprog">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" selected>
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Skift menu"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Training Load Guide -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/da/">Hjem</a> / <a href="/da/#learn">Lær</a> / Træningsbelastning
+    </div>
+    <h1>Styring af Gangtræningsbelastning</h1>
+    <p class="lead">Videnskabelig tilgang til at balancere træningsstimulus, tilpasning og restitution</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <!-- Introduction -->
+        <h2 id="intro">Hvad er Træningsbelastning?</h2>
+
+        <p><strong>Træningsbelastning</strong> kvantificerer den kumulative fysiologiske stress, din krop oplever fra gangtræning. Det integrerer tre nøgledimensioner:</p>
+
+        <ol>
+          <li><strong>Varighed:</strong> Hvor længe du går</li>
+          <li><strong>Intensitet:</strong> Hvor hårdt du går (kadence, puls, hastighed)</li>
+          <li><strong>Frekvens:</strong> Hvor ofte du går</li>
+        </ol>
+
+        <p>Korrekt styring af træningsbelastning muliggør konsekvent forbedring og minimerer skaderisiko og overtræning. I modsætning til tilfældig gang som transport kræver <strong>træningsorienteret gang</strong> systematisk progression og restitutionsplanlægning.</p>
+
+        <div class="key-finding">
+          <strong>Forskningsindsigt:</strong> Forholdet mellem træningsbelastning og tilpasning følger en omvendt U-kurve: for lidt belastning giver ingen tilpasning, optimal belastning driver forbedring, og overdreven belastning fører til overtræning og skader (Soligard et al., 2016).
+        </div>
+
+        <!-- Peak-30 Cadence -->
+        <h2 id="peak30">Peak-30 Kadence: En Banebrydende Måling</h2>
+
+        <p>Nyere forskning har identificeret <strong>Peak-30 kadence</strong> som en kraftfuld forudsiger for sundhedsresultater og dødelighetsrisiko, uafhængigt af samlede daglige skridt.</p>
+
+        <h3>Hvad er Peak-30 Kadence?</h3>
+
+        <p><strong>Peak-30 kadence</strong> er den gennemsnitlige kadence (skridt per minut) under dine <strong>bedste 30 sammenhængende minutter</strong> af gang på en dag. Denne måling fanger din evne til at opretholde målrettet, rask gang.</p>
+
+        <div class="key-finding">
+          <strong>Banebrydende Studie:</strong> Del Pozo-Cruz et al. (2022) analyserede 78.500 UK Biobank-deltagere og fandt, at Peak-30 kadence uafhængigt forudsagde dødelighed af alle årsager og kardiovaskulær sygdomsrisiko, selv efter kontrol for samlede daglige skridt.
+        </div>
+
+        <h3>Peak-30 Kadence Tærskler og Sundhedsresultater</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Peak-30 Kadence</th>
+                <th>Klassifikation</th>
+                <th>Dødelighetsrisiko</th>
+                <th>Sundhedsstatus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;60 spm</td>
+                <td>Meget lav</td>
+                <td>Reference (højest)</td>
+                <td>Stillesiddende mønster</td>
+              </tr>
+              <tr>
+                <td>60-79 spm</td>
+                <td>Lav</td>
+                <td>~15% lavere risiko</td>
+                <td>Tilfældig gang</td>
+              </tr>
+              <tr>
+                <td>80-99 spm</td>
+                <td>Moderat</td>
+                <td>~30% lavere risiko</td>
+                <td>Regelmæssig gang</td>
+              </tr>
+              <tr>
+                <td>100-109 spm</td>
+                <td>Rask</td>
+                <td>~40% lavere risiko</td>
+                <td>Fitnessorienteret</td>
+              </tr>
+              <tr>
+                <td>≥110 spm</td>
+                <td>Meget rask</td>
+                <td>~50% lavere risiko</td>
+                <td>Høj fitness</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Nøgleindsigt:</strong> Peak-30 kadence på ≥100 spm svarer til <strong>moderat til kraftig fysisk aktivitet</strong> (MVPA) og repræsenterer tærsklen for væsentlige sundhedsfordele.</p>
+
+        <h3>Træningsmæssige Implikationer</h3>
+
+        <p>Peak-30 kadence giver handlingsorienteret træningsvejledning:</p>
+
+        <ul>
+          <li><strong>Målsætning:</strong> Sigte mod Peak-30 kadence på 100+ spm mindst 5 dage om ugen</li>
+          <li><strong>Træningsdesign:</strong> Inkluder mindst ét 30-minutters raskt interval i daglige ture</li>
+          <li><strong>Fremskridtssporing:</strong> Overvåg stigninger i Peak-30 kadence i takt med at fitnessen forbedres</li>
+          <li><strong>Intensitetspreskription:</strong> Brug kadencezoner fremfor puls til mere praktisk træning</li>
+        </ul>
+
+        <!-- Brisk Bouts -->
+        <h2 id="brisk-bouts">Raske Intervaller: Kvalitet Over Kvantitet</h2>
+
+        <p>Et <strong>raskt interval</strong> er en kontinuerlig periode med gang ved ≥100 skridt per minut (moderat intensitetstærskel), der varer mindst 10 minutter uden at falde under kadencetærsklen i mere end 1-2 minutter.</p>
+
+        <h3>Videnskabelig Begrundelse</h3>
+
+        <p>2018 U.S. Physical Activity Guidelines eliminerede det tidligere krav om, at aerob aktivitet skulle forekomme i intervaller på mindst 10 minutter. Forskning viser dog, at <strong>vedvarende raske intervaller</strong> giver unikke fordele:</p>
+
+        <ul>
+          <li><strong>Kardiovaskulær tilpasning:</strong> Vedvarende forhøjet puls driver aerobe forbedringer</li>
+          <li><strong>Metabolisk effektivitet:</strong> 10+ minutter tillader metaboliske veje at engagere fuldt ud</li>
+          <li><strong>Færdighedsudvikling:</strong> Vedvarende højere kadence forbedrer gangmekanik</li>
+          <li><strong>Psykologisk fordel:</strong> Intentionel "trænings"-tankegang vs. tilfældig bevægelse</li>
+        </ul>
+
+        <h3>Ugentlige Mål for Raske Intervaller</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Fitnessniveau</th>
+                <th>Ugentlige Raske Minutter</th>
+                <th>Antal Intervaller</th>
+                <th>Eksempel på Tidsplan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Begynder</strong></td>
+                <td>75-100 min</td>
+                <td>3-4 intervaller á 20-30 min</td>
+                <td>Man/Ons/Fre: 25 min hver</td>
+              </tr>
+              <tr>
+                <td><strong>Øvet</strong></td>
+                <td>150-200 min</td>
+                <td>5-6 intervaller á 25-40 min</td>
+                <td>Daglig 30 min + 1 lang weekendtur</td>
+              </tr>
+              <tr>
+                <td><strong>Avanceret</strong></td>
+                <td>200-300+ min</td>
+                <td>5-7 intervaller á 30-60 min</td>
+                <td>Daglig 40 min + intervaller + lang tur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Opfyldelse af Folkesundhedsretningslinjer:</strong> 150 minutters moderat intensitet om ugen (100+ spm kadence) opfylder WHO og CDC anbefalinger for sundhedsfordele.</p>
+
+        <h3>Kvalitetsmålinger for Raske Intervaller</h3>
+
+        <p>Ikke alle raske intervaller er ens. Kvalitet kan vurderes ved:</p>
+
+        <ol>
+          <li><strong>Kadencestabilitet:</strong> Minimal fluktuation omkring målkadence (±5 spm)</li>
+          <li><strong>Varighed:</strong> Længere vedvarende intervaller (30-45 min) > flere korte intervaller</li>
+          <li><strong>Intensitet:</strong> Højere gennemsnitskadence inden for intervallet (110 spm > 100 spm)</li>
+          <li><strong>Konsistens:</strong> Frekvens af raske intervaldage om ugen (5-7 dage > 3 dage)</li>
+        </ol>
+
+        <!-- Walking Stress Score -->
+        <h2 id="wss">Walking Stress Score (WSS)</h2>
+
+        <p><strong>Walking Stress Score (WSS)</strong> er en proprietær måling, der kvantificerer træningsbelastningen af individuelle træningspas. Den tilpasser koncepter fra Training Stress Score (TSS), som anvendes i cykling og løb.</p>
+
+        <h3>WSS Beregningsmetoder</h3>
+
+        <p>WSS kan beregnes ved brug af enten <strong>puls</strong> eller <strong>kadence</strong> som intensitetsmåling:</p>
+
+        <h4>Metode 1: Pulsbaseret WSS</h4>
+
+        <p>Tidsvægtet efter pulszone:</p>
+
+        <div class="formula-box">
+          <pre>WSS = Σ (Minutter i Zone × Zone Multiplikator)
+
+Zone Multiplikatorer:
+  Zone 1 (50-60% HRmax): 1.0
+  Zone 2 (60-70% HRmax): 2.0
+  Zone 3 (70-80% HRmax): 3.0
+  Zone 4 (80-90% HRmax): 4.0
+  Zone 5 (90-100% HRmax): 5.0</pre>
+        </div>
+
+        <p><strong>Eksempel:</strong> 60-minutters tur med:</p>
+        <ul>
+          <li>10 min opvarmning i Zone 1 = 10 × 1.0 = 10</li>
+          <li>40 min stabilt i Zone 2 = 40 × 2.0 = 80</li>
+          <li>10 min nedvarmning i Zone 1 = 10 × 1.0 = 10</li>
+          <li><strong>Total WSS = 100</strong></li>
+        </ul>
+
+        <h4>Metode 2: Kadencebaseret WSS</h4>
+
+        <p>Tidsvægtet efter kadenceintensitet:</p>
+
+        <div class="formula-box">
+          <pre>WSS = Σ (Minutter ved Kadence × Kadence Multiplikator)
+
+Kadence Multiplikatorer:
+  60-99 spm (let): 1.0
+  100-109 spm (moderat): 2.5
+  110-119 spm (moderat-kraftig): 3.5
+  120-129 spm (kraftig): 4.5
+  ≥130 spm (meget kraftig): 6.0</pre>
+        </div>
+
+        <p><strong>Fordel:</strong> Kadencebaseret WSS kræver ikke pulsmåler og er mere praktisk for de fleste gående.</p>
+
+        <h3>Typiske WSS-værdier efter Træningstype</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Træningstype</th>
+                <th>Varighed</th>
+                <th>Gennemsnitlig Intensitet</th>
+                <th>Typisk WSS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Restitutionstur</td>
+                <td>20-30 min</td>
+                <td>Zone 1, &lt;100 spm</td>
+                <td>20-30</td>
+              </tr>
+              <tr>
+                <td>Let aerob tur</td>
+                <td>30-45 min</td>
+                <td>Zone 2, 100-105 spm</td>
+                <td>60-90</td>
+              </tr>
+              <tr>
+                <td>Rask stabil tur</td>
+                <td>45-60 min</td>
+                <td>Zone 2, 105-110 spm</td>
+                <td>90-150</td>
+              </tr>
+              <tr>
+                <td>Tempotur</td>
+                <td>30-40 min</td>
+                <td>Zone 3, 110-120 spm</td>
+                <td>90-140</td>
+              </tr>
+              <tr>
+                <td>Intervaltræning</td>
+                <td>40-50 min</td>
+                <td>Blandede zoner, toppe 120+ spm</td>
+                <td>120-200</td>
+              </tr>
+              <tr>
+                <td>Lang udholdenhedstur</td>
+                <td>90-120 min</td>
+                <td>Zone 2, 100-110 spm</td>
+                <td>180-300</td>
+              </tr>
+              <tr>
+                <td>Kapgangtræning</td>
+                <td>60-90 min</td>
+                <td>Zone 3-4, 120-140 spm</td>
+                <td>200-400</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Weekly Training Load -->
+        <h2 id="weekly-load">Ugentlige Retningslinjer for Træningsbelastning</h2>
+
+        <p>Ugentlig træningsbelastning bør individualiseres baseret på fitnessniveau, mål og tilgængelig tid. Retningslinjer gives i både <strong>WSS</strong> og <strong>raske minutter</strong> for fleksibilitet.</p>
+
+        <h3>Begynder (0-6 måneders træningserfaring)</h3>
+
+        <ul>
+          <li><strong>Ugentlig WSS:</strong> 150-300</li>
+          <li><strong>Raske minutter (≥100 spm):</strong> 75-120 min/uge</li>
+          <li><strong>Samlet gangtid:</strong> 120-200 min/uge</li>
+          <li><strong>Peak-30 mål:</strong> 90-100 spm</li>
+          <li><strong>Sessioner om ugen:</strong> 4-5</li>
+          <li><strong>Fokus:</strong> Konsistens, vanevdannelse, teknikudvikling</li>
+          <li><strong>Progression:</strong> Forøg med 5-10% om ugen</li>
+        </ul>
+
+        <p><strong>Eksempel på uge (Total WSS: 250):</strong></p>
+        <ul>
+          <li>Man: 30 min let tur, 100 spm (WSS 50)</li>
+          <li>Tir: Hvile eller blid 20 min gåtur</li>
+          <li>Ons: 35 min rask tur, 105 spm (WSS 70)</li>
+          <li>Tor: 25 min let tur, 95 spm (WSS 40)</li>
+          <li>Fre: Hvile</li>
+          <li>Lør: 45 min stabil tur, 102 spm (WSS 90)</li>
+          <li>Søn: Let 20-30 min</li>
+        </ul>
+
+        <h3>Øvet (6-18 måneders træningserfaring)</h3>
+
+        <ul>
+          <li><strong>Ugentlig WSS:</strong> 300-550</li>
+          <li><strong>Raske minutter (≥100 spm):</strong> 150-250 min/uge</li>
+          <li><strong>Samlet gangtid:</strong> 250-400 min/uge</li>
+          <li><strong>Peak-30 mål:</strong> 105-115 spm</li>
+          <li><strong>Sessioner om ugen:</strong> 5-6</li>
+          <li><strong>Fokus:</strong> Opbygning af aerob kapacitet, hastighedsudholdenhed, intervalintroduktion</li>
+          <li><strong>Progression:</strong> Forøg med 10% om ugen, med restitutionsuger</li>
+        </ul>
+
+        <p><strong>Eksempel på uge (Total WSS: 420):</strong></p>
+        <ul>
+          <li>Man: 40 min stabil tur, 108 spm (WSS 100)</li>
+          <li>Tir: 30 min let restitution, 95 spm (WSS 45)</li>
+          <li>Ons: 45 min intervaller (5×4 min @ 120 spm / 3 min let) (WSS 130)</li>
+          <li>Tor: 35 min let tur, 100 spm (WSS 60)</li>
+          <li>Fre: Hvile eller 20 min blid tur</li>
+          <li>Lør: 75 min lang tur, 105 spm (WSS 150)</li>
+          <li>Søn: 30 min let restitution (WSS 40)</li>
+        </ul>
+
+        <h3>Avanceret (18+ måneders træningserfaring)</h3>
+
+        <ul>
+          <li><strong>Ugentlig WSS:</strong> 500-900+</li>
+          <li><strong>Raske minutter (≥100 spm):</strong> 250-400+ min/uge</li>
+          <li><strong>Samlet gangtid:</strong> 400-700+ min/uge</li>
+          <li><strong>Peak-30 mål:</strong> 115-130+ spm</li>
+          <li><strong>Sessioner om ugen:</strong> 6-7</li>
+          <li><strong>Fokus:</strong> Præstation, konkurrence, kapgangteknik</li>
+          <li><strong>Progression:</strong> Periodiseret med distinkte træningsfaser</li>
+        </ul>
+
+        <p><strong>Eksempel på uge (Total WSS: 720):</strong></p>
+        <ul>
+          <li>Man: 50 min stabil tur, 110 spm (WSS 120)</li>
+          <li>Tir: 40 min let tur, 100 spm (WSS 70)</li>
+          <li>Ons: 60 min tempo (40 min @ 115-120 spm) (WSS 180)</li>
+          <li>Tor: 35 min restitutionstur, 95 spm (WSS 50)</li>
+          <li>Fre: 50 min intervaller (10×2 min @ 130+ spm / 2 min let) (WSS 180)</li>
+          <li>Lør: 90 min lang tur, 108 spm (WSS 200)</li>
+          <li>Søn: 40 min let tur (WSS 60)</li>
+        </ul>
+
+        <!-- Acute vs Chronic Load -->
+        <h2 id="acwr">Akut:Kronisk Arbejdsbelastningsforhold (ACWR)</h2>
+
+        <p><strong>Akut:Kronisk Arbejdsbelastningsforhold</strong> er et kraftfuldt værktøj til at styre skaderisiko ved at sammenligne nylig træningsbelastning (akut) med længerevarende træningsbelastning (kronisk).</p>
+
+        <h3>Beregning</h3>
+
+        <div class="formula-box">
+          <pre>ACWR = Akut Belastning (7 dage) / Kronisk Belastning (28 dages gennemsnit)
+
+Eksempel:
+  Sidste 7 dages WSS: 450
+  Gennemsnit af foregående 28 dage: 380
+  ACWR = 450 / 380 = 1.18</pre>
+        </div>
+
+        <h3>Fortolkning af ACWR</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>ACWR-interval</th>
+                <th>Skaderisiko</th>
+                <th>Træningsstatus</th>
+                <th>Handling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;0.80</td>
+                <td>Lav-Moderat</td>
+                <td>Detræning mulig</td>
+                <td>Overvej at øge belastning hvis rask</td>
+              </tr>
+              <tr>
+                <td>0.80-1.00</td>
+                <td>Lav</td>
+                <td>Stabil træning</td>
+                <td>Bevar nuværende belastning</td>
+              </tr>
+              <tr>
+                <td>1.00-1.30</td>
+                <td>Lav</td>
+                <td>Optimal progression</td>
+                <td>Sweet spot for tilpasning</td>
+              </tr>
+              <tr>
+                <td>1.30-1.50</td>
+                <td>Moderat</td>
+                <td>Hurtig stigning</td>
+                <td>Overvåg for træthedstegn</td>
+              </tr>
+              <tr>
+                <td>&gt;1.50</td>
+                <td>Høj</td>
+                <td>Farlig spids</td>
+                <td>Reducer belastning, prioriter restitution</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="key-finding">
+          <strong>Forskningsresultat:</strong> Atleter med ACWR >1.50 har 2-4 gange højere skaderisiko sammenlignet med dem i 0.80-1.30 intervallet (Gabbett, 2016). Dette princip gælder på tværs af sportsgrene, inklusive gangtræning.
+        </div>
+
+        <h3>Praktisk Anvendelse</h3>
+
+        <p><strong>Scenarie 1: Vender tilbage efter sygdom</strong></p>
+        <ul>
+          <li>Uge før sygdom: 400 WSS</li>
+          <li>Mistet 10 dage (28-dages gennemsnit falder til 285)</li>
+          <li>Spring ikke tilbage til 400 (ACWR = 1.40)</li>
+          <li>I stedet: Genoptag ved 250-300 WSS (ACWR = 0.88-1.05)</li>
+        </ul>
+
+        <p><strong>Scenarie 2: Ambitiøs progression</strong></p>
+        <ul>
+          <li>Nuværende 4-ugers gennemsnit: 350 WSS/uge</li>
+          <li>Planlægning af næste uge: Vil gerne lave 500 WSS</li>
+          <li>ACWR ville være 1.43 (moderat-høj risiko)</li>
+          <li>Bedre tilgang: 420-450 WSS (ACWR 1.20-1.29)</li>
+        </ul>
+
+        <!-- Training Load Progression -->
+        <h2 id="progression">Strategier for Progression af Træningsbelastning</h2>
+
+        <h3>10%-reglen (med nuancer)</h3>
+
+        <p>Den traditionelle <strong>10%-regel</strong> foreslår at øge ugentlig træningsvolumen med maksimalt 10% om ugen. Selvom den er nyttig som retningslinje, foreslår moderne forskning mere nuancerede tilgange:</p>
+
+        <ul>
+          <li><strong>For begyndere:</strong> 5-10% ugentlige stigninger er passende</li>
+          <li><strong>For erfarne gående:</strong> 10-15% stigninger kan tolereres hvis ACWR forbliver &lt;1.30</li>
+          <li><strong>Efter pauser:</strong> Langsommere progression (5%) er sikrere</li>
+          <li><strong>Under høj belastning:</strong> Bevar eller reducer snarere end at fortsætte med at øge</li>
+        </ul>
+
+        <h3>Periodisering: 3:1 Modellen</h3>
+
+        <p>Den mest evidensbaserede progressionsmodel veksler mellem <strong>3 ugers stigende belastning</strong> og <strong>1 restitutionsuge</strong>:</p>
+
+        <p><strong>Eksempel på 8-ugers blok (starter ved 300 WSS):</strong></p>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Uge</th>
+                <th>Ugentlig WSS</th>
+                <th>Ændring</th>
+                <th>Fase</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>300</td>
+                <td>Basislinje</td>
+                <td>Opbygning</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>330</td>
+                <td>+10%</td>
+                <td>Opbygning</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>365</td>
+                <td>+11%</td>
+                <td>Opbygning</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>220</td>
+                <td>-40%</td>
+                <td><strong>Restitution</strong></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>400</td>
+                <td>+10%</td>
+                <td>Opbygning</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>440</td>
+                <td>+10%</td>
+                <td>Opbygning</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>485</td>
+                <td>+10%</td>
+                <td>Opbygning</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>290</td>
+                <td>-40%</td>
+                <td><strong>Restitution</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Fordele ved restitutionsuger:</strong></p>
+        <ul>
+          <li>Tillader fysiologisk tilpasning (superkompensation)</li>
+          <li>Genopbygger glykogenlagre</li>
+          <li>Reparerer mikro-skader på væv</li>
+          <li>Reducerer akkumuleret træthed</li>
+          <li>Genopfrisker motivation og mental energi</li>
+          <li>Forbereder kroppen til næste træningsblok</li>
+        </ul>
+
+        <h3>Blokperiodisering</h3>
+
+        <p>For avancerede gående, der træner til præstation eller begivenheder, organiser træning i distinkte <strong>mesocyklusser</strong> (4-8 ugers blokke):</p>
+
+        <p><strong>Årlig periodiseringseksempel:</strong></p>
+
+        <ol>
+          <li>
+            <strong>Basisfase (8-12 uger):</strong>
+            <ul>
+              <li>Fokus: Opbyg aerob base med Zone 2 volumen</li>
+              <li>Ugentlig WSS: 400-550</li>
+              <li>80% af tiden ved 100-110 spm</li>
+              <li>Lange ture øges fra 60 til 120 minutter</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Opbygningsfase (6-8 uger):</strong>
+            <ul>
+              <li>Fokus: Tilføj Zone 3 tempoarbejde og korte intervaller</li>
+              <li>Ugentlig WSS: 500-650</li>
+              <li>70% Zone 2, 20% Zone 3, 10% Zone 4</li>
+              <li>2 kvalitetssessioner om ugen</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Topfase (4-6 uger):</strong>
+            <ul>
+              <li>Fokus: Høj intensitet, løbsspecifikt arbejde</li>
+              <li>Ugentlig WSS: 550-750</li>
+              <li>Inkluder løbstempo-intervaller og simuleringer</li>
+              <li>Bevar noget let volumen</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Nedtrapning (1-2 uger):</strong>
+            <ul>
+              <li>Fokus: Reducer volumen, bevar intensitet</li>
+              <li>Ugentlig WSS: 200-350 (50% reduktion)</li>
+              <li>Bevar 1-2 korte, skarpe sessioner</li>
+              <li>Prioriter hvile og parathed</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Restitution/Overgang (2-4 uger):</strong>
+            <ul>
+              <li>Fokus: Aktiv restitution, krydstræning</li>
+              <li>Ugentlig WSS: 150-300</li>
+              <li>Al let gang, ingen struktur</li>
+              <li>Mental og fysisk regenerering</li>
+            </ul>
+          </li>
+        </ol>
+
+        <!-- Monitoring Training Load -->
+        <h2 id="monitoring">Overvågning og Justering af Træningsbelastning</h2>
+
+        <h3>Objektive Målinger</h3>
+
+        <p><strong>Spor disse dagligt/ugentligt:</strong></p>
+
+        <ol>
+          <li>
+            <strong>Hvilepuls (RHR):</strong>
+            <ul>
+              <li>Mål ved opvågning, før du stiger ud af sengen</li>
+              <li>Spor 7-dages rullende gennemsnit</li>
+              <li>Stigning på 5-10 slag/min tyder på ufuldstændig restitution</li>
+              <li>Vedvarende stigning (>1 uge) indikerer overtræningsrisiko</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Pulsvariabilitet (HRV):</strong>
+            <ul>
+              <li>Højere HRV = bedre restitution og parathed</li>
+              <li>Fald på >10% fra basislinje = reduceret parathed</li>
+              <li>Brug app som Elite HRV, HRV4Training eller Oura Ring</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Peak-30 Kadence:</strong>
+            <ul>
+              <li>Spor dagligt for at vurdere evnen til at opretholde intensitet</li>
+              <li>Faldende tendens kan indikere akkumuleret træthed</li>
+              <li>Brug som indikator for træningsparathed</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Ganghastighed ved Standard Indsats:</strong>
+            <ul>
+              <li>Månedlig test: 20-30 min ved konsekvent oplevet indsats</li>
+              <li>Forbedret hastighed ved samme indsats = positiv tilpasning</li>
+              <li>Faldende hastighed = utilstrækkelig restitution eller overtræning</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Subjektive Målinger</h3>
+
+        <p><strong>Daglig wellness-spørgeskema (score 1-5 for hver):</strong></p>
+
+        <ol>
+          <li><strong>Søvnkvalitet:</strong> 1 = forfærdelig, 5 = fremragende</li>
+          <li><strong>Træthedsniveau:</strong> 1 = udmattet, 5 = energisk</li>
+          <li><strong>Muskelsmerter:</strong> 1 = meget øm, 5 = ingen ømhed</li>
+          <li><strong>Humør/motivation:</strong> 1 = dårlig, 5 = fantastisk</li>
+          <li><strong>Stressniveau:</strong> 1 = meget højt, 5 = meget lavt</li>
+        </ol>
+
+        <p><strong>Samlet wellness-score fortolkning:</strong></p>
+        <ul>
+          <li><strong>20-25:</strong> Fremragende parathed, fortsæt med planlagt træning</li>
+          <li><strong>15-19:</strong> God parathed, træn som planlagt eller let reduceret</li>
+          <li><strong>10-14:</strong> Moderate bekymringer, overvej lettere dag eller kortere session</li>
+          <li><strong>5-9:</strong> Dårlig parathed, gør dagen meget let eller tag hviledag</li>
+        </ul>
+
+        <h3>Tegn på Passende Træningsbelastning</h3>
+
+        <ul>
+          <li>Føler sig energisk og motiveret til de fleste ture</li>
+          <li>Gradvis præstationsforbedring over uger/måneder</li>
+          <li>Konsekvent søvnkvalitet (7-9 timer, føler sig udhvilet)</li>
+          <li>Stabil eller forbedret hvilepuls</li>
+          <li>Minimal muskelsmerter ud over 24-48 timer efter træning</li>
+          <li>Bevarer entusiasme for gang</li>
+          <li>I stand til konsekvent at ramme måltempi/kadencer</li>
+        </ul>
+
+        <h3>Advarselstegn på Overdreven Træningsbelastning</h3>
+
+        <ul>
+          <li><strong>Præstation:</strong> Faldende hastighed, manglende evne til at nå målkadencer, øget oplevet indsats</li>
+          <li><strong>Fysiologisk:</strong> Forhøjet RHR (5-10+ slag/min over basislinje), nedsat HRV, vedvarende træthed trods hvile</li>
+          <li><strong>Muskuloskeletalt:</strong> Vedvarende muskelsmerter, flere mindre smerter og lidelser, øget skadeforekomst</li>
+          <li><strong>Psykologisk:</strong> Tab af motivation, irritabilitet, humørforstyrrelser, koncentrationsbesvær</li>
+          <li><strong>Søvn:</strong> Svært ved at falde i søvn, vågner ofte, føler sig ikke udhvilet trods tilstrækkelige timer</li>
+          <li><strong>Immunsystem:</strong> Hyppige forkølelser eller infektioner, langsom heling fra mindre skader</li>
+        </ul>
+
+        <p><strong>Handlingsplan hvis advarselstegn viser sig:</strong></p>
+        <ol>
+          <li>Reducer straks træningsbelastningen med 30-50%</li>
+          <li>Fokuser kun på lette, behagelige ture</li>
+          <li>Prioriter søvn (sigte mod 8-9 timer)</li>
+          <li>Gennemgå ernæring og hydrering</li>
+          <li>Overvej ikke-gang stress (arbejde, liv) og adresser hvis muligt</li>
+          <li>Hvis symptomer varer >1 uge, konsulter sundhedsudbyder</li>
+        </ol>
+
+        <!-- Intensity Distribution -->
+        <h2 id="intensity">Modeller for Intensitetsfordeling</h2>
+
+        <p>Hvordan du fordeler træningsintensitet gennem ugen påvirker tilpasning og præstation betydeligt. To primære modeller anvendes:</p>
+
+        <h3>Polariseret Træning (80/20 Modellen)</h3>
+
+        <p><strong>80/20 modellen</strong> fordeler træningstid mellem lav og høj intensitet med minimal moderat intensitet:</p>
+
+        <ul>
+          <li><strong>80% let (Zone 1-2):</strong> 95-105 spm, samtaletempo</li>
+          <li><strong>0-5% moderat (Zone 3):</strong> Minimal tid ved 110-120 spm</li>
+          <li><strong>15-20% hård (Zone 4-5):</strong> 120+ spm intervaller og tempo</li>
+        </ul>
+
+        <p><strong>Begrundelse:</strong> Maksimerer aerob udvikling (let volumen) samtidig med at der gives højintensitetsstimulus til præstation uden at akkumulere træthed fra overdreven moderat arbejde.</p>
+
+        <p><strong>Bedst til:</strong> Avancerede gående, kapgængere, præstationsorienteret træning</p>
+
+        <p><strong>Eksempel ugentlig tidsplan (300 min total):</strong></p>
+        <ul>
+          <li>240 min let (80%): Daglig 30-40 min lette ture + lang weekendtur</li>
+          <li>60 min hård (20%): 2× interval/tempo-sessioner om ugen</li>
+        </ul>
+
+        <h3>Pyramidal Træning (60/30/10 Modellen)</h3>
+
+        <p><strong>Pyramidemodellen</strong> fordeler intensitet på tværs af alle zoner:</p>
+
+        <ul>
+          <li><strong>60-70% let (Zone 1-2):</strong> Basal aerob udvikling</li>
+          <li><strong>20-30% moderat (Zone 3):</strong> Tempo og rask vedvarende arbejde</li>
+          <li><strong>10% hård (Zone 4-5):</strong> Højintensitetsintervaller</li>
+        </ul>
+
+        <p><strong>Begrundelse:</strong> Mere gradvis intensitetsprogression, bedre til udvikling af moderat intensitetskapacitet, lettere at restituere fra.</p>
+
+        <p><strong>Bedst til:</strong> Begynder til øvet gående, sundhedsfokuseret træning, dem med skadetendens</p>
+
+        <p><strong>Eksempel ugentlig tidsplan (300 min total):</strong></p>
+        <ul>
+          <li>180-210 min let (60-70%): De fleste daglige ture i behageligt tempo</li>
+          <li>60-90 min moderat (20-30%): 2-3× raske ture om ugen</li>
+          <li>30 min hård (10%): 1× intervalsession om ugen</li>
+        </ul>
+
+        <div class="key-finding">
+          <strong>Forskningsindsigt:</strong> Elite-udholdenhedsatleter på tværs af sportsgrene bruger konsekvent polariseret træning. Men for sundheds- og fitnessresultater producerer pyramidemodeller fremragende resultater med lavere skaderisiko (Stöggl & Sperlich, 2014).
+        </div>
+
+        <!-- Recovery Strategies -->
+        <h2 id="recovery">Restitutions- og Tilpasningsstrategier</h2>
+
+        <p>Træningsstimulus skaber kun tilpasning, når det kombineres med tilstrækkelig restitution. Uden restitution bliver træningsbelastning til træningsstress uden fordel.</p>
+
+        <h3>Aktive Restitutionsteknikker</h3>
+
+        <ol>
+          <li>
+            <strong>Lette ture (60-90 spm):</strong>
+            <ul>
+              <li>20-30 minutter ved meget lav intensitet</li>
+              <li>Fremmer blodgennemstrømning uden yderligere stress</li>
+              <li>Psykologisk fordel ved bevægelse</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Krydstræning:</strong>
+            <ul>
+              <li>Svømning, cykling, yoga, tai chi</li>
+              <li>Forskellige bevægelsesmønstre reducerer repetitivt stress</li>
+              <li>Bevarer fitness med variation</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Dynamisk stræk og mobilitet:</strong>
+            <ul>
+              <li>15-20 minutter dagligt</li>
+              <li>Fokus på hofter, ankler, lægge, baglår</li>
+              <li>Bevarer bevægeomfang for effektiv gangbevægelse</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Passive Restitutionsteknikker</h3>
+
+        <ol>
+          <li>
+            <strong>Søvnoptimering:</strong>
+            <ul>
+              <li>7-9 timer per nat (voksne)</li>
+              <li>Konsekvent søvn/vågn-tidsplan</li>
+              <li>Køligt, mørkt rum (16-19°C)</li>
+              <li>Begræns skærme 1 time før sengetid</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Ernæring til restitution:</strong>
+            <ul>
+              <li>Protein: 1.2-1.6 g/kg kropsvægt dagligt</li>
+              <li>Kulhydrater: Tilstrækkelig til at genopbygge glykogen (3-5 g/kg)</li>
+              <li>Hydrering: Overvåg urinfarve (lys gul)</li>
+              <li>Antiinflammatoriske fødevarer: Bær, fed fisk, bladgrøntsager</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Massage og myofascial release:</strong>
+            <ul>
+              <li>Skumrulle 10-15 minutter efter tur</li>
+              <li>Fokus på lægge, IT-bånd, hoftebøjere, balder</li>
+              <li>Professionel massage hver 2-4 uge hvis budget tillader</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Koldtvandsneddykning (valgfrit):</strong>
+            <ul>
+              <li>10-15 minutter i 10-15°C vand</li>
+              <li>Inden for 1 time efter hård træning</li>
+              <li>Kan reducere muskelsmerter og betændelse</li>
+              <li>Ikke anbefalet mere end 2× om ugen</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Mental Restitution</h3>
+
+        <ul>
+          <li><strong>Variation:</strong> Bland ruter, terræner og landskaber for at bevare engagement</li>
+          <li><strong>Sociale ture:</strong> Gå med venner eller grupper for fornøjelse</li>
+          <li><strong>Mindfulness:</strong> Øv nuværende-øjeblik bevidsthed under lette ture</li>
+          <li><strong>Nedtrapningsuger:</strong> Mental pause fra struktureret træning hver 3-4 uge</li>
+          <li><strong>Off-season:</strong> 2-4 uger årligt med minimal struktureret gang</li>
+        </ul>
+
+        <!-- Advanced Concepts -->
+        <h2 id="advanced">Avancerede Træningsbelastningskoncepter</h2>
+
+        <h3>Training Impulse (TRIMP)</h3>
+
+        <p><strong>TRIMP</strong> (Training Impulse) kvantificerer træningsbelastning ved hjælp af pulsdata med eksponentiel vægtning for højere intensiteter.</p>
+
+        <div class="formula-box">
+          <pre>TRIMP = Varighed (min) × ΔHR-forhold × 0.64e^(1.92 × ΔHR-forhold)
+
+Hvor:
+  ΔHR-forhold = (Gennemsnitspuls - Hvilepuls) / (Makspuls - Hvilepuls)</pre>
+        </div>
+
+        <p><strong>Eksempel:</strong></p>
+        <ul>
+          <li>Varighed: 60 minutter</li>
+          <li>Gennemsnitspuls: 130 slag/min</li>
+          <li>Hvilepuls: 60 slag/min</li>
+          <li>Makspuls: 180 slag/min</li>
+          <li>ΔHR-forhold = (130-60)/(180-60) = 70/120 = 0.583</li>
+          <li>TRIMP = 60 × 0.583 × 0.64e^(1.92×0.583) = 60 × 0.583 × 1.94 = 67.9</li>
+        </ul>
+
+        <p><strong>Bemærk:</strong> TRIMP-værdier er ikke direkte sammenlignelige med WSS, men begge kvantificerer træningsbelastning.</p>
+
+        <h3>Fitness-Fatigue Model</h3>
+
+        <p>Træning producerer to modsatrettede effekter:</p>
+
+        <ul>
+          <li><strong>Fitness:</strong> Langsom opbygning, langsom nedbrydning positiv tilpasning (42-dages tidskonstant)</li>
+          <li><strong>Træthed:</strong> Hurtig opbygning, hurtig nedbrydning negativ effekt (7-dages tidskonstant)</li>
+        </ul>
+
+        <p><strong>Præstation = Fitness - Træthed</strong></p>
+
+        <p>Denne model forklarer:</p>
+        <ul>
+          <li>Hvorfor hviledage kan føre til bedre præstation (træthed forsvinder hurtigere end fitness)</li>
+          <li>Hvorfor nedtrapning virker (reducer træthed mens fitness bevares)</li>
+          <li>Hvorfor restitutionsuger er essentielle (håndter akkumuleret træthed)</li>
+        </ul>
+
+        <h3>Chronic Training Load (CTL) og Form</h3>
+
+        <p>Avancerede målinger sporet af platforme som WalkAnalytics:</p>
+
+        <ul>
+          <li><strong>CTL (Chronic Training Load):</strong> 42-dages eksponentielt vægtet gennemsnit af daglig WSS — repræsenterer fitness</li>
+          <li><strong>ATL (Acute Training Load):</strong> 7-dages eksponentielt vægtet gennemsnit af daglig WSS — repræsenterer træthed</li>
+          <li><strong>TSB (Training Stress Balance):</strong> CTL - ATL — repræsenterer form/friskhed</li>
+        </ul>
+
+        <p><strong>TSB Fortolkning:</strong></p>
+        <ul>
+          <li><strong>TSB &lt; -30:</strong> Høj træthed, risiko for overbelastning</li>
+          <li><strong>TSB -30 til -10:</strong> Produktiv træningszone, normal træthed</li>
+          <li><strong>TSB -10 til +10:</strong> Neutral form</li>
+          <li><strong>TSB +10 til +25:</strong> Frisk, god løbsparathed</li>
+          <li><strong>TSB &gt; +25:</strong> Meget frisk, men detræning hvis vedvarende</li>
+        </ul>
+
+        <!-- Practical Application -->
+        <h2 id="practical">Praktisk Styring af Træningsbelastning</h2>
+
+        <h3>Ugentlig Planlægningsskabelon</h3>
+
+        <p><strong>Strukturer hver uge med:</strong></p>
+
+        <ol>
+          <li><strong>1-2 kvalitetssessioner:</strong> Intervaller, tempo eller løbstempo-arbejde</li>
+          <li><strong>1 lang tur:</strong> 60-120 minutter ved let-moderat tempo</li>
+          <li><strong>3-4 lette ture:</strong> Restitution og volumenakkumulering</li>
+          <li><strong>1 hviledag:</strong> Fuldstændig hvile eller meget blid aktivitet</li>
+        </ol>
+
+        <p><strong>Eksempel på øvet uge (Mål: 420 WSS):</strong></p>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Dag</th>
+                <th>Træning</th>
+                <th>Varighed</th>
+                <th>Intensitet</th>
+                <th>WSS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mandag</td>
+                <td>Stabil tur</td>
+                <td>45 min</td>
+                <td>105 spm (Zone 2)</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>Tirsdag</td>
+                <td>Let restitution</td>
+                <td>30 min</td>
+                <td>95 spm (Zone 1)</td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td>Onsdag</td>
+                <td><strong>Intervaller</strong></td>
+                <td>50 min total</td>
+                <td>5×5 min @ 120 spm</td>
+                <td>140</td>
+              </tr>
+              <tr>
+                <td>Torsdag</td>
+                <td>Let tur</td>
+                <td>35 min</td>
+                <td>100 spm (Zone 2)</td>
+                <td>55</td>
+              </tr>
+              <tr>
+                <td>Fredag</td>
+                <td>Hviledag</td>
+                <td>—</td>
+                <td>—</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Lørdag</td>
+                <td><strong>Lang tur</strong></td>
+                <td>75 min</td>
+                <td>105 spm (Zone 2)</td>
+                <td>150</td>
+              </tr>
+              <tr>
+                <td>Søndag</td>
+                <td>Let restitution</td>
+                <td>30 min</td>
+                <td>95 spm (Zone 1)</td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td colspan="4"><strong>Ugentlig Total</strong></td>
+                <td><strong>515 WSS</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Justering Baseret på Feedback</h3>
+
+        <p><strong>Scenarie 1: Føler sig træt midt i ugen</strong></p>
+        <ul>
+          <li>Tjek RHR (forhøjet?) og wellness-score (lav?)</li>
+          <li>Erstat hård træning med let tur</li>
+          <li>Tilføj hviledag hvis nødvendigt</li>
+          <li>Genoptag planlagt træning når restitueret</li>
+        </ul>
+
+        <p><strong>Scenarie 2: Føler sig fantastisk og gør fremskridt</strong></p>
+        <ul>
+          <li>Fortsæt nuværende plan (tilføj ikke ekstra belastning impulsivt)</li>
+          <li>Øg belastning med 5-10% næste uge</li>
+          <li>Overvej kvalitet over kvantitet (øg intensiteten lidt)</li>
+        </ul>
+
+        <p><strong>Scenarie 3: Vedvarende underpræstation</strong></p>
+        <ul>
+          <li>Gennemgå ikke-træningsstress (arbejde, søvn, livsbegivenheder)</li>
+          <li>Reducer træningsbelastning med 30-40% i 1-2 uger</li>
+          <li>Fokuser på søvn, ernæring og stresshåndtering</li>
+          <li>Genopbyg gradvist efter bekræftet restitution</li>
+        </ul>
+
+        <!-- Summary -->
+        <h2 id="summary">Resumé: Nøgleprincipper for Træningsbelastningsstyring</h2>
+
+        <div class="key-finding">
+          <strong>De Fem Søjler for Træningsbelastningsstyring:</strong>
+          <ol>
+            <li><strong>Kvantificer Belastning:</strong> Brug WSS, raske minutter eller TRIMP til at spore træningsstimulus</li>
+            <li><strong>Progresser Gradvist:</strong> 5-10% ugentlige stigninger, med 3:1 opbygning:restitutionsforhold</li>
+            <li><strong>Overvåg ACWR:</strong> Hold akut:kronisk forhold mellem 0.80-1.30 for at minimere skaderisiko</li>
+            <li><strong>Prioriter Restitution:</strong> Træning + Restitution = Tilpasning (manglende af enten forhindrer fremskridt)</li>
+            <li><strong>Individualiser:</strong> Juster baseret på objektive målinger (RHR, HRV, præstation) og subjektiv fornemmelse</li>
+          </ol>
+        </div>
+
+        <p><strong>Handlingstrin:</strong></p>
+
+        <ol>
+          <li>Beregn din nuværende ugentlige WSS ved hjælp af beregneren nedenfor</li>
+          <li>Sæt realistisk mål baseret på dit erfaringsniveau</li>
+          <li>Planlæg progressive ugentlige stigninger (5-10%)</li>
+          <li>Planlæg restitutionsuger hver 3-4 uge</li>
+          <li>Spor Peak-30 kadence og hvilepuls dagligt</li>
+          <li>Brug wellness-spørgeskema til at guide daglige justeringer</li>
+          <li>Gennemgå ACWR ugentligt for at fange farlige spidser tidligt</li>
+          <li>Prioriter søvn (7-9 timer) og ernæring til restitution</li>
+        </ol>
+
+        <!-- Calculator and Tools -->
+        <h2 id="calculating">Beregn Din Træningsbelastning</h2>
+
+        <p>Brug vores gratis beregnere til at bestemme din træningsbelastning:</p>
+
+        <ul>
+          <li><a href="/da/wss-calculator/"><strong>WSS Beregner</strong></a> — Beregn Walking Stress Score for individuelle træningspas</li>
+          <li><a href="/da/training-planner/"><strong>Træningsplangenerator</strong></a> — Opret personlige progressive træningsplaner</li>
+          <li><a href="/da/acwr-calculator/"><strong>ACWR Beregner</strong></a> — Overvåg akut:kronisk arbejdsbelastningsforhold til skadeforebyggelse</li>
+        </ul>
+
+        <!-- Scientific References -->
+        <h2 id="references">Videnskabelige Kilder</h2>
+
+        <p>Denne guide syntetiserer forskning fra træningsfysiologi, idrætsforskning og gangspecifikke studier:</p>
+
+        <ul>
+          <li><strong>Del Pozo-Cruz B, et al. (2022).</strong> "Association of Daily Step Count and Intensity With Incident Cardiovascular Disease." <em>JAMA Network Open</em> 5(12):e2248107. [Peak-30 kadence forskning]</li>
+          <li><strong>Gabbett TJ. (2016).</strong> "The training-injury prevention paradox." <em>British Journal of Sports Medicine</em> 50:273-280. [ACWR og skaderisiko]</li>
+          <li><strong>Soligard T, et al. (2016).</strong> "How much is too much? (Part 1) International Olympic Committee consensus statement on load in sport and risk of injury." <em>British Journal of Sports Medicine</em> 50:1030-1041.</li>
+          <li><strong>Stöggl TL, Sperlich B. (2014).</strong> "Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training." <em>Frontiers in Physiology</em> 5:33. [Intensitetsfordeling]</li>
+          <li><strong>Banister EW. (1991).</strong> "Modeling elite athletic performance." In: MacDougall JD, et al., eds. <em>Physiological Testing of Elite Athletes</em>. Human Kinetics. [Fitness-fatigue model, TRIMP]</li>
+          <li><strong>Tudor-Locke C, et al. (2019).</strong> "Walking cadence (steps/min) and intensity in 21-40 year olds: CADENCE-adults." <em>Int J Behav Nutr Phys Act</em> 16:8. [Kadencetærskler]</li>
+        </ul>
+
+        <p><strong>For mere forskning:</strong></p>
+        <ul>
+          <li><a href="/da/bibliography/">Komplet Videnskabelig Bibliografi</a></li>
+          <li><a href="/da/research/">Nyeste Gangforskning</a></li>
+        </ul>
+
+        <!-- Next Steps -->
+        <h2 id="next-steps">Næste Skridt</h2>
+
+        <ul>
+          <li><a href="/da/walking-zones/">Lær om kadencebaserede træningszoner</a></li>
+          <li><a href="/da/formulas/">Udforsk træningsbelastningsformler og beregninger</a></li>
+          <li><a href="/da/gait-analysis/">Forstå gangmålinger til overvågning</a></li>
+          <li><a href="/da/stride-mechanics/">Optimer gangbiomekanik</a></li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Indholdsfortegnelse</h3>
+          <ul>
+            <li><a href="#intro">Hvad er Træningsbelastning?</a></li>
+            <li><a href="#peak30">Peak-30 Kadence</a></li>
+            <li><a href="#brisk-bouts">Raske Intervaller</a></li>
+            <li><a href="#wss">Walking Stress Score</a></li>
+            <li><a href="#weekly-load">Ugentlige Retningslinjer</a></li>
+            <li><a href="#acwr">Akut:Kronisk Forhold</a></li>
+            <li><a href="#progression">Progressionsstrategier</a></li>
+            <li><a href="#monitoring">Overvågning af Belastning</a></li>
+            <li><a href="#intensity">Intensitetsfordeling</a></li>
+            <li><a href="#recovery">Restitutionsstrategier</a></li>
+            <li><a href="#advanced">Avancerede Koncepter</a></li>
+            <li><a href="#practical">Praktisk Anvendelse</a></li>
+            <li><a href="#summary">Resumé</a></li>
+            <li><a href="#calculating">Beregnere</a></li>
+            <li><a href="#references">Kilder</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Spor Din Belastning</h3>
+          <p>Overvåg WSS, Peak-30 kadence og ACWR automatisk med WalkAnalytics.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Download App</a>
+        </div>
+
+        <div class="tip-box">
+          <h4>Hurtig Tip</h4>
+          <p>Start med at spore din Peak-30 kadence i dag! Sigte mod ≥100 spm i mindst 30 minutter for at ramme sundhedsfordelsgrænsen.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Hjem</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Alle rettigheder forbeholdes
+            </p>
+            <ul class="footer-links">
+                <li><a href="/da/privacy/">Privatliv</a></li>
+                <li><a href="/da/terms/">Vilkår</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Dette websted bruger cookies for at forbedre din oplevelse.</p>
+            <a href="/da/privacy/" class="text-sm">Læs mere</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Afvis</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Acceptér</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

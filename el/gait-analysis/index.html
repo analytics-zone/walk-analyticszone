@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Ανάλυση Βάδισης - Μετρήσεις Βήματος, Ρυθμός &amp; Μηχανική για iOS</title>
+    <meta name="description" content="Προηγμένη ανάλυση βάδισης με παρακολούθηση ρυθμού, μήκος βήματος, συμμετρία. Επιστημονικές μετρήσεις βηματισμού για βελτίωση απόδοσης και αποφυγή τραυματισμών.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="ανάλυση βάδισης iOS, παρακολούθηση ρυθμού, μετρήσεις βήματος, μηχανική βηματισμού, ανάλυση βάδισης">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/el/gait-analysis/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/el/gait-analysis/">
+    <meta property="og:title" content="Ανάλυση Βάδισης - Μετρήσεις Βήματος, Ρυθμός &amp; Μηχανική για iOS">
+    <meta property="og:description" content="Προηγμένη ανάλυση βάδισης με παρακολούθηση ρυθμού, μήκος βήματος, συμμετρία. Επιστημονικές μετρήσεις βηματισμού για βελτίωση απόδοσης και αποφυγή τραυματισμών.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/el/gait-analysis/">
+    <meta name="twitter:title" content="Ανάλυση Βάδισης - Μετρήσεις Βήματος, Ρυθμός &amp; Μηχανική για iOS">
+    <meta name="twitter:description" content="Προηγμένη ανάλυση βάδισης με παρακολούθηση ρυθμού, μήκος βήματος, συμμετρία. Επιστημονικές μετρήσεις βηματισμού για βελτίωση απόδοσης και αποφυγή τραυματισμών.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/gait-analysis/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/gait-analysis/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/gait-analysis/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/gait-analysis/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/gait-analysis/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/gait-analysis/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/gait-analysis/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/gait-analysis/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/gait-analysis/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/gait-analysis/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/gait-analysis/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/gait-analysis/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/gait-analysis/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/gait-analysis/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/gait-analysis/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/gait-analysis/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/gait-analysis/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/gait-analysis/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/gait-analysis/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/gait-analysis/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/gait-analysis/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/gait-analysis/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/gait-analysis/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/gait-analysis/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/gait-analysis/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Μετάβαση στο περιεχόμενο</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/el/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/el/"  aria-current="">
+                            Αρχική
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Μάθετε</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/getting-started/" 
+                                    aria-current="">
+                                    Ξεκινώντας
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/walking-zones/" 
+                                    aria-current="">
+                                    Ζώνες Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-analysis/" class="active" 
+                                    aria-current="page">
+                                    Ανάλυση Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/training-load/" 
+                                    aria-current="">
+                                    Φόρτος Προπόνησης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/wss-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Επιστήμη</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/research/" 
+                                    aria-current="">
+                                    Έρευνα
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/formulas/" 
+                                    aria-current="">
+                                    Τύποι
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-efficiency/" 
+                                    aria-current="">
+                                    Αποδοτικότητα Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/stride-mechanics/" 
+                                    aria-current="">
+                                    Μηχανική Βήματος
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/walking-vs-running/" 
+                                    aria-current="">
+                                    Βάδιση vs Τρέξιμο
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/benchmarks/" 
+                                    aria-current="">
+                                    Δείκτες Απόδοσης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/bibliography/" 
+                                    aria-current="">
+                                    Βιβλιογραφία
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Για Εσάς</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/for-health/" 
+                                    aria-current="">
+                                    Για την Υγεία
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-fitness/" 
+                                    aria-current="">
+                                    Για τη Φυσική Κατάσταση
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-seniors/" 
+                                    aria-current="">
+                                    Για Ηλικιωμένους
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-rehabilitation/" 
+                                    aria-current="">
+                                    Για Αποκατάσταση
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Εργαλεία</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/cadence-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής Ρυθμού
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-assessment/" 
+                                    aria-current="">
+                                    Αξιολόγηση Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/vo2max-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/el/contact/"  aria-current="">
+                            Επικοινωνία
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Επιλογή γλώσσας">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" selected>
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Εναλλαγή μενού"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Οδηγός Ανάλυσης Βάδισης -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/el/">Αρχική</a> / <a href="/el/#learn">Μάθετε</a> / Ανάλυση Βάδισης
+    </div>
+    <h1>Ανάλυση Βάδισης Περπατήματος</h1>
+    <p class="lead">Μάθετε πώς να αναλύετε τη βιομηχανική του περπατήματός σας χρησιμοποιώντας επιστημονικές μετρήσεις για καλύτερη απόδοση, υγεία και πρόληψη τραυματισμών</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="what-is-gait">Τι είναι η Ανάλυση Βάδισης;</h2>
+
+        <p>Η ανάλυση βάδισης είναι η συστηματική μελέτη του μοτίβου και της βιομηχανικής του περπατήματός σας. Εξετάζει πώς κινείται το σώμα σας κατά τη διάρκεια του περπατήματος, εντοπίζοντας αναποτελεσματικότητες, ασυμμετρίες και πιθανούς κινδύνους τραυματισμού.</p>
+
+        <div class="key-insight">
+          <p><strong>Γιατί είναι σημαντικό:</strong> Η ανάλυση βάδισης έχει εξελιχθεί από ένα κλινικό εργαλείο που χρησιμοποιείται μόνο σε εξειδικευμένα εργαστήρια σε μια καταναλωτική τεχνολογία προσβάσιμη μέσω smartwatches και smartphones. Η έρευνα δείχνει ότι η ανάλυση του μοτίβου περπατήματος μπορεί να προβλέψει αποτελέσματα υγείας, να εντοπίσει πρώιμα σημάδια νευρολογικών καταστάσεων και να βελτιστοποιήσει την αποδοτικότητα του περπατήματος.</p>
+        </div>
+
+        <p>Το WalkAnalytics ενσωματώνεται με το Apple HealthKit για να αναλύσει τις μετρήσεις περπατήματος που συλλέγονται παθητικά από το iPhone και το Apple Watch σας, παρέχοντας πληροφορίες κλινικού επιπέδου για την ποιότητα της βάδισής σας.</p>
+
+        <h2 id="key-metrics">Βασικές Μετρήσεις Βάδισης</h2>
+
+        <h3 id="cadence">1. Ρυθμός Βημάτων (Βήματα Ανά Λεπτό)</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Αριθμός βημάτων που πραγματοποιούνται ανά λεπτό (spm)</p>
+
+          <p><strong>Γιατί είναι η πιο σημαντική μέτρηση περπατήματος:</strong> Ο ρυθμός βημάτων είναι ο καλύτερος προγνωστικός δείκτης της έντασης και της ενεργειακής δαπάνης του περπατήματος. Σε αντίθεση με την ταχύτητα (που εξαρτάται από το μήκος διασκελισμού), ο ρυθμός αντικατοπτρίζει άμεσα τη συχνότητα κίνησης και τη μεταβολική ζήτηση.</p>
+
+          <div class="science-box">
+            <h4>Επιστημονική Τεκμηρίωση: Το Όριο των 100 spm</h4>
+            <p>Η σημαντική μελέτη CADENCE-Adults (Tudor-Locke et al., 2019) εξέτασε 76 ενήλικες και διαπίστωσε ότι:</p>
+            <ul>
+              <li><strong>100 βήματα/λεπτό = 3 METs</strong> (μέτρια ένταση) με ευαισθησία 86% και ειδικότητα 89,6%</li>
+              <li><strong>110 spm ≈ 4 METs</strong> (μέτρια-έντονη)</li>
+              <li><strong>120 spm ≈ 5 METs</strong> (έντονη)</li>
+              <li><strong>130 spm = 6 METs</strong> (όριο πολύ έντονης έντασης)</li>
+            </ul>
+            <p>Αυτή η σχέση είναι <strong>εξαιρετικά σταθερή σε ηλικίες 21-85 ετών</strong>, καθιστώντας τον ρυθμό βημάτων μια καθολική μέτρηση έντασης.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Εύρη Ρυθμού Βημάτων και Εφαρμογές</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ρυθμός (spm)</th>
+                  <th>Κατηγορία</th>
+                  <th>Εφαρμογή</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>60-90</td>
+                  <td>Πολύ αργό</td>
+                  <td>Ανάρρωση, μειωμένη κινητικότητα</td>
+                </tr>
+                <tr>
+                  <td>90-100</td>
+                  <td>Ελαφριά ένταση</td>
+                  <td>Ήπια δραστηριότητα, προθέρμανση</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>100-110</strong></td>
+                  <td><strong>Μέτρια ένταση</strong></td>
+                  <td><strong>Οφέλη υγείας, καύση λίπους, συνιστώμενη βάση</strong></td>
+                </tr>
+                <tr>
+                  <td>110-120</td>
+                  <td>Μέτρια-έντονη</td>
+                  <td>Καρδιαγγειακή φυσική κατάσταση, γρήγορο περπάτημα</td>
+                </tr>
+                <tr>
+                  <td>120-130</td>
+                  <td>Έντονη</td>
+                  <td>Δυναμικό περπάτημα, προπόνηση φυσικής κατάστασης</td>
+                </tr>
+                <tr>
+                  <td>130-140</td>
+                  <td>Πολύ έντονη</td>
+                  <td>Προχωρημένη φυσική κατάσταση, διαλειμματική προπόνηση</td>
+                </tr>
+                <tr>
+                  <td>140-180</td>
+                  <td>Αγωνιστικό περπάτημα</td>
+                  <td>Ανταγωνιστικό περπάτημα, άρτιοι αθλητές</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Πώς να μετρήσετε:</strong> Το Apple Watch και οι περισσότεροι παλμογράφοι υπολογίζουν τον ρυθμό βημάτων αυτόματα. Μπορείτε επίσης να μετρήσετε βήματα για 30 δευτερόλεπτα και να πολλαπλασιάσετε επί 2.</p>
+
+          <p><strong>Στόχος ρυθμού βημάτων:</strong></p>
+          <ul>
+            <li><strong>Γενική υγεία:</strong> Στοχεύστε σε ≥100 spm κατά τη διάρκεια των περιπάτων για να επιτύχετε μέτρια ένταση</li>
+            <li><strong>Βελτίωση φυσικής κατάστασης:</strong> Στοχεύστε 110-120 spm για αερόβια ανάπτυξη</li>
+            <li><strong>Προπόνηση απόδοσης:</strong> Εξασκηθείτε σε διαστήματα στα 120-130+ spm</li>
+          </ul>
+        </div>
+
+        <h3 id="stride-length">2. Μήκος Διασκελισμού</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Η απόσταση που καλύπτεται σε έναν πλήρη κύκλο διασκελισμού (από την πρόσκρουση της φτέρνας ενός ποδιού έως την επόμενη πρόσκρουση της φτέρνας του ίδιου ποδιού)</p>
+
+          <p><strong>Βέλτιστο μήκος διασκελισμού:</strong> Η έρευνα δείχνει ότι το βέλτιστο μήκος διασκελισμού είναι <strong>40-50% του ύψους του σώματος</strong> κατά το κανονικό περπάτημα.</p>
+
+          <div class="data-table">
+            <h4>Σημεία Αναφοράς Μήκους Διασκελισμού</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ύψος</th>
+                  <th>Βέλτιστος Διασκελισμός (40-50% ύψους)</th>
+                  <th>Άρτιος Περιπατητής (έως 70%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5'0" (152 cm)</td>
+                  <td>0,61-0,76 m (24-30")</td>
+                  <td>Έως 1,06 m (42")</td>
+                </tr>
+                <tr>
+                  <td>5'6" (168 cm)</td>
+                  <td>0,67-0,84 m (26-33")</td>
+                  <td>Έως 1,18 m (46")</td>
+                </tr>
+                <tr>
+                  <td>6'0" (183 cm)</td>
+                  <td>0,73-0,91 m (29-36")</td>
+                  <td>Έως 1,28 m (50")</td>
+                </tr>
+                <tr>
+                  <td>6'6" (198 cm)</td>
+                  <td>0,79-0,99 m (31-39")</td>
+                  <td>Έως 1,39 m (55")</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Βασική σχέση:</strong> Ταχύτητα = Μήκος Διασκελισμού × Ρυθμός Βημάτων</p>
+          <p>Αυτό σημαίνει ότι μπορείτε να αυξήσετε την ταχύτητα περπατήματος είτε κάνοντας μεγαλύτερα βήματα Ή αυξάνοντας τον ρυθμό βημάτων. Ωστόσο, <strong>η αύξηση του ρυθμού βημάτων είναι γενικά πιο αποδοτική και ασφαλέστερη</strong> από την υπερδιασκέλιση.</p>
+
+          <div class="warning-box">
+            <h4>⚠️ Αποφύγετε την Υπερδιασκέλιση</h4>
+            <p><strong>Η υπερδιασκέλιση</strong> συμβαίνει όταν το πόδι σας προσγειώνεται πολύ μακριά μπροστά από το κέντρο μάζας σας. Αυτό:</p>
+            <ul>
+              <li>Αυξάνει τις δυνάμεις πέδησης και τις δυνάμεις αντίδρασης του εδάφους</li>
+              <li>Μειώνει την αποδοτικότητα του περπατήματος (κάνετε "πέδηση" με κάθε βήμα)</li>
+              <li>Αυξάνει το στρες στα γόνατα και τους γοφούς</li>
+              <li>Αυξάνει τον κίνδυνο τραυματισμού</li>
+            </ul>
+            <p><strong>Λύση:</strong> Εστιάστε στο να προσγειώνεται το πόδι σας πιο κοντά στο κέντρο μάζας του σώματός σας και να απωθείτε δυναμικά από το πίσω πόδι σας.</p>
+          </div>
+
+          <p><strong>Μέτρηση Apple HealthKit:</strong> Το iOS 14+ μετρά το <code>walkingStepLength</code> παθητικά όταν το iPhone μεταφέρεται σε τσέπη/τσάντα.</p>
+        </div>
+
+        <h3 id="ground-contact">3. Χρόνος Επαφής με το Έδαφος</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Η διάρκεια που κάθε πόδι παραμένει σε επαφή με το έδαφος κατά τη διάρκεια ενός διασκελισμού</p>
+
+          <p><strong>Τιμές ειδικές για το περπάτημα:</strong> 200-300 χιλιοστά του δευτερολέπτου ανά βήμα (σημαντικά μεγαλύτερες από τα <200ms του τρεξίματος)</p>
+
+          <div class="science-box">
+            <h4>Οι 5 Φάσεις της Επαφής Περπατήματος</h4>
+            <p>Κάθε βήμα αποτελείται από 5 διακριτές φάσεις:</p>
+            <ol>
+              <li><strong>Αρχική επαφή (πρόσκρουση φτέρνας):</strong> Η φτέρνα αγγίζει το έδαφος σε ~10° ραχιαία κάμψη</li>
+              <li><strong>Απόκριση φόρτισης (επίπεδο πόδι):</strong> Πλήρης επαφή ποδιού, αποδοχή βάρους</li>
+              <li><strong>Μεσο-στάση:</strong> Το βάρος του σώματος περνά πάνω από το πόδι στήριξης</li>
+              <li><strong>Τελική στάση (ανύψωση φτέρνας):</strong> Η φτέρνα αρχίζει να σηκώνεται, το βάρος μετατοπίζεται εμπρός</li>
+              <li><strong>Προ-αιώρηση (απογείωση δακτύλων):</strong> Απώθηση από το πρόσθιο τμήμα του ποδιού, φάση προώθησης</li>
+            </ol>
+          </div>
+
+          <p><strong>Τι επηρεάζει τον χρόνο επαφής με το έδαφος:</strong></p>
+          <ul>
+            <li><strong>Ταχύτητα:</strong> Πιο γρήγορο περπάτημα = μικρότερος χρόνος επαφής</li>
+            <li><strong>Ρυθμός βημάτων:</strong> Υψηλότερος ρυθμός = μικρότερος χρόνος επαφής ανά βήμα</li>
+            <li><strong>Έδαφος:</strong> Η ανηφόρα αυξάνει τον χρόνο επαφής, η κατηφόρα μπορεί να τον μειώσει</li>
+            <li><strong>Κόπωση:</strong> Κουρασμένοι μύες = μεγαλύτερος χρόνος επαφής</li>
+          </ul>
+
+          <p><strong>Σύγκριση με το τρέξιμο:</strong></p>
+          <ul>
+            <li>Περπάτημα: 200-300ms επαφή, 62% του κύκλου βάδισης σε φάση στήριξης</li>
+            <li>Τρέξιμο: <200ms επαφή, μόνο 31% του κύκλου βάδισης σε φάση στήριξης</li>
+            <li>Αυτή η θεμελιώδης διαφορά εξηγεί γιατί το περπάτημα έχει <strong>χαμηλότερες δυνάμεις πρόσκρουσης</strong> και είναι κατάλληλο για ανάρρωση από τραυματισμό</li>
+          </ul>
+        </div>
+
+        <h3 id="double-support">4. Χρόνος Διπλής Στήριξης</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Το τμήμα του κύκλου βάδισης όταν και τα δύο πόδια βρίσκονται ταυτόχρονα σε επαφή με το έδαφος</p>
+
+          <p><strong>Βασικό διακριτικό χαρακτηριστικό του περπατήματος:</strong> Το περπάτημα έχει πάντα φάση διπλής στήριξης (20-30% του κύκλου βάδισης), ενώ το τρέξιμο έχει φάση πτήσης χωρίς επαφή με το έδαφος.</p>
+
+          <div class="key-insight">
+            <p><strong>Κλινική σημασία:</strong> Το ποσοστό διπλής στήριξης είναι ένας ισχυρός προγνωστικός δείκτης του κινδύνου πτώσης και της εμπιστοσύνης στην ισορροπία, ειδικά σε μεγαλύτερους ενήλικες.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Ερμηνεία Διπλής Στήριξης</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Διπλή Στήριξη %</th>
+                  <th>Ερμηνεία</th>
+                  <th>Ενέργεια</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;15%</td>
+                  <td>Πολύ χαμηλή (πλησιάζει σε βάδιση τρεξίματος)</td>
+                  <td>Μπορεί να περπατάτε πολύ γρήγορα για ασφάλεια</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>20-30%</strong></td>
+                  <td><strong>Φυσιολογικό, υγιές εύρος</strong></td>
+                  <td><strong>Βέλτιστη ισορροπία και αποδοτικότητα</strong></td>
+                </tr>
+                <tr>
+                  <td>30-35%</td>
+                  <td>Αυξημένη, ήπια ανησυχία</td>
+                  <td>Παρακολουθήστε για αλλαγές, σκεφτείτε ασκήσεις ισορροπίας</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;35%</strong></td>
+                  <td><strong>Δείκτης υψηλού κινδύνου πτώσης</strong></td>
+                  <td><strong>Συμβουλευτείτε πάροχο υγειονομικής περίθαλψης, ξεκινήστε προπόνηση ισορροπίας</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Τι προκαλεί αυξημένη διπλή στήριξη:</strong></p>
+          <ul>
+            <li>Φόβος πτώσης ή μειωμένη εμπιστοσύνη στην ισορροπία</li>
+            <li>Νευρολογικές καταστάσεις (Πάρκινσον, εγκεφαλικό, νευροπάθεια)</li>
+            <li>Μυϊκή αδυναμία (ειδικά απαγωγοί ισχίου και ραχιαίοι καμπτήρες αστραγάλου)</li>
+            <li>Πόνος ή δυσκαμψία αρθρώσεων</li>
+            <li>Οπτική βλάβη</li>
+          </ul>
+
+          <p><strong>Μέτρηση Apple HealthKit:</strong> Το <code>walkingDoubleSupportPercentage</code> μετριέται παθητικά από iPhone 8+ με iOS 14+. Αυτή η μέτρηση είναι μέρος της αξιολόγησης Walking Steadiness της Apple.</p>
+        </div>
+
+        <h3 id="asymmetry">5. Ασυμμετρία Περπατήματος</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Η διαφορά μεταξύ αριστερών και δεξιών χρόνων βημάτων, μηκών διασκελισμού ή χρόνων επαφής</p>
+
+          <div class="science-box">
+            <h4>Τύπος Δείκτη Συμμετρίας Βάδισης (GSI)</h4>
+            <p>Ο τυπικός τύπος για την ποσοτικοποίηση της ασυμμετρίας βάδισης:</p>
+            <div class="formula-box">
+              <p><strong>GSI = |Δεξιά - Αριστερά| / [0,5 × (Δεξιά + Αριστερά)] × 100</strong></p>
+            </div>
+            <p>Παράδειγμα: Αν χρόνος δεξιού βήματος = 520ms και χρόνος αριστερού βήματος = 480ms:</p>
+            <p>GSI = |520 - 480| / [0,5 × (520 + 480)] × 100 = 40 / 500 × 100 = <strong>8% ασυμμετρία</strong></p>
+          </div>
+
+          <div class="data-table">
+            <h4>Ταξινόμηση Ασυμμετρίας</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ασυμμετρία %</th>
+                  <th>Ταξινόμηση</th>
+                  <th>Κλινική Σημασία</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>&lt;2-3%</strong></td>
+                  <td><strong>Φυσιολογική, συμμετρική</strong></td>
+                  <td>Υγιές μοτίβο βάδισης</td>
+                </tr>
+                <tr>
+                  <td>3-5%</td>
+                  <td>Ήπια ασυμμετρία</td>
+                  <td>Παρακολούθηση, μπορεί να υποδηλώνει μικρή αδυναμία ή συνήθεια</td>
+                </tr>
+                <tr>
+                  <td>5-10%</td>
+                  <td>Μέτρια ασυμμετρία</td>
+                  <td>Σκεφτείτε επαγγελματική αξιολόγηση</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;10%</strong></td>
+                  <td><strong>Κλινικά σημαντική</strong></td>
+                  <td><strong>Πιθανόν να υποδηλώνει τραυματισμό, αδυναμία ή νευρολογικό πρόβλημα</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Συνήθη αίτια ασυμμετρίας:</strong></p>
+          <ul>
+            <li><strong>Αντιστάθμιση προηγούμενου τραυματισμού:</strong> Ευνοώντας το ένα πόδι μετά από τραυματισμό</li>
+            <li><strong>Μυϊκές ανισορροπίες:</strong> Αδυναμία στο ισχίο, γόνατο ή αστράγαλο από τη μία πλευρά</li>
+            <li><strong>Διαφορά μήκους ποδιού:</strong> Πραγματική ή λειτουργική διαφορά στο μήκος του ποδιού</li>
+            <li><strong>Προβλήματα αρθρώσεων:</strong> Αρθρίτιδα, μειωμένο εύρος κίνησης στο ισχίο/γόνατο/αστράγαλο</li>
+            <li><strong>Νευρολογικές καταστάσεις:</strong> Εγκεφαλικό, Πάρκινσον, MS</li>
+            <li><strong>Υπόδηση:</strong> Άνιση φθορά παπουτσιών ή λανθασμένη εφαρμογή</li>
+          </ul>
+
+          <p><strong>Μέτρηση Apple HealthKit:</strong> Το <code>walkingAsymmetryPercentage</code> μετρά τη διαφορά μεταξύ αριστερών και δεξιών χρόνων βημάτων. Τιμές >10% ενεργοποιούν ειδοποιήσεις.</p>
+
+          <div class="tip-box">
+            <h4>💡 Βελτίωση Συμμετρίας</h4>
+            <ul>
+              <li>Ασκήσεις ισορροπίας σε ένα πόδι (30-60 δευτερόλεπτα ανά πόδι)</li>
+              <li>Μονόπλευρη προπόνηση δύναμης (εστίαση στην πιο αδύναμη πλευρά)</li>
+              <li>Επανεκπαίδευση βάδισης με οπτική/ακουστική ανατροφοδότηση</li>
+              <li>Αντιμετώπιση υποκείμενων τραυματισμών ή καταστάσεων</li>
+              <li>Επαγγελματική αξιολόγηση βάδισης αν η ασυμμετρία παραμένει >5%</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="walking-speed">6. Ταχύτητα Περπατήματος</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Η μέση ταχύτητα περπατήματός σας, συνήθως μετρημένη σε μέτρα ανά δευτερόλεπτο (m/s) ή μίλια ανά ώρα (mph)</p>
+
+          <div class="key-insight">
+            <p><strong>Γιατί η ταχύτητα είναι "ζωτικό σημείο":</strong> Μια σημαντική μελέτη του 2011 στο JAMA με 34.485 μεγαλύτερους ενήλικες διαπίστωσε ότι η ταχύτητα βάδισης είναι ένας από τους ισχυρότερους μεμονωμένους προγνωστικούς δείκτες θνησιμότητας, αποκτώντας τον χαρακτηρισμό κλινικού "ζωτικού σημείου" (Studenski et al., 2011).</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Σημεία Αναφοράς Ταχύτητας Περπατήματος για την Υγεία</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ταχύτητα</th>
+                  <th>Ταξινόμηση</th>
+                  <th>Ένδειξη Υγείας</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="warning-row">
+                  <td><strong>&lt;0,6 m/s (1,3 mph)</strong></td>
+                  <td><strong>Σοβαρά εξασθενημένη</strong></td>
+                  <td>Υψηλός κίνδυνος θνησιμότητας, συμβουλευτείτε πάροχο υγειονομικής περίθαλψης</td>
+                </tr>
+                <tr>
+                  <td>0,6-0,8 m/s (1,3-1,8 mph)</td>
+                  <td>Περιορισμένη κινητικότητα</td>
+                  <td>Αυξημένοι κίνδυνοι υγείας, λειτουργικοί περιορισμοί</td>
+                </tr>
+                <tr>
+                  <td>0,8-1,0 m/s (1,8-2,2 mph)</td>
+                  <td>Κάτω από το φυσιολογικό</td>
+                  <td>Μέτριος κίνδυνος, περιθώριο βελτίωσης</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>1,0-1,3 m/s (2,2-2,9 mph)</strong></td>
+                  <td><strong>Καλή λειτουργική υγεία</strong></td>
+                  <td>Φυσιολογικοί δείκτες υγείας</td>
+                </tr>
+                <tr>
+                  <td>1,3-1,5 m/s (2,9-3,4 mph)</td>
+                  <td>Πάνω από το μέσο όρο</td>
+                  <td>Εξαιρετικός δείκτης υγείας, χαμηλός κίνδυνος θνησιμότητας</td>
+                </tr>
+                <tr>
+                  <td>&gt;1,5 m/s (&gt;3,4 mph)</td>
+                  <td>Περπάτημα φυσικής κατάστασης</td>
+                  <td>Αθλητική ικανότητα, πολύ χαμηλοί κίνδυνοι υγείας</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="science-box">
+            <h4>Η Κλίση Ταχύτητας-Επιβίωσης</h4>
+            <p>Η έρευνα δείχνει ότι <strong>κάθε αύξηση 0,1 m/s στην ταχύτητα περπατήματος συσχετίζεται με ~12% μείωση του κινδύνου θνησιμότητας</strong>. Αυτή η σχέση είναι εξαιρετικά γραμμική σε όλους τους πληθυσμούς.</p>
+          </div>
+
+          <p><strong>Μέτρηση Apple HealthKit:</strong> Η <code>walkingSpeed</code> υπολογίζεται από τους αισθητήρες κίνησης του iPhone (iPhone 8+ με iOS 14+). Επικυρωμένες μελέτες δείχνουν συσχέτιση r=0,86-0,91 με κλινικές δοκιμασίες χρονομετρημένου περπατήματος.</p>
+        </div>
+
+        <h3 id="vertical-oscillation">7. Κατακόρυφη Ταλάντωση</h3>
+
+        <div class="metric-detail">
+          <p><strong>Τι είναι:</strong> Η κατακόρυφη μετατόπιση του κέντρου μάζας σας κατά τον κύκλο βάδισης</p>
+
+          <p><strong>Φυσιολογικό εύρος:</strong> 4-8 cm κατακόρυφης κίνησης</p>
+
+          <div class="data-table">
+            <h4>Ερμηνεία Κατακόρυφης Ταλάντωσης</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ταλάντωση</th>
+                  <th>Αξιολόγηση</th>
+                  <th>Συνέπεια</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;4 cm</td>
+                  <td>Πολύ λίγη (βάδιση με σύρσιμο)</td>
+                  <td>Μπορεί να υποδηλώνει αδυναμία, νευρολογικά προβλήματα ή φόβο πτώσης</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>4-8 cm</strong></td>
+                  <td><strong>Φυσιολογικό, αποδοτικό εύρος</strong></td>
+                  <td>Βέλτιστη ενεργειακή δαπάνη</td>
+                </tr>
+                <tr>
+                  <td>&gt;8-10 cm</td>
+                  <td>Υπερβολική (βάδιση με αναπήδηση)</td>
+                  <td>Σπατάλη ενέργειας, αναποτελεσματική μηχανική</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Γιατί είναι σημαντικό:</strong> Η υπερβολική κατακόρυφη ταλάντωση σημαίνει ότι "αναπηδάτε" πολύ με κάθε βήμα, σπαταλώντας ενέργεια καταπολεμώντας τη βαρύτητα. Η ελάχιστη ταλάντωση μπορεί να υποδηλώνει μοτίβο βάδισης με σύρσιμο που σχετίζεται με το Πάρκινσον ή το φόβο πτώσης.</p>
+
+          <p><strong>Πώς να βελτιστοποιήσετε:</strong></p>
+          <ul>
+            <li>Εστιάστε στην κίνηση προς τα εμπρός, όχι προς τα πάνω</li>
+            <li>Διατηρήστε ελαφριά κλίση προς τα εμπρός (2-5°) από τους αστραγάλους</li>
+            <li>Κρατήστε το κεφάλι σε επίπεδη θέση και τα μάτια εμπρός</li>
+            <li>Εξασκηθείτε στην ομαλή μεταφορά βάρους μεταξύ βημάτων</li>
+          </ul>
+        </div>
+
+        <h2 id="apple-metrics">Μετρήσεις Περπατήματος Apple HealthKit</h2>
+
+        <div class="tech-section">
+          <p>Η Apple εισήγαγε προηγμένες μετρήσεις περπατήματος στο iOS 14 (2020) που συλλέγουν παθητικά δεδομένα βάδισης κλινικού επιπέδου από τους αισθητήρες κίνησης του iPhone. Αυτές οι μετρήσεις έχουν <strong>επικυρωθεί έναντι αξιολογήσεων ερευνητικού επιπέδου</strong> και χρησιμοποιούνται τώρα σε ιατρική έρευνα.</p>
+
+          <h3>Walking Steadiness</h3>
+
+          <p>Η ιδιόκτητη μέτρηση <strong>Walking Steadiness</strong> της Apple είναι ένα σύνθετο μέτρο που συνδυάζει:</p>
+          <ul>
+            <li>Ταχύτητα περπατήματος</li>
+            <li>Μήκος βήματος</li>
+            <li>Ποσοστό διπλής στήριξης</li>
+            <li>Ασυμμετρία περπατήματος</li>
+            <li>Μεταβλητότητα ταχύτητας περπατήματος</li>
+            <li>Μεταβλητότητα μήκους βήματος</li>
+          </ul>
+
+          <div class="data-table">
+            <h4>Ταξινόμηση Walking Steadiness</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ταξινόμηση</th>
+                  <th>Κίνδυνος Πτώσης</th>
+                  <th>Ενέργεια</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>OK</strong></td>
+                  <td>&lt;1% ετήσιος κίνδυνος πτώσης</td>
+                  <td>Διατηρήστε το τρέχον επίπεδο δραστηριότητας</td>
+                </tr>
+                <tr>
+                  <td><strong>Low</strong></td>
+                  <td>1-5% ετήσιος κίνδυνος πτώσης</td>
+                  <td>Σκεφτείτε ασκήσεις ισορροπίας, παρακολουθήστε τάσεις</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>Very Low</strong></td>
+                  <td>&gt;5% ετήσιος κίνδυνος πτώσης</td>
+                  <td><strong>Αποστολή ειδοποίησης iPhone, συμβουλευτείτε πάροχο υγειονομικής περίθαλψης</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Δοκιμασία Περπατήματος 6 Λεπτών (6MWT)</h3>
+
+          <p>Το Apple Watch Series 3+ μπορεί να εκτιμήσει την <strong>Απόσταση Δοκιμασίας Περπατήματος 6 Λεπτών</strong> από ιστορικά δεδομένα περπατήματος. Το 6MWT είναι μια κλινική αξιολόγηση χρυσού προτύπου της λειτουργικής ικανότητας άσκησης.</p>
+
+          <div class="science-box">
+            <h4>Ερμηνεία 6MWT</h4>
+            <ul>
+              <li><strong>&lt;350 μέτρα:</strong> Σημαντικός λειτουργικός περιορισμός</li>
+              <li><strong>350-450 μέτρα:</strong> Μέτριος περιορισμός</li>
+              <li><strong>450-550 μέτρα:</strong> Ήπιος περιορισμός ή μεγαλύτερος ενήλικας</li>
+              <li><strong>&gt;550 μέτρα:</strong> Καλή λειτουργική ικανότητα</li>
+              <li><strong>&gt;650 μέτρα:</strong> Εξαιρετική ικανότητα</li>
+            </ul>
+            <p><em>Σημείωση: Οι τιμές ποικίλλουν ανάλογα με την ηλικία, το φύλο και το ύψος. Αυτές είναι γενικές κατευθυντήριες γραμμές.</em></p>
+          </div>
+
+          <h3>Απόρρητο Δεδομένων</h3>
+
+          <p>Όλες οι μετρήσεις περπατήματος Apple HealthKit:</p>
+          <ul>
+            <li><strong>Επεξεργάζονται στη συσκευή:</strong> Δεν αποστέλλονται ποτέ στους διακομιστές της Apple</li>
+            <li><strong>Ελέγχονται από τον χρήστη:</strong> Εσείς αποφασίζετε ποιες εφαρμογές μπορούν να έχουν πρόσβαση στα δεδομένα σας</li>
+            <li><strong>Κρυπτογραφημένες:</strong> Προστατεύονται από την κρυπτογράφηση iOS</li>
+            <li><strong>Διαγράψιμες:</strong> Πλήρης έλεγχος για διαγραφή όλων των δεδομένων υγείας</li>
+          </ul>
+        </div>
+
+        <h2 id="interpreting">Ερμηνεία της Ανάλυσης Βάδισής σας</h2>
+
+        <h3>Σημεία Υγιούς Βάδισης</h3>
+        <ul>
+          <li><strong>Ρυθμός βημάτων:</strong> ≥100 spm κατά τη διάρκεια σκόπιμου περπατήματος</li>
+          <li><strong>Ταχύτητα:</strong> ≥1,0 m/s (2,2 mph) συνηθισμένη ταχύτητα περπατήματος</li>
+          <li><strong>Συμμετρία:</strong> &lt;3% ασυμμετρία μεταξύ αριστερού και δεξιού</li>
+          <li><strong>Διπλή στήριξη:</strong> 20-30% του κύκλου βάδισης</li>
+          <li><strong>Συνέπεια:</strong> Παρόμοιες μετρήσεις σε πολλές ημέρες</li>
+          <li><strong>Walking Steadiness:</strong> Ταξινόμηση "OK"</li>
+        </ul>
+
+        <h3>Σημεία Προειδοποίησης που Απαιτούν Προσοχή</h3>
+        <div class="warning-box">
+          <ul>
+            <li><strong>Ξαφνική αύξηση ασυμμετρίας:</strong> Μπορεί να υποδηλώνει οξύ τραυματισμό</li>
+            <li><strong>Μείωση ταχύτητας με την πάροδο του χρόνου:</strong> Λειτουργική παρακμή, ειδικά αν &gt;0,05 m/s ανά έτος</li>
+            <li><strong>Αύξηση διπλής στήριξης:</strong> Μειωμένη εμπιστοσύνη στην ισορροπία ή δύναμη</li>
+            <li><strong>Το Walking Steadiness πέφτει σε "Low" ή "Very Low":</strong> Αυξημένος κίνδυνος πτώσης</li>
+            <li><strong>Επίμονη ασυμμετρία &gt;10%:</strong> Δικαιολογεί επαγγελματική αξιολόγηση</li>
+            <li><strong>Ταχύτητα &lt;0,8 m/s:</strong> Υψηλός κίνδυνος υγείας, συμβουλευτείτε γιατρό</li>
+          </ul>
+        </div>
+
+        <h2 id="improving">Πώς να Βελτιώσετε τη Βάδισή σας</h2>
+
+        <h3>Προπόνηση Ρυθμού Βημάτων</h3>
+        <p><strong>Στόχος:</strong> Επίτευξη ≥100 spm κατά τη διάρκεια των περιπάτων</p>
+        <p><strong>Μέθοδοι:</strong></p>
+        <ul>
+          <li>Χρησιμοποιήστε εφαρμογή μετρονόμου ρυθμισμένη στα 100-120 BPM</li>
+          <li>Περπατήστε σε μουσική με ρυθμό 100-120 BPM</li>
+          <li>Εξασκηθείτε σε ασκήσεις "γρήγορων ποδιών": σύντομα, γρήγορα βήματα</li>
+          <li>Εστιάστε στον ρυθμό εναλλαγής, όχι στο μήκος διασκελισμού</li>
+          <li>Ορίστε ειδοποιήσεις Apple Watch όταν ο ρυθμός πέφτει κάτω από τον στόχο</li>
+        </ul>
+
+        <h3>Βελτίωση Συμμετρίας</h3>
+        <p><strong>Ασκήσεις:</strong></p>
+        <ul>
+          <li><strong>Στάση σε ένα πόδι:</strong> 30-60 δευτερόλεπτα ανά πόδι, με ανοιχτά και μετά κλειστά μάτια</li>
+          <li><strong>Μονόπλευρη δύναμη:</strong> Νεκρή άρση σε ένα πόδι, ανεβάσματα σκαλοπατιού, μονόποδες προβολές</li>
+          <li><strong>Προπόνηση σε σανίδα ισορροπίας:</strong> Wobble board ή μπάλα BOSU</li>
+          <li><strong>Περπάτημα με καθρέφτη:</strong> Περπατήστε παρακολουθώντας την αντανάκλασή σας για να εντοπίσετε διαφορές</li>
+          <li><strong>Ανάλυση βίντεο:</strong> Τραβήξτε βίντεο τον εαυτό σας να περπατάει από μπροστά και από πίσω</li>
+        </ul>
+
+        <h3>Αύξηση Ταχύτητας Περπατήματος με Ασφάλεια</h3>
+        <p><strong>Προοδευτική προσέγγιση:</strong></p>
+        <ol>
+          <li><strong>Αυξήστε πρώτα τον ρυθμό βημάτων:</strong> Εργαστείτε μέχρι τα 110-120 spm πριν εστιάσετε στο μήκος διασκελισμού</li>
+          <li><strong>Διαλειμματική προπόνηση:</strong> Εναλλάξτε 2 λεπτά γρήγορο + 2 λεπτά κανονικό ρυθμό</li>
+          <li><strong>Προπόνηση δύναμης:</strong> Η δύναμη ισχίου και αστραγάλου βελτιώνει άμεσα την ταχύτητα περπατήματος</li>
+          <li><strong>Σταδιακή πρόοδος:</strong> Αυξήστε την ταχύτητα κατά ~0,1 m/s ανά μήνα</li>
+        </ol>
+
+        <h3>Μείωση Διπλής Στήριξης (αν είναι αυξημένη)</h3>
+        <p><strong>Ασκήσεις ισορροπίας:</strong></p>
+        <ul>
+          <li>Περπάτημα tandem (φτέρνα-δάκτυλο)</li>
+          <li>Στάση σε ένα πόδι με κινήσεις βραχιόνων</li>
+          <li>Ασκήσεις μοτίβου βάδισης με αρχικά ευρύτερη βάση στήριξης</li>
+          <li>Προπόνηση δύναμης: απαγωγοί ισχίου, ραχιαίοι καμπτήρες αστραγάλου, κορμός</li>
+          <li>Ται Τσι ή ομαδικά μαθήματα εστιασμένα στην ισορροπία</li>
+        </ul>
+
+        <h2 id="special-populations">Ανάλυση Βάδισης για Ειδικούς Πληθυσμούς</h2>
+
+        <h3>Μεγαλύτεροι Ενήλικες (65+)</h3>
+        <p><strong>Μετρήσεις προτεραιότητας:</strong></p>
+        <ul>
+          <li><strong>Ταχύτητα περπατήματος:</strong> Παρακολουθήστε ετησίως· μείωση &gt;0,05 m/s/έτος υποδηλώνει κίνδυνο</li>
+          <li><strong>Διπλή στήριξη:</strong> Παρακολουθήστε για αυξήσεις που υποδηλώνουν κίνδυνο πτώσης</li>
+          <li><strong>Walking Steadiness:</strong> Ενεργοποιήστε ειδοποιήσεις για "Low" ή "Very Low"</li>
+          <li><strong>Ασυμμετρία:</strong> Μπορεί να υποδηλώνει αναπτυσσόμενα νευρολογικά προβλήματα</li>
+        </ul>
+
+        <p><strong>Στόχοι:</strong></p>
+        <ul>
+          <li>Διατηρήστε ταχύτητα ≥1,0 m/s</li>
+          <li>Κρατήστε τη διπλή στήριξη &lt;30%</li>
+          <li>Walking Steadiness "OK"</li>
+          <li>Ασυμμετρία &lt;5%</li>
+        </ul>
+
+        <h3>Ασθενείς σε Αποκατάσταση</h3>
+        <p><strong>Παρακολούθηση προόδου ανάρρωσης:</strong></p>
+        <ul>
+          <li><strong>Κανονικοποίηση συμμετρίας:</strong> Στόχος επιστροφής σε &lt;3% ασυμμετρία</li>
+          <li><strong>Ανάκτηση ταχύτητας:</strong> Παρακολουθήστε εβδομαδιαίες βελτιώσεις προς τη βάση πριν από τον τραυματισμό</li>
+          <li><strong>Συνέπεια ρυθμού βημάτων:</strong> Η ικανότητα διατήρησης ≥100 spm υποδηλώνει ετοιμότητα για κανονική δραστηριότητα</li>
+          <li><strong>Μοτίβα αντιστάθμισης:</strong> Παρακολουθήστε για ανάπτυξη νέων ασυμμετριών</li>
+        </ul>
+
+        <h3>Περιπατητές Φυσικής Κατάστασης & Αθλητές</h3>
+        <p><strong>Στόχοι απόδοσης:</strong></p>
+        <ul>
+          <li><strong>Ρυθμός βημάτων:</strong> 120-140 spm για περπάτημα φυσικής κατάστασης· 140-180 spm για αγωνιστικό περπάτημα</li>
+          <li><strong>Ταχύτητα:</strong> &gt;1,5 m/s (3,4 mph) για φυσική κατάσταση· &gt;2,0 m/s (4,5 mph) για ανταγωνιστικό</li>
+          <li><strong>Συμμετρία:</strong> &gt;97% (πολύ χαμηλή ασυμμετρία)</li>
+          <li><strong>Διπλή στήριξη:</strong> Ελαχιστοποίηση σε 15-20% για αποδοτικότητα</li>
+        </ul>
+
+        <h2 id="limitations">Ακρίβεια και Περιορισμοί Τεχνολογίας</h2>
+
+        <h3>Τι Κάνουν Καλά οι Καταναλωτικές Συσκευές</h3>
+        <ul>
+          <li><strong>Καταμέτρηση βημάτων:</strong> 95-99% ακρίβεια σε σχέση με ερευνητικά βηματόμετρα</li>
+          <li><strong>Ρυθμός βημάτων:</strong> ±2-3 spm σφάλμα</li>
+          <li><strong>Ταχύτητα περπατήματος:</strong> συσχέτιση r=0,86-0,91 με κλινικές δοκιμασίες</li>
+          <li><strong>Ανίχνευση τάσεων:</strong> Εξαιρετική για παρακολούθηση αλλαγών με την πάροδο του χρόνου</li>
+        </ul>
+
+        <h3>Περιορισμοί που Πρέπει να Κατανοήσετε</h3>
+        <ul>
+          <li><strong>Όχι διαγνωστικές:</strong> Οι καταναλωτικές συσκευές είναι εργαλεία προκαταρκτικού ελέγχου, όχι ιατρικές διαγνώσεις</li>
+          <li><strong>Η τοποθέτηση έχει σημασία:</strong> Το iPhone πρέπει να μεταφέρεται σε τσέπη/τσάντα· το Apple Watch στον καρπό</li>
+          <li><strong>Εσωτερικοί vs εξωτερικοί χώροι:</strong> Η ακρίβεια GPS επηρεάζει τις εξωτερικές μετρήσεις</li>
+          <li><strong>Ατομική διακύμανση:</strong> Τα "φυσιολογικά" εύρη είναι μέσοι όροι πληθυσμού</li>
+          <li><strong>Δεν μπορεί να αντικαταστήσει κλινικά εργαστήρια βάδισης:</strong> Για λεπτομερή τρισδιάστατη κινηματική, πλάκες δύναμης, EMG χρειάζονται</li>
+        </ul>
+
+        <h3>Πότε να Αναζητήσετε Επαγγελματική Ανάλυση Βάδισης</h3>
+        <ul>
+          <li>Επίμονη ασυμμετρία &gt;10%</li>
+          <li>Ταχύτητα περπατήματος &lt;0,8 m/s χωρίς γνωστή αιτία</li>
+          <li>Συχνές πτώσεις ή σχεδόν-πτώσεις</li>
+          <li>Χρόνιος πόνος κατά τη διάρκεια ή μετά το περπάτημα</li>
+          <li>Ξαφνικές αλλαγές στις μετρήσεις βάδισης</li>
+          <li>Νευρολογικά συμπτώματα (μούδιασμα, μυρμήγκιασμα, προβλήματα συντονισμού)</li>
+        </ul>
+
+        <h2 id="next-steps">Επόμενα Βήματα</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Ζώνες Περπατήματος</h3>
+            <p>Μάθετε πώς να χρησιμοποιείτε τον ρυθμό βημάτων για να προπονηθείτε σε βέλτιστες ζώνες έντασης για υγεία και φυσική κατάσταση.</p>
+            <a href="/el/walking-zones/" class="btn btn-secondary">Μάθετε για τις Ζώνες →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Μηχανική Διασκελισμού</h3>
+            <p>Βαθιά κατάδυση στη βιομηχανική του περπατήματος, τη στάση, την αιώρηση των βραχιόνων και τα μοτίβα πρόσκρουσης του ποδιού.</p>
+            <a href="/el/stride-mechanics/" class="btn btn-secondary">Εξερευνήστε τη Μηχανική →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Επιστημονική Έρευνα</h3>
+            <p>Εξετάστε την επιστημονική τεκμηρίωση που υποστηρίζει την ανάλυση βάδισης και τις μετρήσεις περπατήματος.</p>
+            <a href="/el/research/" class="btn btn-secondary">Δείτε την Έρευνα →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Πλήρης Βιβλιογραφία</h3>
+            <p>Αποκτήστε πρόσβαση σε αναφορές με κριτική από ομοτίμους με απευθείας συνδέσμους σε δημοσιεύσεις.</p>
+            <a href="/el/bibliography/" class="btn btn-secondary">Δείτε τη Βιβλιογραφία →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Πίνακας Περιεχομένων</h3>
+          <ul>
+            <li><a href="#what-is-gait">Τι είναι η Ανάλυση Βάδισης;</a></li>
+            <li><a href="#key-metrics">Βασικές Μετρήσεις</a>
+              <ul>
+                <li><a href="#cadence">Ρυθμός Βημάτων</a></li>
+                <li><a href="#stride-length">Μήκος Διασκελισμού</a></li>
+                <li><a href="#ground-contact">Επαφή με το Έδαφος</a></li>
+                <li><a href="#double-support">Διπλή Στήριξη</a></li>
+                <li><a href="#asymmetry">Ασυμμετρία</a></li>
+                <li><a href="#walking-speed">Ταχύτητα Περπατήματος</a></li>
+                <li><a href="#vertical-oscillation">Κατακόρυφη Ταλάντωση</a></li>
+              </ul>
+            </li>
+            <li><a href="#apple-metrics">Μετρήσεις Apple HealthKit</a></li>
+            <li><a href="#interpreting">Ερμηνεία Ανάλυσης</a></li>
+            <li><a href="#improving">Βελτίωση της Βάδισής σας</a></li>
+            <li><a href="#special-populations">Ειδικοί Πληθυσμοί</a></li>
+            <li><a href="#limitations">Ακρίβεια & Περιορισμοί</a></li>
+            <li><a href="#next-steps">Επόμενα Βήματα</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Αναλύστε τη Βάδισή σας</h3>
+          <p>Παρακολουθήστε τη μηχανική του περπατήματός σας με επιστημονικές μετρήσεις χρησιμοποιώντας το WalkAnalytics.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Λήψη Εφαρμογής</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📊 Βασικό Συμπέρασμα</h4>
+          <p>Εστιάστε σε <strong>ρυθμό βημάτων ≥100 spm</strong> και <strong>ταχύτητα ≥1,0 m/s</strong> ως πρωταρχικούς στόχους σας. Αυτές οι δύο μετρήσεις είναι οι ισχυρότεροι προγνωστικοί δείκτες αποτελεσμάτων υγείας.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Αρχική</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Με επιφύλαξη κάθε δικαιώματος
+            </p>
+            <ul class="footer-links">
+                <li><a href="/el/privacy/">Απόρρητο</a></li>
+                <li><a href="/el/terms/">Όροι</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Αυτός ο ιστότοπος χρησιμοποιεί cookies για τη βελτίωση της εμπειρίας σας.</p>
+            <a href="/el/privacy/" class="text-sm">Μάθετε περισσότερα</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Απόρριψη</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Αποδοχή</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>สูตรการเดิน - สมการและการคำนวณ</title>
+    <meta name="description" content="สูตรและสมการที่ใช้ใน WalkAnalytics การคำนวณ WSS สูตรความยาวก้าว สมการ VO₂max และการวัดท่าเดิน เข้าใจว่าตัวชี้วัดต่างๆ ของคุณถูกคำนวณอย่างไร">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="สูตรการเดิน, การคำนวณ WSS, สูตรความยาวก้าว, สมการท่าเดิน, สูตร VO₂max, walking formulas, gait calculations">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/th/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/th/formulas/">
+    <meta property="og:title" content="สูตรการเดิน - สมการและการคำนวณ">
+    <meta property="og:description" content="สูตรและสมการที่ใช้ใน WalkAnalytics การคำนวณ WSS สูตรความยาวก้าว สมการ VO₂max และการวัดท่าเดิน เข้าใจว่าตัวชี้วัดต่างๆ ของคุณถูกคำนวณอย่างไร">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/th/formulas/">
+    <meta name="twitter:title" content="สูตรการเดิน - สมการและการคำนวณ">
+    <meta name="twitter:description" content="สูตรและสมการที่ใช้ใน WalkAnalytics การคำนวณ WSS สูตรความยาวก้าว สมการ VO₂max และการวัดท่าเดิน เข้าใจว่าตัวชี้วัดต่างๆ ของคุณถูกคำนวณอย่างไร">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/formulas/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/formulas/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/formulas/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/formulas/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/formulas/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/formulas/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/formulas/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/formulas/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/formulas/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/formulas/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/formulas/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/formulas/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/formulas/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/formulas/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/formulas/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/formulas/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/formulas/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหา</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/th/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/th/"  aria-current="">
+                            หน้าแรก
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เรียนรู้</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/getting-started/" 
+                                    aria-current="">
+                                    เริ่มต้นใช้งาน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-zones/" 
+                                    aria-current="">
+                                    โซนการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-analysis/" 
+                                    aria-current="">
+                                    การวิเคราะห์ท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/training-load/" 
+                                    aria-current="">
+                                    ภาระการฝึก
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/wss-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">วิทยาศาสตร์</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/research/" 
+                                    aria-current="">
+                                    การวิจัย
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/formulas/" class="active" 
+                                    aria-current="page">
+                                    สูตรคำนวณ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-efficiency/" 
+                                    aria-current="">
+                                    ประสิทธิภาพการเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/stride-mechanics/" 
+                                    aria-current="">
+                                    กลศาสตร์ก้าวเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/walking-vs-running/" 
+                                    aria-current="">
+                                    เดินเทียบกับวิ่ง
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/benchmarks/" 
+                                    aria-current="">
+                                    มาตรฐานประสิทธิภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/bibliography/" 
+                                    aria-current="">
+                                    บรรณานุกรม
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">สำหรับคุณ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/for-health/" 
+                                    aria-current="">
+                                    สำหรับสุขภาพ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-fitness/" 
+                                    aria-current="">
+                                    สำหรับฟิตเนส
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-seniors/" 
+                                    aria-current="">
+                                    สำหรับผู้สูงอายุ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/for-rehabilitation/" 
+                                    aria-current="">
+                                    สำหรับการฟื้นฟู
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">เครื่องมือ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/th/cadence-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณจังหวะก้าว
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/gait-assessment/" 
+                                    aria-current="">
+                                    การประเมินท่าเดิน
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/th/vo2max-calculator/" 
+                                    aria-current="">
+                                    เครื่องคำนวณ VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/th/contact/"  aria-current="">
+                            ติดต่อเรา
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="เลือกภาษา">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" selected>
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="สลับเมนู"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- สูตรและสมการการวิเคราะห์การเดิน -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/th/">หน้าหลัก</a> / <a href="/th/#science">วิทยาศาสตร์</a> / สูตรคำนวณ
+    </div>
+    <h1>สูตรและสมการการวิเคราะห์การเดิน</h1>
+    <p class="lead">รากฐานทางคณิตศาสตร์ของการวิเคราะห์การเดิน – สมการที่ผ่านการตรวจสอบทางวิทยาศาสตร์สำหรับความเข้มข้น พลังงาน และประสิทธิภาพ</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>หน้านี้นำเสนอสูตรที่ผ่านการตรวจสอบทางวิทยาศาสตร์ที่ใช้ในการวิเคราะห์การเดิน สมการทั้งหมดมีการอ้างอิงงานวิจัยและช่วงความแม่นยำที่ผ่านการตรวจสอบ</p>
+        </div>
+
+        <h2 id="cadence-mets">1. การแปลงจังหวะก้าวเป็น METs</h2>
+
+        <div class="formula-section featured">
+          <h3>สมการเมตาบอลิกจากจังหวะก้าว Moore et al. (2021)</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">จังหวะก้าวเป็น METs</p>
+            <p class="formula-main"><strong>METs = 0.0219 × จังหวะก้าว (ก้าว/นาที) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">ความแม่นยำ: ±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>ทำไมสูตรนี้จึงสำคัญ:</strong> สมการนี้<strong>แม่นยำกว่า 23-35%</strong> เมื่อเทียบกับสมการ ACSM แบบดั้งเดิมที่อิงจากความเร็ว เพราะจังหวะก้าวสะท้อนความถี่ของการเคลื่อนไหวและการใช้พลังงานโดยตรง ในขณะที่ความเร็วขึ้นอยู่กับความยาวก้าวที่แปรผัน</p>
+          </div>
+
+          <h4>ตัวอย่าง:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>เดินที่ 100 ก้าว/นาที:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>เกณฑ์ความเข้มข้นระดับปานกลาง</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>เดินที่ 110 ก้าว/นาที:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">ความเข้มข้นปานกลางที่ดี</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>เดินที่ 120 ก้าว/นาที:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">ความเข้มข้นระดับปานกลาง-หนัก</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>เดินที่ 130 ก้าว/นาที:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>เกณฑ์ความเข้มข้นระดับหนัก</strong> (6 METs ตามการวัดโดยตรงของ CADENCE-Adults)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>หมายเหตุ:</strong> การศึกษา CADENCE-Adults วัดโดยตรงว่า 130 ก้าว/นาที = 6 METs ในสภาวะห้องปฏิบัติการที่ควบคุม สมการ Moore ออกแบบมาสำหรับช่วง 80-130 ก้าว/นาทีและอาจประเมินต่ำเกินไปที่จังหวะสูงมาก</p>
+          </div>
+
+          <h4>ข้อมูลการตรวจสอบ:</h4>
+          <ul>
+            <li><strong>กลุ่มตัวอย่าง:</strong> ผู้ใหญ่ 76 คน อายุ 21-40 ปี</li>
+            <li><strong>วิธีการ:</strong> Indirect calorimetry (มาตรฐานทอง)</li>
+            <li><strong>ค่า R²:</strong> 0.87 (สหสัมพันธ์ดีเยี่ยม)</li>
+            <li><strong>ค่าเฉลี่ยความคลาดเคลื่อนสัมบูรณ์:</strong> 0.47 METs</li>
+            <li><strong>ช่วงที่ใช้ได้:</strong> 80-130 ก้าว/นาที</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. สมการ VO₂ ของ ACSM สำหรับการเดิน</h2>
+
+        <div class="formula-section">
+          <h3>การคำนวณเมตาบอลิกของ ACSM</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">การเดินพื้นราบ (ความลาดชัน 0%)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × ความเร็ว (m/min) + 3.5</strong></p>
+            <p class="formula-note">ความเร็วเป็นเมตรต่อนาที (คูณ km/h ด้วย 16.67 หรือ mph ด้วย 26.82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">การเดินบนพื้นลาดชัน (ทางลาดขึ้น/ลง)</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(ความเร็ว) + 1.8(ความเร็ว)(ความลาดชัน) + 3.5</strong></p>
+            <p class="formula-note">ความลาดชันแสดงเป็นทศนิยม (เช่น 5% = 0.05)</p>
+          </div>
+
+          <h4>ตัวอย่าง:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>เดิน 5 km/h (83.3 m/min) บนพื้นราบ:</strong></p>
+              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
+              <p class="example-conversion">แปลงเป็น METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>เดิน 5 km/h บนทางลาดชัน 5%:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
+              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">ทางลาดชันเพิ่มความเข้มข้นถึง ~64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>การแปลงความเร็ว:</h4>
+            <ul>
+              <li><strong>km/h เป็น m/min:</strong> คูณด้วย 16.67</li>
+              <li><strong>mph เป็น m/min:</strong> คูณด้วย 26.82</li>
+              <li><strong>m/s เป็น m/min:</strong> คูณด้วย 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. การใช้พลังงานและการเผาผลาญแคลอรี</h2>
+
+        <div class="formula-section">
+          <h3>การคำนวณแคลอรีที่แม่นยำ</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">แคลอรีต่อนาที</p>
+            <p class="formula-main"><strong>Cal/min = (METs × 3.5 × น้ำหนักตัว kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">แคลอรีรวมต่อช่วงเวลา</p>
+            <p class="formula-main"><strong>แคลอรีรวม = Cal/min × ระยะเวลา (นาที)</strong></p>
+          </div>
+
+          <h4>ตัวอย่าง:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>คนน้ำหนัก 70 kg เดินที่ 100 ก้าว/นาที (3 METs) เป็นเวลา 45 นาที:</strong></p>
+              <p class="example-calc">Cal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/min</strong></p>
+              <p class="example-calc">รวม = 3.675 × 45 = <strong>165.4 แคลอรี</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>คนน้ำหนัก 85 kg เดินที่ 120 ก้าว/นาที (5 METs) เป็นเวลา 30 นาที:</strong></p>
+              <p class="example-calc">Cal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p>
+              <p class="example-calc">รวม = 7.44 × 30 = <strong>223.2 แคลอรี</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>ทำไมต้องใช้สูตรนี้?</h4>
+            <p>สมการนี้มาจากคำจำกัดความของ MET (Metabolic Equivalent of Task):</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min (อัตราการเผาผลาญขณะพัก)</li>
+              <li>1 ลิตรของ O₂ ที่ใช้ ≈ 5 kcal ที่เผาผลาญ</li>
+              <li>การแปลง: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>การเผาผลาญแคลอรีสุทธิ (เฉพาะการออกกำลังกาย)</h3>
+          <div class="formula-box">
+            <p class="formula-title">แคลอรีสุทธิ (ไม่รวมการพัก)</p>
+            <p class="formula-main"><strong>Net Cal/min = [(METs - 1) × 3.5 × น้ำหนักตัว] / 200</strong></p>
+            <p class="formula-note">ลบ 1 MET เพื่อไม่นับรวมแคลอรีที่เผาผลาญอยู่แล้วขณะพัก</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 METs, 45 นาที – แคลอรีสุทธิ:</strong></p>
+            <p class="example-calc">สุทธิ = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 แคลอรีสุทธิ</strong></p>
+            <p class="example-interpretation">เทียบกับ 165.4 แคลอรีรวม (55 แคลอรีจะถูกเผาผลาญอยู่แล้วขณะพัก)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. ดัชนีความสมมาตรของท่าเดิน (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>การวัดความไม่สมมาตรซ้าย-ขวา</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">ดัชนีความสมมาตรของท่าเดิน</p>
+            <p class="formula-main"><strong>GSI (%) = |ขวา - ซ้าย| / [0.5 × (ขวา + ซ้าย)] × 100</strong></p>
+            <p class="formula-note">สามารถนำไปใช้กับความยาวก้าว เวลาก้าว หรือเวลาสัมผัสพื้น</p>
+          </div>
+
+          <h4>การตีความ:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> ปกติ ท่าเดินสมมาตร</li>
+            <li><strong>3-5%:</strong> ความไม่สมมาตรเล็กน้อย</li>
+            <li><strong>5-10%:</strong> ความไม่สมมาตรปานกลาง ควรติดตาม</li>
+            <li><strong>&gt;10%:</strong> มีความสำคัญทางคลินิก ควรประเมินโดยผู้เชี่ยวชาญ</li>
+          </ul>
+
+          <h4>ตัวอย่าง:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>เวลาก้าว: ขวา = 520 ms, ซ้าย = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% ความไม่สมมาตร</strong></p>
+              <p class="example-interpretation">ความไม่สมมาตรปานกลาง – พิจารณาเสริมสร้างความแข็งแรงด้านที่อ่อนแอกว่า</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>ความยาวก้าว: ขวา = 1.42 m, ซ้าย = 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
+              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% ความไม่สมมาตร</strong></p>
+              <p class="example-interpretation">ปกติ อยู่ในช่วงสุขภาพดี ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>หมายเหตุทางคลินิก:</strong> Walking Asymmetry ของ Apple HealthKit ใช้การคำนวณที่แตกต่างเล็กน้อย (ความแตกต่างเปอร์เซ็นต์อย่างง่ายระหว่างเวลาก้าว) แต่เกณฑ์การตีความคล้ายกัน</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. คะแนน WALK (ตัวชี้วัดเฉพาะของ WalkAnalytics)</h2>
+
+        <div class="formula-section">
+          <h3>คะแนนประสิทธิภาพการเดิน</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">คะแนน WALK</p>
+            <p class="formula-main"><strong>คะแนน WALK = เวลา (วินาที) + ก้าวต่อ 100 เมตร</strong></p>
+            <p class="formula-note">คะแนนต่ำกว่า = ประสิทธิภาพดีกว่า (เหมือน SWOLF สำหรับการว่ายน้ำ)</p>
+          </div>
+
+          <h4>วิธีการทำงาน:</h4>
+          <p>คะแนน WALK รวมเวลาและจำนวนก้าวเพื่อวัดประสิทธิภาพการเดิน คนเดินที่ครอบคลุม 100m ใน 75 วินาทีด้วย 140 ก้าว จะได้คะแนน WALK 215 การปรับปรุงความเร็วหรือประสิทธิภาพก้าวจะลดคะแนน</p>
+
+          <h4>ตัวอย่าง:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100m ใน 80 วินาที, 120 ก้าว:</strong></p>
+              <p class="example-calc">คะแนน WALK = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m ใน 70 วินาที, 110 ก้าว:</strong></p>
+              <p class="example-calc">คะแนน WALK = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">ประสิทธิภาพดีขึ้นผ่านการปรับปรุงความเร็ว + ก้าว</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m ใน 60 วินาที, 130 ก้าว (การเดินแข่ง):</strong></p>
+              <p class="example-calc">คะแนน WALK = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">เร็วแต่ก้าวสั้นกว่า</p>
+            </div>
+          </div>
+
+          <h4>ช่วงคะแนนทั่วไป:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> ท่าเดินช้า/ไม่มีประสิทธิภาพ อาจมีปัญหาการเคลื่อนไหว</li>
+            <li><strong>200-250:</strong> คนเดินเพื่อพักผ่อน ประสิทธิภาพเฉลี่ย</li>
+            <li><strong>170-200:</strong> คนเดินเพื่อสุขภาพ ประสิทธิภาพดี</li>
+            <li><strong>150-170:</strong> คนเดินระดับสูง ประสิทธิภาพยอดเยี่ยม</li>
+            <li><strong>&lt;150:</strong> ระดับเดินแข่ง/ชั้นยอด</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>การฝึกด้วยคะแนน WALK:</strong> ติดตามคะแนนของคุณบนเส้นทาง 100m เดียวกันทุกสัปดาห์ การปรับปรุงแสดงการเพิ่มขึ้นของการประสานงานระบบประสาทกล้ามเนื้อ ความแข็งแรง และประสิทธิภาพการเดิน</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. ตัวชี้วัดท่าเดินพื้นฐาน</h2>
+
+        <div class="formula-section">
+          <h3>การคำนวณพื้นฐาน</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">ความเร็วในการเดิน</p>
+            <p class="formula-main"><strong>ความเร็ว (m/s) = ระยะทาง (m) / เวลา (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">จังหวะก้าวจากจำนวนก้าวทั้งหมด</p>
+            <p class="formula-main"><strong>จังหวะก้าว (spm) = จำนวนก้าวทั้งหมด / เวลา (นาที)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ความยาวก้าวยาว</p>
+            <p class="formula-main"><strong>ความยาวก้าวยาว (m) = ระยะทาง (m) / (ก้าว / 2)</strong></p>
+            <p class="formula-note">หารก้าวด้วย 2 เพราะหนึ่งก้าวยาว = สองก้าว</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ความยาวก้าว</p>
+            <p class="formula-main"><strong>ความยาวก้าว (m) = ระยะทาง (m) / ก้าว</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ความเร็วจากจังหวะก้าวและความยาวก้าวยาว</p>
+            <p class="formula-main"><strong>ความเร็ว = ความยาวก้าวยาว × (จังหวะก้าว / 2) / 60</strong></p>
+            <p class="formula-note">หรือ: ความเร็ว (m/s) = ความยาวก้าว × จังหวะก้าว / 60</p>
+          </div>
+
+          <h4>ตัวอย่างขั้นตอนการทำงาน:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>เดิน 1000m ใน 12 นาที ด้วย 1320 ก้าว:</strong></p>
+            <p><strong>ความเร็ว:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
+            <p><strong>จังหวะก้าว:</strong> 1320 ก้าว / 12 นาที = <strong>110 spm</strong></p>
+            <p><strong>ความยาวก้าวยาว:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
+            <p><strong>ความยาวก้าว:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. การคำนวณโซนอัตราการเต้นของหัวใจ</h2>
+
+        <div class="formula-section">
+          <h3>วิธีโซนอัตราการเต้นของหัวใจแบบดั้งเดิม</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">การประเมินอัตราการเต้นของหัวใจสูงสุด</p>
+            <p class="formula-main"><strong>Max HR = 220 - อายุ</strong></p>
+            <p class="formula-note">ง่าย แต่มีความแปรปรวนเฉพาะบุคคล ±10-15 bpm</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ทางเลือก: สูตร Tanaka (แม่นยำกว่า)</p>
+            <p class="formula-main"><strong>Max HR = 208 - (0.7 × อายุ)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">การคำนวณช่วงโซน</p>
+            <p class="formula-main"><strong>โซน = Max HR × (% ต่ำสุด, % สูงสุด)</strong></p>
+          </div>
+
+          <h4>ตัวอย่าง: อายุ 40 ปี</h4>
+          <div class="calc-example">
+            <p><strong>แบบดั้งเดิม:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p>
+            <p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
+            <p><strong>โซน 2 (60-70%):</strong> 180 × 0.60 = 108 bpm ถึง 180 × 0.70 = 126 bpm</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>หมายเหตุ:</strong> แม้ว่าโซน HR จะมีประโยชน์ แต่<strong>โซนตามจังหวะก้าวแม่นยำและใช้งานได้จริงกว่าสำหรับการเดิน</strong> (ดูคู่มือโซนการเดิน)</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. ต้นทุนการขนส่งและประสิทธิภาพการเดิน</h2>
+
+        <div class="formula-section">
+          <h3>ต้นทุนพลังงานของการเดิน</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">ต้นทุนการขนส่ง (C)</p>
+            <p class="formula-main"><strong>C = พลังงานที่ใช้ / (มวลร่างกาย × ระยะทาง)</strong></p>
+            <p class="formula-note">หน่วย: J/kg/m หรือ mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>เส้นโค้งรูปตัว U:</strong> ประสิทธิภาพการเดินเป็นไปตามเส้นโค้งรูปตัว U มีความเร็วที่เหมาะสม (โดยทั่วไป 1.2-1.4 m/s หรือ 4.3-5.0 km/h) ที่ต้นทุนการขนส่งต่ำที่สุด การเดินช้ากว่าหรือเร็วกว่านี้จะเพิ่มต้นทุนพลังงานต่อระยะทางที่เดินทาง</p>
+          </div>
+
+          <h4>ปัจจัยที่มีผลต่อต้นทุนการขนส่ง:</h4>
+          <ul>
+            <li><strong>ความเร็ว:</strong> ความสัมพันธ์รูปตัว U (เหมาะสมประมาณ 1.3 m/s)</li>
+            <li><strong>ความลาดชัน:</strong> ทางขึ้นเพิ่มต้นทุนอย่างมาก; ทางลงเพิ่มต้นทุนแบบ eccentric</li>
+            <li><strong>มวลร่างกาย:</strong> บุคคลที่หนักกว่ามีต้นทุนสัมบูรณ์สูงกว่าแต่ต้นทุนสัมพัทธ์ใกล้เคียง</li>
+            <li><strong>กลไกก้าว:</strong> ความยาวก้าวที่เหมาะสมลดต้นทุน</li>
+            <li><strong>ภูมิประเทศ:</strong> พื้นผิวไม่เรียบเพิ่มต้นทุนเทียบกับทางเรียบ</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">ต้นทุนที่ปรับตามความลาดชัน</p>
+            <p class="formula-main"><strong>ตัวคูณต้นทุน = 1 + (ความลาดชัน × 10)</strong></p>
+            <p class="formula-note">การประมาณโดยคร่าว: +10% ต้นทุนต่อ 1% ความลาดชัน</p>
+          </div>
+
+          <h4>ตัวอย่าง:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>เดินบนทางลาดชัน 5%:</strong></p>
+            <p class="example-calc">ตัวคูณต้นทุน = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
+            <p class="example-interpretation">เพิ่มต้นทุนพลังงาน 50% เทียบกับพื้นราบ</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. ภาระการฝึกและคะแนนความเครียด</h2>
+
+        <div class="formula-section">
+          <h3>คะแนนความเครียดจากการเดิน (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WSS ตามโซน</p>
+            <p class="formula-main"><strong>WSS = Σ (นาทีในแต่ละโซน × ตัวประกอบโซน)</strong></p>
+            <p>โซน 1: ×1.0 | โซน 2: ×2.0 | โซน 3: ×3.0 | โซน 4: ×4.0 | โซน 5: ×5.0</p>
+          </div>
+
+          <h4>ตัวอย่าง: เดิน 60 นาที</h4>
+          <div class="calc-example">
+            <p>10 นาที โซน 1 × 1 = 10 คะแนน</p>
+            <p>40 นาที โซน 2 × 2 = 80 คะแนน</p>
+            <p>10 นาที โซน 3 × 3 = 30 คะแนน</p>
+            <p><strong>WSS รวม = 120</strong></p>
+          </div>
+
+          <h3>ภาระการฝึกรายสัปดาห์</h3>
+          <div class="formula-box">
+            <p class="formula-title">ภาระรายสัปดาห์</p>
+            <p class="formula-main"><strong>ภาระรายสัปดาห์ = Σ WSS รายวัน (7 วัน)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">การเพิ่มภาระแบบค่อยเป็นค่อยไป</p>
+            <p class="formula-main"><strong>สัปดาห์ถัดไป = สัปดาห์ปัจจุบัน × 1.05-1.10</strong></p>
+            <p class="formula-note">เพิ่ม 5-10% ต่อสัปดาห์สูงสุด</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">สัปดาห์พักฟื้น</p>
+            <p class="formula-main"><strong>สัปดาห์พักฟื้น = ปัจจุบัน × 0.50-0.70</strong></p>
+            <p class="formula-note">ทุก 3-4 สัปดาห์ ลดเหลือ 50-70%</p>
+          </div>
+
+          <h4>ภาระรายสัปดาห์ทั่วไป:</h4>
+          <ul>
+            <li><strong>คนเดินเพื่อสุขภาพระดับเริ่มต้น:</strong> 200-400 WSS/สัปดาห์</li>
+            <li><strong>คนเดินเพื่อสุขภาพปกติ:</strong> 400-700 WSS/สัปดาห์</li>
+            <li><strong>คนเดินเพื่อสุขภาพจริงจัง:</strong> 700-1000 WSS/สัปดาห์</li>
+            <li><strong>นักเดินแข่งขัน:</strong> 1000-1500+ WSS/สัปดาห์</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. สมการการทำนาย</h2>
+
+        <div class="formula-section">
+          <h3>การทำนายระยะทางการทดสอบเดิน 6 นาที (6MWT)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">การทำนายระยะทาง 6MWT (Enright & Sherrill)</p>
+            <p><strong>ผู้ชาย:</strong> (7.57 × ส่วนสูง cm) - (5.02 × อายุ) - (1.76 × น้ำหนัก kg) - 309</p>
+            <p><strong>ผู้หญิง:</strong> (2.11 × ส่วนสูง cm) - (5.78 × อายุ) - (2.29 × น้ำหนัก kg) + 667</p>
+            <p class="formula-note">ทำนายระยะทางเป็นเมตรสำหรับผู้ใหญ่สุขภาพดี</p>
+          </div>
+
+          <h4>ตัวอย่าง: ผู้ชายอายุ 40 ปี ส่วนสูง 175 cm น้ำหนัก 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 เมตร</strong></p>
+            <p class="example-interpretation">ความสามารถในการทำงานดีสำหรับวัย</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>การใช้ทางคลินิก:</strong> 6MWT ใช้เพื่อประเมินความสามารถในการออกกำลังกายเชิงหน้าที่ในผู้ป่วยโรคหัวใจและปอด การประเมินก่อน/หลังผ่าตัด และสมรรถภาพทั่วไปในผู้สูงอายุ</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. การแปลงหน่วย</h2>
+
+        <div class="formula-section">
+          <h3>การแปลงตัวชี้วัดการเดินทั่วไป</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>จาก</th>
+                  <th>ไป</th>
+                  <th>สูตร</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>อ้างอิงด่วน:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (ความเร็วเดินของผู้ใหญ่สุขภาพดีทั่วไป)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (การเดินเร็ว)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (อัตราการเผาผลาญขณะพัก)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (เกณฑ์ความเข้มข้นปานกลาง)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (เกณฑ์ความเข้มข้นหนัก)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">ทรัพยากรที่เกี่ยวข้อง</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>ใช้สูตร: เครื่องคำนวณ WSS</h3>
+            <p>ใช้เครื่องคำนวณแบบโต้ตอบของเราเพื่อคำนวณคะแนนความเครียดจากการเดินของคุณ</p>
+            <a href="/th/wss-calculator/" class="btn btn-secondary">คำนวณ WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>ทำความเข้าใจโซนการเดิน</h3>
+            <p>เรียนรู้วิธีใช้โซนความเข้มข้นตามจังหวะก้าวในการฝึก</p>
+            <a href="/th/walking-zones/" class="btn btn-secondary">เรียนรู้โซน →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>งานวิจัยทางวิทยาศาสตร์</h3>
+            <p>ทบทวนการศึกษาที่ตรวจสอบสูตรเหล่านี้</p>
+            <a href="/th/research/" class="btn btn-secondary">ดูงานวิจัย →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>บรรณานุกรมฉบับสมบูรณ์</h3>
+            <p>เข้าถึงการอ้างอิงแบบเต็มสำหรับสมการที่อ้างอิงทั้งหมด</p>
+            <a href="/th/bibliography/" class="btn btn-secondary">ดูบรรณานุกรม →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>ดัชนีสูตร</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. จังหวะก้าว → METs</a></li>
+            <li><a href="#acsm-vo2">2. สมการ VO₂ ของ ACSM</a></li>
+            <li><a href="#energy-expenditure">3. พลังงานและแคลอรี</a></li>
+            <li><a href="#gait-symmetry">4. ดัชนีความสมมาตรของท่าเดิน</a></li>
+            <li><a href="#walk-score">5. คะแนน WALK</a></li>
+            <li><a href="#basic-metrics">6. ตัวชี้วัดท่าเดินพื้นฐาน</a></li>
+            <li><a href="#heart-rate">7. โซนอัตราการเต้นของหัวใจ</a></li>
+            <li><a href="#cost-transport">8. ต้นทุนการขนส่ง</a></li>
+            <li><a href="#training-load">9. ภาระการฝึก</a></li>
+            <li><a href="#predictions">10. สมการการทำนาย</a></li>
+            <li><a href="#conversions">11. การแปลงหน่วย</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ สำคัญที่สุด</h3>
+          <p><strong>จังหวะก้าวเป็น METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">สมการเดียวนี้ช่วยให้สามารถฝึกความเข้มข้นตามจังหวะก้าวได้โดยไม่ต้องใช้เครื่องวัดอัตราการเต้นของหัวใจ</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>ใช้สูตรเหล่านี้</h3>
+          <p>WalkAnalytics ใช้สมการที่ผ่านการตรวจสอบทางวิทยาศาสตร์เหล่านี้เพื่อวิเคราะห์การเดินของคุณ</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">ดาวน์โหลดแอป</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 ความแม่นยำของสูตร</h4>
+          <p>สมการทั้งหมดในหน้านี้มาจากงานวิจัยที่ผ่านการตรวจสอบโดยผู้เชี่ยวชาญ ดู<a href="/th/bibliography/">บรรณานุกรม</a>สำหรับการอ้างอิงแบบเต็ม</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">หน้าแรก</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. สงวนลิขสิทธิ์
+            </p>
+            <ul class="footer-links">
+                <li><a href="/th/privacy/">ความเป็นส่วนตัว</a></li>
+                <li><a href="/th/terms/">ข้อกำหนด</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>เว็บไซต์นี้ใช้คุกกี้เพื่อปรับปรุงประสบการณ์ของคุณ</p>
+            <a href="/th/privacy/" class="text-sm">เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">ปฏิเสธ</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">ยอมรับ</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>تحلیل‌های خصوصی پیاده‌روی - تحلیل راه رفتن، WSS، معیارهای سلامت برای iOS</title>
+    <meta name="description" content="اپلیکیشن خصوصی iOS پیاده‌روی با تحلیل پیشرفته راه رفتن. ردیابی معیارهای گام، زون‌های پیاده‌روی، WSS به صورت محلی. بینش‌های سلامت مبتنی بر علم. آزمایش رایگان 7 روزه.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="اپلیکیشن تحلیل پیاده‌روی, اپلیکیشن تحلیل راه رفتن, اپلیکیشن iOS حفظ حریم خصوصی, معیارهای سلامت پیاده‌روی, تحلیل گام">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/fa/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-10-27T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://walk.analyticszone.app/fa/">
+    <meta property="og:title" content="تحلیل‌های خصوصی پیاده‌روی - تحلیل راه رفتن، WSS، معیارهای سلامت برای iOS">
+    <meta property="og:description" content="اپلیکیشن خصوصی iOS پیاده‌روی با تحلیل پیشرفته راه رفتن. ردیابی معیارهای گام، زون‌های پیاده‌روی، WSS به صورت محلی. بینش‌های سلامت مبتنی بر علم. آزمایش رایگان 7 روزه.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/fa/">
+    <meta name="twitter:title" content="تحلیل‌های خصوصی پیاده‌روی - تحلیل راه رفتن، WSS، معیارهای سلامت برای iOS">
+    <meta name="twitter:description" content="اپلیکیشن خصوصی iOS پیاده‌روی با تحلیل پیشرفته راه رفتن. ردیابی معیارهای گام، زون‌های پیاده‌روی، WSS به صورت محلی. بینش‌های سلامت مبتنی بر علم. آزمایش رایگان 7 روزه.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+      "url": "https://walk.analyticszone.app",
+      "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+      "description": "Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+      "author": "Albert Arnó",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "analyticszone@onmedic.org"
+      },
+      "sameAs": [
+        "https://twitter.com/runanalytics",
+        "https://apps.apple.com/app/runanalytics/id6737283749"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RunAnalytics",
+      "description": "Scientific running analytics app with Critical Run Speed (CRS), Training Stress Score (TSS), and CTL/ATL/TSB metrics. Privacy-first app processes all data locally on iPhone.",
+      "url": "https://walk.analyticszone.app",
+      "applicationCategory": ["HealthApplication", "FitnessApplication"],
+      "operatingSystem": "iOS",
+      "softwareVersion": "Latest",
+      "author": {
+        "@type": "Organization",
+        "name": "Albert Arnó"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Trial",
+          "description": "7-day free trial of RunAnalytics premium features",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "category": "Trial Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription",
+          "description": "Monthly access to all RunAnalytics premium features",
+          "price": "3.99",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1M",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Subscription",
+          "description": "Annual access to all RunAnalytics premium features at 18% discount",
+          "price": "39",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "category": "Subscription",
+          "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/app/walkanalytics/id0000000000",
+      "featureList": [
+        "Critical Run Speed (CRS) calculation",
+        "Training Stress Score (TSS) tracking",
+        "CTL (Chronic Training Load) metrics",
+        "ATL (Acute Training Load) metrics",
+        "TSB (Training Stress Balance) indicators",
+        "7 personalized training zones",
+        "Kilometer-by-kilometer analysis",
+        "Weekly, monthly, and yearly comparisons",
+        "Running efficiency tracking",
+        "Personal records (PR) detection",
+        "Apple Health app integration",
+        "Export in JSON, CSV, HTML, PDF formats",
+        "100% local data processing",
+        "Privacy-first architecture",
+        "Native SwiftUI interface"
+      ],
+      "screenshot": [
+        "https://walk.analyticszone.app/assets/images/screenshots/workouts-list.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/workout-detail.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/analytics.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/performance.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/training-zones.png",
+        "https://walk.analyticszone.app/assets/images/screenshots/export-options.png"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RunAnalytics",
+      "description": "Professional running analytics app with science-based metrics, personalized training zones, and privacy-first data processing",
+      "url": "https://walk.analyticszone.app",
+      "image": "https://walk.analyticszone.app/assets/images/logo.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "RunAnalytics"
+      },
+      "category": "Fitness & Health Software",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "0",
+        "highPrice": "39",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "7-Day Free Trial",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Plan",
+            "price": "3.99",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1M",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Annual Plan",
+            "price": "39",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1Y",
+            "url": "https://apps.apple.com/app/walkanalytics/id0000000000"
+          }
+        ]
+      }
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does RunAnalytics get my running data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RunAnalytics syncs with Apple Health to import running workouts recorded by any compatible device or app. This includes smart watches, fitness trackers, and manual entries. The app processes this data locally to calculate advanced metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the CRS test and how do I perform it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CRS (Critical Run Speed) is a scientific protocol using 2 maximum effort runs: 5K and 3K with 10-20 minutes rest between. The app calculates your aerobic threshold from these times and automatically adjusts all training zones. Repeat every 6-8 weeks to track progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data uploaded to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RunAnalytics processes all data locally on your iPhone. There are no external servers, no cloud accounts, no data transfers. You control exports: generate JSON, CSV, HTML, or PDF files and share them however you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use RunAnalytics for trail running?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. RunAnalytics works with any running workout in Apple Health, including trail running. The app adapts to available metrics whether you're on a track or trail, providing relevant analysis for each environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between monthly and annual plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both plans offer identical features: all metrics, unlimited zones, temporal comparisons, multiple exports, and free updates. The only difference is price: annual saves 18% (equivalent to €3.25/month vs €3.99/month)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my subscription anytime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Subscriptions are managed through the App Store, so you can cancel anytime from Settings → [Your Name] → Subscriptions. If you cancel, you'll maintain access until the end of your current billing period."
+          }
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://walk.analyticszone.app/fa/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Running Analytics",
+          "item": "https://walk.analyticszone.app/fa/#features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pricing",
+          "item": "https://walk.analyticszone.app/fa/#pricing"
+        }
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "تحلیل‌های خصوصی پیاده‌روی - تحلیل راه رفتن، WSS، معیارهای سلامت برای iOS",
+      "description": "اپلیکیشن خصوصی iOS پیاده‌روی با تحلیل پیشرفته راه رفتن. ردیابی معیارهای گام، زون‌های پیاده‌روی، WSS به صورت محلی. بینش‌های سلامت مبتنی بر علم. آزمایش رایگان 7 روزه.",
+      "url": "https://walk.analyticszone.app/fa/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS",
+        "url": "https://walk.analyticszone.app"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "RunAnalytics"
+      }
+    }
+    </script>
+
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">پرش به محتوا</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/fa/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/fa/"  aria-current="">
+                            خانه
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">یادگیری</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fa/getting-started/" 
+                                    aria-current="">
+                                    شروع کنید
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/walking-zones/" 
+                                    aria-current="">
+                                    زون‌های پیاده‌روی
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/gait-analysis/" 
+                                    aria-current="">
+                                    تحلیل راه رفتن
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/training-load/" 
+                                    aria-current="">
+                                    بار تمرینی
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/wss-calculator/" 
+                                    aria-current="">
+                                    ماشین‌حساب WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">علم</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fa/research/" 
+                                    aria-current="">
+                                    تحقیقات
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/formulas/" 
+                                    aria-current="">
+                                    فرمول‌ها
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/gait-efficiency/" 
+                                    aria-current="">
+                                    کارایی راه رفتن
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/stride-mechanics/" 
+                                    aria-current="">
+                                    مکانیک گام
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/walking-vs-running/" 
+                                    aria-current="">
+                                    پیاده‌روی در مقابل دویدن
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/benchmarks/" 
+                                    aria-current="">
+                                    معیارهای عملکرد
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/bibliography/" 
+                                    aria-current="">
+                                    کتاب‌شناسی
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">برای شما</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fa/for-health/" 
+                                    aria-current="">
+                                    برای سلامتی
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/for-fitness/" 
+                                    aria-current="">
+                                    برای آمادگی جسمانی
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/for-seniors/" 
+                                    aria-current="">
+                                    برای سالمندان
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/for-rehabilitation/" 
+                                    aria-current="">
+                                    برای توانبخشی
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">ابزارها</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/fa/cadence-calculator/" 
+                                    aria-current="">
+                                    ماشین‌حساب ضربان گام
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/gait-assessment/" 
+                                    aria-current="">
+                                    ارزیابی راه رفتن
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/fa/vo2max-calculator/" 
+                                    aria-current="">
+                                    ماشین‌حساب VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/fa/contact/"  aria-current="">
+                            تماس با ما
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="انتخاب زبان">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" selected>
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="تغییر وضعیت منو"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WalkAnalytics App Landing Page - Homepage -->
+
+<!-- Hero Section with App Introduction -->
+<section class="app-hero">
+  <div class="container">
+    <div class="app-hero-content">
+      <div class="app-hero-text">
+        <div class="app-hero-badge">
+          <span>🚶</span>
+          <span>تحلیل‌های پیاده‌روی مبتنی بر علم</span>
+        </div>
+        <h1>هوشمندانه‌تر راه بروید، سالم‌تر زندگی کنید</h1>
+        <p class="app-hero-subtitle">
+          اپلیکیشن iOS با اولویت حریم خصوصی، همراه با تحلیل راه رفتن مبتنی بر تحقیقات، مناطق تمرینی مبتنی بر کادنس و پیگیری جامع سلامت.
+          قدرت‌گرفته از مطالعات همتا-بررسی‌شده شامل CADENCE-Adults، تحقیقات Peak-30 و علم بیومکانیک.
+        </p>
+        <div class="app-hero-cta">
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+            دانلود از App Store
+          </a>
+          <a href="#science" class="btn btn-large btn-secondary">
+            کاوش در علم
+          </a>
+        </div>
+        <p class="mt-6 text-sm-muted">
+          ✓ آزمایش رایگان ۷ روزه &nbsp;&nbsp; ✓ بدون نیاز به حساب کاربری &nbsp;&nbsp; ✓ ۱۰۰٪ داده محلی
+        </p>
+      </div>
+      <div class="app-hero-mockup">
+        <div class="mockup-phone">
+          <img src="/assets/images/screenshots/workouts-list.png" alt="اپلیکیشن iOS WalkAnalytics نمایش تمرینات پیاده‌روی با معیارهای راه رفتن و داده‌های سلامت روی iPhone" width="400" height="auto" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scientific Foundation Section - NEW -->
+<section id="science" class="scientific-foundation">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">پشتوانه تحقیقاتی</div>
+      <h2 class="section-title">ساخته‌شده بر اساس شواهد علمی</h2>
+      <p class="section-subtitle">هر معیار و توصیه بر اساس تحقیقات همتا-بررسی‌شده است</p>
+    </div>
+    <div class="science-highlights">
+      <div class="science-card">
+        <div class="science-number">۷۸٬۵۰۰</div>
+        <h3>تحقیقات کادنس Peak-30</h3>
+        <p>بر اساس مطالعه UK Biobank که نشان می‌دهد ≥۱۰۰ spm به مدت ۳۰ دقیقه به‌طور مستقل ۴۰-۵۰٪ کاهش خطر مرگ‌ومیر را پیش‌بینی می‌کند (Del Pozo-Cruz و همکاران، JAMA 2022)</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">۱۰۰ spm</div>
+        <h3>آستانه شدت متوسط</h3>
+        <p>مطالعه CADENCE-Adults (Tudor-Locke و همکاران، ۲۰۱۹) ۱۰۰ قدم در دقیقه = ۳ METs با حساسیت ۸۶٪ و ویژگی ۸۹.۶٪ را تعیین کرد—بنیان مناطق کادنس ما</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">۲-۴×</div>
+        <h3>پیشگیری از آسیب ACWR</h3>
+        <p>نسبت بار کاری حاد به مزمن >۱.۵۰ خطر آسیب را ۲-۴ برابر افزایش می‌دهد (Gabbett، Br J Sports Med 2016)—ما این را به‌طور خودکار ردیابی می‌کنیم تا شما را ایمن نگه داریم</p>
+      </div>
+      <div class="science-card">
+        <div class="science-number">۱۱</div>
+        <h3>فرمول‌های معتبر</h3>
+        <p>از معادله کادنس→METs مور تا محاسبات هزینه حمل‌ونقل، <a href="/fa/formulas/">هر فرمول</a> شامل داده‌های اعتبارسنجی و تفسیر بالینی است</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/fa/bibliography/" class="btn btn-secondary">مشاهده ۵۰+ منبع علمی ←</a>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features Section -->
+<section id="features" class="app-features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">ویژگی‌ها</div>
+      <h2 class="section-title">معیارهای پیشرفته عملکرد پیاده‌روی</h2>
+      <p class="section-subtitle">تحلیل حرفه‌ای طراحی‌شده برای پیاده‌روان در هر سطح</p>
+    </div>
+    <div class="app-features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-zones"></use>
+          </svg>
+        </div>
+        <h3>مناطق تمرینی مبتنی بر کادنس</h3>
+        <p>تمرین با <a href="/fa/walking-zones/">۵ منطقه مبتنی بر تحقیق</a> (۶۰-۹۹ spm تا ۱۳۰+ spm) بر اساس مطالعه CADENCE-Adults. عملی‌تر از مناطق ضربان قلب—بدون نیاز به بند سینه. ردیابی روزانه کادنس Peak-30.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-chart"></use>
+          </svg>
+        </div>
+        <h3>تحلیل جامع راه رفتن</h3>
+        <p>ردیابی <a href="/fa/gait-analysis/">۷ معیار اساسی راه رفتن</a>: کادنس، طول گام (۴۰-۵۰٪ قد)، زمان تماس با زمین (۲۰۰-۳۰۰ms)، حمایت دوگانه (۲۰-۳۰٪)، عدم تقارن (فرمول GSI)، سرعت و نوسان عمودی (۴-۸cm).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-load"></use>
+          </svg>
+        </div>
+        <h3>مدیریت بار تمرینی</h3>
+        <p>پیشگیری از تمرین بیش‌ازحد با <a href="/fa/training-load/">امتیاز استرس پیاده‌روی (WSS)</a> و ردیابی ACWR. نظارت بر نسبت حاد:مزمن (نگه‌داشتن ۰.۸۰-۱.۳۰) و دریافت توصیه‌های بازیابی شخصی‌شده بر اساس بار شما.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-stride"></use>
+          </svg>
+        </div>
+        <h3>بیومکانیک و کارایی</h3>
+        <p>تحلیل عمیق <a href="/fa/stride-mechanics/">مکانیک گام</a> و ردیابی <a href="/fa/gait-efficiency/">اقتصاد پیاده‌روی</a>. بهینه‌سازی هزینه حمل‌ونقل (~۰.۴۸-۰.۵۵ kcal/kg/km در ۱.۳ m/s)، شناسایی انحرافات راه رفتن، بهبود کارایی ۱۰-۱۵٪.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-health"></use>
+          </svg>
+        </div>
+        <h3>یکپارچگی سلامت</h3>
+        <p>یکپارچگی یکپارچه با Apple Health. وارد کردن خودکار تمرینات پیاده‌روی و همگام‌سازی ضربان قلب، فاصله، قدم‌ها و معیارهای سلامت. سازگار با معیارهای تحرک Apple Watch (ثبات پیاده‌روی، درصد حمایت دوگانه، عدم تقارن).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg class="icon" aria-hidden="true">
+            <use href="/assets/images/icons-sprite.svg#icon-privacy"></use>
+          </svg>
+        </div>
+        <h3>حریم خصوصی کامل</h3>
+        <p>تمام داده‌های پیاده‌روی شما روی iPhone شما باقی می‌ماند. بدون همگام‌سازی ابری، بدون حساب‌ها، بدون ردیابی. معیارهای سلامت شما ۱۰۰٪ خصوصی و امن با پردازش محلی. سازگار با فلسفه GDPR و HIPAA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scientific Differentiators Section - NEW -->
+<section class="differentiators">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">چرا WalkAnalytics</div>
+      <h2 class="section-title">تنها اپلیکیشن پیاده‌روی ساخته‌شده بر اساس علم</h2>
+      <p class="section-subtitle">نه فقط شمارش قدم—تحلیل‌های جامع پشتیبانی‌شده توسط تحقیقات بیومکانیک</p>
+    </div>
+    <div class="differentiator-list">
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>کادنس به‌جای ضربان قلب</h3>
+          <p><strong>چرا مهم است:</strong> ضربان قلب با گرما، استرس، کافئین، بیماری تغییر می‌کند. کادنس قابل‌اعتماد، عملی و اثبات‌شده است. مطالعه CADENCE-Adults نشان داد ۱۰۰ spm = شدت متوسط با حساسیت ۸۶٪—دقیق‌تر از تخمین ضربان قلب.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>ردیابی کادنس Peak-30</h3>
+          <p><strong>معیار پیشرو:</strong> بهترین ۳۰ دقیقه متوالی پیاده‌روی شما در روز به‌طور مستقل سلامت قلبی‌عروقی و مرگ‌ومیر را پیش‌بینی می‌کند (۷۸٬۵۰۰ شرکت‌کننده UK Biobank). ما این را روزانه ردیابی می‌کنیم—هیچ اپلیکیشن پیاده‌روی دیگری این کار را نمی‌کند.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>پیشگیری از آسیب با ACWR</h3>
+          <p><strong>علم ورزشی تطبیق‌یافته برای پیاده‌روی:</strong> نسبت بار کاری حاد:مزمن خود را برای پیشگیری از آسیب‌های ناشی از استفاده بیش‌ازحد نظارت کنید. تحقیقات نشان می‌دهد ACWR >۱.۵۰ = ۲-۴× خطر آسیب. ما قبل از وقوع افزایش‌های خطرناک به شما هشدار می‌دهیم.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>بهینه‌سازی اقتصاد پیاده‌روی</h3>
+          <p><strong>کارایی انرژی:</strong> هزینه حمل‌ونقل و کارایی پیاده‌روی (WEI، WALK Score) را ردیابی کنید. اقتصاد را ۱۰-۱۵٪ از طریق تمرین Zone 2، بهینه‌سازی گام و کار قدرتی بهبود دهید—با راهنمایی خاص.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>تقارن راه رفتن و خطر سقوط</h3>
+          <p><strong>معیارهای درجه بالینی:</strong> شاخص تقارن راه رفتن (GSI) را برای تشخیص عدم تقارن محاسبه کنید. حمایت دوگانه >۳۵٪ و سرعت پیاده‌روی <۰.۸ m/s خطر سقوط بالا را نشان می‌دهد—حیاتی برای بزرگسالان مسن و توان‌بخشی.</p>
+        </div>
+      </div>
+      <div class="differentiator-item">
+        <div class="differentiator-icon">✓</div>
+        <div class="differentiator-content">
+          <h3>۵۰+ استناد همتا-بررسی‌شده</h3>
+          <p><strong>راهنمایی مبتنی بر شواهد:</strong> هر توصیه به <a href="/fa/bibliography/">تحقیقات منتشرشده</a> لینک دارد. از آستانه‌های کادنس Tudor-Locke تا علامت حیاتی سرعت راه رفتن Studenski—شفافیت در علم.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">چگونه کار می‌کند</div>
+      <h2 class="section-title">پیاده‌روی هوشمندانه‌تر را در ۳ مرحله شروع کنید</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">۱</div>
+        <h3>اتصال Apple Health</h3>
+        <p>وارد کردن خودکار تمرینات پیاده‌روی از Apple Health. WalkAnalytics داده‌های تاریخی شما را برای تعیین معیارهای پایه و محاسبه بار تمرینی مزمن شما (میانگین ۲۸ روزه) تجزیه‌وتحلیل می‌کند.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">۲</div>
+        <h3>دریافت بینش‌های مبتنی بر شواهد</h3>
+        <p>دریافت تحلیل جامع شامل کادنس Peak-30، معیارهای راه رفتن، اقتصاد پیاده‌روی (هزینه حمل‌ونقل) و ACWR. الگوهای خود را با آستانه‌های مبتنی بر تحقیق درک کنید.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">۳</div>
+        <h3>تمرین علمی</h3>
+        <p>توصیه‌های شخصی‌شده برای مناطق کادنس، پیشرفت بار تمرینی (۵-۱۰٪ هفتگی) و بازیابی را دنبال کنید. بهبودها در کارایی، سرعت و نتایج سلامت را در طول زمان ردیابی کنید.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who It's For Section -->
+<section class="target-audience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">برای چه کسانی</div>
+      <h2 class="section-title">کامل برای هر پیاده‌رو</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <h3>علاقه‌مندان سلامت</h3>
+        <p>دستیابی به راهنمای ۱۵۰ دقیقه در هفته فعالیت متوسط (۱۰۰+ spm). ردیابی کادنس Peak-30 برای سلامت قلبی‌عروقی. رعایت توصیه‌های WHO/CDC با دقت—نه فقط شمارش قدم.</p>
+      </div>
+      <div class="audience-card">
+        <h3>پیاده‌روان تناسب‌اندام</h3>
+        <p>تمرین با مناطق کادنس (Zone 2 در ۱۰۰-۱۱۰ spm برای پایه هوازی، فواصل در ۱۲۰-۱۳۰ spm). بهبود اقتصاد پیاده‌روی ۱۰-۱۵٪ از طریق تمرین سیستماتیک. ردیابی WSS برای بهینه‌سازی بار.</p>
+      </div>
+      <div class="audience-card">
+        <h3>پیاده‌روان مسابقه‌ای</h3>
+        <p>تسلط بر <a href="/fa/stride-mechanics/#race-walking">تکنیک پیاده‌روی مسابقه</a> (۱۳۰-۱۶۰ spm، پای مستقیم، چرخش لگن اغراق‌شده). ردیابی بیومکانیک، نظارت بر بار تمرینی، پیشگیری از تمرین بیش‌ازحد با ACWR.</p>
+      </div>
+      <div class="audience-card">
+        <h3>بزرگسالان مسن (۶۵+)</h3>
+        <p>نظارت بر <a href="/fa/gait-analysis/#gait-speed">سرعت راه رفتن به‌عنوان علامت حیاتی</a> (حفظ >۱.۰ m/s). ردیابی درصد حمایت دوگانه (<۳۵٪ = ثبات خوب)، عدم تقارن و شاخص‌های خطر سقوط. تشخیص زودهنگام کاهش تحرک.</p>
+      </div>
+      <div class="audience-card">
+        <h3>بیماران توان‌بخشی</h3>
+        <p>ردیابی عینی بهبودهای راه رفتن با فرمول GSI (عدم تقارن <۵٪ = خوب)، بازیابی طول گام و پیشرفت سرعت پیاده‌روی. مستندسازی نتایج برای ارائه‌دهندگان مراقبت‌های بهداشتی.</p>
+      </div>
+      <div class="audience-card">
+        <h3>کاهش وزن و سلامت</h3>
+        <p>بهینه‌سازی سوزاندن کالری با تمرین منطقه‌ای. محاسبه دقیق مصرف انرژی با معادله کادنس→METs مور. ایجاد عادات ورزشی پایدار با پیشرفت تدریجی بار.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Learning Resources Section - NEW -->
+<section class="learning-resources">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">یادگیری</div>
+      <h2 class="section-title">دانش علمی عمیق</h2>
+      <p class="section-subtitle">راهنماهای جامع توضیح‌دهنده علم پشت هر معیار</p>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="resource-category">مبانی</div>
+        <h3><a href="/fa/walking-zones/">مناطق تمرینی مبتنی بر کادنس</a></h3>
+        <p>تغییر کامل پارادایم از ضربان قلب به کادنس. ۵ منطقه (۶۰-۹۹ تا ۱۳۰+ spm)، تحقیقات CADENCE-Adults، مفهوم Peak-30 و پروتکل‌های IWT را بیاموزید.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">بیومکانیک</div>
+        <h3><a href="/fa/stride-mechanics/">مکانیک گام پیاده‌روی</a></h3>
+        <p>فازهای چرخه راه رفتن، تکنیک پیاده‌روی مسابقه (قوانین World Athletics)، تفاوت‌های پیاده‌روی در برابر دویدن. فرمول GSI برای عدم تقارن، نیروهای واکنش زمین.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">عملکرد</div>
+        <h3><a href="/fa/gait-efficiency/">اقتصاد پیاده‌روی و CoT</a></h3>
+        <p>بهینه‌سازی هزینه حمل‌ونقل، مدل آونگ معکوس (۶۵-۷۰٪ بازیابی انرژی)، عدد فرود، منحنی اقتصادی U-شکل، انتقال راه‌رفتن-دویدن در ۲.۲ m/s.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">تمرین</div>
+        <h3><a href="/fa/training-load/">مدیریت بار تمرینی</a></h3>
+        <p>کادنس Peak-30 (Del Pozo-Cruz 2022)، مفهوم بوت‌های تند، پیشگیری از آسیب ACWR، دوره‌بندی ۳:۱، توزیع شدت قطبی در برابر هرمی.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">معیارها</div>
+        <h3><a href="/fa/gait-analysis/">معیارهای تحلیل راه رفتن</a></h3>
+        <p>۷ معیار اساسی با آستانه‌های بالینی: کادنس (۱۰۰ spm = ۳ METs)، طول گام (۴۰-۵۰٪ قد)، حمایت دوگانه (>۳۵٪ = خطر سقوط)، عدم تقارن، سرعت.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-category">فرمول‌ها</div>
+        <h3><a href="/fa/formulas/">فرمول‌های علمی</a></h3>
+        <p>۱۱ معادله معتبر: کادنس→METs مور (R²=0.87)، VO₂ ACSM، مصرف انرژی، GSI، WALK Score، هزینه حمل‌ونقل، بار تمرینی، پیش‌بینی 6MWT.</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/fa/research/" class="btn btn-secondary">کاوش تمام مقالات تحقیقاتی ←</a>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">قیمت‌گذاری</div>
+      <h2 class="section-title">قیمت‌گذاری ساده و شفاف</h2>
+      <p class="section-subtitle">WalkAnalytics را به مدت ۷ روز رایگان امتحان کنید. بدون نیاز به کارت اعتباری.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="price-header">
+        <h3>WalkAnalytics Premium</h3>
+        <div class="price">
+          <span class="amount">$4.99</span>
+          <span class="period">/ماه</span>
+        </div>
+      </div>
+      <ul class="features-list">
+        <li>ردیابی کادنس Peak-30</li>
+        <li>مناطق تمرینی مبتنی بر کادنس</li>
+        <li>تحلیل پیشرفته راه رفتن (GSI، CoT، WEI)</li>
+        <li>امتیاز استرس پیاده‌روی (WSS)</li>
+        <li>پیشگیری از آسیب ACWR</li>
+        <li>۱۱ فرمول معتبر</li>
+        <li>حریم خصوصی کامل داده (پردازش محلی)</li>
+        <li>یکپارچگی Apple Health</li>
+        <li>بدون تبلیغات، برای همیشه</li>
+      </ul>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        شروع آزمایش رایگان
+      </a>
+      <p class="trial-note">آزمایش رایگان ۷ روزه • لغو در هر زمان • بدون نیاز به کارت اعتباری</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">سوالات متداول</div>
+      <h2 class="section-title">سوالات متداول</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>چه چیزی WalkAnalytics را از سایر اپلیکیشن‌های پیاده‌روی متمایز می‌کند؟</h3>
+        <p>ما تنها اپلیکیشن پیاده‌روی ساخته‌شده بر اساس تحقیقات همتا-بررسی‌شده هستیم. هر معیار—کادنس Peak-30، ACWR، هزینه حمل‌ونقل—از مطالعات منتشرشده می‌آید. ما ۵۰+ مقاله علمی را ذکر می‌کنیم و شواهد پشت هر توصیه را توضیح می‌دهیم. این شمارش قدم نیست؛ بیومکانیک و فیزیولوژی ورزش به‌کاررفته در پیاده‌روی است.</p>
+      </div>
+      <div class="faq-item">
+        <h3>کادنس Peak-30 چیست و چرا مهم است؟</h3>
+        <p>کادنس Peak-30 میانگین قدم در دقیقه شما در طول بهترین ۳۰ دقیقه متوالی پیاده‌روی هر روز است. یک مطالعه پیشرو روی ۷۸٬۵۰۰ نفر (Del Pozo-Cruz، JAMA 2022) نشان داد که به‌طور مستقل خطر مرگ‌ومیر را پیش‌بینی می‌کند—حتی پس از کنترل کل قدم‌های روزانه. ما این را به‌طور خودکار ردیابی می‌کنیم، کاری که هیچ اپلیکیشن دیگری انجام نمی‌دهد.</p>
+      </div>
+      <div class="faq-item">
+        <h3>ACWR چگونه از آسیب‌ها جلوگیری می‌کند؟</h3>
+        <p>نسبت بار کاری حاد:مزمن تمرین اخیر شما (۷ روز گذشته) را با میانگین بلندمدت شما (۲۸ روز) مقایسه می‌کند. تحقیقات نشان می‌دهد ACWR >۱.۵۰ خطر آسیب را ۲-۴ برابر افزایش می‌دهد. ما این را روزانه محاسبه می‌کنیم و قبل از افزایش‌های خطرناک به شما هشدار می‌دهیم و به شما کمک می‌کنیم با افزایش ۵-۱۰٪ هفتگی به‌طور ایمن پیشرفت کنید.</p>
+      </div>
+      <div class="faq-item">
+        <h3>چرا مناطق کادنس به‌جای مناطق ضربان قلب؟</h3>
+        <p>کادنس قابل‌اعتمادتر و عملی‌تر است. مطالعه CADENCE-Adults ثابت کرد ۱۰۰ spm = شدت متوسط (۳ METs) با حساسیت ۸۶٪ و ویژگی ۹۰٪. ضربان قلب با گرما، استرس، بیماری، کافئین تغییر می‌کند—کادنس این‌طور نیست. به‌علاوه، نیاز به بند سینه یا ساعت ندارید؛ فقط قدم‌ها را بشمارید.</p>
+      </div>
+      <div class="faq-item">
+        <h3>آیا WalkAnalytics می‌تواند در پیشگیری از سقوط کمک کند؟</h3>
+        <p>بله. ما شاخص‌های خطر سقوط بالینی را ردیابی می‌کنیم: سرعت راه رفتن <۰.۸ m/s، حمایت دوگانه >۳۵٪، عدم تقارن (GSI) >۱۰٪ و ثبات پیاده‌روی. اینها آستانه‌های مبتنی بر شواهد از تحقیقات سالمندی هستند. تشخیص زودهنگام امکان مداخله قبل از وقوع سقوط را فراهم می‌کند—حیاتی برای بزرگسالان ۶۵+.</p>
+      </div>
+      <div class="faq-item">
+        <h3>WalkAnalytics چگونه از حریم خصوصی من محافظت می‌کند؟</h3>
+        <p>تمام داده‌ها روی iPhone شما باقی می‌ماند—نقطه. بدون همگام‌سازی ابری، بدون حساب‌ها، بدون سرورهای دریافت‌کننده داده‌های سلامت شما. ما همه چیز را به‌صورت محلی با استفاده از الگوریتم‌های روی دستگاه پردازش می‌کنیم. معیارهای پیاده‌روی، مکان، ضربان قلب شما—کاملاً خصوصی. ما از فلسفه GDPR و HIPAA پیروی می‌کنیم حتی اگر قانوناً ملزم نیستیم (چون هرگز داده‌های شما را نمی‌بینیم).</p>
+      </div>
+      <div class="faq-item">
+        <h3>آیا به تجهیزات خاصی نیاز دارم؟</h3>
+        <p>خیر. WalkAnalytics با iPhone یا Apple Watch کار می‌کند. برای معیارهای اساسی (کادنس، فاصله، قدم‌ها)، فقط تلفن شما. برای داده‌های ضربان قلب و معیارهای دقیق‌تر، Apple Watch کمک می‌کند اما الزامی نیست. ما با Apple Health یکپارچه می‌شویم، بنابراین هر دستگاه سازگار کار می‌کند.</p>
+      </div>
+      <div class="faq-item">
+        <h3>آیا WalkAnalytics برای توان‌بخشی مناسب است؟</h3>
+        <p>قطعاً. ما توسط بیماران توان‌بخشی که بهبودی را به‌طور عینی ردیابی می‌کنند، استفاده می‌شویم. فرمول شاخص تقارن راه رفتن (GSI) تفاوت‌های چپ-راست را کمی می‌کند (<۳٪ طبیعی، >۱۰٪ بالینی مهم). بازیابی طول گام، بهبود سرعت پیاده‌روی و کاهش عدم تقارن را نظارت کنید. داده‌های عینی را با فیزیوتراپیست یا پزشک خود به اشتراک بگذارید.</p>
+      </div>
+      <div class="faq-item">
+        <h3>مبنای علمی ۱۱ فرمول چیست؟</h3>
+        <p>هر <a href="/fa/formulas/">فرمول</a> شامل داده‌های اعتبارسنجی و استناد تحقیقات اصلی است. مثال: معادله کادنس→METs مور (R²=0.87، دقت ±0.5 METs، ۷۶ بزرگسال) ۲۳-۳۵٪ دقیق‌تر از معادلات قدیمی‌تر ACSM است. ما علم را نشان می‌دهیم، نه فقط محاسبات جعبه سیاه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>آماده پیاده‌روی هوشمندانه‌تر هستید؟</h2>
+      <p>به پیاده‌روانی بپیوندید که سلامت را با تحلیل راه رفتن مبتنی بر تحقیق و علم تمرین بهبود می‌دهند</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        دانلود WalkAnalytics
+      </a>
+      <p class="cta-note">آزمایش رایگان ۷ روزه • iOS 16+ • سازگار با Apple Health • بدون نیاز به کارت اعتباری</p>
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">خانه</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. تمامی حقوق محفوظ است
+            </p>
+            <ul class="footer-links">
+                <li><a href="/fa/privacy/">حریم خصوصی</a></li>
+                <li><a href="/fa/terms/">شرایط استفاده</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>این وب‌سایت از کوکی‌ها برای بهبود تجربه شما استفاده می‌کند.</p>
+            <a href="/fa/privacy/" class="text-sm">بیشتر بدانید</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">رد</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">قبول</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

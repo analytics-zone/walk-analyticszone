@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Ganganalyseformler - Beregn WSS, VO₂, kadence &amp; gangmetrikker</title>
+    <meta name="description" content="Gangberegningsformler: WSS (Walking Stress Score), VO₂-estimation, kadenceberegning, energiforbrug. Videnskabeligt validerede ligninger til ganganalyse.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="WSS formel, VO₂max beregning, kadenceformel, ganganalyseformler, energiforbrugsberegning">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/da/formulas/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/da/formulas/">
+    <meta property="og:title" content="Ganganalyseformler - Beregn WSS, VO₂, kadence &amp; gangmetrikker">
+    <meta property="og:description" content="Gangberegningsformler: WSS (Walking Stress Score), VO₂-estimation, kadenceberegning, energiforbrug. Videnskabeligt validerede ligninger til ganganalyse.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/da/formulas/">
+    <meta name="twitter:title" content="Ganganalyseformler - Beregn WSS, VO₂, kadence &amp; gangmetrikker">
+    <meta name="twitter:description" content="Gangberegningsformler: WSS (Walking Stress Score), VO₂-estimation, kadenceberegning, energiforbrug. Videnskabeligt validerede ligninger til ganganalyse.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/formulas/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/formulas/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/formulas/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/formulas/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/formulas/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/formulas/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/formulas/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/formulas/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/formulas/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/formulas/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/formulas/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/formulas/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/formulas/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/formulas/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/formulas/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/formulas/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/formulas/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/formulas/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/formulas/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/formulas/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/formulas/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/formulas/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/formulas/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/formulas/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/formulas/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/formulas/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/formulas/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/formulas/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/formulas/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/formulas/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/formulas/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/formulas/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/formulas/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/formulas/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Spring til indhold</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/da/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/da/"  aria-current="">
+                            Hjem
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Lær</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/getting-started/" 
+                                    aria-current="">
+                                    Kom i gang
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/walking-zones/" 
+                                    aria-current="">
+                                    Gangzoner
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/gait-analysis/" 
+                                    aria-current="">
+                                    Ganganalyse
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/training-load/" 
+                                    aria-current="">
+                                    Træningsbelastning
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/wss-calculator/" 
+                                    aria-current="">
+                                    WSS-beregner
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Videnskab</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/research/" 
+                                    aria-current="">
+                                    Forskning
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/formulas/" class="active" 
+                                    aria-current="page">
+                                    Formler
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/gait-efficiency/" 
+                                    aria-current="">
+                                    Gangeffektivitet
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/stride-mechanics/" 
+                                    aria-current="">
+                                    Skridtmekanik
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/walking-vs-running/" 
+                                    aria-current="">
+                                    Gang vs løb
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/benchmarks/" 
+                                    aria-current="">
+                                    Præstationsreferencer
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/bibliography/" 
+                                    aria-current="">
+                                    Bibliografi
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Til dig</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/for-health/" 
+                                    aria-current="">
+                                    Til sundhed
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/for-fitness/" 
+                                    aria-current="">
+                                    Til fitness
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/for-seniors/" 
+                                    aria-current="">
+                                    Til seniorer
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/for-rehabilitation/" 
+                                    aria-current="">
+                                    Til genoptræning
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Værktøjer</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/da/cadence-calculator/" 
+                                    aria-current="">
+                                    Kadenceberegner
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/gait-assessment/" 
+                                    aria-current="">
+                                    Gangvurdering
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/da/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max-beregner
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/da/contact/"  aria-current="">
+                            Kontakt
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Vælg sprog">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" selected>
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Skift menu"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/da/">Hjem</a> / <a href="/da/#science">Videnskab</a> / Formler
+    </div>
+    <h1>Gangsmetrikker Formler & Ligninger</h1>
+    <p class="lead">Matematiske grundlag for gangsanalyse – videnskabeligt validerede ligninger for intensitet, energi og præstation</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>Denne side præsenterer videnskabeligt validerede formler, der bruges i gangsanalyse. Alle ligninger er citeret med forskningsreferencer og validerede nøjagtighedsintervaller.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Kadence til METs Konvertering</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore et al. (2021) Kadence-Baseret Metabolisk Ligning</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Kadence til METs</p>
+            <p class="formula-main"><strong>METs = 0.0219 × Kadence (skridt/min) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Nøjagtighed: ±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Hvorfor denne formel er vigtig:</strong> Denne ligning er <strong>23-35% mere nøjagtig</strong> end traditionelle ACSM hastighedsbaserede ligninger for gang. Den fungerer fordi kadence direkte afspejler bevægelsesfrekvens og energiforbrug, mens hastighed afhænger af variabel skridtlængde.</p>
+          </div>
+
+          <h4>Eksempler:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Gang ved 100 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>Moderat intensitetstærskel</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Gang ved 110 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">Solid moderat intensitet</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Gang ved 120 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">Moderat-høj intensitet</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Gang ved 130 spm:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>Høj intensitetstærskel</strong> (6 METs ved CADENCE-Adults direkte måling)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Bemærk:</strong> CADENCE-Adults undersøgelsen målte direkte at 130 spm = 6 METs under kontrollerede laboratorieforhold. Moore-ligningen er designet til området 80-130 spm og kan undervurdere ved meget høje kadencer.</p>
+          </div>
+
+          <h4>Valideringsdata:</h4>
+          <ul>
+            <li><strong>Stikprøve:</strong> 76 voksne i alderen 21-40</li>
+            <li><strong>Metode:</strong> Indirekte kalorimetri (guldstandard)</li>
+            <li><strong>R² værdi:</strong> 0.87 (fremragende korrelation)</li>
+            <li><strong>Gennemsnitlig absolut fejl:</strong> 0.47 METs</li>
+            <li><strong>Anvendeligt område:</strong> 80-130 skridt/min</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM VO₂ Ligninger for Gang</h2>
+
+        <div class="formula-section">
+          <h3>ACSM Metaboliske Beregninger</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Gang på Plant Underlag (0% hældning)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × Hastighed (m/min) + 3.5</strong></p>
+            <p class="formula-note">Hastighed i meter per minut (gang km/t med 16.67 eller mph med 26.82)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Gang med Hældning (stigning/fald)</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(Hastighed) + 1.8(Hastighed)(Hældning) + 3.5</strong></p>
+            <p class="formula-note">Hældning udtrykt som decimal (f.eks. 5% = 0.05)</p>
+          </div>
+
+          <h4>Eksempler:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Gang 5 km/t (83.3 m/min) på plant underlag:</strong></p>
+              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
+              <p class="example-conversion">Konverter til METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Gang 5 km/t på 5% stigning:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
+              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">Stigning øger intensiteten med ~64%!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>Hastighedskonverteringer:</h4>
+            <ul>
+              <li><strong>km/t til m/min:</strong> gang med 16.67</li>
+              <li><strong>mph til m/min:</strong> gang med 26.82</li>
+              <li><strong>m/s til m/min:</strong> gang med 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Energiforbrug & Kalorieforbrænding</h2>
+
+        <div class="formula-section">
+          <h3>Nøjagtig Kalorieberegning</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kalorier per Minut</p>
+            <p class="formula-main"><strong>Kal/min = (METs × 3.5 × Kropsvægt kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Totale Kalorier for Session</p>
+            <p class="formula-main"><strong>Totale Kalorier = Kal/min × Varighed (minutter)</strong></p>
+          </div>
+
+          <h4>Eksempler:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kg person går 100 spm (3 METs) i 45 minutter:</strong></p>
+              <p class="example-calc">Kal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 kal/min</strong></p>
+              <p class="example-calc">Total = 3.675 × 45 = <strong>165.4 kalorier</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kg person går 120 spm (5 METs) i 30 minutter:</strong></p>
+              <p class="example-calc">Kal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 kal/min</strong></p>
+              <p class="example-calc">Total = 7.44 × 30 = <strong>223.2 kalorier</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Hvorfor Denne Formel?</h4>
+            <p>Denne ligning kommer fra definitionen af MET (Metabolisk Ækvivalent af Opgave):</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min (hvilestofskifte)</li>
+              <li>1 liter O₂ forbrugt ≈ 5 kcal forbrændt</li>
+              <li>Konvertering: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>Netto Kalorieforbrænding (Kun Træning)</h3>
+          <div class="formula-box">
+            <p class="formula-title">Netto Kalorier (ekskl. hvile)</p>
+            <p class="formula-main"><strong>Netto Kal/min = [(METs - 1) × 3.5 × Kropsvægt] / 200</strong></p>
+            <p class="formula-note">Trækker 1 MET fra for at ekskludere kalorier du alligevel ville forbrænde i hvile</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 METs, 45 min – Netto kalorier:</strong></p>
+            <p class="example-calc">Netto = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 netto kalorier</strong></p>
+            <p class="example-interpretation">vs 165.4 totale kalorier (55 kalorier ville være forbrændt i hvile)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Gangsymmetriindeks (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Kvantificering af Venstre-Højre Asymmetri</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Gangsymmetriindeks</p>
+            <p class="formula-main"><strong>GSI (%) = |Højre - Venstre| / [0.5 × (Højre + Venstre)] × 100</strong></p>
+            <p class="formula-note">Kan anvendes på skridtlængde, skridttid eller kontakttid</p>
+          </div>
+
+          <h4>Fortolkning:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> Normal, symmetrisk gang</li>
+            <li><strong>3-5%:</strong> Let asymmetri</li>
+            <li><strong>5-10%:</strong> Moderat asymmetri, observer</li>
+            <li><strong>&gt;10%:</strong> Klinisk signifikant, vurder professionelt</li>
+          </ul>
+
+          <h4>Eksempler:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Skridttider: Højre = 520 ms, Venstre = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asymmetri</strong></p>
+              <p class="example-interpretation">Moderat asymmetri – overvej styrketræning af svagere side</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Skridtlængder: Højre = 1.42 m, Venstre = 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
+              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% asymmetri</strong></p>
+              <p class="example-interpretation">Normal, sund interval ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Klinisk Bemærkning:</strong> Apple HealthKits Walking Asymmetry bruger en lidt anderledes beregning (simpel procentforskel mellem skridttider), men fortolkningstærsklerne er lignende.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK Score (WalkAnalytics Proprietær Metrik)</h2>
+
+        <div class="formula-section">
+          <h3>Gangseffektivitetsscore</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK Score</p>
+            <p class="formula-main"><strong>WALK Score = Tid (sekunder) + Skridt per 100 meter</strong></p>
+            <p class="formula-note">Lavere score = bedre effektivitet (ligesom SWOLF for svømning)</p>
+          </div>
+
+          <h4>Hvordan Det Fungerer:</h4>
+          <p>WALK Score kombinerer tid og skridtantal for at kvantificere gangseffektivitet. En person der dækker 100m på 75 sekunder med 140 skridt har en WALK Score på 215. Forbedring af enten hastighed ELLER skrideffekvitet sænker scoren.</p>
+
+          <h4>Eksempler:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100m på 80 sekunder, 120 skridt:</strong></p>
+              <p class="example-calc">WALK Score = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m på 70 sekunder, 110 skridt:</strong></p>
+              <p class="example-calc">WALK Score = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">Bedre effektivitet gennem forbedret hastighed + skridt</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m på 60 sekunder, 130 skridt (kapgang):</strong></p>
+              <p class="example-calc">WALK Score = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">Hurtig men kortere skridt</p>
+            </div>
+          </div>
+
+          <h4>Typiske Områder:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> Langsom/ineffektiv gang, mulige mobilitetsproblemer</li>
+            <li><strong>200-250:</strong> Afslappet gangart, gennemsnitlig effektivitet</li>
+            <li><strong>170-200:</strong> Fitnessganger, god effektivitet</li>
+            <li><strong>150-170:</strong> Avanceret gangart, fremragende effektivitet</li>
+            <li><strong>&lt;150:</strong> Elite/kapgangsniveau</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Træning med WALK Score:</strong> Spor din score på samme 100m rute ugentligt. Forbedringer viser forbedret neuromuskulær koordination, styrke og gangsøkonomi.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. Basale Gangsmetrikker</h2>
+
+        <div class="formula-section">
+          <h3>Grundlæggende Beregninger</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Gangshastighed</p>
+            <p class="formula-main"><strong>Hastighed (m/s) = Distance (m) / Tid (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Kadence fra Totale Skridt</p>
+            <p class="formula-main"><strong>Kadence (spm) = Totale Skridt / Tid (minutter)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Skridtlængde</p>
+            <p class="formula-main"><strong>Skridtlængde (m) = Distance (m) / (Skridt / 2)</strong></p>
+            <p class="formula-note">Divider skridt med 2 fordi ét skridt = to trin</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Trinlængde</p>
+            <p class="formula-main"><strong>Trinlængde (m) = Distance (m) / Skridt</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Hastighed fra Kadence & Skridtlængde</p>
+            <p class="formula-main"><strong>Hastighed = Skridtlængde × (Kadence / 2) / 60</strong></p>
+            <p class="formula-note">Eller: Hastighed (m/s) = Trinlængde × Kadence / 60</p>
+          </div>
+
+          <h4>Eksempel Workflow:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Gå 1000m på 12 minutter med 1320 skridt:</strong></p>
+            <p><strong>Hastighed:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
+            <p><strong>Kadence:</strong> 1320 skridt / 12 min = <strong>110 spm</strong></p>
+            <p><strong>Skridtlængde:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
+            <p><strong>Trinlængde:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. Hjertefrekvenszoneberegninger</h2>
+
+        <div class="formula-section">
+          <h3>Traditionel HR Zone Metode</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Maksimal Hjertefrekvens Estimering</p>
+            <p class="formula-main"><strong>Max HF = 220 - Alder</strong></p>
+            <p class="formula-note">Simpel men ±10-15 slag individuel variation</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Alternativ: Tanaka Formel (mere nøjagtig)</p>
+            <p class="formula-main"><strong>Max HF = 208 - (0.7 × Alder)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Zoneområde Beregning</p>
+            <p class="formula-main"><strong>Zone = Max HF × (Nedre%, Øvre%)</strong></p>
+          </div>
+
+          <h4>Eksempel: 40-årig</h4>
+          <div class="calc-example">
+            <p><strong>Traditionel:</strong> Max HF = 220 - 40 = <strong>180 slag/min</strong></p>
+            <p><strong>Tanaka:</strong> Max HF = 208 - (0.7 × 40) = 208 - 28 = <strong>180 slag/min</strong></p>
+            <p><strong>Zone 2 (60-70%):</strong> 180 × 0.60 = 108 slag/min til 180 × 0.70 = 126 slag/min</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Bemærk:</strong> Selvom HF zoner er nyttige, er <strong>kadence-baserede zoner mere nøjagtige og praktiske for gang</strong> (se Walking Zones guide).</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. Transportomkostning & Gangsøkonomi</h2>
+
+        <div class="formula-section">
+          <h3>Energiomkostning ved Gang</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Transportomkostning (C)</p>
+            <p class="formula-main"><strong>C = Energi Forbrugt / (Kropsmasse × Distance)</strong></p>
+            <p class="formula-note">Enheder: J/kg/m eller mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U-Formet Kurve:</strong> Gangsøkonomi følger en U-formet kurve. Der er en optimal hastighed (typisk 1.2-1.4 m/s eller 4.3-5.0 km/t) hvor transportomkostningen er minimeret. At gå langsommere ELLER hurtigere end dette øger energiomkostningen per tilbagelagt distance.</p>
+          </div>
+
+          <h4>Faktorer der Påvirker Transportomkostning:</h4>
+          <ul>
+            <li><strong>Hastighed:</strong> U-formet forhold (optimal omkring 1.3 m/s)</li>
+            <li><strong>Gradient:</strong> Opad bakke øger omkostningen signifikant; nedover øger excentrisk omkostning</li>
+            <li><strong>Kropsmasse:</strong> Tungere individer har højere absolut men lignende relativ omkostning</li>
+            <li><strong>Skridtmekanik:</strong> Optimal skridtlængde minimerer omkostning</li>
+            <li><strong>Terræn:</strong> Ujævne overflader øger omkostning vs glat asfalt</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">Hældningsjusteret Omkostning</p>
+            <p class="formula-main"><strong>Omkostningsfaktor = 1 + (Hældning × 10)</strong></p>
+            <p class="formula-note">Grov tilnærmelse: +10% omkostning per 1% hældning</p>
+          </div>
+
+          <h4>Eksempel:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Gang på 5% stigning:</strong></p>
+            <p class="example-calc">Omkostningsfaktor = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
+            <p class="example-interpretation">50% stigning i energiomkostning sammenlignet med plant underlag</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. Træningsbelastning & Stressscore</h2>
+
+        <div class="formula-section">
+          <h3>Walking Stress Score (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Zone-Baseret WSS</p>
+            <p class="formula-main"><strong>WSS = Σ (Minutter i Zone × Zonefaktor)</strong></p>
+            <p>Zone 1: ×1.0 | Zone 2: ×2.0 | Zone 3: ×3.0 | Zone 4: ×4.0 | Zone 5: ×5.0</p>
+          </div>
+
+          <h4>Eksempel: 60-minutters gang</h4>
+          <div class="calc-example">
+            <p>10 min Zone 1 × 1 = 10 point</p>
+            <p>40 min Zone 2 × 2 = 80 point</p>
+            <p>10 min Zone 3 × 3 = 30 point</p>
+            <p><strong>Total WSS = 120</strong></p>
+          </div>
+
+          <h3>Ugentlig Træningsbelastning</h3>
+          <div class="formula-box">
+            <p class="formula-title">Ugentlig Belastning</p>
+            <p class="formula-main"><strong>Ugentlig Belastning = Σ Daglig WSS (7 dage)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Progressiv Overbelastning</p>
+            <p class="formula-main"><strong>Næste Uge = Nuværende Uge × 1.05-1.10</strong></p>
+            <p class="formula-note">Øg 5-10% per uge maksimum</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Restitutionsuge</p>
+            <p class="formula-main"><strong>Restitutionsuge = Nuværende × 0.50-0.70</strong></p>
+            <p class="formula-note">Hver 3-4 uge, reducer til 50-70%</p>
+          </div>
+
+          <h4>Typiske Ugentlige Belastninger:</h4>
+          <ul>
+            <li><strong>Begynder sundhedsgænger:</strong> 200-400 WSS/uge</li>
+            <li><strong>Regelmæssig fitnessgænger:</strong> 400-700 WSS/uge</li>
+            <li><strong>Seriøs fitnessgænger:</strong> 700-1000 WSS/uge</li>
+            <li><strong>Konkurrencedygtig kapgænger:</strong> 1000-1500+ WSS/uge</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. Prædiktive Ligninger</h2>
+
+        <div class="formula-section">
+          <h3>6-Minutters Gangstest (6MWT) Distanceprognose</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Forventet 6MWT Distance (Enright & Sherrill)</p>
+            <p><strong>Mænd:</strong> (7.57 × Højde cm) - (5.02 × Alder) - (1.76 × Vægt kg) - 309</p>
+            <p><strong>Kvinder:</strong> (2.11 × Højde cm) - (5.78 × Alder) - (2.29 × Vægt kg) + 667</p>
+            <p class="formula-note">Forudsiger distance i meter for raske voksne</p>
+          </div>
+
+          <h4>Eksempel: 40-årig mand, 175 cm, 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 meter</strong></p>
+            <p class="example-interpretation">God funktionel kapacitet for alderen</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Klinisk Anvendelse:</strong> 6MWT bruges til at vurdere funktionel træningskapacitet hos kardiopulmonale patienter, før/efter-kirurgi evaluering og generel fitness hos ældre voksne.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. Enhedskonverteringer</h2>
+
+        <div class="formula-section">
+          <h3>Almindelige Gangsmetrik Konverteringer</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fra</th>
+                  <th>Til</th>
+                  <th>Formel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/t</td>
+                  <td>m/s</td>
+                  <td>km/t ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/t</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/t</td>
+                  <td>m/min</td>
+                  <td>km/t × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Hurtig Reference:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/t = 2.24 mph (typisk rask voksen gangshastighed)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/t = 3.1 mph (rask gang)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (hvilestofskifte)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (moderat intensitetstærskel)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (høj intensitetstærskel)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">Relaterede Ressourcer</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Anvend Formler: WSS Beregner</h3>
+            <p>Brug vores interaktive beregner til at udregne din Walking Stress Score.</p>
+            <a href="/da/wss-calculator/" class="btn btn-secondary">Beregn WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Forståelse af Gangszoner</h3>
+            <p>Lær hvordan du anvender kadence-baserede intensitetszoner i træning.</p>
+            <a href="/da/walking-zones/" class="btn btn-secondary">Lær Zoner →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Videnskabelig Forskning</h3>
+            <p>Gennemgå de undersøgelser der validerede disse formler.</p>
+            <a href="/da/research/" class="btn btn-secondary">Se Forskning →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Komplet Bibliografi</h3>
+            <p>Få adgang til fulde citater for alle refererede ligninger.</p>
+            <a href="/da/bibliography/" class="btn btn-secondary">Se Bibliografi →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Formelindeks</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Kadence → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂ Ligninger</a></li>
+            <li><a href="#energy-expenditure">3. Energi & Kalorier</a></li>
+            <li><a href="#gait-symmetry">4. Gangsymmetriindeks</a></li>
+            <li><a href="#walk-score">5. WALK Score</a></li>
+            <li><a href="#basic-metrics">6. Basale Gangsmetrikker</a></li>
+            <li><a href="#heart-rate">7. Hjertefrekvens Zoner</a></li>
+            <li><a href="#cost-transport">8. Transportomkostning</a></li>
+            <li><a href="#training-load">9. Træningsbelastning</a></li>
+            <li><a href="#predictions">10. Prædiktive Ligninger</a></li>
+            <li><a href="#conversions">11. Enhedskonverteringer</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Vigtigst</h3>
+          <p><strong>Kadence til METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">Denne enkelt ligning muliggør kadence-baseret intensitetstræning uden hjertefrekvensmålere.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Anvend Disse Formler</h3>
+          <p>WalkAnalytics bruger disse videnskabeligt validerede ligninger til at analysere dine gåture.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Download App</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Formelnøjagtighed</h4>
+          <p>Alle ligninger på denne side kommer fra peer-reviewed forskning. Se <a href="/da/bibliography/">Bibliografi</a> for fulde citater.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Hjem</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Alle rettigheder forbeholdes
+            </p>
+            <ul class="footer-links">
+                <li><a href="/da/privacy/">Privatliv</a></li>
+                <li><a href="/da/terms/">Vilkår</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Dette websted bruger cookies for at forbedre din oplevelse.</p>
+            <a href="/da/privacy/" class="text-sm">Læs mere</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Afvis</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Acceptér</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>

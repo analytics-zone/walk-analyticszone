@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Υπολογιστής Walking Stress Score (WSS) - Υπολογίστε την Ένταση Προπόνησης Βάδισης</title>
+    <meta name="description" content="Δωρεάν υπολογιστής WSS για ποσοτικοποίηση της έντασης προπόνησης βάδισης. Προσδιορίστε τον φόρτο εκπαίδευσης βάσει ζωνών καρδιακού ρυθμού. Παραδείγματα προπόνησης + εβδομαδιαίες οδηγίες.">
+    <meta name="author" content="Albert Arnó">
+
+    
+    
+    <meta name="keywords" content="υπολογιστής WSS, Walking Stress Score, ένταση προπόνησης βάδισης, φόρτος εκπαίδευσης βάδισης, υπολογιστής καρδιακού ρυθμού">
+    
+
+    
+    <link rel="canonical" href="https://walk.analyticszone.app/el/wss-calculator/">
+
+    
+    
+    <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+    <meta property="article:modified_time" content="2025-11-17T14:30:00Z">
+    <meta property="article:author" content="Albert Arnó">
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://walk.analyticszone.app/el/wss-calculator/">
+    <meta property="og:title" content="Υπολογιστής Walking Stress Score (WSS) - Υπολογίστε την Ένταση Προπόνησης Βάδισης">
+    <meta property="og:description" content="Δωρεάν υπολογιστής WSS για ποσοτικοποίηση της έντασης προπόνησης βάδισης. Προσδιορίστε τον φόρτο εκπαίδευσης βάσει ζωνών καρδιακού ρυθμού. Παραδείγματα προπόνησης + εβδομαδιαίες οδηγίες.">
+    
+    <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://walk.analyticszone.app/el/wss-calculator/">
+    <meta name="twitter:title" content="Υπολογιστής Walking Stress Score (WSS) - Υπολογίστε την Ένταση Προπόνησης Βάδισης">
+    <meta name="twitter:description" content="Δωρεάν υπολογιστής WSS για ποσοτικοποίηση της έντασης προπόνησης βάδισης. Προσδιορίστε τον φόρτο εκπαίδευσης βάσει ζωνών καρδιακού ρυθμού. Παραδείγματα προπόνησης + εβδομαδιαίες οδηγίες.">
+    
+    <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+    
+
+    
+    
+    <link rel="alternate" hreflang="af" href="https://walk.analyticszone.app/af/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ar" href="https://walk.analyticszone.app/ar/wss-calculator/">
+    
+    <link rel="alternate" hreflang="bn" href="https://walk.analyticszone.app/bn/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ca" href="https://walk.analyticszone.app/ca/wss-calculator/">
+    
+    <link rel="alternate" hreflang="da" href="https://walk.analyticszone.app/da/wss-calculator/">
+    
+    <link rel="alternate" hreflang="de" href="https://walk.analyticszone.app/de/wss-calculator/">
+    
+    <link rel="alternate" hreflang="el" href="https://walk.analyticszone.app/el/wss-calculator/">
+    
+    <link rel="alternate" hreflang="en" href="https://walk.analyticszone.app/en/wss-calculator/">
+    
+    <link rel="alternate" hreflang="es" href="https://walk.analyticszone.app/es/wss-calculator/">
+    
+    <link rel="alternate" hreflang="fa" href="https://walk.analyticszone.app/fa/wss-calculator/">
+    
+    <link rel="alternate" hreflang="fi" href="https://walk.analyticszone.app/fi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="fr" href="https://walk.analyticszone.app/fr/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ha" href="https://walk.analyticszone.app/ha/wss-calculator/">
+    
+    <link rel="alternate" hreflang="it" href="https://walk.analyticszone.app/it/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ja" href="https://walk.analyticszone.app/ja/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ko" href="https://walk.analyticszone.app/ko/wss-calculator/">
+    
+    <link rel="alternate" hreflang="nl" href="https://walk.analyticszone.app/nl/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ms" href="https://walk.analyticszone.app/ms/wss-calculator/">
+    
+    <link rel="alternate" hreflang="no" href="https://walk.analyticszone.app/no/wss-calculator/">
+    
+    <link rel="alternate" hreflang="hi" href="https://walk.analyticszone.app/hi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="id" href="https://walk.analyticszone.app/id/wss-calculator/">
+    
+    <link rel="alternate" hreflang="pl" href="https://walk.analyticszone.app/pl/wss-calculator/">
+    
+    <link rel="alternate" hreflang="pt" href="https://walk.analyticszone.app/pt/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ru" href="https://walk.analyticszone.app/ru/wss-calculator/">
+    
+    <link rel="alternate" hreflang="sv" href="https://walk.analyticszone.app/sv/wss-calculator/">
+    
+    <link rel="alternate" hreflang="sw" href="https://walk.analyticszone.app/sw/wss-calculator/">
+    
+    <link rel="alternate" hreflang="th" href="https://walk.analyticszone.app/th/wss-calculator/">
+    
+    <link rel="alternate" hreflang="tl" href="https://walk.analyticszone.app/tl/wss-calculator/">
+    
+    <link rel="alternate" hreflang="tr" href="https://walk.analyticszone.app/tr/wss-calculator/">
+    
+    <link rel="alternate" hreflang="ur" href="https://walk.analyticszone.app/ur/wss-calculator/">
+    
+    <link rel="alternate" hreflang="vi" href="https://walk.analyticszone.app/vi/wss-calculator/">
+    
+    <link rel="alternate" hreflang="yo" href="https://walk.analyticszone.app/yo/wss-calculator/">
+    
+    <link rel="alternate" hreflang="zh" href="https://walk.analyticszone.app/zh/wss-calculator/">
+    
+    <link rel="alternate" hreflang="x-default" href="https://walk.analyticszone.app/en/wss-calculator/">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066CC">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    
+    
+
+    
+    
+
+    
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Μετάβαση στο περιεχόμενο</a>
+
+    
+    <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/el/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.webp" type="image/webp"
+                        media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="40" height="40">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/el/"  aria-current="">
+                            Αρχική
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Μάθετε</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/getting-started/" 
+                                    aria-current="">
+                                    Ξεκινώντας
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/walking-zones/" 
+                                    aria-current="">
+                                    Ζώνες Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-analysis/" 
+                                    aria-current="">
+                                    Ανάλυση Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/training-load/" 
+                                    aria-current="">
+                                    Φόρτος Προπόνησης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/wss-calculator/" class="active" 
+                                    aria-current="page">
+                                    Υπολογιστής WSS
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Επιστήμη</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/research/" 
+                                    aria-current="">
+                                    Έρευνα
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/formulas/" 
+                                    aria-current="">
+                                    Τύποι
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-efficiency/" 
+                                    aria-current="">
+                                    Αποδοτικότητα Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/stride-mechanics/" 
+                                    aria-current="">
+                                    Μηχανική Βήματος
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/walking-vs-running/" 
+                                    aria-current="">
+                                    Βάδιση vs Τρέξιμο
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/benchmarks/" 
+                                    aria-current="">
+                                    Δείκτες Απόδοσης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/bibliography/" 
+                                    aria-current="">
+                                    Βιβλιογραφία
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Για Εσάς</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/for-health/" 
+                                    aria-current="">
+                                    Για την Υγεία
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-fitness/" 
+                                    aria-current="">
+                                    Για τη Φυσική Κατάσταση
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-seniors/" 
+                                    aria-current="">
+                                    Για Ηλικιωμένους
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/for-rehabilitation/" 
+                                    aria-current="">
+                                    Για Αποκατάσταση
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">Εργαλεία</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/el/cadence-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής Ρυθμού
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/gait-assessment/" 
+                                    aria-current="">
+                                    Αξιολόγηση Βάδισης
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/el/vo2max-calculator/" 
+                                    aria-current="">
+                                    Υπολογιστής VO₂max
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/el/contact/"  aria-current="">
+                            Επικοινωνία
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Επιλογή γλώσσας">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" selected>
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Εναλλαγή μενού"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <!-- WSS Calculator -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/el/">Αρχική</a> / <a href="/el/#learn">Μάθετε</a> / Υπολογιστής WSS
+    </div>
+    <h1>Υπολογιστής Βαθμού Καταπόνησης Βάδισης</h1>
+    <p class="lead">Δωρεάν υπολογιστής για την ποσοτικοποίηση της έντασης της προπόνησης βάδισης χρησιμοποιώντας ζώνες καρδιακού ρυθμού</p>
+  </div>
+</section>
+
+<section class="calculator-section">
+  <div class="container">
+    <div class="calculator-intro">
+      <h2>Υπολογίστε το WSS σας</h2>
+      <p>Εισάγετε τον χρόνο που περάσατε σε κάθε ζώνη καρδιακού ρυθμού κατά τη διάρκεια του περιπάτου σας για να υπολογίσετε τον Βαθμό Καταπόνησης Βάδισης (WSS). Αυτός ο βαθμός σας βοηθά να κατανοήσετε την ένταση της προπόνησης και να διαχειριστείτε το φορτίο προπόνησης.</p>
+    </div>
+
+    <div class="calculator-tool">
+      <div class="calculator-inputs">
+        <h3>Χρόνος σε Κάθε Ζώνη (λεπτά)</h3>
+
+        <div class="input-group">
+          <label for="zone1">Ζώνη 1 (Αποκατάσταση) - 50-60% Μέγιστος ΚΡ</label>
+          <input type="number" id="zone1" min="0" value="0" />
+          <span class="multiplier">× 1 πόντος/λεπτό</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone2">Ζώνη 2 (Καύση Λίπους) - 60-70% Μέγιστος ΚΡ</label>
+          <input type="number" id="zone2" min="0" value="0" />
+          <span class="multiplier">× 2 πόντοι/λεπτό</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone3">Ζώνη 3 (Αερόβια) - 70-80% Μέγιστος ΚΡ</label>
+          <input type="number" id="zone3" min="0" value="0" />
+          <span class="multiplier">× 3 πόντοι/λεπτό</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone4">Ζώνη 4 (Κατώφλι) - 80-90% Μέγιστος ΚΡ</label>
+          <input type="number" id="zone4" min="0" value="0" />
+          <span class="multiplier">× 4 πόντοι/λεπτό</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone5">Ζώνη 5 (Κορυφή) - 90-100% Μέγιστος ΚΡ</label>
+          <input type="number" id="zone5" min="0" value="0" />
+          <span class="multiplier">× 5 πόντοι/λεπτό</span>
+        </div>
+
+        <button id="calculateBtn" class="btn btn-accent">Υπολογισμός WSS</button>
+      </div>
+
+      <div class="calculator-results">
+        <h3>Τα Αποτελέσματά σας</h3>
+        <div id="results" class="results-box">
+          <div class="result-item">
+            <span class="result-label">Συνολική Διάρκεια:</span>
+            <span class="result-value" id="totalTime">0 λεπτά</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">Βαθμός Καταπόνησης Βάδισης:</span>
+            <span class="result-value" id="wssScore">0</span>
+          </div>
+          <div class="result-interpretation">
+            <h4>Ερμηνεία:</h4>
+            <p id="interpretation">Εισάγετε χρόνους ζωνών για να υπολογίσετε το WSS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <h2>Κατανοώντας το WSS</h2>
+
+    <h3>Τι Σημαίνει το WSS μου;</h3>
+    <ul>
+      <li><strong>0-40:</strong> Ελαφρύς περίπατος αποκατάστασης - ελάχιστη καταπόνηση προπόνησης</li>
+      <li><strong>40-80:</strong> Μέτρια αερόβια προπόνηση - καλή για οικοδόμηση βάσης</li>
+      <li><strong>80-150:</strong> Σταθερός περίπατος αντοχής - σημαντικό προπονητικό όφελος</li>
+      <li><strong>150-250:</strong> Σκληρή προπόνηση - υψηλή καταπόνηση προπόνησης, απαιτεί αποκατάσταση</li>
+      <li><strong>250+:</strong> Πολύ απαιτητική - προσπάθεια αγώνα ή πολύ μεγάλος περίπατος</li>
+    </ul>
+
+    <h3>Εβδομαδιαίες Οδηγίες WSS</h3>
+    <ul>
+      <li><strong>Αρχάριος:</strong> 150-300 συνολικά την εβδομάδα</li>
+      <li><strong>Μεσαίο Επίπεδο:</strong> 300-500 συνολικά την εβδομάδα</li>
+      <li><strong>Προχωρημένος:</strong> 500-800+ συνολικά την εβδομάδα</li>
+    </ul>
+
+    <h3>Πώς να Χρησιμοποιήσετε το WSS</h3>
+    <ol>
+      <li><strong>Καταγράφετε καθημερινά:</strong> Υπολογίζετε το WSS για κάθε περίπατο</li>
+      <li><strong>Αθροίζετε εβδομαδιαία:</strong> Προσθέτετε το WSS 7 ημερών</li>
+      <li><strong>Παρακολουθείτε τις τάσεις:</strong> Προσέχετε για υπερβολικές αυξήσεις</li>
+      <li><strong>Ισορροπείτε το φορτίο:</strong> Συμπεριλάβετε εύκολες και δύσκολες ημέρες</li>
+      <li><strong>Προοδεύετε σταδιακά:</strong> Αυξάνετε το εβδομαδιαίο WSS κατά μέγιστο 10%</li>
+    </ol>
+
+    <h2>Παραδείγματα Προπονήσεων</h2>
+
+    <h3>Εύκολος Περίπατος Αποκατάστασης</h3>
+    <ul>
+      <li>30 λεπτά στη Ζώνη 1-2</li>
+      <li>WSS ≈ 40-50</li>
+      <li>Χρησιμοποιήστε για ημέρες ενεργητικής αποκατάστασης</li>
+    </ul>
+
+    <h3>Μέτριος Περίπατος Οικοδόμησης Βάσης</h3>
+    <ul>
+      <li>60 λεπτά στη Ζώνη 2</li>
+      <li>WSS ≈ 120</li>
+      <li>Θεμέλιο του προγράμματος προπόνησης</li>
+    </ul>
+
+    <h3>Προπόνηση Διαλείμματος</h3>
+    <ul>
+      <li>10 λεπτά Ζώνη 1 προθέρμανση</li>
+      <li>20 λεπτά Ζώνη 3-4 διαλείμματα</li>
+      <li>10 λεπτά Ζώνη 1 χαλάρωση</li>
+      <li>WSS ≈ 100-120</li>
+      <li>Υψηλή ένταση, μικρότερη διάρκεια</li>
+    </ul>
+
+    <h3>Μεγάλος Περίπατος Αντοχής</h3>
+    <ul>
+      <li>120 λεπτά στη Ζώνη 2</li>
+      <li>WSS ≈ 240</li>
+      <li>Μία φορά την εβδομάδα για αντοχή</li>
+    </ul>
+
+    <h2>Λήψη των Δεδομένων Καρδιακού Ρυθμού σας</h2>
+
+    <h3>Χρησιμοποιώντας το Apple Watch</h3>
+    <ol>
+      <li>Ανοίξτε την εφαρμογή Υγεία στο iPhone</li>
+      <li>Πλοηγηθείτε στο Αναζήτηση → Καρδιά → Καρδιακός Ρυθμός</li>
+      <li>Επιλέξτε την προπόνηση βάδισης σας</li>
+      <li>Δείτε τον χρόνο σε κάθε ζώνη</li>
+      <li>Εισάγετε στον υπολογιστή παραπάνω</li>
+    </ol>
+
+    <h3>Χρησιμοποιώντας το WalkAnalytics</h3>
+    <p>Το WalkAnalytics υπολογίζει αυτόματα το WSS για κάθε περίπατο. Δεν χρειάζεται χειροκίνητος υπολογισμός!</p>
+    <ul>
+      <li>Εισάγει προπονήσεις από το Apple Health</li>
+      <li>Αναλύει τις ζώνες καρδιακού ρυθμού αυτόματα</li>
+      <li>Υπολογίζει το WSS άμεσα</li>
+      <li>Παρακολουθεί τις εβδομαδιαίες τάσεις</li>
+      <li>Παρέχει συστάσεις αποκατάστασης</li>
+    </ul>
+
+    <div class="cta-section">
+      <h3>Αυτόματη Παρακολούθηση WSS</h3>
+      <p>Σταματήστε τους χειροκίνητους υπολογισμούς. Το WalkAnalytics υπολογίζει το WSS αυτόματα για κάθε περίπατο.</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">Κατεβάστε το WalkAnalytics</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// WSS Calculator Logic
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  const zone1 = parseFloat(document.getElementById('zone1').value) || 0;
+  const zone2 = parseFloat(document.getElementById('zone2').value) || 0;
+  const zone3 = parseFloat(document.getElementById('zone3').value) || 0;
+  const zone4 = parseFloat(document.getElementById('zone4').value) || 0;
+  const zone5 = parseFloat(document.getElementById('zone5').value) || 0;
+
+  const totalTime = zone1 + zone2 + zone3 + zone4 + zone5;
+  const wss = (zone1 * 1) + (zone2 * 2) + (zone3 * 3) + (zone4 * 4) + (zone5 * 5);
+
+  document.getElementById('totalTime').textContent = totalTime + ' λεπτά';
+  document.getElementById('wssScore').textContent = Math.round(wss);
+
+  let interpretation = '';
+  if (wss === 0) {
+    interpretation = 'Εισάγετε χρόνους ζωνών για να υπολογίσετε το WSS';
+  } else if (wss < 40) {
+    interpretation = 'Ελαφρύς περίπατος αποκατάστασης - ελάχιστη καταπόνηση προπόνησης. Ιδανικό για ημέρες ανάπαυσης ή ενεργητικής αποκατάστασης.';
+  } else if (wss < 80) {
+    interpretation = 'Μέτρια αερόβια προπόνηση - καλή για την οικοδόμηση της αερόβιας βάσης σας. Μπορεί να γίνεται συχνά.';
+  } else if (wss < 150) {
+    interpretation = 'Σταθερός περίπατος αντοχής - σημαντικό προπονητικό όφελος. Παρέχει καλό ερέθισμα για βελτίωση.';
+  } else if (wss < 250) {
+    interpretation = 'Σκληρή προπόνηση - υψηλή καταπόνηση προπόνησης. Ακολουθήστε με ευκολότερες ημέρες για αποκατάσταση.';
+  } else {
+    interpretation = 'Πολύ απαιτητική προπόνηση - προσπάθεια αγώνα ή πολύ μεγάλη διάρκεια. Απαιτεί σημαντικό χρόνο αποκατάστασης.';
+  }
+
+  document.getElementById('interpretation').textContent = interpretation;
+});
+</script>
+    </main>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Αρχική</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. Με επιφύλαξη κάθε δικαιώματος
+            </p>
+            <ul class="footer-links">
+                <li><a href="/el/privacy/">Απόρρητο</a></li>
+                <li><a href="/el/terms/">Όροι</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>Αυτός ο ιστότοπος χρησιμοποιεί cookies για τη βελτίωση της εμπειρίας σας.</p>
+            <a href="/el/privacy/" class="text-sm">Μάθετε περισσότερα</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Απόρριψη</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Αποδοχή</button>
+        </div>
+    </div>
+</div>
+
+    
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/cookie-consent.min.js"></script>
+    <script src="/assets/js/lazy-load.min.js"></script>
+
+    
+    <script src="/assets/js/fuse.min.js"></script>
+    <script src="/assets/js/search.min.js"></script>
+
+    
+    
+    <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+    
+</body>
+</html>
