@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>걷기 지표 공식 - WSS, 보행 및 건강 지표 계산 방법</title>
+  <meta name="description" content="보행 분석 뒤에 숨겨진 수학적 공식. WSS, 보폭 지표, 케이던스 및 효율성 점수 계산 방법 배우기. 과학 기반 방법론.">
+  <meta name="author" content="Albert Arnó">
+
+  
+  
+  <meta name="keywords" content="걷기 공식, WSS 공식, 보행 지표 계산, 보폭 계산, 생체역학 공식">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/ko/formulas/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2025-11-15T14:30:00Z">
+  <meta property="article:author" content="Albert Arnó">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/ko/formulas/">
+  <meta property="og:title" content="걷기 지표 공식 - WSS, 보행 및 건강 지표 계산 방법">
+  <meta property="og:description" content="보행 분석 뒤에 숨겨진 수학적 공식. WSS, 보폭 지표, 케이던스 및 효율성 점수 계산 방법 배우기. 과학 기반 방법론.">
+  
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+  
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/ko/formulas/">
+  <meta name="twitter:title" content="걷기 지표 공식 - WSS, 보행 및 건강 지표 계산 방법">
+  <meta name="twitter:description" content="보행 분석 뒤에 숨겨진 수학적 공식. WSS, 보폭 지표, 케이던스 및 효율성 점수 계산 방법 배우기. 과학 기반 방법론.">
+  
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/">
+  
+  <link rel="alternate" hreflang="no"
+    href="https://walk.analyticszone.app/no/formulas/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/">
+  
+  <link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0066CC">
+
+  
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/ko/" class="site-logo">
+                <picture>
+                    
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    
+                    <img src="/assets/images/logo.png" alt="WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text"></span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        
+                        <a href="/ko/"  aria-current="">
+                            홈
+                        </a>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">학습</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/ko/getting-started/" 
+                                    aria-current="">
+                                    시작하기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/walking-zones/" 
+                                    aria-current="">
+                                    걷기 존
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/gait-analysis/" 
+                                    aria-current="">
+                                    보행 분석
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/training-load/" 
+                                    aria-current="">
+                                    트레이닝 부하
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/wss-calculator/" 
+                                    aria-current="">
+                                    WSS 계산기
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">과학</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/ko/research/" 
+                                    aria-current="">
+                                    연구
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/formulas/" class="active" 
+                                    aria-current="page">
+                                    공식
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/gait-efficiency/" 
+                                    aria-current="">
+                                    보행 효율성
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/stride-mechanics/" 
+                                    aria-current="">
+                                    보폭 역학
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/walking-vs-running/" 
+                                    aria-current="">
+                                    걷기 vs 달리기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/benchmarks/" 
+                                    aria-current="">
+                                    벤치마크
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/bibliography/" 
+                                    aria-current="">
+                                    참고문헌
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">사용자 맞춤</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/ko/for-health/" 
+                                    aria-current="">
+                                    건강용
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/for-fitness/" 
+                                    aria-current="">
+                                    피트니스용
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/for-seniors/" 
+                                    aria-current="">
+                                    노인용
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/for-rehabilitation/" 
+                                    aria-current="">
+                                    재활용
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li class="has-submenu" >
+                        
+                        
+                        
+                        
+                        <span class="nav-label">도구</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/ko/cadence-calculator/" 
+                                    aria-current="">
+                                    케이던스 계산기
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/gait-assessment/" 
+                                    aria-current="">
+                                    보행 평가
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/ko/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max 계산기
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                        </li>
+                        
+                    <li>
+                        
+                        
+                        <a href="/ko/contact/"  aria-current="">
+                            문의
+                        </a>
+                        
+                        </li>
+                        
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="언어 선택">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" selected>
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="메뉴 토글"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  <main id="main-content" class="main-content">
+    <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/ko/">홈</a> / <a href="/ko/#science">과학</a> / 공식
+    </div>
+    <h1>걷기 지표 공식 & 방정식</h1>
+    <p class="lead">걷기 분석의 수학적 기반 – 강도, 에너지 소비, 퍼포먼스를 계산하는 과학적으로 검증된 식들을 정리합니다.</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>이 페이지는 걷기 분석에 사용되는 공인된 방정식을 정리한 것입니다. 모든 공식은 연구 논문을 출처로 하며, 적용 범위와 정확도 정보가 포함되어 있습니다.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. 케이던스 → METs 변환</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore et al. (2021) 케이던스 기반 대사 방정식</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">케이던스에서 METs 계산</p>
+            <p class="formula-main"><strong>METs = 0.0219 × 케이던스(걸음/분) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">정확도: ±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>왜 중요한가?</strong> 이 방정식은 전통적인 ACSM 속도 기반 식보다 <strong>23–35% 더 정확</strong>합니다.
+              속도는 보폭 길이에 따라 달라지지만, 케이던스는 움직임 빈도와 에너지 소비를 직접 반영하기 때문입니다.</p>
+          </div>
+
+          <h4>예시:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 spm으로 걷는 경우:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs → <strong>중강도 기준</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>110 spm으로 걷는 경우:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">탄탄한 중강도 영역</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>120 spm으로 걷는 경우:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">중–고강도에 해당</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>130 spm으로 걷는 경우:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>고강도 임계값</strong> – CADENCE‑Adults 직접 측정에서는 6 METs에 해당</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>주의:</strong> CADENCE‑Adults 연구에서 130 spm은 실험실 조건에서 6 METs(고강도)에 해당하는 것으로 직접 측정되었습니다.
+              Moore 방정식은 80–130 spm 범위를 대상으로 하며, 매우 높은 케이던스에서는 약간 과소추정할 수 있습니다.</p>
+          </div>
+
+          <h4>검증 데이터:</h4>
+          <ul>
+            <li><strong>표본:</strong> 21–40세 성인 76명</li>
+            <li><strong>방법:</strong> 간접 열량 측정(Indirect calorimetry, 골드 스탠더드)</li>
+            <li><strong>설명력:</strong> R² = 0.87 (매우 우수한 상관관계)</li>
+            <li><strong>평균 절대 오차:</strong> 0.47 METs</li>
+            <li><strong>적용 범위:</strong> 80–130 걸음/분</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM VO₂ 보행 공식</h2>
+
+        <div class="formula-section">
+          <h3>ACSM 대사 방정식</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">평지 보행 (경사 0%)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × 속도(m/분) + 3.5</strong></p>
+            <p class="formula-note">속도를 m/분으로 변환: km/h × 16.67 또는 mph × 26.82</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">경사(오르막·내리막) 보행</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(속도) + 1.8(속도)(경사) + 3.5</strong></p>
+            <p class="formula-note">경사는 소수(예: 5% = 0.05)로 입력</p>
+          </div>
+
+          <h4>예시:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>평지에서 5 km/h로 걷는 경우:</strong></p>
+              <p class="example-calc">속도 = 5 × 16.67 = 83.35 m/분</p>
+              <p class="example-calc">VO₂ = 0.1 × 83.35 + 3.5 = 8.335 + 3.5 = <strong>11.84 mL/kg/min</strong></p>
+              <p class="example-conversion">METs = 11.84 ÷ 3.5 = <strong>3.38 METs</strong> (중강도)</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>5% 경사에서 5 km/h로 걷는 경우:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.35) + 1.8(83.35)(0.05) + 3.5</p>
+              <p class="example-calc">= 8.335 + 7.5015 + 3.5 = <strong>19.34 mL/kg/min</strong></p>
+              <p class="example-conversion">METs = 19.34 ÷ 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">경사 5%만으로도 강도가 약 64% 증가</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>속도 변환:</h4>
+            <ul>
+              <li><strong>km/h → m/분:</strong> km/h × 16.67</li>
+              <li><strong>mph → m/분:</strong> mph × 26.82</li>
+              <li><strong>m/s → m/분:</strong> m/s × 60</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. 에너지 소비 & 칼로리 소모</h2>
+
+        <div class="formula-section">
+          <h3>정확한 칼로리 계산</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">분당 칼로리</p>
+            <p class="formula-main"><strong>kcal/분 = (METs × 3.5 × 체중(kg)) ÷ 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">세션 전체 칼로리</p>
+            <p class="formula-main"><strong>총 칼로리 = (kcal/분) × 시간(분)</strong></p>
+          </div>
+
+          <h4>예시:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kg, 100 spm(3 METs)으로 45분 걷는 경우:</strong></p>
+              <p class="example-calc">kcal/분 = (3 × 3.5 × 70) ÷ 200 = 735 ÷ 200 = <strong>3.68 kcal/분</strong></p>
+              <p class="example-calc">총 칼로리 = 3.68 × 45 = <strong>약 166 kcal</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kg, 120 spm(5 METs)으로 30분 걷는 경우:</strong></p>
+              <p class="example-calc">kcal/분 = (5 × 3.5 × 85) ÷ 200 = 1487.5 ÷ 200 = <strong>7.44 kcal/분</strong></p>
+              <p class="example-calc">총 칼로리 = 7.44 × 30 = <strong>약 223 kcal</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>왜 이 식을 쓰나?</h4>
+            <p>MET(대사당량)의 정의에서 직접 유도된 공식입니다.</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min (안정 시 대사율)</li>
+              <li>산소 1L를 소비하면 약 5 kcal 소모</li>
+              <li>따라서 (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>순수 운동 칼로리(Net Calories)</h3>
+          <div class="formula-box">
+            <p class="formula-title">순 칼로리(휴식 대사량 제외)</p>
+            <p class="formula-main"><strong>순 kcal/분 = [(METs - 1) × 3.5 × 체중(kg)] ÷ 200</strong></p>
+            <p class="formula-note">1 MET(안정 시 소모량)를 빼서 “추가 운동 분”만 계산</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 METs, 45분 걷기 – 순 칼로리:</strong></p>
+            <p class="example-calc">순 kcal/분 = [(3 - 1) × 3.5 × 70] ÷ 200 = 4.9 kcal/분</p>
+            <p class="example-calc">총 순 칼로리 = 4.9 × 45 = <strong>약 110 kcal</strong></p>
+            <p class="example-interpretation">총 166 kcal 중 약 55 kcal는 어차피 앉아 있어도 소비되는 에너지</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. 보행 대칭 지수(GSI)</h2>
+
+        <div class="formula-section">
+          <h3>좌·우 비대칭 정량화</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Gait Symmetry Index</p>
+            <p class="formula-main"><strong>GSI(%) = |오른쪽 - 왼쪽| ÷ [0.5 × (오른쪽 + 왼쪽)] × 100</strong></p>
+            <p class="formula-note">보폭 길이, 스텝 시간, 접촉 시간 등에 적용 가능</p>
+          </div>
+
+          <h4>해석:</h4>
+          <ul>
+            <li><strong>&lt;2–3%:</strong> 정상, 대칭적인 보행</li>
+            <li><strong>3–5%:</strong> 경도 비대칭</li>
+            <li><strong>5–10%:</strong> 중등도 비대칭 – 추세 모니터링 필요</li>
+            <li><strong>&gt;10%:</strong> 임상적으로 의미 있는 비대칭 – 전문 평가 권장</li>
+          </ul>
+
+          <h4>예시:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>스텝 시간: 오른쪽 520 ms, 왼쪽 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| ÷ [0.5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 ÷ [0.5 × 1000] × 100 = 40 ÷ 500 × 100 = <strong>8% 비대칭</strong></p>
+              <p class="example-interpretation">중등도 비대칭 – 약한 쪽 강화 운동 고려</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>보폭 길이: 오른쪽 1.42 m, 왼쪽 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38| ÷ [0.5 × (1.42 + 1.38)] × 100</p>
+              <p class="example-calc">= 0.04 ÷ 1.4 × 100 = <strong>2.86% 비대칭</strong></p>
+              <p class="example-interpretation">정상 건강 범위 ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>임상 메모:</strong> Apple HealthKit의 “Walking Asymmetry”는 계산 방식이 약간 다르지만(스텝 시간 단순 비율),
+              해석 임계값은 유사하게 적용할 수 있습니다.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK Score (WalkAnalytics 고유 지표)</h2>
+
+        <div class="formula-section">
+          <h3>보행 효율 점수</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK Score</p>
+            <p class="formula-main"><strong>WALK Score = 시간(초) + 100m당 걸음 수</strong></p>
+            <p class="formula-note">값이 낮을수록 효율이 좋음(수영의 SWOLF 개념과 유사)</p>
+          </div>
+
+          <h4>작동 원리:</h4>
+          <p>WALK Score는 같은 거리(예: 100m)를 이동할 때 걸린 시간과 걸음 수를 합쳐 효율을 정량화합니다.
+            예를 들어 100m를 75초, 140걸음에 주파하면 점수는 215입니다.
+            속도를 올리거나 보폭 효율을 개선해 두 값 중 하나라도 줄이면 점수가 개선됩니다.</p>
+
+          <h4>예시:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100m를 80초, 120걸음:</strong></p>
+              <p class="example-calc">WALK Score = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m를 70초, 110걸음:</strong></p>
+              <p class="example-calc">WALK Score = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">더 빠른 속도 + 더 긴 보폭 → 효율 향상</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100m를 60초, 130걸음(레이스 워킹):</strong></p>
+              <p class="example-calc">WALK Score = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">속도는 빠르지만 보폭이 짧은 패턴</p>
+            </div>
+          </div>
+
+          <h4>전형적인 범위:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> 매우 비효율적, 이동성 문제 가능</li>
+            <li><strong>200–250:</strong> 일반적인 레크리에이션 워커</li>
+            <li><strong>170–200:</strong> 피트니스 워커, 좋은 효율</li>
+            <li><strong>150–170:</strong> 상급 워커, 매우 효율적</li>
+            <li><strong>&lt;150:</strong> 엘리트/레이스 워킹 수준</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>훈련 팁 – WALK Score 활용:</strong> 동일한 100m 코스를 정해 매주 점수를 기록하세요.
+              점수가 내려가면 신경근 협응, 근력, 걷기 경제성이 좋아지고 있다는 뜻입니다.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. 기본 보행 지표 계산</h2>
+
+        <div class="formula-section">
+          <h3>기본 계산식</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">보행 속도</p>
+            <p class="formula-main"><strong>속도(m/s) = 거리(m) ÷ 시간(초)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">총 걸음 수에서 케이던스</p>
+            <p class="formula-main"><strong>케이던스(spm) = 총 걸음 수 ÷ 시간(분)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">보폭 길이(Stride Length)</p>
+            <p class="formula-main"><strong>보폭 길이(m) = 거리(m) ÷ (걸음 수 ÷ 2)</strong></p>
+            <p class="formula-note">보폭 1회 = 스텝 2회이므로 2로 나눕니다.</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">스텝 길이(Step Length)</p>
+            <p class="formula-main"><strong>스텝 길이(m) = 거리(m) ÷ 걸음 수</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">케이던스 & 보폭에서 속도</p>
+            <p class="formula-main"><strong>속도 = 보폭 길이 × (케이던스 ÷ 2) ÷ 60</strong></p>
+            <p class="formula-note">또는: 속도(m/s) = 스텝 길이 × 케이던스 ÷ 60</p>
+          </div>
+
+          <h4>예시 워크플로:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>1000m를 12분, 1320걸음으로 걷는 경우:</strong></p>
+            <p><strong>속도:</strong> 1000m ÷ 720초 = <strong>1.39 m/s</strong></p>
+            <p><strong>케이던스:</strong> 1320걸음 ÷ 12분 = <strong>110 spm</strong></p>
+            <p><strong>보폭 길이:</strong> 1000m ÷ (1320 ÷ 2) = 1000 ÷ 660 = <strong>1.52 m</strong></p>
+            <p><strong>스텝 길이:</strong> 1000m ÷ 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. 심박수 존 계산</h2>
+
+        <div class="formula-section">
+          <h3>전통적인 심박수 존 산정</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">최대 심박수 추정</p>
+            <p class="formula-main"><strong>Max HR = 220 - 나이</strong></p>
+            <p class="formula-note">간단하지만 개인 차가 ±10–15 bpm 정도 날 수 있음</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">대안: Tanaka 공식(더 정확)</p>
+            <p class="formula-main"><strong>Max HR = 208 - (0.7 × 나이)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">존 범위 계산</p>
+            <p class="formula-main"><strong>Zone = Max HR × (하한%, 상한%)</strong></p>
+          </div>
+
+          <h4>예시: 40세 성인</h4>
+          <div class="calc-example">
+            <p><strong>전통식:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p>
+            <p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
+            <p><strong>Zone 2(60–70%):</strong> 180 × 0.60 = 108 bpm ~ 180 × 0.70 = 126 bpm</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>참고:</strong> 심박수 존은 유용하지만, <strong>걷기에서는 케이던스 기반 존이 더 실용적이고 정확</strong>한 경우가 많습니다. 자세한 내용은 워킹 존
+              가이드를 참고하세요.</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. 운송 비용(Cost of Transport)과 걷기 경제성</h2>
+
+        <div class="formula-section">
+          <h3>걷기의 에너지 비용</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">운송 비용(C)</p>
+            <p class="formula-main"><strong>C = 소비 에너지 ÷ (체중 × 거리)</strong></p>
+            <p class="formula-note">단위: J/kg/m 또는 mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U자형 곡선:</strong> 걷기 경제성은 U자형 곡선을 따릅니다.
+              대개 1.2–1.4 m/s(4.3–5.0 km/h) 부근에서 운송 비용이 최소가 되며,
+              이보다 너무 느리거나 빠르면 같은 거리를 가는 데 드는 에너지 비용이 증가합니다.</p>
+          </div>
+
+          <h4>운송 비용에 영향을 미치는 요인:</h4>
+          <ul>
+            <li><strong>속도:</strong> 1.3 m/s 부근에서 최적, 그 이탈 시 비용 증가</li>
+            <li><strong>경사:</strong> 오르막은 대사 비용을 크게 증가시키며, 내리막은 편심성 근수축 비용을 증가</li>
+            <li><strong>체중:</strong> 절대 비용은 증가하지만, 체중당 비용은 비슷</li>
+            <li><strong>보폭·케이던스:</strong> 주어진 속도에서 보폭과 케이던스 조합에 따라 효율이 달라짐</li>
+            <li><strong>지면 특성:</strong> 부드러운 모래·풀은 아스팔트보다 비용이 큼</li>
+          </ul>
+        </div>
+
+        <h2 id="training-load">9. 트레이닝 부하 계산</h2>
+
+        <div class="formula-section">
+          <h3>Walking Stress Score (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WSS 개념</p>
+            <p class="formula-main"><strong>WSS = 각 심박수 존에서 보낸 시간 × 가중치의 합</strong></p>
+          </div>
+
+          <div class="data-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>존</th>
+                  <th>강도</th>
+                  <th>가중치 (점/분)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Zone 1</td>
+                  <td>회복 (50–60% HRmax)</td>
+                  <td>1점</td>
+                </tr>
+                <tr>
+                  <td>Zone 2</td>
+                  <td>지방 연소 (60–70% HRmax)</td>
+                  <td>2점</td>
+                </tr>
+                <tr>
+                  <td>Zone 3</td>
+                  <td>유산소 (70–80% HRmax)</td>
+                  <td>3점</td>
+                </tr>
+                <tr>
+                  <td>Zone 4</td>
+                  <td>역치 (80–90% HRmax)</td>
+                  <td>4점</td>
+                </tr>
+                <tr>
+                  <td>Zone 5</td>
+                  <td>최대 (90–100% HRmax)</td>
+                  <td>5점</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>예시: 60분 걷기 세션</h4>
+          <div class="calc-example">
+            <p>Zone 1에서 10분 × 1점 = 10점</p>
+            <p>Zone 2에서 40분 × 2점 = 80점</p>
+            <p>Zone 3에서 10분 × 3점 = 30점</p>
+            <p><strong>총 WSS = 120점</strong></p>
+          </div>
+
+          <h3>주간 부하</h3>
+          <div class="formula-box">
+            <p class="formula-title">주간 부하</p>
+            <p class="formula-main"><strong>Weekly Load = 7일간의 Daily WSS 합</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">점진적 과부하</p>
+            <p class="formula-main"><strong>다음 주 WSS = 이번 주 × 1.05–1.10</strong></p>
+            <p class="formula-note">주당 5–10% 이상 증가시키지 않는 것이 안전</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">회복 주간</p>
+            <p class="formula-main"><strong>Recovery Week = 최근 주 × 0.50–0.70</strong></p>
+            <p class="formula-note">3–4주마다 1주를 50–70% 수준으로 줄여 회복</p>
+          </div>
+
+          <h4>전형적인 주간 WSS 범위:</h4>
+          <ul>
+            <li><strong>건강 초보 워커:</strong> 200–400 WSS/주</li>
+            <li><strong>규칙적인 피트니스 워커:</strong> 400–700 WSS/주</li>
+            <li><strong>진지한 피트니스 워커:</strong> 700–1000 WSS/주</li>
+            <li><strong>경쟁 레이스 워커:</strong> 1000–1500+ WSS/주</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. 예측 방정식</h2>
+
+        <div class="formula-section">
+          <h3>6분 보행 검사(6MWT) 예측 거리</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">6MWT 예측 거리 (Enright & Sherrill)</p>
+            <p><strong>남성:</strong> (7.57 × 키(cm)) - (5.02 × 나이) - (1.76 × 체중(kg)) - 309</p>
+            <p><strong>여성:</strong> (2.11 × 키(cm)) - (5.78 × 나이) - (2.29 × 체중(kg)) + 667</p>
+            <p class="formula-note">건강한 성인에서 6분 보행 예측 거리(m)를 계산</p>
+          </div>
+
+          <h4>예시: 40세 남성, 175 cm, 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>약 683 m</strong></p>
+            <p class="example-interpretation">연령 대비 양호한 기능적 운동능력</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>임상적 사용:</strong> 6MWT는 심폐 질환 환자, 수술 전·후 평가, 고령자의 전반적 기능 능력을 평가하는 데 널리 사용됩니다.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. 단위 변환</h2>
+
+        <div class="formula-section">
+          <h3>자주 사용하는 걷기 관련 단위 변환</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Formula</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/분</td>
+                  <td>km/h × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/분</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>빠른 참조:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (건강한 성인의 대표적인 보행 속도)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (브리스크 워킹)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (안정 시 대사율)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (중강도 임계값)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (고강도 임계값)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">관련 리소스</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>공식 적용: WSS 계산기</h3>
+            <p>인터랙티브 계산기를 사용해 본인의 Walking Stress Score를 계산해 보세요.</p>
+            <a href="/ko/wss-calculator/" class="btn btn-secondary">WSS 계산하기 →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>워킹 존 이해하기</h3>
+            <p>케이던스 기반 강도 존을 실제 트레이닝에 적용하는 방법을 배워보세요.</p>
+            <a href="/ko/walking-zones/" class="btn btn-secondary">워킹 존 보기 →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>과학적 연구</h3>
+            <p>이 방정식들을 검증한 연구들을 확인해 보세요.</p>
+            <a href="/ko/research/" class="btn btn-secondary">연구 보기 →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>참고 문헌 전체</h3>
+            <p>여기서 언급된 모든 공식의 출처 논문을 참고 문헌 페이지에서 확인할 수 있습니다.</p>
+            <a href="/ko/bibliography/" class="btn btn-secondary">참고 문헌 보기 →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>공식 색인</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. 케이던스 → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂ 공식</a></li>
+            <li><a href="#energy-expenditure">3. 에너지 & 칼로리</a></li>
+            <li><a href="#gait-symmetry">4. 보행 대칭 지수</a></li>
+            <li><a href="#walk-score">5. WALK Score</a></li>
+            <li><a href="#basic-metrics">6. 기본 보행 지표</a></li>
+            <li><a href="#heart-rate">7. 심박수 존</a></li>
+            <li><a href="#cost-transport">8. 운송 비용</a></li>
+            <li><a href="#training-load">9. 트레이닝 부하</a></li>
+            <li><a href="#predictions">10. 예측 방정식</a></li>
+            <li><a href="#conversions">11. 단위 변환</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ 가장 중요한 공식</h3>
+          <p><strong>케이던스 → METs</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">이 한 가지 식만으로도 심박계 없이 케이던스 기반 강도 훈련이 가능합니다.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>이 공식을 앱에서 활용하기</h3>
+          <p>WalkAnalytics는 이 페이지의 방정식들을 사용해 당신의 걷기를 자동으로 분석합니다.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">앱 다운로드</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 정확도에 대하여</h4>
+          <p>이 페이지의 모든 공식은 동료 심사를 거친 연구에 기반합니다. 자세한 인용은 <a href="/ko/bibliography/">참고 문헌</a>을 참고하세요.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with WalkAnalytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">홈</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 WalkAnalytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. 모든 권리 보유
+            </p>
+            <ul class="footer-links">
+                <li><a href="/ko/privacy/">개인정보 보호</a></li>
+                <li><a href="/ko/terms/">이용약관</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>이 웹사이트는 사용자 경험을 개선하기 위해 쿠키를 사용합니다.</p>
+            <a href="/ko/privacy/" class="text-sm">자세히 알아보기</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">거부</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">수락</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+  <script src="/assets/js/cookie-consent.min.js"></script>
+  <script src="/assets/js/lazy-load.min.js"></script>
+
+  
+  <script src="/assets/js/fuse.min.js"></script>
+  <script src="/assets/js/search.min.js"></script>
+
+  
+  
+  <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82"></script>
+  
+</body>
+
+</html>
