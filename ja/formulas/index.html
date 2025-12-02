@@ -19,7 +19,7 @@
   
   
   <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-11-29T14:30:00Z">
+  <meta property="article:modified_time" content="2025-12-02T14:30:00Z">
   <meta property="article:author" content="Albert Arnó">
   
 
@@ -595,7 +595,595 @@
 
   
   <main id="main-content" class="main-content">
-    <!-- formulas.html - 日本語版 coming soon -->
+    <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/ja/">ホーム</a> / <a href="/ja/#science">科学</a> / 数式
+    </div>
+    <h1>ウォーキング測定値の数式と方程式</h1>
+    <p class="lead">ウォーキング分析の数学的基礎 – 科学的に検証された強度、エネルギー、パフォーマンスの方程式</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>このページでは、ウォーキング分析で使用される科学的に検証された数式を紹介します。すべての方程式は研究参照と検証された精度範囲とともに引用されています。</p>
+        </div>
+
+        <h2 id="cadence-mets">1. ケイデンスからMETsへの変換</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore et al. (2021) ケイデンスベースの代謝方程式</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">ケイデンスからMETsへ</p>
+            <p class="formula-main"><strong>METs = 0.0219 × ケイデンス (歩/分) + 0.72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">精度: ±0.5 METs</span>
+              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>この数式が重要な理由:</strong> この方程式は、ウォーキングにおいて従来のACSM速度ベース方程式よりも<strong>23～35%精度が高い</strong>です。ケイデンスは移動頻度とエネルギー消費を直接反映するため機能しますが、速度は可変的なストライド長に依存します。</p>
+          </div>
+
+          <h4>例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 spmで歩行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
+              <p class="example-interpretation">≈ 3 METs = <strong>中強度の閾値</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>110 spmで歩行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
+              <p class="example-interpretation">しっかりした中強度</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>120 spmで歩行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
+              <p class="example-interpretation">中～高強度</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>130 spmで歩行:</strong></p>
+              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
+              <p class="example-interpretation"><strong>高強度の閾値</strong> (CADENCE-Adults直接測定による130 spm = 6 METs)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>注:</strong> CADENCE-Adults研究では、管理された実験室条件下で130 spm = 6 METsであることが直接測定されました。Moore方程式は80～130 spmの範囲向けに設計されており、非常に高いケイデンスでは過小評価する可能性があります。</p>
+          </div>
+
+          <h4>検証データ:</h4>
+          <ul>
+            <li><strong>サンプル:</strong> 21～40歳の成人76名</li>
+            <li><strong>方法:</strong> 間接熱量測定(ゴールドスタンダード)</li>
+            <li><strong>R²値:</strong> 0.87 (優れた相関)</li>
+            <li><strong>平均絶対誤差:</strong> 0.47 METs</li>
+            <li><strong>適用範囲:</strong> 80～130歩/分</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ウォーキング用ACSM VO₂方程式</h2>
+
+        <div class="formula-section">
+          <h3>ACSM代謝計算</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">平坦な歩行 (0%勾配)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × 速度 (m/min) + 3.5</strong></p>
+            <p class="formula-note">速度は分速メートル単位 (km/hに16.67を掛ける、またはmphに26.82を掛ける)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">勾配のある歩行 (傾斜/下り)</p>
+            <p class="formula-main"><strong>VO₂ = 0.1(速度) + 1.8(速度)(勾配) + 3.5</strong></p>
+            <p class="formula-note">勾配は小数で表現 (例: 5% = 0.05)</p>
+          </div>
+
+          <h4>例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>平坦な地面で5 km/h (83.3 m/min)で歩行:</strong></p>
+              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
+              <p class="example-conversion">METsに変換: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>5%の傾斜で5 km/hで歩行:</strong></p>
+              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
+              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
+              <p class="example-interpretation">傾斜により強度が約64%増加!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>速度変換:</h4>
+            <ul>
+              <li><strong>km/hからm/minへ:</strong> 16.67を掛ける</li>
+              <li><strong>mphからm/minへ:</strong> 26.82を掛ける</li>
+              <li><strong>m/sからm/minへ:</strong> 60を掛ける</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. エネルギー消費とカロリー燃焼</h2>
+
+        <div class="formula-section">
+          <h3>正確なカロリー計算</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">1分あたりのカロリー</p>
+            <p class="formula-main"><strong>Cal/分 = (METs × 3.5 × 体重 kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">セッションの総カロリー</p>
+            <p class="formula-main"><strong>総カロリー = Cal/分 × 時間 (分)</strong></p>
+          </div>
+
+          <h4>例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kgの人が100 spm (3 METs)で45分間歩行:</strong></p>
+              <p class="example-calc">Cal/分 = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/分</strong></p>
+              <p class="example-calc">合計 = 3.675 × 45 = <strong>165.4カロリー</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kgの人が120 spm (5 METs)で30分間歩行:</strong></p>
+              <p class="example-calc">Cal/分 = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/分</strong></p>
+              <p class="example-calc">合計 = 7.44 × 30 = <strong>223.2カロリー</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>なぜこの数式なのか?</h4>
+            <p>この方程式はMET(Metabolic Equivalent of Task)の定義から導かれます:</p>
+            <ul>
+              <li>1 MET = 3.5 mL O₂/kg/min (安静時代謝率)</li>
+              <li>消費された1リットルのO₂ ≈ 5 kcal燃焼</li>
+              <li>変換: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>正味カロリー燃焼 (運動のみ)</h3>
+          <div class="formula-box">
+            <p class="formula-title">正味カロリー (安静時を除く)</p>
+            <p class="formula-main"><strong>正味Cal/分 = [(METs - 1) × 3.5 × 体重] / 200</strong></p>
+            <p class="formula-note">安静時に消費されるカロリーを除外するため1 METを引く</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg、3 METs、45分 – 正味カロリー:</strong></p>
+            <p class="example-calc">正味 = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3正味カロリー</strong></p>
+            <p class="example-interpretation">総カロリー165.4に対して (55カロリーは安静時に燃焼されるもの)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. 歩行対称性指数 (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>左右の非対称性の定量化</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">歩行対称性指数</p>
+            <p class="formula-main"><strong>GSI (%) = |右 - 左| / [0.5 × (右 + 左)] × 100</strong></p>
+            <p class="formula-note">ストライド長、ステップ時間、または接地時間に適用可能</p>
+          </div>
+
+          <h4>解釈:</h4>
+          <ul>
+            <li><strong>&lt;2-3%:</strong> 正常、対称的な歩行</li>
+            <li><strong>3-5%:</strong> 軽度の非対称性</li>
+            <li><strong>5-10%:</strong> 中程度の非対称性、監視が必要</li>
+            <li><strong>&gt;10%:</strong> 臨床的に有意、専門的評価が必要</li>
+          </ul>
+
+          <h4>例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>ステップ時間: 右 = 520 ms、左 = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% 非対称性</strong></p>
+              <p class="example-interpretation">中程度の非対称性 – 弱い側の強化を検討</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>ストライド長: 右 = 1.42 m、左 = 1.38 m</strong></p>
+              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
+              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% 非対称性</strong></p>
+              <p class="example-interpretation">正常、健康的範囲 ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>臨床ノート:</strong> Apple HealthKitの歩行非対称性は、わずかに異なる計算(ステップ時間間の単純なパーセンテージ差)を使用していますが、解釈の閾値は類似しています。</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALKスコア (Walk Analytics独自指標)</h2>
+
+        <div class="formula-section">
+          <h3>ウォーキング効率スコア</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALKスコア</p>
+            <p class="formula-main"><strong>WALKスコア = 時間 (秒) + 100メートルあたりの歩数</strong></p>
+            <p class="formula-note">スコアが低いほど効率が良い (水泳のSWOLFに似ている)</p>
+          </div>
+
+          <h4>仕組み:</h4>
+          <p>WALKスコアは、時間と歩数を組み合わせてウォーキングの効率を定量化します。100mを75秒で140歩でカバーする歩行者のWALKスコアは215です。速度またはストライド効率のいずれかを改善すると、スコアが低くなります。</p>
+
+          <h4>例:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100mを80秒で、120歩:</strong></p>
+              <p class="example-calc">WALKスコア = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100mを70秒で、110歩:</strong></p>
+              <p class="example-calc">WALKスコア = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">速度 + ストライドの改善により効率が向上</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100mを60秒で、130歩 (競歩):</strong></p>
+              <p class="example-calc">WALKスコア = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">速いがストライドが短い</p>
+            </div>
+          </div>
+
+          <h4>典型的な範囲:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> 遅い/非効率的な歩行、可能性のある可動性の問題</li>
+            <li><strong>200-250:</strong> カジュアルな歩行者、平均的な効率</li>
+            <li><strong>170-200:</strong> フィットネス歩行者、良好な効率</li>
+            <li><strong>150-170:</strong> 上級歩行者、優れた効率</li>
+            <li><strong>&lt;150:</strong> エリート/競歩レベル</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>WALKスコアでのトレーニング:</strong> 同じ100mコースで毎週スコアを追跡します。改善は、神経筋の協調性、筋力、ウォーキングエコノミーの向上を示します。</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. 基本的な歩行指標</h2>
+
+        <div class="formula-section">
+          <h3>基本的な計算</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">歩行速度</p>
+            <p class="formula-main"><strong>速度 (m/s) = 距離 (m) / 時間 (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">総歩数からのケイデンス</p>
+            <p class="formula-main"><strong>ケイデンス (spm) = 総歩数 / 時間 (分)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ストライド長</p>
+            <p class="formula-main"><strong>ストライド長 (m) = 距離 (m) / (歩数 / 2)</strong></p>
+            <p class="formula-note">1ストライド = 2ステップなので歩数を2で割る</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ステップ長</p>
+            <p class="formula-main"><strong>ステップ長 (m) = 距離 (m) / 歩数</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ケイデンスとストライド長からの速度</p>
+            <p class="formula-main"><strong>速度 = ストライド長 × (ケイデンス / 2) / 60</strong></p>
+            <p class="formula-note">または: 速度 (m/s) = ステップ長 × ケイデンス / 60</p>
+          </div>
+
+          <h4>ワークフローの例:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>12分で1000mを1320歩で歩行:</strong></p>
+            <p><strong>速度:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
+            <p><strong>ケイデンス:</strong> 1320歩 / 12分 = <strong>110 spm</strong></p>
+            <p><strong>ストライド長:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
+            <p><strong>ステップ長:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. 心拍数ゾーン計算</h2>
+
+        <div class="formula-section">
+          <h3>従来のHRゾーン方法</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">最大心拍数の推定</p>
+            <p class="formula-main"><strong>最大HR = 220 - 年齢</strong></p>
+            <p class="formula-note">シンプルだが個人差は±10～15 bpm</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">代替: 田中式 (より正確)</p>
+            <p class="formula-main"><strong>最大HR = 208 - (0.7 × 年齢)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">ゾーン範囲計算</p>
+            <p class="formula-main"><strong>ゾーン = 最大HR × (下限%, 上限%)</strong></p>
+          </div>
+
+          <h4>例: 40歳</h4>
+          <div class="calc-example">
+            <p><strong>従来:</strong> 最大HR = 220 - 40 = <strong>180 bpm</strong></p>
+            <p><strong>田中:</strong> 最大HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
+            <p><strong>ゾーン2 (60-70%):</strong> 180 × 0.60 = 108 bpmから180 × 0.70 = 126 bpm</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>注:</strong> HRゾーンは有用ですが、<strong>ケイデンスベースのゾーンはウォーキングにおいてより正確で実用的です</strong> (ウォーキングゾーンガイドを参照)。</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. 移動コストとウォーキングエコノミー</h2>
+
+        <div class="formula-section">
+          <h3>ウォーキングのエネルギーコスト</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">移動コスト (C)</p>
+            <p class="formula-main"><strong>C = 消費エネルギー / (体重 × 距離)</strong></p>
+            <p class="formula-note">単位: J/kg/mまたはmL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U字型曲線:</strong> ウォーキングエコノミーはU字型曲線に従います。最適な速度(通常1.2～1.4 m/sまたは4.3～5.0 km/h)があり、その速度で移動コストが最小化されます。この速度より遅くまたは速く歩くと、移動距離あたりのエネルギーコストが増加します。</p>
+          </div>
+
+          <h4>移動コストに影響する要因:</h4>
+          <ul>
+            <li><strong>速度:</strong> U字型関係 (最適は約1.3 m/s)</li>
+            <li><strong>勾配:</strong> 上り坂はコストを大幅に増加; 下り坂は遠心性コストを増加</li>
+            <li><strong>体重:</strong> 重い人は絶対的には高いが相対的には類似したコスト</li>
+            <li><strong>ストライドメカニクス:</strong> 最適なストライド長はコストを最小化</li>
+            <li><strong>地形:</strong> 不均一な表面は滑らかな舗装に比べてコストが増加</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">勾配調整コスト</p>
+            <p class="formula-main"><strong>コスト倍率 = 1 + (勾配 × 10)</strong></p>
+            <p class="formula-note">概算: 1%の勾配あたり+10%のコスト</p>
+          </div>
+
+          <h4>例:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>5%の傾斜で歩行:</strong></p>
+            <p class="example-calc">コスト倍率 = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
+            <p class="example-interpretation">平坦な地面に比べてエネルギーコストが50%増加</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. トレーニング負荷とストレススコア</h2>
+
+        <div class="formula-section">
+          <h3>ウォーキングストレススコア (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">ゾーンベースWSS</p>
+            <p class="formula-main"><strong>WSS = Σ (ゾーン内の分 × ゾーン係数)</strong></p>
+            <p>ゾーン1: ×1.0 | ゾーン2: ×2.0 | ゾーン3: ×3.0 | ゾーン4: ×4.0 | ゾーン5: ×5.0</p>
+          </div>
+
+          <h4>例: 60分のウォーキング</h4>
+          <div class="calc-example">
+            <p>10分 ゾーン1 × 1 = 10ポイント</p>
+            <p>40分 ゾーン2 × 2 = 80ポイント</p>
+            <p>10分 ゾーン3 × 3 = 30ポイント</p>
+            <p><strong>総WSS = 120</strong></p>
+          </div>
+
+          <h3>週間トレーニング負荷</h3>
+          <div class="formula-box">
+            <p class="formula-title">週間負荷</p>
+            <p class="formula-main"><strong>週間負荷 = Σ 日次WSS (7日間)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">漸進的過負荷</p>
+            <p class="formula-main"><strong>次週 = 今週 × 1.05-1.10</strong></p>
+            <p class="formula-note">週あたり最大5～10%増加</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">回復週</p>
+            <p class="formula-main"><strong>回復週 = 現在 × 0.50-0.70</strong></p>
+            <p class="formula-note">3～4週ごとに50～70%に減少</p>
+          </div>
+
+          <h4>典型的な週間負荷:</h4>
+          <ul>
+            <li><strong>初心者健康ウォーカー:</strong> 200-400 WSS/週</li>
+            <li><strong>定期的なフィットネスウォーカー:</strong> 400-700 WSS/週</li>
+            <li><strong>真剣なフィットネスウォーカー:</strong> 700-1000 WSS/週</li>
+            <li><strong>競技競歩者:</strong> 1000-1500+ WSS/週</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. 予測方程式</h2>
+
+        <div class="formula-section">
+          <h3>6分間歩行テスト (6MWT) 距離予測</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">予測6MWT距離 (Enright & Sherrill)</p>
+            <p><strong>男性:</strong> (7.57 × 身長 cm) - (5.02 × 年齢) - (1.76 × 体重 kg) - 309</p>
+            <p><strong>女性:</strong> (2.11 × 身長 cm) - (5.78 × 年齢) - (2.29 × 体重 kg) + 667</p>
+            <p class="formula-note">健康な成人のメートル単位の距離を予測</p>
+          </div>
+
+          <h4>例: 40歳男性、175 cm、75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
+            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95メートル</strong></p>
+            <p class="example-interpretation">年齢に対して良好な機能的能力</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>臨床使用:</strong> 6MWTは、心肺患者、手術前後の評価、高齢者の一般的なフィットネスにおける機能的運動能力を評価するために使用されます。</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. 単位変換</h2>
+
+        <div class="formula-section">
+          <h3>一般的なウォーキング指標の変換</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>から</th>
+                  <th>へ</th>
+                  <th>計算式</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3.6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0.447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3.6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2.237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × 16.67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26.82</td>
+                </tr>
+                <tr>
+                  <td>METs</td>
+                  <td>mL/kg/min</td>
+                  <td>METs × 3.5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>METs</td>
+                  <td>VO₂ ÷ 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>クイックリファレンス:</h4>
+          <ul>
+            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (典型的な健康な成人の歩行速度)</li>
+            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (速歩)</li>
+            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (安静時代謝)</li>
+            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (中強度閾値)</li>
+            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (高強度閾値)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">関連リソース</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>数式を適用: WSSカリキュレーター</h3>
+            <p>インタラクティブな計算機を使用してウォーキングストレススコアを計算します。</p>
+            <a href="/ja/wss-calculator/" class="btn btn-secondary">WSSを計算 →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>ウォーキングゾーンの理解</h3>
+            <p>トレーニングでケイデンスベースの強度ゾーンを適用する方法を学びます。</p>
+            <a href="/ja/walking-zones/" class="btn btn-secondary">ゾーンを学ぶ →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>科学的研究</h3>
+            <p>これらの数式を検証した研究をレビューします。</p>
+            <a href="/ja/research/" class="btn btn-secondary">研究を見る →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>完全な参考文献</h3>
+            <p>参照されたすべての方程式の完全な引用にアクセスします。</p>
+            <a href="/ja/bibliography/" class="btn btn-secondary">参考文献を見る →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>数式インデックス</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. ケイデンス → METs</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂方程式</a></li>
+            <li><a href="#energy-expenditure">3. エネルギーとカロリー</a></li>
+            <li><a href="#gait-symmetry">4. 歩行対称性指数</a></li>
+            <li><a href="#walk-score">5. WALKスコア</a></li>
+            <li><a href="#basic-metrics">6. 基本的な歩行指標</a></li>
+            <li><a href="#heart-rate">7. 心拍数ゾーン</a></li>
+            <li><a href="#cost-transport">8. 移動コスト</a></li>
+            <li><a href="#training-load">9. トレーニング負荷</a></li>
+            <li><a href="#predictions">10. 予測方程式</a></li>
+            <li><a href="#conversions">11. 単位変換</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ 最も重要</h3>
+          <p><strong>ケイデンスからMETsへ</strong></p>
+          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
+          <p class="small-text">この単一の方程式により、心拍数モニターなしでケイデンスベースの強度トレーニングが可能になります。</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>これらの数式を適用</h3>
+          <p>Walk Analyticsは、これらの科学的に検証された方程式を使用してあなたの歩行を分析します。</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">アプリをダウンロード</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 数式の精度</h4>
+          <p>このページのすべての方程式は査読済み研究からのものです。完全な引用については<a href="/ja/bibliography/">参考文献</a>をご覧ください。</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
   </main>
 
   
