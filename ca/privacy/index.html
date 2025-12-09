@@ -854,149 +854,434 @@ img[width][height] {
 
 <section class="section">
     <div class="container container-narrow">
-        <h1 class="mb-lg">Política de Privadesa</h1>
+        <h1 class="mb-lg">Política de Privacitat de Walk Analytics</h1>
 
-        <p class="text-secondary mb-xl">Última actualització: <strong>27 d'octubre de 2025</strong></p>
+        <p class="text-secondary mb-xl"><strong>Última actualització:</strong> 10 de Gener de 2025 | <strong>Data
+                d'efecte:</strong> 10 de Gener de 2025</p>
 
-        <div class="callout callout-success mb-xl">
-            <h2 class="mb-sm">La teva Privadesa està Protegida</h2>
-            <p>
-                <strong>Walk Analytics no recopila, emmagatzema ni transmet cap de les teves dades personals.</strong>
-                Tot el processament de dades es realitza localment al teu dispositiu.
+        <div class="mb-xl">
+            <h2 class="mb-md">Introducció</h2>
+            <p class="mb-md">
+                Walk Analytics ("nosaltres", "el nostre" o "l'app") es compromet a protegir la vostra privacitat.
+                Aquesta Política de Privacitat explica com les nostres aplicacions mòbils (iOS i Android) accedeixen,
+                utilitzen i protegeixen les dades de salut del vostre dispositiu.
             </p>
+            <div class="callout callout-info mb-md">
+                <p><strong>Principi Clau de Privacitat:</strong> Walk Analytics opera amb una <strong>arquitectura local
+                        sense servidors</strong>. Totes les dades de salut accedides des d'Apple HealthKit (iOS) o
+                    Health Connect (Android) romanen exclusivament al vostre dispositiu físic i mai es transmeten a
+                    servidors externs, serveis al núvol o tercers.</p>
+            </div>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Visió General</h2>
+            <h2 class="mb-md">1. Accés a Dades de Salut</h2>
             <p class="mb-md">
-                Walk Analytics està dissenyat amb la teva privadesa com a prioritat absoluta. Aquesta Política de
-                Privadesa explica el nostre compromís de protegir la teva informació personal i les teves dades.
+                Walk Analytics s'integra amb la plataforma de salut nativa del vostre dispositiu per proporcionar
+                anàlisi d'entrenaments de caminada:
             </p>
-            <p class="mb-md">
-                <strong>En resum: No recopilem les teves dades perquè no les necessitem.</strong> Tot el que fas a
-                l'aplicació es queda al teu dispositiu.
-            </p>
-        </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Informació que NO recopilem</h2>
-            <p class="mb-md">Walk Analytics no recopila, transmet ni emmagatzema:</p>
+            <h3 class="mb-sm">1.1 iOS - Integració amb Apple HealthKit</h3>
+            <p class="mb-md">
+                En dispositius iOS, Walk Analytics s'integra amb <strong>Apple HealthKit</strong> per accedir a les
+                dades d'entrenament de caminada. Sol·licitem accés de només lectura a:
+            </p>
             <ul class="mb-md">
-                <li>Informació personal (nom, correu electrònic, número de telèfon, etc.)</li>
-                <li>Dades d'activitat de marxa (distància, passos, velocitat, temps, etc.)</li>
-                <li>Dades de salut (freqüència cardíaca, calories, etc.)</li>
-                <li>Dades d'ubicació o coordenades GPS</li>
-                <li>Informació del dispositiu o identificadors</li>
-                <li>Estadístiques d'ús o anàlisis</li>
-                <li>Informes d'errors o diagnòstics</li>
-                <li>Qualsevol altra informació personal o sensible</li>
+                <li><strong>Sessions d'Entrenament:</strong> Sessions d'exercici de caminada amb temps i durada</li>
+                <li><strong>Distància:</strong> Distàncies totals i distàncies per llarg</li>
+                <li><strong>Freqüència Cardíaca:</strong> Dades de freqüència cardíaca durant els entrenaments</li>
+                <li><strong>Energia Activa:</strong> Calories cremades durant les sessions de caminada</li>
+                <li><strong>Recompte de Braçades:</strong> Dades de braçades per a l'anàlisi</li>
+            </ul>
+            <p class="mb-md">
+                <strong>Compliment amb Apple HealthKit:</strong> Walk Analytics s'adhereix a totes les directrius
+                d'Apple HealthKit. Les vostres dades de salut es processen completament al vostre dispositiu iOS i mai
+                en surten. Mai compartim dades de HealthKit amb tercers, plataformes publicitàries o corredors de dades.
+            </p>
+
+            <h3 class="mb-sm">1.2 Android - Integració amb Health Connect</h3>
+            <div class="table-responsive mb-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tipus de Dada de Salut</th>
+                            <th>Permís</th>
+                            <th>Propòsit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sessions d'Exercici</strong></td>
+                            <td><code>READ_EXERCISE</code></td>
+                            <td>Per identificar i importar sessions d'entrenament de caminada des de Health Connect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Registres de Distància</strong></td>
+                            <td><code>READ_DISTANCE</code></td>
+                            <td>Per mostrar mètriques clau com la distància total per bany, distàncies per llarg i
+                                calcular el ritme</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Registres de Freqüència Cardíaca</strong></td>
+                            <td><code>READ_HEART_RATE</code></td>
+                            <td>Per mostrar gràfics de freqüència cardíaca, calcular la mitjana i màxima durant els
+                                entrenaments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Registres de Velocitat</strong></td>
+                            <td><code>READ_SPEED</code></td>
+                            <td>Per calcular i mostrar el vostre ritme de caminada, zones de ritme i anàlisi de
+                                freqüència de braçada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Calories Cremades</strong></td>
+                            <td><code>READ_TOTAL_CALORIES_BURNED</code></td>
+                            <td>Per proporcionar una visió general completa de la despesa energètica durant les sessions
+                                de caminada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb-md">
+                <strong>Permisos d'Android:</strong> Aquests permisos es sol·liciten durant el primer inici de l'app.
+                Podeu revocar aquests permisos en qualsevol moment a través de Configuració d'Android → Aplicacions →
+                Health Connect → Walk Analytics.
+            </p>
+
+            <h3 class="mb-sm">1.3 Com Utilitzem les Dades de Salut</h3>
+            <p class="mb-sm">Totes les dades de salut s'utilitzen <strong>exclusivament per als següents
+                    propòsits</strong>:</p>
+            <ul class="mb-md">
+                <li><strong>Visualització d'Entrenaments:</strong> Mostra les vostres sessions de caminada amb mètriques
+                    detallades (distància, temps, ritme, freqüència cardíaca)</li>
+                <li><strong>Analítica de Rendiment:</strong> Calcula zones de ritme, anàlisi de braçada, CSS (Velocitat
+                    Crítica de Caminada) i sTSS (Puntuació d'Estrès d'Entrenament de caminada)</li>
+                <li><strong>Seguiment del Progrés:</strong> Mostra tendències de rendiment, millors marques personals i
+                    resums d'entrenament</li>
+                <li><strong>Exportació de Dades:</strong> Permet exportar les vostres dades d'entrenament a format CSV
+                    per a ús personal</li>
+            </ul>
+
+            <h3 class="mb-sm">1.4 Emmagatzematge de Dades</h3>
+            <div class="callout callout-success mb-md">
+                <h4 class="mb-sm">🔒 GARANTIA CRÍTICA DE PRIVACITAT:</h4>
+                <p class="mb-sm"><strong>Totes les dades de salut romanen exclusivament al vostre dispositiu
+                        físic.</strong></p>
+                <ul class="mb-0">
+                    <li><strong>iOS:</strong> Les dades s'emmagatzemen utilitzant iOS Core Data i UserDefaults (només al
+                        dispositiu)</li>
+                    <li><strong>Android:</strong> Les dades s'emmagatzemen utilitzant Android Room Database (SQLite al
+                        dispositiu)</li>
+                    <li><strong>NO es pugen dades a servidors externs</strong></li>
+                    <li><strong>NO es transmeten dades per internet</strong></li>
+                    <li><strong>NO hi ha sincronització al núvol ni còpia de seguretat de dades de salut</strong></li>
+                    <li><strong>NO hi ha accés de tercers a les vostres dades de salut</strong></li>
+                </ul>
+            </div>
+            <p class="mb-md">
+                L'únic moment en què les dades surten del vostre dispositiu és quan <strong>VOSALTRES trieu
+                    explícitament</strong> exportar els vostres entrenaments a format CSV i compartir el fitxer
+                vosaltres mateixos.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">2. Permisos Necessaris</h2>
+
+            <h3 class="mb-sm">2.1 Permisos iOS</h3>
+            <ul class="mb-md">
+                <li><strong>Accés a HealthKit:</strong> Accés de lectura a Entrenaments, Distància, Freqüència Cardíaca,
+                    Energia Activa i Recompte de Braçades</li>
+                <li><strong>Fototeca (Opcional):</strong> Només si trieu desar resums d'entrenament com a imatges</li>
+            </ul>
+            <p class="mb-md">
+                Podeu gestionar els permisos de HealthKit en qualsevol moment a Configuració iOS → Privacitat i
+                Seguretat → Salut → Walk Analytics.
+            </p>
+
+            <h3 class="mb-sm">2.2 Permisos Android</h3>
+            <ul class="mb-md">
+                <li><code>android.permission.health.READ_EXERCISE</code></li>
+                <li><code>android.permission.health.READ_DISTANCE</code></li>
+                <li><code>android.permission.health.READ_HEART_RATE</code></li>
+                <li><code>android.permission.health.READ_SPEED</code></li>
+                <li><code>android.permission.health.READ_TOTAL_CALORIES_BURNED</code></li>
+                <li><strong>Accés a Internet</strong> (<code>INTERNET</code>): Utilitzat només per mostrar contingut
+                    estàtic dins l'app i accedir a la gestió de subscripcions (Google Play Billing). No es transmeten
+                    dades de salut.</li>
+                <li><strong>Servei en Primer Pla</strong> (<code>FOREGROUND_SERVICE</code>): Per a potencials funcions
+                    futures de sincronització en segon pla (no implementades actualment).</li>
             </ul>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Com funciona l'aplicació</h2>
-            <p class="mb-md">
-                Tots els càlculs i processaments de dades a Walk Analytics es realitzen <strong>íntegrament al teu
-                    dispositiu</strong>:
-            </p>
+            <h2 class="mb-md">3. Dades que NO Recollim</h2>
+            <p class="mb-sm">Walk Analytics <strong>NO</strong> recull, emmagatzema ni transmet:</p>
             <ul class="mb-md">
-                <li>Les teves dades de marxa s'emmagatzemen només a l'emmagatzematge local del teu dispositiu</li>
-                <li>Tots els càlculs (passos, ritme, cadència, zones, etc.) es realitzen localment</li>
-                <li>No s'envien dades als nostres servidors ni a serveis de tercers</li>
-                <li>No es requereix connexió a internet perquè l'aplicació funcioni</li>
+                <li>❌ Informació d'identificació personal (nom, correu electrònic, número de telèfon)</li>
+                <li>❌ Identificadors de dispositiu (IDFA a iOS, ID de publicitat a Android)</li>
+                <li>❌ Dades d'ubicació o coordenades GPS</li>
+                <li>❌ Analítica d'ús o seguiment de comportament a l'app</li>
+                <li>❌ Informes d'error o dades de diagnòstic a servidors externs</li>
+                <li>❌ Cap dada a través de SDKs de tercers o serveis d'analítica</li>
+            </ul>
+            <p class="mb-sm">Utilitzem <strong>zero biblioteques de seguiment de tercers</strong> incloent:</p>
+            <ul class="mb-md">
+                <li>No Google Analytics / Firebase Analytics</li>
+                <li>No Facebook SDK</li>
+                <li>No SDKs de publicitat</li>
+                <li>No serveis d'informes d'error (Crashlytics, Sentry, etc.)</li>
             </ul>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Emmagatzematge de Dades</h2>
+            <h2 class="mb-md">4. Compres dins l'App i Subscripcions</h2>
             <p class="mb-md">
-                Totes les dades que introdueixes o generes a l'aplicació s'emmagatzemen exclusivament al teu dispositiu
-                utilitzant els mecanismes d'emmagatzematge local d'iOS. Aquestes dades romanen sota el teu control
-                total:
+                Walk Analytics ofereix subscripcions opcionals dins l'app gestionades mitjançant el sistema de pagament
+                natiu del vostre dispositiu:
             </p>
+
+            <h3 class="mb-sm">4.1 iOS - Subscripcions App Store</h3>
+            <p class="mb-sm">Quan compreu una subscripció a iOS:</p>
             <ul class="mb-md">
-                <li>Les teves dades romanen al teu dispositiu en tot moment</li>
-                <li>Nosaltres no podem accedir a les teves dades</li>
-                <li>Si elimines l'aplicació, totes les dades s'eliminen definitivament del teu dispositiu</li>
-                <li>Les dades no es sincronitzen amb iCloud ni amb cap altre servei al núvol, tret que activis
-                    explícitament les còpies de seguretat de l'aplicació iOS</li>
+                <li>Apple gestiona tot el processament de pagaments a través de l'App Store</li>
+                <li>Nosaltres rebem només l'estat de la subscripció (activa/inactiva) a través de StoreKit</li>
+                <li>NO tenim accés a la vostra informació de pagament (targeta de crèdit, adreça de facturació)</li>
+                <li>Les dades de subscripció s'emmagatzemen localment al vostre dispositiu</li>
+            </ul>
+            <p class="mb-sm">Gestionar subscripcions:</p>
+            <ul class="mb-md">
+                <li>Configuració iOS → El vostre nom → Subscripcions → Walk Analytics</li>
+                <li>O dins l'app: Configuració → Gestionar Subscripció</li>
+            </ul>
+
+            <h3 class="mb-sm">4.2 Android - Google Play Billing</h3>
+            <p class="mb-sm">Quan compreu una subscripció a Android:</p>
+            <ul class="mb-md">
+                <li>Google Play gestiona tot el processament de pagaments</li>
+                <li>Nosaltres rebem només l'estat de la subscripció (activa/inactiva) a través de l'API de Google Play
+                    Billing</li>
+                <li>NO tenim accés a la vostra informació de pagament (targeta de crèdit, adreça de facturació)</li>
+                <li>Les dades de subscripció s'emmagatzemen localment al vostre dispositiu</li>
+            </ul>
+            <p class="mb-sm">Gestionar subscripcions:</p>
+            <ul class="mb-md">
+                <li>Google Play Store → Compte → Subscripcions → Walk Analytics</li>
+                <li>O dins l'app: Configuració → Gestionar Subscripció</li>
             </ul>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Serveis de Tercers</h2>
-            <p class="mb-md">
-                Walk Analytics no utilitza cap servei de tercers, incloent:
-            </p>
+            <h2 class="mb-md">5. Retenció i Eliminació de Dades</h2>
+
+            <h3 class="mb-sm">5.1 Retenció de Dades</h3>
             <ul class="mb-md">
-                <li>Sense serveis d'anàlisi (Google Analytics, Firebase, etc.)</li>
-                <li>Sense xarxes publicitàries</li>
-                <li>Sense serveis d'informe d'errors</li>
-                <li>Sense integracions de xarxes socials</li>
-                <li>Sense processadors de pagament (l'aplicació és gratuïta)</li>
+                <li>Les dades de salut s'emmagatzemen al vostre dispositiu <strong>indefinidament</strong> fins que les
+                    elimineu manualment</li>
+                <li>Les dades d'entrenament es conserven per proporcionar seguiment històric del rendiment i analítica
+                </li>
+            </ul>
+
+            <h3 class="mb-sm">5.2 Eliminació de Dades</h3>
+            <p class="mb-sm">Podeu eliminar les vostres dades en qualsevol moment:</p>
+
+            <p class="mb-sm"><strong>Mètode 1: Eliminar Entrenaments Individuals</strong></p>
+            <ul class="mb-md">
+                <li>Obriu la pantalla de detall de l'entrenament</li>
+                <li>Toqueu el botó d'eliminar (icona de paperera)</li>
+                <li>Confirmeu l'eliminació</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Mètode 2: Esborrar Totes les Dades de l'App</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Elimineu i reinstal·leu l'app (totes les dades locals s'eliminen)</li>
+                <li><strong>Android:</strong> Configuració → Aplicacions → Walk Analytics → Emmagatzematge → Esborrar
+                    dades</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Mètode 3: Desinstal·lar l'App</strong></p>
+            <ul class="mb-md">
+                <li>Desinstal·lar Walk Analytics elimina automàticament totes les dades locals</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Mètode 4: Revocar Permisos de Salut</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Configuració → Privacitat i Seguretat → Salut → Walk Analytics → Desactivar
+                    Totes les Categories</li>
+                <li><strong>Android:</strong> Configuració → Aplicacions → Health Connect → Walk Analytics → Revocar
+                    tots els permisos</li>
             </ul>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Permisos</h2>
+            <h2 class="mb-md">6. Seguretat de les Dades</h2>
             <p class="mb-md">
-                L'aplicació pot sol·licitar els següents permisos d'iOS només si tries utilitzar funcionalitats
-                específiques:
+                Ens prenem la seguretat de les dades seriosament, tot i que totes les dades romanen al vostre
+                dispositiu:
             </p>
+
+            <h3 class="mb-sm">6.1 Mesures de Seguretat</h3>
             <ul class="mb-md">
-                <li><strong>HealthKit/App Salut:</strong> Només si tries importar dades d'entrenament. Totes les dades
-                    romanen al teu dispositiu.</li>
-                <li><strong>Notificacions:</strong> Només si actives els recordatoris d'entrenament. No s'envien dades
-                    fora del teu dispositiu.</li>
+                <li><strong>Seguretat iOS:</strong> Totes les dades emmagatzemades utilitzant iOS Core Data estan
+                    protegides pel Keychain d'iOS i l'encriptació del dispositiu. Les dades estan protegides quan el
+                    dispositiu està bloquejat.</li>
+                <li><strong>Seguretat Android:</strong> Totes les dades emmagatzemades a Room Database estan protegides
+                    per la seguretat integrada d'Android i el sandbox de l'aplicació.</li>
+                <li><strong>Sense Transmissió de Xarxa:</strong> Les dades de salut mai surten del vostre dispositiu,
+                    eliminant els riscos de seguretat de transmissió</li>
+                <li><strong>Sandboxing d'App:</strong> Els sandboxes d'app d'iOS i Android eviten que altres apps
+                    accedeixin a les dades de Walk Analytics</li>
+                <li><strong>Emmagatzematge Segur:</strong> No es pot accedir a les dades de salut sense autenticació del
+                    dispositiu (codi, Face ID, Touch ID, empremta digital, desbloqueig facial)</li>
             </ul>
+
+            <h3 class="mb-sm">6.2 La Vostra Responsabilitat</h3>
+            <p class="mb-sm">Per protegir les vostres dades:</p>
+            <ul class="mb-md">
+                <li>Mantingueu el vostre dispositiu bloquejat amb un codi fort/biometria</li>
+                <li>Mantingueu el vostre sistema operatiu actualitzat amb els últims pedaços de seguretat</li>
+                <li><strong>iOS:</strong> No feu jailbreak al vostre dispositiu</li>
+                <li><strong>Android:</strong> No feu root al vostre dispositiu</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">7. Compartició de Dades i Tercers</h2>
             <p class="mb-md">
-                Tots els permisos són opcionals i els pots revocar en qualsevol moment a través dels Ajustos d'iOS.
+                <strong>Walk Analytics NO comparteix les vostres dades de salut amb cap tercer.</strong>
+            </p>
+
+            <h3 class="mb-sm">7.1 Sense Compartició de Dades</h3>
+            <ul class="mb-md">
+                <li>No venem les vostres dades</li>
+                <li>No compartim les vostres dades amb anunciants</li>
+                <li>No proporcionem les vostres dades a empreses d'analítica</li>
+                <li>No ens integrem amb plataformes de xarxes socials</li>
+            </ul>
+
+            <h3 class="mb-sm">7.2 Exportació CSV (Només Iniciada per l'Usuari)</h3>
+            <p class="mb-sm">L'única manera que les dades surtin del vostre dispositiu és quan
+                <strong>VOSALTRES</strong> explícitament:</p>
+            <ol class="mb-md">
+                <li>Navegueu a Configuració → Exportació de Dades Brutes</li>
+                <li>Genereu un fitxer CSV</li>
+                <li>Trieu compartir el fitxer CSV a través del menú de compartir del vostre dispositiu (correu
+                    electrònic, emmagatzematge al núvol, apps de missatgeria)</li>
+            </ol>
+            <p class="mb-md"><strong>Això està totalment sota el vostre control.</strong></p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">8. Privacitat dels Menors</h2>
+            <p class="mb-md">
+                Walk Analytics no recull conscientment dades de menors de 13 anys. L'app no sol·licita informació
+                d'edat, però els pares haurien de supervisar l'ús que fan els seus fills de les aplicacions de seguiment
+                de salut.
+            </p>
+            <p class="mb-md">
+                Si creieu que un menor de 13 anys ha utilitzat Walk Analytics, contacteu-nos i us ajudarem a assegurar
+                que totes les dades locals s'eliminin del dispositiu.
             </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Privadesa dels Nens</h2>
+            <h2 class="mb-md">9. Transferències Internacionals de Dades</h2>
             <p class="mb-md">
-                Com que no recopilem cap dada, Walk Analytics és segur per a usuaris de totes les edats, inclosos els
-                nens menors de 13 anys. No obstant això, recomanem supervisió parental per a totes les activitats de
-                fitness.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Modificacions d'aquesta Política de Privadesa</h2>
-            <p class="mb-md">
-                Podem actualitzar aquesta Política de Privadesa de tant en tant per reflectir els canvis a l'aplicació o
-                els requisits legals. Qualsevol canvi es publicarà en aquesta pàgina amb una data d'"Última
-                actualització" actualitzada.
-            </p>
-            <p class="mb-md">
-                <strong>Important:</strong> Mai canviarem el nostre compromís fonamental de no recopilar les teves
+                <strong>No Aplicable.</strong> Com que totes les dades de salut romanen exclusivament al vostre
+                dispositiu (iOS o Android) i mai es transmeten a servidors, no hi ha transferències internacionals de
                 dades.
             </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Contacta amb nosaltres</h2>
+            <h2 class="mb-md">10. Els Vostres Drets (Compliment GDPR, CCPA)</h2>
             <p class="mb-md">
-                Si tens preguntes sobre aquesta Política de Privadesa o l'aplicació, si us plau contacta amb nosaltres a
-                través de la nostra <a href="/ca/contact/">pàgina de contacte</a>.
+                Tot i que Walk Analytics no recull dades personals en servidors, respectem els vostres drets de
+                privacitat de dades:
+            </p>
+
+            <h3 class="mb-sm">10.1 Drets GDPR (Usuaris Europeus)</h3>
+            <ul class="mb-md">
+                <li><strong>Dret d'Accés:</strong> Totes les vostres dades són accessibles dins l'app en qualsevol
+                    moment</li>
+                <li><strong>Dret d'Eliminació:</strong> Elimineu dades utilitzant els mètodes descrits a la Secció 5.2
+                </li>
+                <li><strong>Dret a la Portabilitat:</strong> Exporteu les vostres dades a format CSV (Configuració →
+                    Exportació de Dades Brutes)</li>
+                <li><strong>Dret a Restringir el Tractament:</strong> Revoqueu els permisos de salut per aturar l'accés
+                    a noves dades</li>
+            </ul>
+
+            <h3 class="mb-sm">10.2 Drets CCPA (Usuaris de Califòrnia)</h3>
+            <ul class="mb-md">
+                <li><strong>Dret a Saber:</strong> Aquesta política revela totes les dades a les quals s'accedeix i com
+                    s'utilitzen</li>
+                <li><strong>Dret a Eliminar:</strong> Elimineu dades utilitzant els mètodes descrits a la Secció 5.2
+                </li>
+                <li><strong>Dret a Optar per No Vendre:</strong> No aplicable (mai venem dades)</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">11. Canvis en Aquesta Política de Privacitat</h2>
+            <p class="mb-sm">Podem actualitzar aquesta Política de Privacitat de tant en tant. Quan fem canvis:</p>
+            <ul class="mb-md">
+                <li>La data de "Última Actualització" a la part superior d'aquesta política es revisarà</li>
+                <li>Els canvis significatius s'anunciaran dins l'app</li>
+                <li>L'ús continuat de l'app després dels canvis constitueix l'acceptació de la política actualitzada
+                </li>
+            </ul>
+            <p class="mb-md">
+                Recomanem revisar aquesta política periòdicament per estar informats sobre com protegim la vostra
+                privacitat.
             </p>
         </div>
 
-        <div class="callout callout-info">
-            <h2 class="mb-sm">Resum</h2>
-            <p class="mb-sm">
-                <strong>Walk Analytics és una aplicació centrada en la privadesa.</strong> Creiem que les teves dades et
-                pertanyen i han de romandre amb tu.
-            </p>
-            <ul>
-                <li>❌ Sense recopilació de dades</li>
-                <li>❌ Sense seguiment ni anàlisi</li>
-                <li>❌ Sense serveis de tercers</li>
-                <li>✅ Processament 100% local</li>
-                <li>✅ Control total sobre les teves dades</li>
+        <div class="mb-xl">
+            <h2 class="mb-md">12. Contacteu-nos</h2>
+            <p class="mb-sm">Si teniu preguntes, inquietuds o sol·licituds relacionades amb aquesta Política de
+                Privacitat o la vostra privacitat de dades:</p>
+            <ul class="mb-md">
+                <li><strong>Correu electrònic:</strong> support@walkanalytics.app</li>
+                <li><strong>Lloc web:</strong> <a href="https://walkanalytics.app">https://walkanalytics.app</a></li>
             </ul>
+            <p class="mb-md">
+                <strong>Temps de Resposta:</strong> Intentem respondre a totes les consultes de privacitat en un termini
+                de 7 dies laborables.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">13. Compliment Legal</h2>
+            <p class="mb-sm">Walk Analytics compleix amb:</p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Directrius de Revisió de l'App Store d'Apple, Directrius de HealthKit d'Apple
+                </li>
+                <li><strong>Android:</strong> Polítiques del Programa de Desenvolupadors de Google Play, Directrius de
+                    Health Connect d'Android</li>
+                <li>Reglament General de Protecció de Dades (GDPR)</li>
+                <li>Llei de Privacitat del Consumidor de Califòrnia (CCPA)</li>
+                <li>Llei de Protecció de la Privacitat Infantil en Línia (COPPA)</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-success">
+            <h2 class="mb-md">Resum</h2>
+            <p class="mb-sm"><strong>En Termes Simples:</strong></p>
+            <ul class="mb-sm">
+                <li>✅ <strong>A què accedim:</strong> Dades d'entrenament de caminada d'Apple HealthKit (iOS) o Health
+                    Connect (Android)</li>
+                <li>✅ <strong>On s'emmagatzema:</strong> Només al VOSTRE dispositiu (iOS Core Data o Android Room
+                    Database)</li>
+                <li>✅ <strong>On va:</strong> Enlloc. Mai surt del vostre dispositiu.</li>
+                <li>✅ <strong>Qui ho veu:</strong> Només vosaltres.</li>
+                <li>✅ <strong>Com esborrar-ho:</strong> Esborreu les dades de l'app o desinstal·leu l'app en qualsevol
+                    moment.</li>
+            </ul>
+            <p class="mb-0">
+                <strong>Walk Analytics està construït amb la privacitat com a prioritat. Les vostres dades de caminada
+                    són vostres i es queden al vostre dispositiu.</strong>
+            </p>
         </div>
     </div>
 </section>

@@ -854,132 +854,412 @@ img[width][height] {
 
 <section class="section">
     <div class="container container-narrow">
-        <h1 class="mb-lg">Manufar Sirri</h1>
+        <h1 class="mb-lg">Manufar Keɓantawa ta Walk Analytics</h1>
 
-        <p class="text-secondary mb-xl">An sabunta: <strong>Oktoba 27, 2025</strong></p>
+        <p class="text-secondary mb-xl"><strong>An sabunta shi na karshe:</strong> 10 Janairu 2025 | <strong>Ranar Fara
+                Aiki:</strong> 10 Janairu 2025</p>
 
-        <div class="callout callout-success mb-xl">
-            <h2 class="mb-sm">Ana Kare Sirrinka</h2>
-            <p>
-                <strong>Walk Analytics ba ya tattara, adanawa, ko aika duk wani bayananku na sirri.</strong> Duk sarrafa bayanai yana faruwa a cikin na'urar ku kawai.
+        <div class="mb-xl">
+            <h2 class="mb-md">Gabatarwa</h2>
+            <p class="mb-md">
+                Walk Analytics ("mu", "namu" ko "app") ta himmatu wajen kare keɓantawar ku. Wannan Manufar Keɓantawa
+                tana bayyana yadda manhajar wayoyinmu (iOS da Android) ke samun dama, amfani, da kare bayanan lafiya a
+                na'urar ku.
             </p>
+            <div class="callout callout-info mb-md">
+                <p><strong>Babban Ka'idar Keɓantawa:</strong> Walk Analytics tana aiki ne da <strong>tsarin da babu uwar
+                        garke (serverless), local-first</strong>. Duk bayanan lafiya da aka samo daga Apple HealthKit
+                    (iOS) ko Health Connect (Android) suna zama ne kawai a kan na'urarku ta zahiri kuma ba a taba tura
+                    su zuwa sabar waje, ayyukan girgije, ko wasu mutane ba.</p>
+            </div>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Bayani Gabaɗaya</h2>
+            <h2 class="mb-md">1. Samun Dama ga Bayanan Lafiya</h2>
             <p class="mb-md">
-                An tsara Walk Analytics tare da ganin sirrinka a matsayin fifiko. Wannan Manufar Sirri tana bayyana alkawarin mu na kare bayananku na sirri.
+                Walk Analytics tana haɗewa tare da ingantaccen dandamalin lafiya na na'urar ku don samar da nazarin
+                motsa jiki na iyo:
             </p>
-            <p class="mb-md">
-                <strong>A taƙaice: Ba ma tattara bayananku saboda ba mu buƙatarsu.</strong> Duk abin da kuke yi a cikin app yana zaune a cikin na'urar ku.
-            </p>
-        </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Bayanan Da Ba Mu Tattarawa</h2>
-            <p class="mb-md">Walk Analytics ba ya tattara, aika, ko adana:</p>
-            <ul class="mb-md">
-                <li>Bayanan sirri (suna, imel, lambar waya, da dai sauransu)</li>
-                <li>Bayanan ayyukan tafiya (nisa, matakai, sauri, lokaci, da dai sauransu)</li>
-                <li>Bayanan lafiya (bugun zuciya, calories, da dai sauransu)</li>
-                <li>Bayanan wurin zama ko kididdigar GPS</li>
-                <li>Bayanan na'ura ko alamomi</li>
-                <li>Kididdigar amfani ko bincike</li>
-                <li>Rahotannin matsaloli ko gwaje-gwaje</li>
-                <li>Duk wani bayanan sirri ko masu mahimmanci</li>
-            </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Yadda App Ɗin Ke Aiki</h2>
+            <h3 class="mb-sm">1.1 iOS - Haɗewar Apple HealthKit</h3>
             <p class="mb-md">
-                Duk ƙididdiga da sarrafa bayanai a cikin Walk Analytics suna faruwa <strong>gaba ɗaya a cikin na'urar ku</strong>:
+                A kan na'urorin iOS, Walk Analytics tana haɗewa tare da <strong>Apple HealthKit</strong> don samun damar
+                bayanan iyo. Muna neman damar karantawa kawai zuwa:
             </p>
             <ul class="mb-md">
-                <li>Ana adana bayanan tafiyar ku kawai a cikin ajiyar na'urar ku</li>
-                <li>Ana yin duk ƙididdiga (matakai, saurin tafiya, cadence, yankuna, da dai sauransu) a gida</li>
-                <li>Ba a taɓa aika bayanai zuwa sabar mu ko wani sabis na wasu kamfanoni ba</li>
-                <li>Ba a buƙatar haɗin intanet don app ɗin ya yi aiki ba</li>
+                <li><strong>Motsa jiki (Workouts):</strong> Ayyukan yin iyo tare da lokaci da tsawon lokaci</li>
+                <li><strong>Nisa:</strong> Jimlar nisa da nisan zagaye</li>
+                <li><strong>Bugun Zuciya:</strong> Bayanan bugun zuciya yayin motsa jiki</li>
+                <li><strong>Makamashi Mai Aiki:</strong> Kalori da aka ƙone yayin zaman iyo</li>
+                <li><strong>Bugawa (Strokes):</strong> Bayanan bugawa don bincike</li>
             </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Ajiyar Bayanai</h2>
             <p class="mb-md">
-                Duk wani bayanan da kuka shigar ko kuma kuka ƙirƙira a cikin app ɗin ana adana shi kawai a cikin na'urar ku ta hanyar iOS local storage. Wannan bayanan yana ƙarƙashin ikon ku:
+                <strong>Yarda da Apple HealthKit:</strong> Walk Analytics tana bin duk ƙa'idodin Apple HealthKit. Ana
+                sarrafa bayanan lafiyar ku gabaɗaya akan na'urar iOS ɗin ku kuma ba ya barin ta. Ba mu taba raba bayanan
+                HealthKit tare da wasu mutane, dandamalin talla, ko dillalan bayanai ba.
             </p>
+
+            <h3 class="mb-sm">1.2 Android - Haɗewar Health Connect</h3>
+            <div class="table-responsive mb-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nau'in Bayanan Lafiya</th>
+                            <th>Izini</th>
+                            <th>Manufa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Zaman Motsa Jiki</strong></td>
+                            <td><code>READ_EXERCISE</code></td>
+                            <td>Don ganowa da shigo da ayyukan yin iyo daga Health Connect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rubutun Nisa</strong></td>
+                            <td><code>READ_DISTANCE</code></td>
+                            <td>Don nuna mahimman ma'auni kamar jimlar nisan iyo, nisan zagaye da lissafin taki</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rubutun Bugun Zuciya</strong></td>
+                            <td><code>READ_HEART_RATE</code></td>
+                            <td>Don nuna jadawalin bugun zuciya da lissafin matsakaici da max yayin motsa jiki</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rubutun Gudu</strong></td>
+                            <td><code>READ_SPEED</code></td>
+                            <td>Don lissafawa da nuna saurin iyo, yankunan taki da nazarin ƙimar bugun jini</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kalori da aka Ƙone</strong></td>
+                            <td><code>READ_TOTAL_CALORIES_BURNED</code></td>
+                            <td>Don samar da cikakken bayyani game da kashe kuɗin makamashi yayin zaman iyo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb-md">
+                <strong>Izinin Android:</strong> Ana buƙatar waɗannan izini lokacin ƙaddamar da app a karon farko. Kuna
+                iya soke waɗannan izini a kowane lokaci a cikin Saitunan Android → Apps → Health Connect → Walk Analytics.
+            </p>
+
+            <h3 class="mb-sm">1.3 Yadda muke amfani da bayanan lafiya</h3>
+            <p class="mb-sm">Duk bayanan lafiya ana amfani da su <strong>kawai don dalilai masu zuwa</strong>:</p>
             <ul class="mb-md">
-                <li>Bayananku suna zaune a cikin na'urar ku kullum</li>
-                <li>Ba za mu iya samun damar bayananku ba</li>
-                <li>Idan kun share app ɗin, duk bayanan za a cire su gaba ɗaya daga na'urar ku</li>
-                <li>Ba a daidaita bayanan zuwa iCloud ko wani sabis na girgije sai dai idan kun kunna iOS app backups</li>
+                <li><strong>Nuna Motsa Jiki:</strong> Nuna zaman ninkayarku tare da cikakkun awo (nisa, lokaci, taki,
+                    bugun zuciya)</li>
+                <li><strong>Binciken Aiki:</strong> Lissafin yankunan taki, binciken bugun jini, CSS (Matsakaicin Saurin
+                    Iyo) da sTSS (Maki na Damuwar Iyo)</li>
+                <li><strong>Bibiyar Ci gaba:</strong> Nuna yanayin aiki, bayanan sirri da taƙaitaccen horo</li>
+                <li><strong>Fitar da Bayanai:</strong> Ba da damar fitar da bayanan motsa jiki a cikin tsarin CSV don
+                    amfanin kashin kai</li>
             </ul>
+
+            <h3 class="mb-sm">1.4 Ajiye Bayanai</h3>
+            <div class="callout callout-success mb-md">
+                <h4 class="mb-sm">🔒 Babban Garanti na Keɓantawa:</h4>
+                <p class="mb-sm"><strong>Duk bayanan lafiya suna zama ne kawai akan na'urarku ta zahiri.</strong></p>
+                <ul class="mb-0">
+                    <li><strong>iOS:</strong> Ana adana bayanai ta amfani da iOS Core Data da UserDefaults (na na'ura
+                        kawai)</li>
+                    <li><strong>Android:</strong> Ana adana bayanai ta amfani da Android Room Database (SQLite na
+                        na'ura)</li>
+                    <li><strong>Babu lodawa zuwa sabar waje</strong></li>
+                    <li><strong>Babu watsawa ta intanet</strong></li>
+                    <li><strong>Babu daidaita girgije ko madadin bayanan lafiya</strong></li>
+                    <li><strong>Babu damar ɓangare na uku ga bayanan lafiyar ku</strong></li>
+                </ul>
+            </div>
+            <p class="mb-md">
+                Kawai yanayin inda bayanai ke barin na'urarka shine lokacin da <strong>kai da kanka ka zaɓi</strong>
+                fitar da motsa jikinka zuwa CSV da raba fayil ɗin da kanka.
+            </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Ayyukan Wasu Kamfanoni</h2>
-            <p class="mb-md">
-                Walk Analytics ba ya amfani da kowane sabis na wasu kamfanoni, ciki har da:
-            </p>
+            <h2 class="mb-md">2. Abubuwan da ake buƙata</h2>
+
+            <h3 class="mb-sm">2.1 Izinin iOS</h3>
             <ul class="mb-md">
-                <li>Babu ayyukan bincike (Google Analytics, Firebase, da dai sauransu)</li>
-                <li>Babu cibiyoyin talla</li>
-                <li>Babu ayyukan rahotannin matsaloli</li>
-                <li>Babu haɗin kafofin watsa labarun jama'a</li>
-                <li>Babu masu sarrafa biyan kuɗi (app ɗin kyauta ne)</li>
+                <li><strong>Samun damar HealthKit:</strong> Samun damar karantawa zuwa motsa jiki, nisa, bugun zuciya,
+                    kuzari mai aiki da bugun jini</li>
+                <li><strong>Dakin Karatun Hotuna (na zaɓi):</strong> Sai kawai idan kun zaɓi ajiye taƙaitaccen horo
+                    azaman hotuna</li>
             </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Izini</h2>
             <p class="mb-md">
-                App ɗin na iya neman izinin iOS masu zuwa kawai idan kun zaɓi yin amfani da takamaiman fasaloli:
+                Kuna iya sarrafa izinin HealthKit a kowane lokaci a cikin Saitunan iOS → Sirri & Tsaro → Lafiya → Walk Analytics.
             </p>
+
+            <h3 class="mb-sm">2.2 Izinin Android</h3>
             <ul class="mb-md">
-                <li><strong>HealthKit/Health App:</strong> Kawai idan kun zaɓi shigo da bayanan motsa jiki. Duk bayanan suna zaune a cikin na'urar ku.</li>
-                <li><strong>Sanarwa:</strong> Kawai idan kun kunna tunatarwar motsa jiki. Ba a aika bayanai wajen na'urar ku ba.</li>
+                <li><code>android.permission.health.READ_EXERCISE</code></li>
+                <li><code>android.permission.health.READ_DISTANCE</code></li>
+                <li><code>android.permission.health.READ_HEART_RATE</code></li>
+                <li><code>android.permission.health.READ_SPEED</code></li>
+                <li><code>android.permission.health.READ_TOTAL_CALORIES_BURNED</code></li>
+                <li><strong>Samun damar Intanet</strong> (<code>INTERNET</code>): Ana amfani da shi kawai don nuna abun
+                    ciki tsaye a cikin app da samun damar sarrafa biyan kuɗi (Google Play Billing). Ba a aika bayanan
+                    lafiya.</li>
+                <li><strong>Sabis na Gaba</strong> (<code>FOREGROUND_SERVICE</code>): Don yuwuwar sifofin aiki tare na
+                    baya na gaba (ba a aiwatar da su a halin yanzu ba).</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">3. Bayanan da BA MA tattarawa</h2>
+            <p class="mb-sm">Walk Analytics <strong>BA YA</strong> tattarawa, adana ko watsa:</p>
+            <ul class="mb-md">
+                <li>❌ Bayanin Gano Kai (suna, imel, lambar waya)</li>
+                <li>❌ Masu Gano Na'ura (IDFA akan iOS, Advertising ID akan Android)</li>
+                <li>❌ Bayanan Wuri ko haɗin GPS</li>
+                <li>❌ Nazarin amfani ko bin diddigin hali a cikin app</li>
+                <li>❌ Rahoton faɗuwa ko bayanan bincike zuwa sabar waje</li>
+                <li>❌ Duk wani bayanai via SDKs na ɓangare na uku ko sabis na nazari</li>
+            </ul>
+            <p class="mb-sm">Muna amfani da <strong>sifili dakunan karatu na bin diddigi na ɓangare na uku</strong> ciki
+                har da:</p>
+            <ul class="mb-md">
+                <li>Babu Google Analytics / Firebase Analytics</li>
+                <li>Babu Facebook SDK</li>
+                <li>Babu SDKs na Talla</li>
+                <li>Babu sabis na bayar da rahoton faɗuwa (Crashlytics, Sentry, da sauransu)</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">4. Siyayya a cikin App da Biyan kuɗi</h2>
+            <p class="mb-md">
+                Walk Analytics yana ba da biyan kuɗi na zaɓi a cikin app wanda aka sarrafa ta hanyar tsarin biyan kuɗi
+                na asali na na'urarka:
+            </p>
+
+            <h3 class="mb-sm">4.1 iOS - Biyan kuɗi na App Store</h3>
+            <p class="mb-sm">Lokacin da kuka sayi biyan kuɗi akan iOS:</p>
+            <ul class="mb-md">
+                <li>Apple yana sarrafa duk sarrafa biyan kuɗi ta hanyar App Store</li>
+                <li>Muna karɓar matsayin biyan kuɗi kawai (mai aiki/mara aiki) ta StoreKit</li>
+                <li>Ba mu da damar yin amfani da bayanan biyan kuɗin ku (katin kuɗi, adireshin lissafi)</li>
+                <li>Ana adana bayanan biyan kuɗi a cikin na'urarku</li>
+            </ul>
+            <p class="mb-sm">Sarrafa biyan kuɗi:</p>
+            <ul class="mb-md">
+                <li>Saitunan iOS → Sunan ku → Biyan kuɗi → Walk Analytics</li>
+                <li>Ko a cikin app: Saituna → Sarrafa Biyan Kuɗi</li>
+            </ul>
+
+            <h3 class="mb-sm">4.2 Android - Google Play Billing</h3>
+            <p class="mb-sm">Lokacin da kuka sayi biyan kuɗi akan Android:</p>
+            <ul class="mb-md">
+                <li>Google Play yana sarrafa duk sarrafa biyan kuɗi</li>
+                <li>Muna karɓar matsayin biyan kuɗi kawai (mai aiki/mara aiki) ta Google Play Billing API</li>
+                <li>Ba mu da damar yin amfani da bayanan biyan kuɗin ku (katin kuɗi, adireshin lissafi)</li>
+                <li>Ana adana bayanan biyan kuɗi a cikin na'urarku</li>
+            </ul>
+            <p class="mb-sm">Sarrafa biyan kuɗi:</p>
+            <ul class="mb-md">
+                <li>Google Play Store → Account → Biyan kuɗi da biyan kuɗi → Biyan kuɗi → Walk Analytics</li>
+                <li>Ko a cikin app: Saituna → Sarrafa Biyan Kuɗi</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">5. Riƙewa da Share Bayanai</h2>
+
+            <h3 class="mb-sm">5.1 Riƙe Bayanai</h3>
+            <ul class="mb-md">
+                <li>Ana adana bayanan lafiya a kan na'urarka <strong>har abada</strong> har sai kun share su da hannu
+                </li>
+                <li>Ana adana bayanan motsa jiki don samar da bin diddigin ayyukan tarihi da bincike</li>
+            </ul>
+
+            <h3 class="mb-sm">5.2 Share Bayanai</h3>
+            <p class="mb-sm">Kuna iya share bayanan ku a kowane lokaci:</p>
+
+            <p class="mb-sm"><strong>Hanyar 1: Share motsa jiki guda ɗaya</strong></p>
+            <ul class="mb-md">
+                <li>Buɗe allon bayanan motsa jiki</li>
+                <li>Taɓa maɓallin sharewa (ikon shara)</li>
+                <li>Tabbatar da sharewa</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Hanyar 2: Share duk bayanan app</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Share da sake shigar da app (duk bayanan gida ana cire su)</li>
+                <li><strong>Android:</strong> Saituna → Apps → Walk Analytics → Adana → Share Bayanai</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Hanyar 3: Cire app</strong></p>
+            <ul class="mb-md">
+                <li>Cire Walk Analytics yana cire duk bayanan gida ta atomatik</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Hanyar 4: Soke izinin lafiya</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Saituna → Sirri & Tsaro → Lafiya → Walk Analytics → Kashe duk nau'ikan</li>
+                <li><strong>Android:</strong> Saituna → Apps → Health Connect → Walk Analytics → Soke duk izini</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">6. Tsaron Bayanai</h2>
+            <p class="mb-md">
+                Muna ɗaukar tsaron bayanai da mahimmanci, kodayake duk bayanai suna kan na'urar ku:
+            </p>
+
+            <h3 class="mb-sm">6.1 Matakan Tsaro</h3>
+            <ul class="mb-md">
+                <li><strong>Tsaron iOS:</strong> Duk bayanan da aka adana ta amfani da iOS Core Data suna da kariya ta
+                    iOS Keychain da ɓoyayyen na'ura. Ana kiyaye bayanai lokacin da aka kulle na'urar.</li>
+                <li><strong>Tsaron Android:</strong> Duk bayanan da aka adana a cikin Room Database suna da kariya ta
+                    ginanniyar tsaro ta Android da sandbox ɗin app.</li>
+                <li><strong>Babu Watsa hanyar sadarwa:</strong> Bayanin lafiya baya barin na'urar ku, wanda ke kawar da
+                    haɗarin tsaro na watsawa</li>
+                <li><strong>App Sandboxing:</strong> iOS da Android app sandboxes suna hana sauran apps samun damar
+                    bayanan Walk Analytics</li>
+                <li><strong>Amintaccen Ma'ajiya:</strong> Ba za a iya samun damar bayanan lafiya ba tare da tabbatar da
+                    na'ura ba (lambar wucewa, ID na Fuska, ID na taɓawa, yatsa)</li>
+            </ul>
+
+            <h3 class="mb-sm">6.2 Nauyin Ku</h3>
+            <p class="mb-sm">Don kare bayanan ku:</p>
+            <ul class="mb-md">
+                <li>Ci gaba da na'urarka a kulle tare da ƙaƙƙarfan lambar wucewa/biometric</li>
+                <li>Ci gaba da sabunta tsarin aikin ku tare da sabbin facin tsaro</li>
+                <li><strong>iOS:</strong> Kada ku "jailbreak" na'urarku</li>
+                <li><strong>Android:</strong> Kada ku "root" na'urarku</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">7. Raba Bayanai da Wasu Mutane</h2>
+            <p class="mb-md">
+                <strong>Walk Analytics BA YA raba bayanan lafiyar ku tare da kowane ɓangare na uku.</strong>
+            </p>
+
+            <h3 class="mb-sm">7.1 Babu Raba Bayanai</h3>
+            <ul class="mb-md">
+                <li>Ba mu sayar da bayanan ku ba</li>
+                <li>Ba mu raba bayanan ku da masu talla</li>
+                <li>Ba mu samar da bayanan ku ga kamfanonin bincike</li>
+                <li>Ba mu haɗa kai da dandamalin kafofin watsa labarun ba</li>
+            </ul>
+
+            <h3 class="mb-sm">7.2 Fitar da CSV (mai amfani ne kawai ya fara)</h3>
+            <p class="mb-sm">Hanyar kawai da bayanai ke barin na'urarka shine lokacin da <strong>kai</strong>
+                takamaiman:</p>
+            <ol class="mb-md">
+                <li>Je zuwa Saituna → Fitar da Raw Data</li>
+                <li>Ƙirƙiri fayil ɗin CSV</li>
+                <li>Zaɓi raba fayil ɗin CSV ta hanyar menu na raba na'ura (imel, ajiyar girgije, ƙa'idodin saƙo)</li>
+            </ol>
+            <p class="mb-md"><strong>Wannan yana ƙarƙashin ikon ku gaba ɗaya.</strong></p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">8. Keɓantawar Yara</h2>
+            <p class="mb-md">
+                Walk Analytics ba ya tattara bayanai da gangan daga yara 'yan ƙasa da shekaru 13. App ɗin ba ya neman
+                bayanan shekaru, amma iyaye yakamata su kula da amfani da ƙa'idodin bin diddigin lafiyar yaransu.
+            </p>
+            <p class="mb-md">
+                Idan kun yi imani cewa yaro ɗan ƙasa da shekaru 13 ya yi amfani da Walk Analytics, tuntuɓe mu kuma za mu
+                taimaka wajen tabbatar da an cire duk bayanan gida daga na'urar.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">9. Canja wurin Bayanai na Duniya</h2>
+            <p class="mb-md">
+                <strong>Bai shafi ba.</strong> Tunda duk bayanan lafiya suna zama ne kawai akan na'urarku (iOS ko
+                Android) kuma ba a taba tura su zuwa sabar ba, babu canja wurin bayanai na duniya da ke faruwa.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">10. Haƙƙoƙin ku (GDPR da CCPA Compliance)</h2>
+            <p class="mb-md">
+                Kodayake Walk Analytics ba ya tattara bayanan sirri akan sabobin, muna girmama haƙƙin keɓantawar bayanan
+                ku:
+            </p>
+
+            <h3 class="mb-sm">10.1 Hakkokin GDPR (Masu Amfani da Turai)</h3>
+            <ul class="mb-md">
+                <li><strong>Haƙƙin Samun Dama:</strong> Duk bayanan ku ana samun dama a cikin app a kowane lokaci</li>
+                <li><strong>Haƙƙin Sharewa:</strong> Share bayanai ta amfani da hanyoyin da aka bayyana a sashe na 5.2
+                </li>
+                <li><strong>Haƙƙin Ɗaukar Bayanai:</strong> Fitar da bayanan ku a tsarin CSV (Saituna → Fitar da Raw
+                    Data)</li>
+                <li><strong>Haƙƙin Ƙuntata Gudanarwa:</strong> Soke izinin lafiya don dakatar da samun damar sabbin
+                    bayanai</li>
+            </ul>
+
+            <h3 class="mb-sm">10.2 Hakkokin CCPA (Masu Amfani da California)</h3>
+            <ul class="mb-md">
+                <li><strong>Haƙƙin Sanin:</strong> Wannan manufar tana bayyana duk bayanan da aka samu da kuma yadda ake
+                    amfani da su</li>
+                <li><strong>Haƙƙin Sharewa:</strong> Share bayanai ta amfani da hanyoyin da aka bayyana a sashe na 5.2
+                </li>
+                <li><strong>Haƙƙin Fita Daga Siyarwa:</strong> Bai shafi ba (ba mu taba sayar da bayanai ba)</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">11. Canje-canje ga Wannan Manufar Keɓantawa</h2>
+            <p class="mb-sm">Muna iya sabunta wannan Manufar Keɓantawa lokaci zuwa lokaci. Lokacin da muka yi
+                canje-canje:</p>
+            <ul class="mb-md">
+                <li>Za a sake bitar ranar "An sabunta shi na karshe" a saman wannan manufar</li>
+                <li>Za a sanar da manyan canje-canje a cikin app</li>
+                <li>Ci gaba da amfani da app bayan canje-canje yana nufin karɓar manufar da aka sabunta</li>
             </ul>
             <p class="mb-md">
-                Duk izini ba lallai ba ne kuma kuna iya soke su a kowane lokaci ta hanyar iOS Settings.
+                Muna ba da shawarar ku sake duba wannan manufar lokaci-lokaci don kasancewa da masaniya game da yadda
+                muke kare keɓantawar ku.
             </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Sirrin Yara</h2>
-            <p class="mb-md">
-                Saboda ba mu tattara wani bayani ba, Walk Analytics yana da aminci ga masu amfani na kowane zamani, ciki har da yara ƙarƙashin shekara 13. Duk da haka, muna ba da shawarar jagorantar iyaye ga duk ayyukan motsa jiki.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Canje-canje ga Wannan Manufar Sirri</h2>
-            <p class="mb-md">
-                Za mu iya sabunta wannan Manufar Sirri lokaci zuwa lokaci don nuna canje-canje a cikin app ɗin ko buƙatun doka. Duk wani canje-canje za a buga shi a wannan shafi tare da sabunta ranar "An sabunta".
-            </p>
-            <p class="mb-md">
-                <strong>Muhimmi:</strong> Ba za mu taɓa canza alkawarin mu na asali na rashin tattara bayananku ba.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Tuntuɓe Mu</h2>
-            <p class="mb-md">
-                Idan kuna da wasu tambayoyi game da wannan Manufar Sirri ko app ɗin, don Allah tuntuɓe mu ta hanyar <a href="/ha/contact/">shafin tuntuɓarmu</a>.
-            </p>
-        </div>
-
-        <div class="callout callout-info">
-            <h2 class="mb-sm">Taƙaitawa</h2>
-            <p class="mb-sm">
-                <strong>Walk Analytics app ne mai ba da fifiko ga sirri.</strong> Mun gaskanta cewa bayananku naku ne kuma ya kamata su kasance tare da ku.
-            </p>
-            <ul>
-                <li>❌ Babu tattara bayanai</li>
-                <li>❌ Babu bibiyar ko bincike</li>
-                <li>❌ Babu ayyukan wasu kamfanoni</li>
-                <li>✅ 100% sarrafa bayanai a gida</li>
-                <li>✅ Cikakken iko akan bayananku</li>
+            <h2 class="mb-md">12. Tuntube Mu</h2>
+            <p class="mb-sm">Idan kuna da wasu tambayoyi, damuwa, ko buƙatu game da wannan Manufar Keɓantawa ko
+                keɓantawar bayanan ku:</p>
+            <ul class="mb-md">
+                <li><strong>Imel:</strong> support@walkanalytics.app</li>
+                <li><strong>Yanar Gizo:</strong> <a href="https://walkanalytics.app">https://walkanalytics.app</a></li>
             </ul>
+            <p class="mb-md">
+                <strong>Lokacin Amsa:</strong> Muna da nufin amsa duk tambayoyin sirri a cikin kwanaki 7 na aiki.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">13. Yarda da Shari'a</h2>
+            <p class="mb-sm">Walk Analytics yana bin:</p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Jagororin Binciken Apple App Store, Jagororin Apple HealthKit</li>
+                <li><strong>Android:</strong>Manufofin Shirin Masu Haɓaka Google Play, Jagororin Android Health Connect
+                </li>
+                <li>Babban Dokar Kariyar Bayanai (GDPR)</li>
+                <li>Dokar Sirri ta Masu Amfani da California (CCPA)</li>
+                <li>Dokar Kariyar Sirrin Kan layi na Yara (COPPA)</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-success">
+            <h2 class="mb-md">Taƙaitawa</h2>
+            <p class="mb-sm"><strong>A cikin sharuddan sauƙi:</strong></p>
+            <ul class="mb-sm">
+                <li>✅ <strong>Abin da muke samu:</strong> Bayanan horar da iyo daga Apple HealthKit (iOS) ko Health
+                    Connect (Android)</li>
+                <li>✅ <strong>Inda aka adana shi:</strong> Kawai akan na'urarku ta <strong>ku</strong> (iOS Core Data ko
+                    Android Room Database)</li>
+                <li>✅ <strong>Inda yake tafiya:</strong> Babu inda. Ba ya barin na'urarka.</li>
+                <li>✅ <strong>Wanda ke ganin sa:</strong> Kai kawai.</li>
+                <li>✅ <strong>Yadda ake sharewa:</strong> Share bayanan app ko cire app a kowane lokaci.</li>
+            </ul>
+            <p class="mb-0">
+                <strong>An gina Walk Analytics tare da Keɓantawa na Farko (Privacy First). Bayanan ninkayarku na ku ne
+                    kuma suna zama akan na'urar ku.</strong>
+            </p>
         </div>
     </div>
 </section>

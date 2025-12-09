@@ -854,132 +854,427 @@ img[width][height] {
 
 <section class="section">
     <div class="container container-narrow">
-        <h1 class="mb-lg">Privacybeleid</h1>
+        <h1 class="mb-lg">Privacybeleid voor Walk Analytics</h1>
 
-        <p class="text-secondary mb-xl">Laatst bijgewerkt: <strong>27 oktober 2025</strong></p>
+        <p class="text-secondary mb-xl"><strong>Laatst bijgewerkt:</strong> 10 januari 2025 |
+            <strong>Ingangsdatum:</strong> 10 januari 2025</p>
 
-        <div class="callout callout-success mb-xl">
-            <h2 class="mb-sm">Uw Privacy is Beschermd</h2>
-            <p>
-                <strong>Walk Analytics verzamelt, bewaart of verzendt geen van uw persoonsgegevens.</strong> Alle gegevensverwerking vindt lokaal plaats op uw apparaat.
+        <div class="mb-xl">
+            <h2 class="mb-md">Inleiding</h2>
+            <p class="mb-md">
+                Walk Analytics ("wij", "ons" of "de app") zet zich in om uw privacy te beschermen. Dit privacybeleid
+                legt uit hoe onze mobiele applicaties (iOS en Android) toegang krijgen tot gezondheidsgegevens op uw
+                apparaat, deze gebruiken en beschermen.
             </p>
+            <div class="callout callout-info mb-md">
+                <p><strong>Belangrijkste Privacyprincipe:</strong> Walk Analytics werkt met een <strong>serverloze,
+                        lokale architectuur</strong>. Alle gezondheidsgegevens die toegankelijk zijn via Apple HealthKit
+                    (iOS) of Health Connect (Android) blijven uitsluitend op uw fysieke apparaat en worden nooit
+                    verzonden naar externe servers, clouddiensten of derden.</p>
+            </div>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Overzicht</h2>
+            <h2 class="mb-md">1. Toegang tot Gezondheidsgegevens</h2>
             <p class="mb-md">
-                Walk Analytics is ontworpen met uw privacy als topprioriteit. Dit Privacybeleid legt onze toewijding uit om uw persoonlijke informatie en gegevens te beschermen.
+                Walk Analytics integreert met het systeemeigen gezondheidsplatform van uw apparaat om
+                zwemtrainingsanalyses te bieden:
             </p>
-            <p class="mb-md">
-                <strong>Kortom: We verzamelen uw gegevens niet omdat we ze niet nodig hebben.</strong> Alles wat u in de app doet, blijft op uw apparaat.
-            </p>
-        </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Informatie die wij NIET Verzamelen</h2>
-            <p class="mb-md">Walk Analytics verzamelt, verzendt of bewaart niet:</p>
-            <ul class="mb-md">
-                <li>Persoonsgegevens (naam, e-mail, telefoonnummer, etc.)</li>
-                <li>Wandelactiviteitsgegevens (afstand, stappen, snelheid, tijden, etc.)</li>
-                <li>Gezondheidsgegevens (hartslag, calorieën, etc.)</li>
-                <li>Locatiegegevens of GPS-coördinaten</li>
-                <li>Apparaatinformatie of identificatiegegevens</li>
-                <li>Gebruiksstatistieken of analyses</li>
-                <li>Crashrapporten of diagnostische gegevens</li>
-                <li>Andere persoonlijke of gevoelige informatie</li>
-            </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Hoe de App Werkt</h2>
+            <h3 class="mb-sm">1.1 iOS - Apple HealthKit Integratie</h3>
             <p class="mb-md">
-                Alle berekeningen en gegevensverwerking in Walk Analytics vinden <strong>volledig plaats op uw apparaat</strong>:
+                Op iOS-apparaten integreert Walk Analytics met <strong>Apple HealthKit</strong> om toegang te krijgen
+                tot zwemtrainingsgegevens. We vragen alleen-lezen toegang tot:
             </p>
             <ul class="mb-md">
-                <li>Uw wandelgegevens worden alleen opgeslagen in de lokale opslag van uw apparaat</li>
-                <li>Alle berekeningen (stappen, tempo, cadans, zones, etc.) worden lokaal uitgevoerd</li>
-                <li>Er worden nooit gegevens naar onze servers of externe diensten verzonden</li>
-                <li>Er is geen internetverbinding nodig om de app te laten werken</li>
+                <li><strong>Trainingssessies:</strong> Zwemtrainingen met tijd en duur</li>
+                <li><strong>Afstand:</strong> Totale afstanden en afstanden per baantje</li>
+                <li><strong>Hartslag:</strong> Hartslaggegevens tijdens trainingen</li>
+                <li><strong>Actieve Energie:</strong> Verbrande calorieën tijdens zwemsessies</li>
+                <li><strong>Slagtelling:</strong> Slaggegevens voor analyse</li>
+            </ul>
+            <p class="mb-md">
+                <strong>Naleving van Apple HealthKit:</strong> Walk Analytics houdt zich aan alle richtlijnen van Apple
+                HealthKit. Uw gezondheidsgegevens worden volledig op uw iOS-apparaat verwerkt en verlaten dit nooit. We
+                delen nooit HealthKit-gegevens met derden, advertentieplatforms of gegevensmakelaars.
+            </p>
+
+            <h3 class="mb-sm">1.2 Android - Health Connect Integratie</h3>
+            <div class="table-responsive mb-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Type Gezondheidsgegevens</th>
+                            <th>Toestemming</th>
+                            <th>Doel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oefensessies</strong></td>
+                            <td><code>READ_EXERCISE</code></td>
+                            <td>Om zwemtrainingen te identificeren en importeren vanuit Health Connect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Afstandsrecords</strong></td>
+                            <td><code>READ_DISTANCE</code></td>
+                            <td>Om belangrijke statistieken te tonen zoals totale afstand per zwembeurt, afstanden per
+                                baantje en tempo te berekenen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hartslagrecords</strong></td>
+                            <td><code>READ_HEART_RATE</code></td>
+                            <td>Om hartslaggrafieken te tonen, gemiddelde en maximale hartslag tijdens trainingen te
+                                berekenen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Snelheidsrecords</strong></td>
+                            <td><code>READ_SPEED</code></td>
+                            <td>Om uw zwemtempo, tempozones en slagfrequentieanalyse te berekenen en te tonen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Verbrande Calorieën</strong></td>
+                            <td><code>READ_TOTAL_CALORIES_BURNED</code></td>
+                            <td>Om een compleet overzicht te geven van energieverbruik tijdens zwemsessies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb-md">
+                <strong>Android Toestemmingen:</strong> Deze toestemmingen worden gevraagd bij de eerste start van de
+                app. U kunt deze toestemmingen op elk moment intrekken via Android Instellingen → Apps → Health Connect
+                → Walk Analytics.
+            </p>
+
+            <h3 class="mb-sm">1.3 Hoe Wij Gezondheidsgegevens Gebruiken</h3>
+            <p class="mb-sm">Alle gezondheidsgegevens worden <strong>uitsluitend voor de volgende doeleinden</strong>
+                gebruikt:</p>
+            <ul class="mb-md">
+                <li><strong>Trainingsweergave:</strong> Tonen van uw zwemsessies met gedetailleerde statistieken
+                    (afstand, tijd, tempo, hartslag)</li>
+                <li><strong>Prestatieanalyse:</strong> Berekenen van tempozones, slaganalyse, CSS (Critical Swim Speed)
+                    en sTSS (swim Training Stress Score)</li>
+                <li><strong>Voortgangsregistratie:</strong> Tonen van prestatietrends, persoonlijke records en
+                    trainingsoverzichten</li>
+                <li><strong>Gegevensexport:</strong> Mogelijk maken om uw trainingsgegevens te exporteren naar
+                    CSV-formaat voor persoonlijk gebruik</li>
+            </ul>
+
+            <h3 class="mb-sm">1.4 Gegevensopslag</h3>
+            <div class="callout callout-success mb-md">
+                <h4 class="mb-sm">🔒 KRITIEKE PRIVACYGARANTIE:</h4>
+                <p class="mb-sm"><strong>Alle gezondheidsgegevens blijven uitsluitend op uw fysieke apparaat.</strong>
+                </p>
+                <ul class="mb-0">
+                    <li><strong>iOS:</strong> Gegevens worden opgeslagen met iOS Core Data en UserDefaults (alleen op
+                        het apparaat)</li>
+                    <li><strong>Android:</strong> Gegevens worden opgeslagen met Android Room Database (SQLite op het
+                        apparaat)</li>
+                    <li><strong>GEEN gegevens worden geüpload naar externe servers</strong></li>
+                    <li><strong>GEEN gegevens worden verzonden via internet</strong></li>
+                    <li><strong>GEEN cloudsynchronisatie of back-up van gezondheidsgegevens</strong></li>
+                    <li><strong>GEEN toegang van derden tot uw gezondheidsgegevens</strong></li>
+                </ul>
+            </div>
+            <p class="mb-md">
+                Het enige moment dat gegevens uw apparaat verlaten, is wanneer <strong>U expliciet kiest</strong> om uw
+                trainingen te exporteren naar CSV-formaat en het bestand zelf te delen.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">2. Vereiste Toestemmingen</h2>
+
+            <h3 class="mb-sm">2.1 iOS Toestemmingen</h3>
+            <ul class="mb-md">
+                <li><strong>HealthKit Toegang:</strong> Leestoegang tot Trainingen, Afstand, Hartslag, Actieve Energie
+                    en Slagtelling</li>
+                <li><strong>Fotobibliotheek (Optioneel):</strong> Alleen als u ervoor kiest om trainingsoverzichten op
+                    te slaan als afbeeldingen</li>
+            </ul>
+            <p class="mb-md">
+                U kunt HealthKit-toestemmingen op elk moment beheren in iOS Instellingen → Privacy en Beveiliging →
+                Gezondheid → Walk Analytics.
+            </p>
+
+            <h3 class="mb-sm">2.2 Android Toestemmingen</h3>
+            <ul class="mb-md">
+                <li><code>android.permission.health.READ_EXERCISE</code></li>
+                <li><code>android.permission.health.READ_DISTANCE</code></li>
+                <li><code>android.permission.health.READ_HEART_RATE</code></li>
+                <li><code>android.permission.health.READ_SPEED</code></li>
+                <li><code>android.permission.health.READ_TOTAL_CALORIES_BURNED</code></li>
+                <li><strong>Internettoegang</strong> (<code>INTERNET</code>): Alleen gebruikt om statische in-app inhoud
+                    te tonen en toegang te krijgen tot abonnementsbeheer (Google Play Billing). Er worden geen
+                    gezondheidsgegevens verzonden.</li>
+                <li><strong>Voorgrondservice</strong> (<code>FOREGROUND_SERVICE</code>): Voor mogelijke toekomstige
+                    achtergrondsynchronisatiefuncties (momenteel niet geïmplementeerd).</li>
             </ul>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Gegevensopslag</h2>
+            <h2 class="mb-md">3. Gegevens die Wij NIET Verzamelen</h2>
+            <p class="mb-sm">Walk Analytics verzamelt, bewaart of verzendt <strong>NIET</strong>:</p>
+            <ul class="mb-md">
+                <li>❌ Persoonlijk identificeerbare informatie (naam, e-mail, telefoonnummer)</li>
+                <li>❌ Apparaat-ID's (IDFA op iOS, Advertentie-ID op Android)</li>
+                <li>❌ Locatiegegevens of GPS-coördinaten</li>
+                <li>❌ Gebruiksanalyses of gedragstracking in de app</li>
+                <li>❌ Crashrapporten of diagnostische gegevens naar externe servers</li>
+                <li>❌ Enige gegevens via derden SDK's of analysediensten</li>
+            </ul>
+            <p class="mb-sm">We gebruiken <strong>nul trackingbibliotheken van derden</strong> waaronder:</p>
+            <ul class="mb-md">
+                <li>Geen Google Analytics / Firebase Analytics</li>
+                <li>Geen Facebook SDK</li>
+                <li>Geen Advertentie SDK's</li>
+                <li>Geen crashrapportagediensten (Crashlytics, Sentry, enz.)</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">4. In-App Aankopen en Abonnementen</h2>
             <p class="mb-md">
-                Alle gegevens die u invoert of genereert in de app worden uitsluitend opgeslagen op uw apparaat met behulp van iOS lokale opslagmechanismen. Deze gegevens blijven volledig onder uw controle:
+                Walk Analytics biedt optionele in-app abonnementen aan die worden beheerd via het systeemeigen
+                betalingssysteem van uw apparaat:
+            </p>
+
+            <h3 class="mb-sm">4.1 iOS - App Store Abonnementen</h3>
+            <p class="mb-sm">Wanneer u een abonnement koopt op iOS:</p>
+            <ul class="mb-md">
+                <li>Apple handelt alle betalingsverwerking af via de App Store</li>
+                <li>Wij ontvangen alleen de abonnementsstatus (actief/inactief) via StoreKit</li>
+                <li>We hebben GEEN toegang tot uw betalingsinformatie (creditcard, factuuradres)</li>
+                <li>Abonnementsgegevens worden lokaal op uw apparaat opgeslagen</li>
+            </ul>
+            <p class="mb-sm">Abonnementen beheren:</p>
+            <ul class="mb-md">
+                <li>iOS Instellingen → Uw Naam → Abonnementen → Walk Analytics</li>
+                <li>Of in de app: Instellingen → Abonnement Beheren</li>
+            </ul>
+
+            <h3 class="mb-sm">4.2 Android - Google Play Billing</h3>
+            <p class="mb-sm">Wanneer u een abonnement koopt op Android:</p>
+            <ul class="mb-md">
+                <li>Google Play handelt alle betalingsverwerking af</li>
+                <li>Wij ontvangen alleen de abonnementsstatus (actief/inactief) via de Google Play Billing API</li>
+                <li>We hebben GEEN toegang tot uw betalingsinformatie (creditcard, factuuradres)</li>
+                <li>Abonnementsgegevens worden lokaal op uw apparaat opgeslagen</li>
+            </ul>
+            <p class="mb-sm">Abonnementen beheren:</p>
+            <ul class="mb-md">
+                <li>Google Play Store → Account → Abonnementen → Walk Analytics</li>
+                <li>Of in de app: Instellingen → Abonnement Beheren</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">5. Gegevensbewaring en -verwijdering</h2>
+
+            <h3 class="mb-sm">5.1 Gegevensbewaring</h3>
+            <ul class="mb-md">
+                <li>Gezondheidsgegevens worden <strong>voor onbepaalde tijd</strong> op uw apparaat opgeslagen totdat u
+                    ze handmatig verwijdert</li>
+                <li>Trainingsgegevens worden bewaard om historische prestatieopvolging en analyse mogelijk te maken</li>
+            </ul>
+
+            <h3 class="mb-sm">5.2 Gegevensverwijdering</h3>
+            <p class="mb-sm">U kunt uw gegevens op elk moment verwijderen:</p>
+
+            <p class="mb-sm"><strong>Methode 1: Individuele Trainingen Verwijderen</strong></p>
+            <ul class="mb-md">
+                <li>Open het trainingsdetailscherm</li>
+                <li>Tik op de verwijderknop (prullenbakpictogram)</li>
+                <li>Bevestig de verwijdering</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Methode 2: Alle App-gegevens Wissen</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Verwijder en installeer de app opnieuw (alle lokale gegevens worden
+                    verwijderd)</li>
+                <li><strong>Android:</strong> Instellingen → Apps → Walk Analytics → Opslag → Gegevens wissen</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Methode 3: App Deïnstalleren</strong></p>
+            <ul class="mb-md">
+                <li>Het verwijderen van Walk Analytics verwijdert automatisch alle lokale gegevens</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Methode 4: Gezondheidstoestemmingen Intrekken</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Instellingen → Privacy en Beveiliging → Gezondheid → Walk Analytics → Schakel
+                    Alle Categorieën Uit</li>
+                <li><strong>Android:</strong> Instellingen → Apps → Health Connect → Walk Analytics → Trek alle
+                    toestemmingen in</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">6. Gegevensbeveiliging</h2>
+            <p class="mb-md">
+                We nemen gegevensbeveiliging serieus, hoewel alle gegevens op uw apparaat blijven:
+            </p>
+
+            <h3 class="mb-sm">6.1 Beveiligingsmaatregelen</h3>
+            <ul class="mb-md">
+                <li><strong>iOS Beveiliging:</strong> Alle gegevens die zijn opgeslagen met iOS Core Data worden
+                    beschermd door de iOS Keychain en apparaatversleuteling. Gegevens zijn beschermd wanneer het
+                    apparaat is vergrendeld.</li>
+                <li><strong>Android Beveiliging:</strong> Alle gegevens die zijn opgeslagen in Room Database worden
+                    beschermd door de ingebouwde beveiliging van Android en de app-sandbox.</li>
+                <li><strong>Geen Netwerktransmissie:</strong> Gezondheidsgegevens verlaten nooit uw apparaat, waardoor
+                    beveiligingsrisico's tijdens transmissie worden geëlimineerd</li>
+                <li><strong>App Sandboxing:</strong> iOS en Android app-sandboxing voorkomen dat andere apps toegang
+                    krijgen tot Walk Analytics-gegevens</li>
+                <li><strong>Veilige Opslag:</strong> Gezondheidsgegevens kunnen niet worden geopend zonder
+                    apparaatauthenticatie (toegangscode, Face ID, Touch ID, vingerafdruk, gezichtsontgrendeling)</li>
+            </ul>
+
+            <h3 class="mb-sm">6.2 Uw Verantwoordelijkheid</h3>
+            <p class="mb-sm">Om uw gegevens te beschermen:</p>
+            <ul class="mb-md">
+                <li>Houd uw apparaat vergrendeld met een sterke toegangscode/biometrie</li>
+                <li>Houd uw besturingssysteem up-to-date met de laatste beveiligingspatches</li>
+                <li><strong>iOS:</strong> Jailbreak uw apparaat niet</li>
+                <li><strong>Android:</strong> Root uw apparaat niet</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">7. Gegevensdeling en Derden</h2>
+            <p class="mb-md">
+                <strong>Walk Analytics deelt uw gezondheidsgegevens met GEEN ENKELE derde partij.</strong>
+            </p>
+
+            <h3 class="mb-sm">7.1 Geen Gegevensdeling</h3>
+            <ul class="mb-md">
+                <li>Wij verkopen uw gegevens niet</li>
+                <li>Wij delen uw gegevens niet met adverteerders</li>
+                <li>Wij verstrekken uw gegevens niet aan analysebedrijven</li>
+                <li>Wij integreren niet met sociale mediaplatforms</li>
+            </ul>
+
+            <h3 class="mb-sm">7.2 CSV Export (Alleen Gestart door Gebruiker)</h3>
+            <p class="mb-sm">De enige manier waarop gegevens uw apparaat verlaten, is wanneer <strong>U</strong>
+                expliciet:</p>
+            <ol class="mb-md">
+                <li>Navigeert naar Instellingen → Export Ruwe Gegevens</li>
+                <li>Genereert een CSV-bestand</li>
+                <li>Kiest om het CSV-bestand te delen via het deelmenu van uw apparaat (e-mail, cloudopslag,
+                    berichtenapps)</li>
+            </ol>
+            <p class="mb-md"><strong>Dit is volledig onder uw controle.</strong></p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">8. Privacy van Kinderen</h2>
+            <p class="mb-md">
+                Walk Analytics verzamelt niet bewust gegevens van kinderen jonger dan 13 jaar. De app vraagt geen
+                leeftijdsgegevens, maar ouders moeten het gebruik van gezondheidsapps door hun kinderen controleren.
+            </p>
+            <p class="mb-md">
+                Als u denkt dat een kind jonger dan 13 Walk Analytics heeft gebruikt, neem dan contact met ons op en wij
+                zullen u helpen ervoor te zorgen dat alle lokale gegevens van het apparaat worden verwijderd.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">9. Internationale Gegevensoverdracht</h2>
+            <p class="mb-md">
+                <strong>Niet van toepassing.</strong> Omdat alle gezondheidsgegevens uitsluitend op uw apparaat (iOS of
+                Android) blijven en nooit naar servers worden verzonden, is er geen sprake van internationale
+                gegevensoverdracht.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">10. Uw Rechten (AVG/GDPR, CCPA Naleving)</h2>
+            <p class="mb-md">
+                Hoewel Walk Analytics geen persoonlijke gegevens op servers verzamelt, respecteren wij uw
+                gegevensprivacyrechten:
+            </p>
+
+            <h3 class="mb-sm">10.1 AVG/GDPR Rechten (Europese Gebruikers)</h3>
+            <ul class="mb-md">
+                <li><strong>Recht op Inzage:</strong> Al uw gegevens zijn op elk moment in de app toegankelijk</li>
+                <li><strong>Recht op Verwijdering:</strong> Verwijder gegevens met behulp van de methoden beschreven in
+                    Sectie 5.2</li>
+                <li><strong>Recht op Overdraagbaarheid:</strong> Exporteer uw gegevens naar CSV-formaat (Instellingen →
+                    Export Ruwe Gegevens)</li>
+                <li><strong>Recht op Beperking van de Verwerking:</strong> Trek gezondheidstoestemmingen in om toegang
+                    tot nieuwe gegevens te stoppen</li>
+            </ul>
+
+            <h3 class="mb-sm">10.2 CCPA Rechten (Gebruikers in Californië)</h3>
+            <ul class="mb-md">
+                <li><strong>Recht om te Weten:</strong> Dit beleid maakt alle gegevens bekend waartoe toegang wordt
+                    verkregen en hoe deze worden gebruikt</li>
+                <li><strong>Recht om te Verwijderen:</strong> Verwijder gegevens met behulp van de methoden beschreven
+                    in Sectie 5.2</li>
+                <li><strong>Recht om Verkoop te Weigeren:</strong> Niet van toepassing (wij verkopen nooit gegevens)
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">11. Wijzigingen aan dit Privacybeleid</h2>
+            <p class="mb-sm">We kunnen dit privacybeleid van tijd tot tijd bijwerken. Wanneer we wijzigingen aanbrengen:
             </p>
             <ul class="mb-md">
-                <li>Uw gegevens blijven te allen tijde op uw apparaat</li>
-                <li>Wij hebben geen toegang tot uw gegevens</li>
-                <li>Als u de app verwijdert, worden alle gegevens permanent van uw apparaat verwijderd</li>
-                <li>Gegevens worden niet gesynchroniseerd met iCloud of een andere clouddienst, tenzij u expliciet iOS app-backups inschakelt</li>
+                <li>De datum "Laatst bijgewerkt" bovenaan dit beleid wordt herzien</li>
+                <li>Aanzienlijke wijzigingen worden in de app aangekondigd</li>
+                <li>Voortgezet gebruik van de app na wijzigingen houdt acceptatie van het bijgewerkte beleid in</li>
             </ul>
+            <p class="mb-md">
+                We raden aan dit beleid regelmatig te bekijken om op de hoogte te blijven van hoe we uw privacy
+                beschermen.
+            </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Diensten van Derden</h2>
-            <p class="mb-md">
-                Walk Analytics maakt geen gebruik van diensten van derden, waaronder:
-            </p>
+            <h2 class="mb-md">12. Neem Contact met Ons Op</h2>
+            <p class="mb-sm">Als u vragen, zorgen of verzoeken heeft met betrekking tot dit privacybeleid of uw
+                gegevensprivacy:</p>
             <ul class="mb-md">
-                <li>Geen analysediensten (Google Analytics, Firebase, etc.)</li>
-                <li>Geen advertentienetwerken</li>
-                <li>Geen crashrapportagediensten</li>
-                <li>Geen social media-integraties</li>
-                <li>Geen betalingsverwerkers (de app is gratis)</li>
+                <li><strong>E-mail:</strong> support@walkanalytics.app</li>
+                <li><strong>Website:</strong> <a href="https://walkanalytics.app">https://walkanalytics.app</a></li>
             </ul>
+            <p class="mb-md">
+                <strong>Reactietijd:</strong> We streven ernaar om alle privacyvragen binnen 7 werkdagen te
+                beantwoorden.
+            </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Toestemmingen</h2>
-            <p class="mb-md">
-                De app kan de volgende iOS-toestemmingen vragen alleen als u ervoor kiest om specifieke functies te gebruiken:
-            </p>
+            <h2 class="mb-md">13. Wettelijke Naleving</h2>
+            <p class="mb-sm">Walk Analytics voldoet aan:</p>
             <ul class="mb-md">
-                <li><strong>HealthKit/Gezondheid App:</strong> Alleen als u ervoor kiest om trainingsgegevens te importeren. Alle gegevens blijven op uw apparaat.</li>
-                <li><strong>Meldingen:</strong> Alleen als u trainingsherinneringen inschakelt. Er worden geen gegevens buiten uw apparaat verzonden.</li>
+                <li><strong>iOS:</strong> Apple App Store Review Richtlijnen, Apple HealthKit Richtlijnen</li>
+                <li><strong>Android:</strong> Google Play Developer Programma Beleid, Android Health Connect Richtlijnen
+                </li>
+                <li>Algemene Verordening Gegevensbescherming (AVG / GDPR)</li>
+                <li>California Consumer Privacy Act (CCPA)</li>
+                <li>Children's Online Privacy Protection Act (COPPA)</li>
             </ul>
-            <p class="mb-md">
-                Alle toestemmingen zijn optioneel en u kunt ze op elk moment intrekken via iOS Instellingen.
-            </p>
         </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Privacy van Kinderen</h2>
-            <p class="mb-md">
-                Omdat wij geen gegevens verzamelen, is Walk Analytics veilig voor gebruikers van alle leeftijden, inclusief kinderen onder de 13. We raden echter ouderlijk toezicht aan voor alle fitnessactiviteiten.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Wijzigingen in dit Privacybeleid</h2>
-            <p class="mb-md">
-                We kunnen dit Privacybeleid van tijd tot tijd bijwerken om wijzigingen in de app of wettelijke vereisten weer te geven. Eventuele wijzigingen worden op deze pagina geplaatst met een bijgewerkte "Laatst bijgewerkt"-datum.
-            </p>
-            <p class="mb-md">
-                <strong>Belangrijk:</strong> We zullen nooit onze kerntoewijding veranderen om uw gegevens niet te verzamelen.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Neem Contact met Ons Op</h2>
-            <p class="mb-md">
-                Als u vragen heeft over dit Privacybeleid of de app, neem dan contact met ons op via onze <a href="/nl/contact/">contactpagina</a>.
-            </p>
-        </div>
-
-        <div class="callout callout-info">
-            <h2 class="mb-sm">Samenvatting</h2>
-            <p class="mb-sm">
-                <strong>Walk Analytics is een privacy-first app.</strong> Wij geloven dat uw gegevens van u zijn en bij u moeten blijven.
-            </p>
-            <ul>
-                <li>❌ Geen gegevensverzameling</li>
-                <li>❌ Geen tracking of analyses</li>
-                <li>❌ Geen diensten van derden</li>
-                <li>✅ 100% lokale verwerking</li>
-                <li>✅ Volledige controle over uw gegevens</li>
+        <div class="callout callout-success">
+            <h2 class="mb-md">Samenvatting</h2>
+            <p class="mb-sm"><strong>In Eenvoudige Termen:</strong></p>
+            <ul class="mb-sm">
+                <li>✅ <strong>Waar we toegang toe hebben:</strong> Zwemtrainingsgegevens van Apple HealthKit (iOS) of
+                    Health Connect (Android)</li>
+                <li>✅ <strong>Waar het wordt opgeslagen:</strong> Alleen op UW apparaat (iOS Core Data of Android Room
+                    Database)</li>
+                <li>✅ <strong>Waar het naartoe gaat:</strong> Nergens. Het verlaat nooit uw apparaat.</li>
+                <li>✅ <strong>Wie het ziet:</strong> Alleen u.</li>
+                <li>✅ <strong>Hoe het te verwijderen:</strong> Wis app-gegevens of deïnstalleer de app op elk moment.
+                </li>
             </ul>
+            <p class="mb-0">
+                <strong>Walk Analytics is gebouwd met privacy als prioriteit. Uw zwemgegevens zijn van u en blijven op
+                    uw apparaat.</strong>
+            </p>
         </div>
     </div>
 </section>

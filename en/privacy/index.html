@@ -852,131 +852,188 @@ img[width][height] {
 
 <section class="section">
     <div class="container container-narrow">
-        <h1 class="mb-lg">Privacy Policy</h1>
+        <h1 class="mb-lg">Privacy Policy for Walk Analytics</h1>
 
-        <p class="text-secondary mb-xl">Last updated: <strong>October 27, 2025</strong></p>
+        <p class="text-secondary mb-xl"><strong>Last Updated:</strong> January 10, 2025 | <strong>Effective
+                Date:</strong> January 10, 2025</p>
 
-        <div class="callout callout-success mb-xl">
-            <h2 class="mb-sm">Your Privacy is Protected</h2>
-            <p>
-                <strong>Walk Analytics does not collect, store, or transmit any of your personal data.</strong> All data processing happens locally on your device.
+        <div class="mb-xl">
+            <h2 class="mb-md">Introduction</h2>
+            <p class="mb-md">
+                Walk Analytics ("we," "our," or "the app") is committed to protecting your privacy. This Privacy Policy
+                explains how our mobile applications (iOS and Android) access, use, and protect health data from your
+                device.
             </p>
+            <div class="callout callout-info mb-md">
+                <p><strong>Key Privacy Principle:</strong> Walk Analytics operates on a <strong>zero-server, local-only
+                        architecture</strong>. All health data accessed from Apple HealthKit (iOS) or Health Connect
+                    (Android) remains exclusively on your physical device and is never transmitted to external servers,
+                    cloud services, or third parties.</p>
+            </div>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Overview</h2>
+            <h2 class="mb-md">1. Health Data Access</h2>
             <p class="mb-md">
-                Walk Analytics is designed with your privacy as a top priority. This Privacy Policy explains our commitment to protecting your personal information and data.
+                Walk Analytics integrates with your device's native health platform to provide detailed walking workout
+                analysis:
             </p>
-            <p class="mb-md">
-                <strong>In short: We don't collect your data because we don't need it.</strong> Everything you do in the app stays on your device.
-            </p>
-        </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Information We Do NOT Collect</h2>
-            <p class="mb-md">Walk Analytics does not collect, transmit, or store:</p>
+            <h3 class="mb-sm">1.1 iOS - Apple HealthKit Integration</h3>
+            <p class="mb-md">
+                On iOS devices, Walk Analytics integrates with <strong>Apple HealthKit</strong> to access walking
+                workout data. We request read-only access to:
+            </p>
             <ul class="mb-md">
-                <li>Personal information (name, email, phone number, etc.)</li>
-                <li>Walking activity data (distance, steps, speed, times, etc.)</li>
-                <li>Health data (heart rate, calories, etc.)</li>
-                <li>Location data or GPS coordinates</li>
-                <li>Device information or identifiers</li>
-                <li>Usage statistics or analytics</li>
-                <li>Crash reports or diagnostics</li>
-                <li>Any other personal or sensitive information</li>
+                <li><strong>Workout Sessions:</strong> Walking exercise sessions with time and duration</li>
+                <li><strong>Distance:</strong> Total walking distances</li>
+                <li><strong>Heart Rate:</strong> Heart rate data during workouts</li>
+                <li><strong>Active Energy:</strong> Calories burned during walking sessions</li>
+                <li><strong>Step Count:</strong> Analysis of steps taken during walks</li>
+                <li><strong>Walking Speed:</strong> Speed metrics for pace analysis</li>
+            </ul>
+            <p class="mb-md">
+                <strong>Apple HealthKit Compliance:</strong> Walk Analytics adheres to all Apple HealthKit guidelines.
+                Your health data is processed entirely on your iOS device and never leaves it. We never share HealthKit
+                data with third parties, advertising platforms, or data brokers.
+            </p>
+
+            <h3 class="mb-sm">1.2 Android - Health Connect Integration</h3>
+            <div class="table-responsive mb-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Health Data Type</th>
+                            <th>Permission</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Exercise Sessions</strong></td>
+                            <td><code>READ_EXERCISE</code></td>
+                            <td>To identify and import walking workout sessions from Health Connect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Distance Records</strong></td>
+                            <td><code>READ_DISTANCE</code></td>
+                            <td>To display total distance per walk and calculate pace</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Heart Rate Records</strong></td>
+                            <td><code>READ_HEART_RATE</code></td>
+                            <td>To display heart rate charts, calculate average and maximum heart rate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Speed Records</strong></td>
+                            <td><code>READ_SPEED</code></td>
+                            <td>To calculate and display your walking speed and pace zones</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Steps</strong></td>
+                            <td><code>READ_STEPS</code></td>
+                            <td>To count steps during walking sessions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Calories Burned</strong></td>
+                            <td><code>READ_TOTAL_CALORIES_BURNED</code></td>
+                            <td>To provide overview of energy expenditure during walks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="mb-sm">1.3 How We Use Health Data</h3>
+            <p class="mb-sm">All health data is used <strong>exclusively for the following purposes</strong>:</p>
+            <ul class="mb-md">
+                <li><strong>Workout Display:</strong> Show your walking sessions with detailed metrics (distance, time,
+                    steps, heart rate)</li>
+                <li><strong>Performance Analytics:</strong> Calculate pace zones, Activity Score, and Walking Readiness
+                </li>
+                <li><strong>Progress Tracking:</strong> Display performance trends, personal bests, and workout
+                    summaries</li>
+                <li><strong>Data Export:</strong> Allow you to export your workout data to CSV format for personal use
+                </li>
+            </ul>
+
+            <h3 class="mb-sm">1.4 Data Storage</h3>
+            <div class="callout callout-success mb-md">
+                <h4 class="mb-sm">🔒 CRITICAL PRIVACY GUARANTEE:</h4>
+                <p class="mb-sm"><strong>All health data remains exclusively on your physical device.</strong></p>
+                <ul class="mb-0">
+                    <li><strong>iOS:</strong> Data is stored using iOS Core Data and UserDefaults (on-device only)</li>
+                    <li><strong>Android:</strong> Data is stored using Android Room Database (on-device SQLite)</li>
+                    <li><strong>NO data is uploaded to external servers</strong></li>
+                    <li><strong>NO data is transmitted over the internet</strong></li>
+                    <li><strong>NO cloud synchronization or backup of health data</strong></li>
+                    <li><strong>NO third-party access to your health data</strong></li>
+                </ul>
+            </div>
+            <p class="mb-md">
+                The only time data leaves your device is when <strong>YOU explicitly choose</strong> to export your
+                workouts to CSV format and share the file yourself.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">2. Permissions Required</h2>
+
+            <h3 class="mb-sm">2.1 iOS Permissions</h3>
+            <ul class="mb-md">
+                <li><strong>HealthKit Access:</strong> Read access to Workouts, Distance, Heart Rate, Active Energy,
+                    Steps, and Walking Speed</li>
+                <li><strong>Photo Library (Optional):</strong> Only if you choose to save workout summaries as images
+                </li>
+            </ul>
+            <p class="mb-md">
+                You can manage HealthKit permissions at any time in iOS Settings → Privacy & Security → Health → Walk
+                Analytics.
+            </p>
+
+            <h3 class="mb-sm">2.2 Android Permissions</h3>
+            <ul class="mb-md">
+                <li><code>android.permission.health.READ_EXERCISE</code></li>
+                <li><code>android.permission.health.READ_DISTANCE</code></li>
+                <li><code>android.permission.health.READ_HEART_RATE</code></li>
+                <li><code>android.permission.health.READ_SPEED</code></li>
+                <li><code>android.permission.health.READ_STEPS</code></li>
+                <li><code>android.permission.health.READ_TOTAL_CALORIES_BURNED</code></li>
+                <li><strong>Internet Access</strong> (<code>INTERNET</code>): Used only for displaying static in-app
+                    content.</li>
             </ul>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">How the App Works</h2>
-            <p class="mb-md">
-                All calculations and data processing in Walk Analytics happen <strong>entirely on your device</strong>:
+            <h2 class="mb-md">3. Data We Do NOT Collect</h2>
+            <p class="mb-sm">Walk Analytics does <strong>NOT</strong> collect name, email, location, or usage analytics.
             </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">4. In-App Purchases</h2>
+            <p class="mb-md">Subscriptions are managed by App Store/Google Play. We never see payment details.</p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">5. Data Retention</h2>
+            <p class="mb-md">Data stays on device indefinitely until you delete it or uninstall the app.</p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">11. Contact Us</h2>
             <ul class="mb-md">
-                <li>Your walking data is stored only in your device's local storage</li>
-                <li>All calculations (steps, pace, cadence, zones, etc.) are performed locally</li>
-                <li>No data is ever sent to our servers or any third-party services</li>
-                <li>No internet connection is required for the app to function</li>
+                <li><strong>Email:</strong> support@walkanalytics.app</li>
+                <li><strong>Website:</strong> <a href="https://walkanalytics.app">https://walkanalytics.app</a></li>
             </ul>
         </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Data Storage</h2>
-            <p class="mb-md">
-                Any data you enter or generate in the app is stored exclusively on your device using iOS local storage mechanisms. This data remains under your complete control:
-            </p>
-            <ul class="mb-md">
-                <li>Your data stays on your device at all times</li>
-                <li>We cannot access your data</li>
-                <li>If you delete the app, all data is permanently removed from your device</li>
-                <li>Data is not synchronized to iCloud or any cloud service unless you explicitly enable iOS app backups</li>
-            </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Third-Party Services</h2>
-            <p class="mb-md">
-                Walk Analytics does not use any third-party services, including:
-            </p>
-            <ul class="mb-md">
-                <li>No analytics services (Google Analytics, Firebase, etc.)</li>
-                <li>No advertising networks</li>
-                <li>No crash reporting services</li>
-                <li>No social media integrations</li>
-                <li>No payment processors (the app is free)</li>
-            </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Permissions</h2>
-            <p class="mb-md">
-                The app may request the following iOS permissions only if you choose to use specific features:
-            </p>
-            <ul class="mb-md">
-                <li><strong>HealthKit/Health App:</strong> Only if you choose to import workout data. All data remains on your device.</li>
-                <li><strong>Notifications:</strong> Only if you enable workout reminders. No data is sent outside your device.</li>
-            </ul>
-            <p class="mb-md">
-                All permissions are optional and you can revoke them at any time through iOS Settings.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Children's Privacy</h2>
-            <p class="mb-md">
-                Because we don't collect any data, Walk Analytics is safe for users of all ages, including children under 13. However, we recommend parental guidance for all fitness activities.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Changes to This Privacy Policy</h2>
-            <p class="mb-md">
-                We may update this Privacy Policy from time to time to reflect changes in the app or legal requirements. Any changes will be posted on this page with an updated "Last updated" date.
-            </p>
-            <p class="mb-md">
-                <strong>Important:</strong> We will never change our core commitment to not collecting your data.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Contact Us</h2>
-            <p class="mb-md">
-                If you have any questions about this Privacy Policy or the app, please contact us through our <a href="/en/contact/">contact page</a>.
-            </p>
-        </div>
-
-        <div class="callout callout-info">
-            <h2 class="mb-sm">Summary</h2>
-            <p class="mb-sm">
-                <strong>Walk Analytics is a privacy-first app.</strong> We believe your data belongs to you and should stay with you.
-            </p>
-            <ul>
-                <li>❌ No data collection</li>
-                <li>❌ No tracking or analytics</li>
-                <li>❌ No third-party services</li>
-                <li>✅ 100% local processing</li>
-                <li>✅ Complete control over your data</li>
+        <div class="callout callout-success">
+            <h2 class="mb-md">Summary</h2>
+            <p class="mb-sm"><strong>In Simple Terms:</strong></p>
+            <ul class="mb-sm">
+                <li>✅ <strong>What we access:</strong> Walking data from HealthKit/Health Connect</li>
+                <li>✅ <strong>Where it's stored:</strong> Only on YOUR device</li>
+                <li>✅ <strong>Where it goes:</strong> Nowhere.</li>
             </ul>
         </div>
     </div>

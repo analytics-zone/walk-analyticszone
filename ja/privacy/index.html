@@ -854,132 +854,372 @@ img[width][height] {
 
 <section class="section">
     <div class="container container-narrow">
-        <h1 class="mb-lg">プライバシーポリシー</h1>
+        <h1 class="mb-lg">Walk Analytics プライバシーポリシー</h1>
 
-        <p class="text-secondary mb-xl">最終更新日：<strong>2025年10月27日</strong></p>
+        <p class="text-secondary mb-xl"><strong>最終更新日:</strong> 2025年1月10日 | <strong>発効日:</strong> 2025年1月10日</p>
 
-        <div class="callout callout-success mb-xl">
-            <h2 class="mb-sm">あなたのプライバシーは保護されています</h2>
-            <p>
-                <strong>Walk Analyticsは、あなたの個人データを収集、保存、または送信しません。</strong> すべてのデータ処理は、お使いのデバイス上でローカルに行われます。
+        <div class="mb-xl">
+            <h2 class="mb-md">はじめに</h2>
+            <p class="mb-md">
+                Walk Analytics（以下「当社」、「私たち」または「アプリ」）は、お客様のプライバシー保護に取り組んでいます。このプライバシーポリシーでは、当社のモバイルアプリケーション（iOSおよびAndroid）がお客様のデバイスの健康データにアクセス、使用、および保護する方法について説明します。
             </p>
+            <div class="callout callout-info mb-md">
+                <p><strong>プライバシーに関する重要な原則:</strong> Walk Analyticsは、<strong>サーバーレスのローカルアーキテクチャ</strong>で動作します。Apple
+                    HealthKit（iOS）またはHealth
+                    Connect（Android）からアクセスされるすべての健康データは、物理デバイスにのみ残り、外部サーバー、クラウドサービス、または第三者に送信されることはありません。</p>
+            </div>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">概要</h2>
+            <h2 class="mb-md">1. 健康データへのアクセス</h2>
             <p class="mb-md">
-                Walk Analyticsは、あなたのプライバシーを最優先事項として設計されています。このプライバシーポリシーは、あなたの個人情報とデータを保護するという私たちのコミットメントを説明するものです。
+                Walk Analyticsは、デバイスのネイティブヘルスプラットフォームと統合して、ウォーキングトレーニング分析を提供します。
             </p>
-            <p class="mb-md">
-                <strong>簡単に言えば：私たちはあなたのデータを必要としないため、収集しません。</strong> アプリ内で行うすべてのことは、お使いのデバイスに残ります。
-            </p>
-        </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">収集しない情報</h2>
-            <p class="mb-md">Walk Analyticsは、以下を収集、送信、または保存しません：</p>
-            <ul class="mb-md">
-                <li>個人情報（名前、メールアドレス、電話番号など）</li>
-                <li>ウォーキング活動データ（距離、歩数、速度、時間など）</li>
-                <li>健康データ（心拍数、カロリーなど）</li>
-                <li>位置データまたはGPS座標</li>
-                <li>デバイス情報または識別子</li>
-                <li>使用統計または分析</li>
-                <li>クラッシュレポートまたは診断</li>
-                <li>その他の個人情報または機密情報</li>
-            </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">アプリの仕組み</h2>
+            <h3 class="mb-sm">1.1 iOS - Apple HealthKitとの統合</h3>
             <p class="mb-md">
-                Walk Analyticsでのすべての計算とデータ処理は、<strong>完全にお使いのデバイス上</strong>で行われます：
+                iOSデバイスでは、Walk Analyticsは<strong>Apple HealthKit</strong>と統合して、ウォーキングトレーニングデータにアクセスします。以下への読み取り専用アクセスを要求します。
             </p>
             <ul class="mb-md">
-                <li>ウォーキングデータは、お使いのデバイスのローカルストレージにのみ保存されます</li>
-                <li>すべての計算（歩数、ペース、ケイデンス、ゾーンなど）はローカルで実行されます</li>
-                <li>データが私たちのサーバーやサードパーティのサービスに送信されることはありません</li>
-                <li>アプリが機能するためにインターネット接続は必要ありません</li>
+                <li><strong>ワークアウト:</strong> 時間と期間を含むウォーキング運動</li>
+                <li><strong>距離:</strong> 総距離およびラップごとの距離</li>
+                <li><strong>心拍数:</strong> ワークアウト中の心拍数データ</li>
+                <li><strong>アクティブエネルギー:</strong> ウォーキングセッション中に消費されたカロリー</li>
+                <li><strong>ストローク数:</strong> 分析用のストロークデータ</li>
             </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">データ保存</h2>
             <p class="mb-md">
-                アプリに入力または生成したすべてのデータは、iOSのローカルストレージメカニズムを使用して、お使いのデバイスにのみ保存されます。これらのデータは、あなたの完全な管理下にあります：
+                <strong>Apple HealthKitへの準拠:</strong> Walk Analyticsは、すべてのApple
+                HealthKitガイドラインに準拠しています。健康データはiOSデバイス上で完全に処理され、デバイスの外に出ることはありません。HealthKitデータを第三者、広告プラットフォーム、またはデータブローカーと共有することはありません。
             </p>
+
+            <h3 class="mb-sm">1.2 Android - Health Connectとの統合</h3>
+            <div class="table-responsive mb-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>健康データの種類</th>
+                            <th>権限</th>
+                            <th>目的</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>運動セッション</strong></td>
+                            <td><code>READ_EXERCISE</code></td>
+                            <td>Health Connectからウォーキングトレーニングを識別してインポートするため</td>
+                        </tr>
+                        <tr>
+                            <td><strong>距離の記録</strong></td>
+                            <td><code>READ_DISTANCE</code></td>
+                            <td>泳ぎごとの総距離、ラップごとの距離などの主要な指標を表示し、ペースを計算するため</td>
+                        </tr>
+                        <tr>
+                            <td><strong>心拍数の記録</strong></td>
+                            <td><code>READ_HEART_RATE</code></td>
+                            <td>心拍数グラフを表示し、ワークアウト中の平均および最大心拍数を計算するため</td>
+                        </tr>
+                        <tr>
+                            <td><strong>速度の記録</strong></td>
+                            <td><code>READ_SPEED</code></td>
+                            <td>ウォーキングペース、ペースゾーン、ストロークケイデンス分析を計算して表示するため</td>
+                        </tr>
+                        <tr>
+                            <td><strong>消費カロリー</strong></td>
+                            <td><code>READ_TOTAL_CALORIES_BURNED</code></td>
+                            <td>ウォーキングセッション中のエネルギー消費の完全な概要を提供するため</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb-md">
+                <strong>Androidの権限:</strong> これらの権限は、アプリの初回起動時に要求されます。Android設定→アプリ→Health Connect→Walk Analyticsからいつでもこれらの権限を取り消すことができます。
+            </p>
+
+            <h3 class="mb-sm">1.3 健康データの使用方法</h3>
+            <p class="mb-sm">すべての健康データは、<strong>以下の目的でのみ</strong>使用されます。</p>
             <ul class="mb-md">
-                <li>データは常にデバイスに残ります</li>
-                <li>私たちはあなたのデータにアクセスできません</li>
-                <li>アプリを削除すると、すべてのデータがデバイスから完全に削除されます</li>
-                <li>iOSアプリのバックアップを明示的に有効にしない限り、データはiCloudやその他のクラウドサービスと同期されません</li>
+                <li><strong>ワークアウトの表示:</strong> 詳細な指標（距離、時間、ペース、心拍数）を含むウォーキングセッションの表示</li>
+                <li><strong>パフォーマンス分析:</strong> ペースゾーン、ストローク分析、CSS（クリティカルスイムスピード）、sTSS（ウォーキングトレーニングストレススコア）の計算</li>
+                <li><strong>進捗状況の追跡:</strong> パフォーマンストレンド、自己ベスト、トレーニング概要の表示</li>
+                <li><strong>データのエクスポート:</strong> 個人使用のためにトレーニングデータをCSV形式でエクスポートすることを許可</li>
             </ul>
+
+            <h3 class="mb-sm">1.4 データの保存</h3>
+            <div class="callout callout-success mb-md">
+                <h4 class="mb-sm">🔒 クリティカルなプライバシー保証:</h4>
+                <p class="mb-sm"><strong>すべての健康データは、物理デバイスにのみ残ります。</strong></p>
+                <ul class="mb-0">
+                    <li><strong>iOS:</strong> データはiOS Core DataとUserDefaultsを使用して保存されます（デバイス内のみ）</li>
+                    <li><strong>Android:</strong> データはAndroid Room Database（デバイス内のSQLite）を使用して保存されます</li>
+                    <li><strong>外部サーバーへのデータのアップロードはありません</strong></li>
+                    <li><strong>インターネット経由でのデータ送信はありません</strong></li>
+                    <li><strong>クラウド同期や健康データのバックアップはありません</strong></li>
+                    <li><strong>第三者による健康データへのアクセスはありません</strong></li>
+                </ul>
+            </div>
+            <p class="mb-md">
+                データがデバイスを離れる唯一の機会は、<strong>お客様が明示的に</strong>トレーニングをCSV形式にエクスポートし、ファイルをご自身で共有することを選択した場合のみです。
+            </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">サードパーティサービス</h2>
-            <p class="mb-md">
-                Walk Analyticsは、以下を含むいかなるサードパーティサービスも使用しません：
-            </p>
+            <h2 class="mb-md">2. 必要な権限</h2>
+
+            <h3 class="mb-sm">2.1 iOSの権限</h3>
             <ul class="mb-md">
-                <li>分析サービスなし（Google Analytics、Firebaseなど）</li>
-                <li>広告ネットワークなし</li>
-                <li>クラッシュレポートサービスなし</li>
-                <li>ソーシャルメディア統合なし</li>
-                <li>決済プロセッサなし（アプリは無料です）</li>
+                <li><strong>HealthKitアクセス:</strong> ワークアウト、距離、心拍数、アクティブエネルギー、ストローク数への読み取りアクセス</li>
+                <li><strong>写真ライブラリ（オプション）:</strong> トレーニング概要を画像として保存することを選択した場合のみ</li>
             </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">許可</h2>
             <p class="mb-md">
-                アプリは、特定の機能を使用することを選択した場合にのみ、以下のiOS許可を要求する場合があります：
+                iOS設定→プライバシーとセキュリティ→ヘルスケア→Walk AnalyticsでいつでもHealthKitの権限を管理できます。
             </p>
+
+            <h3 class="mb-sm">2.2 Androidの権限</h3>
             <ul class="mb-md">
-                <li><strong>HealthKit/ヘルスケアアプリ：</strong> ワークアウトデータをインポートすることを選択した場合のみ。すべてのデータはデバイスに残ります。</li>
-                <li><strong>通知：</strong> ワークアウトのリマインダーを有効にした場合のみ。データがデバイス外に送信されることはありません。</li>
+                <li><code>android.permission.health.READ_EXERCISE</code></li>
+                <li><code>android.permission.health.READ_DISTANCE</code></li>
+                <li><code>android.permission.health.READ_HEART_RATE</code></li>
+                <li><code>android.permission.health.READ_SPEED</code></li>
+                <li><code>android.permission.health.READ_TOTAL_CALORIES_BURNED</code></li>
+                <li><strong>インターネットアクセス</strong> (<code>INTERNET</code>): アプリ内の静的コンテンツの表示とサブスクリプション管理（Google Play
+                    Billing）へのアクセスにのみ使用されます。健康データは送信されません。</li>
+                <li><strong>フォアグラウンドサービス</strong> (<code>FOREGROUND_SERVICE</code>): 将来的なバックグラウンド同期機能用（現在は実装されていません）。
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">3. 収集しないデータ</h2>
+            <p class="mb-sm">Walk Analyticsは以下を収集、保存、または送信<strong>しません</strong>。</p>
+            <ul class="mb-md">
+                <li>❌ 個人識別情報（名前、メールアドレス、電話番号）</li>
+                <li>❌ デバイス識別子（iOSのIDFA、Androidの広告ID）</li>
+                <li>❌ 位置データまたはGPS座標</li>
+                <li>❌ 使用状況分析またはアプリ内の行動追跡</li>
+                <li>❌ 外部サーバーへのクラッシュレポートまたは診断データ</li>
+                <li>❌ サードパーティのSDKまたは分析サービスを介したデータ</li>
+            </ul>
+            <p class="mb-sm">以下を含む<strong>サードパーティの追跡ライブラリは一切使用していません</strong>。</p>
+            <ul class="mb-md">
+                <li>Google Analytics / Firebase Analyticsなし</li>
+                <li>Facebook SDKなし</li>
+                <li>広告SDKなし</li>
+                <li>クラッシュレポートサービス（Crashlytics、Sentryなど）なし</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">4. アプリ内課金とサブスクリプション</h2>
+            <p class="mb-md">
+                Walk Analyticsは、デバイスのネイティブ決済システムを通じて管理されるオプションのアプリ内サブスクリプションを提供します。
+            </p>
+
+            <h3 class="mb-sm">4.1 iOS - App Storeサブスクリプション</h3>
+            <p class="mb-sm">iOSでサブスクリプションを購入する場合:</p>
+            <ul class="mb-md">
+                <li>AppleがApp Storeを通じてすべての支払い処理を行います</li>
+                <li>当社はStoreKitを通じてサブスクリプションのステータス（有効/無効）のみを受け取ります</li>
+                <li>当社はお客様の支払い情報（クレジットカード、請求先住所）にアクセスできません</li>
+                <li>サブスクリプションデータはデバイスにローカルに保存されます</li>
+            </ul>
+            <p class="mb-sm">サブスクリプションの管理:</p>
+            <ul class="mb-md">
+                <li>iOS設定→名前→サブスクリプション→Walk Analytics</li>
+                <li>またはアプリ内で: 設定→サブスクリプションの管理</li>
+            </ul>
+
+            <h3 class="mb-sm">4.2 Android - Google Play Billing</h3>
+            <p class="mb-sm">Androidでサブスクリプションを購入する場合:</p>
+            <ul class="mb-md">
+                <li>Google Playがすべての支払い処理を行います</li>
+                <li>当社はGoogle Play Billing APIを通じてサブスクリプションのステータス（有効/無効）のみを受け取ります</li>
+                <li>当社はお客様の支払い情報（クレジットカード、請求先住所）にアクセスできません</li>
+                <li>サブスクリプションデータはデバイスにローカルに保存されます</li>
+            </ul>
+            <p class="mb-sm">サブスクリプションの管理:</p>
+            <ul class="mb-md">
+                <li>Google Playストア→アカウント→定期購入→Walk Analytics</li>
+                <li>またはアプリ内で: 設定→サブスクリプションの管理</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">5. データの保持と削除</h2>
+
+            <h3 class="mb-sm">5.1 データの保持</h3>
+            <ul class="mb-md">
+                <li>健康データは、手動で削除するまでデバイスに<strong>無期限に</strong>保存されます</li>
+                <li>トレーニングデータは、過去のパフォーマンス追跡と分析を提供するために保持されます</li>
+            </ul>
+
+            <h3 class="mb-sm">5.2 データの削除</h3>
+            <p class="mb-sm">いつでもデータを削除できます。</p>
+
+            <p class="mb-sm"><strong>方法 1: 個々のワークアウトの削除</strong></p>
+            <ul class="mb-md">
+                <li>ワークアウト詳細画面を開く</li>
+                <li>削除ボタン（ゴミ箱アイコン）をタップ</li>
+                <li>削除を確認</li>
+            </ul>
+
+            <p class="mb-sm"><strong>方法 2: すべてのアプリデータを消去</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> アプリを削除して再インストール（すべてのローカルデータが削除されます）</li>
+                <li><strong>Android:</strong> 設定→アプリ→Walk Analytics→ストレージ→データを消去</li>
+            </ul>
+
+            <p class="mb-sm"><strong>方法 3: アプリのアンインストール</strong></p>
+            <ul class="mb-md">
+                <li>Walk Analyticsをアンインストールすると、すべてのローカルデータが自動的に削除されます</li>
+            </ul>
+
+            <p class="mb-sm"><strong>方法 4: 健康権限の取り消し</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> 設定→プライバシーとセキュリティ→ヘルスケア→Walk Analytics→すべてのカテゴリをオフにする</li>
+                <li><strong>Android:</strong> 設定→アプリ→Health Connect→Walk Analytics→すべての権限を取り消す</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">6. データのセキュリティ</h2>
+            <p class="mb-md">
+                すべてのデータはデバイスに残りますが、データのセキュリティを真剣に受け止めています。
+            </p>
+
+            <h3 class="mb-sm">6.1 セキュリティ対策</h3>
+            <ul class="mb-md">
+                <li><strong>iOSセキュリティ:</strong> iOS Core Dataを使用して保存されたすべてのデータは、iOS
+                    Keychainとデバイスの暗号化によって保護されています。デバイスがロックされているとき、データは保護されています。</li>
+                <li><strong>Androidセキュリティ:</strong> Room
+                    Databaseに保存されたすべてのデータは、Androidの組み込みセキュリティとアプリサンドボックスによって保護されています。</li>
+                <li><strong>ネットワーク送信なし:</strong> 健康データはデバイスから出ることがないため、送信セキュリティリスクが排除されます</li>
+                <li><strong>アプリサンドボックス:</strong> iOSとAndroidのアプリサンドボックスは、他のアプリがWalk Analyticsのデータにアクセスするのを防ぎます</li>
+                <li><strong>安全なストレージ:</strong> 健康データは、デバイス認証（パスコード、Face ID、Touch ID、指紋、顔認証）なしではアクセスできません</li>
+            </ul>
+
+            <h3 class="mb-sm">6.2 お客様の責任</h3>
+            <p class="mb-sm">データを保護するために:</p>
+            <ul class="mb-md">
+                <li>強力なパスコード/生体認証でデバイスをロックしてください</li>
+                <li>最新のセキュリティパッチでオペレーティングシステムを最新の状態に保ってください</li>
+                <li><strong>iOS:</strong> デバイスをジェイルブレイクしないでください</li>
+                <li><strong>Android:</strong> デバイスをルート化しないでください</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">7. データ共有と第三者</h2>
+            <p class="mb-md">
+                <strong>Walk Analyticsは、お客様の健康データをいかなる第三者とも共有しません。</strong>
+            </p>
+
+            <h3 class="mb-sm">7.1 データ共有なし</h3>
+            <ul class="mb-md">
+                <li>データを販売しません</li>
+                <li>データを広告主と共有しません</li>
+                <li>データを分析会社に提供しません</li>
+                <li>ソーシャルメディアプラットフォームと統合しません</li>
+            </ul>
+
+            <h3 class="mb-sm">7.2 CSVエクスポート（ユーザー開始のみ）</h3>
+            <p class="mb-sm">データがデバイスを離れる唯一の方法は、<strong>お客様が</strong>明示的に以下を行う場合です。</p>
+            <ol class="mb-md">
+                <li>設定→生データのエクスポートに移動</li>
+                <li>CSVファイルを生成</li>
+                <li>デバイスの共有メニュー（メール、クラウドストレージ、メッセージングアプリ）を介してCSVファイルを共有することを選択</li>
+            </ol>
+            <p class="mb-md"><strong>これは完全にお客様の管理下にあります。</strong></p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">8. 子供のプライバシー</h2>
+            <p class="mb-md">
+                Walk Analyticsは、13歳未満の子供から意図的にデータを収集しません。アプリは年齢情報を要求しませんが、保護者は子供による健康追跡アプリの使用を監督する必要があります。
+            </p>
+            <p class="mb-md">
+                13歳未満の子供がWalk Analyticsを使用したと思われる場合は、ご連絡ください。ローカルデータがデバイスから削除されるように支援します。
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">9. 国際データ転送</h2>
+            <p class="mb-md">
+                <strong>該当なし。</strong> すべての健康データはデバイス（iOSまたはAndroid）にのみ残り、サーバーに送信されることはないため、国際データ転送はありません。
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">10. お客様の権利（GDPR、CCPA準拠）</h2>
+            <p class="mb-md">
+                Walk Analyticsはサーバー上で個人データを収集しませんが、お客様のデータプライバシーの権利を尊重します。
+            </p>
+
+            <h3 class="mb-sm">10.1 GDPRの権利（欧州ユーザー）</h3>
+            <ul class="mb-md">
+                <li><strong>アクセス権:</strong> すべてのデータはアプリ内でいつでもアクセス可能です</li>
+                <li><strong>削除権:</strong> セクション5.2に記載されている方法を使用してデータを削除します</li>
+                <li><strong>ポータビリティ権:</strong> データをCSV形式でエクスポートします（設定→生データのエクスポート）</li>
+                <li><strong>処理を制限する権利:</strong> 新しいデータへのアクセスを停止するために健康権限を取り消します</li>
+            </ul>
+
+            <h3 class="mb-sm">10.2 CCPAの権利（カリフォルニアユーザー）</h3>
+            <ul class="mb-md">
+                <li><strong>知る権利:</strong> このポリシーは、アクセスされるすべてのデータとその使用方法を開示しています</li>
+                <li><strong>削除する権利:</strong> セクション5.2に記載されている方法を使用してデータを削除します</li>
+                <li><strong>販売を拒否する権利:</strong> 該当なし（データを販売することはありません）</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">11. このプライバシーポリシーの変更</h2>
+            <p class="mb-sm">このプライバシーポリシーは随時更新される場合があります。変更を行う場合:</p>
+            <ul class="mb-md">
+                <li>このポリシーの上部にある「最終更新日」が改訂されます</li>
+                <li>重要な変更はアプリ内で発表されます</li>
+                <li>変更後もアプリを継続して使用することは、更新されたポリシーへの同意とみなされます</li>
             </ul>
             <p class="mb-md">
-                すべての許可は任意であり、iOSの設定からいつでも取り消すことができます。
+                プライバシー保護の方法について情報を得るために、このポリシーを定期的に確認することをお勧めします。
             </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">子供のプライバシー</h2>
-            <p class="mb-md">
-                データを収集しないため、Walk Analyticsは13歳未満の子供を含むすべての年齢のユーザーにとって安全です。ただし、すべてのフィットネス活動には保護者の監督をお勧めします。
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">このプライバシーポリシーの変更</h2>
-            <p class="mb-md">
-                アプリの変更や法的要件を反映するために、このプライバシーポリシーを随時更新する場合があります。変更があった場合は、このページに更新された「最終更新日」とともに掲載されます。
-            </p>
-            <p class="mb-md">
-                <strong>重要：</strong> データを収集しないという基本的なコミットメントを変更することは決してありません。
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">お問い合わせ</h2>
-            <p class="mb-md">
-                このプライバシーポリシーまたはアプリについてご質問がある場合は、<a href="/ja/contact/">お問い合わせページ</a>からご連絡ください。
-            </p>
-        </div>
-
-        <div class="callout callout-info">
-            <h2 class="mb-sm">要約</h2>
-            <p class="mb-sm">
-                <strong>Walk Analyticsはプライバシー重視のアプリです。</strong> 私たちは、あなたのデータはあなたのものであり、あなたと共に留まるべきだと信じています。
-            </p>
-            <ul>
-                <li>❌ データ収集なし</li>
-                <li>❌ 追跡または分析なし</li>
-                <li>❌ サードパーティサービスなし</li>
-                <li>✅ 100%ローカル処理</li>
-                <li>✅ データの完全な管理</li>
+            <h2 class="mb-md">12. お問い合わせ</h2>
+            <p class="mb-sm">このプライバシーポリシーまたはデータプライバシーに関する質問、懸念、またはリクエストがある場合:</p>
+            <ul class="mb-md">
+                <li><strong>メール:</strong> support@walkanalytics.app</li>
+                <li><strong>ウェブサイト:</strong> <a href="https://walkanalytics.app">https://walkanalytics.app</a></li>
             </ul>
+            <p class="mb-md">
+                <strong>応答時間:</strong> すべてのプライバシーに関するお問い合わせには、7営業日以内に回答することを目指しています。
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">13. 法的準拠</h2>
+            <p class="mb-sm">Walk Analyticsは以下に準拠しています。</p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Apple App Store審査ガイドライン、Apple HealthKitガイドライン</li>
+                <li><strong>Android:</strong> Google Playデベロッパープログラムポリシー、Android Health Connectガイドライン</li>
+                <li>一般データ保護規則（GDPR）</li>
+                <li>カリフォルニア州消費者プライバシー法（CCPA）</li>
+                <li>児童オンラインプライバシー保護法（COPPA）</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-success">
+            <h2 class="mb-md">要約</h2>
+            <p class="mb-sm"><strong>簡単に言うと:</strong></p>
+            <ul class="mb-sm">
+                <li>✅ <strong>アクセスするもの:</strong> Apple HealthKit（iOS）またはHealth Connect（Android）からのウォーキングトレーニングデータ</li>
+                <li>✅ <strong>保存場所:</strong> お客様のデバイス（iOS Core DataまたはAndroid Room Database）のみ</li>
+                <li>✅ <strong>どこに行くか:</strong> どこにも行きません。デバイスから出ることはありません。</li>
+                <li>✅ <strong>誰が見るか:</strong> お客様のみ。</li>
+                <li>✅ <strong>削除方法:</strong> いつでもアプリデータを消去するか、アプリをアンインストールしてください。</li>
+            </ul>
+            <p class="mb-0">
+                <strong>Walk Analyticsは、プライバシーを第一に構築されています。あなたのウォーキングデータはあなたのものであり、あなたのデバイスに残ります。</strong>
+            </p>
         </div>
     </div>
 </section>

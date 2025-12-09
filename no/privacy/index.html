@@ -854,132 +854,411 @@ img[width][height] {
 
 <section class="section">
     <div class="container container-narrow">
-        <h1 class="mb-lg">Personvernerklæring</h1>
+        <h1 class="mb-lg">Personvernerklæring for Walk Analytics</h1>
 
-        <p class="text-secondary mb-xl">Sist oppdatert: <strong>27. oktober 2025</strong></p>
+        <p class="text-secondary mb-xl"><strong>Sist oppdatert:</strong> 10. januar 2025 |
+            <strong>Ikrafttredelsesdato:</strong> 10. januar 2025</p>
 
-        <div class="callout callout-success mb-xl">
-            <h2 class="mb-sm">Ditt personvern er beskyttet</h2>
-            <p>
-                <strong>Walk Analytics samler ikke inn, lagrer eller overfører noen av dine personopplysninger.</strong> All databehandling skjer lokalt på enheten din.
+        <div class="mb-xl">
+            <h2 class="mb-md">Introduksjon</h2>
+            <p class="mb-md">
+                Walk Analytics ("vi", "oss" eller "appen") er forpliktet til å beskytte ditt personvern. Denne
+                personvernerklæringen forklarer hvordan våre mobilapper (iOS og Android) får tilgang til, bruker og
+                beskytter helsedata på enheten din.
             </p>
+            <div class="callout callout-info mb-md">
+                <p><strong>Viktig personvernprinsipp:</strong> Walk Analytics opererer med en <strong>serverløs,
+                        lokal-først arkitektur</strong>. Alle helsedata som hentes fra Apple HealthKit (iOS) eller
+                    Health Connect (Android) forblir utelukkende på din fysiske enhet og overføres aldri til eksterne
+                    servere, skytjenester eller tredjeparter.</p>
+            </div>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Oversikt</h2>
+            <h2 class="mb-md">1. Tilgang til helsedata</h2>
             <p class="mb-md">
-                Walk Analytics er utviklet med ditt personvern som høyeste prioritet. Denne personvernerklæringen forklarer vårt engasjement for å beskytte dine personopplysninger og data.
+                Walk Analytics integreres med enhetens innebygde helseplattform for å gi analyser av svømmeøkter:
             </p>
-            <p class="mb-md">
-                <strong>Kort fortalt: Vi samler ikke inn dine data fordi vi ikke trenger dem.</strong> Alt du gjør i appen forblir på enheten din.
-            </p>
-        </div>
 
-        <div class="mb-xl">
-            <h2 class="mb-md">Informasjon vi IKKE samler inn</h2>
-            <p class="mb-md">Walk Analytics samler ikke inn, overfører eller lagrer:</p>
-            <ul class="mb-md">
-                <li>Personopplysninger (navn, e-post, telefonnummer, osv.)</li>
-                <li>Gåaktivitetsdata (distanse, skritt, hastighet, tider, osv.)</li>
-                <li>Helsedata (puls, kalorier, osv.)</li>
-                <li>Stedsdata eller GPS-koordinater</li>
-                <li>Enhetsinformasjon eller identifikatorer</li>
-                <li>Bruksstatistikk eller analysedata</li>
-                <li>Krasjrapporter eller diagnostikk</li>
-                <li>Andre personopplysninger eller sensitiv informasjon</li>
-            </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Hvordan appen fungerer</h2>
+            <h3 class="mb-sm">1.1 iOS - Apple HealthKit-integrasjon</h3>
             <p class="mb-md">
-                Alle beregninger og databehandling i Walk Analytics skjer <strong>utelukkende på enheten din</strong>:
+                På iOS-enheter integreres Walk Analytics med <strong>Apple HealthKit</strong> for å få tilgang til
+                svømmedata. Vi ber om skrivetilgang til:
             </p>
             <ul class="mb-md">
-                <li>Dine gådata lagres kun i enhetens lokale lagring</li>
-                <li>Alle beregninger (skritt, tempo, kadens, soner, osv.) utføres lokalt</li>
-                <li>Ingen data sendes noensinne til våre servere eller tredjeparts tjenester</li>
-                <li>Ingen internettforbindelse kreves for at appen skal fungere</li>
+                <li><strong>Trening (Workouts):</strong> Svømmeøkter med tid og varighet</li>
+                <li><strong>Distanse:</strong> Total distanse og runder</li>
+                <li><strong>Puls:</strong> Pulsdata under trening</li>
+                <li><strong>Aktiv energi:</strong> Kalorier forbrent under svømmeøkter</li>
+                <li><strong>Svømmetak (Strokes):</strong> Takdata for analyse</li>
             </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Datalagring</h2>
             <p class="mb-md">
-                Alle data du registrerer eller genererer i appen lagres utelukkende på enheten din ved hjelp av iOS lokale lagringsmekanismer. Disse dataene forblir under din fullstendige kontroll:
+                <strong>Overholdelse av Apple HealthKit:</strong> Walk Analytics følger alle retningslinjer for Apple
+                HealthKit. Dine helsedata behandles fullstendig på din iOS-enhet og forlater den aldri. Vi deler aldri
+                HealthKit-data med tredjeparter, annonseplattformer eller datameglere.
             </p>
+
+            <h3 class="mb-sm">1.2 Android - Health Connect-integrasjon</h3>
+            <div class="table-responsive mb-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Helsedatatype</th>
+                            <th>Tillatelse</th>
+                            <th>Formål</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Treningsøkter</strong></td>
+                            <td><code>READ_EXERCISE</code></td>
+                            <td>For å identifisere og importere svømmeøkter fra Health Connect</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Distanseregistreringer</strong></td>
+                            <td><code>READ_DISTANCE</code></td>
+                            <td>For å vise nøkkeltall som total svømmedistanse, runder og beregne tempo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pulsregistreringer</strong></td>
+                            <td><code>READ_HEART_RATE</code></td>
+                            <td>For å vise pulsgrafer og beregne gjennomsnitt og maks under trening</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hastighetsregistreringer</strong></td>
+                            <td><code>READ_SPEED</code></td>
+                            <td>For å beregne og vise svømmehastighet, temposoner og analyse av svømmetak</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Forbrente kalorier</strong></td>
+                            <td><code>READ_TOTAL_CALORIES_BURNED</code></td>
+                            <td>For å gi en fullstendig oversikt over energiforbruk under svømmeøkter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb-md">
+                <strong>Android-tillatelser:</strong> Disse tillatelsene forespørres første gang appen startes. Du kan
+                når som helst trekke tilbake disse tillatelsene via Android Innstillinger → Apper → Health Connect →
+                Walk Analytics.
+            </p>
+
+            <h3 class="mb-sm">1.3 Hvordan vi bruker helsedata</h3>
+            <p class="mb-sm">Alle helsedata brukes <strong>utelukkende til følgende formål</strong>:</p>
             <ul class="mb-md">
-                <li>Dine data forblir på enheten din til enhver tid</li>
-                <li>Vi har ikke tilgang til dine data</li>
-                <li>Hvis du sletter appen, fjernes alle data permanent fra enheten din</li>
-                <li>Data synkroniseres ikke til iCloud eller noen skytjeneste med mindre du eksplisitt aktiverer iOS app-sikkerhetskopier</li>
+                <li><strong>Treningsvisning:</strong> Viser dine svømmeøkter med detaljerte beregninger (distanse, tid,
+                    tempo, puls)</li>
+                <li><strong>Prestasjonsanalyse:</strong> Beregning av temposoner, analyse av svømmetak, CSS (Critical
+                    Swim Speed) og sTSS (Swim Training Stress Score)</li>
+                <li><strong>Fremdriftssporing:</strong> Visning av prestasjonstrender, personlige rekorder og
+                    treningssammendrag</li>
+                <li><strong>Dataeksport:</strong> Gir mulighet til å eksportere treningsdata i CSV-format for personlig
+                    bruk</li>
             </ul>
+
+            <h3 class="mb-sm">1.4 Datalagring</h3>
+            <div class="callout callout-success mb-md">
+                <h4 class="mb-sm">🔒 Kritisk personvernsløfte:</h4>
+                <p class="mb-sm"><strong>Alle helsedata forblir utelukkende på din fysiske enhet.</strong></p>
+                <ul class="mb-0">
+                    <li><strong>iOS:</strong> Data lagres ved hjelp av iOS Core Data og UserDefaults (kun på enheten)
+                    </li>
+                    <li><strong>Android:</strong> Data lagres ved hjelp av Android Room Database (SQLite på enheten)
+                    </li>
+                    <li><strong>Ingen opplasting til eksterne servere</strong></li>
+                    <li><strong>Ingen overføring over internett</strong></li>
+                    <li><strong>Ingen skysynkronisering eller sikkerhetskopiering av helsedata</strong></li>
+                    <li><strong>Ingen tredjepartstilgang til dine helsedata</strong></li>
+                </ul>
+            </div>
+            <p class="mb-md">
+                Det eneste tilfellet der data forlater enheten din, er når <strong>du uttrykkelig velger</strong> å
+                eksportere treningsøktene dine til CSV-format og selv deler filen.
+            </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Tredjeparts tjenester</h2>
-            <p class="mb-md">
-                Walk Analytics benytter ingen tredjeparts tjenester, inkludert:
-            </p>
+            <h2 class="mb-md">2. Nødvendige tillatelser</h2>
+
+            <h3 class="mb-sm">2.1 iOS-tillatelser</h3>
             <ul class="mb-md">
-                <li>Ingen analysetjenester (Google Analytics, Firebase, osv.)</li>
-                <li>Ingen annonseringsnettverk</li>
-                <li>Ingen krasjrapporteringstjenester</li>
-                <li>Ingen sosiale medier-integrasjoner</li>
-                <li>Ingen betalingstjenester (appen er gratis)</li>
+                <li><strong>Tilgang til HealthKit:</strong> Lesetilgang til trening, distanse, puls, aktiv energi og
+                    svømmetak</li>
+                <li><strong>Bildebibliotek (valgfritt):</strong> Kun hvis du velger å lagre treningssammendrag som
+                    bilder</li>
             </ul>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Tillatelser</h2>
             <p class="mb-md">
-                Appen kan be om følgende iOS-tillatelser kun dersom du velger å bruke spesifikke funksjoner:
+                Du kan når som helst administrere HealthKit-tillatelser i iOS Innstillinger → Personvern og sikkerhet →
+                Helse → Walk Analytics.
             </p>
+
+            <h3 class="mb-sm">2.2 Android-tillatelser</h3>
             <ul class="mb-md">
-                <li><strong>HealthKit/Helse-app:</strong> Kun dersom du velger å importere treningsdata. Alle data forblir på enheten din.</li>
-                <li><strong>Varsler:</strong> Kun dersom du aktiverer treningspåminnelser. Ingen data sendes utenfor enheten din.</li>
+                <li><code>android.permission.health.READ_EXERCISE</code></li>
+                <li><code>android.permission.health.READ_DISTANCE</code></li>
+                <li><code>android.permission.health.READ_HEART_RATE</code></li>
+                <li><code>android.permission.health.READ_SPEED</code></li>
+                <li><code>android.permission.health.READ_TOTAL_CALORIES_BURNED</code></li>
+                <li><strong>Internettilgang</strong> (<code>INTERNET</code>): Brukes kun til å vise statisk innhold i
+                    appen og få tilgang til abonnementsadministrasjon (Google Play Billing). Ingen helsedata overføres.
+                </li>
+                <li><strong>Forgrunnstjeneste</strong> (<code>FOREGROUND_SERVICE</code>): For potensielle fremtidige
+                    bakgrunnssynkroniseringsfunksjoner (ikke implementert for øyeblikket).</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">3. Data vi IKKE samler inn</h2>
+            <p class="mb-sm">Walk Analytics samler <strong>IKKE</strong> inn, lagrer eller overfører:</p>
+            <ul class="mb-md">
+                <li>❌ Personlig identifiserbar informasjon (navn, e-post, telefonnummer)</li>
+                <li>❌ Enhetsidentifikatorer (IDFA på iOS, Annonse-ID på Android)</li>
+                <li>❌ Stedsdata eller GPS-koordinater</li>
+                <li>❌ Bruksanalyse eller atferdssporing i appen</li>
+                <li>❌ Krasjrapporter eller diagnostikkdata til eksterne servere</li>
+                <li>❌ Noen data via tredjeparts SDK-er eller analysetjenester</li>
+            </ul>
+            <p class="mb-sm">Vi bruker <strong>ingen tredjeparts sporingsbiblioteker</strong> inkludert:</p>
+            <ul class="mb-md">
+                <li>Ingen Google Analytics / Firebase Analytics</li>
+                <li>Ingen Facebook SDK</li>
+                <li>Ingen annonse-SDK-er</li>
+                <li>Ingen krasjrapporteringstjenester (Crashlytics, Sentry, osv.)</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">4. Kjøp i appen og abonnementer</h2>
+            <p class="mb-md">
+                Walk Analytics tilbyr valgfrie abonnementer i appen som administreres via enhetens innebygde
+                betalingssystem:
+            </p>
+
+            <h3 class="mb-sm">4.1 iOS - App Store-abonnementer</h3>
+            <p class="mb-sm">Når du kjøper et abonnement på iOS:</p>
+            <ul class="mb-md">
+                <li>Apple håndterer all betalingsbehandling via App Store</li>
+                <li>Vi mottar kun abonnementsstatus (aktiv/inaktiv) via StoreKit</li>
+                <li>Vi har ikke tilgang til din betalingsinformasjon (kredittkort, faktureringsadresse)</li>
+                <li>Abonnementsdata lagres lokalt på enheten din</li>
+            </ul>
+            <p class="mb-sm">Administrering av abonnementer:</p>
+            <ul class="mb-md">
+                <li>iOS Innstillinger → Ditt navn → Abonnementer → Walk Analytics</li>
+                <li>Eller i appen: Innstillinger → Administrer abonnement</li>
+            </ul>
+
+            <h3 class="mb-sm">4.2 Android - Google Play Billing</h3>
+            <p class="mb-sm">Når du kjøper et abonnement på Android:</p>
+            <ul class="mb-md">
+                <li>Google Play håndterer all betalingsbehandling</li>
+                <li>Vi mottar kun abonnementsstatus (aktiv/inaktiv) via Google Play Billing API</li>
+                <li>Vi har ikke tilgang til din betalingsinformasjon (kredittkort, faktureringsadresse)</li>
+                <li>Abonnementsdata lagres lokalt på enheten din</li>
+            </ul>
+            <p class="mb-sm">Administrering av abonnementer:</p>
+            <ul class="mb-md">
+                <li>Google Play Store → Konto → Abonnementer → Walk Analytics</li>
+                <li>Eller i appen: Innstillinger → Administrer abonnement</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">5. Datalagring og sletting</h2>
+
+            <h3 class="mb-sm">5.1 Datalagring</h3>
+            <ul class="mb-md">
+                <li>Helsedata lagres på enheten din <strong>på ubestemt tid</strong> til du sletter dem manuelt</li>
+                <li>Treningsdata beholdes for å gi historisk prestasjonssporing og analyse</li>
+            </ul>
+
+            <h3 class="mb-sm">5.2 Datasletting</h3>
+            <p class="mb-sm">Du kan slette dataene dine når som helst:</p>
+
+            <p class="mb-sm"><strong>Metode 1: Slett individuelle treningsøkter</strong></p>
+            <ul class="mb-md">
+                <li>Åpne treningsdetaljskjermen</li>
+                <li>Trykk på sletteknappen (søppelbøtteikon)</li>
+                <li>Bekreft sletting</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Metode 2: Tøm all appdata</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Slett og installer appen på nytt (all lokal data fjernes)</li>
+                <li><strong>Android:</strong> Innstillinger → Apper → Walk Analytics → Lagring → Tøm data</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Metode 3: Avinstaller appen</strong></p>
+            <ul class="mb-md">
+                <li>Avinstallering av Walk Analytics fjerner automatisk all lokal data</li>
+            </ul>
+
+            <p class="mb-sm"><strong>Metode 4: Tilbakekall helsetillatelser</strong></p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Innstillinger → Personvern og sikkerhet → Helse → Walk Analytics → Slå av alle
+                    kategorier</li>
+                <li><strong>Android:</strong> Innstillinger → Apper → Health Connect → Walk Analytics → Tilbakekall alle
+                    tillatelser</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">6. Datasikkerhet</h2>
+            <p class="mb-md">
+                Vi tar datasikkerhet på alvor, selv om all data forblir på enheten din:
+            </p>
+
+            <h3 class="mb-sm">6.1 Sikkerhetstiltak</h3>
+            <ul class="mb-md">
+                <li><strong>iOS-sikkerhet:</strong> All data som lagres med iOS Core Data, er beskyttet av iOS Keychain
+                    og enhetskryptering. Data er beskyttet når enheten er låst.</li>
+                <li><strong>Android-sikkerhet:</strong> All data som lagres i Room Database, er beskyttet av Androids
+                    innebygde sikkerhet og app-sandbox.</li>
+                <li><strong>Ingen nettverksoverføring:</strong> Helsedata forlater aldri enheten din, noe som eliminerer
+                    sikkerhetsrisikoer ved overføring</li>
+                <li><strong>App-sandboxing:</strong> iOS og Android app-sandboxer hindrer andre apper i å få tilgang til
+                    Walk Analytics-data</li>
+                <li><strong>Sikker lagring:</strong> Helsedata kan ikke nås uten enhetsautentisering (passord, Face ID,
+                    Touch ID, fingeravtrykk)</li>
+            </ul>
+
+            <h3 class="mb-sm">6.2 Ditt ansvar</h3>
+            <p class="mb-sm">For å beskytte dataene dine:</p>
+            <ul class="mb-md">
+                <li>Hold enheten låst med et sterkt passord/biometri</li>
+                <li>Hold operativsystemet oppdatert med de nyeste sikkerhetsoppdateringene</li>
+                <li><strong>iOS:</strong> Ikke "jailbreak" enheten din</li>
+                <li><strong>Android:</strong> Ikke "root" enheten din</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">7. Datadeling og tredjeparter</h2>
+            <p class="mb-md">
+                <strong>Walk Analytics deler IKKE dine helsedata med noen tredjepart.</strong>
+            </p>
+
+            <h3 class="mb-sm">7.1 Ingen datadeling</h3>
+            <ul class="mb-md">
+                <li>Vi selger ikke dataene dine</li>
+                <li>Vi deler ikke dataene dine med annonsører</li>
+                <li>Vi leverer ikke dataene dine til analyseselskaper</li>
+                <li>Vi integrerer ikke med sosiale medieplattformer</li>
+            </ul>
+
+            <h3 class="mb-sm">7.2 CSV-eksport (kun brukerinitiert)</h3>
+            <p class="mb-sm">Den eneste måten data forlater enheten din på, er når <strong>du</strong> uttrykkelig:</p>
+            <ol class="mb-md">
+                <li>Går til Innstillinger → Eksport av rådata</li>
+                <li>Genererer en CSV-fil</li>
+                <li>Velger å dele CSV-filen via enhetens delemeny (e-post, skylagring, meldingsapper)</li>
+            </ol>
+            <p class="mb-md"><strong>Dette er helt under din kontroll.</strong></p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">8. Barns personvern</h2>
+            <p class="mb-md">
+                Walk Analytics samler ikke bevisst inn data fra barn under 13 år. Appen ber ikke om aldersinformasjon,
+                men foreldre bør overvåke barnas bruk av helsesporingsapper.
+            </p>
+            <p class="mb-md">
+                Hvis du tror at et barn under 13 år har brukt Walk Analytics, vennligst kontakt oss, så hjelper vi med å
+                sikre at all lokal data fjernes fra enheten.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">9. Internasjonale dataoverføringer</h2>
+            <p class="mb-md">
+                <strong>Ikke relevant.</strong> Siden alle helsedata forblir utelukkende på enheten din (iOS eller
+                Android) og aldri overføres til servere, skjer det ingen internasjonale dataoverføringer.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">10. Dine rettigheter (GDPR, CCPA-samsvar)</h2>
+            <p class="mb-md">
+                Selv om Walk Analytics ikke samler inn personopplysninger på servere, respekterer vi dine
+                personvernrettigheter:
+            </p>
+
+            <h3 class="mb-sm">10.1 GDPR-rettigheter (Europeiske brukere)</h3>
+            <ul class="mb-md">
+                <li><strong>Rett til innsyn:</strong> All din data er tilgjengelig i appen når som helst</li>
+                <li><strong>Rett til sletting:</strong> Slett data ved å bruke metodene beskrevet i avsnitt 5.2</li>
+                <li><strong>Rett til dataportabilitet:</strong> Eksporter dataene dine i CSV-format (Innstillinger →
+                    Eksport av rådata)</li>
+                <li><strong>Rett til begrensning av behandling:</strong> Tilbakekall helsetillatelser for å stoppe
+                    tilgang til nye data</li>
+            </ul>
+
+            <h3 class="mb-sm">10.2 CCPA-rettigheter (Brukere i California)</h3>
+            <ul class="mb-md">
+                <li><strong>Rett til å vite:</strong> Denne policyen opplyser om all data som er tilgjengelig og hvordan
+                    den brukes</li>
+                <li><strong>Rett til sletting:</strong> Slett data ved å bruke metodene beskrevet i avsnitt 5.2</li>
+                <li><strong>Rett til å velge bort salg:</strong> Ikke relevant (vi selger aldri data)</li>
+            </ul>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">11. Endringer i denne personvernerklæringen</h2>
+            <p class="mb-sm">Vi kan oppdatere denne personvernerklæringen fra tid til annen. Når vi gjør endringer:</p>
+            <ul class="mb-md">
+                <li>Datoen for "sist oppdatert" øverst i denne erklæringen vil bli revidert</li>
+                <li>Vesentlige endringer vil bli kunngjort i appen</li>
+                <li>Fortsatt bruk av appen etter endringer utgjør aksept av den oppdaterte erklæringen</li>
             </ul>
             <p class="mb-md">
-                Alle tillatelser er valgfrie og du kan tilbakekalle dem når som helst gjennom iOS-innstillinger.
+                Vi anbefaler at du jevnlig gjennomgår denne erklæringen for å holde deg informert om hvordan vi
+                beskytter personvernet ditt.
             </p>
         </div>
 
         <div class="mb-xl">
-            <h2 class="mb-md">Barns personvern</h2>
-            <p class="mb-md">
-                Siden vi ikke samler inn noen data, er Walk Analytics trygg for brukere i alle aldre, inkludert barn under 13 år. Vi anbefaler likevel foreldreveiledning for alle treningsaktiviteter.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Endringer i denne personvernerklæringen</h2>
-            <p class="mb-md">
-                Vi kan oppdatere denne personvernerklæringen fra tid til annen for å gjenspeile endringer i appen eller juridiske krav. Eventuelle endringer vil bli publisert på denne siden med en oppdatert dato for "Sist oppdatert".
-            </p>
-            <p class="mb-md">
-                <strong>Viktig:</strong> Vi vil aldri endre vårt grunnleggende prinsipp om ikke å samle inn dine data.
-            </p>
-        </div>
-
-        <div class="mb-xl">
-            <h2 class="mb-md">Kontakt oss</h2>
-            <p class="mb-md">
-                Hvis du har spørsmål om denne personvernerklæringen eller appen, vennligst kontakt oss via vår <a href="/no/contact/">kontaktside</a>.
-            </p>
-        </div>
-
-        <div class="callout callout-info">
-            <h2 class="mb-sm">Sammendrag</h2>
-            <p class="mb-sm">
-                <strong>Walk Analytics er en personvernfokusert app.</strong> Vi mener dine data tilhører deg og bør forbli hos deg.
-            </p>
-            <ul>
-                <li>❌ Ingen datainnsamling</li>
-                <li>❌ Ingen sporing eller analysedata</li>
-                <li>❌ Ingen tredjeparts tjenester</li>
-                <li>✅ 100% lokal behandling</li>
-                <li>✅ Fullstendig kontroll over dine data</li>
+            <h2 class="mb-md">12. Kontakt oss</h2>
+            <p class="mb-sm">Hvis du har spørsmål, bekymringer eller forespørsler angående denne personvernerklæringen
+                eller ditt personvern:</p>
+            <ul class="mb-md">
+                <li><strong>E-post:</strong> support@walkanalytics.app</li>
+                <li><strong>Nettsted:</strong> <a href="https://walkanalytics.app">https://walkanalytics.app</a></li>
             </ul>
+            <p class="mb-md">
+                <strong>Svartid:</strong> Vi tar sikte på å svare på alle personvernhenvendelser innen 7 virkedager.
+            </p>
+        </div>
+
+        <div class="mb-xl">
+            <h2 class="mb-md">13. Juridisk samsvar</h2>
+            <p class="mb-sm">Walk Analytics overholder:</p>
+            <ul class="mb-md">
+                <li><strong>iOS:</strong> Apple App Store gjennomgangsretningslinjer, Apple HealthKit-retningslinjer
+                </li>
+                <li><strong>Android:</strong> Google Play utviklerprogramretningslinjer, Android Health
+                    Connect-retningslinjer</li>
+                <li>Generell personvernforordning (GDPR)</li>
+                <li>California Consumer Privacy Act (CCPA)</li>
+                <li>Children's Online Privacy Protection Act (COPPA)</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-success">
+            <h2 class="mb-md">Sammendrag</h2>
+            <p class="mb-sm"><strong>Enkelt sagt:</strong></p>
+            <ul class="mb-sm">
+                <li>✅ <strong>Hva vi får tilgang til:</strong> Svømmetreningsdata fra Apple HealthKit (iOS) eller Health
+                    Connect (Android)</li>
+                <li>✅ <strong>Hvor det lagres:</strong> Kun på <strong>din</strong> enhet (iOS Core Data eller Android
+                    Room Database)</li>
+                <li>✅ <strong>Hvor det går:</strong> Ingen steder. Det forlater aldri enheten din.</li>
+                <li>✅ <strong>Hvem som ser det:</strong> Bare du.</li>
+                <li>✅ <strong>Hvordan slette:</strong> Tøm appdata eller avinstaller appen når som helst.</li>
+            </ul>
+            <p class="mb-0">
+                <strong>Walk Analytics er bygget med personvern først. Dine svømmedata tilhører deg og forblir på
+                    enheten din.</strong>
+            </p>
         </div>
     </div>
 </section>
