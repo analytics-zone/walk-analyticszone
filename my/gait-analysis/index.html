@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="my" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>အ보ကြီးဖြင့် လှုပ်ရှားမှု ခွဲခြမ်းစိတ်ဖြာမှု</title>
+  <meta name="description" content="သိပ္ပံဆိုင်ရာ အကျိုးအရာများကို အသုံးပြု၍ သင်၏အ보ကြီးဆိုင်ရာ ကွန်ပျူတာဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုကို သင်ယူပြီး ပိုကောင်းမွန်သော စွမ်းဆောင်ရည်၊ ကျန်းမာရေး နှင့် ဒဏ်ရာတားဆီးရန်ကို သိပ်မစီမံခန့်ခွဲပါ">
+  <meta name="author" content="Albert Arnó">
+
+  
+  
+  <meta name="keywords" content="gait analysis, stride symmetry, walking cadence, gait balance metrics, walking biomechanics">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/my/gait-analysis/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2025-10-27T14:30:00Z">
+  <meta property="article:author" content="Albert Arnó">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/my/gait-analysis/">
+  <meta property="og:title" content="အ보ကြီးဖြင့် လှုပ်ရှားမှု ခွဲခြမ်းစိတ်ဖြာမှု">
+  <meta property="og:description" content="သိပ္ပံဆိုင်ရာ အကျိုးအရာများကို အသုံးပြု၍ သင်၏အ보ကြီးဆိုင်ရာ ကွန်ပျူတာဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုကို သင်ယူပြီး ပိုကောင်းမွန်သော စွမ်းဆောင်ရည်၊ ကျန်းမာရေး နှင့် ဒဏ်ရာတားဆီးရန်ကို သိပ်မစီမံခန့်ခွဲပါ">
+  
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+  
+  <meta property="og:locale" content="my_MM">
+  <meta property="og:site_name" content="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/my/gait-analysis/">
+  <meta name="twitter:title" content="အ보ကြီးဖြင့် လှုပ်ရှားမှု ခွဲခြမ်းစိတ်ဖြာမှု">
+  <meta name="twitter:description" content="သိပ္ပံဆိုင်ရာ အကျိုးအရာများကို အသုံးပြု၍ သင်၏အ보ကြီးဆိုင်ရာ ကွန်ပျူတာဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုကို သင်ယူပြီး ပိုကောင်းမွန်သော စွမ်းဆောင်ရည်၊ ကျန်းမာရေး နှင့် ဒဏ်ရာတားဆီးရန်ကို သိပ်မစီမံခန့်ခွဲပါ">
+  
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/walk-analytics-og.jpg">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/gait-analysis/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/gait-analysis/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/gait-analysis/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/gait-analysis/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/gait-analysis/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/gait-analysis/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/gait-analysis/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/gait-analysis/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/gait-analysis/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/gait-analysis/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/gait-analysis/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/gait-analysis/">
+  
+  <link rel="alternate" hreflang="no"
+    href="https://walk.analyticszone.app/no/gait-analysis/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/gait-analysis/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/gait-analysis/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/gait-analysis/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/gait-analysis/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/gait-analysis/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/gait-analysis/">
+  
+  <link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/gait-analysis/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/gait-analysis/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/gait-analysis/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/gait-analysis/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/gait-analysis/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/gait-analysis/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/gait-analysis/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/gait-analysis/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0066CC">
+  <meta name="robots" content="index, follow">
+
+  
+  <style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="preload" href="/assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+
+  
+  
+
+  
+  
+
+  
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "အ보ကြီးဖြင့် လှုပ်ရှားမှု ခွဲခြမ်းစိတ်ဖြာမှု",
+      "description": "သိပ္ပံဆိုင်ရာ အကျိုးအရာများကို အသုံးပြု၍ သင်၏အ보ကြီးဆိုင်ရာ ကွန်ပျူတာဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုကို သင်ယူပြီး ပိုကောင်းမွန်သော စွမ်းဆောင်ရည်၊ ကျန်းမာရေး နှင့် ဒဏ်ရာတားဆီးရန်ကို သိပ်မစီမံခန့်ခွဲပါ",
+      "author": {
+        "@type": "Person",
+        "name": "Albert Arnó"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Walk Analytics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://walk.analyticszone.app/assets/images/logo.png"
+        }
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-10-27",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://walk.analyticszone.app/my/gait-analysis/"
+      }
+    }
+  </script>
+  
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">အကြောင်းအရာထဲသို့ ခုန်မည်</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/my/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        <a href="/my/" 
+                            aria-current="">
+                            မူလ
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <span class="nav-label">လေ့လာမှု</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/my/getting-started/" 
+                                    aria-current="">
+                                    စတင်အသုံးပြုမှု
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/walking-zones/" 
+                                    aria-current="">
+                                    လမ်းလျှောက် ဇုန်များ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/gait-analysis/" class="active"
+                                    aria-current="page">
+                                    လမ်းလျှောက်ခွဲခြမ်းစိတ်ဖြာမှု
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/training-load/" 
+                                    aria-current="">
+                                    လေ့ကျင့်ခွဲခြမ်း
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/wss-calculator/" 
+                                    aria-current="">
+                                    WSS တွက်စက်
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <span class="nav-label">သိပ္ပံ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/my/research/" 
+                                    aria-current="">
+                                    သုတေသန
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/formulas/" 
+                                    aria-current="">
+                                    တွက်ချက်ပုံများ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/gait-efficiency/" 
+                                    aria-current="">
+                                    လမ်းလျှောက် ထိရောက်မှု
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/stride-mechanics/" 
+                                    aria-current="">
+                                    လမ်းလျှောက် နည်းပညာ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/walking-vs-running/" 
+                                    aria-current="">
+                                    လမ်းလျှောက်ခြင်း နှင့် ပြေးခြင်း
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/benchmarks/" 
+                                    aria-current="">
+                                    စံညွှန်းများ
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/bibliography/" 
+                                    aria-current="">
+                                    စာရင်းဇယား
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <span class="nav-label">သင့်အတွက်</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/my/for-health/" 
+                                    aria-current="">
+                                    ကျန်းမာရေးအတွက်
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/for-fitness/" 
+                                    aria-current="">
+                                    ဖစ်နစ်အတွက်
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/for-seniors/" 
+                                    aria-current="">
+                                    အသက်ကြီးသူများအတွက်
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/for-rehabilitation/" 
+                                    aria-current="">
+                                    ပြန်လည်ထူထောင်ရေး
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <span class="nav-label">ကိရိယာများ</span>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/my/cadence-calculator/" 
+                                    aria-current="">
+                                    Cadence တွက်စက်
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/gait-assessment/" 
+                                    aria-current="">
+                                    လမ်းလျှောက် အကဲဖြတ်မှု
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/my/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max တွက်စက်
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/my/contact/" 
+                            aria-current="">
+                            ဆက်သွယ်ရန်
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="ဘာသာစကား ရွေးရန်">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bg" >
+                        Български
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="cs" >
+                        Čeština
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="hu" >
+                        Magyar
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="is" >
+                        Íslenska
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="my" selected>
+                        မြန်မာ
+                    </option>
+                    
+                    <option value="nb" >
+                        Norsk Bokmål
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="no" >
+                        Norsk
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ro" >
+                        Română
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sl" >
+                        Slovenščina
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="yo" >
+                        Yorùbá
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="မီနူး ပြ / ပိတ်"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  <main id="main-content" class="main-content">
+    <!-- Gait Analysis Guide -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/my/">အဖြူ စာမျက်နှာ</a> / <a href="/my/#learn">သင်ခန်းစာ</a> / ကျင်းကြီးဖြင့်လှုပ်ရှားမှု ခွဲခြမ်းစိတ်ဖြာမှု
+    </div>
+    <h1>အ보ကြီးဖြင့် လှုပ်ရှားမှု ခွဲခြမ်းစိတ်ဖြာမှု</h1>
+    <p class="lead">သိပ္ပံဆိုင်ရာ အကျိုးအရာများကို အသုံးပြု၍ သင်၏အ보ကြီးဆိုင်ရာ ကွန်ပျူတာဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုကို သင်ယူပြီး ပိုကောင်းမွန်သော စွမ်းဆောင်ရည်၊ ကျန်းမာရေး နှင့် ဒဏ်ရာတားဆီးရန်ကို သိပ်မစီမံခန့်ခွဲပါ</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="what-is-gait">အုပ်စုဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှု ဆိုသည်မှာ အဘယ်နည်း</h2>
+
+        <p>အုပ်စုဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုသည် သင်၏အုပ်စုဆိုင်ရာ ပုံစံ နှင့် ကွန်ပျူတာဆိုင်ရာ မည်သည့်အရာများကို စနစ်တကျ လေ့လာရန်ဖြစ်သည်။ သင်အုပ်စုဖြင့် လှုပ်ရှားမှုအခါ သင်၏ခန္ဓာကိုယ် မည်သို့လှုပ်ရှားသည်ကို ကြည့်ရှုပြီး অအရည်အသွေးများ၊ မညီမျှမှုများ နှင့် ဒဏ်ရာအန္တရာယ်များကို စုံစမ်းခြင်းဖြစ်သည်။</p>
+
+        <div class="key-insight">
+          <p><strong>အဘယ်ကြောင့် အရေးကြီးသည်：</strong> အုပ်စုဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှုသည် ကဏ္ဍပြုခွင့် အမှတ်အသားတွင်သာ အသုံးပြုသည့် ကလီနီကယ်ကိရိယာမှ ယုံကြည်အားထားရသည့် နည်းပညာအဖြစ် ဖြုံးဖြာပြီး အသုံးပြုနိုင်သည်ဖြစ်သည်။ အုပ်စုဆိုင်ရာ ပုံစံ ခွဲခြမ်းစိတ်ဖြာမှုသည် ကျန်းမာရေး ရလဒ်များကို ခန့်မှန်းနိုင်ခြင်း၊ အာရုံခံအဖွဲ့ အခြေအနေများ၏ အစောဆုံး လကၡဏာများကို တွေ့ရှိနိုင်ခြင်း နှင့် အုပ်စုဆိုင်ရာ အာရုံခံစွမ်းဆောင်ရည်ကို အကောင်းအကျ လုပ်ဆောင်နိုင်ခြင်းတို့ကို သုတေသနမှ ပြသထားသည်။</p>
+        </div>
+
+        <p>Walk Analytics သည် Apple HealthKit ဖြင့် ပေါင်းစည်းအလုပ်လုပ်သောအခါ သင်၏ iPhone နှင့် Apple Watch မှ ပုံမှန်ဆိုင်ရာ စုဆောင်းထားသည့် အုပ်စုဆိုင်ရာ အကျိုးအရာများကို ခွဲခြမ်းစိတ်ဖြာပြီး ကလီနီကယ် အဆင့်အတန်အ အဆိုးအကျိုးများကို ပြောင်းလည်းပေးသည်။</p>
+
+        <h2 id="key-metrics">အဓိကအုပ်စုဆိုင်ရာ အကျိုးအရာများ</h2>
+
+        <h3 id="cadence">၁။ အုပ်စုအလျင် (မိနစ်တစ်ခုတွင် အုပ်စုအရေအတွက်)</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> မိနစ်တစ်ခုတွင် ယူရသည့် အုပ်စုအရေအတွက် (spm)</p>
+
+          <p><strong>အဘယ်ကြောင့် အုပ်စုဆိုင်ရာ အအရေးကြီးဆုံး အကျိုးအရာဖြစ်သည်:</strong> အုပ်စုအလျင်သည် အုပ်စုဆိုင်ရာ ရင်းမြစ်အဆင့် နှင့် အင်အားအသုံးချမှုကို အကောင်းဆုံး ခန့်မှန်းနိုင်သည်။ အလျင် (အုပ်စုအလျှားအခြေခံ) မှ ကွဲလွဲလျက် အုပ်စုအလျင်သည် လှုပ်ရှားမှု ကြိမ်နှုန်း နှင့် အပ်သလုံးဆိုင်ရာ သုံးစွဲမှုကို တိုက်ရိုက် ထင်ဟပ်စေသည်။</p>
+
+          <div class="science-box">
+            <h4>သိပ္ပံဆိုင်ရာ အထက်သုံးခွင်း: 100 spm အစွန်အမြတ်</h4>
+            <p>အကြီးအကျယ် CADENCE-Adults လေ့လာမှု (Tudor-Locke et al., 2019) သည် အရွယ်ရောက် ၇၆ ယောက်ကို စမ်းသပ်ခြင်းဖြင့် အည်အရာများကို သတ်မှတ်ခဲ့သည်:</p>
+            <ul>
+              <li><strong>100 steps/min = 3 METs</strong> (အလယ်အလတ် အစွမ်းအဆင့်) 86% အာရုံခံသုံးစွဲမှု နှင့် 89.6% သီးခြားသတ်မှတ်မှု</li>
+              <li><strong>110 spm ≈ 4 METs</strong> (အလယ်အလတ်-စွမ်းအားထက်သန်စေ)</li>
+              <li><strong>120 spm ≈ 5 METs</strong> (စွမ်းအားထက်သန်စေ)</li>
+              <li><strong>130 spm = 6 METs</strong> (အလွန်စွမ်းအားထက်သန်စေ အစွမ်းအဆင့် အစွန်အမြတ်)</li>
+            </ul>
+            <p>ဤအချက်ချင်းအက်ဆက်အဆက်သည် <strong>အသက် 21-85 ခုနှစ်များအတွင်း အထူးသဖြင့် စဉ်ဆက်မပ断ဖြစ်သည်</strong>အတွက် အုပ်စုအလျင်သည် အဆုံးအမရှိ အစွမ်းအဆင့် အကျိုးအရာဖြစ်သည်။</p>
+          </div>
+
+          <div class="data-table">
+            <h4>အုပ်စုအလျင် အကျိုးအရာများ နှင့် အသုံးချမှုများ</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>အုပ်စုအလျင် (spm)</th>
+                  <th>အမျိုးအစား</th>
+                  <th>အသုံးချမှု</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>60-90</td>
+                  <td>အလွန်ကျယ်လွင်</td>
+                  <td>ရေလည်ပြီးမြန်ခြင်း၊ လှုပ်ရှားမှု အခြေအနေ</td>
+                </tr>
+                <tr>
+                  <td>90-100</td>
+                  <td>အလင်းအလျင် အစွမ်းအဆင့်</td>
+                  <td>မြေမှုန်းအလုပ်လုပ်ခြင်း၊ ငါးစားခြင်း</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>100-110</strong></td>
+                  <td><strong>အလယ်အလတ် အစွမ်းအဆင့်</strong></td>
+                  <td><strong>ကျန်းမာရေး အကျိုးကျေးဇူးများ၊ အဆီမီးမီး သုံးစွဲမှု၊ ကြံ့ခိုင်သည့် အခြေခံမှတ်တမ်း</strong></td>
+                </tr>
+                <tr>
+                  <td>110-120</td>
+                  <td>အလယ်အလတ်-စွမ်းအားထက်သန်စေ</td>
+                  <td>နှလုံးသွင်းအစွမ်းအဆင့် ကြီးထွင်းရန်၊ လျင်လျင်မြန်မြန် အုပ်စု</td>
+                </tr>
+                <tr>
+                  <td>120-130</td>
+                  <td>စွမ်းအားထက်သန်စေ</td>
+                  <td>စွမ်းအားအုပ်စု၊ ကြီးထွင်းရန် လုပ်ငန်းခွင်</td>
+                </tr>
+                <tr>
+                  <td>130-140</td>
+                  <td>အလွန်စွမ်းအားထက်သန်စေ</td>
+                  <td>အဆင့်မြင့် အကြီးအကျယ်စွမ်းအားထက်သန်များ၊ အကွာအဝေးအုပ်စု</td>
+                </tr>
+                <tr>
+                  <td>140-180</td>
+                  <td>အုပ်စုယှက်ခြင်း</td>
+                  <td>ယှက်ခြင်းအုပ်စု၊ စွမ်းအားကြီးသူများ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>မည်သို့ အကျိုးအရာများ ယူယူရမည်:</strong> Apple Watch နှင့် အများဆုံး အကြီးအကျယ်တည်းဆိုင်သည့် လုံ့ခြင်းများသည် အုပ်စုအလျင်များကို အလိုအလျောက် တွက်ချက်သည်။ သို့မဟုတ်ကား ၃၀ စက္ကန့်အတွင်း အုပ်စုများကို တွက်ခြင်း၊ နှစ်ဆထည့်သွင်းခြင်းဖြင့် ရရှိနိုင်သည်။</p>
+
+          <p><strong>ပစ္စည်းအုပ်စုအလျင်:</strong></p>
+          <ul>
+            <li><strong>အထွေထွေ ကျန်းမာရေး:</strong> အုပ်စုများတွင် အလယ်အလတ် အစွမ်းအဆင့်သို့ ရောက်လည်းခြင်းအတွက် ≥100 spm ကို ရည်မှန်းပါ</li>
+            <li><strong>အကြီးအကျယ်စွမ်းအားထက်သန်များ စွမ်းအားတည်ဆောက်ခြင်း:</strong> အလေယုံလေယုံ ရေလည်ပြီးမြန်ခြင်းအတွက် 110-120 spm ကို ရည်မှန်းပါ</li>
+            <li><strong>စွမ်းအားထက်သန်ရေးလုပ်ငန်း:</strong> 120-130+ spm တွင် အကွာအဝေးများကို လုပ်ခြင်း</li>
+          </ul>
+        </div>
+
+        <h3 id="stride-length">၂။ အုပ်စုအလျှား</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> အုပ်စုအုပ်စုအခြုံရေ့ တစ်အုပ်စုအုပ်စုအခြုံရေ့၏ အခြုံရေ့မှ တစ်ဖက်အုပ်စုအခြုံရေ့အားလုံးအထိ ဖုံးအုပ်သည့် အကွာအဝေး</p>
+
+          <p><strong>အကောင်းဆုံး အုပ်စုအလျှား:</strong> သုတေသန အရ အကောင်းဆုံး အုပ်စုအလျှားသည် <strong>ခန္ဓာကိုယ်အမြင့်၏ ၄၀-၅၀%</strong> ပုံမှန် အုပ်စုဆိုင်ရာ ပုံစံအကျ ဖြစ်သည်။</p>
+
+          <div class="data-table">
+            <h4>အုပ်စုအလျှား လမ်းညွှန်ချက်များ</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>အမြင့်</th>
+                  <th>အကောင်းဆုံး အုပ်စု (အမြင့်၏ ၄၀-၅၀%)</th>
+                  <th>ကြီးမားစွာ အုပ်စု (အမြင့်၏ အထိ ၇၀%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5'0" (152 cm)</td>
+                  <td>0.61-0.76 m (24-30")</td>
+                  <td>အထိ 1.06 m (42")</td>
+                </tr>
+                <tr>
+                  <td>5'6" (168 cm)</td>
+                  <td>0.67-0.84 m (26-33")</td>
+                  <td>အထိ 1.18 m (46")</td>
+                </tr>
+                <tr>
+                  <td>6'0" (183 cm)</td>
+                  <td>0.73-0.91 m (29-36")</td>
+                  <td>အထိ 1.28 m (50")</td>
+                </tr>
+                <tr>
+                  <td>6'6" (198 cm)</td>
+                  <td>0.79-0.99 m (31-39")</td>
+                  <td>အထိ 1.39 m (55")</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>အဓိကအက်ဆက်အဆက်:</strong> အလျင် = အုပ်စုအလျှား × အုပ်စုအလျင်</p>
+          <p>ဤအဓိပ္ပာယ်သည် သင်သည် အုပ်စုအလျှားများကို ကျယ်လွင်စေခြင်း သို့မဟုတ် အုပ်စုအလျင်ကို တိုးမြင့်စေခြင်းမှ အုပ်စုအလျင်ကို တိုးမြင့်စေနိုင်သည်ဖြစ်သည်။ သို့သော် <strong>အုပ်စုအလျင်သည် အများအားဖြင့် ပိုအကောင်းမွန်သည်သို့မဟုတ် ပိုလုံခြုံသည်</strong> အုပ်စုအလျှားများကို ကျယ်လွင်စေခြင်းထက်။</p>
+
+          <div class="warning-box">
+            <h4>⚠️ အုပ်စုအလျှားများကို ကျယ်လွင်စေခြင်းကို ရှောင်ကျောင်းပါ</h4>
+            <p><strong>အုပ်စုအလျှားများကို ကျယ်လွင်စေခြင်း</strong> သည် သင်၏ခန္ဓာကိုယ်မင်းအလယ်အလတ်ထက် အများစုမှ ခြင်း၏ခြင်း။ ဤအရာသည်:</p>
+            <ul>
+              <li>အချည်းနှီး အားအင်များ နှင့် မြေအပ်သလုံးမြစ်ရင်ထည့် အားအင်များ တိုးမြင့်စေသည်</li>
+              <li>အုပ်စုစွမ်းအားထက်သန်များကို လျှော့ချစေသည် (အုပ်စုအုပ်စုတိုင်းအတွက် သင်သည် "အချည်းနှီး" သည်)</li>
+              <li>ခြင်း နှင့် ခြင်းအကွာအဝေးအပေါ် အတုအမုန်းများ တိုးမြင့်စေသည်</li>
+              <li>ဒဏ်ရာအန္တရာယ်များ ကြီးစေသည်</li>
+            </ul>
+            <p><strong>ဖြေရှင်းချက်:</strong> သင်၏ခန္ဓာကိုယ် အလယ်အလတ်ခြင်းအျ ခြင်း၏ခြင်းကို ခြင်းလည်ပွင့်ပြီး သင်၏ မြောက်ခြင်းမှ အားအင်များ အသုံးချပါ။</p>
+          </div>
+
+          <p><strong>Apple HealthKit အကျိုးအရာ:</strong> iOS 14+ သည် ခြင်းထဲတွင် သုံးစွဲသည့် အုပ်စုအလျှားများကို <code>walkingStepLength</code> နည်းလမ်းအရ တွက်ချက်သည်။</p>
+        </div>
+
+        <h3 id="ground-contact">၃။ မြေအပ်သလုံးဆက်သွယ်သည့် အချိန်</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> အုပ်စုစွဲအကြာတွင် ခြင်းအုံးမြေအပ်သလုံးဆက်သွယ်သည့် သုံးစွဲချိန်</p>
+
+          <p><strong>အုပ်စုဆိုင်ရာ သီးခြားတန်ဖိုးများ:</strong> အုပ်စုတစ်ခုအုပ်စုအတွက် ၂၀၀-၃၀၀ မီလီစက္ကန့် (အုပ်စုယှက်ခြင်း၏ <200ms ထက် အလွန်ကျယ်လွင်သည်)</p>
+
+          <div class="science-box">
+            <h4>အုပ်စုဆက်သွယ်သည့် ၅ အဆင့်များ</h4>
+            <p>အုပ်စုအုပ်စုအုံးအုံးတိုင်း ၅ သီးခြားအဆင့်များဖြင့် ပြုလုပ်သည်:</p>
+            <ol>
+              <li><strong>မူလအု�်သလုံးဆက်သွယ်မှု (ခြင်းအု�်သလုံးအု�်သ):</strong> ခြင်းအု�်သလုံး မြေအပ်သလုံးအု�်သ ~10° dorsiflexion တွင်</li>
+              <li><strong>အဆင့်မြင့် အု�်သလုံးဆက်သွယ်မှု (ခြင်းအု�်သလုံးအု�်သ):</strong> ခြင်းအု�်သလုံးဆက်သွယ်သည့်ခြင်း၊ အလေယုံယုံဆင့်</li>
+              <li><strong>အလယ်အလတ် အု�်သလုံးဆက်သွယ်မှု:</strong> ခန္ဓာကိုယ်အလေယုံ အုံးခြင်းအု�်သလုံးအပေါ် ဖြတ်သန်းသည်</li>
+              <li><strong>အတိုင်းအဆအု�်သလုံးဆက်သွယ်မှု (ခြင်းအု�်သလုံးမြင့်မားခြင်း):</strong> ခြင်းအု�်သလုံး မြင့်မားရန် စတင်သည်၊ အလေယုံ ရွေ့လျားသည်</li>
+              <li><strong>အု�်သလုံးတက်ခြင်း (ခြင်းအု�်သလုံးအု�်သ):</strong> ခြင်းအု�်သလုံးအု�်သမှ အုပ်စု၊ အု�်သလုံးအင်အားများ</li>
+            </ol>
+          </div>
+
+          <p><strong>အဘယ်အရာများသည် မြေအပ်သလုံးဆက်သွယ်သည့် အချိန်ကို အကျိုးသက်ရောက်စေသည်:</strong></p>
+          <ul>
+            <li><strong>အလျင်:</strong> လျင်လျင်မြန်မြန် အုပ်စု = ခြင်းအု�်သလုံးအု�်သမှာ အချိန်အတိုင်း</li>
+            <li><strong>အုပ်စုအလျင်:</strong> အမြင့် အု�်စုအလျင် = ခြင်းအု�်သလုံးအု�်သမှာ အချိန်အတိုင်း</li>
+            <li><strong>ခင်းပါရီ:</strong> တောင်ကြီးဖြင့်အု�်သလုံးဆက်သွယ်သည့် အချိန်မြင့်မားသည်၊ တောင်မြင့်လွင်ကျ ကျင်းကျေးလျ</li>
+            <li><strong>ငိုယ်ယုံခြင်း:</strong> ငိုယ်ယုံခြင်း အကြီးအကျယ် = ခြင်းအု�်သလုံးအု�်သမှာ အချိန်အများ</li>
+          </ul>
+
+          <p><strong>အုပ်စုယှက်ခြင်းအဆိုင်းယဉ်းချမ်း:</strong></p>
+          <ul>
+            <li>အုပ်စု: 200-300ms အု�်သလုံးဆက်သွယ်မှု၊ အု�်စီုတစ် အု�်စီုအအု�်စီုတွင် ၆၂%</li>
+            <li>အု�်စီုယှက်ခြင်း: <200ms အု�်သလုံးဆက်သွယ်မှု၊ အု�်စီုတစ် အု�်စီုအအု�်စီုတွင် ၃၁%</li>
+            <li>ဤအခြေခံ ခွဲခြားတည်ဆောက်မှုသည် အု�်စီုအု�်စီု အည်အရာများ ဘာဖြန့်သည့် အည်အရာများ နည်းသည်ကို သုံးညွှန်းများကြ</li>
+          </ul>
+        </div>
+
+        <h3 id="double-support">၄။ နှစ်ဖက်အု�်သလုံးဆက်သွယ်သည့် အချိန်</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> အု�်စီုစုံသည့် အချိန်ကာလအတွင်း ခြင်းနှစ်ခုစလုံး မြေအပ်သလုံးဆက်သွယ်သည့် အု�်စီုယုံခြင်း</p>
+
+          <p><strong>အု�်စီုဆိုင်ရာ အဓိကခွဲခြားသည့် အု�်စီုအု�်စီု:</strong> အု�်စီုစုံသည်များတွင် နှစ်ဖက်အု�်သလုံးဆက်သွယ်သည့် အု�်စီု အု�်စီု (အု�်စီုယုံခြင်း၏ ၂၀-၃၀%)၊ အု�်စီုယှက်ခြင်းတွင် အု�်စီုအု�်စီုမြေအပ်သလုံးမည်ရှိမည်။</p>
+
+          <div class="key-insight">
+            <p><strong>ကလီနီကယ်ထူးခြားမှု:</strong> နှစ်ဖက်အု�်သလုံးဆက်သွယ်သည့် ရာခိုင်နှုန်းသည် အခြေခံအု�်စီုအန္တရာယ် နှင့် အု�်စီုတည်ဆောက်ရန်အု�်စီုအု�်စီု၏ အလွန်ခိုင်လုံသည့် ခန့်မှန်းနိုင်သည့် အု�်စီု၊ အထူးသဖြင့် အသက်ကြီးများအတွက်။</p>
+          </div>
+
+          <div class="data-table">
+            <h4>နှစ်ဖက်အု�်သလုံးဆက်သွယ်သည့် အု�်စီုအု�်စွ</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>နှစ်ဖက်အု�်သလုံးဆက်သွယ် %</th>
+                  <th>အု�်စွ</th>
+                  <th>လုပ်ဆောင်ချက်</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;15%</td>
+                  <td>အလွန်နည်း (အု�်စီုယှက်ခြင်း အု�်စီုအု�်စီုအု�်စီု)</td>
+                  <td>အု�်စီုအု�်စီုလုံခြုံမှု အု�်စီုအု�်စီုနှုန်း အလွန်မြန်နိုင်သည်</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>20-30%</strong></td>
+                  <td><strong>ပုံမှန်၊ ကျန်းမာရေး အု�်စီုအု�်စီု</strong></td>
+                  <td><strong>အကောင်းဆုံး အု�်စီုဆက်သွယ် နှင့် အု�်စီုအု�်စီုအု�်စီု</strong></td>
+                </tr>
+                <tr>
+                  <td>30-35%</td>
+                  <td>မြင့်မားသည့်၊ အု�်စီုအု�်စီု</td>
+                  <td>အု�်စီုအု�်စီုအု�်စီုလုံခြုံမှု စောင့်ကြည့်ရန်၊ အု�်စီုဆက်သွယ်ခြင်းလုပ်ငန်းများ စဉ်းစားရန်</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;35%</strong></td>
+                  <td><strong>အခြေခံအု�်စီုအန္တရာယ် အု�်စွ</strong></td>
+                  <td><strong>ကျန်းမာရေး အု�်စီုအု�်စီုအု�်စီုအု�်စီု ဆက်သွယ်ရန်၊ အု�်စီုဆက်သွယ်ခြင်းလုပ်ငန်းများ စတင်ရန်</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>အဘယ်အရာများသည် မြင့်မားသည့် နှစ်ဖက်အု�်သလုံးဆက်သွယ်သည့် အချိန်ကို ဖြစ်စေသည်:</strong></p>
+          <ul>
+            <li>အခြေခံအု�်စီုအန္တရာယ် သို့မဟုတ် နည်းသည့် အု�်စီုဆက်သွယ် အု�်စွ</li>
+            <li>အာရုံခံဆိုင်ရာ အခြေအနေများ (Parkinson's သို့မဟုတ် stroke သို့မဟုတ် neuropathy)</li>
+            <li>သုံးစွဲခြင်း အု�်စီု အု�်စီုအု�်စီု (အထူးသဖြင့် အု�်စီုအု�်စီု abductors နှင့် ankle dorsiflexors)</li>
+            <li>အု�်စီုအု�်စီု အု�်စီု သို့မဟုတ် အု�်စီုအု�်စီု</li>
+            <li>ကြည့်ရှုခြင်း အု�်စီုအု�်စီု</li>
+          </ul>
+
+          <p><strong>Apple HealthKit အု�်စွ:</strong> <code>walkingDoubleSupportPercentage</code> iPhone 8+ နှင့် iOS 14+ အု�်စွ အု�်စီုအု�်စီု။ ဤအု�်စွသည် Apple ၏ အု�်စီုလုံခြုံမှု အု�်စီုတည်ဆောက်မှု အု�်စီု။</p>
+        </div>
+
+        <h3 id="asymmetry">၅။ အု�်စီုလုံခြုံမှု မညီမျှမှု</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> ဘယ်ဖက် နှင့် လက်ျာဖက် အု�်စီုအု�်စီုချိန်များ၊ အု�်စီုအု�်စီုအု�်စီုများ သို့မဟုတ် အု�်သလုံးဆက်သွယ်ချိန်များ အကြား အခြားအားဆန်သည့်</p>
+
+          <div class="science-box">
+            <h4>အု�်စီုလုံခြုံမှု အု�်စီု (GSI) ဖော်မြူလာ</h4>
+            <p>အု�်စီုလုံခြုံမှု မညီမျှမှုကို အု�်စီုအု�်စီုအု�်စီုအု�်စီုနှုံ:</p>
+            <div class="formula-box">
+              <p><strong>GSI = |Right - Left| / [0.5 × (Right + Left)] × 100</strong></p>
+            </div>
+            <p>ဥပမာ: လက်ျာဖက် အု�်စီုချိန် = 520ms နှင့် ဘယ်ဖက် အု�်စီုချိန် = 480ms</p>
+            <p>GSI = |520 - 480| / [0.5 × (520 + 480)] × 100 = 40 / 500 × 100 = <strong>8% မညီမျှမှု</strong></p>
+          </div>
+
+          <div class="data-table">
+            <h4>မညီမျှမှု ခွဲခြားမှု</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>မညီမျှမှု %</th>
+                  <th>ခွဲခြားမှု</th>
+                  <th>ကလီနီကယ် အု�်စီု</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>&lt;2-3%</strong></td>
+                  <td><strong>ပုံမှန်၊ ညီမျှသည့်</strong></td>
+                  <td>ကျန်းမာရေး အု�်စီုပုံစံ</td>
+                </tr>
+                <tr>
+                  <td>3-5%</td>
+                  <td>သိမ်သိမ်လျင်း မညီမျှမှု</td>
+                  <td>စောင့်ကြည့်ရန်၊ အု�်စီုအု�်စီု အု�်စီု သို့မဟုတ် အု�်စီုအု�်စီုအု�်စီုကို ဖော်ဆိုနိုင်သည်</td>
+                </tr>
+                <tr>
+                  <td>5-10%</td>
+                  <td>အလယ်အလတ် မညီမျှမှု</td>
+                  <td>ကျွမ်းကျင်သည့် အု�်စီုအု�်စီုအု�်စီု စဉ်းစားပါ</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;10%</strong></td>
+                  <td><strong>ကလီနီကယ်အု�်စီု အု�်စွ</strong></td>
+                  <td><strong>ဒဏ်ရာ၊ အု�်စီုအု�်စီု သို့မဟုတ် အာရုံခံဆိုင်ရာ အု�်စီုအု�်စီု ဖော်ဆိုခြင်းကို အု�်စီုထီတင်သည်</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>မညီမျှမှုဖြစ်စေသည့် အုပ်စုများ:</strong></p>
+          <ul>
+            <li><strong>အတိုအခါ ဒဏ်ရာ ပြည့်ဝခြင်း:</strong> ဒဏ်ရာအခါ ခြင်းအု�်စီုခွင့်ပြုခြင်း</li>
+            <li><strong>သုံးစွဲခြင်း မညီမျှမှုများ:</strong> အု�်စီုအု�်စီု၊ အု�်စီု သို့မဟုတ် အု�်စီုတစ်ဖက်လျှင် အု�်စီု</li>
+            <li><strong>ခြင်းအလျှား မညီမျှမှု:</strong> ပုံမှန် သို့မဟုတ် အု�်စီုခြင်းအလျှား မညီမျှမှု</li>
+            <li><strong>အု�်စီုအု�်စီုများ:</strong> အု�်စီုအု�်စီု၊ လျှော့ချ ROM အု�်စီု/အု�်စီု/အု�်စီု</li>
+            <li><strong>အာရုံခံဆိုင်ရာ အခြေအနေများ:</strong> stroke သို့မဟုတ် Parkinson's သို့မဟုတ် MS</li>
+            <li><strong>အု�်စီုအု�်စီု:</strong> အု�်စီုအု�်စီု အု�်စီု သို့မဟုတ် မမှန်တဲ့ အု�်စီု</li>
+          </ul>
+
+          <p><strong>Apple HealthKit အု�်စွ:</strong> <code>walkingAsymmetryPercentage</code> ဘယ်ဖက် နှင့် လက်ျာဖက် အု�်စီုချိန်များ အကြား မညီမျှမှု အု�်စီု။ တန်ဖိုးများ >10% အု�်စီုအု�်စီုများကို အု�်စီုစီမံခန့်ခွဲသည်။</p>
+
+          <div class="tip-box">
+            <h4>💡 လုံခြုံမှု ကြီးမားခြင်း</h4>
+            <ul>
+              <li>တစ်ခြင်းအု�်စီုဆက်သွယ်ခြင်း လုပ်ငန်းများ (30-60 sec ခြင်းတစ်ခုအု�်စီု)</li>
+              <li>အု�်စီုတစ်ခြင်း သုံးစွဲခြင်း လုပ်ငန်းများ (အု�်စီုအု�်စီု ဆိုင်ရာ အု�်စီု)</li>
+              <li>အု�်စီုအု�်စီုအု�်စီု မြင်သာမြင်သာ/အကြည်းအမြည်း အု�်စီုအု�်စီု</li>
+              <li>အခြေခံ ဒဏ်ရာများ သို့မဟုတ် အခြေအနေများကို ခွင့်ပြုခြင်း</li>
+              <li>အု�်စီုလုံခြုံမှု >5% အု�်စီုလျှင် ကျွမ်းကျင်သည့် အု�်စီုအု�်စီုအု�်စီု</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="walking-speed">၆။ အု�်စီုအလျင်</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> သင်၏ပျမ်းမျှ အု�်စီုအလျင်၊ သာမန်အားဖြင့် စက္ကန့်တစ်ခုအု�်စီုမီတာ (m/s) သို့မဟုတ် နာရီတစ်နာရီမိုင် (mph) အု�်စီုအု�်စီု</p>
+
+          <div class="key-insight">
+            <p><strong>အဘယ်ကြောင့် အလျင်သည် "အဓိကအု�်စီု" ဖြစ်သည်:</strong> အု�်စီုအု�်စီု 2011 JAMA လေ့လာမှု 34,485 အသက်ကြီးများအု�်စီုအု�်စီု အု�်စီုအလျင်သည် အု�်စီုအု�်စီု အု�်စီုအု�်စီုအု�်စီုခန့်မှန်းနိုင်သည့် တစ်ခုဖြစ်ကြောင်း တွေ့ရှိခဲ့သည့် အု�်စီုကုအု�်စီု (Studenski et al., 2011)။</p>
+          </div>
+
+          <div class="data-table">
+            <h4>အု�်စီုအလျင် ကျန်းမာရေး လမ်းညွှန်ချက်များ</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>အလျင်</th>
+                  <th>ခွဲခြားမှု</th>
+                  <th>ကျန်းမာရေး အု�်စီု</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="warning-row">
+                  <td><strong>&lt;0.6 m/s (1.3 mph)</strong></td>
+                  <td><strong>အလွန်ဆန့်ခြင်းခံသည့်</strong></td>
+                  <td>အု�်စီုအု�်စီုအန္တရာယ်မြင့်မားသည်၊ ကျန်းမာရေး အု�်စီုအု�်စီုအု�်စီုအု�်စီု</td>
+                </tr>
+                <tr>
+                  <td>0.6-0.8 m/s (1.3-1.8 mph)</td>
+                  <td>လုံခြုံမှု အု�်စီုအု�်စီုအု�်စီု</td>
+                  <td>အု�်စီုကျန်းမာရေး အန္တရာယ်များ၊ အု�်စီုအု�်စီုအု�်စီုအု�်စီုများ</td>
+                </tr>
+                <tr>
+                  <td>0.8-1.0 m/s (1.8-2.2 mph)</td>
+                  <td>ပုံမှန်အု�်စီုအု�်စီု</td>
+                  <td>အလယ်အလတ် အန္တရာယ်၊ ကြီးမားခြင်းအု�်စီုအု�်စီု</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>1.0-1.3 m/s (2.2-2.9 mph)</strong></td>
+                  <td><strong>အု�်စီုအု�်စီုကျန်းမာရေး</strong></td>
+                  <td>ပုံမှန် ကျန်းမာရေး အု�်စီုများ</td>
+                </tr>
+                <tr>
+                  <td>1.3-1.5 m/s (2.9-3.4 mph)</td>
+                  <td>ပုံမှန်အု�်စီုအု�်စီု</td>
+                  <td>အု�်စီုကျန်းမာရေး အု�်စီု၊ နည်းသည့် အု�်စီုအု�်စီုအန္တရာယ်</td>
+                </tr>
+                <tr>
+                  <td>&gt;1.5 m/s (&gt;3.4 mph)</td>
+                  <td>အု�်စီုကြီးမားခြင်း</td>
+                  <td>အု�်စီုအု�်စီုစွမ်းအားထက်သန်များ၊ အု�်စီုအု�်စီုအန္တရာယ်များ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="science-box">
+            <h4>အလျင်-အု�်စီုကြီးမားခြင်း အု�်စီု</h4>
+            <p>သုတေသန မှ <strong>အု�်စီုအလျင်မြင့်မားခြင်း 0.1 m/s တိုင်း အု�်စီုအု�်စီုအု�်စီု အန္တရာယ်သည် ~12% လျှော့ချသည်</strong> ကို သိုင်သည်။ ဤအက်ဆက်အဆက်သည် အု�်စီုအု�်စီုများအတွင်း အထူးအု�်စီုအု�်စီုဖြစ်သည်။</p>
+          </div>
+
+          <p><strong>Apple HealthKit အု�်စွ:</strong> <code>walkingSpeed</code> iPhone အု�်စီုအု�်စီုမှ တွက်ချက်သည် (iPhone 8+ နှင့် iOS 14+)။ အု�်စီုလေ့လာမှုများ သည်အု�်စီုအု�်စီုအု�်စီုကျင်းကြီးအု�်စီုလုပ်ငန်းများ ဆက်သွယ်မှု r=0.86-0.91 ကို ပြသထားသည်။</p>
+        </div>
+
+        <h3 id="vertical-oscillation">၇။ အု�်စီုအု�်စီုအု�်စီု</h3>
+
+        <div class="metric-detail">
+          <p><strong>အဘယ်နည်း:</strong> အု�်စီုအု�်စီုအု�်စီုအခါ သင်၏ခန္ဓာကိုယ် အလယ်အလတ်ခြင်း အု�်စီုအု�်စီုအု�်စီု</p>
+
+          <p><strong>ပုံမှန် အု�်စီုအု�်စီု:</strong> အု�်စီုအု�်စီုအု�်စီု 4-8 cm အု�်စီုအု�်စီု</p>
+
+          <div class="data-table">
+            <h4>အု�်စီုအု�်စီုအု�်စီု အု�်စီုအု�်စီု</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>အု�်စီုအု�်စီုအု�်စီု</th>
+                  <th>အု�်စီုအု�်စီု</th>
+                  <th>အု�်စီုအု�်စီု</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;4 cm</td>
+                  <td>အခြည်းနှီး အု�်စီုအု�်စီု (shuffling အု�်စီု)</td>
+                  <td>အု�်စီုအု�်စီု၊ အာရုံခံအု�်စီုများ သို့မဟုတ် အု�်စီုအု�်စီုအန္တရာယ်ကို ဖော်ဆိုနိုင်သည်</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>4-8 cm</strong></td>
+                  <td><strong>ပုံမှန်၊ အု�်စီုအု�်စီုအု�်စီု အု�်စီုအု�်စီု</strong></td>
+                  <td>အကောင်းဆုံး အင်အားအသုံးချမှု</td>
+                </tr>
+                <tr>
+                  <td>&gt;8-10 cm</td>
+                  <td>အဆင်များ (အု�်စီုအု�်စီု အု�်စီု)</td>
+                  <td>အင်အားအသုံးချမှု အဆီဆီ၊ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>အဘယ်ကြောင့် အရေးကြီးသည်:</strong> အဆင်များသည့် အု�်စီုအု�်စီုအု�်စီုသည် သင်သည် အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု "အု�်စီုအု�်စီု" သည် အု�်စီုအု�်စီုအု�်စီုကို အသုံးချမှုကို အု�်စီုစီမံခန့်ခွဲသည်ဖြစ်သည်။ အု�်စီုအု�်စီုအု�်စီုသည် Parkinson's သို့မဟုတ် အု�်စီုအု�်စီုအန္တရာယ်ဆက်သွယ်သည့် အု�်စီုပုံစံကို ဖော်ဆိုနိုင်သည်။</p>
+
+          <p><strong>မည်သို့ အု�်စီုအု�်စီုအု�်စီုအု�်စီု:</strong></p>
+          <ul>
+            <li>ရွေ့လျားမှုအု�်စီုအု�်စီုအု�်စီု၊ အု�်စီုအု�်စီုအု�်စီုအု�်စီု မူလတည်ဆောက်သည်</li>
+            <li>အု�်စီုအု�်စီုမှ အု�်စီုအု�်စီုအု�်စီု (2-5°) အု�်စီုအု�်စီု</li>
+            <li>အု�်စီုအု�်စီု အု�်စီုအု�်စီု နှင့် ကျောင်းအု�်စီうออ</li>
+            <li>အု�်စီုအု�်စီုအု�်စီုအု�်စီု အု�်စီုအု�်စီုအု�်စီုအု�်စီု လုပ်ခြင်း</li>
+          </ul>
+        </div>
+
+        <h2 id="apple-metrics">Apple HealthKit အု�်စီုအု�်စီုအု�်စီုများ</h2>
+
+        <div class="tech-section">
+          <p>Apple သည် iOS 14 (2020) တွင် အု�်စီုအု�်စီုအု�်စီုအု�်စီုများကို မိတ်ဆက်ခဲ့သည့် အု�်စီုမှ ပုံမှန်ဆိုင်ရာ ကလီနီကယ်-အဆင့်အု�်စီုအု�်စီုများ စုဆောင်းသည်။ ဤအု�်စီုများသည် <strong>သုတေသန-အဆင့် အု�်စီုအု�်စီုများအပြင်</strong> အု�်စီုအု�်စီုဆိုင်ရာ လေ့လာမှုများတွင် အသုံးပြုကြသည်။</p>
+
+          <h3>အု�်စီုလုံခြုံမှု</h3>
+
+          <p>Apple ၏ proprietary <strong>အု�်စီုလုံခြုံမှု</strong> အု�်စီုသည် အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုဖြစ်သည်:</p>
+          <ul>
+            <li>အု�်စီုအလျင်</li>
+            <li>အု�်စီုအု�်စီုအု�်စီု</li>
+            <li>နှစ်ဖက်အု�်သလုံးဆက်သွယ် ရာခိုင်နှုန်း</li>
+            <li>အု�်စီုလုံခြုံမှု မညီမျှမှု</li>
+            <li>အု�်စီုအလျင် ကွာခြားမှု</li>
+            <li>အု�်စီုအု�်စီုအု�်စီု ကွာခြားမှု</li>
+          </ul>
+
+          <div class="data-table">
+            <h4>အု�်စီုလုံခြုံမှု ခွဲခြားမှု</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>ခွဲခြားမှု</th>
+                  <th>အု�်စီုအန္တရာယ်</th>
+                  <th>လုပ်ဆောင်ချက်</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>အု�်စီုအု�်စီု</strong></td>
+                  <td>&lt;1% နှစ်စဉ် အု�်စီုအန္တရာယ်</td>
+                  <td>လက်ရှိ အု�်စီုအု�်စီုအု�်စီု ထိန်းသိမ်းရန်</td>
+                </tr>
+                <tr>
+                  <td><strong>နည်း</strong></td>
+                  <td>1-5% နှစ်စဉ် အု�်စီုအန္တရာယ်</td>
+                  <td>အု�်စီုဆက်သွယ်ခြင်း လုပ်ငန်းများ စဉ်းစားပါ၊ အု�်စီုအု�်စီုအု�်စီု စောင့်ကြည့်ပါ</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>အလွန်နည်း</strong></td>
+                  <td>&gt;5% နှစ်စဉ် အု�်စီုအန္တရာယ်</td>
+                  <td><strong>iPhone အု�်စီုအု�်စီုစီမံခန့်ခွဲခြင်း ပို့ခြင်း၊ ကျန်းမာရေး အု�်စီုအု�်စီုအု�်စီုအု�်စီု</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>6-အု�်စီုအု�်စီုလုပ်ငန်း (6MWT)</h3>
+
+          <p>Apple Watch Series 3+ သည် <strong>6-အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</strong> ကို ပြည့်စုံသည့် အု�်စီုအု�်စီုအု�်စီုများမှ အု�်စီုအု�်စီုနိုင်သည်။ 6MWT သည် အု�်စီုအု�်စီုအု�်စီုအု�်စီုစွမ်းအားထက်သန်များ၏ ရွေးချယ်ခွင့် အု�်စီုအု�်စီုအု�်စီုဖြစ်သည်။</p>
+
+          <div class="science-box">
+            <h4>6MWT အု�်စီုအု�်စီု</h4>
+            <ul>
+              <li><strong>&lt;350 meters:</strong> အု�်စီုအု�်စီုအု�်စီု လုံခြုံမှု အု�်စီုအု�်စီု</li>
+              <li><strong>350-450 meters:</strong> အလယ်အလတ် အု�်စီုအု�်စီု</li>
+              <li><strong>450-550 meters:</strong> ပြည့်စုံ သို့မဟုတ် အသက်ကြီး အု�်စီုအု�်စီု</li>
+              <li><strong>&gt;550 meters:</strong> အု�်စီုအု�်စီုအု�်စီုလုံခြုံမှု စွမ်းအားထက်သန်</li>
+              <li><strong>&gt;650 meters:</strong> အု�်စီုအု�်စီုစွမ်းအားထက်သန်</li>
+            </ul>
+            <p><em>မှတ်ချက်: တန်ဖိုးများသည် အသက်၊ လိင် နှင့် အမြင့်အု�်စီုအု�်စီုအု�်စီုအု�်စီု။ အု�်စီုအု�်စီုအု�်စီုအု�်စီုများ ဖြစ်သည်။</em></p>
+          </div>
+
+          <h3>အု�်စီုအု�်စီုလုံခြုံမှု</h3>
+
+          <p>Apple HealthKit အု�်စီုအု�်စီုအု�်စီုများသည်:</p>
+          <ul>
+            <li><strong>အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု:</strong> Apple အု�်စီုအု�်စီုအု�်စီုအု�်စီုြည့်စုံသည်</li>
+            <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> သင်သည် မည်သည့် အု�်စီုများကို အု�်စီုအု�်စီုခွင့်ပြုရမည်ကို ရွေးချယ်သည်</li>
+            <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> iOS အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+            <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> အု�်စီုကျန်းမာရေု အု�်စီုအု�်စီုအု�်စီု</li>
+          </ul>
+        </div>
+
+        <h2 id="interpreting">သင်၏ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</h2>
+
+        <h3>ကျန်းမာရေး အု�်စီုအု�်စီုများ</h3>
+        <ul>
+          <li><strong>အု�်စီုအလျင်:</strong> ≥100 spm အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          <li><strong>အလျင်:</strong> ≥1.0 m/s (2.2 mph) အု�်စီုအု�်စီုအု�်စီုအု�်စီုအလျင်</li>
+          <li><strong>လုံခြုံမှု:</strong> &lt;3% ဘယ်ဖက် နှင့် လက်ျာဖက် မညီမျှမှု</li>
+          <li><strong>နှစ်ဖက်အု�်သလုံးဆက်သွယ်:</strong> အု�်စီုယုံခြင်း၏ 20-30%</li>
+          <li><strong>သည့်တည့်ခွင်း:</strong> အု�်စီုအု�်စီုများအတွင်း အု�်စီုအု�်စီုအု�်စီု</li>
+          <li><strong>အု�်စီုလုံခြုံမှု:</strong> "OK" ခွဲခြားမှု</li>
+        </ul>
+
+        <h3>သတိပေးခြင်း အု�်စီုများ အောင်ဆုံးရှုံးခြင်းတည်းဆိုင်သည်</h3>
+        <div class="warning-box">
+          <ul>
+            <li><strong>သုတေသန လုံခြုံမှု တိုးမြင့်ခြင်း:</strong> အု�်စီုဒဏ်ရာကို ဖော်ဆိုနိုင်သည်</li>
+            <li><strong>အု�်စီုအလျင် လျှော့ချခြင်း အချိန်အုံး:</strong> အု�်စီုအု�်စီု၊ အထူးသဖြင့် >0.05 m/s နှစ်စဉ်</li>
+            <li><strong>နှစ်ဖက်အု�်သလုံးဆက်သွယ် တိုးမြင့်ခြင်း:</strong> အု�်စီုလုံခြုံမှု သို့မဟုတ် သုံးစွဲခြင်း လျှော့ချခြင်း</li>
+            <li><strong>အု�်စီုလုံခြုံမှု "Low" သို့မဟုတ် "Very Low" သို့ ကျဆင်းခြင်း:</strong> အု�်စီုအန္တရာယ် တိုးမြင့်ခြင်း</li>
+            <li><strong>အု�်စီုလုံခြုံမှု >10%:</strong> ကျွမ်းကျင်သည့် အု�်စီုအု�်စီုအု�်စီု အု�်စီုဆိုသည်</li>
+            <li><strong>အလျင် <0.8 m/s:</strong> အု�်စီုကျန်းမာရေု အန္တရာယ်မြင့်မားသည်၊ အု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          </ul>
+        </div>
+
+        <h2 id="improving">သင်၏ အု�်စီုအု�်စီုအု�်စီုအု�်စီု</h2>
+
+        <h3>အု�်စီုအလျင် လုပ်ငန်းချုပ်</h3>
+        <p><strong>ရည်မှန်းချက်:</strong> ≥100 spm အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</p>
+        <p><strong>နည်းလမ်းများ:</strong></p>
+        <ul>
+          <li>Metronome အု�်စီု 100-120 BPM သို့ သတ်မှတ်ခြင်း</li>
+          <li>100-120 BPM အု�်စီုဆည်တွင် အု�်စီုအု�်စီုအု�်စီုဆည်</li>
+          <li>"အု�်စီုခြင်း" အု�်စီုများ အလုပ်လုပ်ခြင်း: အု�်စီုအု�်စီု အု�်စီုအု�်စီုများ</li>
+          <li>အု�်စီုအု�်စီုအု�်စီုအု�်စီု အု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          <li>Apple Watch အု�်စီုအု�်စီု အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု ထိန်းသိမ်းရန်</li>
+        </ul>
+
+        <h3>လုံခြုံမှု ကြီးမားခြင်း</h3>
+        <p><strong>အု�်စီုများ:</strong></p>
+        <ul>
+          <li><strong>တစ်ခြင်းအု�်စီုဆက်သွယ်:</strong> 30-60 စက္ကန့် ခြင်းတစ်ခုအု�်စီု၊ မျက်လုံးဖွင့်သည် ပိုက်ခြင်း</li>
+          <li><strong>အု�်စီုတစ်ခြင်း သုံးစွဲခြင်း:</strong> တစ်ခြင်းအု�်စီုအု�်စီု၊ အု�်စီုအု�်စီု၊ လုံခြုံမှုလုပ်ငန်းများ</li>
+          <li><strong>အု�်စီုအု�်စီုလုပ်ငန်း:</strong> Wobble အု�်စီု သို့မဟုတ် BOSU အု�်စီု</li>
+          <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု ကွာခြားမှုများ စုံစမ်းခြင်း</li>
+          <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> သင်၏ အု�်စီုအု�်စီုမှ ကွာခြားမှုများ စုံစမ်းခြင်း</li>
+        </ul>
+
+        <h3>အု�်စီုအလျင် တိုးမြင့်စေခြင်း လုံခြုံစွာ</h3>
+        <p><strong>တဆင့်တဆင့် နည်းလမ်း:</strong></p>
+        <ol>
+          <li><strong>အု�်စီုအလျင် တိုးမြင့်စေခြင်း ပထမဆုံး:</strong> 110-120 spm အထိ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          <li><strong>အု�်စီုအု�်စီုလုပ်ငန်း:</strong> လျင်လျင်မြန်မြန် 2 မိနစ် + သာမန် အလျင် 2 မိနစ် အု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          <li><strong>သုံးစွဲခြင်း လုပ်ငန်း:</strong> အု�်စီု နှင့် အု�်စီုသုံးစွဲခြင်း တိုက်ရိုက် အု�်စီုအလျင်ကို ကြီးမားစေသည်</li>
+          <li><strong>တဆင့်တဆင့် တိုးမြင့်စေခြင်း:</strong> အု�်စီုအလျင် ~0.1 m/s လစ်ဆင်း အု�်စီုအု�်စီုအု�်စီု</li>
+        </ol>
+
+        <h3>နှစ်ဖက်အု�်သလုံးဆက်သွယ် လျှော့ချခြင်း (အထက်ကျ စကားအု�်စီု)</h3>
+        <p><strong>အု�်စီုဆက်သွယ်ခြင်း လုပ်ငန်းများ:</strong></p>
+        <ul>
+          <li>အု�်စီုအု�်စီုအု�်စီုအု�်စီုလုပ်ငန်း (heel-to-toe)</li>
+          <li>တစ်ခြင်းအု�်စီုဆက်သွယ် အင်အားလုံခြုံမှု လုပ်ငန်းများ</li>
+          <li>အု�်စီုပုံစံလုပ်ငန်းများ အု�်စီုအု�်စီုအု�်စီု မူလတည်ဆောက်သည်</li>
+          <li>သုံးစွဲခြင်း လုပ်ငန်း: အု�်စီုအု�်စီုများ၊ အု�်စီု dorsiflexors၊ အု�်စီု</li>
+          <li>Tai Chi သို့မဟုတ် အု�်စီုလုံခြုံမှုအု�်စီုအု�်စီုလုပ်ငန်းများ</li>
+        </ul>
+
+        <h2 id="special-populations">အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုလုံခြုံမှု အု�်စီုအု�်စီု</h2>
+
+        <h3>အသက်ကြီးများ (65+)</h3>
+        <p><strong>အု�်စီုအု�်စီုအု�်စီုများ:</strong></p>
+        <ul>
+          <li><strong>အု�်စီုအလျင်:</strong> နှစ်စဉ် စောင့်ကြည့်ခြင်း; လျှော့ချခြင်း >0.05 m/s/year အန္တရာယ် ဖော်ဆိုခြင်း</li>
+          <li><strong>နှစ်ဖက်အု�်သလုံးဆက်သွယ်:</strong> အု�်စီုအန္တရာယ် ဖော်ဆိုခြင်း တိုးမြင့်မှုများ စောင့်ကြည့်ခြင်း</li>
+          <li><strong>အု�်စီုလုံခြုံမှု:</strong> "Low" သို့မဟုတ် "Very Low" အု�်စီုအု� စီုစီမံခန့်ခွဲခြင်း အု�်စီုလုံခြုံမှု စဖွင့်ခြင်း</li>
+          <li><strong>မညီမျှမှု:</strong> အု�်စီုအာရုံခံအု�်စီုခွင့်ပြုခြင်းများ ဖော်ဆိုနိုင်သည် စောင့်ကြည့်ခြင်း</li>
+        </ul>
+
+        <p><strong>ရည်မှန်းချက်များ:</strong></p>
+        <ul>
+          <li>အု�်စီုအလျင် ထိန်းသိမ်းရန် ≥1.0 m/s</li>
+          <li>နှစ်ဖက်အု�်သလုံးဆက်သွယ် ထိန်းသိမ်းရန် <30%</li>
+          <li>အု�်စီုလုံခြုံမှု "OK"</li>
+          <li>မညီမျှမှု <5%</li>
+        </ul>
+
+        <h3>ပြန်ရန်လုပ်ငန်းများ လူများ</h3>
+        <p><strong>ပြန်ရန်သည် တိုးမြင့်စေခြင်း စောင့်ကြည့်ခြင်း:</strong></p>
+        <ul>
+          <li><strong>လုံခြုံမှု ပုံမှန်ပြုခြင်း:</strong> ဒဏ်ရာအခါ အု�်စီု <3% မညီမျှမှုသို့ ပြန်လည်ရန်</li>
+          <li><strong>အု�်စီုအလျင် ပြန်ရန်:</strong> ပြန်ရန်ခြင်း ဒဏ်ရာ ရည်မှန်းချက်များထိ အပတ်စဉ် တိုးမြင့်စေခြင်း စောင့်ကြည့်ခြင်း</li>
+          <li><strong>အု�်စီုအလျင် သည့်တည့်ခွင်း:</strong> ≥100 spm ထိန်းသိမ်းရန် လုံခြုံမှု ပုံမှန် အု�်စီုအု�်စီု</li>
+          <li><strong>ပြည့်ဝခြင်း ပုံစံများ:</strong> အု�်စီုအု�်စီုအု�်စီုအု�်စီုများ ဖော်ဆိုခြင်း စောင့်ကြည့်ခြင်း</li>
+        </ul>
+
+        <h3>အု�်စီုကြီးမားခြင်း လူများ နှင့် အု�်စီုများ</h3>
+        <p><strong>စွမ်းအားထက်သန်များ ရည်မှန်းချက်များ:</strong></p>
+        <ul>
+          <li><strong>အု�်စီုအလျင်:</strong> အု�်စီုအု�်စီုအု�်စီု 120-140 spm; အု�်စီုယှက်ခြင်း 140-180 spm</li>
+          <li><strong>အလျင်:</strong> အု�်စီုအု�်စီုအု�်စီု >1.5 m/s (3.4 mph); ယှက်ခြင်း >2.0 m/s (4.5 mph)</li>
+          <li><strong>လုံခြုံမှု:</strong> >97% (အု�်စီုနည်း မညီမျှမှု)</li>
+          <li><strong>နှစ်ဖက်အု�်သလုံးဆက်သွယ်:</strong> အု�်စီုအု�်စီု 15-20% အု�်စီုအု�်စီုအု�်စီု</li>
+        </ul>
+
+        <h2 id="limitations">နည်းပညာ အု�်စီုအု�်စီုအု�်စီု နှင့် အု�်စီုအု�်စီုများ</h2>
+
+        <h3>အု�်စီုလုံခြုံမှု အု�်စီုများ အု�်စီုအု�်စီု</h3>
+        <ul>
+          <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> 95-99% အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုများ အု�်စီုအု�်စီု</li>
+          <li><strong>အု�်စီုအလျင်:</strong> ±2-3 spm အု�်စီုအု�်စီု</li>
+          <li><strong>အု�်စီုအလျင်:</strong> r=0.86-0.91 ကလီနီကယ် လုပ်ငန်းများ ဆက်သွယ်မှု</li>
+          <li><strong>အု�်စီုအု�်စီုစောင့်ကြည့်ခြင်း:</strong> အု�်စီုအု�်စီုလုံခြုံမှု အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+        </ul>
+
+        <h3>အု�်စီုအု�်စီုများ သည့်တည့်ရန်</h3>
+        <ul>
+          <li><strong>ကူးက္ခခွင့်မ :</strong> အု�်စီုလုံခြုံမှု လုံခြုံမှုများ သည့်တည့်သည့်၊ ကျန်းမာရေု အု�်စီုများ မဟုတ်</li>
+          <li><strong>အု�်စီုအု�်စီုအု�်စီု အရေးကြီးသည်:</strong> iPhone သည် အု�်စီုထဲတွင် သုံးစွဲသည်; Apple Watch လက်စွပ်တွင်</li>
+          <li><strong>အု�်စီုအု�်စီုအု�်စီု:</strong> GPS အု�်စီုသည် အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု အု�်စီုအု�်စီုအု�်စီု</li>
+          <li><strong>ကိုယ်ခန္ဓာ ကွာခြားမှု:</strong> "ပုံမှန်" အု�်စီုအု�်စီုများ အု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          <li><strong>ကလီနီကယ် အု�်စီုအု�်စီုများ အစားထိုးမ :</strong> အု�်စီုအု�်စီု 3D kinematics, အု�်စီုများ, EMG အု�်စီုအု�်စီု</li>
+        </ul>
+
+        <h3>အု�်စီုကျွမ်းကျင်သည့် အု�်စီုအု�်စီုအု�်စီုစောင့်ကြည့်ရန်</h3>
+        <ul>
+          <li>အု�်စီုလုံခြုံမှု >10%</li>
+          <li>အု�်စီုအလျင် <0.8 m/s အု�်စီုအု�်စီုအု�်စီုမဟုတ်</li>
+          <li>အု�်စီုအု�်စီုအု�်စီု သို့မဟုတ် အု�်စီုအု�်စီုအု�်စီုအု�်စီုများ</li>
+          <li>အု�်စီုအု�်စီု အု�်စီုအု�်စီု သို့မဟုတ် အု�်စီုအု�်စီုအု�်စီုအု�်စီု</li>
+          <li>အု�်စီုအု�်စီုအု�်စီုအု�်စီုများ ကွာခြားမှုများ</li>
+          <li>အာရုံခံဆိုင်ရာ လကၡဏာများ (အု�်စီုမရှိခြင်း၊ တုံတွင်းခြင်း၊ ညီညွတ်မှု အု�်စီုများ)</li>
+        </ul>
+
+        <h2 id="next-steps">နောက်တစ်ဆင့်များ</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>အု�်စီုအု�်စီုအု�်စီုများ</h3>
+            <p>အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုကျန်းမာရေု နှင့် အု�်စီုအု�်စီုအု�်စီုအု�်စီုမည်သို့ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု။</p>
+            <a href="/my/walking-zones/" class="btn btn-secondary">အု�်စီုအု�်စီုများ သည့်တည့်ရန် →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>အု�်စီုမည်သည့်နည်းသည့်အု�်စီု</h3>
+            <p>အု�်စီုကွန်ပျူတာဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာမှု၊ အနေအထိုင်၊ အင်အားလုံခြုံမှု နှင့် ခြင်းအု�်စီုပုံစံများသို့ အု�်စီုအု�်စီုအု�်စီုအု�်စီု။</p>
+            <a href="/my/stride-mechanics/" class="btn btn-secondary">မည်သည့်နည်းသည့်အု�်စီု စူးစမ်းအလည်အပတ် →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>သုတေသန သိပ္ပံဆိုင်ရာ</h3>
+            <p>အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု။</p>
+            <a href="/my/research/" class="btn btn-secondary">သုတေသန ကြည့်ရှုရန် →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>ပြည့်စုံသည့် အု�်စီုအု�်စီုမဂ္ဂဇင်း</h3>
+            <p>အု�်စီုအု�်စီုအု�်စီုများမှ တိုက်ရိုက် စာမျက်နှာ လင်ခ်များ ခွင့်ပြုချက်များကို အု�်စီုအု�်စီု။</p>
+            <a href="/my/bibliography/" class="btn btn-secondary">အု�်စီုအု�်စီုမဂ္ဂဇင်း ကြည့်ရှုရန် →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>အု�်စီုအု�်စီုအု�်စီု</h3>
+          <ul>
+            <li><a href="#what-is-gait">အု�်စီုလုံခြုံမှု ခွဲခြမ်းစိတ်ဖြာမှု အဘယ်နည်း</a></li>
+            <li><a href="#key-metrics">အဓိကအု�်စီုများ</a>
+              <ul>
+                <li><a href="#cadence">အု�်စီုအလျင်</a></li>
+                <li><a href="#stride-length">အု�်စီုအု�်စီုအု�်စီု</a></li>
+                <li><a href="#ground-contact">မြေအု�်စီုဆက်သွယ်</a></li>
+                <li><a href="#double-support">နှစ်ဖက်အု�်သလုံးဆက်သွယ်</a></li>
+                <li><a href="#asymmetry">လုံခြုံမှု</a></li>
+                <li><a href="#walking-speed">အု�်စီုအလျင်</a></li>
+                <li><a href="#vertical-oscillation">အု�်စီုအု�်စီုအု�်စီု</a></li>
+              </ul>
+            </li>
+            <li><a href="#apple-metrics">Apple HealthKit အု�်စီုများ</a></li>
+            <li><a href="#interpreting">ခွဲခြမ်းစိတ်ဖြာမှုအု�်စီုအု�်စီု</a></li>
+            <li><a href="#improving">သင်၏ အု�်စီုအု�်စီုအု�်စီုအု�်စီု</a></li>
+            <li><a href="#special-populations">အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုလုံခြုံမှု</a></li>
+            <li><a href="#limitations">အု�်စီုအု�်စီုအု�်စီု နှင့် အု�်စီုအု�်စီုများ</a></li>
+            <li><a href="#next-steps">နောက်တစ်ဆင့်များ</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>သင်၏ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု</h3>
+          <p>Walk Analytics အု�်စီုအု�်စီုအု�်စီုသိပ္ပံဆိုင်ရာ အု�်စီုများ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု။</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">အု�်စီုအု�်စီုအု�်စီုအု�်စီု</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📊 အု�်စီုအု�်စီုအု�်စီုအု�်စီု</h4>
+          <p><strong>အု�်စီုအလျင် ≥100 spm</strong> နှင့် <strong>အလျင် ≥1.0 m/s</strong> ကို သင်၏ အု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီုအု�်စီု။ ဤနှစ်ခု အု�်စီုများသည် ကျန်းမာရေု ရလဒ်များ၏ အအု�်စီုခန့်မှန်းနိုင်သည့် တည်ဆောက်များ ဖြစ်သည်။</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div>
+                <h3 class="mb-md">Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS</h3>
+                <p class="text-secondary">Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">မူလ</h3>
+                <ul class="footer-links">
+                    
+                    <li>
+                        <a href="/af/">Afrikaans</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ar/">العربية</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bn/">বাংলা</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ca/">Català</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/da/">Dansk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/de/">Deutsch</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/el/">Ελληνικά</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/en/">English</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/es/">Español</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fa/">فارسی</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fi/">Suomi</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/fr/">Français</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ha/">Hausa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/it/">Italiano</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ja/">日本語</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ko/">한국어</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nl/">Nederlands</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ms/">Bahasa Melayu</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/no/">Norsk</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hi/">हिन्दी</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/id/">Bahasa Indonesia</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pl/">Polski</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pt/">Português</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ru/">Русский</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sv/">Svenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sw/">Kiswahili</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/th/">ไทย</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tl/">Tagalog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tr/">Türkçe</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ur/">اردو</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/vi/">Tiếng Việt</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/yo/">Yorùbá</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/zh/">中文</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/my/">မြန်မာ</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/bg/">Български</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/cs/">Čeština</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/hu/">Magyar</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/is/">Íslenska</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/nb/">Norsk Bokmål</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/ro/">Română</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/sl/">Slovenščina</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            
+            <div>
+                <h3 class="mb-md">Download</h3>
+                <div class="footer-badges">
+                    <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="app-store-badge" target="_blank" rel="noopener">
+                        <img src="/assets/images/badge-app-store.svg" alt="Download on the App Store" width="120" height="40">
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <p class="text-sm text-secondary">
+                &copy; 2025 Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS. မူပိုင်ခွင့် အားလုံးကို ထိန်းသိမ်းထားသည်
+            </p>
+            <ul class="footer-links">
+                <li><a href="/my/privacy/">ကိုယ်ရေးကိုယ်တာ</a></li>
+                <li><a href="/my/terms/">စည်းမျဉ်းများ</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>ဤဝဘ်ဆိုဒ်သည် သင့်အတွေ့အကြုံကို မြှင့်တင်ရန် ကူးကီးများကို အသုံးပြုပါသည်။</p>
+            <a href="/my/privacy/" class="text-sm">နောက်ထပ် သိရန်</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">ငြင်းပယ်မည်</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">လက်ခံမည်</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="/assets/js/core.min.js" defer></script>
+  <script src="/assets/js/search.min.js" defer></script>
+
+  
+  
+  <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+
+</html>
