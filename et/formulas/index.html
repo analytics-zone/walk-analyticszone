@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="et" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Kõnnimõõdikute valemid - kuidas arvutatakse WSS-i, kõnni- ja tervisemõõdikuid</title>
+  <meta name="description" content="Matemaatilised valemid kõnnianalüütika taga. Õppige, kuidas arvutatakse WSS-i, sammude mõõdikuid, rütmi ja efektiivsust.">
+  <meta name="author" content="Albert Arnó">
+
+  
+  
+  <meta name="keywords" content="kõnni valemid, WSS valem, kõnnimõõdikute arvutamine, kõnniteaduslikud valemid, sammu arvutamine">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/et/formulas/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2025-11-29T14:30:00Z">
+  <meta property="article:author" content="Albert Arnó">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/et/formulas/">
+  <meta property="og:title" content="Kõnnimõõdikute valemid - kuidas arvutatakse WSS-i, kõnni- ja tervisemõõdikuid">
+  <meta property="og:description" content="Matemaatilised valemid kõnnianalüütika taga. Õppige, kuidas arvutatakse WSS-i, sammude mõõdikuid, rütmi ja efektiivsust.">
+  
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:site_name" content="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/et/formulas/">
+  <meta name="twitter:title" content="Kõnnimõõdikute valemid - kuidas arvutatakse WSS-i, kõnni- ja tervisemõõdikuid">
+  <meta name="twitter:description" content="Matemaatilised valemid kõnnianalüütika taga. Õppige, kuidas arvutatakse WSS-i, sammude mõõdikuid, rütmi ja efektiivsust.">
+  
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/">
+  
+  <link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/">
+  
+  <link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/">
+  
+  <link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/">
+  
+  <link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/">
+  
+  <link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/">
+  
+  <link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/">
+  
+  <link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/">
+  
+  <link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/">
+  
+  <link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/">
+  
+  <link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/">
+  
+  <link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/">
+  
+  <link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0066CC">
+  <meta name="robots" content="index, follow">
+
+  
+  <style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="preload" href="/assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+
+  
+  
+
+  
+  
+
+  
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Kõnnimõõdikute valemid - kuidas arvutatakse WSS-i, kõnni- ja tervisemõõdikuid",
+      "description": "Matemaatilised valemid kõnnianalüütika taga. Õppige, kuidas arvutatakse WSS-i, sammude mõõdikuid, rütmi ja efektiivsust.",
+      "author": {
+        "@type": "Person",
+        "name": "Albert Arnó"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Walk Analytics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://walk.analyticszone.app/assets/images/logo.png"
+        }
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-11-29",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://walk.analyticszone.app/et/formulas/"
+      }
+    }
+  </script>
+  
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">Liigu sisu juurde</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/et/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        <a href="/et/" 
+                            aria-current="">
+                            Avaleht
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/getting-started/" class="nav-label">Õpi</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/getting-started/" 
+                                    aria-current="">
+                                    Alustamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-zones/" 
+                                    aria-current="">
+                                    Kõnnitsoonid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-analysis/" 
+                                    aria-current="">
+                                    Kõnnianalüüs
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/training-load/" 
+                                    aria-current="">
+                                    Treeningkoormus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/wss-calculator/" 
+                                    aria-current="">
+                                    WSS kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/research/" class="nav-label">Teadus</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/research/" 
+                                    aria-current="">
+                                    Uuringud
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/formulas/" class="active"
+                                    aria-current="page">
+                                    Valemid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-efficiency/" 
+                                    aria-current="">
+                                    Kõnni efektiivsus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/stride-mechanics/" 
+                                    aria-current="">
+                                    Sammumehaanika
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-vs-running/" 
+                                    aria-current="">
+                                    Kõndimine vs jooksmine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/benchmarks/" 
+                                    aria-current="">
+                                    Võrdlusandmed
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/bibliography/" 
+                                    aria-current="">
+                                    Bibliograafia
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/for-health/" class="nav-label">Sulle</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/for-health/" 
+                                    aria-current="">
+                                    Terviseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-fitness/" 
+                                    aria-current="">
+                                    Vormi saavutamiseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-seniors/" 
+                                    aria-current="">
+                                    Eakatele
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-rehabilitation/" 
+                                    aria-current="">
+                                    Taastusraviks
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/cadence-calculator/" class="nav-label">Tööriistad</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/cadence-calculator/" 
+                                    aria-current="">
+                                    Rütmikalkulaator
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-assessment/" 
+                                    aria-current="">
+                                    Kõnni hindamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/et/contact/" 
+                            aria-current="">
+                            Kontakt
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Vali keel">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="am" >
+                        አမ္ဟာ
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bg" >
+                        Български
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="cs" >
+                        Čeština
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="et" selected>
+                        Eesti
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="gu" >
+                        ગુજરાતી
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="he" >
+                        עברית
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="hr" >
+                        Hrvatski
+                    </option>
+                    
+                    <option value="hu" >
+                        Magyar
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="is" >
+                        Íslenska
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="lt" >
+                        Lietuvių
+                    </option>
+                    
+                    <option value="lv" >
+                        Latviešu
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="my" >
+                        မြန်မာ
+                    </option>
+                    
+                    <option value="nb" >
+                        Norsk Bokmål
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ro" >
+                        Română
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sk" >
+                        Slovenčina
+                    </option>
+                    
+                    <option value="sl" >
+                        Slovenščina
+                    </option>
+                    
+                    <option value="sr" >
+                        Српски
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="ta" >
+                        தமிழ்
+                    </option>
+                    
+                    <option value="te" >
+                        తెలుగు
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="uk" >
+                        Українська
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menüü lüliti"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+        <ol>
+            
+            <li>
+                
+                <a href="/et/">Avaleht</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="/et/research/">Teadus</a>
+                
+            </li>
+            
+            <li>
+                
+                <span aria-current="page">Valemid</span>
+                
+            </li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+  
+  <main id="main-content" class="main-content">
+    <!-- Walking Metrics Formulas -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/et/">Avaleht</a> / <a href="/et/#science">Teadus</a> / Valemid
+    </div>
+    <h1>Kõnninäitajate valemid ja seosed</h1>
+    <p class="lead">Kõnnianalüüsi matemaatilised alused — teaduslikult valideeritud võrrandid intensiivsuse, energia ja
+      soorituse kohta</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <div class="intro-note">
+          <p>See leht esitab kõnnianalüüsis kasutatavad teaduslikult valideeritud valemid. Kõigile võrranditele on
+            lisatud viited uuringutele ja nende täpsusvahemikud.</p>
+        </div>
+
+        <h2 id="cadence-mets">1. Sammusageduse konverteerimine MET-ideks</h2>
+
+        <div class="formula-section featured">
+          <h3>Moore jt (2021) sammusageduse põhine metaboolne valem</h3>
+
+          <div class="formula-box primary">
+            <p class="formula-title">Sammusagedusest MET-ideks</p>
+            <p class="formula-main"><strong>MET-id = 0,0219 × sammusagedus (sammu/min) + 0,72</strong></p>
+            <p class="formula-meta">
+              <span class="accuracy">Täpsus: ±0,5 MET-i</span>
+              <span class="reference">Moore CC, jt (2021). Med Sci Sports Exerc 53(1):165-173</span>
+            </p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>Miks see valem on oluline:</strong> see valem on <strong>23–35% täpsem</strong> kui
+              traditsioonilised ACSM-i kiirusepõhised kõndimisvalemid. See toimib, sest sammusagedus peegeldab otseselt
+              liikumissagedust ja energiakulu, samas kui kiirus sõltub varieeruvast sammupikkusest.</p>
+          </div>
+
+          <h4>Näited:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Kõndimine 100 sammu/min juures:</strong></p>
+              <p class="example-calc">MET-id = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 MET-i</strong></p>
+              <p class="example-interpretation">≈ 3 MET-i = <strong>mõõduka intensiivsuse lävi</strong> ✓</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kõndimine 110 sammu/min juures:</strong></p>
+              <p class="example-calc">MET-id = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 MET-i</strong></p>
+              <p class="example-interpretation">Kindel mõõdukas intensiivsus</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kõndimine 120 sammu/min juures:</strong></p>
+              <p class="example-calc">MET-id = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 MET-i</strong></p>
+              <p class="example-interpretation">Mõõdukas-tugev intensiivsus</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kõndimine 130 sammu/min juures:</strong></p>
+              <p class="example-calc">MET-id = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 MET-i</strong></p>
+              <p class="example-interpretation"><strong>Tugeva intensiivsuse lävi</strong> (CADENCE-Adults otseste
+                mõõtmiste kohaselt 6 MET-i)</p>
+            </div>
+          </div>
+
+          <div class="formula-note">
+            <p><strong>Märkus:</strong> CADENCE-Adults uuringus mõõdeti kontrollitud laboritingimustes, et 130 sammu/min
+              = 6 MET-i. Moore'i valem on loodud vahemikuks 80–130 sammu/min ja võib väga kõrgete sageduste juures
+              intensiivsust alahinnata.</p>
+          </div>
+
+          <h4>Valideerimisandmed:</h4>
+          <ul>
+            <li><strong>Valim:</strong> 76 täiskasvanut vanuses 21–40</li>
+            <li><strong>Meetod:</strong> kaudne kalorimeetria (kuldstandard)</li>
+            <li><strong>R² väärtus:</strong> 0,87 (suurepärane korrelatsioon)</li>
+            <li><strong>Keskmine absoluutne viga:</strong> 0,47 MET-i</li>
+            <li><strong>Rakendatav vahemik:</strong> 80–130 sammu/min</li>
+          </ul>
+        </div>
+
+        <h2 id="acsm-vo2">2. ACSM VO₂ valemid kõndimiseks</h2>
+
+        <div class="formula-section">
+          <h3>ACSM metaboolsed arvutused</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Tasasel pinnal kõndimine (kalle 0%)</p>
+            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0,1 × kiirus (m/min) + 3,5</strong></p>
+            <p class="formula-note">Kiirus meetrites minutis (korrutage km/h 16,67-ga või mph 26,82-ga)</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Kaldega kõndimine (tõus/langus)</p>
+            <p class="formula-main"><strong>VO₂ = 0,1(kiirus) + 1,8(kiirus)(kalle) + 3,5</strong></p>
+            <p class="formula-note">Kalle väljendatuna kümnendarvuna (nt 5% = 0,05)</p>
+          </div>
+
+          <h4>Näited:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Kõndimine 5 km/h (83,3 m/min) tasasel pinnal:</strong></p>
+              <p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 mL/kg/min</strong></p>
+              <p class="example-conversion">Teisendatuna MET-ideks: 11,83 / 3,5 = <strong>3,38 MET-i</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Kõndimine 5 km/h 5% tõusul:</strong></p>
+              <p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p>
+              <p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 mL/kg/min</strong></p>
+              <p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 MET-i</strong></p>
+              <p class="example-interpretation">Tõus suurendab intensiivsust ~64% võrra!</p>
+            </div>
+          </div>
+
+          <div class="conversion-helper">
+            <h4>Kiiruse teisendused:</h4>
+            <ul>
+              <li><strong>km/h m/min-ks:</strong> korrutada 16,67-ga</li>
+              <li><strong>mph m/min-ks:</strong> korrutada 26,82-ga</li>
+              <li><strong>m/s m/min-ks:</strong> korrutada 60-ga</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="energy-expenditure">3. Energiakulu ja kalorite põletamine</h2>
+
+        <div class="formula-section">
+          <h3>Täpne kaloriarvutus</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kaloreid minutis</p>
+            <p class="formula-main"><strong>kcal/min = (MET-id × 3,5 × kehakaal kg) / 200</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Seansi kogukalorid</p>
+            <p class="formula-main"><strong>Kogukalorid = kcal/min × kestus (minutites)</strong></p>
+          </div>
+
+          <h4>Näited:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>70 kg kaaluv inimene kõnnib 100 sammu/min (3 MET-i) 45 minutit:</strong>
+              </p>
+              <p class="example-calc">kcal/min = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 kcal/min</strong></p>
+              <p class="example-calc">Kokku = 3,675 × 45 = <strong>165,4 kcal</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>85 kg kaaluv inimene kõnnib 120 sammu/min (5 MET-i) 30 minutit:</strong>
+              </p>
+              <p class="example-calc">kcal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 kcal/min</strong>
+              </p>
+              <p class="example-calc">Kokku = 7,44 × 30 = <strong>223,2 kcal</strong></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h4>Miks just see valem?</h4>
+            <p>See võrrand tuleneb MET-i (Metabolic Equivalent of Task) definitsioonist:</p>
+            <ul>
+              <li>1 MET = 3,5 mL O₂/kg/min (puhkeoleku ainevahetuse kiirus)</li>
+              <li>1 liiter tarbitud O₂-d ≈ 5 kcal põletatud energiat</li>
+              <li>Teisendades: (MET-id × 3,5 × kg × 5) / 1000 = (MET-id × 3,5 × kg) / 200</li>
+            </ul>
+          </div>
+
+          <h3>Neto-kalorikulu (ainult treening)</h3>
+          <div class="formula-box">
+            <p class="formula-title">Neto-kalorid (ilma puhkeolekuta)</p>
+            <p class="formula-main"><strong>Neto-kcal/min = [(MET-id - 1) × 3,5 × kehakaal] / 200</strong></p>
+            <p class="formula-note">Lahutab 1 MET-i, et jätta välja kalorid, mida põletaksid niikuinii puhates</p>
+          </div>
+
+          <div class="calc-example">
+            <p class="example-input"><strong>70 kg, 3 MET-i, 45 min – neto-kalorid:</strong></p>
+            <p class="example-calc">Neto = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3
+                neto-kcal</strong></p>
+            <p class="example-interpretation">Võrdluses 165,4 kogukaloriga (55 kalorit oleks põletatud puhkeolekus)</p>
+          </div>
+        </div>
+
+        <h2 id="gait-symmetry">4. Kõnni sümmeetria indeks (GSI)</h2>
+
+        <div class="formula-section">
+          <h3>Vasaku ja parema jala asümmeetria kvantifitseerimine</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kõnni sümmeetria indeks</p>
+            <p class="formula-main"><strong>GSI (%) = |Parem - Vasak| / [0,5 × (Parem + Vasak)] × 100</strong></p>
+            <p class="formula-note">Saab rakendada sammupikkusele, sammu ajale või kontaktiajale</p>
+          </div>
+
+          <h4>Tõlgendamine:</h4>
+          <ul>
+            <li><strong>&lt;2–3%:</strong> Normaalne, sümmeetriline kõnd</li>
+            <li><strong>3–5%:</strong> Kerge asümmeetria</li>
+            <li><strong>5–10%:</strong> Mõõdukas asümmeetria, vajab jälgimist</li>
+            <li><strong>&gt;10%:</strong> Kliiniliselt oluline, konsulteerige spetsialistiga</li>
+          </ul>
+
+          <h4>Näited:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>Sammude ajad: parem = 520 ms, vasak = 480 ms</strong></p>
+              <p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p>
+              <p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asümmeetria</strong></p>
+              <p class="example-interpretation">Mõõdukas asümmeetria – kaaluge nõrgema poole tugevdamist</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>Sammupikkused: parem = 1,42 m, vasak = 1,38 m</strong></p>
+              <p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p>
+              <p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% asümmeetria</strong></p>
+              <p class="example-interpretation">Normaalne, tervislik vahemik ✓</p>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Kliiniline märkus:</strong> Apple HealthKiti kõnni asümmeetria kasutab veidi teistsugust arvutust
+              (sammuaegade lihtne protsentuaalne erinevus), kuid tõlgendusläved on sarnased.</p>
+          </div>
+        </div>
+
+        <h2 id="walk-score">5. WALK skoor (Walk Analyticsi patenteeritud mõõdik)</h2>
+
+        <div class="formula-section">
+          <h3>Kõndimise efektiivsuse skoor</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">WALK skoor</p>
+            <p class="formula-main"><strong>WALK skoor = aeg (sekundites) + sammud 100 meetri kohta</strong></p>
+            <p class="formula-note">Madalam skoor = parem efektiivsus</p>
+          </div>
+
+          <h4>Kuidas see toimib:</h4>
+          <p>WALK skoor kombineerib aja ja sammude arvu, et kvantifitseerida kõndimise efektiivsust. Kõndija, kes läbib
+            100 m 75 sekundiga ja teeb selleks 140 sammu, saab WALK skooriks 215. Skoori alandamiseks tuleb parandada
+            kas kiirust VÕI sammu efektiivsust.</p>
+
+          <h4>Näited:</h4>
+          <div class="calculation-examples">
+            <div class="calc-example">
+              <p class="example-input"><strong>100 m 80 sekundiga, 120 sammu:</strong></p>
+              <p class="example-calc">WALK skoor = 80 + 120 = <strong>200</strong></p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 m 70 sekundiga, 110 sammu:</strong></p>
+              <p class="example-calc">WALK skoor = 70 + 110 = <strong>180</strong></p>
+              <p class="example-interpretation">Parem efektiivsus läbi paranenud kiiruse + sammu</p>
+            </div>
+
+            <div class="calc-example">
+              <p class="example-input"><strong>100 m 60 sekundiga, 130 sammu (kiirkäimine):</strong></p>
+              <p class="example-calc">WALK skoor = 60 + 130 = <strong>190</strong></p>
+              <p class="example-interpretation">Kiire, kuid lühemate sammudega</p>
+            </div>
+          </div>
+
+          <h4>Tüüpilised vahemikud:</h4>
+          <ul>
+            <li><strong>&gt;250:</strong> Aeglane/ebaefektiivne kõnd, võimalikud liikumisprobleemid</li>
+            <li><strong>200–250:</strong> Tavakäija, keskmine efektiivsus</li>
+            <li><strong>170–200:</strong> Tervisekõndija, hea efektiivsus</li>
+            <li><strong>150–170:</strong> Edasijõudnud käija, suurepärane efektiivsus</li>
+            <li><strong>&lt;150:</strong> Eliit/kiirkäimise tase</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Treenimine WALK skooriga:</strong> Jälgige oma skoori samal 100 m rajal kord nädalas. Skoori
+              paranemine näitab täiustatud neuromuskulaarset koordinatsiooni, jõudu ja kõnniökonoomsust.</p>
+          </div>
+        </div>
+
+        <h2 id="basic-metrics">6. Kõnninäitajate põhitõed</h2>
+
+        <div class="formula-section">
+          <h3>Fundamentaalsed arvutused</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Kõnnikiirus</p>
+            <p class="formula-main"><strong>Kiirus (m/s) = vahemaa (m) / aeg (s)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Sammusagedus sammude koguarvust</p>
+            <p class="formula-main"><strong>Sammusagedus (sammu/min) = sammud kokku / aeg (minutites)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Sammutsükli pikkus (stride)</p>
+            <p class="formula-main"><strong>Sammutsükli pikkus (m) = vahemaa (m) / (sammud / 2)</strong></p>
+            <p class="formula-note">Jagame sammud 2-ga, sest üks tsükkel = kaks sammu</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Üksiksamm (step)</p>
+            <p class="formula-main"><strong>Üksiksamm (m) = vahemaa (m) / sammud</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Kiirus sammusagedusest ja tsükli pikkusest</p>
+            <p class="formula-main"><strong>Kiirus = sammutsükli pikkus × (sammusagedus / 2) / 60</strong></p>
+            <p class="formula-note">Või: kiirus (m/s) = üksiksamm × sammusagedus / 60</p>
+          </div>
+
+          <h4>Näidisvoog:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Kõnd 1000 m 12 minutiga 1320 sammuga:</strong></p>
+            <p><strong>Kiirus:</strong> 1000 m / 720 s = <strong>1,39 m/s</strong></p>
+            <p><strong>Sammusagedus:</strong> 1320 sammu / 12 min = <strong>110 sammu/min</strong></p>
+            <p><strong>Sammutsükli pikkus:</strong> 1000 m / (1320/2) = 1000 / 660 = <strong>1,52 m</strong></p>
+            <p><strong>Üksiksamm:</strong> 1000 m / 1320 = <strong>0,76 m</strong></p>
+          </div>
+        </div>
+
+        <h2 id="heart-rate">7. Pulsitsoonide arvutamine</h2>
+
+        <div class="formula-section">
+          <h3>Traditsiooniline pulsitsoonide meetod</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Maksimaalse pulsisageduse hindamine</p>
+            <p class="formula-main"><strong>Maksimaalne pulss = 220 - vanus</strong></p>
+            <p class="formula-note">Lihtne, kuid ±10–15 lööki/min individuaalse varieeruvusega</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Alternatiiv: Tanaka valem (täpsem)</p>
+            <p class="formula-main"><strong>Maksimaalne pulss = 208 - (0,7 × vanus)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Tsooni vahemiku arvutamine</p>
+            <p class="formula-main"><strong>Tsoon = maksimaalne pulss × (alumine%, ülemine%)</strong></p>
+          </div>
+
+          <h4>Näide: 40-aastane</h4>
+          <div class="calc-example">
+            <p><strong>Traditsiooniline:</strong> max pulss = 220 - 40 = <strong>180 l/min</strong></p>
+            <p><strong>Tanaka:</strong> max pulss = 208 - (0,7 × 40) = 208 - 28 = <strong>180 l/min</strong></p>
+            <p><strong>Tsoon 2 (60–70%):</strong> 180 × 0,60 = 108 l/min kuni 180 × 0,70 = 126 l/min</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Märkus:</strong> Kuigi pulsitsoonid on kasulikud, on <strong>sammusagedusepõhised tsoonid
+                kõndimisel täpsemad ja praktilisemad</strong> (vaata kõnnitsoonide juhendit).</p>
+          </div>
+        </div>
+
+        <h2 id="cost-transport">8. Liikumise kulu ja kõnniökonoomsus</h2>
+
+        <div class="formula-section">
+          <h3>Kõndimise energiakulu</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Liikumise kulu (C)</p>
+            <p class="formula-main"><strong>C = kulutatud energia / (kehakaal × vahemaa)</strong></p>
+            <p class="formula-note">Ühikud: J/kg/m või mL O₂/kg/m</p>
+          </div>
+
+          <div class="key-insight">
+            <p><strong>U-kujuline kõver:</strong> kõnniökonoomsus järgib U-kujulist kõverat. On olemas optimaalne kiirus
+              (tavaliselt 1,2–1,4 m/s või 4,3–5,0 km/h), kus liikumise kulu on minimaalne. Sellest aeglasemalt VÕI
+              kiiremini kõndimine suurendab energiakulu läbitud vahemaa kohta.</p>
+          </div>
+
+          <h4>Faktorid, mis mõjutavad liikumise kulu:</h4>
+          <ul>
+            <li><strong>Kiirus:</strong> U-kujuline seos (optimaalne ~1,3 m/s)</li>
+            <li><strong>Kalle:</strong> ülesmäge suurendab oluliselt kulu; alamäge suurendab ekstsentrilist kulu</li>
+            <li><strong>Kehakaal:</strong> raskematel inimestel on suurem absoluutne, kuid sarnane suhteline kulu</li>
+            <li><strong>Sammumehaanika:</strong> optimaalne sammupikkus minimeerib kulu</li>
+            <li><strong>Maastik:</strong> ebaühtlane pind suurendab kulu võrreldes sileda asfaldiga</li>
+          </ul>
+
+          <div class="formula-box">
+            <p class="formula-title">Kaldega korrigeeritud kulu</p>
+            <p class="formula-main"><strong>Kulu kordaja = 1 + (kalle × 10)</strong></p>
+            <p class="formula-note">Ligianduv hinnang: +10% kulu iga 1% kalde kohta</p>
+          </div>
+
+          <h4>Näide:</h4>
+          <div class="calc-example">
+            <p class="example-input"><strong>Kõndimine 5% tõusul:</strong></p>
+            <p class="example-calc">Kulu kordaja = 1 + (0,05 × 10) = <strong>1,5×</strong></p>
+            <p class="example-interpretation">50% suurem energiakulu võrreldes tasase pinnaga</p>
+          </div>
+        </div>
+
+        <h2 id="training-load">9. Treeningkoormus ja koormusskoor</h2>
+
+        <div class="formula-section">
+          <h3>Kõndimise koormusskoor (WSS)</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Tsoonipõhine WSS</p>
+            <p class="formula-main"><strong>WSS = Σ (minutid tsoonis × tsooni faktor)</strong></p>
+            <p>Tsoon 1: ×1,0 | Tsoon 2: ×2,0 | Tsoon 3: ×3,0 | Tsoon 4: ×4,0 | Tsoon 5: ×5,0</p>
+          </div>
+
+          <h4>Näide: 60-minutiline kõnd</h4>
+          <div class="calc-example">
+            <p>10 min tsoon 1 × 1 = 10 punkti</p>
+            <p>40 min tsoon 2 × 2 = 80 punkti</p>
+            <p>10 min tsoon 3 × 3 = 30 punkti</p>
+            <p><strong>WSS kokku = 120</strong></p>
+          </div>
+
+          <h3>Nädala treeningkoormus</h3>
+          <div class="formula-box">
+            <p class="formula-title">Nädala koormus</p>
+            <p class="formula-main"><strong>Nädala koormus = Σ päeva WSS (7 päeva)</strong></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Progressiivne ülekoormus</p>
+            <p class="formula-main"><strong>Järgmine nädal = käesolev nädal × 1,05–1,10</strong></p>
+            <p class="formula-note">Suurendage maksimaalselt 5–10% nädalas</p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-title">Taastusnädal</p>
+            <p class="formula-main"><strong>Taastusnädal = käesolev × 0,50–0,70</strong></p>
+            <p class="formula-note">Iga 3–4 nädala järel vähendage koormust 50–70%-ni</p>
+          </div>
+
+          <h4>Tüüpilised nädala koormused:</h4>
+          <ul>
+            <li><strong>Alustav tervisekõndija:</strong> 200–400 WSS/nädalas</li>
+            <li><strong>Regulaarne treenija:</strong> 400–700 WSS/nädalas</li>
+            <li><strong>Tõsine harrastaja:</strong> 700–1000 WSS/nädalas</li>
+            <li><strong>Võistlev kiirkäija:</strong> 1000–1500+ WSS/nädalas</li>
+          </ul>
+        </div>
+
+        <h2 id="predictions">10. Ennustavad võrrandid</h2>
+
+        <div class="formula-section">
+          <h3>6-minuti kõnnitesti (6MWT) distantsi ennustamine</h3>
+
+          <div class="formula-box">
+            <p class="formula-title">Ennustatav 6MWT distants (Enright & Sherrill)</p>
+            <p><strong>Mehed:</strong> (7,57 × pikkus cm) - (5,02 × vanus) - (1,76 × kaal kg) - 309</p>
+            <p><strong>Naised:</strong> (2,11 × pikkus cm) - (5,78 × vanus) - (2,29 × kaal kg) + 667</p>
+            <p class="formula-note">Ennustab läbitavat vahemaad meetrites tervete täiskasvanute puhul</p>
+          </div>
+
+          <h4>Näide: 40-aastane mees, 175 cm, 75 kg</h4>
+          <div class="calc-example">
+            <p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p>
+            <p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 meetrit</strong></p>
+            <p class="example-interpretation">Hea funktsionaalne võimekus vanuse kohta</p>
+          </div>
+
+          <div class="info-box">
+            <p><strong>Kliiniline kasutus:</strong> 6MWT-d kasutatakse funktsionaalse võimekuse hindamiseks
+              südame-veresoonkonna patsientidel, operatsioonieelseks/-järgseks hindamiseks ja üldise vormi testimiseks
+              eakate seas.</p>
+          </div>
+        </div>
+
+        <h2 id="conversions">11. Ühikute teisendamine</h2>
+
+        <div class="formula-section">
+          <h3>Levinud kõnninäitajate teisendused</h3>
+
+          <div class="conversion-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kust</th>
+                  <th>Kuhu</th>
+                  <th>Valem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/s</td>
+                  <td>km/h ÷ 3,6</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/s</td>
+                  <td>mph × 0,447</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>km/h</td>
+                  <td>m/s × 3,6</td>
+                </tr>
+                <tr>
+                  <td>m/s</td>
+                  <td>mph</td>
+                  <td>m/s × 2,237</td>
+                </tr>
+                <tr>
+                  <td>km/h</td>
+                  <td>m/min</td>
+                  <td>km/h × 16,67</td>
+                </tr>
+                <tr>
+                  <td>mph</td>
+                  <td>m/min</td>
+                  <td>mph × 26,82</td>
+                </tr>
+                <tr>
+                  <td>MET-id</td>
+                  <td>mL/kg/min</td>
+                  <td>MET-id × 3,5</td>
+                </tr>
+                <tr>
+                  <td>mL/kg/min</td>
+                  <td>MET-id</td>
+                  <td>VO₂ ÷ 3,5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Kiirviited:</h4>
+          <ul>
+            <li><strong>1,0 m/s =</strong> 3,6 km/h = 2,24 mph (tüüpiline terve täiskasvanu kõnnikiirus)</li>
+            <li><strong>1,4 m/s =</strong> 5,0 km/h = 3,1 mph (reibas kõndimine)</li>
+            <li><strong>1 MET =</strong> 3,5 mL O₂/kg/min (puhkeoleku ainevahetus)</li>
+            <li><strong>3 MET-i =</strong> 10,5 mL O₂/kg/min (mõõduka intensiivsuse lävi)</li>
+            <li><strong>6 MET-i =</strong> 21 mL O₂/kg/min (tugeva intensiivsuse lävi)</li>
+          </ul>
+        </div>
+
+        <h2 id="next-steps">Seotud allikad</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Kasuta valemeid: WSS kalkulaator</h3>
+            <p>Kasuta meie interaktiivset kalkulaatorit oma kõndimise koormusskoori arvutamiseks.</p>
+            <a href="/et/wss-calculator/" class="btn btn-secondary">Arvuta WSS →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Kõnnitsoonide mõistmine</h3>
+            <p>Õpi kasutama sammusagedusepõhiseid intensiivsustsoone treeningutel.</p>
+            <a href="/et/walking-zones/" class="btn btn-secondary">Õpi tsoone →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Teadusuuringud</h3>
+            <p>Vaata üle uuringud, mis on need valemid valideerinud.</p>
+            <a href="/et/research/" class="btn btn-secondary">Vaata uuringuid →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Täielik bibliograafia</h3>
+            <p>Leia kõigi viidatud võrrandite täielikud allikad.</p>
+            <a href="/et/bibliography/" class="btn btn-secondary">Vaata bibliograafiat →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Valemite register</h3>
+          <ul>
+            <li><a href="#cadence-mets">1. Sammusagedus → MET-id</a></li>
+            <li><a href="#acsm-vo2">2. ACSM VO₂ valemid</a></li>
+            <li><a href="#energy-expenditure">3. Energia ja kalorid</a></li>
+            <li><a href="#gait-symmetry">4. Kõnni sümmeetria indeks</a></li>
+            <li><a href="#walk-score">5. WALK skoor</a></li>
+            <li><a href="#basic-metrics">6. Kõnni põhinäitajad</a></li>
+            <li><a href="#heart-rate">7. Pulsitsoonid</a></li>
+            <li><a href="#cost-transport">8. Liikumise kulu</a></li>
+            <li><a href="#training-load">9. Treeningkoormus</a></li>
+            <li><a href="#predictions">10. Ennustavad võrrandid</a></li>
+            <li><a href="#conversions">11. Ühikute teisendamine</a></li>
+          </ul>
+        </div>
+
+        <div class="formula-highlight">
+          <h3>⭐ Kõige olulisem</h3>
+          <p><strong>Sammusagedusest MET-ideks</strong></p>
+          <p class="formula-compact">MET-id = 0,0219 × sammu/min + 0,72</p>
+          <p class="small-text">See ainus võrrand võimaldab sammusageduse põhise intensiivsuse jälgimist ilma
+            pulsimõõtjata.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Kasuta neid valemeid</h3>
+          <p>Walk Analytics kasutab neid teaduslikult valideeritud võrrandeid sinu kõndimise analüüsimiseks.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Laadi rakendus
+            alla</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📐 Valemite täpsus</h4>
+          <p>Kõik sellel lehel olevad võrrandid pärinevad retsenseeritud teadusuuringutest. Vaata täielikke viiteid <a
+              href="/et/bibliography/">bibliograafiast</a>.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-top">
+            <div class="footer-brand-section">
+                <h2>Walk Analytics</h2>
+                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+            <div class="footer-download">
+                <h3 class="footer-heading">Download</h3>
+                <div class="footer-badges">
+                    
+                    <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener" aria-label="Download on the App Store">
+                        <img src="/assets/images/badge-app-store.svg" alt="Download on the App Store" width="135" height="40" loading="lazy">
+                    </a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-languages">
+            <h3 class="footer-heading">Available in</h3>
+            <div class="lang-grid">
+                
+                <a href="/af/"
+                   class="lang-link"
+                   hreflang="af"
+                   >
+                    Afrikaans
+                </a>
+                
+                <a href="/am/"
+                   class="lang-link"
+                   hreflang="am"
+                   >
+                    አမ္ဟာ
+                </a>
+                
+                <a href="/ar/"
+                   class="lang-link"
+                   hreflang="ar"
+                   dir="rtl">
+                    العربية
+                </a>
+                
+                <a href="/bg/"
+                   class="lang-link"
+                   hreflang="bg"
+                   >
+                    Български
+                </a>
+                
+                <a href="/bn/"
+                   class="lang-link"
+                   hreflang="bn"
+                   >
+                    বাংলা
+                </a>
+                
+                <a href="/ca/"
+                   class="lang-link"
+                   hreflang="ca"
+                   >
+                    Català
+                </a>
+                
+                <a href="/cs/"
+                   class="lang-link"
+                   hreflang="cs"
+                   >
+                    Čeština
+                </a>
+                
+                <a href="/da/"
+                   class="lang-link"
+                   hreflang="da"
+                   >
+                    Dansk
+                </a>
+                
+                <a href="/de/"
+                   class="lang-link"
+                   hreflang="de"
+                   >
+                    Deutsch
+                </a>
+                
+                <a href="/el/"
+                   class="lang-link"
+                   hreflang="el"
+                   >
+                    Ελληνικά
+                </a>
+                
+                <a href="/en/"
+                   class="lang-link"
+                   hreflang="en"
+                   >
+                    English
+                </a>
+                
+                <a href="/es/"
+                   class="lang-link"
+                   hreflang="es"
+                   >
+                    Español
+                </a>
+                
+                <a href="/et/"
+                   class="lang-link active"
+                   hreflang="et"
+                   >
+                    Eesti
+                </a>
+                
+                <a href="/fa/"
+                   class="lang-link"
+                   hreflang="fa"
+                   dir="rtl">
+                    فارسی
+                </a>
+                
+                <a href="/fi/"
+                   class="lang-link"
+                   hreflang="fi"
+                   >
+                    Suomi
+                </a>
+                
+                <a href="/fr/"
+                   class="lang-link"
+                   hreflang="fr"
+                   >
+                    Français
+                </a>
+                
+                <a href="/gu/"
+                   class="lang-link"
+                   hreflang="gu"
+                   >
+                    ગુજરાતી
+                </a>
+                
+                <a href="/ha/"
+                   class="lang-link"
+                   hreflang="ha"
+                   >
+                    Hausa
+                </a>
+                
+                <a href="/he/"
+                   class="lang-link"
+                   hreflang="he"
+                   dir="rtl">
+                    עברית
+                </a>
+                
+                <a href="/hi/"
+                   class="lang-link"
+                   hreflang="hi"
+                   >
+                    हिन्दी
+                </a>
+                
+                <a href="/hr/"
+                   class="lang-link"
+                   hreflang="hr"
+                   >
+                    Hrvatski
+                </a>
+                
+                <a href="/hu/"
+                   class="lang-link"
+                   hreflang="hu"
+                   >
+                    Magyar
+                </a>
+                
+                <a href="/id/"
+                   class="lang-link"
+                   hreflang="id"
+                   >
+                    Bahasa Indonesia
+                </a>
+                
+                <a href="/is/"
+                   class="lang-link"
+                   hreflang="is"
+                   >
+                    Íslenska
+                </a>
+                
+                <a href="/it/"
+                   class="lang-link"
+                   hreflang="it"
+                   >
+                    Italiano
+                </a>
+                
+                <a href="/ja/"
+                   class="lang-link"
+                   hreflang="ja"
+                   >
+                    日本語
+                </a>
+                
+                <a href="/ko/"
+                   class="lang-link"
+                   hreflang="ko"
+                   >
+                    한국어
+                </a>
+                
+                <a href="/lt/"
+                   class="lang-link"
+                   hreflang="lt"
+                   >
+                    Lietuvių
+                </a>
+                
+                <a href="/lv/"
+                   class="lang-link"
+                   hreflang="lv"
+                   >
+                    Latviešu
+                </a>
+                
+                <a href="/ms/"
+                   class="lang-link"
+                   hreflang="ms"
+                   >
+                    Bahasa Melayu
+                </a>
+                
+                <a href="/my/"
+                   class="lang-link"
+                   hreflang="my"
+                   >
+                    မြန်မာ
+                </a>
+                
+                <a href="/nb/"
+                   class="lang-link"
+                   hreflang="nb"
+                   >
+                    Norsk Bokmål
+                </a>
+                
+                <a href="/nl/"
+                   class="lang-link"
+                   hreflang="nl"
+                   >
+                    Nederlands
+                </a>
+                
+                <a href="/pl/"
+                   class="lang-link"
+                   hreflang="pl"
+                   >
+                    Polski
+                </a>
+                
+                <a href="/pt/"
+                   class="lang-link"
+                   hreflang="pt"
+                   >
+                    Português
+                </a>
+                
+                <a href="/ro/"
+                   class="lang-link"
+                   hreflang="ro"
+                   >
+                    Română
+                </a>
+                
+                <a href="/ru/"
+                   class="lang-link"
+                   hreflang="ru"
+                   >
+                    Русский
+                </a>
+                
+                <a href="/sk/"
+                   class="lang-link"
+                   hreflang="sk"
+                   >
+                    Slovenčina
+                </a>
+                
+                <a href="/sl/"
+                   class="lang-link"
+                   hreflang="sl"
+                   >
+                    Slovenščina
+                </a>
+                
+                <a href="/sr/"
+                   class="lang-link"
+                   hreflang="sr"
+                   >
+                    Српски
+                </a>
+                
+                <a href="/sv/"
+                   class="lang-link"
+                   hreflang="sv"
+                   >
+                    Svenska
+                </a>
+                
+                <a href="/sw/"
+                   class="lang-link"
+                   hreflang="sw"
+                   >
+                    Kiswahili
+                </a>
+                
+                <a href="/ta/"
+                   class="lang-link"
+                   hreflang="ta"
+                   >
+                    தமிழ்
+                </a>
+                
+                <a href="/te/"
+                   class="lang-link"
+                   hreflang="te"
+                   >
+                    తెలుగు
+                </a>
+                
+                <a href="/th/"
+                   class="lang-link"
+                   hreflang="th"
+                   >
+                    ไทย
+                </a>
+                
+                <a href="/tl/"
+                   class="lang-link"
+                   hreflang="tl"
+                   >
+                    Tagalog
+                </a>
+                
+                <a href="/tr/"
+                   class="lang-link"
+                   hreflang="tr"
+                   >
+                    Türkçe
+                </a>
+                
+                <a href="/uk/"
+                   class="lang-link"
+                   hreflang="uk"
+                   >
+                    Українська
+                </a>
+                
+                <a href="/ur/"
+                   class="lang-link"
+                   hreflang="ur"
+                   dir="rtl">
+                    اردو
+                </a>
+                
+                <a href="/vi/"
+                   class="lang-link"
+                   hreflang="vi"
+                   >
+                    Tiếng Việt
+                </a>
+                
+                <a href="/zh/"
+                   class="lang-link"
+                   hreflang="zh"
+                   >
+                    中文
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Walk Analytics. Kõik õigused kaitstud
+            </p>
+            <ul class="footer-legal">
+                <li><a href="/et/privacy/">Privaatsus</a></li>
+                <li><a href="/et/terms/">Tingimused</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>See veebisait kasutab küpsiseid teie kogemuse parandamiseks.</p>
+            <a href="/et/privacy/" class="text-sm">Loe lähemalt</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Keeldu</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Nõustu</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="/assets/js/core.min.js" defer></script>
+  <script src="/assets/js/search.min.js" defer></script>
+
+  
+  
+  <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+
+</html>

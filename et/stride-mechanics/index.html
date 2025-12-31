@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="et" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Kõnnisammude mehaanika - biomehaanika, rütm ja sammude optimeerimine</title>
+  <meta name="description" content="Süvitsi minna kõnnisammude mehaanikasse. Mõistke rütmi, sammu pikkust, maapinnaga kokkupuute aega.">
+  <meta name="author" content="Albert Arnó">
+
+  
+  
+  <meta name="keywords" content="sammu mehaanika, kõnni biomehaanika, sammu optimeerimine, kõnnirütm">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/et/stride-mechanics/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2025-11-16T14:30:00Z">
+  <meta property="article:author" content="Albert Arnó">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/et/stride-mechanics/">
+  <meta property="og:title" content="Kõnnisammude mehaanika - biomehaanika, rütm ja sammude optimeerimine">
+  <meta property="og:description" content="Süvitsi minna kõnnisammude mehaanikasse. Mõistke rütmi, sammu pikkust, maapinnaga kokkupuute aega.">
+  
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:site_name" content="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/et/stride-mechanics/">
+  <meta name="twitter:title" content="Kõnnisammude mehaanika - biomehaanika, rütm ja sammude optimeerimine">
+  <meta name="twitter:description" content="Süvitsi minna kõnnisammude mehaanikasse. Mõistke rütmi, sammu pikkust, maapinnaga kokkupuute aega.">
+  
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/stride-mechanics/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/stride-mechanics/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0066CC">
+  <meta name="robots" content="index, follow">
+
+  
+  <style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="preload" href="/assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+
+  
+  
+
+  
+  
+
+  
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Kõnnisammude mehaanika - biomehaanika, rütm ja sammude optimeerimine",
+      "description": "Süvitsi minna kõnnisammude mehaanikasse. Mõistke rütmi, sammu pikkust, maapinnaga kokkupuute aega.",
+      "author": {
+        "@type": "Person",
+        "name": "Albert Arnó"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Walk Analytics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://walk.analyticszone.app/assets/images/logo.png"
+        }
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-11-16",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://walk.analyticszone.app/et/stride-mechanics/"
+      }
+    }
+  </script>
+  
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">Liigu sisu juurde</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/et/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        <a href="/et/" 
+                            aria-current="">
+                            Avaleht
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/getting-started/" class="nav-label">Õpi</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/getting-started/" 
+                                    aria-current="">
+                                    Alustamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-zones/" 
+                                    aria-current="">
+                                    Kõnnitsoonid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-analysis/" 
+                                    aria-current="">
+                                    Kõnnianalüüs
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/training-load/" 
+                                    aria-current="">
+                                    Treeningkoormus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/wss-calculator/" 
+                                    aria-current="">
+                                    WSS kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/research/" class="nav-label">Teadus</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/research/" 
+                                    aria-current="">
+                                    Uuringud
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/formulas/" 
+                                    aria-current="">
+                                    Valemid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-efficiency/" 
+                                    aria-current="">
+                                    Kõnni efektiivsus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/stride-mechanics/" class="active"
+                                    aria-current="page">
+                                    Sammumehaanika
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-vs-running/" 
+                                    aria-current="">
+                                    Kõndimine vs jooksmine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/benchmarks/" 
+                                    aria-current="">
+                                    Võrdlusandmed
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/bibliography/" 
+                                    aria-current="">
+                                    Bibliograafia
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/for-health/" class="nav-label">Sulle</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/for-health/" 
+                                    aria-current="">
+                                    Terviseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-fitness/" 
+                                    aria-current="">
+                                    Vormi saavutamiseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-seniors/" 
+                                    aria-current="">
+                                    Eakatele
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-rehabilitation/" 
+                                    aria-current="">
+                                    Taastusraviks
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/cadence-calculator/" class="nav-label">Tööriistad</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/cadence-calculator/" 
+                                    aria-current="">
+                                    Rütmikalkulaator
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-assessment/" 
+                                    aria-current="">
+                                    Kõnni hindamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/et/contact/" 
+                            aria-current="">
+                            Kontakt
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Vali keel">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="am" >
+                        አမ္ဟာ
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bg" >
+                        Български
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="cs" >
+                        Čeština
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="et" selected>
+                        Eesti
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="gu" >
+                        ગુજરાતી
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="he" >
+                        עברית
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="hr" >
+                        Hrvatski
+                    </option>
+                    
+                    <option value="hu" >
+                        Magyar
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="is" >
+                        Íslenska
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="lt" >
+                        Lietuvių
+                    </option>
+                    
+                    <option value="lv" >
+                        Latviešu
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="my" >
+                        မြန်မာ
+                    </option>
+                    
+                    <option value="nb" >
+                        Norsk Bokmål
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ro" >
+                        Română
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sk" >
+                        Slovenčina
+                    </option>
+                    
+                    <option value="sl" >
+                        Slovenščina
+                    </option>
+                    
+                    <option value="sr" >
+                        Српски
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="ta" >
+                        தமிழ்
+                    </option>
+                    
+                    <option value="te" >
+                        తెలుగు
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="uk" >
+                        Українська
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menüü lüliti"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+        <ol>
+            
+            <li>
+                
+                <a href="/et/">Avaleht</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="/et/research/">Teadus</a>
+                
+            </li>
+            
+            <li>
+                
+                <span aria-current="page">Sammumehaanika</span>
+                
+            </li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+  
+  <main id="main-content" class="main-content">
+    <!-- Sammu biomehaanika juhend -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/et/">Avaleht</a> / <a href="/et/#science">Teadus</a> / Sammu biomehaanika
+    </div>
+    <h1>Kõndimise biomehaanika</h1>
+    <p class="lead">Inimese kõnnimustri teaduslik analüüs</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="intro-box">
+      <p>Kõndimine on keeruline neuromuskulaarne tegevus, mis hõlmab mitme liigese ja lihasgrupi koordineeritud
+        liikumist. Sammu biomehaanika mõistmine võimaldab optimeerida efektiivsust, vältida vigastusi ja parandada
+        sooritust. See juhend pakub teaduspõhist analüüsi kõndimise biomehaanikast alates tavalisest kõnnist kuni
+        kiirkõnni tehnikani.</p>
+    </div>
+
+    <!-- Kõnnitsükkel -->
+    <h2>Kõnnitsükkel</h2>
+
+    <p>Täielik kõnnitsükkel esindab aega ühe jala kahe järjestikuse kannalöögi vahel. Erinevalt jooksmisest säilib
+      kõndimisel <strong>pidev kokkupuude maapinnaga</strong>, millele on iseloomulik kahekordse toetuse faas, kus
+      mõlemad jalad on üheaegselt maas.</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Faas</th>
+            <th>% tsüklist</th>
+            <th>Peamised sündmused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Toetusfaas (Stance)</strong></td>
+            <td>60%</td>
+            <td>Jalg on kontaktis maapinnaga</td>
+          </tr>
+          <tr>
+            <td><strong>Hoofaas (Swing)</strong></td>
+            <td>40%</td>
+            <td>Jalg on õhus, liigub ettepoole</td>
+          </tr>
+          <tr>
+            <td><strong>Kahekordne toetus</strong></td>
+            <td>20%</td>
+            <td>Mõlemad jalad on maas (ainuomane kõndimisele)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Toetusfaasi jaotus (60% tsüklist)</h3>
+
+    <p><strong>Maapinnaga kokkupuute ajal toimub viis eraldiseisvat alafaasi:</strong></p>
+
+    <ol>
+      <li>
+        <strong>Esmane kontakt (kannalöök):</strong>
+        <ul>
+          <li>Kand puudutab maad ~10° dorsifleksiooni (pöia ülespoole sirutuse) juures</li>
+          <li>Põlv on suhteliselt sirge (~180–175°)</li>
+          <li>Puus on painutatud ~30°</li>
+          <li>Algab esimene vertikaalse jõu tipp (~110% kehamassist)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Koormusele reageerimine (tald maas):</strong>
+        <ul>
+          <li>Täielik kontakt maaga saavutatakse 50 ms jooksul</li>
+          <li>Raskus kandub kannalt pöiale</li>
+          <li>Põlv paindub 15–20° löögi summutamiseks</li>
+          <li>Pahkluu sirutub (plantaarfleksioon) lameda jala asendisse</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Kesktoetus:</strong>
+        <ul>
+          <li>Keha raskuskese liigub otse üle toetava jala</li>
+          <li>Vastasjalg on hoofaasis</li>
+          <li>Pahkluu sooritab dorsifleksiooni sääre liikumisel</li>
+          <li>Minimaalne vertikaalne jõud (80–90% kehamassist)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Lõpptoetus (kanna tõus):</strong>
+        <ul>
+          <li>Kand hakkab maast tõusma</li>
+          <li>Raskus kandub esipöiale ja varvastele</li>
+          <li>Pahkluu plantaarfleksioon algab</li>
+          <li>Puusa sirutus saavutab maksimumi (~10–15°)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Hooeelne faas (varvaste tõus):</strong>
+        <ul>
+          <li>Viimane edasiviiv tõuge esipöialt</li>
+          <li>Teine vertikaalse jõu tipp (~110–120% kehamassist)</li>
+          <li>Kiire pahkluu plantaarfleksioon (kuni 20°)</li>
+          <li>Kontakti kestus: 200–300 ms kokku</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>Hoofaasi jaotus (40% tsüklist)</h3>
+
+    <p><strong>Kolm alafaasi viivad jalga ettepoole:</strong></p>
+
+    <ol>
+      <li>
+        <strong>Algne hoovõtt:</strong>
+        <ul>
+          <li>Varvas lahkub maast</li>
+          <li>Põlv paindub kiiresti ~60°-ni (maksimaalne painutus)</li>
+          <li>Puus jätkab painutust</li>
+          <li>Jalg tõuseb maast 1–2 cm kõrgusele</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Keskhoofaas:</strong>
+        <ul>
+          <li>Hoos olev jalg möödub toetusjalast</li>
+          <li>Põlv hakkab sirutuma</li>
+          <li>Pahkluu sooritab dorsifleksiooni neutraalasendisse</li>
+          <li>Minimaalne vahe maapinnaga</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Lõpphoofaas:</strong>
+        <ul>
+          <li>Jalg sirutub ette, et valmistuda kannalöögiks</li>
+          <li>Põlv läheneb täielikule sirutusele</li>
+          <li>Tagareie lihased aktiveeruvad jala aeglustamiseks</li>
+          <li>Pahkluu hoitakse kergelt ülespoole sirutatuna (dorsifleksioon)</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Biomehaanilised parameetrid -->
+    <h2>Olulised biomehaanilised parameetrid</h2>
+
+    <h3>Stride Length (sammu pikkus) vs Step Length (sammu vahe)</h3>
+
+    <p><strong>Oluline erisus:</strong></p>
+    <ul>
+      <li><strong>Step Length:</strong> Kaugus ühe jala kannast vastasjala kannani (vasak→parem või parem→vasak)</li>
+      <li><strong>Stride Length (täissamm):</strong> Kaugus ühe jala kannast sama jala järgmise kannalöögini
+        (vasak→vasak või parem→parem)</li>
+      <li><strong>Seos:</strong> Üks täissamm koosneb kahest sammust</li>
+      <li><strong>Sümmeetria:</strong> Tervisliku kõnni puhul peaksid vasaku ja parema sammu pikkused olema 2–3% piires
+      </li>
+    </ul>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Pikkus (cm)</th>
+            <th>Optimaalne täissamm (m)</th>
+            <th>% pikkusest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>150</td>
+            <td>0,60–0,75</td>
+            <td>40–50%</td>
+          </tr>
+          <tr>
+            <td>160</td>
+            <td>0,64–0,80</td>
+            <td>40–50%</td>
+          </tr>
+          <tr>
+            <td>170</td>
+            <td>0,68–0,85</td>
+            <td>40–50%</td>
+          </tr>
+          <tr>
+            <td>180</td>
+            <td>0,72–0,90</td>
+            <td>40–50%</td>
+          </tr>
+          <tr>
+            <td>190</td>
+            <td>0,76–0,95</td>
+            <td>40–50%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Eliitkiirkõndijad</strong> saavutavad täissamme pikkusega kuni 70% oma pikkusest tänu suurepärasele
+      tehnikale ja puusa liikuvusele.</p>
+
+    <h3>Rütmi optimeerimine</h3>
+
+    <p>Sammude arv minutis (spm) mõjutab sügavalt biomehaanikat, efektiivsust ja vigastuste riski:</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Rütmi vahemik</th>
+            <th>Klassifikatsioon</th>
+            <th>Biomehaanilised omadused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;90 spm</td>
+            <td>Väga aeglane</td>
+            <td>Pikad sammud, suured löögijõud, madal efektiivsus</td>
+          </tr>
+          <tr>
+            <td>90–99 spm</td>
+            <td>Aeglane</td>
+            <td>Alla mõõduka intensiivsuse läve</td>
+          </tr>
+          <tr>
+            <td>100–110 spm</td>
+            <td>Mõõdukas</td>
+            <td>Tasakaalustatud samm/rütm, 3–4 MET-i</td>
+          </tr>
+          <tr>
+            <td>110–120 spm</td>
+            <td>Libre / Kiire</td>
+            <td>Mõõdukas-tugev, optimaalne südametervisele</td>
+          </tr>
+          <tr>
+            <td>120–130 spm</td>
+            <td>Jõuline</td>
+            <td>Jõuline kõnd, 5–6 MET-i</td>
+          </tr>
+          <tr>
+            <td>130–160 spm</td>
+            <td>Kiirkõnd</td>
+            <td>Vajab eliittehnikat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-finding">
+      <strong>Uuringu tulemus:</strong> CADENCE-Adultsi uuring (Tudor-Locke jt, 2019) tegi kindlaks, et 100 spm tähistab
+      mõõduka intensiivsuse läve (3 MET-i) 86% tundlikkuse ja 89,6% spetsiifilisusega täiskasvanutel vanuses 21–85
+      aastat.
+    </div>
+
+    <h3>Maapinnaga kokkupuute aeg</h3>
+
+    <p><strong>Kogu toetusfaasi kestus: 200–300 millisekundit</strong></p>
+
+    <ul>
+      <li><strong>Tavapärane kõnd (4 km/h):</strong> ~300 ms kontaktaeg</li>
+      <li><strong>Kiire kõnd (6 km/h):</strong> ~230 ms kontaktaeg</li>
+      <li><strong>Väga kiire kõnd (7+ km/h):</strong> ~200 ms kontaktaeg</li>
+      <li><strong>Võrdlus jooksmisega:</strong> Jooksmisel on kontaktaeg &lt;200 ms koos lennufaasiga</li>
+    </ul>
+
+    <p><strong>Kontaktiaeg väheneb kiiruse tulles, kuna:</strong></p>
+    <ol>
+      <li>Toetusfaas lüheneb tsükli kestuse suhtes</li>
+      <li>Raskuse ülekandmine toimub kiiremini</li>
+      <li>Lihaste eelaktiveerumine enne kontakti suureneb</li>
+      <li>Suurem elastse energia salvestamine ja tagastamine</li>
+    </ol>
+
+    <h3>Kahekordse toetuse aeg</h3>
+
+    <p>Ajavahemik, mil mõlemad jalad on üheaegselt maas, on <strong>ainuomane kõndimisele</strong> ja kaob jooksmisel
+      (asendudes lennufaasiga).</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Kahekordne toetus %</th>
+            <th>Klassifikatsioon</th>
+            <th>Kliiniline tähtsus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15–20%</td>
+            <td>Normaalne (kiire kõnd)</td>
+            <td>Tervislik ja enesekindel liikumine</td>
+          </tr>
+          <tr>
+            <td>20–30%</td>
+            <td>Normaalne (mõõdukas kõnd)</td>
+            <td>Tüüpiline enamiku kiiruste juures</td>
+          </tr>
+          <tr>
+            <td>30–35%</td>
+            <td>Ettevaatlik kõnd</td>
+            <td>Võib viidata tasakaaluhäiretele</td>
+          </tr>
+          <tr>
+            <td>&gt;35%</td>
+            <td>Suurenenud kukkumisoht</td>
+            <td>Soovitatav on professionaalne sekkumine</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Apple HealthKit integratsioon:</strong> iOS 15+ mõõdab kahekordse toetuse protsenti liikumisnäitajana,
+      kus väärtusi &gt;35% loetakse madalaks kõnnikindluseks.</p>
+
+    <h3>Vertikaalne kalle (Oscillation)</h3>
+
+    <p>Keha raskuskeskme üles-alla liikumine kõnnitsükli jooksul:</p>
+
+    <ul>
+      <li><strong>Tavavahemik:</strong> 4–8 cm</li>
+      <li><strong>Optimaalne efektiivsus:</strong> ~5–6 cm</li>
+      <li><strong>Liigne (&gt;8–10 cm):</strong> Energia raiskamine asjatule üles-alla liikumisele</li>
+      <li><strong>Ebapiisav (&lt;4 cm):</strong> Lohisev samm, potentsiaalne patoloogia</li>
+    </ul>
+
+    <p><strong>Mehhanismid, mis minimeerivad vertikaalset liikumist:</strong></p>
+    <ol>
+      <li>Vaagna pöörlemine horisontaaltasapinnal (4–8°)</li>
+      <li>Vaagna kalle frontaaltasapinnal (5–7°)</li>
+      <li>Põlve painutamine toetusfaasi ajal (15–20°)</li>
+      <li>Pahkluu sirutuse-painutuse koordinatsioon</li>
+      <li>Vaagna külgsuunaline liikumine (~2–5 cm)</li>
+    </ol>
+
+    <!-- Täiustatud biomehaanika -->
+    <h2>Keerulisemad biomehaanilised komponendid</h2>
+
+    <h3>Käte liikumise biomehaanika</h3>
+
+    <p>Koordineeritud käte liikumine <strong>ei ole ilu pärast</strong> — sellel on kriitiline biomehaaniline kasu:</p>
+
+    <div class="key-finding">
+      <strong>Energiasääst:</strong> Õige käte liikumine vähendab metaboolset kulu 10–12% võrreldes käte liikumatult
+      hoidmisega (Collins jt, 2009).
+    </div>
+
+    <p><strong>Optimaalsed käte liikumise omadused:</strong></p>
+    <ul>
+      <li><strong>Muster:</strong> Vastupidine koordinatsioon (vasak käsi ette parema jalaga)</li>
+      <li><strong>Vahemik:</strong> 15–20° kalle vertikaalist ette või taha</li>
+      <li><strong>Küünarnuki nurk:</strong> 90° jõulisel kõnnil; 110–120° tavalisel kõnnil</li>
+      <li><strong>Käte asend:</strong> Lõdvestunud, ei ristata keha keskjoonel</li>
+      <li><strong>Õlgade liikumine:</strong> Minimaalne pöörlemine, käed liiguvad õlaliigesest</li>
+    </ul>
+
+    <p><strong>Biomehaanilised funktsioonid:</strong></p>
+    <ol>
+      <li><strong>Impulsimomendi kompenseerimine:</strong> Käed tasakaalustavad jalgade pöörlemist, minimeerides kere
+        väändumist</li>
+      <li><strong>Vertikaalse reaktsioonijõu reguleerimine:</strong> Vähendab maksimaalseid löögijõude</li>
+      <li><strong>Koordinatsiooni soodustamine:</strong> Tagab rütmilise ja stabiilse kõnni</li>
+      <li><strong>Energia ülekanne:</strong> Aitab edasiliikumisele kaasa läbi kineetilise ahela</li>
+    </ol>
+
+    <h3>Jala maandumise mustrid</h3>
+
+    <p><strong>80% kõndijatest</strong> kasutab loomulikult kannalööki (rearfoot strike). On ka teisi mustreid, kuid
+      need on vähem levinud:</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Maandumismuster</th>
+            <th>Levimus</th>
+            <th>Omadused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kannalöök</strong></td>
+            <td>~80%</td>
+            <td>Esmane kontakt kannal, ~10° dorsifleksioon, M-kujuline jõukõver</td>
+          </tr>
+          <tr>
+            <td><strong>Keskpöia maandumine</strong></td>
+            <td>~15%</td>
+            <td>Jalg maandub lamedalt, vähendatud löögitipp, lühem samm</td>
+          </tr>
+          <tr>
+            <td><strong>Esipöia maandumine</strong></td>
+            <td>~5%</td>
+            <td>Haruldane kõndimisel, esineb väga kiirkõnni üleminekutel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Maapinna reaktsioonijõud kannalöögi korral:</strong></p>
+    <ul>
+      <li><strong>Esimene tipp (~50 ms):</strong> Löögi algus, 110% kehamassist</li>
+      <li><strong>Miinimum (~200 ms):</strong> Kesktoetuse madalseis, 80–90% kehamassist</li>
+      <li><strong>Teine tipp (~400 ms):</strong> Tõuge edasi, 110–120% kehamassist</li>
+      <li><strong>Kogu jõukõver:</strong> Iseloomulik M-kujuline või kaheküüruline vorm</li>
+    </ul>
+
+    <h3>Vaagna ja puusa biomehaanika</h3>
+
+    <p>Vaagna liikumine kolmel tasapinnal võimaldab efektiivset ja sujuvat kõndi:</p>
+
+    <p><strong>1. Vaagna pöörlemine (horisontaaltasand):</strong></p>
+    <ul>
+      <li><strong>Tavaline kõnd:</strong> 4–8° pöörlemist igas suunas</li>
+      <li><strong>Kiirkõnd:</strong> 8–15° pöörlemist (liialdatud sammu pikkuse saavutamiseks)</li>
+      <li><strong>Funktsioon:</strong> Pikendab funktsionaalset jalga, suurendab sammu pikkust</li>
+      <li><strong>Koordinatsioon:</strong> Vaagen pöörleb ette koos liikuva jalaga</li>
+    </ul>
+
+    <p><strong>2. Vaagna kalle (frontaaltasand):</strong></p>
+    <ul>
+      <li><strong>Vahemik:</strong> 5–7° hoofaasis oleva jala puusa langus</li>
+      <li><strong>Trendelenburgi sündroom:</strong> Liigne langus viitab puusa abduktorite nõrkusele</li>
+      <li><strong>Funktsioon:</strong> Alandab raskuskeskme trajektoori, vähendab vertikaalset liikumist</li>
+    </ul>
+
+    <p><strong>3. Vaagna nihe (frontaaltasand):</strong></p>
+    <ul>
+      <li><strong>Külgsuunaline nihe:</strong> 2–5 cm toetusjala suunas</li>
+      <li><strong>Funktsioon:</strong> Säilitab tasakaalu, joondab keharaskuse toetuspunkti kohale</li>
+    </ul>
+
+    <h3>Kere asend ja joondus</h3>
+
+    <p><strong>Optimaalne kõnnirüht:</strong></p>
+    <ul>
+      <li><strong>Kere asend:</strong> Vertikaalne või 2–5° kalle ettepoole pahkluust</li>
+      <li><strong>Pea asend:</strong> Neutraalne, kõrvad õlgade kohal</li>
+      <li><strong>Õlgade asend:</strong> Lõdvestunud, mitte pinges üles tõstetud</li>
+      <li><strong>Kere süvalihased:</strong> Mõõdukas aktiveerimine kere stabiilsuse tagamiseks</li>
+      <li><strong>Pilgu suund:</strong> 10–20 meetrit ettepoole tasasel maastikul</li>
+    </ul>
+
+    <p><strong>Sagedased rühivead:</strong></p>
+    <ul>
+      <li><strong>Liigne kalle ettepoole:</strong> Sageli tingitud nõrkadest puusa sirutajatest</li>
+      <li><strong>Kalle tahapoole:</strong> Esineb raseduse, rasvumise või nõrkade kõhulihaste korral</li>
+      <li><strong>Külgsuunaline kalle:</strong> Puusa abduktorite nõrkus või jalgade pikkuse erinevus</li>
+      <li><strong>Pea etteulatumine:</strong> "Nutikaela" rüht, vähendab tasakaalu</li>
+    </ul>
+
+    <!-- Kiirkõnni tehnika -->
+    <h2>Kiirkõnni tehnika</h2>
+
+    <p>Kiirkõndi reguleerivad konkreetsed biomehaanilised reeglid (World Athletics reegel 54.2), mis eristavad seda
+      jooksmisest, maksimeerides kiirust kõndimise piirangute raames.</p>
+
+    <h3>Kaks põhireeglit</h3>
+
+    <p><strong>Reegel 1: Pidev kontakt</strong></p>
+    <ul>
+      <li>Ei tohi olla nähtavat kokkupuute kaotust maapinnaga (lennufaas puudub)</li>
+      <li>Ettepoole liikuv jalg peab puudutama maad enne, kui tagumine jalg maast lahkub</li>
+      <li>Kohtunikud hindavad seda visuaalselt määratud tsoonides</li>
+      <li>Eliitkiirkõndijad saavutavad kiiruseid 13–15 km/h, säilitades kontakti</li>
+    </ul>
+
+    <p><strong>Reegel 2: Sirge jala nõue</strong></p>
+    <ul>
+      <li>Toetav jalg peab olema sirge (mitte painutatud) alates esmasest kontaktist kuni vertikaalasendini</li>
+      <li>Põlv ei tohi olla nähtavalt painutatud kannalöögist kuni kesktoetuseni</li>
+      <li>See reegel eristab kiirkõndi tavalisest kõnnist või jõulisest kõnnist</li>
+    </ul>
+
+    <h3>Biomehaanilised kohandused kiiruse saavutamiseks</h3>
+
+    <p><strong>Rütmi 130–160 spm saavutamiseks ja reeglite järgimiseks:</strong></p>
+
+    <ol>
+      <li>
+        <strong>Liialdatud vaagna pöörlemine:</strong>
+        <ul>
+          <li>8–15° pöörlemist (vs 4–8° tavalisel kõnnil)</li>
+          <li>Suurendab funktsionaalset jala pikkust</li>
+          <li>Võimaldab pikemat sammu ilma liigset kukkumist ettepoole tegemata</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Agressiivne puusa sirutus:</strong>
+        <ul>
+          <li>15–20° puusa sirutus (vs 10–15° tavaline)</li>
+          <li>Tugev tõuge tuhara- ja tagareielihastest</li>
+          <li>Maksimeerib sammu pikkust keha taga</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Kiire käte liikumine:</strong>
+        <ul>
+          <li>Küünarnukid 90° painutatud (lühem hoob = kiirem liikumine)</li>
+          <li>Tugev käte tahaviimine aitab edasiliikumisele kaasa</li>
+          <li>Koordineeritud jalgade rütmiga 1:1</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Suurenenud maapinna reaktsioonijõud:</strong>
+        <ul>
+          <li>Maksimaalsed jõud saavutavad 130–150% kehamassist</li>
+          <li>Kiire koormamine ja vabastamine</li>
+          <li>Suured nõudmised puusa- ja pahkluulihastele</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Minimaalne vertikaalne liikumine:</strong>
+        <ul>
+          <li>Eliitkiirkõndijatel: 3–5 cm (vs 5–6 cm tavaline)</li>
+          <li>Maksimeerib edasisuunalist impulssi</li>
+          <li>Vajab erakordset puusa liikuvust ja kere stabiilsust</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>Metaboolsed nõudmised</h3>
+
+    <p>Kiirkõnd kiirusega 13 km/h nõuab:</p>
+    <ul>
+      <li><strong>VO₂:</strong> ~40–50 mL/kg/min (sarnane jooksmisega 9–10 km/h juures)</li>
+      <li><strong>MET-id:</strong> 10–12 MET-i (tugev kuni väga tugev intensiivsus)</li>
+      <li><strong>Energiakulu:</strong> ~1,2–1,5 kcal/kg/km (suurem kui jooksmisel samal kiirusel)</li>
+      <li><strong>Laktaat:</strong> Võib võistlustel ulatuda 4–8 mmol/L</li>
+    </ul>
+
+    <!-- Kõndimine vs jooksmine -->
+    <h2>Kõndimine vs jooksmine: peamised erinevused</h2>
+
+    <p>Hoolimata pinnapealsest sarnasusest, kasutavad kõndimine ja jooksmine erinevaid biomehaanilisi strateegiaid:</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameeter</th>
+            <th>Kõndimine</th>
+            <th>Jooksmine</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kontakt maapinnaga</strong></td>
+            <td>Pidev, kahekordse toetusega</td>
+            <td>Vahelduv, koos lennufaasiga</td>
+          </tr>
+          <tr>
+            <td><strong>Toetusaeg</strong></td>
+            <td>~62% tsüklist (~300 ms 4 km/h juures)</td>
+            <td>~31% tsüklist (~150–200 ms)</td>
+          </tr>
+          <tr>
+            <td><strong>Kahekordne toetus</strong></td>
+            <td>20% tsüklist</td>
+            <td>0% (selle asemel on lennufaas)</td>
+          </tr>
+          <tr>
+            <td><strong>Maksimaalne vertikaaljõud</strong></td>
+            <td>110–120% kehamassist</td>
+            <td>200–300% kehamassist</td>
+          </tr>
+          <tr>
+            <td><strong>Energia mehhanism</strong></td>
+            <td>Pööratud pendlisüsteem (potentsiaalne↔kineetiline)</td>
+            <td>Vedru-mass süsteem (elastne salvestus)</td>
+          </tr>
+          <tr>
+            <td><strong>Põlve painutamine kontaktil</strong></td>
+            <td>Peaaegu sirge (~5–10°)</td>
+            <td>Painutatud (~20–30°)</td>
+          </tr>
+          <tr>
+            <td><strong>Raskuskeskme trajektoor</strong></td>
+            <td>Sujuv kaar, minimaalne vertikaalne kalle</td>
+            <td>Suurem vertikaalne kalle</td>
+          </tr>
+          <tr>
+            <td><strong>Üleminekukiirus</strong></td>
+            <td>Efektiivne kuni ~7–8 km/h</td>
+            <td>Efektiivsem üle ~8 km/h</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Üleminek kõnnilt jooksule</strong> toimub loomulikult ~7–8 km/h (2,0–2,2 m/s) juures, kuna:</p>
+    <ol>
+      <li>Kõndimine muutub sellest kiirusest alates metaboolselt ebaefektiivseks</li>
+      <li>Kontakti säilitamiseks on vaja liiga kiiret rütmi</li>
+      <li>Jooksmise elastne energiasalvestus annab eelise</li>
+      <li>Maksimaalsed jõud kiirel kõndimisel lähenevad jooksmise tasemele</li>
+    </ol>
+
+    <div class="key-finding">
+      <strong>Uuringu tulemus:</strong> Kõndimise metaboolne kulu tõuseb eksponentsiaalselt üle 7 km/h, samas kui
+      jooksmise kulu tõuseb kiirusega lineaarselt (Margaria jt, 1963). See tekitab ristumispunkti, kus jooksmine muutub
+      ökonoomsemaks.
+    </div>
+
+    <!-- Sagedased kõnnivead -->
+    <h2>Sagedased kõnnivead ja nende parandamine</h2>
+
+    <h3>1. Ülepikk samm (Overstriding)</h3>
+
+    <p><strong>Probleem:</strong> Kanna maandumine keha raskuskeskmest liiga kaugel ettepoole</p>
+
+    <p><strong>Biomehaanilised tagajärjed:</strong></p>
+    <ul>
+      <li>Pidurdusjõud kuni 20–30% kehamassist</li>
+      <li>Suurenenud löögijõud (130–150% vs tavadirektiiv 110%)</li>
+      <li>Suurem koormus põlve- ja puusaliigestele</li>
+      <li>Vähenenud edasiliikumise efektiivsus</li>
+      <li>Suurenenud vigastusrisk (nt eesmine säärevalu, plantaarfastsiit)</li>
+    </ul>
+
+    <p><strong>Lahendused:</strong></p>
+    <ul>
+      <li><strong>Suurendage rütmi:</strong> Lisage 5–10% praegusele spm-le</li>
+      <li><strong>Juhis "maandu puusa alla":</strong> Keskenduge jala asetamisele keha alla</li>
+      <li><strong>Lühendage sammu:</strong> Tehke väiksemaid ja kiiremaid samme</li>
+      <li><strong>Kalle ette:</strong> Kerge 2–3° kalle pahkluust</li>
+    </ul>
+
+    <h3>2. Asümmeetriline kõnd</h3>
+
+    <p><strong>Probleem:</strong> Ebavõrdne sammu pikkus, ajastus või maapinna reaktsioonijõud jalgade vahel</p>
+
+    <p><strong>Hindamine kõnni asümmeetria indeksi (GSI) abil:</strong></p>
+    <pre><code>GSI (%) = |Parem - Vasak| / [0,5 × (Parem + Vasak)] × 100</code></pre>
+
+    <p><strong>Tõlgendus:</strong></p>
+    <ul>
+      <li><strong>&lt;3%:</strong> Normaalne, kliiniliselt ebaoluline asümmeetria</li>
+      <li><strong>3–5%:</strong> Kerge asümmeetria, jälgige muutusi</li>
+      <li><strong>5–10%:</strong> Mõõdukas asümmeetria, võib vajada sekkumist</li>
+      <li><strong>&gt;10%:</strong> Kliiniliselt oluline, soovitatav professionaalne hinnang</li>
+    </ul>
+
+    <p><strong>Levinumad põhjused:</strong></p>
+    <ul>
+      <li>Varasem vigastus või operatsioon (ühe jala säästmine)</li>
+      <li>Jalgade pikkuse erinevus (&gt;1 cm)</li>
+      <li>Ühepoolne nõrkus (puusa abduktorid, tuharalihased)</li>
+      <li>Neuroloogilised seisundid (insult, Parkinson)</li>
+      <li>Valu vältiv käitumine</li>
+    </ul>
+
+    <p><strong>Lahendused:</strong></p>
+    <ul>
+      <li><strong>Jõutreening:</strong> Ühe jala harjutused nõrgemale poolele</li>
+      <li><strong>Tasakaalutreening:</strong> Ühel jalal seismine, stabiilsusharjutused</li>
+      <li><strong>Kõnni ümberõpe:</strong> Metronoomiga kõndimine, tagasiside peeglist</li>
+      <li><strong>Professionaalne hinnang:</strong> Füsioteraapia, ortopeedia</li>
+    </ul>
+
+    <h3>3. Liigne vertikaalne kalle</h3>
+
+    <p><strong>Probleem:</strong> Raskuskese tõuseb ja langeb rohkem kui 8–10 cm</p>
+
+    <p><strong>Biomehaanilised tagajärjed:</strong></p>
+    <ul>
+      <li>Energia raiskamine vertikaalsele liikumisele (mitte edasiviimisele)</li>
+      <li>Kuni 15–20% tõus metaboolses kulus</li>
+      <li>Suuremad maksimaalsed maapinna reaktsioonijõud</li>
+      <li>Suurem koormus alajäsemete liigestele</li>
+    </ul>
+
+    <p><strong>Lahendused:</strong></p>
+    <ul>
+      <li><strong>Juhis "libise ette":</strong> Minimeerige üles-alla hüppamist</li>
+      <li><strong>Kere süvalihaste tugevdamine:</strong> Plank, rotatsioonivastased harjutused</li>
+      <li><strong>Puusa liikuvus:</strong> Parandage vaagna pöörlemist ja kallet</li>
+    </ul>
+
+    <h3>4. Puudulik või vale käte liikumine</h3>
+
+    <p><strong>Probleemid:</strong></p>
+    <ul>
+      <li><strong>Keskjoone ristamine:</strong> Käed liiguvad üle keha keskjoone</li>
+      <li><strong>Liigne pöörlemine:</strong> Õlgade ja kere väändumine</li>
+      <li><strong>Jäigad käed:</strong> Käte liikumine puudub või on minimaalne</li>
+      <li><strong>Asümmeetriline liikumine:</strong> Erinev ulatus vasakul ja paremal pool</li>
+    </ul>
+
+    <p><strong>Biomehaanilised tagajärjed:</strong></p>
+    <ul>
+      <li>10–12% tõus energiakulus (jäigad käed)</li>
+      <li>Liigne kere pöörlemine ja ebastabiilsus</li>
+      <li>Vähenenud kõnnikiirus ja efektiivsus</li>
+      <li>Võimalik pinge kaelas ja seljas</li>
+    </ul>
+
+    <p><strong>Lahendused:</strong></p>
+    <ul>
+      <li><strong>Hoidke käed paralleelselt:</strong> Liikumine suunal ette-taha, mitte küljele</li>
+      <li><strong>Painutage küünarnukid 90°:</strong> Jõulise kõnni puhul</li>
+      <li><strong>Lõdvestage õlad:</strong> Vältige pinget</li>
+      <li><strong>Sobitage jalgade rütmiga:</strong> 1:1 koordinatsioon</li>
+    </ul>
+
+    <h3>5. Lohisev kõnd (Shuffle Gait)</h3>
+
+    <p><strong>Probleem:</strong> Jalad vaevalt tõusevad maast, minimaalne vahe maaga (&lt;1 cm)</p>
+
+    <p><strong>Biomehaanilised omadused:</strong></p>
+    <ul>
+      <li>Vähenenud puusa ja põlve painutus hoofaasis</li>
+      <li>Minimaalne pahkluu dorsifleksioon</li>
+      <li>Vähenenud sammu pikkus</li>
+      <li>Pikenenud kahekordse toetuse aeg (&gt;35%)</li>
+      <li>Suur kukkumisoht komistamise tõttu</li>
+    </ul>
+
+    <p><strong>Levinud juhtudel:</strong></p>
+    <ul>
+      <li>Parkinsoni tõbi</li>
+      <li>Eakate puhul (kukkumishirm)</li>
+      <li>Alajäsemete nõrkus</li>
+    </ul>
+
+    <p><strong>Lahendused:</strong></p>
+    <ul>
+      <li><strong>Tugevdage puusa painutajaid:</strong> Nimme-niudelihas (iliopsoas), reie sirglihas</li>
+      <li><strong>Parandage pahkluu liikuvust:</strong> Venitused ja harjutused</li>
+      <li><strong>Juhis "kõrged põlved":</strong> Liialdage põlvede tõstmisega hoofaasis</li>
+      <li><strong>Visuaalsed tähised:</strong> Astuge üle joonte või takistuste</li>
+    </ul>
+
+    <!-- Optimeerimise strateegiad -->
+    <h2>Kõndimise biomehaanika optimeerimine</h2>
+
+    <h3>Juhised efektiivseks kõndimiseks</h3>
+
+    <p><strong>Alakeha:</strong></p>
+    <ul>
+      <li><strong>"Maandu oma puusa alla":</strong> Kannalöök keha raskuskeskme lähedal</li>
+      <li><strong>"Tõuka varvastega":</strong> Aktiivne edasiliikumine toetusfaasi lõpus</li>
+      <li><strong>"Kiired jalad":</strong> Kiire rütm, ärge lohistage jalgu</li>
+      <li><strong>"Puusad ette":</strong> Juhtige liikumist vaagnaga</li>
+    </ul>
+
+    <p><strong>Ülakeha:</strong></p>
+    <ul>
+      <li><strong>"Seisa sirgelt":</strong> Pikendage selgroogu, kõrvad õlgade kohal</li>
+      <li><strong>"Rind ees":</strong> Avatud rindkere, lõdvestunud õlad</li>
+      <li><strong>"Käed liiguvad taha":</strong> Rõhk on käte tahasuunalisel liikumisel</li>
+      <li><strong>"Küünarnukid 90°":</strong> Kiirustel üle 6 km/h</li>
+      <li><strong>"Vaata ette":</strong> Pilk 10–20 meetrit ettepoole</li>
+    </ul>
+
+    <h3>Harjutused parema biomehaanika saavutamiseks</h3>
+
+    <p><strong>1. Kiire rütmiga kõndimine</strong></p>
+    <ul>
+      <li><strong>Kestus:</strong> 3–5 minutit</li>
+      <li><strong>Eesmärk:</strong> 130–140 spm (kasutage metronoomi)</li>
+      <li><strong>Fookus:</strong> Kiire jalgade liikumine, lühemad sammud</li>
+      <li><strong>Kasu:</strong> Vähendab ülepikka sammu, parandab efektiivsust</li>
+    </ul>
+
+    <p><strong>2. Ühele elemendile keskendunud kõnd</strong></p>
+    <ul>
+      <li><strong>Kestus:</strong> 5 minutit elemendi kohta</li>
+      <li><strong>Vahetage fookust:</strong> Käte liikumine → kannalöök → rüht → hingamine</li>
+      <li><strong>Kasu:</strong> Isoleerib ja parandab konkreetseid komponente</li>
+    </ul>
+
+    <p><strong>3. Mäkke kõndimine</strong></p>
+    <ul>
+      <li><strong>Ülesmäge:</strong> Parandab puusa sirutusjõudu ja võimsust</li>
+      <li><strong>Allamäge:</strong> Paneb proovile ekstsentrilise lihaskontrolli</li>
+      <li><strong>Kasu:</strong> Arendab jõudu, kinnistades samal ajal õiget tehnikat</li>
+    </ul>
+
+    <p><strong>4. Tagurpidi kõndimine</strong></p>
+    <ul>
+      <li><strong>Kestus:</strong> 1–2 minutit (tasasel ja turvalisel pinnal)</li>
+      <li><strong>Fookus:</strong> Varvas-pöid-kand kontaktimuster</li>
+      <li><strong>Kasu:</strong> Tugevdab neljapealihaseid, parandab propriotseptsiooni</li>
+    </ul>
+
+    <!-- Tehnoloogia ja mõõtmine -->
+    <h2>Tehnoloogia ja kõnni mõõtmine</h2>
+
+    <h3>Mida tänapäevased seadmed mõõdavad</h3>
+
+    <p><strong>Apple Watch (iOS 15+) koos HealthKitiga:</strong></p>
+    <ul>
+      <li><strong>Walking Steadiness (kõnnikindlus):</strong> Koondskoor kiirusest, sammu pikkusest, kahekordsest
+        toetusest ja asümmeetriast</li>
+      <li><strong>Kõndimiskiirus:</strong> Keskmine kiirus tasasel maal (m/s)</li>
+      <li><strong>Kõnni asümmeetria:</strong> Protsentuaalne erinevus vasaku ja parema jala sammude vahel</li>
+      <li><strong>Kahekordse toetuse aeg:</strong> Tsükli osa, mil mõlemad jalad on maas</li>
+      <li><strong>Sammu pikkus:</strong> Keskmine sentimeetrites</li>
+      <li><strong>Rütm:</strong> Hetkeline sammude arv minutis</li>
+      <li><strong>VO₂max hinnang:</strong> Välitingimustes tehtud kõnnitreeningute ajal tasasel maastikul</li>
+    </ul>
+
+    <p><strong>Android Health Connect:</strong></p>
+    <ul>
+      <li><strong>Sammude arv ja rütm</strong></li>
+      <li><strong>Vahemaa ja kiirus</strong></li>
+      <li><strong>Kõndimise kestus</strong></li>
+      <li><strong>Pulss kõndimise ajal</strong></li>
+    </ul>
+
+    <h3>Andmete kasutamine kõnni parandamiseks</h3>
+
+    <p><strong>Jälgige trende ajas:</strong></p>
+    <ul>
+      <li>Monitorige keskmist kõndimiskiirust (peaks püsima stabiilne või paranema)</li>
+      <li>Jälgige asümmeetria kasvu (võib viidata tekkivale probleemile)</li>
+      <li>Jälgige rütmi ühtlust erinevatel kiirustel</li>
+      <li>Jälgige kahekordse toetuse trende (kasv võib viidata tasakaalumuredele)</li>
+    </ul>
+
+    <p><strong>Seadke biomehaanilised eesmärgid:</strong></p>
+    <ul>
+      <li>Sihtige rütmi 100+ spm mõõduka intensiivsusega kõnnil</li>
+      <li>Hoidke sammu pikkus 40–50% piires oma pikkusest</li>
+      <li>Hoidke asümmeetria alla 5%</li>
+      <li>Säilitage kõndimiskiirus üle 1,0 m/s (tervise lävi)</li>
+    </ul>
+
+    <!-- Kliinilised rakendused -->
+    <h2>Kõnnianalüüsi kliinilised rakendused</h2>
+
+    <h3>Kõndimiskiirus kui elutähtis näitaja</h3>
+
+    <p>Kõndimiskiirust tunnustatakse üha enam kui <strong>"kuuendat elutähtsat näitajat"</strong>, millel on suur
+      ennustusväärtus:</p>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Kõndimiskiirus (m/s)</th>
+            <th>Klassifikatsioon</th>
+            <th>Kliiniline tähtsus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;0,6</td>
+            <td>Tõsiselt kahjustatud</td>
+            <td>Kõrge suremusrisk, vajab sekkumist</td>
+          </tr>
+          <tr>
+            <td>0,6–0,8</td>
+            <td>Mõõdukalt kahjustatud</td>
+            <td>Suurenenud kukkumisoht, haprus</td>
+          </tr>
+          <tr>
+            <td>0,8–1,0</td>
+            <td>Kergelt kahjustatud</td>
+            <td>Soovitatav on jälgimine</td>
+          </tr>
+          <tr>
+            <td>1,0–1,3</td>
+            <td>Normaalne</td>
+            <td>Tervislik liikumine kogukonnas</td>
+          </tr>
+          <tr>
+            <td>&gt;1,3</td>
+            <td>Robustne</td>
+            <td>Madal suremusrisk, hea funktsionaalne reserv</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-finding">
+      <strong>Uuringu tulemus:</strong> Iga 0,1 m/s tõus kõndimiskiiruses on seotud 12% suremusriski vähenemisega
+      eakatel täiskasvanutel (Studenski jt, JAMA 2011).
+    </div>
+
+    <!-- Kokkuvõte -->
+    <h2>Kokkuvõte: Biomehaanika põhiprintsiibid</h2>
+
+    <div class="key-finding">
+      <strong>Efektiivse kõnni biomehaanika viis sammast:</strong>
+      <ol>
+        <li><strong>Pidev kontakt maapinnaga:</strong> Alati on vähemalt üks jalg maas (kõndimise põhiline tunnus)</li>
+        <li><strong>Optimaalne rütm:</strong> 100+ spm mõõduka intensiivsuse ja 120+ tugeva kõnni puhul</li>
+        <li><strong>Koordineeritud käte liikumine:</strong> Säästab 10–12% energiakulu</li>
+        <li><strong>Minimaalne vertikaalne kalle:</strong> 4–8 cm hoiab energia suunatud edasiliikumisele</li>
+        <li><strong>Sümmeetria:</strong> Tasakaalustatud sammu pikkus ja ajastus jalgade vahel (&lt;5% asümmeetriat)
+        </li>
+      </ol>
+    </div>
+
+    <p><strong>Üldise tervise ja vormi saavutamiseks:</strong></p>
+    <ul>
+      <li>Keskenduge loomulikule ja mugavale sammu pikkusele (ärge tehke liiga pikki samme)</li>
+      <li>Sihtige rütmi 100–120 spm kiiretel jalutuskäikudel</li>
+      <li>Säilitage püstine rüht kerge kaldega ettepoole</li>
+      <li>Lubage loomulik käte liikumine (ärge piirake ega liialdage sellega)</li>
+      <li>Maanduge kannale, rulluge üle pöia ja tõugake varvastega</li>
+    </ul>
+
+    <p><strong>Soorituse ja kiirkõnni saavutamiseks:</strong></p>
+    <ul>
+      <li>Arendage liialdatud vaagna pöörlemist (8–15°)</li>
+      <li>Harjutage sirge jala tehnikat maandumisel</li>
+      <li>Arendage jõulist käte tööd 90° küünarnuki painutusega</li>
+      <li>Sihtige rütmi 130–160 spm minimaalse vertikaalse kaldega</li>
+      <li>Treenige spetsiaalselt puusa painduvust ja kere stabiilsust</li>
+    </ul>
+
+    <!-- Bibliograafia -->
+    <h2>Teaduslikud viited</h2>
+
+    <p>See juhend põhineb biomehaanika uuringutel. Täpsemate viidete ja täiendavate uuringute jaoks vaadake:</p>
+
+    <ul>
+      <li><a href="/et/bibliography/">Täielik teaduslik bibliograafia</a></li>
+      <li><a href="/et/research/">Uusimad kõndimisuuringud</a></li>
+      <li><a href="/et/gait-analysis/">Üksikasjalikud kõnnianalüüsi näitajad</a></li>
+    </ul>
+
+    <p><strong>Olulisemad tsiteeritud biomehaanika ressursid:</strong></p>
+    <ul>
+      <li>Tudor-Locke C, jt (2019). CADENCE-Adults study. <em>Int J Behav Nutr Phys Act</em> 16:8.</li>
+      <li>Collins SH, jt (2009). The advantage of a rolling foot. <em>J Exp Biol</em> 212:2555-2559.</li>
+      <li>Studenski S, jt (2011). Gait speed and survival in older adults. <em>JAMA</em> 305:50-58.</li>
+    </ul>
+
+  </div>
+</section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-top">
+            <div class="footer-brand-section">
+                <h2>Walk Analytics</h2>
+                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+            <div class="footer-download">
+                <h3 class="footer-heading">Download</h3>
+                <div class="footer-badges">
+                    
+                    <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener" aria-label="Download on the App Store">
+                        <img src="/assets/images/badge-app-store.svg" alt="Download on the App Store" width="135" height="40" loading="lazy">
+                    </a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-languages">
+            <h3 class="footer-heading">Available in</h3>
+            <div class="lang-grid">
+                
+                <a href="/af/"
+                   class="lang-link"
+                   hreflang="af"
+                   >
+                    Afrikaans
+                </a>
+                
+                <a href="/am/"
+                   class="lang-link"
+                   hreflang="am"
+                   >
+                    አမ္ဟာ
+                </a>
+                
+                <a href="/ar/"
+                   class="lang-link"
+                   hreflang="ar"
+                   dir="rtl">
+                    العربية
+                </a>
+                
+                <a href="/bg/"
+                   class="lang-link"
+                   hreflang="bg"
+                   >
+                    Български
+                </a>
+                
+                <a href="/bn/"
+                   class="lang-link"
+                   hreflang="bn"
+                   >
+                    বাংলা
+                </a>
+                
+                <a href="/ca/"
+                   class="lang-link"
+                   hreflang="ca"
+                   >
+                    Català
+                </a>
+                
+                <a href="/cs/"
+                   class="lang-link"
+                   hreflang="cs"
+                   >
+                    Čeština
+                </a>
+                
+                <a href="/da/"
+                   class="lang-link"
+                   hreflang="da"
+                   >
+                    Dansk
+                </a>
+                
+                <a href="/de/"
+                   class="lang-link"
+                   hreflang="de"
+                   >
+                    Deutsch
+                </a>
+                
+                <a href="/el/"
+                   class="lang-link"
+                   hreflang="el"
+                   >
+                    Ελληνικά
+                </a>
+                
+                <a href="/en/"
+                   class="lang-link"
+                   hreflang="en"
+                   >
+                    English
+                </a>
+                
+                <a href="/es/"
+                   class="lang-link"
+                   hreflang="es"
+                   >
+                    Español
+                </a>
+                
+                <a href="/et/"
+                   class="lang-link active"
+                   hreflang="et"
+                   >
+                    Eesti
+                </a>
+                
+                <a href="/fa/"
+                   class="lang-link"
+                   hreflang="fa"
+                   dir="rtl">
+                    فارسی
+                </a>
+                
+                <a href="/fi/"
+                   class="lang-link"
+                   hreflang="fi"
+                   >
+                    Suomi
+                </a>
+                
+                <a href="/fr/"
+                   class="lang-link"
+                   hreflang="fr"
+                   >
+                    Français
+                </a>
+                
+                <a href="/gu/"
+                   class="lang-link"
+                   hreflang="gu"
+                   >
+                    ગુજરાતી
+                </a>
+                
+                <a href="/ha/"
+                   class="lang-link"
+                   hreflang="ha"
+                   >
+                    Hausa
+                </a>
+                
+                <a href="/he/"
+                   class="lang-link"
+                   hreflang="he"
+                   dir="rtl">
+                    עברית
+                </a>
+                
+                <a href="/hi/"
+                   class="lang-link"
+                   hreflang="hi"
+                   >
+                    हिन्दी
+                </a>
+                
+                <a href="/hr/"
+                   class="lang-link"
+                   hreflang="hr"
+                   >
+                    Hrvatski
+                </a>
+                
+                <a href="/hu/"
+                   class="lang-link"
+                   hreflang="hu"
+                   >
+                    Magyar
+                </a>
+                
+                <a href="/id/"
+                   class="lang-link"
+                   hreflang="id"
+                   >
+                    Bahasa Indonesia
+                </a>
+                
+                <a href="/is/"
+                   class="lang-link"
+                   hreflang="is"
+                   >
+                    Íslenska
+                </a>
+                
+                <a href="/it/"
+                   class="lang-link"
+                   hreflang="it"
+                   >
+                    Italiano
+                </a>
+                
+                <a href="/ja/"
+                   class="lang-link"
+                   hreflang="ja"
+                   >
+                    日本語
+                </a>
+                
+                <a href="/ko/"
+                   class="lang-link"
+                   hreflang="ko"
+                   >
+                    한국어
+                </a>
+                
+                <a href="/lt/"
+                   class="lang-link"
+                   hreflang="lt"
+                   >
+                    Lietuvių
+                </a>
+                
+                <a href="/lv/"
+                   class="lang-link"
+                   hreflang="lv"
+                   >
+                    Latviešu
+                </a>
+                
+                <a href="/ms/"
+                   class="lang-link"
+                   hreflang="ms"
+                   >
+                    Bahasa Melayu
+                </a>
+                
+                <a href="/my/"
+                   class="lang-link"
+                   hreflang="my"
+                   >
+                    မြန်မာ
+                </a>
+                
+                <a href="/nb/"
+                   class="lang-link"
+                   hreflang="nb"
+                   >
+                    Norsk Bokmål
+                </a>
+                
+                <a href="/nl/"
+                   class="lang-link"
+                   hreflang="nl"
+                   >
+                    Nederlands
+                </a>
+                
+                <a href="/pl/"
+                   class="lang-link"
+                   hreflang="pl"
+                   >
+                    Polski
+                </a>
+                
+                <a href="/pt/"
+                   class="lang-link"
+                   hreflang="pt"
+                   >
+                    Português
+                </a>
+                
+                <a href="/ro/"
+                   class="lang-link"
+                   hreflang="ro"
+                   >
+                    Română
+                </a>
+                
+                <a href="/ru/"
+                   class="lang-link"
+                   hreflang="ru"
+                   >
+                    Русский
+                </a>
+                
+                <a href="/sk/"
+                   class="lang-link"
+                   hreflang="sk"
+                   >
+                    Slovenčina
+                </a>
+                
+                <a href="/sl/"
+                   class="lang-link"
+                   hreflang="sl"
+                   >
+                    Slovenščina
+                </a>
+                
+                <a href="/sr/"
+                   class="lang-link"
+                   hreflang="sr"
+                   >
+                    Српски
+                </a>
+                
+                <a href="/sv/"
+                   class="lang-link"
+                   hreflang="sv"
+                   >
+                    Svenska
+                </a>
+                
+                <a href="/sw/"
+                   class="lang-link"
+                   hreflang="sw"
+                   >
+                    Kiswahili
+                </a>
+                
+                <a href="/ta/"
+                   class="lang-link"
+                   hreflang="ta"
+                   >
+                    தமிழ்
+                </a>
+                
+                <a href="/te/"
+                   class="lang-link"
+                   hreflang="te"
+                   >
+                    తెలుగు
+                </a>
+                
+                <a href="/th/"
+                   class="lang-link"
+                   hreflang="th"
+                   >
+                    ไทย
+                </a>
+                
+                <a href="/tl/"
+                   class="lang-link"
+                   hreflang="tl"
+                   >
+                    Tagalog
+                </a>
+                
+                <a href="/tr/"
+                   class="lang-link"
+                   hreflang="tr"
+                   >
+                    Türkçe
+                </a>
+                
+                <a href="/uk/"
+                   class="lang-link"
+                   hreflang="uk"
+                   >
+                    Українська
+                </a>
+                
+                <a href="/ur/"
+                   class="lang-link"
+                   hreflang="ur"
+                   dir="rtl">
+                    اردو
+                </a>
+                
+                <a href="/vi/"
+                   class="lang-link"
+                   hreflang="vi"
+                   >
+                    Tiếng Việt
+                </a>
+                
+                <a href="/zh/"
+                   class="lang-link"
+                   hreflang="zh"
+                   >
+                    中文
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Walk Analytics. Kõik õigused kaitstud
+            </p>
+            <ul class="footer-legal">
+                <li><a href="/et/privacy/">Privaatsus</a></li>
+                <li><a href="/et/terms/">Tingimused</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>See veebisait kasutab küpsiseid teie kogemuse parandamiseks.</p>
+            <a href="/et/privacy/" class="text-sm">Loe lähemalt</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Keeldu</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Nõustu</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="/assets/js/core.min.js" defer></script>
+  <script src="/assets/js/search.min.js" defer></script>
+
+  
+  
+  <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+
+</html>

@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="et" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Kõnnianalüüs kõndijatele - sammu sümmeetria, rütm ja tasakaalumõõdikud</title>
+  <meta name="description" content="Põhjalik kõnnianalüüsi juhend. Mõistke sammu pikkust, rütmi, sümmeetriat ja tasakaalu mõõdikuid. Parandage efektiivsust.">
+  <meta name="author" content="Albert Arnó">
+
+  
+  
+  <meta name="keywords" content="kõnnianalüüs, sammu sümmeetria, kõnnirütm, tasakaalu mõõdikud, kõnni biomehaanika">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/et/gait-analysis/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2025-11-29T14:30:00Z">
+  <meta property="article:author" content="Albert Arnó">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/et/gait-analysis/">
+  <meta property="og:title" content="Kõnnianalüüs kõndijatele - sammu sümmeetria, rütm ja tasakaalumõõdikud">
+  <meta property="og:description" content="Põhjalik kõnnianalüüsi juhend. Mõistke sammu pikkust, rütmi, sümmeetriat ja tasakaalu mõõdikuid. Parandage efektiivsust.">
+  
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:site_name" content="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/et/gait-analysis/">
+  <meta name="twitter:title" content="Kõnnianalüüs kõndijatele - sammu sümmeetria, rütm ja tasakaalumõõdikud">
+  <meta name="twitter:description" content="Põhjalik kõnnianalüüsi juhend. Mõistke sammu pikkust, rütmi, sümmeetriat ja tasakaalu mõõdikuid. Parandage efektiivsust.">
+  
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/gait-analysis/">
+  
+  <link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/gait-analysis/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/gait-analysis/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/gait-analysis/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/gait-analysis/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/gait-analysis/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/gait-analysis/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/gait-analysis/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/gait-analysis/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/gait-analysis/">
+  
+  <link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/gait-analysis/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/gait-analysis/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/gait-analysis/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/gait-analysis/">
+  
+  <link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/gait-analysis/">
+  
+  <link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/gait-analysis/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/gait-analysis/">
+  
+  <link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/gait-analysis/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/gait-analysis/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/gait-analysis/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/gait-analysis/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/gait-analysis/">
+  
+  <link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/gait-analysis/">
+  
+  <link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/gait-analysis/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/gait-analysis/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/gait-analysis/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/gait-analysis/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/gait-analysis/">
+  
+  <link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/gait-analysis/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/gait-analysis/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/gait-analysis/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/gait-analysis/">
+  
+  <link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/gait-analysis/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/gait-analysis/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/gait-analysis/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/gait-analysis/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/gait-analysis/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0066CC">
+  <meta name="robots" content="index, follow">
+
+  
+  <style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="preload" href="/assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+
+  
+  
+
+  
+  
+
+  
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Kõnnianalüüs kõndijatele - sammu sümmeetria, rütm ja tasakaalumõõdikud",
+      "description": "Põhjalik kõnnianalüüsi juhend. Mõistke sammu pikkust, rütmi, sümmeetriat ja tasakaalu mõõdikuid. Parandage efektiivsust.",
+      "author": {
+        "@type": "Person",
+        "name": "Albert Arnó"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Walk Analytics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://walk.analyticszone.app/assets/images/logo.png"
+        }
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-11-29",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://walk.analyticszone.app/et/gait-analysis/"
+      }
+    }
+  </script>
+  
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">Liigu sisu juurde</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/et/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        <a href="/et/" 
+                            aria-current="">
+                            Avaleht
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/getting-started/" class="nav-label">Õpi</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/getting-started/" 
+                                    aria-current="">
+                                    Alustamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-zones/" 
+                                    aria-current="">
+                                    Kõnnitsoonid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-analysis/" class="active"
+                                    aria-current="page">
+                                    Kõnnianalüüs
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/training-load/" 
+                                    aria-current="">
+                                    Treeningkoormus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/wss-calculator/" 
+                                    aria-current="">
+                                    WSS kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/research/" class="nav-label">Teadus</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/research/" 
+                                    aria-current="">
+                                    Uuringud
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/formulas/" 
+                                    aria-current="">
+                                    Valemid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-efficiency/" 
+                                    aria-current="">
+                                    Kõnni efektiivsus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/stride-mechanics/" 
+                                    aria-current="">
+                                    Sammumehaanika
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-vs-running/" 
+                                    aria-current="">
+                                    Kõndimine vs jooksmine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/benchmarks/" 
+                                    aria-current="">
+                                    Võrdlusandmed
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/bibliography/" 
+                                    aria-current="">
+                                    Bibliograafia
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/for-health/" class="nav-label">Sulle</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/for-health/" 
+                                    aria-current="">
+                                    Terviseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-fitness/" 
+                                    aria-current="">
+                                    Vormi saavutamiseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-seniors/" 
+                                    aria-current="">
+                                    Eakatele
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-rehabilitation/" 
+                                    aria-current="">
+                                    Taastusraviks
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/cadence-calculator/" class="nav-label">Tööriistad</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/cadence-calculator/" 
+                                    aria-current="">
+                                    Rütmikalkulaator
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-assessment/" 
+                                    aria-current="">
+                                    Kõnni hindamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/et/contact/" 
+                            aria-current="">
+                            Kontakt
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Vali keel">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="am" >
+                        አမ္ဟာ
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bg" >
+                        Български
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="cs" >
+                        Čeština
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="et" selected>
+                        Eesti
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="gu" >
+                        ગુજરાતી
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="he" >
+                        עברית
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="hr" >
+                        Hrvatski
+                    </option>
+                    
+                    <option value="hu" >
+                        Magyar
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="is" >
+                        Íslenska
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="lt" >
+                        Lietuvių
+                    </option>
+                    
+                    <option value="lv" >
+                        Latviešu
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="my" >
+                        မြန်မာ
+                    </option>
+                    
+                    <option value="nb" >
+                        Norsk Bokmål
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ro" >
+                        Română
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sk" >
+                        Slovenčina
+                    </option>
+                    
+                    <option value="sl" >
+                        Slovenščina
+                    </option>
+                    
+                    <option value="sr" >
+                        Српски
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="ta" >
+                        தமிழ்
+                    </option>
+                    
+                    <option value="te" >
+                        తెలుగు
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="uk" >
+                        Українська
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menüü lüliti"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+        <ol>
+            
+            <li>
+                
+                <a href="/et/">Avaleht</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="/et/getting-started/">Õpi</a>
+                
+            </li>
+            
+            <li>
+                
+                <span aria-current="page">Kõnnianalüüs</span>
+                
+            </li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+  
+  <main id="main-content" class="main-content">
+    <!-- Kõnnianalüüsi juhend -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/et/">Avaleht</a> / <a href="/et/#learn">Õpi</a> / Kõnnianalüüs
+    </div>
+    <h1>Kõnnianalüüs</h1>
+    <p class="lead">Õppige analüüsima oma kõndimise biomehaanikat teaduspõhiste mõõdikute abil, et saavutada parem
+      sooritus, tervis ja vältida vigastusi</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <h2 id="what-is-gait">Mis on kõnnianalüüs?</h2>
+
+        <p>Kõnnianalüüs on teie kõnnimustri ja biomehaanika süstemaatiline uurimine. See käsitleb seda, kuidas teie keha
+          kõndimise ajal liigub, tuvastades ebaefektiivsust, asümmeetriat ja potentsiaalseid vigastusriske.</p>
+
+        <div class="key-insight">
+          <p><strong>Miks see oluline on:</strong> Kõnnianalüüs on arenenud kliinilisest vahendist, mida kasutati ainult
+            spetsialiseeritud laborites, tarbetehnoloogiaks, mis on kättesaadav nutikellade ja nutitelefonide kaudu.
+            Uuringud näitavad, et kõnnimustri analüüs võib ennustada tervisetulemusi, tuvastada varajasi märke
+            neuroloogilistest seisunditest ja optimeerida kõnniefektiivsust.</p>
+        </div>
+
+        <p>Walk Analytics integreerub Apple HealthKitiga, et analüüsida iPhone'i ja Apple Watchi poolt passiivselt
+          kogutud kõnnimõõdikuid, pakkudes kliinilise taseme teavet teie kõnni kvaliteedi kohta.</p>
+
+        <h2 id="key-metrics">Olulised kõnnimõõdikud</h2>
+
+        <h3 id="cadence">1. Rütm (sammu minutis)</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Minutis tehtud sammude arv (spm)</p>
+
+          <p><strong>Miks see on kõige olulisem kõndimismõõdik:</strong> Rütm on parim üksiknäitaja kõndimise
+            intensiivsuse ja energiakulu ennustamiseks. Erinevalt kiirusest (mis sõltub sammu pikkusest), peegeldab rütm
+            otseselt liikumissagedust ja metaboolset nõudlust.</p>
+
+          <div class="science-box">
+            <h4>Teaduslik tõend: 100 spm lävi</h4>
+            <p>Märgiline CADENCE-Adultsi uuring (Tudor-Locke jt, 2019) testis 76 täiskasvanut ja tegi kindlaks, et:</p>
+            <ul>
+              <li><strong>100 sammu/min = 3 METi</strong> (mõõdukas intensiivsus) 86% tundlikkuse ja 89,6%
+                spetsiifilisusega</li>
+              <li><strong>110 spm ≈ 4 METi</strong> (mõõdukas-tugev)</li>
+              <li><strong>120 spm ≈ 5 METi</strong> (tugev)</li>
+              <li><strong>130 spm = 6 METi</strong> (väga tugeva intensiivsuse lävi)</li>
+            </ul>
+            <p>See seos on <strong>märkimisväärselt järjepidev vanuses 21–85 aastat</strong>, muutes rütmi
+              universaalseks intensiivsuse mõõdikuks.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Rütmivahemikud ja rakendused</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Rütm (spm)</th>
+                  <th>Kategooria</th>
+                  <th>Rakendus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>60–90</td>
+                  <td>Väga aeglane</td>
+                  <td>Taastumine, liikumispiirangud</td>
+                </tr>
+                <tr>
+                  <td>90–100</td>
+                  <td>Kerge intensiivsus</td>
+                  <td>Õrn tegevus, soojendus</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>100–110</strong></td>
+                  <td><strong>Mõõdukas intensiivsus</strong></td>
+                  <td><strong>Tervislik kasu, rasvapõletus, soovituslik baastase</strong></td>
+                </tr>
+                <tr>
+                  <td>110–120</td>
+                  <td>Mõõdukas-tugev</td>
+                  <td>Südame-veresoonkonna tervis, reibas kõnd</td>
+                </tr>
+                <tr>
+                  <td>120–130</td>
+                  <td>Tugev</td>
+                  <td>Jõuline kõnd, vormitreening</td>
+                </tr>
+                <tr>
+                  <td>130–140</td>
+                  <td>Väga tugev</td>
+                  <td>Edasijõudnud, intervalltreening</td>
+                </tr>
+                <tr>
+                  <td>140–180</td>
+                  <td>Kiirkõnd</td>
+                  <td>Võistluskõnd, tippatleedid</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Kuidas mõõta:</strong> Apple Watch ja enamik aktiivsusmonitorid arvutavad rütmi automaatselt.
+            Samuti saate loendada samme 30 sekundi jooksul ja korrutada 2-ga.</p>
+
+          <p><strong>Eesmärk:</strong></p>
+          <ul>
+            <li><strong>Üldine tervis:</strong> Püüdke kõndimise ajal hoida rütmi ≥100 spm, et saavutada mõõdukas
+              intensiivsus</li>
+            <li><strong>Vormi parandamine:</strong> Aeroobse arengu saavutamiseks sihtige 110–120 spm</li>
+            <li><strong>Soorituse arendamine:</strong> Harjutage intervalle rütmiga 120–130+ spm</li>
+          </ul>
+        </div>
+
+        <h3 id="stride-length">2. Sammu pikkus</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Ühe täieliku sammu tsükli jooksul läbitud vahemaa (ühe jala kannalöögist kuni
+            sama jala järgmise kannalöögini)</p>
+
+          <p><strong>Optimaalne sammu pikkus:</strong> Uuringud näitavad, et optimaalne sammu pikkus tavalise kõndimise
+            ajal on <strong>40–50% keha pikkusest</strong>.</p>
+
+          <div class="data-table">
+            <h4>Sammu pikkuse võrdlusnäitajad</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Pikkus (cm)</th>
+                  <th>Optimaalne samm (40–50% pikkusest)</th>
+                  <th>Eliitkõndija (kuni 70%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>152 cm</td>
+                  <td>0.61–0.76 m</td>
+                  <td>Kuni 1.06 m</td>
+                </tr>
+                <tr>
+                  <td>168 cm</td>
+                  <td>0.67–0.84 m</td>
+                  <td>Kuni 1.18 m</td>
+                </tr>
+                <tr>
+                  <td>183 cm</td>
+                  <td>0.73–0.91 m</td>
+                  <td>Kuni 1.28 m</td>
+                </tr>
+                <tr>
+                  <td>198 cm</td>
+                  <td>0.79–0.99 m</td>
+                  <td>Kuni 1.39 m</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Põhiseos:</strong> Kiirus = Sammu pikkus × Rütm</p>
+          <p>See tähendab, et saate kõndimiskiirust suurendada kas pikemate sammude VÕI rütmi suurendamise abil. Kuid
+            <strong>rütmi suurendamine on üldiselt tõhusam ja ohutum</strong> kui liiga pikkade sammude tegemine.</p>
+
+          <div class="warning-box">
+            <h4>⚠️ Vältige liiga pikki samme</h4>
+            <p><strong>Ülepikk samm</strong> (overstriding) tekib siis, kui teie jalg maandub liiga kaugel teie
+              raskuskeskmest. See:</p>
+            <ul>
+              <li>Suurendab pidurdustegureid ja maapinna reaktsioonijõude</li>
+              <li>Vähendab kõnniefektiivsust (te "pidurdage" iga sammuga)</li>
+              <li>Suurendab koormust põlvedele ja puusadele</li>
+              <li>Tõstab vigastusriski</li>
+            </ul>
+            <p><strong>Lahendus:</strong> Keskenduge sellele, et jalg maanduks kehale lähemal, ja lükake end tagumiselt
+              jalalt jõuliselt lahti.</p>
+          </div>
+
+          <p><strong>Apple HealthKit mõõdik:</strong> iOS 14+ mõõdab passiivselt <code>walkingStepLength</code>, kui
+            iPhone'i kantakse taskus või kotis.</p>
+        </div>
+
+        <h3 id="ground-contact">3. Maapinnaga kokkupuute aeg</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Kestus, mille jooksul kumbki jalg jääb sammu ajal maapinnaga kokkupuutesse</p>
+
+          <p><strong>Kõndimispõhised väärtused:</strong> 200–300 millisekundit sammu kohta (oluliselt pikem kui
+            jooksmisel, kus see on <200ms)< /p>
+
+              <div class="science-box">
+                <h4>Kõndimise kokkupuute 5 faasi</h4>
+                <p>Iga samm koosneb 5 eraldiseisvast faasist:</p>
+                <ol>
+                  <li><strong>Esmane kontakt (kannalöök):</strong> Kand puudutab maad ~10° nurga all</li>
+                  <li><strong>Koormusele reageerimine:</strong> Täielik jala kontakt, raskuse vastuvõtmine</li>
+                  <li><strong>Kesktoetus:</strong> Keharaskus liigub üle toetava jala</li>
+                  <li><strong>Lõpptoetus (kanna tõus):</strong> Kand hakkab tõusma, raskus kandub ettepoole</li>
+                  <li><strong>Hooeelne faas (varvaste äratõuge):</strong> Tõuge pöialt, liikumisfaas</li>
+                </ol>
+              </div>
+
+              <p><strong>Mis mõjutab maapinnaga kokkupuute aega:</strong></p>
+              <ul>
+                <li><strong>Kiirus:</strong> Kiirem kõndimine = lühem kokkupuuteaeg</li>
+                <li><strong>Rütm:</strong> Suurem rütm = lühem kokkupuuteaeg sammu kohta</li>
+                <li><strong>Maastik:</strong> Ülesmäge minek suurendab kokkupuuteaega, alamäge võib see väheneda</li>
+                <li><strong>Väsimus:</strong> Väsinud lihased = pikem kokkupuuteaeg</li>
+              </ul>
+
+              <p><strong>Võrdlus jooksmisega:</strong></p>
+              <ul>
+                <li>Kõndimine: 200–300ms kontakt, 62% kõnnitsüklist toetusfaasis</li>
+                <li>Jooksmine: <200ms kontakt, ainult 31% kõnnitsüklist toetusfaasis</li>
+                <li>See põhimõtteline erinevus selgitab, miks kõndimisel on <strong>väiksemad löögijõud</strong> ja see
+                  sobib vigastusest taastumiseks</li>
+              </ul>
+        </div>
+
+        <h3 id="double-support">4. Kahekordse toetuse aeg</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Kõnnitsükli osa, kus mõlemad jalad on üheaegselt maapinnaga kokkupuutes</p>
+
+          <p><strong>Kõndimise põhiline erisus:</strong> Kõndimisel on alati kahekordse toetuse faas (20–30%
+            kõnnitsüklist), samas kui jooksmisel on lennufaas ilma maapinna kontaktita.</p>
+
+          <div class="key-insight">
+            <p><strong>Kliiniline tähtsus:</strong> Kahekordse toetuse protsent on võimas kukkumisriski ja tasakaalu
+              usaldusväärsuse ennustaja, eriti eakatel.</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Kahekordse toetuse tõlgendamine</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Kahekordne toetus %</th>
+                  <th>Tõlgendamine</th>
+                  <th>Tegevus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;15%</td>
+                  <td>Väga madal (läheneb jooksmisele)</td>
+                  <td>Võite kõndida liiga kiiresti ohutuse tagamiseks</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>20–30%</strong></td>
+                  <td><strong>Normaalne, tervislik vahemik</strong></td>
+                  <td><strong>Optimaalne tasakaal ja efektiivsus</strong></td>
+                </tr>
+                <tr>
+                  <td>30–35%</td>
+                  <td>Tõenäoline, kerge mure</td>
+                  <td>Jälgige muutusi, kaaluge tasakaaluharjutusi</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;35%</strong></td>
+                  <td><strong>Suure kukkumisriski näitaja</strong></td>
+                  <td><strong>Konsulteerige arstiga, alustage tasakaalutreeningut</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Mis põhjustab suurenenud kahekordset toetust:</strong></p>
+          <ul>
+            <li>Hirm kukkumise ees või vähenenud tasakaalutunnetus</li>
+            <li>Neuroloogilised seisundid (Parkinson, insult, neuropaatia)</li>
+            <li>Lihasnõrkus (eriti puusa abduktorid ja pahkluu dorsifleksorid)</li>
+            <li>Liigesevalu või jäikus</li>
+            <li>Nägemispuue</li>
+          </ul>
+
+          <p><strong>Apple HealthKit mõõdik:</strong> <code>walkingDoubleSupportPercentage</code>, mida mõõdab
+            passiivselt iPhone 8+ (iOS 14+). See mõõdik on osa Apple'i kõnnikindluse (Walking Steadiness) hinnangust.
+          </p>
+        </div>
+
+        <h3 id="asymmetry">5. Kõnni asümmeetria</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Erinevus vasaku ja parema sammu aja, sammu pikkuse või kokkupuuteaja vahel</p>
+
+          <div class="science-box">
+            <h4>Kõnni asümmeetria indeksi (GSI) valem</h4>
+            <p>Standardne valem kõnni asümmeetria kvantifitseerimiseks:</p>
+            <div class="formula-box">
+              <p><strong>GSI = |Parem - Vasak| / [0.5 × (Parem + Vasak)] × 100</strong></p>
+            </div>
+            <p>Näide: Kui parema sammu aeg = 520ms ja vasaku sammu aeg = 480ms:</p>
+            <p>GSI = |520 - 480| / [0.5 × (520 + 480)] × 100 = 40 / 500 × 100 = <strong>8% asümmeetria</strong></p>
+          </div>
+
+          <div class="data-table">
+            <h4>Asümmeetria klassifikatsioon</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Asümmeetria %</th>
+                  <th>Klassifikatsioon</th>
+                  <th>Kliiniline tähtsus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>&lt;2–3%</strong></td>
+                  <td><strong>Normaalne, sümmeetriline</strong></td>
+                  <td>Tervislik kõnnimuster</td>
+                </tr>
+                <tr>
+                  <td>3–5%</td>
+                  <td>Kerge asümmeetria</td>
+                  <td>Jälgige, võib viidata kergele nõrkusele või harjumusele</td>
+                </tr>
+                <tr>
+                  <td>5–10%</td>
+                  <td>Mõõdukas asümmeetria</td>
+                  <td>Kaaluge professionaalset hindamist</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>&gt;10%</strong></td>
+                  <td><strong>Kliiniliselt oluline</strong></td>
+                  <td><strong>Viitab tõenäoliselt vigastusele, nõrkusele või neuroloogilisele probleemile</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Asümmeetria levinumad põhjused:</strong></p>
+          <ul>
+            <li><strong>Varasema vigastuse hüvitamine:</strong> Ühe jala eelistamine pärast vigastust</li>
+            <li><strong>Lihaste tasakaalustamatus:</strong> Ühe poole puusa, põlve või pahkluu nõrkus</li>
+            <li><strong>Jalgade pikkuse erinevus:</strong> Reaalne või funktsionaalne erinevus</li>
+            <li><strong>Liigesteprobleemid:</strong> Artriit, piiratud liikumisulatus</li>
+            <li><strong>Neuroloogilised seisundid:</strong> Insult, Parkinson, SM</li>
+            <li><strong>Jalatsid:</strong> Ebaühtlane kingade kulumine või vale sobivus</li>
+          </ul>
+
+          <p><strong>Apple HealthKit mõõdik:</strong> <code>walkingAsymmetryPercentage</code> mõõdab erinevust vasaku ja
+            parema sammu aja vahel. Väärtused >10% käivitavad teavitused.</p>
+
+          <div class="tip-box">
+            <h4>💡 Sümmeetria parandamine</h4>
+            <ul>
+              <li>Ühel jalal seismise harjutused (30–60 sek jala kohta)</li>
+              <li>Ühepoolne jõutreening (keskendu nõrgemale poolele)</li>
+              <li>Kõnnitreening visuaalse või auditoorse tagasisidega</li>
+              <li>Tegelege põhivigastuste või seisunditega</li>
+              <li>Professionaalne kõnnianalüüs, kui asümmeetria püsub >5%</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 id="walking-speed">6. Kõndimiskiirus</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Teie keskmine kõndimiskiirus, mida mõõdetakse tavaliselt meetrites sekundis
+            (m/s) või kilomeetrites tunnis (km/h)</p>
+
+          <div class="key-insight">
+            <p><strong>Miks on kiirus "eluline märk":</strong> Märgiline 2011. aasta JAMA uuring 34 485 eaka inimesega
+              leidis, et kõnnikiirus on üks tugevamaid suremuse prognoosijaid, pälvides nimetuse kliiniline "eluline
+              märk" (Studenski jt, 2011).</p>
+          </div>
+
+          <div class="data-table">
+            <h4>Kõndimiskiiruse tervislikud võrdlusnäitajad</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Kiirus</th>
+                  <th>Klassifikatsioon</th>
+                  <th>Tervisenäitaja</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="warning-row">
+                  <td><strong>&lt;0.6 m/s</strong></td>
+                  <td><strong>Tõsiselt kahjustatud</strong></td>
+                  <td>Kõrge suremusrisk, konsulteerige arstiga</td>
+                </tr>
+                <tr>
+                  <td>0.6–0.8 m/s</td>
+                  <td>Liikumispiirangutega</td>
+                  <td>Suurenenud terviseriskid, funktsionaalsed piirangud</td>
+                </tr>
+                <tr>
+                  <td>0.8–1.0 m/s</td>
+                  <td>Alla normi</td>
+                  <td>Mõõdukas risk, ruumi parandusteks</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>1.0–1.3 m/s</strong></td>
+                  <td><strong>Hea funktsionaalne tervis</strong></td>
+                  <td>Normaalsed tervisenäitajad</td>
+                </tr>
+                <tr>
+                  <td>1.3–1.5 m/s</td>
+                  <td>Üle keskmise</td>
+                  <td>Suurepärane tervisenäitaja, madal suremusrisk</td>
+                </tr>
+                <tr>
+                  <td>&gt;1.5 m/s</td>
+                  <td>Sportlik kõnd</td>
+                  <td>Atleetlik võimekus, väga madalad terviseriskid</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="science-box">
+            <h4>Kiiruse ja elulemuse gradient</h4>
+            <p>Uuringud näitavad, et <strong>iga 0.1 m/s suurune kõndimiskiiruse tõus korreleerub ~12% võrra madalama
+                suremusriskiga</strong>.</p>
+          </div>
+
+          <p><strong>Apple HealthKit mõõdik:</strong> <code>walkingSpeed</code> arvutatakse iPhone'i liikumisandurite
+            põhjal (iPhone 8+ koos iOS 14-ga). Valideeritud uuringud näitavad korrelatsiooni r=0.86–0.91 kliiniliste
+            ajastatud kõnnitestidega.</p>
+        </div>
+
+        <h3 id="vertical-oscillation">7. Vertikaalne liikumine</h3>
+
+        <div class="metric-detail">
+          <p><strong>Mis see on:</strong> Teie raskuskeskme vertikaalne nihkumine kõnnitsükli jooksul</p>
+
+          <p><strong>Normaalne vahemik:</strong> 4–8 cm vertikaalset liikumist</p>
+
+          <div class="data-table">
+            <h4>Vertikaalse liikumise tõlgendamine</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Liikumine</th>
+                  <th>Hinnang</th>
+                  <th>Tähendus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;4 cm</td>
+                  <td>Liiga vähe (lohistav kõnd)</td>
+                  <td>Võib viidata nõrkusele, neuroloogilistele probleemidele või kukkumishirmule</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>4–8 cm</strong></td>
+                  <td><strong>Normaalne, efektiivne vahemik</strong></td>
+                  <td>Optimaalne energiakulu</td>
+                </tr>
+                <tr>
+                  <td>&gt;8–10 cm</td>
+                  <td>Liigne (hüppav kõnd)</td>
+                  <td>Energiaraiskamine, ebaefektiivne biomehaanika</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Miks see oluline on:</strong> Liigne vertikaalne liikumine tähendab, et te "hüppate" iga sammuga
+            liiga palju, raisates energiat gravitatsiooniga võitlemiseks. Minimaalne liikumine võib aga viidata
+            lohistavale kõnnimustrile, mida seostatakse Parkinsoni tõve või kukkumishirmuga.</p>
+
+          <p><strong>Kuidas optimeerida:</strong></p>
+          <ul>
+            <li>Keskenduge edasiliikumisele, mitte ülespoole liikumisele</li>
+            <li>Hoidke kerget ettepoole kallet (2–5°) pahkluudest</li>
+            <li>Hoidke pea otse ja pilk eespool</li>
+            <li>Harjutage sujuvat raskuse ülekandmist sammude vahel</li>
+          </ul>
+        </div>
+
+        <h2 id="apple-metrics">Apple HealthKiti kõnnimõõdikud</h2>
+
+        <div class="tech-section">
+          <p>Apple tutvustas täiustatud kõnnimõõdikuid iOS 14-s (2020), mis koguvad passiivselt kliinilise taseme
+            kõndiandmeid iPhone'i liikumisanduritest. Need mõõdikud on <strong>valideeritud uuringute tasemel
+              hindamistega</strong> ja neid kasutatakse nüüd meditsiiniuuringutes.</p>
+
+          <h3>Kõnnikindlus (Walking Steadiness)</h3>
+
+          <p>Apple'i omandiõigusega kaitstud <strong>Walking Steadiness</strong> mõõdik on koondnäitaja, mis ühendab:
+          </p>
+          <ul>
+            <li>Kõndimiskiiruse</li>
+            <li>Sammu pikkuse</li>
+            <li>Kahekordse toetuse protsendi</li>
+            <li>Kõnni asümmeetria</li>
+            <li>Kõndimiskiiruse varieeruvuse</li>
+            <li>Sammu pikkuse varieeruvuse</li>
+          </ul>
+
+          <div class="data-table">
+            <h4>Kõnnikindluse klassifikatsioon</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Klassifikatsioon</th>
+                  <th>Kukkumisrisk</th>
+                  <th>Tegevus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>OK</strong></td>
+                  <td>&lt;1% aastane kukkumisrisk</td>
+                  <td>Säilitage praegune aktiivsus</td>
+                </tr>
+                <tr>
+                  <td><strong>Madal</strong></td>
+                  <td>1–5% aastane kukkumisrisk</td>
+                  <td>Kaaluge tasakaaluharjutusi, jälgige trende</td>
+                </tr>
+                <tr class="warning-row">
+                  <td><strong>Väga madal</strong></td>
+                  <td>&gt;5% aastane kukkumisrisk</td>
+                  <td><strong>Saadeti teavitus, konsulteerige arstiga</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>6 minuti kõnnitest (6MWT)</h3>
+
+          <p>Apple Watch Series 3+ suudab hinnata <strong>6 minuti kõnnitesti distantsi</strong> varasemate kõndiandmete
+            põhjal. 6MWT on funktsionaalse koormusvõime kliiniline kuldstandard.</p>
+
+          <div class="science-box">
+            <h4>6MWT tõlgendamine</h4>
+            <ul>
+              <li><strong>&lt;350 meetrit:</strong> Oluline funktsionaalne piirang</li>
+              <li><strong>350–450 meetrit:</strong> Mõõdukas piirang</li>
+              <li><strong>450–550 meetrit:</strong> Kerge piirang või eakas täiskasvanu</li>
+              <li><strong>&gt;550 meetrit:</strong> Hea funktsionaalne võimekus</li>
+              <li><strong>&gt;650 meetrit:</strong> Suurepärane võimekus</li>
+            </ul>
+            <p><em>Märkus: Väärtused varieeruvad sõltuvalt vanusest, soost ja pikkusest. Need on üldised juhised.</em>
+            </p>
+          </div>
+
+          <h3>Andmete privaatsus</h3>
+
+          <p>Kõik Apple HealthKiti kõnnimõõdikud on:</p>
+          <ul>
+            <li><strong>Töödeldud seadmes:</strong> Neid ei saadeta kunagi Apple'i serveritesse</li>
+            <li><strong>Kasutaja kontrollitavad:</strong> Teie otsustate, millised rakendused teie andmetele juurde
+              pääsevad</li>
+            <li><strong>Krüpteeritud:</strong> Kaitstud iOS-i krüptimisega</li>
+            <li><strong>Kustutatavad:</strong> Täielik kontroll kõigi terviseandmete kustutamise üle</li>
+          </ul>
+        </div>
+
+        <h2 id="interpreting">Oma kõnnianalüüsi tõlgendamine</h2>
+
+        <h3>Tervisliku kõnni märgid</h3>
+        <ul>
+          <li><strong>Rütm:</strong> ≥100 spm teadliku kõndimise ajal</li>
+          <li><strong>Kiirus:</strong> ≥1.0 m/s (3.6 km/h) tavaline kõndimiskiirus</li>
+          <li><strong>Sümmeetria:</strong> &lt;3% asümmeetriat vasaku ja parema vahel</li>
+          <li><strong>Kahekordne toetus:</strong> 20–30% kõnnitsüklist</li>
+          <li><strong>Järjepidevus:</strong> Sarnased mõõdikud mitme päeva jooksul</li>
+          <li><strong>Kõnnikindlus:</strong> "OK" klassifikatsioon</li>
+        </ul>
+
+        <h3>Hoiatusmärgid, mis vajavad tähelepanu</h3>
+        <div class="warning-box">
+          <ul>
+            <li><strong>Äkiline asümmeetria tõus:</strong> Võib viidata ägedale vigastusele</li>
+            <li><strong>Kiiruse kahanemine aja jooksul:</strong> Funktsionaalne langus, eriti kui >0.05 m/s aastas</li>
+            <li><strong>Kahekordse toetuse suurenemine:</strong> Vähenenud tasakaal või nõrkus</li>
+            <li><strong>Kõnnikindlus langeb tasemele "Madal" või "Väga madal":</strong> Suurenenud kukkumisrisk</li>
+            <li><strong>Püsiv asümmeetria >10%:</strong> Vajab professionaalset hindamist</li>
+            <li><strong>Kiirus &lt;0.8 m/s:</strong> Kõrge terviserisk, konsulteerige arstiga</li>
+          </ul>
+        </div>
+
+        <h2 id="improving">Kuidas oma kõndi parandada</h2>
+
+        <h3>Rütmitreening</h3>
+        <p><strong>Eesmärk:</strong> Saavutada kõndimise ajal ≥100 spm</p>
+        <p><strong>Meetodid:</strong></p>
+        <ul>
+          <li>Kasutage metronoomi rakendust, mis on seadistatud 100–120 BPM-ile</li>
+          <li>Kõndige muusika saatel, mille tempo on 100–120 BPM</li>
+          <li>Harjutage "kiireid jalgu": lühikesed ja kiired sammud</li>
+          <li>Keskenduge sammude sagedusele, mitte sammu pikkusele</li>
+          <li>Seadistage Apple Watchi märguanded, kui rütm langeb alla eesmärgi</li>
+        </ul>
+
+        <h3>Sümmeetria parandamine</h3>
+        <p><strong>Harjutused:</strong></p>
+        <ul>
+          <li><strong>Ühel jalal seismine:</strong> 30–60 sekundit jala kohta, silmad lahti ja siis kinni</li>
+          <li><strong>Ühepoolne jõud:</strong> Ühe jala jõutõmbed, astmed, väljaasted</li>
+          <li><strong>Tasakaalutreening:</strong> Ebastabiilsed alused (wobble board või BOSU pall)</li>
+          <li><strong>Peegli ees kõndimine:</strong> Jälgige oma peegelpilti, et tuvastada erinevusi</li>
+          <li><strong>Videoanalüüs:</strong> Filmige end nii eest kui tagant kõndimas</li>
+        </ul>
+
+        <h3>Kõndimiskiiruse ohutu suurendamine</h3>
+        <p><strong>Järk-järguline lähenemine:</strong></p>
+        <ol>
+          <li><strong>Suurendage esmalt rütmi:</strong> Jõudke 110–120 spm-ni enne sammu pikkusele keskendumist</li>
+          <li><strong>Intervalltreening:</strong> Vahetage 2 min kiiret + 2 min tavalist tempot</li>
+          <li><strong>Jõutreening:</strong> Puusa- ja pahkluulihaste tugevus parandab otseselt kiirust</li>
+          <li><strong>Edenege järk-järgult:</strong> Suurendage kiirust ~0.1 m/s kuus</li>
+        </ol>
+
+        <h3>Kahekordse toetuse vähendamine (kui see on kõrge)</h3>
+        <p><strong>Tasakaaluharjutused:</strong></p>
+        <ul>
+          <li>Tandem-kõnd (kand-varvas meetodil)</li>
+          <li>Ühel jalal seismine koos käteliigutustega</li>
+          <li>Kõnnimustri harjutused esialgu laiema toetuspinnaga</li>
+          <li>Jõutreening: puusa abduktorid, pahkluu dorsifleksorid, kerelihased</li>
+          <li>Tai Chi või tasakaalule suunatud rühmatreeningud</li>
+        </ul>
+
+        <h2 id="special-populations">Kõnnianalüüs spetsiifilistele rühmadele</h2>
+
+        <h3>Eakad täiskasvanud (65+)</h3>
+        <p><strong>Prioriteetsed mõõdikud:</strong></p>
+        <ul>
+          <li><strong>Kõndimiskiirus:</strong> Jälgige igal aastal; langus >0.05 m/s/aastas viitab riskile</li>
+          <li><strong>Kahekordne toetus:</strong> Jälgige suurenemist, mis viitab kukkumisriskile</li>
+          <li><strong>Kõnnikindlus:</strong> Lubage teavitused taseme "Madal" või "Väga madal" korral</li>
+          <li><strong>Asümmeetria:</strong> Võib viidata arenevatele neuroloogilistele probleemidele</li>
+        </ul>
+
+        <p><strong>Eesmärgid:</strong></p>
+        <ul>
+          <li>Säilitada kiirus ≥1.0 m/s</li>
+          <li>Hoida kahekordne toetus &lt;30%</li>
+          <li>Kõnnikindlus olekus "OK"</li>
+          <li>Asümmeetria &lt;5%</li>
+        </ul>
+
+        <h3>Taastusravi patsiendid</h3>
+        <p><strong>Jälgige taastumise edenemist:</strong></p>
+        <ul>
+          <li><strong>Sümmeetria normaliseerumine:</strong> Eesmärk naasta &lt;3% asümmeetria juurde</li>
+          <li><strong>Kiiruse taastumine:</strong> Jälgige iganädalast paranemist baastaseme suunas</li>
+          <li><strong>Rütmi järjepidevus:</strong> Võime säilitada ≥100 spm viitab valmidusele tavapäraseks tegevuseks
+          </li>
+          <li><strong>Kompenseerimismustrid:</strong> Jälgige uute asümmeetriate tekkimist</li>
+        </ul>
+
+        <h3>Vormisoleku kõndijad ja sportlased</h3>
+        <p><strong>Soorituseesmärgid:</strong></p>
+        <ul>
+          <li><strong>Rütm:</strong> 120–140 spm kiirkõnni jaoks; 140–180 spm võistluskõnni jaoks</li>
+          <li><strong>Kiirus:</strong> &gt;1.5 m/s (5.4 km/h) harrastajatele; &gt;2.0 m/s (7.2 km/h) võistlejatele</li>
+          <li><strong>Sümmeetria:</strong> &gt;97% (väga madal asümmeetria)</li>
+          <li><strong>Kahekordne toetus:</strong> Minimeerige 15–20%-le efektiivsuse tagamiseks</li>
+        </ul>
+
+        <h2 id="limitations">Tehnoloogia täpsus ja piirangud</h2>
+
+        <h3>Mida tarbeseadmed teevad hästi</h3>
+        <ul>
+          <li><strong>Sammude loendamine:</strong> 95–99% täpsus võrreldes uuringupedomeetritega</li>
+          <li><strong>Rütm:</strong> ±2–3 spm viga</li>
+          <li><strong>Kõndimiskiirus:</strong> r=0.86–0.91 korrelatsioon kliiniliste testidega</li>
+          <li><strong>Trendide tuvastamine:</strong> Suurepärane muutuste jälgimiseks ajas</li>
+        </ul>
+
+        <h3>Piirangud, mida mõista</h3>
+        <ul>
+          <li><strong>Mitte diagnostiline:</strong> Tarbeseadmed on sõeluuringu vahendid, mitte meditsiiniline diagnoos
+          </li>
+          <li><strong>Asukoht on oluline:</strong> iPhone'i tuleb kanda taskus/kotis; Apple Watchi randmel</li>
+          <li><strong>Sise- vs välistingimused:</strong> GPS-i täpsus mõjutab välimõõtmisi</li>
+          <li><strong>Individuaalsed erinevused:</strong> "Normaalsed" vahemikud on rahvastiku keskmised</li>
+          <li><strong>Ei asenda kliinilisi laboreid:</strong> Detailse 3D-kinemaatika ja jõuandmete jaoks on vaja
+            laboreid</li>
+        </ul>
+
+        <h3>Millal pöörduda professionaalse kõnnianalüüsi poole</h3>
+        <ul>
+          <li>Püsiv asümmeetria >10%</li>
+          <li>Kõndimiskiirus &lt;0.8 m/s ilma teadaoleva põhjuseta</li>
+          <li>Sagedased kukkumised või peaaegu-kukkumised</li>
+          <li>Krooniline valu kõndimise ajal või pärast seda</li>
+          <li>Äkilised muutused kõnnimõõdikutes</li>
+          <li>Neuroloogilised sümptomid (tuimus, surin, koordinatsiooniprobleemid)</li>
+        </ul>
+
+        <h2 id="next-steps">Järgmised sammud</h2>
+
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <h3>Kõnnitsoonid</h3>
+            <p>Siit saate teada, kuidas kasutada rütmi, et treenida optimaalse intensiivsusega tsoonides.</p>
+            <a href="/et/walking-zones/" class="btn btn-secondary">Loe tsoonide kohta →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Sammumehaanika</h3>
+            <p>Süvenege kõndimise biomehaanikasse, rühti ja käte liikumisse.</p>
+            <a href="/et/stride-mechanics/" class="btn btn-secondary">Avasta mehaanikat →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Teadusuuringud</h3>
+            <p>Vaadake teaduslikke tõendeid, mis toetavad kõnnianalüüsi ja kõnnimõõdikuid.</p>
+            <a href="/et/research/" class="btn btn-secondary">Vaata uuringuid →</a>
+          </div>
+
+          <div class="next-step-card">
+            <h3>Täielik bibliograafia</h3>
+            <p>Juurdepääs retsenseeritud viidetele koos otselinkidega väljaannetele.</p>
+            <a href="/et/bibliography/" class="btn btn-secondary">Vaata bibliograafiat →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Sisukord</h3>
+          <ul>
+            <li><a href="#what-is-gait">Mis on kõnnianalüüs?</a></li>
+            <li><a href="#key-metrics">Olulised mõõdikud</a>
+              <ul>
+                <li><a href="#cadence">Rütm</a></li>
+                <li><a href="#stride-length">Sammu pikkus</a></li>
+                <li><a href="#ground-contact">Kokkupuude maaga</a></li>
+                <li><a href="#double-support">Kahekordne toetus</a></li>
+                <li><a href="#asymmetry">Asümmeetria</a></li>
+                <li><a href="#walking-speed">Kõndimiskiirus</a></li>
+                <li><a href="#vertical-oscillation">Vertikaalne liikumine</a></li>
+              </ul>
+            </li>
+            <li><a href="#apple-metrics">Apple HealthKiti mõõdikud</a></li>
+            <li><a href="#interpreting">Analüüsi tõlgendamine</a></li>
+            <li><a href="#improving">Kõnni parandamine</a></li>
+            <li><a href="#special-populations">Eriraühmad</a></li>
+            <li><a href="#limitations">Täpsus ja piirangud</a></li>
+            <li><a href="#next-steps">Järgmised sammud</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Analüüsige oma kõndi</h3>
+          <p>Jälgige oma kõnni mehaanikat teaduspõhiste mõõdikute abil Walk Analyticsiga.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Laadi rakendus
+            alla</a>
+        </div>
+
+        <div class="info-box">
+          <h4>📊 Oluline teadmine</h4>
+          <p>Keskenduge <strong>rütmile ≥100 spm</strong> ja <strong>kiirusele ≥1.0 m/s</strong> kui oma peamistele
+            eesmärkidele.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-top">
+            <div class="footer-brand-section">
+                <h2>Walk Analytics</h2>
+                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+            <div class="footer-download">
+                <h3 class="footer-heading">Download</h3>
+                <div class="footer-badges">
+                    
+                    <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener" aria-label="Download on the App Store">
+                        <img src="/assets/images/badge-app-store.svg" alt="Download on the App Store" width="135" height="40" loading="lazy">
+                    </a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-languages">
+            <h3 class="footer-heading">Available in</h3>
+            <div class="lang-grid">
+                
+                <a href="/af/"
+                   class="lang-link"
+                   hreflang="af"
+                   >
+                    Afrikaans
+                </a>
+                
+                <a href="/am/"
+                   class="lang-link"
+                   hreflang="am"
+                   >
+                    አမ္ဟာ
+                </a>
+                
+                <a href="/ar/"
+                   class="lang-link"
+                   hreflang="ar"
+                   dir="rtl">
+                    العربية
+                </a>
+                
+                <a href="/bg/"
+                   class="lang-link"
+                   hreflang="bg"
+                   >
+                    Български
+                </a>
+                
+                <a href="/bn/"
+                   class="lang-link"
+                   hreflang="bn"
+                   >
+                    বাংলা
+                </a>
+                
+                <a href="/ca/"
+                   class="lang-link"
+                   hreflang="ca"
+                   >
+                    Català
+                </a>
+                
+                <a href="/cs/"
+                   class="lang-link"
+                   hreflang="cs"
+                   >
+                    Čeština
+                </a>
+                
+                <a href="/da/"
+                   class="lang-link"
+                   hreflang="da"
+                   >
+                    Dansk
+                </a>
+                
+                <a href="/de/"
+                   class="lang-link"
+                   hreflang="de"
+                   >
+                    Deutsch
+                </a>
+                
+                <a href="/el/"
+                   class="lang-link"
+                   hreflang="el"
+                   >
+                    Ελληνικά
+                </a>
+                
+                <a href="/en/"
+                   class="lang-link"
+                   hreflang="en"
+                   >
+                    English
+                </a>
+                
+                <a href="/es/"
+                   class="lang-link"
+                   hreflang="es"
+                   >
+                    Español
+                </a>
+                
+                <a href="/et/"
+                   class="lang-link active"
+                   hreflang="et"
+                   >
+                    Eesti
+                </a>
+                
+                <a href="/fa/"
+                   class="lang-link"
+                   hreflang="fa"
+                   dir="rtl">
+                    فارسی
+                </a>
+                
+                <a href="/fi/"
+                   class="lang-link"
+                   hreflang="fi"
+                   >
+                    Suomi
+                </a>
+                
+                <a href="/fr/"
+                   class="lang-link"
+                   hreflang="fr"
+                   >
+                    Français
+                </a>
+                
+                <a href="/gu/"
+                   class="lang-link"
+                   hreflang="gu"
+                   >
+                    ગુજરાતી
+                </a>
+                
+                <a href="/ha/"
+                   class="lang-link"
+                   hreflang="ha"
+                   >
+                    Hausa
+                </a>
+                
+                <a href="/he/"
+                   class="lang-link"
+                   hreflang="he"
+                   dir="rtl">
+                    עברית
+                </a>
+                
+                <a href="/hi/"
+                   class="lang-link"
+                   hreflang="hi"
+                   >
+                    हिन्दी
+                </a>
+                
+                <a href="/hr/"
+                   class="lang-link"
+                   hreflang="hr"
+                   >
+                    Hrvatski
+                </a>
+                
+                <a href="/hu/"
+                   class="lang-link"
+                   hreflang="hu"
+                   >
+                    Magyar
+                </a>
+                
+                <a href="/id/"
+                   class="lang-link"
+                   hreflang="id"
+                   >
+                    Bahasa Indonesia
+                </a>
+                
+                <a href="/is/"
+                   class="lang-link"
+                   hreflang="is"
+                   >
+                    Íslenska
+                </a>
+                
+                <a href="/it/"
+                   class="lang-link"
+                   hreflang="it"
+                   >
+                    Italiano
+                </a>
+                
+                <a href="/ja/"
+                   class="lang-link"
+                   hreflang="ja"
+                   >
+                    日本語
+                </a>
+                
+                <a href="/ko/"
+                   class="lang-link"
+                   hreflang="ko"
+                   >
+                    한국어
+                </a>
+                
+                <a href="/lt/"
+                   class="lang-link"
+                   hreflang="lt"
+                   >
+                    Lietuvių
+                </a>
+                
+                <a href="/lv/"
+                   class="lang-link"
+                   hreflang="lv"
+                   >
+                    Latviešu
+                </a>
+                
+                <a href="/ms/"
+                   class="lang-link"
+                   hreflang="ms"
+                   >
+                    Bahasa Melayu
+                </a>
+                
+                <a href="/my/"
+                   class="lang-link"
+                   hreflang="my"
+                   >
+                    မြန်မာ
+                </a>
+                
+                <a href="/nb/"
+                   class="lang-link"
+                   hreflang="nb"
+                   >
+                    Norsk Bokmål
+                </a>
+                
+                <a href="/nl/"
+                   class="lang-link"
+                   hreflang="nl"
+                   >
+                    Nederlands
+                </a>
+                
+                <a href="/pl/"
+                   class="lang-link"
+                   hreflang="pl"
+                   >
+                    Polski
+                </a>
+                
+                <a href="/pt/"
+                   class="lang-link"
+                   hreflang="pt"
+                   >
+                    Português
+                </a>
+                
+                <a href="/ro/"
+                   class="lang-link"
+                   hreflang="ro"
+                   >
+                    Română
+                </a>
+                
+                <a href="/ru/"
+                   class="lang-link"
+                   hreflang="ru"
+                   >
+                    Русский
+                </a>
+                
+                <a href="/sk/"
+                   class="lang-link"
+                   hreflang="sk"
+                   >
+                    Slovenčina
+                </a>
+                
+                <a href="/sl/"
+                   class="lang-link"
+                   hreflang="sl"
+                   >
+                    Slovenščina
+                </a>
+                
+                <a href="/sr/"
+                   class="lang-link"
+                   hreflang="sr"
+                   >
+                    Српски
+                </a>
+                
+                <a href="/sv/"
+                   class="lang-link"
+                   hreflang="sv"
+                   >
+                    Svenska
+                </a>
+                
+                <a href="/sw/"
+                   class="lang-link"
+                   hreflang="sw"
+                   >
+                    Kiswahili
+                </a>
+                
+                <a href="/ta/"
+                   class="lang-link"
+                   hreflang="ta"
+                   >
+                    தமிழ்
+                </a>
+                
+                <a href="/te/"
+                   class="lang-link"
+                   hreflang="te"
+                   >
+                    తెలుగు
+                </a>
+                
+                <a href="/th/"
+                   class="lang-link"
+                   hreflang="th"
+                   >
+                    ไทย
+                </a>
+                
+                <a href="/tl/"
+                   class="lang-link"
+                   hreflang="tl"
+                   >
+                    Tagalog
+                </a>
+                
+                <a href="/tr/"
+                   class="lang-link"
+                   hreflang="tr"
+                   >
+                    Türkçe
+                </a>
+                
+                <a href="/uk/"
+                   class="lang-link"
+                   hreflang="uk"
+                   >
+                    Українська
+                </a>
+                
+                <a href="/ur/"
+                   class="lang-link"
+                   hreflang="ur"
+                   dir="rtl">
+                    اردو
+                </a>
+                
+                <a href="/vi/"
+                   class="lang-link"
+                   hreflang="vi"
+                   >
+                    Tiếng Việt
+                </a>
+                
+                <a href="/zh/"
+                   class="lang-link"
+                   hreflang="zh"
+                   >
+                    中文
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Walk Analytics. Kõik õigused kaitstud
+            </p>
+            <ul class="footer-legal">
+                <li><a href="/et/privacy/">Privaatsus</a></li>
+                <li><a href="/et/terms/">Tingimused</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>See veebisait kasutab küpsiseid teie kogemuse parandamiseks.</p>
+            <a href="/et/privacy/" class="text-sm">Loe lähemalt</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Keeldu</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Nõustu</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="/assets/js/core.min.js" defer></script>
+  <script src="/assets/js/search.min.js" defer></script>
+
+  
+  
+  <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+
+</html>

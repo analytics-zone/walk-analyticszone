@@ -1,0 +1,2630 @@
+<!DOCTYPE html>
+<html lang="et" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Kõnnitreeningu koormuse juhend: WSS, nädalane maht ja taastumismõõdikud</title>
+  <meta name="description" content="Õppige kõnnitreeningu koormuse mõõdikuid. WSS-i arvutamine, nädalase mahu jälgimine, taastumise monitooring.">
+  <meta name="author" content="Albert Arnó">
+
+  
+  
+  <meta name="keywords" content="kõnnitreeningu koormus, WSS kalkulaator, nädalane kõnnimaht, kõnni vormi jälgimine">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/et/training-load/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2025-12-23T14:30:00Z">
+  <meta property="article:author" content="Albert Arnó">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/et/training-load/">
+  <meta property="og:title" content="Kõnnitreeningu koormuse juhend: WSS, nädalane maht ja taastumismõõdikud">
+  <meta property="og:description" content="Õppige kõnnitreeningu koormuse mõõdikuid. WSS-i arvutamine, nädalase mahu jälgimine, taastumise monitooring.">
+  
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:site_name" content="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/et/training-load/">
+  <meta name="twitter:title" content="Kõnnitreeningu koormuse juhend: WSS, nädalane maht ja taastumismõõdikud">
+  <meta name="twitter:description" content="Õppige kõnnitreeningu koormuse mõõdikuid. WSS-i arvutamine, nädalase mahu jälgimine, taastumise monitooring.">
+  
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/training-load/">
+  
+  <link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/training-load/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/training-load/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/training-load/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/training-load/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/training-load/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/training-load/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/training-load/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/training-load/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/training-load/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/training-load/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/training-load/">
+  
+  <link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/training-load/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/training-load/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/training-load/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/training-load/">
+  
+  <link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/training-load/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/training-load/">
+  
+  <link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/training-load/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/training-load/">
+  
+  <link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/training-load/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/training-load/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/training-load/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/training-load/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/training-load/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/training-load/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/training-load/">
+  
+  <link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/training-load/">
+  
+  <link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/training-load/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/training-load/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/training-load/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/training-load/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/training-load/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/training-load/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/training-load/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/training-load/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/training-load/">
+  
+  <link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/training-load/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/training-load/">
+  
+  <link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/training-load/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/training-load/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/training-load/">
+  
+  <link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/training-load/">
+  
+  <link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/training-load/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/training-load/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/training-load/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/training-load/">
+  
+  <link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/training-load/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/training-load/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/training-load/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/training-load/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/training-load/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0066CC">
+  <meta name="robots" content="index, follow">
+
+  
+  <style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="preload" href="/assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+
+  
+  
+
+  
+  
+
+  
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Kõnnitreeningu koormuse juhend: WSS, nädalane maht ja taastumismõõdikud",
+      "description": "Õppige kõnnitreeningu koormuse mõõdikuid. WSS-i arvutamine, nädalase mahu jälgimine, taastumise monitooring.",
+      "author": {
+        "@type": "Person",
+        "name": "Albert Arnó"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Walk Analytics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://walk.analyticszone.app/assets/images/logo.png"
+        }
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-12-23",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://walk.analyticszone.app/et/training-load/"
+      }
+    }
+  </script>
+  
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">Liigu sisu juurde</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/et/" class="site-logo">
+                <picture>
+                    <source srcset="/assets/images/logo-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+                    <img src="/assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <ul>
+                    
+                    <li>
+                        
+                        <a href="/et/" 
+                            aria-current="">
+                            Avaleht
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/getting-started/" class="nav-label">Õpi</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/getting-started/" 
+                                    aria-current="">
+                                    Alustamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-zones/" 
+                                    aria-current="">
+                                    Kõnnitsoonid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-analysis/" 
+                                    aria-current="">
+                                    Kõnnianalüüs
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/training-load/" class="active"
+                                    aria-current="page">
+                                    Treeningkoormus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/wss-calculator/" 
+                                    aria-current="">
+                                    WSS kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/research/" class="nav-label">Teadus</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/research/" 
+                                    aria-current="">
+                                    Uuringud
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/formulas/" 
+                                    aria-current="">
+                                    Valemid
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-efficiency/" 
+                                    aria-current="">
+                                    Kõnni efektiivsus
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/stride-mechanics/" 
+                                    aria-current="">
+                                    Sammumehaanika
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/walking-vs-running/" 
+                                    aria-current="">
+                                    Kõndimine vs jooksmine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/benchmarks/" 
+                                    aria-current="">
+                                    Võrdlusandmed
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/bibliography/" 
+                                    aria-current="">
+                                    Bibliograafia
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/for-health/" class="nav-label">Sulle</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/for-health/" 
+                                    aria-current="">
+                                    Terviseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-fitness/" 
+                                    aria-current="">
+                                    Vormi saavutamiseks
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-seniors/" 
+                                    aria-current="">
+                                    Eakatele
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/for-rehabilitation/" 
+                                    aria-current="">
+                                    Taastusraviks
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="has-submenu">
+                        
+                        
+                        <a href="/et/cadence-calculator/" class="nav-label">Tööriistad</a>
+                        
+                        <ul class="submenu">
+                            
+                            <li>
+                                <a href="/et/cadence-calculator/" 
+                                    aria-current="">
+                                    Rütmikalkulaator
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/gait-assessment/" 
+                                    aria-current="">
+                                    Kõnni hindamine
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="/et/vo2max-calculator/" 
+                                    aria-current="">
+                                    VO₂max kalkulaator
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    <li>
+                        
+                        <a href="/et/contact/" 
+                            aria-current="">
+                            Kontakt
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                        aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                    <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                </div>
+
+                
+                <select class="language-selector" id="language-select" aria-label="Vali keel">
+                    
+                    <option value="af" >
+                        Afrikaans
+                    </option>
+                    
+                    <option value="am" >
+                        አမ္ဟာ
+                    </option>
+                    
+                    <option value="ar" >
+                        العربية
+                    </option>
+                    
+                    <option value="bg" >
+                        Български
+                    </option>
+                    
+                    <option value="bn" >
+                        বাংলা
+                    </option>
+                    
+                    <option value="ca" >
+                        Català
+                    </option>
+                    
+                    <option value="cs" >
+                        Čeština
+                    </option>
+                    
+                    <option value="da" >
+                        Dansk
+                    </option>
+                    
+                    <option value="de" >
+                        Deutsch
+                    </option>
+                    
+                    <option value="el" >
+                        Ελληνικά
+                    </option>
+                    
+                    <option value="en" >
+                        English
+                    </option>
+                    
+                    <option value="es" >
+                        Español
+                    </option>
+                    
+                    <option value="et" selected>
+                        Eesti
+                    </option>
+                    
+                    <option value="fa" >
+                        فارسی
+                    </option>
+                    
+                    <option value="fi" >
+                        Suomi
+                    </option>
+                    
+                    <option value="fr" >
+                        Français
+                    </option>
+                    
+                    <option value="gu" >
+                        ગુજરાતી
+                    </option>
+                    
+                    <option value="ha" >
+                        Hausa
+                    </option>
+                    
+                    <option value="he" >
+                        עברית
+                    </option>
+                    
+                    <option value="hi" >
+                        हिन्दी
+                    </option>
+                    
+                    <option value="hr" >
+                        Hrvatski
+                    </option>
+                    
+                    <option value="hu" >
+                        Magyar
+                    </option>
+                    
+                    <option value="id" >
+                        Bahasa Indonesia
+                    </option>
+                    
+                    <option value="is" >
+                        Íslenska
+                    </option>
+                    
+                    <option value="it" >
+                        Italiano
+                    </option>
+                    
+                    <option value="ja" >
+                        日本語
+                    </option>
+                    
+                    <option value="ko" >
+                        한국어
+                    </option>
+                    
+                    <option value="lt" >
+                        Lietuvių
+                    </option>
+                    
+                    <option value="lv" >
+                        Latviešu
+                    </option>
+                    
+                    <option value="ms" >
+                        Bahasa Melayu
+                    </option>
+                    
+                    <option value="my" >
+                        မြန်မာ
+                    </option>
+                    
+                    <option value="nb" >
+                        Norsk Bokmål
+                    </option>
+                    
+                    <option value="nl" >
+                        Nederlands
+                    </option>
+                    
+                    <option value="pl" >
+                        Polski
+                    </option>
+                    
+                    <option value="pt" >
+                        Português
+                    </option>
+                    
+                    <option value="ro" >
+                        Română
+                    </option>
+                    
+                    <option value="ru" >
+                        Русский
+                    </option>
+                    
+                    <option value="sk" >
+                        Slovenčina
+                    </option>
+                    
+                    <option value="sl" >
+                        Slovenščina
+                    </option>
+                    
+                    <option value="sr" >
+                        Српски
+                    </option>
+                    
+                    <option value="sv" >
+                        Svenska
+                    </option>
+                    
+                    <option value="sw" >
+                        Kiswahili
+                    </option>
+                    
+                    <option value="ta" >
+                        தமிழ்
+                    </option>
+                    
+                    <option value="te" >
+                        తెలుగు
+                    </option>
+                    
+                    <option value="th" >
+                        ไทย
+                    </option>
+                    
+                    <option value="tl" >
+                        Tagalog
+                    </option>
+                    
+                    <option value="tr" >
+                        Türkçe
+                    </option>
+                    
+                    <option value="uk" >
+                        Українська
+                    </option>
+                    
+                    <option value="ur" >
+                        اردو
+                    </option>
+                    
+                    <option value="vi" >
+                        Tiếng Việt
+                    </option>
+                    
+                    <option value="zh" >
+                        中文
+                    </option>
+                    
+                </select>
+
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                
+                
+                <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="header-download-btn" target="_blank" rel="noopener"
+                    aria-label="Download on App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                    </svg>
+                    <span class="download-text">Download</span>
+                </a>
+                
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menüü lüliti"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+        <ol>
+            
+            <li>
+                
+                <a href="/et/">Avaleht</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="/et/getting-started/">Õpi</a>
+                
+            </li>
+            
+            <li>
+                
+                <span aria-current="page">Treeningkoormus</span>
+                
+            </li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+  
+  <main id="main-content" class="main-content">
+    <!-- Treeningkoormuse juhend -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/et/">Avaleht</a> / <a href="/et/#learn">Loe lähemalt</a> / Treeningkoormus
+    </div>
+    <h1>Kõnnitreeningu koormuse juhtimine</h1>
+    <p class="lead">Teaduslik lähenemine treeningstiimuli, kohanemise ja taastumise tasakaalustamisele</p>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-content">
+
+        <!-- Sissejuhatus -->
+        <h2 id="intro">Mis on treeningkoormus?</h2>
+
+        <p><strong>Treeningkoormus</strong> kvantifitseerib kumulatiivset füsioloogilist stressi, mida keha
+          kõnnitreeningute käigus kogeb. See ühendab kolm peamist mõõdet:</p>
+
+        <ol>
+          <li><strong>Kestus:</strong> Kui kaua sa kõnnid</li>
+          <li><strong>Intensiivsus:</strong> Kui tugevalt sa kõnnid (sammusagedus, pulss, kiirus)</li>
+          <li><strong>Sagedus:</strong> Kui tihti sa kõnnid</li>
+        </ol>
+
+        <p>Treeningkoormuse õige juhtimine võimaldab järjepidevat arengut, minimeerides samal ajal vigastuste ohtu ja
+          ületreeningut. Erinevalt igapäevasest liikumisest, nõuab <strong>treeningule suunatud kõndimine</strong>
+          süstemaatilist progressiooni ja taastumise planeerimist.</p>
+
+        <div class="key-finding">
+          <strong>Uuringu tulemus:</strong> Seos treeningkoormuse ja kohanemise vahel järgib ümberpööratud U-kujulist
+          kõverat: liiga väike koormus ei tekita kohanemist, optimaalne koormus soodustab arengut ning liigne koormus
+          viib ületreeningu ja vigastusteni (Soligard jt, 2016).
+        </div>
+
+        <!-- Peak-30 sammusagedus -->
+        <h2 id="peak30">Peak-30 sammusagedus: Läbimurdeline näitaja</h2>
+
+        <p>Hiljutised uuringud on tuvastanud, et <strong>Peak-30 sammusagedus</strong> on võimas tervisetulemuste ja
+          suremusriski ennustaja, sõltumata päevaste sammude koguarvust.</p>
+
+        <h3>Mis on Peak-30 sammusagedus?</h3>
+
+        <p><strong>Peak-30 sammusagedus</strong> on keskmine sammusagedus (sammud minutis) sinu <strong>päeva parima 30
+            järjestikuse minuti</strong> jooksul. See näitaja peegeldab sinu võimet säilitada eesmärgipärast reibast
+          kõndi.</p>
+
+        <div class="key-finding">
+          <strong>Läbimurdeline uuring:</strong> Del Pozo-Cruz jt (2022) analüüsisid 78 500 UK Biobanki osalejat ja
+          leidsid, et Peak-30 sammusagedus ennustas sõltumatult üldsuremust ja südame-veresoonkonna haiguste riski,
+          isegi pärast sammude üldarvu arvestamist.
+        </div>
+
+        <h3>Peak-30 sammusageduse lävendid ja tervisemõju</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Peak-30 sammusagedus</th>
+                <th>Klassifikatsioon</th>
+                <th>Suremusrisk</th>
+                <th>Tervislik seisund</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;60 sammu/min</td>
+                <td>Väga madal</td>
+                <td>Võrdlustase (kõrgeim)</td>
+                <td>Isuv eluviis</td>
+              </tr>
+              <tr>
+                <td>60–79 sammu/min</td>
+                <td>Madal</td>
+                <td>~15% madalam risk</td>
+                <td>Tavaline jalutamine</td>
+              </tr>
+              <tr>
+                <td>80–99 sammu/min</td>
+                <td>Mõõdukas</td>
+                <td>~30% madalam risk</td>
+                <td>Regulaarne kõndimine</td>
+              </tr>
+              <tr>
+                <td>100–109 sammu/min</td>
+                <td>Reibas</td>
+                <td>~40% madalam risk</td>
+                <td>Vormile orienteeritud</td>
+              </tr>
+              <tr>
+                <td>≥110 sammu/min</td>
+                <td>Väga reibas</td>
+                <td>~50% madalam risk</td>
+                <td>Kõrge treenitus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Oluline teadmine:</strong> Peak-30 sammusagedus ≥100 sammu/min vastab <strong>mõõdukale kuni tugevale
+            kehalisele aktiivsusele</strong> (MVPA) ja tähistab läve märkimisväärse tervisliku kasu saavutamiseks.</p>
+
+        <h3>Mõju treeningule</h3>
+
+        <p>Peak-30 sammusagedus annab praktilisi juhiseid treeninguks:</p>
+
+        <ul>
+          <li><strong>Eesmärkide seadmine:</strong> Püüa saavutada Peak-30 sammusagedus 100+ sammu/min vähemalt 5 päeval
+            nädalas</li>
+          <li><strong>Treeningu ülesehitus:</strong> Lisa igapäevastesse kõndidesse vähemalt üks 30-minutiline reibas
+            lõik</li>
+          <li><strong>Arengu jälgimine:</strong> Jälgi Peak-30 sammusageduse tõusu vastupidavuse paranedes</li>
+          <li><strong>Intensiivsuse määramine:</strong> Kasuta praktilisemaks treeninguks sammusageduse tsoone pulsi
+            asemel</li>
+        </ul>
+
+        <!-- Reibad sessioonid -->
+        <h2 id="brisk-bouts">Reibad sessioonid: Kvaliteet üle kvantiteedi</h2>
+
+        <p><strong>Reibas sessioon</strong> (brisk bout) on pidev kõndimisperiood sagedusega ≥100 sammu minutis (mõõduka
+          intensiivsuse lävi), mis kestab vähemalt 10 minutit, ilma et sammusagedus langeks alla läve kauemaks kui 1–2
+          minutiks.</p>
+
+        <h3>Teaduslik põhjendus</h3>
+
+        <p>2018. aasta USA kehalise aktiivsuse juhised eemaldasid varasema nõude, et aeroobne tegevus peab toimuma
+          vähemalt 10-minutiliste sessioonidena. Siiski näitavad uuringud, et <strong>pidevad reibad sessioonid</strong>
+          pakuvad unikaalseid eeliseid:</p>
+
+        <ul>
+          <li><strong>Südame-veresoonkonna kohanemine:</strong> Püsivalt tõusnud pulss soodustab aeroobset arengut</li>
+          <li><strong>Metaboolne efektiivsus:</strong> 10+ minutit võimaldab metaboolsetel radadel täielikult käivituda
+          </li>
+          <li><strong>Tehnika arendamine:</strong> Püsiv kõrgem sammusagedus parandab kõnnimehaanikat</li>
+          <li><strong>Psühholoogiline kasu:</strong> Teadlik "treeningu" mõtteviis vs. juhuslik liikumine</li>
+        </ul>
+
+        <h3>Iganädalased reibaste sessioonide eesmärgid</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Treenituse tase</th>
+                <th>Reibad minutid nädalas</th>
+                <th>Sessioonide arv</th>
+                <th>Näidiskava</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Algaja</strong></td>
+                <td>75–100 min</td>
+                <td>3–4 sessiooni, 20–30 min</td>
+                <td>E/K/R: 25 min igaüks</td>
+              </tr>
+              <tr>
+                <td><strong>Kesktase</strong></td>
+                <td>150–200 min</td>
+                <td>5–6 sessiooni, 25–40 min</td>
+                <td>Iga päev 30 min + 1 pikk nädalavahetuse kõnd</td>
+              </tr>
+              <tr>
+                <td><strong>Edasijõudnu</strong></td>
+                <td>200–300+ min</td>
+                <td>5–7 sessiooni, 30–60 min</td>
+                <td>Iga päev 40 min + intervallid + pikk kõnd</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Rahvatervise juhiste täitmine:</strong> 150 minutit mõõduka intensiivsusega tegevust nädalas
+          (sammusagedus 100+ sammu/min) vastab WHO ja CDC soovitustele tervisliku kasu saamiseks.</p>
+
+        <h3>Reiba sessiooni kvaliteedinäitajad</h3>
+
+        <p>Mitte kõik reibad sessioonid ei ole võrdsed. Kvaliteeti saab hinnata järgmiste näitajate abil:</p>
+
+        <ol>
+          <li><strong>Sammusageduse stabiilsus:</strong> Minimaalne kõikumine sihtsammusageduse ümber (±5 sammu/min)
+          </li>
+          <li><strong>Kestus:</strong> Pikemad pidevad sessioonid (30–45 min) > mitu lühikest sessiooni</li>
+          <li><strong>Intensiivsus:</strong> Kõrgem keskmine sammusagedus sessiooni jooksul (110 sammu/min > 100
+            sammu/min)</li>
+          <li><strong>Järjepidevus:</strong> Reibaste sessioonide sagedus nädalas (5–7 päeva > 3 päeva)</li>
+        </ol>
+
+        <!-- Kõnni stressiskoor -->
+        <h2 id="wss">Kõnni stressiskoor (WSS)</h2>
+
+        <p><strong>Kõnni stressiskoor (WSS)</strong> on spetsiaalne näitaja, mis kvantifitseerib üksikute treeningute
+          koormust. See kohandab jalgrattasõidus ja jooksmises kasutatava treeningstressi skoori (TSS) kontseptsioone.
+        </p>
+
+        <h3>WSS-i arvutusmeetodid</h3>
+
+        <p>WSS-i saab arvutada kas <strong>pulsi</strong> või <strong>sammusageduse</strong> põhjal:</p>
+
+        <h4>Meetod 1: Pulsipõhine WSS</h4>
+
+        <p>Ajas kaalutud vastavalt pulsitsoonile:</p>
+
+        <div class="formula-box">
+          <pre>WSS = Σ (Minutid tsoonis × tsooni kordaja)
+
+Tsoonide kordajad:
+  Tsoon 1 (50–60% max pulss): 1,0
+  Tsoon 2 (60–70% max pulss): 2,0
+  Tsoon 3 (70–80% max pulss): 3,0
+  Tsoon 4 (80–90% max pulss): 4,0
+  Tsoon 5 (90–100% max pulss): 5,0</pre>
+        </div>
+
+        <p><strong>Näide:</strong> 60-minutiline kõnd:</p>
+        <ul>
+          <li>10 min soojendust 1. tsoonis = 10 × 1,0 = 10</li>
+          <li>40 min põhiosa 2. tsoonis = 40 × 2,0 = 80</li>
+          <li>10 min lõdvestust 1. tsoonis = 10 × 1,0 = 10</li>
+          <li><strong>Kokku WSS = 100</strong></li>
+        </ul>
+
+        <h4>Meetod 2: Sammusagedusepõhine WSS</h4>
+
+        <p>Ajas kaalutud vastavalt sammusageduse intensiivsusele:</p>
+
+        <div class="formula-box">
+          <pre>WSS = Σ (Minutid rütmis × rütmi kordaja)
+
+Rütmi kordajad:
+  60–99 sammu/min (kerge): 1,0
+  100–109 sammu/min (mõõdukas): 2,5
+  110–119 sammu/min (mõõd-tugev): 3,5
+  120–129 sammu/min (tugev): 4,5
+  ≥130 sammu/min (väga tugev): 6,0</pre>
+        </div>
+
+        <p><strong>Eelis:</strong> Sammusagedusepõhine WSS ei nõua pulsiandurit ja on enamikule kõndijatele praktilisem.
+        </p>
+
+        <h3>Tüüpilised WSS väärtused treeningutüübi järgi</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Treeningu tüüp</th>
+                <th>Kestus</th>
+                <th>Keskmine intensiivsus</th>
+                <th>Tüüpiline WSS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Taastav kõnd</td>
+                <td>20–30 min</td>
+                <td>Tsoon 1, &lt;100 sammu/min</td>
+                <td>20–30</td>
+              </tr>
+              <tr>
+                <td>Kerge aeroobne kõnd</td>
+                <td>30–45 min</td>
+                <td>Tsoon 2, 100–105 sammu/min</td>
+                <td>60–90</td>
+              </tr>
+              <tr>
+                <td>Reibas püsiv kõnd</td>
+                <td>45–60 min</td>
+                <td>Tsoon 2, 105–110 sammu/min</td>
+                <td>90–150</td>
+              </tr>
+              <tr>
+                <td>Tempokõnd</td>
+                <td>30–40 min</td>
+                <td>Tsoon 3, 110–120 sammu/min</td>
+                <td>90–140</td>
+              </tr>
+              <tr>
+                <td>Intervalltreening</td>
+                <td>40–50 min</td>
+                <td>Erinevad tsoonid, tipud 120+ lp/m</td>
+                <td>120–200</td>
+              </tr>
+              <tr>
+                <td>Pikk vastupidavuskõnd</td>
+                <td>90–120 min</td>
+                <td>Tsoon 2, 100–110 sammu/min</td>
+                <td>180–300</td>
+              </tr>
+              <tr>
+                <td>Kiirkõnni treening</td>
+                <td>60–90 min</td>
+                <td>Tsoon 3–4, 120–140 sammu/min</td>
+                <td>200–400</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Iganädalane treeningkoormus -->
+        <h2 id="weekly-load">Iganädalased treeningkoormuse juhised</h2>
+
+        <p>Nädala treeningkoormus peaks olema individuaalne, tuginedes treenitusele, eesmärkidele ja vabale ajale.
+          Paindlikkuse huvides on juhised esitatud nii <strong>WSS</strong>-i kui ka <strong>reibaste minutite</strong>
+          kohta.</p>
+
+        <h3>Algaja (0–6 kuud treeningkogemust)</h3>
+
+        <ul>
+          <li><strong>Nädala WSS:</strong> 150–300</li>
+          <li><strong>Reibad minutid (≥100 sammu/min):</strong> 75–120 min/nädalas</li>
+          <li><strong>Kogu kõndimisaeg:</strong> 120–200 min/nädalas</li>
+          <li><strong>Peak-30 eesmärk:</strong> 90–100 sammu/min</li>
+          <li><strong>Treeningud nädalas:</strong> 4–5</li>
+          <li><strong>Fookus:</strong> Järjepidevus, harjumuse tekitamine, tehnika arendamine</li>
+          <li><strong>Progressioon:</strong> Suurenda koormust 5–10% nädalas</li>
+        </ul>
+
+        <p><strong>Näidisnädal (Kogu WSS: 250):</strong></p>
+        <ul>
+          <li>E: 30 min kergelt, 100 sammu/min (WSS 50)</li>
+          <li>T: Puhkus või kerge 20 min jalutuskäik</li>
+          <li>K: 35 min reibast kõndi, 105 sammu/min (WSS 70)</li>
+          <li>N: 25 min kergelt, 95 sammu/min (WSS 40)</li>
+          <li>R: Puhkus</li>
+          <li>L: 45 min püsivalt, 102 sammu/min (WSS 90)</li>
+          <li>P: Kerge 20–30 min</li>
+        </ul>
+
+        <h3>Kesktase (6–18 kuud treeningkogemust)</h3>
+
+        <ul>
+          <li><strong>Nädala WSS:</strong> 300–550</li>
+          <li><strong>Reibad minutid (≥100 sammu/min):</strong> 150–250 min/nädalas</li>
+          <li><strong>Kogu kõndimisaeg:</strong> 250–400 min/nädalas</li>
+          <li><strong>Peak-30 eesmärk:</strong> 105–115 sammu/min</li>
+          <li><strong>Treeningud nädalas:</strong> 5–6</li>
+          <li><strong>Fookus:</strong> Aeroobse võimekuse loomine, kiirusvastupidavus, intervallide lisamine</li>
+          <li><strong>Progressioon:</strong> Suurenda koormust 10% nädalas, koos taastumisnädalatega</li>
+        </ul>
+
+        <p><strong>Näidisnädal (Kogu WSS: 420):</strong></p>
+        <ul>
+          <li>E: 40 min püsivalt, 108 sammu/min (WSS 100)</li>
+          <li>T: 30 min kerge taastumine, 95 sammu/min (WSS 45)</li>
+          <li>K: 45 min intervalle (5×4 min @ 120 sammu/min / 3 min kergelt) (WSS 130)</li>
+          <li>N: 35 min kergelt, 100 sammu/min (WSS 60)</li>
+          <li>R: Puhkus või 20 min kerge kõnd</li>
+          <li>L: 75 min pikk kõnd, 105 sammu/min (WSS 150)</li>
+          <li>P: 30 min kerge taastumine (WSS 40)</li>
+        </ul>
+
+        <h3>Edasijõudnu (18+ kuud treeningkogemust)</h3>
+
+        <ul>
+          <li><strong>Nädala WSS:</strong> 500–900+</li>
+          <li><strong>Reibad minutid (≥100 sammu/min):</strong> 250–400+ min/nädalas</li>
+          <li><strong>Kogu kõndimisaeg:</strong> 400–700+ min/nädalas</li>
+          <li><strong>Peak-30 eesmärk:</strong> 115–130+ sammu/min</li>
+          <li><strong>Treeningud nädalas:</strong> 6–7</li>
+          <li><strong>Fookus:</strong> Sooritus, võistlemine, kiirkõnni tehnika</li>
+          <li><strong>Progressioon:</strong> Periodiseeritud koos selgete treeningfaasidega</li>
+        </ul>
+
+        <p><strong>Näidisnädal (Kogu WSS: 720):</strong></p>
+        <ul>
+          <li>E: 50 min püsivalt, 110 sammu/min (WSS 120)</li>
+          <li>T: 40 min kergelt, 100 sammu/min (WSS 70)</li>
+          <li>K: 60 min tempokõndi (40 min @ 115–120 sammu/min) (WSS 180)</li>
+          <li>N: 35 min taastavat kõndi, 95 sammu/min (WSS 50)</li>
+          <li>R: 50 min intervalle (10×2 min @ 130+ sammu/min / 2 min kergelt) (WSS 180)</li>
+          <li>L: 90 min pikk kõnd, 108 sammu/min (WSS 200)</li>
+          <li>P: 40 min kergelt (WSS 60)</li>
+        </ul>
+
+        <!-- Akuutse ja kroonilise koormuse suhe -->
+        <h2 id="acwr">Akuutse ja kroonilise koormuse suhe (ACWR)</h2>
+
+        <p><strong>Akuutse ja kroonilise koormuse suhe</strong> on võimas tööriist vigastusriski juhtimiseks, võrreldes
+          viimase aja treeningkoormust (akuutne) pikaajalise treeningkoormusega (krooniline).</p>
+
+        <h3>Arvutamine</h3>
+
+        <div class="formula-box">
+          <pre>ACWR = Akuutne koormus (7 päeva) / Krooniline koormus (28 päeva keskmine)
+
+Näide:
+  Viimase 7 päeva WSS: 450
+  Eelmise 28 päeva keskmine: 380
+  ACWR = 450 / 380 = 1,18</pre>
+        </div>
+
+        <h3>ACWR tõlgendamine</h3>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>ACWR vahemik</th>
+                <th>Vigastusrisk</th>
+                <th>Treeningstaatus</th>
+                <th>Tegevus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;0,80</td>
+                <td>Madal-Mõõdukas</td>
+                <td>Vajakajääk koormuses</td>
+                <td>Kaalu koormuse tõstmist</td>
+              </tr>
+              <tr>
+                <td>0,80–1,00</td>
+                <td>Madal</td>
+                <td>Stabiilne treening</td>
+                <td>Hoia praegust koormust</td>
+              </tr>
+              <tr>
+                <td>1,00–1,30</td>
+                <td>Madal</td>
+                <td>Optimaalne progressioon</td>
+                <td>Arengu "magus punkt"</td>
+              </tr>
+              <tr>
+                <td>1,30–1,50</td>
+                <td>Mõõdukas</td>
+                <td>Kiire tõus</td>
+                <td>Jälgi väsimuse märke</td>
+              </tr>
+              <tr>
+                <td>&gt;1,50</td>
+                <td>Kõrge</td>
+                <td>Ohtlik piir</td>
+                <td>Vähenda koormust, taastu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="key-finding">
+          <strong>Uuringu tulemus:</strong> Sportlastel, kelle ACWR on suurem kui 1,50, on 2–4 korda suurem vigastusrisk
+          võrreldes neiga, kes jäävad vahemikku 0,80–1,30 (Gabbett, 2016). See põhimõte kehtib ka kõndimise puhul.
+        </div>
+
+        <h3>Praktiline rakendamine</h3>
+
+        <p><strong>Stsenaarium 1: Naasmine pärast haigust</strong></p>
+        <ul>
+          <li>Nädal enne haigust: 400 WSS</li>
+          <li>Puudutud 10 päeva (28 päeva keskmine langeb 285-le)</li>
+          <li>Ära hüppa kohe tagasi 400 peale (ACWR = 1,40)</li>
+          <li>Selle asemel: Alusta uuesti 250–300 WSS-iga (ACWR = 0,88–1,05)</li>
+        </ul>
+
+        <p><strong>Stsenaarium 2: Ambitsioonikas areng</strong></p>
+        <ul>
+          <li>Praegune 4 nädala keskmine: 350 WSS/nädalas</li>
+          <li>Järgmise nädala plaan: 500 WSS</li>
+          <li>ACWR oleks 1,43 (mõõdukas kuni kõrge risk)</li>
+          <li>Parem valik: 420–450 WSS (ACWR 1,20–1,29)</li>
+        </ul>
+
+        <!-- Treeningkoormuse progressioon -->
+        <h2 id="progression">Treeningkoormuse progressiooni strateegiad</h2>
+
+        <h3>10% reegel (koos nüanssidega)</h3>
+
+        <p>Traditsiooniline <strong>10% reegel</strong> soovitab suurendada nädala treeningmahtu mitte rohkem kui 10%
+          nädalas. Kuigi see on kasulik juhis, viitavad tänapäevased uuringud nüansirikkamatele lähenemistele:</p>
+
+        <ul>
+          <li><strong>Algajatele:</strong> 5–10% iganädalased tõusud on asjakohased</li>
+          <li><strong>Kogemustega kõndijatele:</strong> 10–15% tõusud on talutavad, kui ACWR jääb &lt;1,30</li>
+          <li><strong>Pärast pause:</strong> Aeglasem progressioon (5%) on turvalisem</li>
+          <li><strong>Kõrge koormuse ajal:</strong> Säilita või vähenda koormust, selle asemel et edasi tõsta</li>
+        </ul>
+
+        <h3>Periodiseerimine: 3:1 mudel</h3>
+
+        <p>Teaduspõhine progressioonimudel vaheldab <strong>3 nädalat kasvavat koormust</strong> <strong>1
+            taastumisnädalaga</strong>:</p>
+
+        <p><strong>Näidis 8-nädalasest blokist (alustades 300 WSS-iga):</strong></p>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Nädal</th>
+                <th>Nädala WSS</th>
+                <th>Muutus</th>
+                <th>Faas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>300</td>
+                <td>Baastase</td>
+                <td>Loomine</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>330</td>
+                <td>+10%</td>
+                <td>Loomine</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>365</td>
+                <td>+11%</td>
+                <td>Loomine</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>220</td>
+                <td>-40%</td>
+                <td><strong>Taastumine</strong></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>400</td>
+                <td>+10%</td>
+                <td>Loomine</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>440</td>
+                <td>+10%</td>
+                <td>Loomine</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>485</td>
+                <td>+10%</td>
+                <td>Loomine</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>290</td>
+                <td>-40%</td>
+                <td><strong>Taastumine</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Taastumisnädalate eelised:</strong></p>
+        <ul>
+          <li>Võimaldab füsioloogilist kohanemist (superkompensatsioon)</li>
+          <li>Täidab glükogeenivarusid</li>
+          <li>Taastab kudedes tekkinud mikrokahjustusi</li>
+          <li>Vähendab kuhjunud väsimust</li>
+          <li>Värskendab motivatsiooni ja vaimset energiat</li>
+          <li>Valmistab keha ette järgmiseks treeningblokiks</li>
+        </ul>
+
+        <h3>Blokkperiodiseerimine</h3>
+
+        <p>Edasijõudnud kõndijad võiksid treeningu jagada selgeteks <strong>mesotsükliteks</strong> (4–8-nädalased
+          blokid):</p>
+
+        <p><strong>Aastase periodiseerimise näide:</strong></p>
+
+        <ol>
+          <li>
+            <strong>Baasfaas (8–12 nädalat):</strong>
+            <ul>
+              <li>Fookus: Aeroobse baasi loomine 2. tsooni mahuga</li>
+              <li>Nädala WSS: 400–550</li>
+              <li>80% ajast sammusagedusel 100–110 sammu/min</li>
+              <li>Pikad kõnnid kasvavad 60-st 120 minutini</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Ehitusfaas (6–8 nädalat):</strong>
+            <ul>
+              <li>Fookus: 3. tsooni tempotöö ja lühikeste intervallide lisamine</li>
+              <li>Nädala WSS: 500–650</li>
+              <li>70% tsoon 2, 20% tsoon 3, 10% tsoon 4</li>
+              <li>2 kvaliteetset treeningut nädalas</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Tippfaas (4–6 nädalat):</strong>
+            <ul>
+              <li>Fookus: Kõrge intensiivsus, võistlusspetsiifiline töö</li>
+              <li>Nädala WSS: 550–750</li>
+              <li>Võistlustempos intervallid ja simulatsioonid</li>
+              <li>Säilita teatud määral kerget mahtu</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Vormi realiseerimine/Tapering (1–2 nädalat):</strong>
+            <ul>
+              <li>Fookus: Mahu vähendamine, intensiivsuse säilitamine</li>
+              <li>Nädala WSS: 200–350 (50% vähendamine)</li>
+              <li>Jäta 1–2 lühikest ja kiiret sessiooni</li>
+              <li>Prioritiseeri puhkust ja valmisolekut</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Taastumine/Üleminek (2–4 nädalat):</strong>
+            <ul>
+              <li>Fookus: Aktiivne taastumine, üldfüüsiline ettevalmistus</li>
+              <li>Nädala WSS: 150–300</li>
+              <li>Kogu kõndimine on vaba ja kerge, puudub struktuur</li>
+              <li>Vaimne ja füüsiline uuenemine</li>
+            </ul>
+          </li>
+        </ol>
+
+        <!-- Treeningkoormuse jälgimine -->
+        <h2 id="monitoring">Treeningkoormuse jälgimine ja kohandamine</h2>
+
+        <h3>Objektiivsed näitajad</h3>
+
+        <p><strong>Jälgi neid igapäevaselt või iganädalaselt:</strong></p>
+
+        <ol>
+          <li>
+            <strong>Puhkepulss (RHR):</strong>
+            <ul>
+              <li>Mõõda ärgates, enne voodist välja tulemist</li>
+              <li>Jälgi 7 päeva jooksvat keskmist</li>
+              <li>Tõus 5–10 lööki minutis viitab puudulikule taastumisele</li>
+              <li>Püsiv tõus (>1 nädal) tähistab ületreeningu ohtu</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Südame löögisageduse varieeruvus (HRV):</strong>
+            <ul>
+              <li>Kõrgem HRV = parem taastumine ja valmisolek</li>
+              <li>Laskumine >10% baastasemest = vähenenud valmisolek</li>
+              <li>Kasuta rakendust nagu Elite HRV, HRV4Training või vastavat nutiseadet</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Peak-30 sammusagedus:</strong>
+            <ul>
+              <li>Jälgi igapäevaselt, et hinnata võimet säilitada intensiivsust</li>
+              <li>Langev trend võib viidata kuhjunud väsimusele</li>
+              <li>Kasuta valmisoleku indikaatorina enne treeningut</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Kõnnikiirus standardsel pingutusel:</strong>
+            <ul>
+              <li>Igakuine test: 20–30 min ühtlasel tajutud pingutusel</li>
+              <li>Paranev kiirus samal pingutusel = positiivne kohanemine</li>
+              <li>Langev kiirus = ebapiisav taastumine või ületreening</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Subjektiivsed näitajad</h3>
+
+        <p><strong>Igapäevane heaolu küsimustik (hinda igat punkti 1–5):</strong></p>
+
+        <ol>
+          <li><strong>Une kvaliteet:</strong> 1 = kohutav, 5 = suurepärane</li>
+          <li><strong>Väsimuse tase:</strong> 1 = kurnatud, 5 = energiat täis</li>
+          <li><strong>Lihasvalu:</strong> 1 = väga valus, 5 = valu puudub</li>
+          <li><strong>Tuju/motivatsioon:</strong> 1 = halb, 5 = väga hea</li>
+          <li><strong>Stressitase:</strong> 1 = väga kõrge, 5 = väga madal</li>
+        </ol>
+
+        <p><strong>Heaolu koondskoori tõlgendamine:</strong></p>
+        <ul>
+          <li><strong>20–25:</strong> Suurepärane valmisolek, jätka plaanitud treeninguga</li>
+          <li><strong>15–19:</strong> Hea valmisolek, treeni plaanipäraselt või veidi kergemalt</li>
+          <li><strong>10–14:</strong> Mõõdukas mure, kaalu kergemat päeva või lühemat sessiooni</li>
+          <li><strong>5–9:</strong> Halb valmisolek, tee päev väga kergeks või võta puhkepäev</li>
+        </ul>
+
+        <h3>Märgid sobivast treeningkoormusest</h3>
+
+        <ul>
+          <li>Energiline tunne ja motivatsioon enamikuks kõndideks</li>
+          <li>Järk-järguline soorituse paranemine nädalate ja kuude jooksul</li>
+          <li>Stabiilne une kvaliteet (7–9 tundi, tunned end puhanuna)</li>
+          <li>Stabiilne või paranev puhkepulss</li>
+          <li>Minimaalne lihasvalu peale 24–48 tundi peale treeningut</li>
+          <li>Säilinud entusiasm kõndimise vastu</li>
+          <li>Võime saavutada sihttempot ja -sammusagedust järjepidevalt</li>
+        </ul>
+
+        <h3>Ohu märgid liigsest treeningkoormusest</h3>
+
+        <ul>
+          <li><strong>Sooritus:</strong> Langev kiirus, võimetus saavutada sihtsammusagedust, tõusnud tajutud pingutus
+          </li>
+          <li><strong>Füsioloogiline:</strong> Tõusnud puhkepulss (5–10+ l/min üle baastaseme), vähenenud HRV, püsiv
+            väsimus vaatamata puhkusele</li>
+          <li><strong>Lihas-skeleti süsteem:</strong> Püsiv lihasvalu, mitmed pisivigastused, sagenenud vigastused</li>
+          <li><strong>Psühholoogiline:</strong> Motivatsioonilangus, ärrituvus, tujukõikumised, raskused keskendumisel
+          </li>
+          <li><strong>Uni:</strong> Raskused uinumisel, sagedane ärkamine, ei tunne end puhanuna ka pärast piisavat
+            unetundide arvu</li>
+          <li><strong>Immuunsüsteem:</strong> Sagedased külmetushaigused või infektsioonid, aeglane paranemine
+            pisivigastustest</li>
+        </ul>
+
+        <p><strong>Tegevuskava ohumärkide ilmnemisel:</strong></p>
+        <ol>
+          <li>Vähenda koheselt treeningkoormust 30–50%</li>
+          <li>Keskendu ainult kergetele ja nauditavatele kõndidele</li>
+          <li>Prioritiseeri und (sihi 8–9 tundi)</li>
+          <li>Vaata üle toitumine ja veetarbimine</li>
+          <li>Kaalu treeninguvälist stressi (töö, elu) ja maanda seda võimalusel</li>
+          <li>Kvisümptomid püsivad üle nädala, konsulteeri tervishoiutöötajaga</li>
+        </ol>
+
+        <!-- Intensiivsuse jaotus -->
+        <h2 id="intensity">Intensiivsuse jaotuse mudelid</h2>
+
+        <p>See, kuidas sa jaotad treeningu intensiivsust nädala jooksul, mõjutab oluliselt kohanemist ja sooritust.
+          Kasutatakse kahte peamist mudelit:</p>
+
+        <h3>Polariseeritud treening (80/20 mudel)</h3>
+
+        <p><strong>80/20 mudel</strong> jagab treeningaja madala ja kõrge intensiivsuse vahel, minimiseerides mõõdukat
+          intensiivsust:</p>
+
+        <ul>
+          <li><strong>80% kerge (Tsoon 1–2):</strong> 95–105 sammu/min, vestlust võimaldav tempo</li>
+          <li><strong>0–5% mõõdukas (Tsoon 3):</strong> Minimaalne aeg 110–120 sammu/min juures</li>
+          <li><strong>15–20% tugev (Tsoon 4–5):</strong> 120+ sammu/min intervallid ja tempo</li>
+        </ul>
+
+        <p><strong>Põhjendus:</strong> Maksimeerib aeroobset arengut (kerge maht), pakkudes samal ajal soorituse jaoks
+          vajalikku kõrge intensiivsusega stiimulit, vältides liigse mõõduka tööga kuhjuvat väsimust.</p>
+
+        <p><strong>Sobib kõige paremini:</strong> Edasijõudnud kõndijatele, kiirkõndijatele, sooritusele orienteeritud
+          treeninguks</p>
+
+        <p><strong>Näidisnädal (300 min kokku):</strong></p>
+        <ul>
+          <li>240 min kergelt (80%): Igapäevased 30–40 min kerged kõnnid + pikk nädalavahetuse jalutuskäik</li>
+          <li>60 min tugevalt (20%): 2× intervall/tempotreeningut nädalas</li>
+        </ul>
+
+        <h3>Püramidaalne treening (60/30/10 mudel)</h3>
+
+        <p><strong>Püramidaalne mudel</strong> jaotab intensiivsuse järk-järgult üle kõigi tsoonide:</p>
+
+        <ul>
+          <li><strong>60–70% kerge (Tsoon 1–2):</strong> Aeroobne baasettevalmistus</li>
+          <li><strong>20–30% mõõdukas (Tsoon 3):</strong> Tempo ja reibas püsiv töö</li>
+          <li><strong>10% tugev (Tsoon 4–5):</strong> Kõrge intensiivsusega intervallid</li>
+        </ul>
+
+        <p><strong>Põhjendus:</strong> Järkjärgulisem intensiivsuse tõus, arendab paremini mõõduka intensiivsuse
+          võimekust, kergem taastuda.</p>
+
+        <p><strong>Sobib kõige paremini:</strong> Algajatele ja kesktaseme kõndijatele, tervisele suunatud treeninguks,
+          vigastusaldistele inimestele</p>
+
+        <p><strong>Näidisnädal (300 min kokku):</strong></p>
+        <ul>
+          <li>180–210 min kergelt (60–70%): Enamik päevi mugavas tempos jalutades</li>
+          <li>60–90 min mõõdukalt (20–30%): 2–3× reibast kõndi nädalas</li>
+          <li>30 min tugevalt (10%): 1× intervalltreening nädalas</li>
+        </ul>
+
+        <div class="key-finding">
+          <strong>Uuringu tulemus:</strong> Eliitsportlased kasutavad järjepidevalt polariseeritud treeningut. Kuid
+          tervise ja vormi parandamiseks annavad ka püramidaalsed mudelid suurepäraseid tulemusi väiksema
+          vigastusriskiga (Stöggl & Sperlich, 2014).
+        </div>
+
+        <!-- Taastumise strateegiad -->
+        <h2 id="recovery">Taastumise ja kohanemise strateegiad</h2>
+
+        <p>Treeningstiimul tekitab kohanemise ainult siis, kui see on paaris piisava taastumisega. Ilma taastumiseta
+          muutub treeningkoormus lihtsalt treeningstressiks ilma igasuguse kasuta.</p>
+
+        <h3>Aktiivse taastumise tehnikad</h3>
+
+        <ol>
+          <li>
+            <strong>Kerged kõnnid (60–90 sammu/min):</strong>
+            <ul>
+              <li>20–30 minutit väga madalal intensiivsusel</li>
+              <li>Soodustab verevarustust ilma täiendava stressita</li>
+              <li>Liikumise psühholoogiline kasu</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Risttreening:</strong>
+            <ul>
+              <li>Ujumine, rattasõit, jooga, tai chi</li>
+              <li>Erinevad liikumismustrid vähendavad korduvat stressi</li>
+              <li>Säilitab vormi vaheldusrikkuse kaudu</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Dünaamiline venitus ja liikuvus:</strong>
+            <ul>
+              <li>15–20 minutit päevas</li>
+              <li>Fookus puusadel, pahkluudel, säärtaladel, reie tagakülgedel</li>
+              <li>Säilitab liikumisulatust efektiivseks kõndimiseks</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Passiivse taastumise tehnikad</h3>
+
+        <ol>
+          <li>
+            <strong>Une optimeerimine:</strong>
+            <ul>
+              <li>7–9 tundi öösel (täiskasvanud)</li>
+              <li>Järjepidev une-ärkveloleku graafik</li>
+              <li>Jahe ja pime ruum (16–19 °C)</li>
+              <li>Piira ekraaniaega 1 tund enne magamaminekut</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Toitumine taastumiseks:</strong>
+            <ul>
+              <li>Valk: 1,2–1,6 g kehamassi kg kohta päevas</li>
+              <li>Süsivesikud: Piisaval hulgal glükogeenivarude täitmiseks (3–5 g/kg)</li>
+              <li>Vedelik: Jälgi uriini värvust (peaks olema helekollane)</li>
+              <li>Põletikuvastased toidud: Marjad, rasvane kala, lehtköögiviljad</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Massaas ja lihashoolduse vahendid:</strong>
+            <ul>
+              <li>Rullimine massaažirulliga 10–15 minutit pärast kõndi</li>
+              <li>Fookus säärtel, IT-sidemel, puusa painutajatel, tuharatel</li>
+              <li>Professionaalne massaaž iga 2–4 nädala järel, kui võimalik</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Külmateraapia (valikuline):</strong>
+            <ul>
+              <li>10–15 minutit 10–15 °C vees</li>
+              <li>1 tunni jooksul pärast rasket treeningut</li>
+              <li>Võib vähendada lihasvalu ja põletikku</li>
+              <li>Ei soovitata rohkem kui 2× nädalas</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Vaimne taastumine</h3>
+
+        <ul>
+          <li><strong>Vaheldus:</strong> Muuda marsruute ja maastikku, et säilitada huvi</li>
+          <li><strong>Sotsiaalsed kõnnid:</strong> Kõnni koos sõprade või gruppidega naudingu eesmärgil</li>
+          <li><strong>Teadlikkus:</strong> Harjuta hetkes viibimist kergete kõndide ajal</li>
+          <li><strong>Puhkenädalad:</strong> Vaimne puhkus struktureeritud treeningust iga 3–4 nädala järel</li>
+          <li><strong>Hooajaväline periood:</strong> 2–4 nädalat aastas minimaalset struktureeritud kõndimist</li>
+        </ul>
+
+        <!-- Edasijõudnute kontseptsioonid -->
+        <h2 id="advanced">Edasijõudnute treeningkoormuse mõisted</h2>
+
+        <h3>Treeningimpulss (TRIMP)</h3>
+
+        <p><strong>TRIMP</strong> (Training Impulse) kvantifitseerib treeningkoormust, kasutades pulsiandmeid koos
+          eksponentsiaalse kaaluga kõrgemate intensiivsuste puhul.</p>
+
+        <div class="formula-box">
+          <pre>TRIMP = Kestus (min) × ΔHR suhe × 0,64e^(1,92 × ΔHR suhe)
+
+Kus:
+  ΔHR suhe = (Keskmine HR - Puhkepulss) / (Max pulss - Puhkepulss)</pre>
+        </div>
+
+        <p><strong>Näide:</strong></p>
+        <ul>
+          <li>Kestus: 60 minutit</li>
+          <li>Keskmine pulss: 130 l/min</li>
+          <li>Puhkepulss: 60 l/min</li>
+          <li>Max pulss: 180 l/min</li>
+          <li>ΔHR suhe = (130-60)/(180-60) = 70/120 = 0,583</li>
+          <li>TRIMP = 60 × 0,583 × 0,64e^(1,92×0,583) = 60 × 0,583 × 1,94 = 67,9</li>
+        </ul>
+
+        <p><strong>Märkus:</strong> TRIMP väärtused ei ole otseselt võrreldavad WSS-iga, kuid mõlemad kvantifitseerivad
+          treeningkoormust.</p>
+
+        <h3>Võimekuse-väsimuse mudel</h3>
+
+        <p>Treeningul on kaks vastandlikku mõju:</p>
+
+        <ul>
+          <li><strong>Võimekus (Fitness):</strong> Aeglaselt tekkiv ja aeglaselt kaduv positiivne kohanemine (42-päevane
+            ajakonstant)</li>
+          <li><strong>Väsimus (Fatigue):</strong> Kiiresti tekkiv ja kiiresti kaduv negatiivne mõju (7-päevane
+            ajakonstant)</li>
+        </ul>
+
+        <p><strong>Sooritus = Võimekus - Väsimus</strong></p>
+
+        <p>See mudel selgitab:</p>
+        <ul>
+          <li>Miks puhkepäevad võivad viia parema soorituseni (väsimus kaob kiiremini kui võimekus)</li>
+          <li>Miks tapering töötab (vähendab väsimust, säilitades võimekust)</li>
+          <li>Miks taastumisnädalad on hädavajalikud (kuhjunud väsimuse juhtimiseks)</li>
+        </ul>
+
+        <h3>Krooniline treeningkoormus (CTL) ja vorm</h3>
+
+        <p>Edasijõudnute näitajad, mida jälgivad platvormid nagu Walk Analytics:</p>
+
+        <ul>
+          <li><strong>CTL (Krooniline treeningkoormus):</strong> Päevase WSS-i 42-päevane eksponentsiaalselt kaalutud
+            keskmine — tähistab võimekust</li>
+          <li><strong>ATL (Akuutne treeningkoormus):</strong> Päevase WSS-i 7-päevane eksponentsiaalselt kaalutud
+            keskmine — tähistab väsimust</li>
+          <li><strong>TSB (Treeningstressi tasakaal):</strong> CTL - ATL — tähistab vormi/värskust</li>
+        </ul>
+
+        <p><strong>TSB tõlgendamine:</strong></p>
+        <ul>
+          <li><strong>TSB &lt; -30:</strong> Suur väsimus, ülepüüdlikkuse oht</li>
+          <li><strong>TSB -30 kuni -10:</strong> Produktiivne treeningtsoon, tavaline väsimus</li>
+          <li><strong>TSB -10 kuni +10:</strong> Neutraalne vorm</li>
+          <li><strong>TSB +10 kuni +25:</strong> Värske, hea valmisolek soorituseks</li>
+          <li><strong>TSB &gt; +25:</strong> Väga värske, kuid liiga pikal püsimisel vormi langus</li>
+        </ul>
+
+        <!-- Praktiline rakendamine -->
+        <h2 id="practical">Praktiline treeningkoormuse juhtimine</h2>
+
+        <h3>Nädala planeerimise eeskuju</h3>
+
+        <p><strong>Pane iga nädal kokku nii:</strong></p>
+
+        <ol>
+          <li><strong>1–2 kvaliteetsessiooni:</strong> Intervallid, tempokõnd või võistlustempos töö</li>
+          <li><strong>1 pikk kõnd:</strong> 60–120 minutit kerges kuni mõõdukas tempos</li>
+          <li><strong>3–4 kerget kõndi:</strong> Taastumine ja mahu kasvatamine</li>
+          <li><strong>1 puhkepäev:</strong> Täielik puhkus või väga kerge tegevus</li>
+        </ol>
+
+        <p><strong>Näide kesktaseme nädalast (eesmärk: 420 WSS):</strong></p>
+
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Päev</th>
+                <th>Treening</th>
+                <th>Kestus</th>
+                <th>Intensiivsus</th>
+                <th>WSS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Esmaspäev</td>
+                <td>Püsiv kõnd</td>
+                <td>45 min</td>
+                <td>105 sammu/min (Tsoon 2)</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>Teisipäev</td>
+                <td>Kerge taastumine</td>
+                <td>30 min</td>
+                <td>95 sammu/min (Tsoon 1)</td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td>Kolmapäev</td>
+                <td><strong>Intervallid</strong></td>
+                <td>50 min kokku</td>
+                <td>5×5 min @ 120 sammu/min</td>
+                <td>140</td>
+              </tr>
+              <tr>
+                <td>Neljapäev</td>
+                <td>Kerge kõnd</td>
+                <td>35 min</td>
+                <td>100 sammu/min (Tsoon 2)</td>
+                <td>55</td>
+              </tr>
+              <tr>
+                <td>Reede</td>
+                <td>Puhkepäev</td>
+                <td>—</td>
+                <td>—</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Laupäev</td>
+                <td><strong>Pikk kõnd</strong></td>
+                <td>75 min</td>
+                <td>105 sammu/min (Tsoon 2)</td>
+                <td>150</td>
+              </tr>
+              <tr>
+                <td>Pühapäev</td>
+                <td>Kerge taastumine</td>
+                <td>30 min</td>
+                <td>95 sammu/min (Tsoon 1)</td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td colspan="4"><strong>Nädala kokkuvõte</strong></td>
+                <td><strong>515 WSS</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Kohandamine põhinedes tagasisidele</h3>
+
+        <p><strong>Stsenaarium 1: Väsimus keset nädalat</strong></p>
+        <ul>
+          <li>Kontrolli puhkepulssi (kas on tõusnud?) ja heaolu skoori (kas on madal?)</li>
+          <li>Asenda raske treening kerge jalutuskäiguga</li>
+          <li>Vajadusel lisa puhkepäev</li>
+          <li>Jätka plaanitud treeninguga, kui oled taastunud</li>
+        </ul>
+
+        <p><strong>Stsenaarium 2: Tunned end suurepäraselt ja areng on hea</strong></p>
+        <ul>
+          <li>Jätka praeguse plaaniga (ära lisa koormust impulsiivselt)</li>
+          <li>Suurenda koormust järgmisel nädalal 5–10%</li>
+          <li>Eelista kvaliteeti kvantiteedile (tõsta veidi intensiivsust)</li>
+        </ul>
+
+        <p><strong>Stsenaarium 3: Püsiv soorituse langus</strong></p>
+        <ul>
+          <li>Vaata üle treeninguväline stress (töö, uni, sündmused)</li>
+          <li>Vähenda treeningkoormust 30–40% 1–2 nädalaks</li>
+          <li>Keskendu unele, toitumisele ja stressi maandamisele</li>
+          <li>Taasta koormus järk-järgult, kui taastumine on kinnitust saanud</li>
+        </ul>
+
+        <!-- Kokkuvõte -->
+        <h2 id="summary">Kokkuvõte: Treeningkoormuse peamised põhimõtted</h2>
+
+        <div class="key-finding">
+          <strong>Viis sammast treeningkoormuse juhtimisel:</strong>
+          <ol>
+            <li><strong>Kvantifitseeri koormus:</strong> Kasuta WSS-i, reibaste minutite arvu või TRIMP-i
+              treeningstiimuli jälgimiseks</li>
+            <li><strong>Progresseri järk-järgult:</strong> 5–10% iganädalased tõusud, kasutades 3:1 ehitus:taastumine
+              suhet</li>
+            <li><strong>Jälgi ACWR-i:</strong> Hoia akuutse ja kroonilise koormuse suhe vahemikus 0,80–1,30, et
+              minimeerida vigastusriski</li>
+            <li><strong>Prioritiseeri taastumist:</strong> Treening + Taastumine = Kohanemine (kumbagi puudumine peatab
+              arengu)</li>
+            <li><strong>Individualiseeri:</strong> Kohanda lähtuvalt objektiivsetest näitajatest (puhkepulss, HRV,
+              sooritus) ja subjektiivsest enesetundest</li>
+          </ol>
+        </div>
+
+        <p><strong>Tegevused:</strong></p>
+
+        <ol>
+          <li>Arvuta oma praegune nädala WSS, kasutades allolevat kalkulaatorit</li>
+          <li>Sea realistlik eesmärk vastavalt oma treenitusele</li>
+          <li>Planeeri järk-järgulised iganädalased tõusud (5–10%)</li>
+          <li>Planeeri taastumisnädal iga 3–4 nädala järel</li>
+          <li>Jälgi Peak-30 sammusagedust ja puhkepulssi igapäevaselt</li>
+          <li>Kasuta heaolu küsimustikku igapäevasteks kohandusteks</li>
+          <li>Vaata iganädalaselt üle ACWR, et märgata ohtlikke hüppeid vara</li>
+          <li>Prioritiseeri und (7–9 tundi) ja toitumist taastumiseks</li>
+        </ol>
+
+        <!-- Kalkulaatorid ja tööriistad -->
+        <h2 id="calculating">Arvuta oma treeningkoormus</h2>
+
+        <p>Kasuta meie tasuta kalkulaatoreid, et määrata oma treeningkoormus:</p>
+
+        <ul>
+          <li><a href="/et/wss-calculator/"><strong>WSS kalkulaator</strong></a> — Arvuta kõnni stressiskoor
+            üksikute treeningute kohta</li>
+        </ul>
+
+        <!-- Teaduslikud viited -->
+        <h2 id="references">Teaduslikud viited</h2>
+
+        <p>See juhend sünteesib uuringuid harjutusfüsioloogia, sporditeaduse ja spetsiaalselt kõndimisele suunatud
+          uuringute valdkonnast:</p>
+
+        <ul>
+          <li><strong>Del Pozo-Cruz B jt (2022).</strong> "Association of Daily Step Count and Intensity With Incident
+            Cardiovascular Disease." <em>JAMA Network Open</em> 5(12):e2248107. [Peak-30 sammusageduse uuring]</li>
+          <li><strong>Gabbett TJ. (2016).</strong> "The training-injury prevention paradox." <em>British Journal of
+              Sports Medicine</em> 50:273-280. [ACWR ja vigastusrisk]</li>
+          <li><strong>Soligard T jt (2016).</strong> "How much is too much? (Part 1) International Olympic Committee
+            consensus statement on load in sport and risk of injury." <em>British Journal of Sports Medicine</em>
+            50:1030-1041.</li>
+          <li><strong>Stöggl TL, Sperlich B. (2014).</strong> "Polarized training has greater impact on key endurance
+            variables than threshold, high intensity, or high volume training." <em>Frontiers in Physiology</em> 5:33.
+            [Intensiivsuse jaotus]</li>
+          <li><strong>Banister EW. (1991).</strong> "Modeling elite athletic performance." In: MacDougall JD jt, toim.
+            <em>Physiological Testing of Elite Athletes</em>. Human Kinetics. [Võimekuse-väsimuse mudel, TRIMP]</li>
+          <li><strong>Tudor-Locke C jt (2019).</strong> "Walking cadence (steps/min) and intensity in 21-40 year olds:
+            CADENCE-adults." <em>Int J Behav Nutr Phys Act</em> 16:8. [Sammusageduse lävendid]</li>
+        </ul>
+
+        <p><strong>Rohkem uuringuid:</strong></p>
+        <ul>
+          <li><a href="/et/bibliography/">Täielik teaduslik bibliograafia</a></li>
+          <li><a href="/et/research/">Viimased kõnniuuringud</a></li>
+        </ul>
+
+        <!-- Järgmised sammud -->
+        <h2 id="next-steps">Järgmised sammud</h2>
+
+        <ul>
+          <li><a href="/et/walking-zones/">Loe lähemalt sammusagedusepõhiste treeningtsoonide kohta</a></li>
+          <li><a href="/et/formulas/">Tutvu treeningkoormuse valemite ja arvutustega</a></li>
+          <li><a href="/et/gait-analysis/">Mõista kõnni analüüsi näitajaid jälgimiseks</a></li>
+          <li><a href="/et/stride-mechanics/">Optimeeri kõnni biomehaanikat</a></li>
+        </ul>
+
+      </div>
+
+      <!-- Külgriba -->
+      <aside class="sidebar">
+        <div class="toc">
+          <h3>Sisukord</h3>
+          <ul>
+            <li><a href="#intro">Mis on treeningkoormus?</a></li>
+            <li><a href="#peak30">Peak-30 sammusagedus</a></li>
+            <li><a href="#brisk-bouts">Reibad sessioonid</a></li>
+            <li><a href="#wss">Kõnni stressiskoor</a></li>
+            <li><a href="#weekly-load">Iganädalased juhised</a></li>
+            <li><a href="#acwr">Akuutse ja kroonilise suhe</a></li>
+            <li><a href="#progression">Progressiooni strateegiad</a></li>
+            <li><a href="#monitoring">Koormuse jälgimine</a></li>
+            <li><a href="#intensity">Intensiivsuse jaotus</a></li>
+            <li><a href="#recovery">Taastumise strateegiad</a></li>
+            <li><a href="#advanced">Edasijõudnute kontseptsioonid</a></li>
+            <li><a href="#practical">Praktiline rakendamine</a></li>
+            <li><a href="#summary">Kokkuvõte</a></li>
+            <li><a href="#calculating">Kalkulaatorid</a></li>
+            <li><a href="#references">Viited</a></li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Jälgi oma koormust</h3>
+          <p>Jälgi WSS-i, Peak-30 sammusagedust ja ACWR-i automaatselt Walk Analytics rakendusega.</p>
+          <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-accent" target="_blank" rel="noopener">Laadi rakendus
+            alla</a>
+        </div>
+
+        <div class="tip-box">
+          <h4>Kiire nõuanne</h4>
+          <p>Alusta oma Peak-30 sammusageduse jälgimist juba täna! Püüa saavutada ≥100 sammu/min vähemalt 30 minutiks,
+            et jõuda tervisliku kasu läveni.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-top">
+            <div class="footer-brand-section">
+                <h2>Walk Analytics</h2>
+                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+            </div>
+            <div class="footer-download">
+                <h3 class="footer-heading">Download</h3>
+                <div class="footer-badges">
+                    
+                    <a href="https://apps.apple.com/app/walkanalytics/id0000000000" target="_blank" rel="noopener" aria-label="Download on the App Store">
+                        <img src="/assets/images/badge-app-store.svg" alt="Download on the App Store" width="135" height="40" loading="lazy">
+                    </a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-languages">
+            <h3 class="footer-heading">Available in</h3>
+            <div class="lang-grid">
+                
+                <a href="/af/"
+                   class="lang-link"
+                   hreflang="af"
+                   >
+                    Afrikaans
+                </a>
+                
+                <a href="/am/"
+                   class="lang-link"
+                   hreflang="am"
+                   >
+                    አမ္ဟာ
+                </a>
+                
+                <a href="/ar/"
+                   class="lang-link"
+                   hreflang="ar"
+                   dir="rtl">
+                    العربية
+                </a>
+                
+                <a href="/bg/"
+                   class="lang-link"
+                   hreflang="bg"
+                   >
+                    Български
+                </a>
+                
+                <a href="/bn/"
+                   class="lang-link"
+                   hreflang="bn"
+                   >
+                    বাংলা
+                </a>
+                
+                <a href="/ca/"
+                   class="lang-link"
+                   hreflang="ca"
+                   >
+                    Català
+                </a>
+                
+                <a href="/cs/"
+                   class="lang-link"
+                   hreflang="cs"
+                   >
+                    Čeština
+                </a>
+                
+                <a href="/da/"
+                   class="lang-link"
+                   hreflang="da"
+                   >
+                    Dansk
+                </a>
+                
+                <a href="/de/"
+                   class="lang-link"
+                   hreflang="de"
+                   >
+                    Deutsch
+                </a>
+                
+                <a href="/el/"
+                   class="lang-link"
+                   hreflang="el"
+                   >
+                    Ελληνικά
+                </a>
+                
+                <a href="/en/"
+                   class="lang-link"
+                   hreflang="en"
+                   >
+                    English
+                </a>
+                
+                <a href="/es/"
+                   class="lang-link"
+                   hreflang="es"
+                   >
+                    Español
+                </a>
+                
+                <a href="/et/"
+                   class="lang-link active"
+                   hreflang="et"
+                   >
+                    Eesti
+                </a>
+                
+                <a href="/fa/"
+                   class="lang-link"
+                   hreflang="fa"
+                   dir="rtl">
+                    فارسی
+                </a>
+                
+                <a href="/fi/"
+                   class="lang-link"
+                   hreflang="fi"
+                   >
+                    Suomi
+                </a>
+                
+                <a href="/fr/"
+                   class="lang-link"
+                   hreflang="fr"
+                   >
+                    Français
+                </a>
+                
+                <a href="/gu/"
+                   class="lang-link"
+                   hreflang="gu"
+                   >
+                    ગુજરાતી
+                </a>
+                
+                <a href="/ha/"
+                   class="lang-link"
+                   hreflang="ha"
+                   >
+                    Hausa
+                </a>
+                
+                <a href="/he/"
+                   class="lang-link"
+                   hreflang="he"
+                   dir="rtl">
+                    עברית
+                </a>
+                
+                <a href="/hi/"
+                   class="lang-link"
+                   hreflang="hi"
+                   >
+                    हिन्दी
+                </a>
+                
+                <a href="/hr/"
+                   class="lang-link"
+                   hreflang="hr"
+                   >
+                    Hrvatski
+                </a>
+                
+                <a href="/hu/"
+                   class="lang-link"
+                   hreflang="hu"
+                   >
+                    Magyar
+                </a>
+                
+                <a href="/id/"
+                   class="lang-link"
+                   hreflang="id"
+                   >
+                    Bahasa Indonesia
+                </a>
+                
+                <a href="/is/"
+                   class="lang-link"
+                   hreflang="is"
+                   >
+                    Íslenska
+                </a>
+                
+                <a href="/it/"
+                   class="lang-link"
+                   hreflang="it"
+                   >
+                    Italiano
+                </a>
+                
+                <a href="/ja/"
+                   class="lang-link"
+                   hreflang="ja"
+                   >
+                    日本語
+                </a>
+                
+                <a href="/ko/"
+                   class="lang-link"
+                   hreflang="ko"
+                   >
+                    한국어
+                </a>
+                
+                <a href="/lt/"
+                   class="lang-link"
+                   hreflang="lt"
+                   >
+                    Lietuvių
+                </a>
+                
+                <a href="/lv/"
+                   class="lang-link"
+                   hreflang="lv"
+                   >
+                    Latviešu
+                </a>
+                
+                <a href="/ms/"
+                   class="lang-link"
+                   hreflang="ms"
+                   >
+                    Bahasa Melayu
+                </a>
+                
+                <a href="/my/"
+                   class="lang-link"
+                   hreflang="my"
+                   >
+                    မြန်မာ
+                </a>
+                
+                <a href="/nb/"
+                   class="lang-link"
+                   hreflang="nb"
+                   >
+                    Norsk Bokmål
+                </a>
+                
+                <a href="/nl/"
+                   class="lang-link"
+                   hreflang="nl"
+                   >
+                    Nederlands
+                </a>
+                
+                <a href="/pl/"
+                   class="lang-link"
+                   hreflang="pl"
+                   >
+                    Polski
+                </a>
+                
+                <a href="/pt/"
+                   class="lang-link"
+                   hreflang="pt"
+                   >
+                    Português
+                </a>
+                
+                <a href="/ro/"
+                   class="lang-link"
+                   hreflang="ro"
+                   >
+                    Română
+                </a>
+                
+                <a href="/ru/"
+                   class="lang-link"
+                   hreflang="ru"
+                   >
+                    Русский
+                </a>
+                
+                <a href="/sk/"
+                   class="lang-link"
+                   hreflang="sk"
+                   >
+                    Slovenčina
+                </a>
+                
+                <a href="/sl/"
+                   class="lang-link"
+                   hreflang="sl"
+                   >
+                    Slovenščina
+                </a>
+                
+                <a href="/sr/"
+                   class="lang-link"
+                   hreflang="sr"
+                   >
+                    Српски
+                </a>
+                
+                <a href="/sv/"
+                   class="lang-link"
+                   hreflang="sv"
+                   >
+                    Svenska
+                </a>
+                
+                <a href="/sw/"
+                   class="lang-link"
+                   hreflang="sw"
+                   >
+                    Kiswahili
+                </a>
+                
+                <a href="/ta/"
+                   class="lang-link"
+                   hreflang="ta"
+                   >
+                    தமிழ்
+                </a>
+                
+                <a href="/te/"
+                   class="lang-link"
+                   hreflang="te"
+                   >
+                    తెలుగు
+                </a>
+                
+                <a href="/th/"
+                   class="lang-link"
+                   hreflang="th"
+                   >
+                    ไทย
+                </a>
+                
+                <a href="/tl/"
+                   class="lang-link"
+                   hreflang="tl"
+                   >
+                    Tagalog
+                </a>
+                
+                <a href="/tr/"
+                   class="lang-link"
+                   hreflang="tr"
+                   >
+                    Türkçe
+                </a>
+                
+                <a href="/uk/"
+                   class="lang-link"
+                   hreflang="uk"
+                   >
+                    Українська
+                </a>
+                
+                <a href="/ur/"
+                   class="lang-link"
+                   hreflang="ur"
+                   dir="rtl">
+                    اردو
+                </a>
+                
+                <a href="/vi/"
+                   class="lang-link"
+                   hreflang="vi"
+                   >
+                    Tiếng Việt
+                </a>
+                
+                <a href="/zh/"
+                   class="lang-link"
+                   hreflang="zh"
+                   >
+                    中文
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Walk Analytics. Kõik õigused kaitstud
+            </p>
+            <ul class="footer-legal">
+                <li><a href="/et/privacy/">Privaatsus</a></li>
+                <li><a href="/et/terms/">Tingimused</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>See veebisait kasutab küpsiseid teie kogemuse parandamiseks.</p>
+            <a href="/et/privacy/" class="text-sm">Loe lähemalt</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Keeldu</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Nõustu</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="/assets/js/core.min.js" defer></script>
+  <script src="/assets/js/search.min.js" defer></script>
+
+  
+  
+  <script src="/assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+</body>
+
+</html>
