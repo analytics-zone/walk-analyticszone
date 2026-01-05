@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>أداة تقييم المشية</h1>
+
+    <p class="lead">
+        قيِّم مشيتك باستخدام اختبارات ذاتية بسيطة. تساعد هذه المقاييس في تحديد عدم التماثل، ومراقبة التعافي من الإصابة، أو تتبع التحسينات في كفاءة المشي.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. اختبار سرعة المشية (مشي 4 أمتار)</h2>
+
+            <p>امشِ 4 أمتار بسرعتك المريحة. وقِّت نفسك من البداية إلى النهاية.</p>
+
+            <div class="input-group">
+                <label for="time">الوقت للمشي 4 أمتار (ثواني):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">ثواني</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">احسب</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>سرعة المشية:</strong> <span id="speed-value"></span> م/ثانية
+                </div>
+                <div class="result-item">
+                    <strong>التصنيف:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>الأهمية السريرية:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. اختبار الإيقاع (عدّ 60 ثانية)</h2>
+
+            <p>امشِ بسرعتك الطبيعية لمدة 60 ثانية. اعدد خطواتك.</p>
+
+            <div class="input-group">
+                <label for="steps">إجمالي الخطوات في 60 ثانية:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">خطوات</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">تقييم</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>الإيقاع:</strong> <span id="cadence-value"></span> خطوة/دقيقة
+                </div>
+                <div class="result-item">
+                    <strong>METs المقدّرة:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>الشدة:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. مؤشر تماثل المشية (طول الخطوة)</h2>
+
+            <p>قس طول الخطوة لكل ساق (من كعب إلى كعب). يمكنك استخدام شريط القياس على سطح مستوٍ.</p>
+
+            <div class="input-group">
+                <label for="right-step">طول خطوة الساق اليمنى (سم):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">سم</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">طول خطوة الساق اليسرى (سم):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">سم</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">احسب GSI</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>مؤشر تماثل المشية (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>تصنيف التماثل:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>التفسير:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>القيم المرجعية</h2>
+
+        <h3>سرعة المشية (البالغون الأصحاء)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 م/ثانية</strong></td>
+                        <td>ضعيف شديد</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 م/ثانية</strong></td>
+                        <td>ضعيف متوسط</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 م/ثانية</strong></td>
+                        <td>ضعيف خفيف</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 م/ثانية</strong></td>
+                        <td>عتبة وظيفية (تنقل مجتمعي)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 م/ثانية</strong></td>
+                        <td>قدرة وظيفية جيدة</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 م/ثانية</strong></td>
+                        <td>قدرة ممتازة</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>مؤشر تماثل المشية</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>تماثل ممتاز (الشباب الأصحاء)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>تماثل جيد (تباين طبيعي)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>عدم تماثل خفيف (مراقبة)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>عدم تماثل معتدل (يوصى باستشارة أخصائي علاج طبيعي)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>عدم تماثل شديد (يلزم تقييم طبي)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('يرجى إدخال وقت صالح بين 2-20 ثانية');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'ضعيف شديد';
+        clinical = 'معتمد في معظم الأنشطة؛ يوصى بالتقييم الطبي';
+    } else if (speed < 0.80) {
+        classification = 'ضعيف متوسط';
+        clinical = 'تنقل منزلي محدود؛ ينصح بالعلاج الطبيعي';
+    } else if (speed < 1.00) {
+        classification = 'ضعيف خفيف';
+        clinical = 'تنقل مجتمعي محدود؛ يمكن التحسين بالتدريب';
+    } else if (speed < 1.20) {
+        classification = 'عتبة وظيفية';
+        clinical = 'مستقل في المجتمع؛ يلبي الحد الأدنى لعبور الشوارع';
+    } else if (speed < 1.40) {
+        classification = 'قدرة وظيفية جيدة';
+        clinical = 'سرعة البالغ النموذجي الصحي؛ خطر إعاقة منخفض';
+    } else {
+        classification = 'قدرة ممتازة';
+        clinical = 'صحة قوية؛ مرتبط بطول العمر';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('يرجى إدخال عدد خطوات صالح بين 40-180');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'شدة خفيفة';
+    else if (mets < 6.0) intensity = 'شدة متوسطة';
+    else intensity = 'شدة عالية';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('يرجى إدخال أطوال خطوة صالحة بين 30-120 سم');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'تماثل ممتاز';
+        interpretation = 'مشية البالغ الصحي الطبيعية';
+    } else if (gsi < 5) {
+        classification = 'تماثل جيد';
+        interpretation = 'تباين طبيعي، لا يوجد قلق';
+    } else if (gsi < 10) {
+        classification = 'عدم تماثل خفيف';
+        interpretation = 'قد يشير إلى عدم توازن بسيط؛ راقب بمرور الوقت';
+    } else if (gsi < 20) {
+        classification = 'عدم تماثل معتدل';
+        interpretation = 'يستحق الاهتمام؛ ينصح بتقييم أخصائي علاج طبيعي';
+    } else {
+        classification = 'عدم تماثل شديد';
+        interpretation = 'يوصى بالتقييم الطبي؛ من المحتمل وجود مرض';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>VO₂max Calculator (Rockport Walking Test)</h1>
+
+    <p class="lead">
+        Estimate your VO₂max (aerobic fitness) using the Rockport 1-Mile Walking Test. Walk 1 mile (1.61 km) as fast as possible, record your time and heart rate immediately upon finishing.
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>Calculate VO₂max</h2>
+
+            <div class="input-group">
+                <label for="age">Age (years):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">Sex:</label>
+                <select id="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Body Weight:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">1-Mile Walk Time:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>min</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>sec</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">Heart Rate (immediately after finishing):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">Calculate VO₂max</button>
+
+            <div id="results" style="display:none;">
+                <h3>Results</h3>
+                <div class="result-item">
+                    <strong>Estimated VO₂max:</strong> <span id="vo2max-value"></span> ml/kg/min
+                </div>
+                <div class="result-item">
+                    <strong>Fitness Classification:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Percentile for Age/Sex:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Interpretation:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>VO₂max Reference Values (ml/kg/min)</h2>
+
+        <h3>Men</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Age</th>
+                        <th>Poor</th>
+                        <th>Fair</th>
+                        <th>Good</th>
+                        <th>Excellent</th>
+                        <th>Superior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Women</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Age</th>
+                        <th>Poor</th>
+                        <th>Fair</th>
+                        <th>Good</th>
+                        <th>Excellent</th>
+                        <th>Superior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>Methodology: Rockport Walking Test</h2>
+
+        <div class="formula-box">
+            <h3>Equation</h3>
+            <pre>
+VO₂max (ml/kg/min) = 132.853
+                      - (0.0769 × Weight in lbs)
+                      - (0.3877 × Age in years)
+                      + (6.315 × Sex) [1 = male, 0 = female]
+                      - (3.2649 × Time in minutes)
+                      - (0.1565 × Heart Rate in bpm)
+
+Validation:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - Correlation with lab-measured VO₂max: r = 0.88-0.93
+  - Standard error: ±5 ml/kg/min
+            </pre>
+        </div>
+
+        <h3>Test Protocol</h3>
+        <ol>
+            <li><strong>Preparation:</strong> Avoid vigorous activity 24 hours before test; well-hydrated</li>
+            <li><strong>Warm-up:</strong> 5-10 minutes easy walking</li>
+            <li><strong>Test:</strong> Walk 1 mile (1.61 km) as fast as possible while maintaining walking gait (no running)</li>
+            <li><strong>Measurement:</strong> Record time (to nearest second) and heart rate immediately upon finishing</li>
+            <li><strong>Track:</strong> Flat 400m track (4 laps) or measured 1-mile route</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('Please fill in all fields with valid numbers');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'Poor';
+            percentile = 'Below 20th percentile';
+            interpretation = 'Below average fitness; begin gradual walking program';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Fair';
+            percentile = '20th-40th percentile';
+            interpretation = 'Below average; aim to increase to 150 min/week moderate walking';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Good';
+            percentile = '40th-60th percentile';
+            interpretation = 'Average fitness; maintain regular activity';
+        } else if (vo2max < 48) {
+            fitnessClass = 'Excellent';
+            percentile = '60th-80th percentile';
+            interpretation = 'Above average; good cardiovascular health';
+        } else {
+            fitnessClass = 'Superior';
+            percentile = 'Above 80th percentile';
+            interpretation = 'Excellent aerobic fitness; athlete-level';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'Poor';
+            percentile = 'Below 20th percentile';
+            interpretation = 'Below average fitness; begin gradual walking program';
+        } else if (vo2max < 30) {
+            fitnessClass = 'Fair';
+            percentile = '20th-40th percentile';
+            interpretation = 'Below average; aim to increase to 150 min/week moderate walking';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Good';
+            percentile = '40th-60th percentile';
+            interpretation = 'Average fitness; maintain regular activity';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Excellent';
+            percentile = '60th-80th percentile';
+            interpretation = 'Above average; good cardiovascular health';
+        } else {
+            fitnessClass = 'Superior';
+            percentile = 'Above 80th percentile';
+            interpretation = 'Excellent aerobic fitness; athlete-level';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

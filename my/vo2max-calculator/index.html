@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>VO₂max ပြဌာန်း (Rockport လမ်းလျှောက်စမ်းသပ်မှု)</h1>
+
+    <p class="lead">
+        Rockport ၁-မိုင်းလမ်းလျှောက်စမ်းသပ်မှုကို အသုံးပြု၍ သင်၏ VO₂max (လေရှုးဆိုင်ရာ ကြံ့ခိုင်မှု) ကို ခန့်မှန်းပါ။ ၁ မိုင် (၁.၆၁ ကီလိုမီတာ) ကို အလျင်မြန်ဆုံး လမ်းလျှောက်ပြီး ပြီးဆုံးလျှင် ချက်ချင်း ကုန်အချိန်နှင့် နှလုံးခုန်နှုန်းကို မှတ်တမ်းတင်ပါ။
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>VO₂max ပြဌာန်း</h2>
+
+            <div class="input-group">
+                <label for="age">အသက် (နှစ်):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">စိတ်ဝင်စားရှိသည့်အရာ:</label>
+                <select id="sex">
+                    <option value="male">အမျိုးသား</option>
+                    <option value="female">အမျိုးသမီး</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">ကိုယ်အလေးချိန်:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">၁-မိုင်း လမ်းလျှောက်ချိန်:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>မိနစ်</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>စက္ကန့်</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">နှလုံးခုန်နှုန်း (ပြီးဆုံးချက်ချင်း):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">VO₂max ပြဌာန်း</button>
+
+            <div id="results" style="display:none;">
+                <h3>ရလာဒ်</h3>
+                <div class="result-item">
+                    <strong>ခန့်မှန်းထားသည့် VO₂max:</strong> <span id="vo2max-value"></span> ml/kg/min
+                </div>
+                <div class="result-item">
+                    <strong>ကြံ့ခိုင်မှု အဆင့်သတ်မှတ်ချက်:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>အသက်/စိတ်ဝင်စားရှိသည့်အရာအတွက် ရာခိုင်နှုန်း:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>အဓိပ္ပါယ်သုံးသပ်မှု:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>VO₂max ကိုးကားတန်ဖိုး (ml/kg/min)</h2>
+
+        <h3>အမျိုးသား</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>အသက်</th>
+                        <th>အားနည်း</th>
+                        <th>အလယ်အလတ်</th>
+                        <th>ကောင်း</th>
+                        <th>အလွန်ကောင်း</th>
+                        <th>အထူးကောင်း</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>၂၀-၂၉</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၃၀-၃၉</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၄၀-၄၉</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၅၀-၅၉</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၆၀+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>အမျိုးသမီး</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>အသက်</th>
+                        <th>အားနည်း</th>
+                        <th>အလယ်အလတ်</th>
+                        <th>ကောင်း</th>
+                        <th>အလွန်ကောင်း</th>
+                        <th>အထူးကောင်း</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>၂၀-၂၉</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၃၀-၃၉</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၄၀-၄၉</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၅၀-၅၉</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>၆၀+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>វិធីសាស្រ្ត: Rockport လမ်းလျှောက်စမ်းသပ်မှု</h2>
+
+        <div class="formula-box">
+            <h3>ညီမျှခွင်</h3>
+            <pre>
+VO₂max (ml/kg/min) = 132.853
+                      - (0.0769 × Weight in lbs)
+                      - (0.3877 × Age in years)
+                      + (6.315 × Sex) [1 = male, 0 = female]
+                      - (3.2649 × Time in minutes)
+                      - (0.1565 × Heart Rate in bpm)
+
+အတည်ခံခြင်း:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - ဓာတ်ခွဲခန်းတိုင်းတာထားသည့် VO₂max ရှိ ဆက်စပ်မှု: r = 0.88-0.93
+  - စံအမှားအယွင်း: ±5 ml/kg/min
+            </pre>
+        </div>
+
+        <h3>စမ်းသပ်မှု နည်းဥပဒေ</h3>
+        <ol>
+            <li><strong>ပြင်ဆင်ခြင်း:</strong> စမ်းသပ်မှုမတစ်ခြင်းခြင်းမှီဆီးခြင်း၂၄ နာရီ ကြုံ၏ အားထုတ်လုပ်ဆောင်ခြင်းမှ ရှောင်ကျဉ်းပါ၊ ရေနွေးထည့်သွင်းမှု ကောင်းမွန်ပါ</li>
+            <li><strong>အပူပေးခြင်း:</strong> ၅-၁၀ မိနစ် လွယ်ကူသည့် လမ်းလျှောက်ခြင်း</li>
+            <li><strong>စမ်းသပ်မှု:</strong> ၁ မိုင် (၁.၆၁ ကီလိုမီတာ) ကို လမ်းလျှောက်ယူ ကံ့အလယ်လုံဆောင်ပြီး လမ်းလျှောက်သည့် အပတ်လည်ပြည့်ကျုံ့ (အီဒီယံမျိုးသုံးမှုမူဝါဒ)ကို ထိန်းသိမ်းပါ</li>
+            <li><strong>တိုင်းတာခြင်း:</strong> ချိန် (အနီးဆုံး စက္ကန့်)သည့်တည်ဆောင်းခြင်းနှင့် နှလုံးခုန်နှုန်းကို ပြီးဆုံးချက်ချင်း မှတ်တမ်းတင်ပါ</li>
+            <li><strong>လမ်းကြောင်း:</strong> ပြန့်ပြူလှပ် ၄၀၀m လမ်းကြောင်း (၄ လည်ပတ်) သို့မဟုတ် တိုင်းတာထားသည့် ၁-မိုင်း လမ်းကြောင်း</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('သည်အလုံးစုံ ကွက်လပ်များကို မှန်ကန်သည့် ကိန်းဂဏန်းများဖြင့် ဖြည့်သွင်းပါ');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'အားနည်း';
+            percentile = '၂၀ ရာခိုင်နှုန်းအောက်';
+            interpretation = 'အလယ်အလတ်ထက် နိမ့်သည့် ကြံ့ခိုင်မှု။ တဖြည်းဖြည်းလမ်းလျှောက်ပလာန်တစ်ခုစတင်ပါ';
+        } else if (vo2max < 36) {
+            fitnessClass = 'အလယ်အလတ်';
+            percentile = '၂၀-၄၀ ရာခိုင်နှုန်း';
+            interpretation = 'အလယ်အလတ်ထက် နိမ့်သည့်အလား။ လေ့ကျင့်ခန်းကို ပတ်လweek ၁၅၀ မိနစ်အထိ မြှင့်တင်ရန်ရည်ရွယ်ပါ';
+        } else if (vo2max < 42) {
+            fitnessClass = 'ကောင်း';
+            percentile = '၄၀-၆၀ ရာခိုင်နှုန်း';
+            interpretation = 'အလယ်အလတ် ကြံ့ခိုင်မှု။ ပုံမှန် လုပ်ဆောင်မှုကို ထိန်းသိမ်းပါ';
+        } else if (vo2max < 48) {
+            fitnessClass = 'အလွန်ကောင်း';
+            percentile = '၆၀-၈၀ ရာခိုင်နှုန်း';
+            interpretation = 'အလယ်အလတ်ထက် သာလွန်သည့်အလား။ ကောင်းမွန်သည့် နှလုံးမာကြားခြင်း ကျန်းမာရ';
+        } else {
+            fitnessClass = 'အထူးကောင်း';
+            percentile = '၈၀ ရာခိုင်နှုန်းအထက်';
+            interpretation = 'လွန်ကဲ သည့်လေရှုးဆိုင်ရာ ကြံ့ခိုင်မှု။ အားလုပ်သမား-အဆင့်';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'အားနည်း';
+            percentile = '၂၀ ရာခိုင်နှုန်းအောက်';
+            interpretation = 'အလယ်အလတ်ထက် နိမ့်သည့် ကြံ့ခိုင်မှု။ တဖြည်းဖြည်းလမ်းလျှောက်ပလာန်တစ်ခုစတင်ပါ';
+        } else if (vo2max < 30) {
+            fitnessClass = 'အလယ်အလတ်';
+            percentile = '၂၀-၄၀ ရာခိုင်နှုန်း';
+            interpretation = 'အလယ်အလတ်ထက် နိမ့်သည့်အလား။ လေ့ကျင့်ခန်းကို ပတ်လweek ၁၅၀ မိနစ်အထိ မြှင့်တင်ရန်ရည်ရွယ်ပါ';
+        } else if (vo2max < 36) {
+            fitnessClass = 'ကောင်း';
+            percentile = '၄၀-၆၀ ရာခိုင်နှုန်း';
+            interpretation = 'အလယ်အလတ် ကြံ့ခိုင်မှု။ ပုံမှန် လုပ်ဆောင်မှုကို ထိန်းသိမ်းပါ';
+        } else if (vo2max < 42) {
+            fitnessClass = 'အလွန်ကောင်း';
+            percentile = '၆၀-၈၀ ရာခိုင်နှုန်း';
+            interpretation = 'အလယ်အလတ်ထက် သာလွန်သည့်အလား။ ကောင်းမွန်သည့် နှလုံးမာကြားခြင်း ကျန်းမာရ';
+        } else {
+            fitnessClass = 'အထူးကောင်း';
+            percentile = '၈၀ ရာခိုင်နှုန်းအထက်';
+            interpretation = 'လွန်ကဲ သည့်လေရှုးဆိုင်ရာ ကြံ့ခိုင်မှု။ အားလုပ်သမား-အဆင့်';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

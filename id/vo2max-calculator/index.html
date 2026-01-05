@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Kalkulator VO₂maks (Tes Jalan Rockport)</h1>
+
+    <p class="lead">
+        Perkirakan VO₂maks Anda (kebugaran aerobik) menggunakan Tes Jalan 1 Mil Rockport. Berjalanlah sejauh 1 mil (1,61 km) secepat mungkin, catat waktu dan detak jantung Anda segera setelah selesai.
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>Hitung VO₂maks</h2>
+
+            <div class="input-group">
+                <label for="age">Usia (tahun):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">Jenis Kelamin:</label>
+                <select id="sex">
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Berat Badan:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">Waktu Jalan 1 Mil:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>menit</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>detik</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">Detak Jantung (segera setelah selesai):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">dpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">Hitung VO₂maks</button>
+
+            <div id="results" style="display:none;">
+                <h3>Hasil</h3>
+                <div class="result-item">
+                    <strong>Perkiraan VO₂maks:</strong> <span id="vo2max-value"></span> ml/kg/menit
+                </div>
+                <div class="result-item">
+                    <strong>Klasifikasi Kebugaran:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Persentil untuk Usia/Jenis Kelamin:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Interpretasi:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Nilai Rujukan VO₂maks (ml/kg/menit)</h2>
+
+        <h3>Laki-laki</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usia</th>
+                        <th>Buruk</th>
+                        <th>Cukup</th>
+                        <th>Baik</th>
+                        <th>Sangat Baik</th>
+                        <th>Unggul</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Perempuan</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usia</th>
+                        <th>Buruk</th>
+                        <th>Cukup</th>
+                        <th>Baik</th>
+                        <th>Sangat Baik</th>
+                        <th>Unggul</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>Metodologi: Tes Jalan Rockport</h2>
+
+        <div class="formula-box">
+            <h3>Persamaan</h3>
+            <pre>
+VO₂maks (ml/kg/menit) = 132,853
+                      - (0,0769 × Berat dalam lbs)
+                      - (0,3877 × Usia dalam tahun)
+                      + (6,315 × Jenis Kelamin) [1 = laki-laki, 0 = perempuan]
+                      - (3,2649 × Waktu dalam menit)
+                      - (0,1565 × Detak Jantung dalam dpm)
+
+Validasi:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - Korelasi dengan VO₂maks yang diukur di lab: r = 0,88-0,93
+  - Kesalahan standar: ±5 ml/kg/menit
+            </pre>
+        </div>
+
+        <h3>Protokol Tes</h3>
+        <ol>
+            <li><strong>Persiapan:</strong> Hindari aktivitas berat 24 jam sebelum tes; pastikan tubuh terhidrasi dengan baik</li>
+            <li><strong>Pemanasan:</strong> Jalan santai 5-10 menit</li>
+            <li><strong>Tes:</strong> Berjalan sejauh 1 mil (1,61 km) secepat mungkin sambil mempertahankan cara jalan (tidak berlari)</li>
+            <li><strong>Pengukuran:</strong> Catat waktu (hingga detik terdekat) dan detak jantung segera setelah selesai</li>
+            <li><strong>Lintasan:</strong> Lintasan datar 400m (4 putaran) atau rute 1 mil yang telah diukur</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('Harap isi semua kolom dengan angka yang valid');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'Buruk';
+            percentile = 'Di bawah persentil ke-20';
+            interpretation = 'Kebugaran di bawah rata-rata; mulai program jalan bertahap';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Cukup';
+            percentile = 'Persentil ke-20 hingga ke-40';
+            interpretation = 'Di bawah rata-rata; targetkan 150 menit/minggu jalan sedang';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Baik';
+            percentile = 'Persentil ke-40 hingga ke-60';
+            interpretation = 'Kebugaran rata-rata; pertahankan aktivitas rutin';
+        } else if (vo2max < 48) {
+            fitnessClass = 'Sangat Baik';
+            percentile = 'Persentil ke-60 hingga ke-80';
+            interpretation = 'Di atas rata-rata; kesehatan kardiovaskular baik';
+        } else {
+            fitnessClass = 'Unggul';
+            percentile = 'Di atas persentil ke-80';
+            interpretation = 'Kebugaran aerobik sangat baik; tingkat atlet';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'Buruk';
+            percentile = 'Di bawah persentil ke-20';
+            interpretation = 'Kebugaran di bawah rata-rata; mulai program jalan bertahap';
+        } else if (vo2max < 30) {
+            fitnessClass = 'Cukup';
+            percentile = 'Persentil ke-20 hingga ke-40';
+            interpretation = 'Di bawah rata-rata; targetkan 150 menit/minggu jalan sedang';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Baik';
+            percentile = 'Persentil ke-40 hingga ke-60';
+            interpretation = 'Kebugaran rata-rata; pertahankan aktivitas rutin';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Sangat Baik';
+            percentile = 'Persentil ke-60 hingga ke-80';
+            interpretation = 'Di atas rata-rata; kesehatan kardiovaskular baik';
+        } else {
+            fitnessClass = 'Unggul';
+            percentile = 'Di atas persentil ke-80';
+            interpretation = 'Kebugaran aerobik sangat baik; tingkat atlet';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

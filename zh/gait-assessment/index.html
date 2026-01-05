@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>步态评估工具</h1>
+
+    <p class="lead">
+        使用简单的自我测试评估您的行走步态。这些指标有助于识别不对称、监测损伤恢复或跟踪行走效率的改善。
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. 步态速度测试（4 米步行）</h2>
+
+            <p>以您舒适的步速步行 4 米。从开始到结束计时。</p>
+
+            <div class="input-group">
+                <label for="time">步行 4 米的时间（秒）：</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">秒</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">计算</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>结果</h3>
+                <div class="result-item">
+                    <strong>步态速度：</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>分类：</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>临床意义：</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. 步频测试（60 秒计数）</h2>
+
+            <p>以正常步速步行 60 秒。计算您的步数。</p>
+
+            <div class="input-group">
+                <label for="steps">60 秒内的总步数：</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">步</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">评估</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>结果</h3>
+                <div class="result-item">
+                    <strong>步频：</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>估计 METs：</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>强度：</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. 步态对称指数（步长）</h2>
+
+            <p>测量每条腿的步长（脚跟到脚跟）。您可以在平坦表面上使用卷尺。</p>
+
+            <div class="input-group">
+                <label for="right-step">右腿步长（cm）：</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">左腿步长（cm）：</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">计算 GSI</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>结果</h3>
+                <div class="result-item">
+                    <strong>步态对称指数（GSI）：</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>对称性分类：</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>解读：</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>参考值</h2>
+
+        <h3>步态速度（健康成人）</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>严重受损</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>中度受损</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>轻度受损</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>功能阈值（社区活动能力）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>良好功能能力</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>优秀能力</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>步态对称指数</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>优秀对称性（健康年轻成人）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>良好对称性（正常变异）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>轻度不对称（监测）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>中度不对称（建议物理治疗咨询）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>严重不对称（需要医学评估）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('请输入 2-20 秒之间的有效时间');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 米 / 时间
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = '严重受损';
+        clinical = '大多数活动依赖他人；建议医学评估';
+    } else if (speed < 0.80) {
+        classification = '中度受损';
+        clinical = '室内活动能力有限；考虑物理治疗';
+    } else if (speed < 1.00) {
+        classification = '轻度受损';
+        clinical = '社区活动能力有限；可通过训练改善';
+    } else if (speed < 1.20) {
+        classification = '功能阈值';
+        clinical = '社区独立活动；满足过马路的最低要求';
+    } else if (speed < 1.40) {
+        classification = '良好功能能力';
+        clinical = '健康典型成人速度；低残疾风险';
+    } else {
+        classification = '优秀能力';
+        clinical = '强健康状况；与长寿相关';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('请输入 40-180 之间的有效步数');
+        return;
+    }
+
+    const cadence = steps; // 每分钟步数
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = '轻度强度';
+    else if (mets < 6.0) intensity = '中等强度';
+    else intensity = '剧烈强度';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('请输入 30-120 cm 之间的有效步长');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = '优秀对称性';
+        interpretation = '正常健康成人步态';
+    } else if (gsi < 5) {
+        classification = '良好对称性';
+        interpretation = '正常变异，无需担心';
+    } else if (gsi < 10) {
+        classification = '轻度不对称';
+        interpretation = '可能表明轻微失衡；随时间监测';
+    } else if (gsi < 20) {
+        classification = '中度不对称';
+        interpretation = '需要注意；考虑物理治疗评估';
+    } else {
+        classification = '严重不对称';
+        interpretation = '建议医学评估；可能存在病理';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

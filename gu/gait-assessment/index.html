@@ -1034,6 +1034,341 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>ગેટ એસેસમેન્ટ ટૂલ (Gait Assessment Tool)</h1>
+
+    <p class="lead">
+        સરળ સેલ્ફ-ટેસ્ટનો ઉપયોગ કરીને તમારા વૉકિંગ ગેટનું મૂલ્યાંકન કરો. આ મેટ્રિક્સ અસમાનતા (asymmetries) ઓળખવામાં,
+        ઈજામાંથી રિકવરી પર નજર રાખવામાં અથવા વૉકિંગ એફિશિયન્સીમાં થતા સુધારાને ટ્રેક કરવામાં મદદ કરે છે.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. ગેટ સ્પીડ ટેસ્ટ (4-મીટર વૉક)</h2>
+
+            <p>4 મીટર સુધી તમારી આરામદાયક ગતિએ ચાલો. શરૂઆતથી અંત સુધીનો તમારો સમય માપો.</p>
+
+            <div class="input-group">
+                <label for="time">4 મીટર ચાલવા માટેનો સમય (સેકન્ડ):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">સેકન્ડ</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">ગણતરી કરો</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>પરિણામો</h3>
+                <div class="result-item">
+                    <strong>ગેટ સ્પીડ:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>વર્ગીકરણ:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>ક્લિનિકલ મહત્વ:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. કેડેન્સ ટેસ્ટ (60-સેકન્ડ ગણતરી)</h2>
+
+            <p>60 સેકન્ડ માટે તમારી સામાન્ય ગતિએ ચાલો. તમારા ડગલાં ગણો.</p>
+
+            <div class="input-group">
+                <label for="steps">60 સેકન્ડમાં કુલ ડગલાં:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">ડગલાં</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">મૂલ્યાંકન કરો</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>પરિણામો</h3>
+                <div class="result-item">
+                    <strong>કેડેન્સ:</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>અંદાજિત METs:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>તીવ્રતા:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. ગેટ સિમેટ્રી ઇન્ડેક્સ (ડગલાંની લંબાઈ)</h2>
+
+            <p>દરેક પગ માટે ડગલાંની લંબાઈ (એડી થી એડી) માપો. તમે સપાટ સપાટી પર મેઝરિંગ ટેપનો ઉપયોગ કરી શકો છો.</p>
+
+            <div class="input-group">
+                <label for="right-step">જમણા પગના ડગલાની લંબાઈ (cm):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">ડાબા પગના ડગલાની લંબાઈ (cm):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">GSI ગણો</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>પરિણામો</h3>
+                <div class="result-item">
+                    <strong>ગેટ સિમેટ્રી ઇન્ડેક્સ (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>સિમેટ્રી વર્ગીકરણ:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>અર્થઘટન:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>સંદર્ભ મૂલ્યો (Reference Values)</h2>
+
+        <h3>ગેટ સ્પીડ (તંદુરસ્ત વયસ્કો)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>ગંભીર રીતે ક્ષતિગ્રસ્ત</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>મધ્યમ ક્ષતિગ્રસ્ત</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>હળવી ક્ષતિગ્રસ્ત</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>કાર્યકારી થ્રેશોલ્ડ (કોમ્યુનિટી મોબિલિટી)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>સારી કાર્યક્ષમતા</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>ઉત્તમ કાર્યક્ષમતા</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>ગેટ સિમેટ્રી ઇન્ડેક્સ (Gait Symmetry Index)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>ઉત્તમ સિમેટ્રી (તંદુરસ્ત યુવાન વયસ્કો)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>સારી સિમેટ્રી (સામાન્ય તફાવત)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>હળવી અસમાનતા (મોનિટર કરો)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>મધ્યમ અસમાનતા (ફિઝિયોથેરાપીની સલાહ લેવી)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>ગંભીર અસમાનતા (મેડિકલ તપાસ જરૂરી)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function calculateGaitSpeed() {
+        const time = parseFloat(document.getElementById('time').value);
+
+        if (isNaN(time) || time < 2 || time > 20) {
+            alert('કૃપા કરીને 2-20 સેકન્ડ વચ્ચેનો માન્ય સમય દાખલ કરો');
+            return;
+        }
+
+        const speed = 4.0 / time; // 4 meters / time
+
+        let classification = '';
+        let clinical = '';
+
+        if (speed < 0.60) {
+            classification = 'ગંભીર રીતે ક્ષતિગ્રસ્ત';
+            clinical = 'મોટાભાગની પ્રવૃત્તિઓ માટે બીજા પર નિર્ભર; મેડિકલ તપાસની ભલામણ કરવામાં આવે છે';
+        } else if (speed < 0.80) {
+            classification = 'મધ્યમ ક્ષતિગ્રસ્ત';
+            clinical = 'ઘરની અંદર મર્યાદિત હલનચલન; ફિઝિયોથેરાપીનો વિચાર કરો';
+        } else if (speed < 1.00) {
+            classification = 'હળવી ક્ષતિગ્રસ્ત';
+            clinical = 'સમાજમાં મર્યાદિત હલનચલન; તાલીમ દ્વારા સુધારી શકાય છે';
+        } else if (speed < 1.20) {
+            classification = 'કાર્યકારી થ્રેશોલ્ડ';
+            clinical = 'સમાજમાં સ્વતંત્ર હલનચલન; રસ્તો ક્રોસ કરવા માટેની ન્યૂનતમ શરતો પૂરી કરે છે';
+        } else if (speed < 1.40) {
+            classification = 'સારી કાર્યક્ષમતા';
+            clinical = 'સામાન્ય તંદુરસ્ત પુખ્ત વયની ઝડપ; અપંગતાનું ઓછું જોખમ';
+        } else {
+            classification = 'ઉત્તમ કાર્યક્ષમતા';
+            clinical = 'મજબૂત સ્વાસ્થ્ય; લાંબા આયુષ્ય સાથે સંબંધિત';
+        }
+
+        document.getElementById('speed-value').textContent = speed.toFixed(2);
+        document.getElementById('speed-class').textContent = classification;
+        document.getElementById('speed-clinical').textContent = clinical;
+        document.getElementById('speed-results').style.display = 'block';
+    }
+
+    function assessCadence() {
+        const steps = parseFloat(document.getElementById('steps').value);
+
+        if (isNaN(steps) || steps < 40 || steps > 180) {
+            alert('કૃપા કરીને 40-180 વચ્ચેના ડગલાંની સંખ્યા દાખલ કરો');
+            return;
+        }
+
+        const cadence = steps; // steps per minute
+        const mets = (0.0219 * cadence) + 0.72;
+
+        let intensity = '';
+        if (mets < 3.0) intensity = 'હળવી તીવ્રતા';
+        else if (mets < 6.0) intensity = 'મધ્યમ તીવ્રતા';
+        else intensity = 'ભારે તીવ્રતા';
+
+        document.getElementById('cadence-value').textContent = cadence;
+        document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+        document.getElementById('cadence-intensity').textContent = intensity;
+        document.getElementById('cadence-results').style.display = 'block';
+    }
+
+    function calculateGSI() {
+        const right = parseFloat(document.getElementById('right-step').value);
+        const left = parseFloat(document.getElementById('left-step').value);
+
+        if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+            alert('કૃપા કરીને 30-120 cm વચ્ચેની માન્ય ડગલાની લંબાઈ દાખલ કરો');
+            return;
+        }
+
+        const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+        let classification = '';
+        let interpretation = '';
+
+        if (gsi < 2) {
+            classification = 'ઉત્તમ સિમેટ્રી';
+            interpretation = 'સામાન્ય તંદુરસ્ત પુખ્ત ગેટ';
+        } else if (gsi < 5) {
+            classification = 'સારી સિમેટ્રી';
+            interpretation = 'સામાન્ય તફાવત, કોઈ ચિંતા નથી';
+        } else if (gsi < 10) {
+            classification = 'હળવી અસમાનતા';
+            interpretation = 'નાનું અસંતુલન સૂચવી શકે છે; સમય જતાં નિરીક્ષણ કરો';
+        } else if (gsi < 20) {
+            classification = 'મધ્યમ અસમાનતા';
+            interpretation = 'ધ્યાન આપવાની જરૂર છે; ફિઝિયોથેરાપી મૂલ્યાંકનનો વિચાર કરો';
+        } else {
+            classification = 'ગંભીર અસમાનતા';
+            interpretation = 'મેડિકલ તપાસની ભલામણ કરવામાં આવે છે; પેથોલોજી હોઈ શકે છે';
+        }
+
+        document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+        document.getElementById('gsi-class').textContent = classification;
+        document.getElementById('gsi-interp').textContent = interpretation;
+        document.getElementById('gsi-results').style.display = 'block';
+    }
+</script>
+
+<style>
+    .calculator-box {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-group input {
+        width: 120px;
+        padding: 0.5rem;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1.1rem;
+    }
+
+    .input-group .unit {
+        margin-left: 0.5rem;
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+        background: #0056b3;
+    }
+
+    .result-item {
+        background: white;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-left: 4px solid #28a745;
+        border-radius: 4px;
+    }
+
+    .result-item strong {
+        color: #495057;
+    }
+
+    .result-item span {
+        color: #28a745;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+</style>
+
+
   </main>
 
   

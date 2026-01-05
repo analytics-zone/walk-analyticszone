@@ -1034,6 +1034,341 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Járásfelmérő eszköz</h1>
+
+    <p class="lead">
+        Mérje fel járását egyszerű öntesztek segítségével. Ezek a mutatók segítenek az aszimmetriák azonosításában, a
+        sérülés utáni felépülés nyomon követésében vagy a gyaloglási hatékonyság javulásának követésében.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. Járási sebesség teszt (4 méteres séta)</h2>
+
+            <p>Gyalogoljon 4 métert kényelmes tempóban. Mérje meg az időt az indulástól a célba érkezésig.</p>
+
+            <div class="input-group">
+                <label for="time">4 méter megtételéhez szükséges idő (másodperc):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">másodperc</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">Számítás</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>Eredmények</h3>
+                <div class="result-item">
+                    <strong>Járási sebesség:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>Besorolás:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Klinikai jelentőség:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. Kadencia teszt (60 másodperces számlálás)</h2>
+
+            <p>Gyalogoljon normál tempóban 60 másodpercig. Számolja a lépéseit.</p>
+
+            <div class="input-group">
+                <label for="steps">Összes lépés 60 másodperc alatt:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">lépés</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">Kiértékelés</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>Eredmények</h3>
+                <div class="result-item">
+                    <strong>Kadencia:</strong> <span id="cadence-value"></span> lépés/perc
+                </div>
+                <div class="result-item">
+                    <strong>Becsült MET:</strong> <span id="cadence-mets"></span> MET
+                </div>
+                <div class="result-item">
+                    <strong>Intenzitás:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. Járási szimmetria index (Lépéshossz)</h2>
+
+            <p>Mérje meg mindkét láb lépéshosszát (sarktól sarokig). Használhat mérőszalagot sík felületen.</p>
+
+            <div class="input-group">
+                <label for="right-step">Jobb láb lépéshossza (cm):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">Bal láb lépéshossza (cm):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">GSI kiszámítása</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>Eredmények</h3>
+                <div class="result-item">
+                    <strong>Járási szimmetria index (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>Szimmetria besorolás:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Értelmezés:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Referenciaértékek</h2>
+
+        <h3>Járási sebesség (Egészséges felnőttek)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0,60 m/s</strong></td>
+                        <td>Súlyosan korlátozott</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0,60-0,80 m/s</strong></td>
+                        <td>Közepesen korlátozott</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0,80-1,00 m/s</strong></td>
+                        <td>Enyhén korlátozott</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1,00-1,20 m/s</strong></td>
+                        <td>Funkcionális küszöb (közösségi mozgás)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1,20-1,40 m/s</strong></td>
+                        <td>Jó funkcionális kapacitás</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1,40 m/s</strong></td>
+                        <td>Kiváló kapacitás</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Járási szimmetria index</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>Kiváló szimmetria (egészséges fiatal felnőttek)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>Jó szimmetria (normál variáció)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>Enyhe aszimmetria (ellenőrzés javasolt)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>Közepes aszimmetria (gyógytornász konzultáció javasolt)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>Súlyos aszimmetria (orvosi kivizsgálás szükséges)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function calculateGaitSpeed() {
+        const time = parseFloat(document.getElementById('time').value);
+
+        if (isNaN(time) || time < 2 || time > 20) {
+            alert('Kérjük, adjon meg egy érvényes időt 2 és 20 másodperc között');
+            return;
+        }
+
+        const speed = 4.0 / time; // 4 méter / idő
+
+        let classification = '';
+        let clinical = '';
+
+        if (speed < 0.60) {
+            classification = 'Súlyosan korlátozott';
+            clinical = 'A legtöbb tevékenységhez segítségre szorul; orvosi kivizsgálás javasolt';
+        } else if (speed < 0.80) {
+            classification = 'Közepesen korlátozott';
+            clinical = 'Korlátozott otthoni mobilitás; gyógytorna javasolt';
+        } else if (speed < 1.00) {
+            classification = 'Enyhén korlátozott';
+            clinical = 'Korlátozott közösségi mobilitás; edzéssel javítható';
+        } else if (speed < 1.20) {
+            classification = 'Funkcionális küszöb';
+            clinical = 'Független a közösségben; teljesíti az utcán való átkelés minimumát';
+        } else if (speed < 1.40) {
+            classification = 'Jó funkcionális kapacitás';
+            clinical = 'Egészséges felnőtt átlagsebesség; alacsony rokkantsági kockázat';
+        } else {
+            classification = 'Kiváló kapacitás';
+            clinical = 'Robusztus egészség; összefüggésbe hozható a hosszú élettel';
+        }
+
+        document.getElementById('speed-value').textContent = speed.toFixed(2);
+        document.getElementById('speed-class').textContent = classification;
+        document.getElementById('speed-clinical').textContent = clinical;
+        document.getElementById('speed-results').style.display = 'block';
+    }
+
+    function assessCadence() {
+        const steps = parseFloat(document.getElementById('steps').value);
+
+        if (isNaN(steps) || steps < 40 || steps > 180) {
+            alert('Kérjük, adjon meg egy érvényes lépésszámot 40 és 180 között');
+            return;
+        }
+
+        const cadence = steps; // lépés per perc
+        const mets = (0.0219 * cadence) + 0.72;
+
+        let intensity = '';
+        if (mets < 3.0) intensity = 'Alacsony intenzitás';
+        else if (mets < 6.0) intensity = 'Mérsékelt intenzitás';
+        else intensity = 'Erős intenzitás';
+
+        document.getElementById('cadence-value').textContent = cadence;
+        document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+        document.getElementById('cadence-intensity').textContent = intensity;
+        document.getElementById('cadence-results').style.display = 'block';
+    }
+
+    function calculateGSI() {
+        const right = parseFloat(document.getElementById('right-step').value);
+        const left = parseFloat(document.getElementById('left-step').value);
+
+        if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+            alert('Kérjük, adjon meg érvényes lépéshosszokat 30 és 120 cm között');
+            return;
+        }
+
+        const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+        let classification = '';
+        let interpretation = '';
+
+        if (gsi < 2) {
+            classification = 'Kiváló szimmetria';
+            interpretation = 'Normális, egészséges felnőtt járás';
+        } else if (gsi < 5) {
+            classification = 'Jó szimmetria';
+            interpretation = 'Normal variáció, nincs ok aggodalomra';
+        } else if (gsi < 10) {
+            classification = 'Enyhe aszimmetria';
+            interpretation = 'Kisebb egyensúlyhiányt jelezhet; kövesse figyelemmel';
+        } else if (gsi < 20) {
+            classification = 'Közepes aszimmetria';
+            interpretation = 'Figyelmet érdemel; fontolja meg a gyógytornász felmérését';
+        } else {
+            classification = 'Súlyos aszimmetria';
+            interpretation = 'Orvosi kivizsgálás javasolt; valószínűleg kóros elváltozás';
+        }
+
+        document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+        document.getElementById('gsi-class').textContent = classification;
+        document.getElementById('gsi-interp').textContent = interpretation;
+        document.getElementById('gsi-results').style.display = 'block';
+    }
+</script>
+
+<style>
+    .calculator-box {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-group input {
+        width: 120px;
+        padding: 0.5rem;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1.1rem;
+    }
+
+    .input-group .unit {
+        margin-left: 0.5rem;
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+        background: #0056b3;
+    }
+
+    .result-item {
+        background: white;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-left: 4px solid #28a745;
+        border-radius: 4px;
+    }
+
+    .result-item strong {
+        color: #495057;
+    }
+
+    .result-item span {
+        color: #28a745;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+</style>
+
+
   </main>
 
   

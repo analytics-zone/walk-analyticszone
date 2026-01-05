@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>VO₂max کیلکولیٹر (راک پورٹ واکنگ ٹیسٹ)</h1>
+
+    <p class="lead">
+        راک پورٹ 1 میل واکنگ ٹیسٹ استعمال کرتے ہوئے اپنے VO₂max (ایروبک فٹنس) کا تخمینہ لگائیں۔ زیادہ سے زیادہ تیزی سے 1 میل (1.61 کلومیٹر) چلیں، اور ختم ہونے کے فوراً بعد اپنا وقت اور دل کی دھڑکن ریکارڈ کریں۔
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>VO₂max کا حساب لگائیں</h2>
+
+            <div class="input-group">
+                <label for="age">عمر (سال):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">جنس:</label>
+                <select id="sex">
+                    <option value="male">مرد</option>
+                    <option value="female">عورت</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">جسمانی وزن:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">1 میل پیدل چلنے کا وقت:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>منٹ</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>سیکنڈ</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">دل کی دھڑکن (ختم ہونے کے فوراً بعد):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">VO₂max کا حساب لگائیں</button>
+
+            <div id="results" style="display:none;">
+                <h3>نتائج</h3>
+                <div class="result-item">
+                    <strong>تخمینہ شدہ VO₂max:</strong> <span id="vo2max-value"></span> ml/kg/min
+                </div>
+                <div class="result-item">
+                    <strong>فٹنس کی درجہ بندی:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>عمر/جنس کے لیے فیصدی:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>تشریح:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>VO₂max حوالہ جاتی اقدار (ml/kg/min)</h2>
+
+        <h3>مرد</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>عمر</th>
+                        <th>ناقص</th>
+                        <th>معمولی</th>
+                        <th>اچھا</th>
+                        <th>بہترین</th>
+                        <th>عمدہ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>خواتین</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>عمر</th>
+                        <th>ناقص</th>
+                        <th>معمولی</th>
+                        <th>اچھا</th>
+                        <th>بہترین</th>
+                        <th>عمدہ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>طریقہ کار: راک پورٹ واکنگ ٹیسٹ</h2>
+
+        <div class="formula-box">
+            <h3>مساوات</h3>
+            <pre>
+VO₂max (ml/kg/min) = 132.853
+                      - (0.0769 × وزن پاؤنڈز میں)
+                      - (0.3877 × عمر سالوں میں)
+                      + (6.315 × جنس) [1 = مرد، 0 = عورت]
+                      - (3.2649 × وقت منٹوں میں)
+                      - (0.1565 × دل کی دھڑکن bpm میں)
+
+توثیق:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - لیبارٹری میں ماپے گئے VO₂max کے ساتھ تعلق: r = 0.88-0.93
+  - معیاری خرابی: ±5 ml/kg/min
+            </pre>
+        </div>
+
+        <h3>ٹیسٹ کا طریقہ کار</h3>
+        <ol>
+            <li><strong>تیاری:</strong> ٹیسٹ سے 24 گھنٹے پہلے سخت سرگرمی سے پرہیز کریں؛ اچھی طرح ہائیڈریٹڈ رہیں</li>
+            <li><strong>وارم اپ:</strong> 5-10 منٹ آرام سے چلنا</li>
+            <li><strong>ٹیسٹ:</strong> چلنے کی حالت برقرار رکھتے ہوئے (دوڑنا نہیں) زیادہ سے زیادہ تیزی سے 1 میل (1.61 کلومیٹر) چلیں</li>
+            <li><strong>پیمائش:</strong> ختم ہونے کے فوراً بعد وقت (قریب ترین سیکنڈ تک) اور دل کی دھڑکن ریکارڈ کریں</li>
+            <li><strong>ٹریک:</strong> ہموار 400 میٹر ٹریک (4 چکر) یا ماپا ہوا 1 میل راستہ</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('براہ کرم تمام خانوں کو درست نمبروں سے بھریں');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'ناقص';
+            percentile = '20ویں فیصدی سے نیچے';
+            interpretation = 'اوسط سے کم فٹنس؛ بتدریج پیدل چلنے کا پروگرام شروع کریں';
+        } else if (vo2max < 36) {
+            fitnessClass = 'معمولی';
+            percentile = '20ویں-40ویں فیصدی';
+            interpretation = 'اوسط سے کم؛ ہفتے میں 150 منٹ اعتدال سے چلنے کا ہدف رکھیں';
+        } else if (vo2max < 42) {
+            fitnessClass = 'اچھا';
+            percentile = '40ویں-60ویں فیصدی';
+            interpretation = 'اوسط فٹنس؛ باقاعدہ سرگرمی برقرار رکھیں';
+        } else if (vo2max < 48) {
+            fitnessClass = 'بہترین';
+            percentile = '60ویں-80ویں فیصدی';
+            interpretation = 'اوسط سے بہتر؛ اچھی قلبی صحت';
+        } else {
+            fitnessClass = 'عمدہ';
+            percentile = '80ویں فیصدی سے اوپر';
+            interpretation = 'بہترین ایروبک فٹنس؛ کھلاڑی کی سطح';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'ناقص';
+            percentile = '20ویں فیصدی سے نیچے';
+            interpretation = 'اوسط سے کم فٹنس؛ بتدریج پیدل چلنے کا پروگرام شروع کریں';
+        } else if (vo2max < 30) {
+            fitnessClass = 'معمولی';
+            percentile = '20ویں-40ویں فیصدی';
+            interpretation = 'اوسط سے کم؛ ہفتے میں 150 منٹ اعتدال سے چلنے کا ہدف رکھیں';
+        } else if (vo2max < 36) {
+            fitnessClass = 'اچھا';
+            percentile = '40ویں-60ویں فیصدی';
+            interpretation = 'اوسط فٹنس؛ باقاعدہ سرگرمی برقرار رکھیں';
+        } else if (vo2max < 42) {
+            fitnessClass = 'بہترین';
+            percentile = '60ویں-80ویں فیصدی';
+            interpretation = 'اوسط سے بہتر؛ اچھی قلبی صحت';
+        } else {
+            fitnessClass = 'عمدہ';
+            percentile = '80ویں فیصدی سے اوپر';
+            interpretation = 'بہترین ایروبک فٹنس؛ کھلاڑی کی سطح';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

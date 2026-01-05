@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>เครื่องมือประเมินการเดิน</h1>
+
+    <p class="lead">
+        ประเมินท่าเดินของคุณด้วยการทดสอบตนเองแบบง่ายๆ ตัวชี้วัดเหล่านี้ช่วยระบุความไม่สมดุล ติดตามการฟื้นตัวจากการบาดเจ็บ หรือติดตามการพัฒนาประสิทธิภาพการเดิน
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. การทดสอบความเร็วในการเดิน (การเดิน 4 เมตร)</h2>
+
+            <p>เดิน 4 เมตรด้วยจังหวะที่สบายของคุณ จับเวลาตั้งแต่เริ่มต้นจนจบ</p>
+
+            <div class="input-group">
+                <label for="time">เวลาที่ใช้เดิน 4 เมตร (วินาที):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">วินาที</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">คำนวณ</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>ผลลัพธ์</h3>
+                <div class="result-item">
+                    <strong>ความเร็วในการเดิน:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>การจำแนก:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>ความสำคัญทางคลินิก:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. การทดสอบจังหวะก้าว (นับ 60 วินาที)</h2>
+
+            <p>เดินด้วยจังหวะปกติของคุณเป็นเวลา 60 วินาที นับจำนวนก้าวของคุณ</p>
+
+            <div class="input-group">
+                <label for="steps">จำนวนก้าวทั้งหมดใน 60 วินาที:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">ก้าว</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">ประเมิน</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>ผลลัพธ์</h3>
+                <div class="result-item">
+                    <strong>จังหวะก้าว:</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>ค่า METs โดยประมาณ:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>ความเข้มข้น:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. ดัชนีความสมมาตรในการเดิน (ความยาวก้าว)</h2>
+
+            <p>วัดความยาวก้าวของแต่ละขา (จากส้นเท้าถึงส้นเท้า) คุณสามารถใช้สายวัดบนพื้นผิวเรียบได้</p>
+
+            <div class="input-group">
+                <label for="right-step">ความยาวก้าวขาขวา (ซม.):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">ซม.</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">ความยาวก้าวขาซ้าย (ซม.):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">ซม.</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">คำนวณ GSI</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>ผลลัพธ์</h3>
+                <div class="result-item">
+                    <strong>ดัชนีความสมมาตรในการเดิน (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>การจำแนกความสมมาตร:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>การตีความ:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>ค่าอ้างอิง</h2>
+
+        <h3>ความเร็วในการเดิน (ผู้ใหญ่สุขภาพดี)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>บกพร่องอย่างรุนแรง</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>บกพร่องปานกลาง</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>บกพร่องเล็กน้อย</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>เกณฑ์การทำงาน (การเคลื่อนที่ในชุมชน)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>ความสามารถในการทำงานดี</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>ความสามารถยอดเยี่ยม</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>ดัชนีความสมมาตรในการเดิน</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>ความสมมาตรยอดเยี่ยม (ผู้ใหญ่วัยหนุ่มสุขภาพดี)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>ความสมมาตรดี (ความผันแปรปกติ)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>ความไม่สมมาตรเล็กน้อย (ควรติดตาม)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>ความไม่สมมาตรปานกลาง (แนะนำให้ปรึกษานักกายภาพบำบัด)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>ความไม่สมมาตรรุนแรง (จำเป็นต้องประเมินทางการแพทย์)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('กรุณากรอกเวลาที่ถูกต้องระหว่าง 2-20 วินาที');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'บกพร่องอย่างรุนแรง';
+        clinical = 'ต้องพึ่งพาในกิจกรรมส่วนใหญ่ แนะนำให้รับการประเมินทางการแพทย์';
+    } else if (speed < 0.80) {
+        classification = 'บกพร่องปานกลาง';
+        clinical = 'การเคลื่อนที่ในบ้านจำกัด พิจารณากายภาพบำบัด';
+    } else if (speed < 1.00) {
+        classification = 'บกพร่องเล็กน้อย';
+        clinical = 'การเคลื่อนที่ในชุมชนจำกัด สามารถปรับปรุงได้ด้วยการฝึก';
+    } else if (speed < 1.20) {
+        classification = 'เกณฑ์การทำงาน';
+        clinical = 'เป็นอิสระในชุมชน ตรงตามเกณฑ์ขั้นต่ำสำหรับการข้ามถนน';
+    } else if (speed < 1.40) {
+        classification = 'ความสามารถในการทำงานดี';
+        clinical = 'ความเร็วผู้ใหญ่ปกติโดยทั่วไปที่มีสุขภาพดี ความเสี่ยงความพิการต่ำ';
+    } else {
+        classification = 'ความสามารถยอดเยี่ยม';
+        clinical = 'สุขภาพแข็งแรง เกี่ยวข้องกับอายุยืน';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('กรุณากรอกจำนวนก้าวที่ถูกต้องระหว่าง 40-180');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'ความเข้มข้นเบา';
+    else if (mets < 6.0) intensity = 'ความเข้มข้นปานกลาง';
+    else intensity = 'ความเข้มข้นหนัก';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('กรุณากรอกความยาวก้าวที่ถูกต้องระหว่าง 30-120 ซม.');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'ความสมมาตรยอดเยี่ยม';
+        interpretation = 'การเดินของผู้ใหญ่สุขภาพดีปกติ';
+    } else if (gsi < 5) {
+        classification = 'ความสมมาตรดี';
+        interpretation = 'ความผันแปรปกติ ไม่น่ากังวล';
+    } else if (gsi < 10) {
+        classification = 'ความไม่สมมาตรเล็กน้อย';
+        interpretation = 'อาจบ่งชี้ความไม่สมดุลเล็กน้อย ควรติดตามเมื่อเวลาผ่านไป';
+    } else if (gsi < 20) {
+        classification = 'ความไม่สมมาตรปานกลาง';
+        interpretation = 'ควรใส่ใจ พิจารณาการประเมินจากนักกายภาพบำบัด';
+    } else {
+        classification = 'ความไม่สมมาตรรุนแรง';
+        interpretation = 'แนะนำให้รับการประเมินทางการแพทย์ มีแนวโน้มว่ามีพยาธิสภาพ';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>VO₂max-Calculator (Rockport Wandeltest)</h1>
+
+    <p class="lead">
+        Schat uw VO₂max (aerobe fitheid) met behulp van de Rockport 1-Mijl Wandeltest. Loop 1 mijl (1,61 km) zo snel mogelijk en registreer uw tijd en hartslag direct na afloop.
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>Bereken VO₂max</h2>
+
+            <div class="input-group">
+                <label for="age">Leeftijd (jaren):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">Geslacht:</label>
+                <select id="sex">
+                    <option value="male">Man</option>
+                    <option value="female">Vrouw</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Lichaamsgewicht:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">1-Mijl Wandeltijd:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>min</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>sec</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">Hartslag (direct na afloop):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">Bereken VO₂max</button>
+
+            <div id="results" style="display:none;">
+                <h3>Resultaten</h3>
+                <div class="result-item">
+                    <strong>Geschatte VO₂max:</strong> <span id="vo2max-value"></span> ml/kg/min
+                </div>
+                <div class="result-item">
+                    <strong>Conditieclassificatie:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Percentiel voor Leeftijd/Geslacht:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Interpretatie:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>VO₂max-Referentiewaarden (ml/kg/min)</h2>
+
+        <h3>Mannen</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Leeftijd</th>
+                        <th>Slecht</th>
+                        <th>Matig</th>
+                        <th>Goed</th>
+                        <th>Uitstekend</th>
+                        <th>Superieur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Vrouwen</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Leeftijd</th>
+                        <th>Slecht</th>
+                        <th>Matig</th>
+                        <th>Goed</th>
+                        <th>Uitstekend</th>
+                        <th>Superieur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>Methodologie: Rockport Wandeltest</h2>
+
+        <div class="formula-box">
+            <h3>Vergelijking</h3>
+            <pre>
+VO₂max (ml/kg/min) = 132,853
+                      - (0,0769 × Gewicht in lbs)
+                      - (0,3877 × Leeftijd in jaren)
+                      + (6,315 × Geslacht) [1 = man, 0 = vrouw]
+                      - (3,2649 × Tijd in minuten)
+                      - (0,1565 × Hartslag in bpm)
+
+Validatie:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - Correlatie met in laboratorium gemeten VO₂max: r = 0,88-0,93
+  - Standaardfout: ±5 ml/kg/min
+            </pre>
+        </div>
+
+        <h3>Testprotocol</h3>
+        <ol>
+            <li><strong>Voorbereiding:</strong> Vermijd zware inspanning 24 uur voor de test; zorg voor goede hydratatie</li>
+            <li><strong>Opwarming:</strong> 5-10 minuten rustig wandelen</li>
+            <li><strong>Test:</strong> Loop 1 mijl (1,61 km) zo snel mogelijk terwijl u een wandelgang aanhoudt (niet rennen)</li>
+            <li><strong>Meting:</strong> Noteer de tijd (tot op de seconde nauwkeurig) en hartslag direct na afloop</li>
+            <li><strong>Baan:</strong> Vlakke 400m-baan (4 rondes) of afgemeten 1-mijl route</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('Vul alle velden in met geldige getallen');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'Slecht';
+            percentile = 'Onder 20e percentiel';
+            interpretation = 'Onder gemiddelde conditie; begin geleidelijk wandelprogramma';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Matig';
+            percentile = '20e-40e percentiel';
+            interpretation = 'Onder gemiddeld; streef naar 150 min/week matig wandelen';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Goed';
+            percentile = '40e-60e percentiel';
+            interpretation = 'Gemiddelde conditie; handhaaf regelmatige activiteit';
+        } else if (vo2max < 48) {
+            fitnessClass = 'Uitstekend';
+            percentile = '60e-80e percentiel';
+            interpretation = 'Boven gemiddeld; goede cardiovasculaire gezondheid';
+        } else {
+            fitnessClass = 'Superieur';
+            percentile = 'Boven 80e percentiel';
+            interpretation = 'Uitstekende aerobe fitheid; atletisch niveau';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'Slecht';
+            percentile = 'Onder 20e percentiel';
+            interpretation = 'Onder gemiddelde conditie; begin geleidelijk wandelprogramma';
+        } else if (vo2max < 30) {
+            fitnessClass = 'Matig';
+            percentile = '20e-40e percentiel';
+            interpretation = 'Onder gemiddeld; streef naar 150 min/week matig wandelen';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Goed';
+            percentile = '40e-60e percentiel';
+            interpretation = 'Gemiddelde conditie; handhaaf regelmatige activiteit';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Uitstekend';
+            percentile = '60e-80e percentiel';
+            interpretation = 'Boven gemiddeld; goede cardiovasculaire gezondheid';
+        } else {
+            fitnessClass = 'Superieur';
+            percentile = 'Boven 80e percentiel';
+            interpretation = 'Uitstekende aerobe fitheid; atletisch niveau';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

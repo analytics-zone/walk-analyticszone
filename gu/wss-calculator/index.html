@@ -1034,6 +1034,210 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<!-- WSS Calculator -->
+
+<section class="guide-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/gu/">હોમ</a> / <a href="/gu/#learn">શીખો</a> / WSS કેલ્ક્યુલેટર
+    </div>
+    <h1>વૉકિંગ સ્ટ્રેસ સ્કોર (WSS) કેલ્ક્યુલેટર</h1>
+    <p class="lead">હાર્ટ રેટ ઝોન્સનો ઉપયોગ કરીને તમારા વૉકિંગ વર્કઆઉટની તીવ્રતા માપવા માટેનું મફત કેલ્ક્યુલેટર</p>
+  </div>
+</section>
+
+<section class="calculator-section">
+  <div class="container">
+    <div class="calculator-intro">
+      <h2>તમારો WSS ગણો</h2>
+      <p>વૉકિંગ સ્ટ્રેસ સ્કોર (WSS) ગણવા માટે તમારા વૉક દરમિયાન દરેક હાર્ટ રેટ ઝોનમાં વિતાવેલો સમય દાખલ કરો. આ સ્કોર
+        તમને વર્કઆઉટની તીવ્રતા સમજવામાં અને ટ્રેનિંગ લોડ મેનેજ કરવામાં મદદ કરે છે.</p>
+    </div>
+
+    <div class="calculator-tool">
+      <div class="calculator-inputs">
+        <h3>દરેક ઝોનમાં સમય (મિનિટ)</h3>
+
+        <div class="input-group">
+          <label for="zone1">ઝોન 1 (રિકવરી) - 50-60% Max HR</label>
+          <input type="number" id="zone1" min="0" value="0" />
+          <span class="multiplier">× 1 પોઈન્ટ/મિનિટ</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone2">ઝોન 2 (ફેટ બર્ન) - 60-70% Max HR</label>
+          <input type="number" id="zone2" min="0" value="0" />
+          <span class="multiplier">× 2 પોઈન્ટ/મિનિટ</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone3">ઝોન 3 (એરોબિક) - 70-80% Max HR</label>
+          <input type="number" id="zone3" min="0" value="0" />
+          <span class="multiplier">× 3 પોઈન્ટ/મિનિટ</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone4">ઝોન 4 (થ્રેશોલ્ડ) - 80-90% Max HR</label>
+          <input type="number" id="zone4" min="0" value="0" />
+          <span class="multiplier">× 4 પોઈન્ટ/મિનિટ</span>
+        </div>
+
+        <div class="input-group">
+          <label for="zone5">ઝોન 5 (પીક) - 90-100% Max HR</label>
+          <input type="number" id="zone5" min="0" value="0" />
+          <span class="multiplier">× 5 પોઈન્ટ/મિનિટ</span>
+        </div>
+
+        <button id="calculateBtn" class="btn btn-accent">WSS ગણો</button>
+      </div>
+
+      <div class="calculator-results">
+        <h3>તમારા પરિણામો</h3>
+        <div id="results" class="results-box">
+          <div class="result-item">
+            <span class="result-label">કુલ સમયગાળો:</span>
+            <span class="result-value" id="totalTime">0 મિનિટ</span>
+          </div>
+          <div class="result-item highlight">
+            <span class="result-label">વૉકિંગ સ્ટ્રેસ સ્કોર:</span>
+            <span class="result-value" id="wssScore">0</span>
+          </div>
+          <div class="result-interpretation">
+            <h4>અર્થઘટન:</h4>
+            <p id="interpretation">WSS ગણવા માટે ઝોનનો સમય દાખલ કરો</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-content">
+  <div class="container">
+    <h2>WSS ને સમજવું</h2>
+
+    <h3>મારા WSS નો અર્થ શું છે?</h3>
+    <ul>
+      <li><strong>0-40:</strong> હળવું રિકવરી વૉક - ન્યૂનતમ ટ્રેનિંગ સ્ટ્રેસ</li>
+      <li><strong>40-80:</strong> મધ્યમ એરોબિક વર્કઆઉટ - બેઝ બનાવવા માટે સારું</li>
+      <li><strong>80-150:</strong> મજબૂત એન્ડ્યુરન્સ (સહનશક્તિ) વૉક - નોંધપાત્ર ટ્રેનિંગ લાભ</li>
+      <li><strong>150-250:</strong> સખત વર્કઆઉટ - ઉચ્ચ ટ્રેનિંગ સ્ટ્રેસ, રિકવરી જરૂરી છે</li>
+      <li><strong>250+:</strong> ખૂબ જ કપરૂં - રેસ જેવો પ્રયત્ન અથવા ખૂબ લાંબું વૉક</li>
+    </ul>
+
+    <h3>સાપ્તાહિક WSS માર્ગદર્શિકા</h3>
+    <ul>
+      <li><strong>શરૂઆત કરનારા:</strong> અઠવાડિયે કુલ 150-300</li>
+      <li><strong>મધ્યવર્તી:</strong> અઠવાડિયે કુલ 300-500</li>
+      <li><strong>અદ્યતન:</strong> અઠવાડિયે કુલ 500-800+</li>
+    </ul>
+
+    <h3>WSS નો ઉપયોગ કેવી રીતે કરવો</h3>
+    <ol>
+      <li><strong>દૈનિક ટ્રેક કરો:</strong> દરેક વૉક માટે WSS ગણો</li>
+      <li><strong>સાપ્તાહિક સરવાળો કરો:</strong> 7 દિવસના WSS ને ઉમેરો</li>
+      <li><strong>વલણો પર નજર રાખો:</strong> અચાનક થતા મોટા વધારા પર ધ્યાન આપો</li>
+      <li><strong>લોડ સંતુલિત કરો:</strong> સરળ અને કઠિન દિવસોનો સમાવેશ કરો</li>
+      <li><strong>ક્રમશઃ પ્રગતિ કરો:</strong> સાપ્તાહિક WSS માં વધુમાં વધુ 10% નો વધારો કરો</li>
+    </ol>
+
+    <h2>વર્કઆઉટના ઉદાહરણો</h2>
+
+    <h3>સરળ રિકવરી વૉક</h3>
+    <ul>
+      <li>ઝોન 1-2 માં 30 મિનિટ</li>
+      <li>WSS ≈ 40-50</li>
+      <li>એક્ટિવ રિકવરી દિવસો માટે ઉપયોગ કરો</li>
+    </ul>
+
+    <h3>મધ્યમ બેઝ બિલ્ડિંગ વૉક</h3>
+    <ul>
+      <li>ઝોન 2 માં 60 મિનિટ</li>
+      <li>WSS ≈ 120</li>
+      <li>ટ્રેનિંગ પ્લાનનો પાયો</li>
+    </ul>
+
+    <h3>અંતરાલ (Interval) વર્કઆઉટ</h3>
+    <ul>
+      <li>10 મિનિટ ઝોન 1 વોર્મ-અપ</li>
+      <li>20 મિનિટ ઝોન 3-4 અંતરાલ</li>
+      <li>10 મિનિટ ઝોન 1 કૂલ-ડાઉન</li>
+      <li>WSS ≈ 100-120</li>
+      <li>ઉચ્ચ તીવ્રતા, ટૂંકો સમયગાળો</li>
+    </ul>
+
+    <h3>લાંબુ એન્ડ્યુરન્સ વૉક</h3>
+    <ul>
+      <li>ઝોન 2 માં 120 મિનિટ</li>
+      <li>WSS ≈ 240</li>
+      <li>સહનશક્તિ વધારવા માટે અઠવાડિયે એક વાર</li>
+    </ul>
+
+    <h2>તમારો હાર્ટ રેટ ડેટા કેવી રીતે મેળવવો</h2>
+
+    <h3>Apple Watch નો ઉપયોગ કરીને</h3>
+    <ol>
+      <li>iPhone પર Health એપ ખોલો</li>
+      <li>Browse → Heart → Heart Rate પર જાઓ</li>
+      <li>તમારા વૉક વર્કઆઉટને પસંદ કરો</li>
+      <li>દરેક ઝોનમાં વિતાવેલો સમય જુઓ</li>
+      <li>ઉપરના કેલ્ક્યુલેટરમાં દાખલ કરો</li>
+    </ol>
+
+    <h3>Walk Analytics નો ઉપયોગ કરીને</h3>
+    <p>Walk Analytics દરેક વૉક માટે આપમેળે WSS ગણે છે. મેન્યુઅલ ગણતરીની જરૂર નથી!</p>
+    <ul>
+      <li>Apple Health માંથી વર્કઆઉટ ઇમ્પોર્ટ કરે છે</li>
+      <li>હાર્ટ રેટ ઝોનનું આપમેળે વિશ્લેષણ કરે છે</li>
+      <li>ત્વરિત WSS ગણે છે</li>
+      <li>સાપ્તાહિક વલણોને ટ્રેક કરે છે</li>
+      <li>રિકવરી માટે ભલામણો આપે છે</li>
+    </ul>
+
+    <div class="cta-section">
+      <h3>ઓટોમેટિક WSS ટ્રેકિંગ</h3>
+      <p>મેન્યુઅલ ગણતરીઓ બંધ કરો. Walk Analytics દરેક વૉક માટે આપમેળે WSS ગણે છે.</p>
+      <a href="https://apps.apple.com/app/walkanalytics/id0000000000" class="btn btn-large btn-accent" target="_blank" rel="noopener">Walk
+        Analytics ડાઉનલોડ કરો</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // WSS Calculator Logic
+  document.getElementById('calculateBtn').addEventListener('click', function () {
+    const zone1 = parseFloat(document.getElementById('zone1').value) || 0;
+    const zone2 = parseFloat(document.getElementById('zone2').value) || 0;
+    const zone3 = parseFloat(document.getElementById('zone3').value) || 0;
+    const zone4 = parseFloat(document.getElementById('zone4').value) || 0;
+    const zone5 = parseFloat(document.getElementById('zone5').value) || 0;
+
+    const totalTime = zone1 + zone2 + zone3 + zone4 + zone5;
+    const wss = (zone1 * 1) + (zone2 * 2) + (zone3 * 3) + (zone4 * 4) + (zone5 * 5);
+
+    document.getElementById('totalTime').textContent = totalTime + ' મિનિટ';
+    document.getElementById('wssScore').textContent = Math.round(wss);
+
+    let interpretation = '';
+    if (wss === 0) {
+      interpretation = 'WSS ગણવા માટે ઝોનનો સમય દાખલ કરો';
+    } else if (wss < 40) {
+      interpretation = 'હળવું રિકવરી વૉક - ન્યૂનતમ ટ્રેનિંગ સ્ટ્રેસ. આરામના દિવસો અથવા એક્ટિવ રિકવરી માટે શ્રેષ્ઠ.';
+    } else if (wss < 80) {
+      interpretation = 'મધ્યમ એરોબિક વર્કઆઉટ - તમારા એરોબિક બેઝ બનાવવા માટે સારું. વારંવાર કરી શકાય છે.';
+    } else if (wss < 150) {
+      interpretation = 'મજબૂત એન્ડ્યુરન્સ વૉક - નોંધપાત્ર ટ્રેનિંગ લાભ. સુધારણા માટે ઉત્તમ પ્રેરણા આપે છે.';
+    } else if (wss < 250) {
+      interpretation = 'સખત વર્કઆઉટ - ઉચ્ચ ટ્રેનિંગ સ્ટ્રેસ. રિકવરી માટે પછીના દિવસો હળવા રાખો.';
+    } else {
+      interpretation = 'ખૂબ જ કપરૂં વર્કઆઉટ - રેસ જેવો પ્રયત્ન અથવા ખૂબ લાંબો સમયગાળો. પૂરતા રિકવરી સમયની જરૂર છે.';
+    }
+
+    document.getElementById('interpretation').textContent = interpretation;
+  });
+</script>
+
   </main>
 
   

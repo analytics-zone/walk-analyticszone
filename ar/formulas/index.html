@@ -1034,6 +1034,547 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>المعادلات والحسابات</h1>
+
+    <p class="lead">
+        مرجع شامل لجميع المعادلات العلمية والحسابات المستخدمة في Walk Analytics، بما في ذلك المصادقة والحدود والتطبيقات السريرية.
+    </p>
+
+    <nav class="page-toc">
+        <h2>محتويات</h2>
+        <ul>
+            <li><a href="#vo2-equations">معادلات VO₂</a></li>
+            <li><a href="#mets-conversions">تحويلات METs</a></li>
+            <li><a href="#cadence">الإيقاع والشدة</a></li>
+            <li><a href="#gait-metrics">مقاييس المشية</a></li>
+            <li><a href="#training-load">حمل التدريب</a></li>
+            <li><a href="#energy-expenditure">نفقة الطاقة</a></li>
+        </ul>
+    </nav>
+
+    <section id="vo2-equations">
+        <h2>معادلات VO₂</h2>
+
+        <div class="formula-card">
+            <h3>ACSM معادلة المشي (1995، محدّثة 2013)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>VO₂ (مل/كجم/دقيقة) = (0.1 × S) + (1.8 × S × G) + 3.5</strong>
+                </p>
+                <p class="formula-legend">
+                    حيث:<br>
+                    S = السرعة بالمتر/دقيقة<br>
+                    G = الانحدار (كسر عشري؛ 10% = 0.10)
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>المصادقة</h4>
+                <ul>
+                    <li><strong>نطاق الصلاحية:</strong> 50-100 م/دقيقة (1.9-3.7 ميل/ساعة)</li>
+                    <li><strong>الدقة:</strong> SEE ≈ 7% (~1.5 مل/كجم/دقيقة)</li>
+                    <li><strong>التطبيق:</strong> المشي دون الحد الأقصى، حالة مستقرة (≥5 دقائق)</li>
+                    <li><strong>القيود:</strong> يبالغ في التقدير عند السرعات البطيئة جداً (&lt;50 م/دقيقة)</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> مشي بسرعة 5.5 كم/ساعة (91.7 م/دقيقة) على مستوى مسطح</p>
+                <p>
+                    VO₂ = (0.1 × 91.7) + (1.8 × 91.7 × 0) + 3.5<br>
+                    VO₂ = 9.17 + 0 + 3.5<br>
+                    <strong>VO₂ = 12.7 مل/كجم/دقيقة (3.6 METs)</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>معادلة Pandolf (1977) – حمل الحمولة والتضاريس</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>M = 1.5W + 2.0(W + L)(L/W)² + η(W + L)(1.5V² + 0.35VG)</strong>
+                </p>
+                <p class="formula-legend">
+                    حيث:<br>
+                    M = معدل الأيض (واط)<br>
+                    W = وزن الجسم (كجم)<br>
+                    L = الحمولة المحمولة (كجم)<br>
+                    V = سرعة المشي (م/ثانية)<br>
+                    G = الانحدار (%)<br>
+                    η = معامل التضاريس (1.0 للرصيف، 1.2 للعشب، 1.5 للرمل)
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>المصادقة</h4>
+                <ul>
+                    <li><strong>العينة:</strong> جنود عسكريون، حمولات 0-47 كجم</li>
+                    <li><strong>الدقة:</strong> R² = 0.92 للتنبؤ بنفقة الطاقة</li>
+                    <li><strong>التطبيق:</strong> المشي لمسافات طويلة، المشي لمسافات طويلة تكتيكية، الرحلات</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="mets-conversions">
+        <h2>تحويلات METs</h2>
+
+        <div class="formula-card">
+            <h3>التحويلات الأساسية</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>1 MET = 3.5 مل O₂/كجم/دقيقة</strong> (للبالغين، عمر 40 سنة، 70 كجم)
+                </p>
+                <p class="formula-main">
+                    <strong>METs = VO₂ (مل/كجم/دقيقة) ÷ 3.5</strong>
+                </p>
+                <p class="formula-main">
+                    <strong>VO₂ (مل/كجم/دقيقة) = METs × 3.5</strong>
+                </p>
+            </div>
+
+            <div class="note">
+                <h4>التعديل حسب العمر</h4>
+                <p>معدل الأيض أثناء الراحة ينخفض مع التقدم في العمر. للتقديرات الدقيقة:</p>
+                <div class="formula-box">
+                    <p class="formula-main">
+                        <strong>MET معدّل = MET قياسي × (0.0074 × العمر + 2.66) / 3.5</strong>
+                    </p>
+                </div>
+                <p>مثال: شخص عمره 65 سنة لديه MET أثناء الراحة ≈ 3.1 مل/كجم/دقيقة</p>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>نفقة الطاقة</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>كيلوكالوري/دقيقة = METs × 3.5 × وزن الجسم (كجم) / 200</strong>
+                </p>
+                <p class="formula-main">
+                    <strong>كيلوكالوري إجمالية = (كيلوكالوري/دقيقة) × المدة (دقائق)</strong>
+                </p>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> شخص 70 كجم يمشي لمدة 30 دقيقة عند 4.0 METs</p>
+                <p>
+                    كيلوكالوري/دقيقة = 4.0 × 3.5 × 70 / 200 = 4.9 كيلوكالوري/دقيقة<br>
+                    <strong>كيلوكالوري إجمالية = 4.9 × 30 = 147 كيلوكالوري</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence">
+        <h2>الإيقاع والشدة</h2>
+
+        <div class="formula-card">
+            <h3>معادلة Moore (2019) – CADENCE-Adults</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>METs = 0.0219 × الإيقاع (خطوة/دقيقة) + 0.72</strong>
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>المصادقة</h4>
+                <ul>
+                    <li><strong>العينة:</strong> 156 بالغاً، أعمار 21-85</li>
+                    <li><strong>R²:</strong> 0.87 (ارتباط قوي)</li>
+                    <li><strong>عتبات الإيقاع:</strong>
+                        <ul>
+                            <li>100 خطوة/دقيقة → 3.0 METs (حساسية 86%، نوعية 89.6%)</li>
+                            <li>130 خطوة/دقيقة → 6.0 METs (حساسية 81.3%، نوعية 84.7%)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>طول الخطوة والسرعة</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>سرعة المشي (م/ثانية) = الإيقاع (خطوة/دقيقة) × طول الخطوة (م) / 120</strong>
+                </p>
+                <p class="formula-legend">
+                    ملاحظة: القسمة على 120 تحوّل خطوة/دقيقة إلى خطوة/ثانية وتحسب لكلتا القدمين
+                </p>
+            </div>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>طول الخطوة (م) = الطول (م) × 0.43</strong> (تقريبي)
+                </p>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> شخص طوله 1.75 م، إيقاع 110 خطوة/دقيقة</p>
+                <p>
+                    طول الخطوة = 1.75 × 0.43 = 0.75 م<br>
+                    السرعة = 110 × 0.75 / 120 = 0.69 م/ثانية<br>
+                    <strong>السرعة = 2.5 كم/ساعة (1.5 ميل/ساعة)</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gait-metrics">
+        <h2>مقاييس المشية</h2>
+
+        <div class="formula-card">
+            <h3>مؤشر التماثل المشية (GSI)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>GSI = |اليمين - اليسار| / [0.5 × (اليمين + اليسار)] × 100</strong>
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>القيم المرجعية</h4>
+                <ul>
+                    <li><strong>المشية الطبيعية:</strong> GSI &lt; 3% (Robinson et al., 1987)</li>
+                    <li><strong>عدم تماثل خفيف:</strong> GSI 3-5%</li>
+                    <li><strong>عدم تماثل معتدل:</strong> GSI 5-10%</li>
+                    <li><strong>عدم تماثل مرضي:</strong> GSI &gt; 10% (يوصى بالتقييم)</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> وقت اتصال أرضي 620 مللي ثانية (يسار)، 680 مللي ثانية (يمين)</p>
+                <p>
+                    GSI = |680 - 620| / [0.5 × (680 + 620)] × 100<br>
+                    GSI = 60 / 650 × 100<br>
+                    <strong>GSI = 9.2% (عدم تماثل معتدل)</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>نسبة الدعم المزدوج</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>الدعم المزدوج (%) = (وقت الدعم المزدوج / وقت الدورة) × 100</strong>
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>القيم المرجعية</h4>
+                <ul>
+                    <li><strong>الكبار الأصحاء:</strong> 18-25% من دورة المشية</li>
+                    <li><strong>كبار السن (&gt;65):</strong> 20-30% (Callisaya et al., 2010)</li>
+                    <li><strong>خطر السقوط:</strong> &gt;30% (يشير إلى استراتيجية محافظة)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>سرعة المشية (Gait Velocity)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>المشية الطبيعية (م/ثانية) = المسافة (م) / الوقت (ثانية)</strong>
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>المعايير السريرية (Studenski et al., 2011)</h4>
+                <ul>
+                    <li><strong>&gt;1.0 م/ثانية:</strong> استقلالية وظيفية جيدة</li>
+                    <li><strong>0.6-1.0 م/ثانية:</strong> استقلالية محدودة</li>
+                    <li><strong>&lt;0.6 م/ثانية:</strong> خطر سقوط عالي، إعاقة وظيفية</li>
+                    <li><strong>عتبة البقاء (عمر 75):</strong>
+                        <ul>
+                            <li>≥1.36 م/ثانية: بقاء لمدة 10 سنوات 87%</li>
+                            <li>0.46-1.36 م/ثانية: بقاء لمدة 10 سنوات 19-87%</li>
+                            <li>&lt;0.46 م/ثانية: بقاء لمدة 10 سنوات &lt;19%</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="training-load">
+        <h2>حمل التدريب</h2>
+
+        <div class="formula-card">
+            <h3>Walking Stress Score (WSS)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>WSS = Σ(دقائق في المنطقة × عامل المنطقة)</strong>
+                </p>
+                <p class="formula-legend">
+                    عوامل المنطقة:<br>
+                    المنطقة 1 (خفيف): 1.0<br>
+                    المنطقة 2 (متوسط): 2.0<br>
+                    المنطقة 3 (سريع): 3.0<br>
+                    المنطقة 4 (شديد): 4.0<br>
+                    المنطقة 5 (أقصى): 5.0
+                </p>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> جلسة 60 دقيقة – 15 دقيقة المنطقة 1، 30 دقيقة المنطقة 2، 15 دقيقة المنطقة 3</p>
+                <p>
+                    WSS = (15 × 1) + (30 × 2) + (15 × 3)<br>
+                    WSS = 15 + 60 + 45<br>
+                    <strong>WSS = 120</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>نسبة الحمل الحاد:المزمن (ACWR)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>ACWR = الحمل الحاد (7 أيام) / الحمل المزمن (28 يوماً)</strong>
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>مناطق الخطر (Gabbett et al., 2016)</h4>
+                <ul>
+                    <li><strong>0.8-1.3 (المنطقة الخضراء):</strong> خطر إصابة منخفض</li>
+                    <li><strong>1.3-1.5 (المنطقة الصفراء):</strong> خطر إصابة متوسط</li>
+                    <li><strong>&gt;1.5 (المنطقة الحمراء):</strong> خطر إصابة عالي (2-4× زيادة)</li>
+                    <li><strong>&lt;0.8 (المنطقة الزرقاء):</strong> قد يكون التدريب غير كافٍ</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> حمل حاد = 600 WSS، حمل مزمن = 500 WSS</p>
+                <p>
+                    ACWR = 600 / 500<br>
+                    <strong>ACWR = 1.2 (منطقة خضراء – خطر منخفض)</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>الحجم الأسبوعي (كم أو دقائق)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>قاعدة 10%:</strong> لا تزيد الحجم الأسبوعي بأكثر من 10% أسبوعياً
+                </p>
+            </div>
+
+            <div class="validation">
+                <h4>الحجم الموصى به للصحة</h4>
+                <ul>
+                    <li><strong>الحد الأدنى:</strong> 150 دقيقة/أسبوع شدة متوسطة (منظمة الصحة العالمية)</li>
+                    <li><strong>الأمثل للصحة:</strong> 300 دقيقة/أسبوع (Lear et al., 2017 – دراسة PURE)</li>
+                    <li><strong>تأثير الجرعة:</strong> فائدة متناقصة &gt;450 دقيقة/أسبوع</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="energy-expenditure">
+        <h2>نفقة الطاقة</h2>
+
+        <div class="formula-card">
+            <h3>التكلفة الصافية مقابل الإجمالية للأكسجين</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>VO₂ الصافي (مل/كجم/دقيقة) = VO₂ الإجمالي - VO₂ أثناء الراحة</strong>
+                </p>
+                <p class="formula-legend">
+                    VO₂ أثناء الراحة ≈ 3.5 مل/كجم/دقيقة (تقريبي لعمر 40 سنة)
+                </p>
+            </div>
+
+            <div class="note">
+                <p>
+                    <strong>الاستخدام:</strong> يعكس VO₂ الصافي تكلفة التمرين فقط، بينما يعكس VO₂ الإجمالي الطلب الأيضي الكامل.
+                    للصحة العامة والسعرات الحرارية، استخدم VO₂ الإجمالي (يتضمن METs).
+                </p>
+            </div>
+        </div>
+
+        <div class="formula-card">
+            <h3>معادلة الإنفاق من منظمة الصحة العالمية (2000)</h3>
+
+            <div class="formula-box">
+                <p class="formula-main">
+                    <strong>إنفاق الطاقة (كيلوكالوري/يوم) = 1.1 × METs × وزن الجسم (كجم) × الوقت (ساعات)</strong>
+                </p>
+            </div>
+
+            <div class="example">
+                <h4>مثال</h4>
+                <p><strong>السيناريو:</strong> شخص 70 كجم يمشي 1 ساعة عند 3.5 METs</p>
+                <p>
+                    إنفاق الطاقة = 1.1 × 3.5 × 70 × 1<br>
+                    <strong>إنفاق الطاقة = 270 كيلوكالوري</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="references">
+        <h2>المراجع</h2>
+        <ol>
+            <li>American College of Sports Medicine (2013). ACSM's Guidelines for Exercise Testing and Prescription. 9th ed.</li>
+            <li>Pandolf KB, et al. (1977). Predicting energy expenditure with loads while standing or walking very slowly. J Appl Physiol. 43(4):577-81.</li>
+            <li>Tudor-Locke C, et al. (2019). Cadence (steps/min) and intensity during ambulation in 6-20 year olds: the CADENCE-kids study. Int J Behav Nutr Phys Act. 16(1):8.</li>
+            <li>Moore CC, et al. (2019). Cadence and intensity during ambulation in the 21-85 year age range: the CADENCE-Adults study. Med Sci Sports Exerc. (in press).</li>
+            <li>Robinson RO, et al. (1987). Use of force platform variables to quantify the effects of chiropractic manipulation on gait symmetry. J Manipulative Physiol Ther. 10(4):172-6.</li>
+            <li>Callisaya ML, et al. (2010). Gait, gait variability and the risk of multiple incident falls in older people. Age Ageing. 39(4):481-7.</li>
+            <li>Studenski S, et al. (2011). Gait speed and survival in older adults. JAMA. 305(1):50-8.</li>
+            <li>Gabbett TJ, et al. (2016). The acute:chronic workload ratio predicts injury. Br J Sports Med. 50(8):471-5.</li>
+            <li>Lear SA, et al. (2017). The effect of physical activity on mortality and cardiovascular disease in 130,000 people from 17 high-income, middle-income, and low-income countries: the PURE study. Lancet. 390(10113):2643-54.</li>
+        </ol>
+    </div>
+
+</div>
+
+<style>
+.page-toc {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.page-toc h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.page-toc ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.page-toc li {
+    margin: 0.5rem 0;
+}
+
+.formula-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.formula-card h3 {
+    margin-top: 0;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+.formula-box {
+    background: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+.formula-main {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    color: #212529;
+}
+
+.formula-legend {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+.validation,
+.example,
+.note {
+    margin: 1.5rem 0;
+}
+
+.validation h4,
+.example h4,
+.note h4 {
+    color: #28a745;
+    margin-bottom: 0.75rem;
+}
+
+.validation ul,
+.note ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.validation li,
+.note li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.example {
+    background: #e7f3ff;
+    border-left: 4px solid #007bff;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+}
+
+.example p {
+    margin: 0.5rem 0;
+}
+
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+}
+
+.references {
+    background: #f8f9fa;
+    border-top: 3px solid #dee2e6;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.references h2 {
+    margin-top: 0;
+}
+
+.references ol {
+    padding-left: 1.5rem;
+}
+
+.references li {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+</style>
+
+
   </main>
 
   

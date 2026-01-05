@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Ferramenta de Avaliação da Marcha</h1>
+
+    <p class="lead">
+        Avalie a sua marcha utilizando testes simples de autoavaliação. Estas métricas ajudam a identificar assimetrias, monitorizar a recuperação de lesões ou acompanhar melhorias na eficiência da marcha.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. Teste de Velocidade da Marcha (Caminhada de 4 Metros)</h2>
+
+            <p>Caminhe 4 metros ao seu ritmo confortável. Registe o tempo desde o início até ao fim.</p>
+
+            <div class="input-group">
+                <label for="time">Tempo para caminhar 4 metros (segundos):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">segundos</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">Calcular</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>Resultados</h3>
+                <div class="result-item">
+                    <strong>Velocidade da Marcha:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>Classificação:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Significado Clínico:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. Teste de Cadência (Contagem de 60 Segundos)</h2>
+
+            <p>Caminhe ao seu ritmo normal durante 60 segundos. Conte os seus passos.</p>
+
+            <div class="input-group">
+                <label for="steps">Total de passos em 60 segundos:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">passos</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">Avaliar</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>Resultados</h3>
+                <div class="result-item">
+                    <strong>Cadência:</strong> <span id="cadence-value"></span> ppm
+                </div>
+                <div class="result-item">
+                    <strong>METs Estimados:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>Intensidade:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. Índice de Simetria da Marcha (Comprimento do Passo)</h2>
+
+            <p>Meça o comprimento do passo para cada perna (calcanhar a calcanhar). Pode utilizar uma fita métrica numa superfície plana.</p>
+
+            <div class="input-group">
+                <label for="right-step">Comprimento do passo da perna direita (cm):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">Comprimento do passo da perna esquerda (cm):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">Calcular ISM</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>Resultados</h3>
+                <div class="result-item">
+                    <strong>Índice de Simetria da Marcha (ISM):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>Classificação da Simetria:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Interpretação:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Valores de Referência</h2>
+
+        <h3>Velocidade da Marcha (Adultos Saudáveis)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0,60 m/s</strong></td>
+                        <td>Gravemente comprometida</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0,60-0,80 m/s</strong></td>
+                        <td>Moderadamente comprometida</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0,80-1,00 m/s</strong></td>
+                        <td>Ligeiramente comprometida</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1,00-1,20 m/s</strong></td>
+                        <td>Limiar funcional (mobilidade comunitária)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1,20-1,40 m/s</strong></td>
+                        <td>Boa capacidade funcional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1,40 m/s</strong></td>
+                        <td>Excelente capacidade</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Índice de Simetria da Marcha</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>Excelente simetria (adultos jovens saudáveis)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>Boa simetria (variação normal)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>Assimetria ligeira (monitorizar)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>Assimetria moderada (consulta de fisioterapia recomendada)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>Assimetria grave (avaliação médica necessária)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('Por favor, introduza um tempo válido entre 2-20 segundos');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'Gravemente comprometida';
+        clinical = 'Dependente para a maioria das atividades; avaliação médica recomendada';
+    } else if (speed < 0.80) {
+        classification = 'Moderadamente comprometida';
+        clinical = 'Mobilidade doméstica limitada; considere fisioterapia';
+    } else if (speed < 1.00) {
+        classification = 'Ligeiramente comprometida';
+        clinical = 'Mobilidade comunitária limitada; pode melhorar com treino';
+    } else if (speed < 1.20) {
+        classification = 'Limiar funcional';
+        clinical = 'Independente na comunidade; cumpre mínimo para atravessar a rua';
+    } else if (speed < 1.40) {
+        classification = 'Boa capacidade funcional';
+        clinical = 'Velocidade típica de adulto saudável; baixo risco de incapacidade';
+    } else {
+        classification = 'Excelente capacidade';
+        clinical = 'Saúde robusta; associada à longevidade';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('Por favor, introduza uma contagem de passos válida entre 40-180');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'Intensidade leve';
+    else if (mets < 6.0) intensity = 'Intensidade moderada';
+    else intensity = 'Intensidade vigorosa';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('Por favor, introduza comprimentos de passo válidos entre 30-120 cm');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'Excelente simetria';
+        interpretation = 'Marcha de adulto saudável normal';
+    } else if (gsi < 5) {
+        classification = 'Boa simetria';
+        interpretation = 'Variação normal, sem preocupação';
+    } else if (gsi < 10) {
+        classification = 'Assimetria ligeira';
+        interpretation = 'Pode indicar desequilíbrio menor; monitorizar ao longo do tempo';
+    } else if (gsi < 20) {
+        classification = 'Assimetria moderada';
+        interpretation = 'Requer atenção; considere avaliação de fisioterapia';
+    } else {
+        classification = 'Assimetria grave';
+        interpretation = 'Avaliação médica recomendada; provável patologia';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

@@ -1034,6 +1034,394 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>VO₂max કેલ્ક્યુલેટર (Rockport વૉકિંગ ટેસ્ટ)</h1>
+
+    <p class="lead">
+        Rockport 1-માઈલ વૉકિંગ ટેસ્ટનો ઉપયોગ કરીને તમારા VO₂max (એરોબિક ફિટનેસ) નો અંદાજ લગાવો. 1 માઈલ (1.61 કિમી) જેટલી
+        ઝડપથી બની શકે તેટલું ચાલો અને પૂર્ણ કર્યા પછી તરત જ તમારો સમય અને હાર્ટ રેટ નોંધો.
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>VO₂max ગણો</h2>
+
+            <div class="input-group">
+                <label for="age">ઉંમર (વર્ષ):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">જાતિ:</label>
+                <select id="sex">
+                    <option value="male">પુરુષ</option>
+                    <option value="female">સ્ત્રી</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">શરીરનું વજન:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">કિગ્રા</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">1-માઈલ વૉક સમય:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>મિનિટ</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>સેકન્ડ</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">હાર્ટ રેટ (ટેસ્ટ પૂરો કર્યા પછી તરત):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">VO₂max ગણો</button>
+
+            <div id="results" style="display:none;">
+                <h3>પરિણામો</h3>
+                <div class="result-item">
+                    <strong>અંદાજિત VO₂max:</strong> <span id="vo2max-value"></span> ml/kg/min
+                </div>
+                <div class="result-item">
+                    <strong>ફિટનેસ વર્ગીકરણ:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>ઉંમર/જાતિ માટે પર્સન્ટાઇલ:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>અર્થઘટન:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>VO₂max સંદર્ભ મૂલ્યો (ml/kg/min)</h2>
+
+        <h3>પુરુષો</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ઉંમર</th>
+                        <th>નબળું</th>
+                        <th>સાધારણ</th>
+                        <th>સારું</th>
+                        <th>ઉત્તમ</th>
+                        <th>શ્રેષ્ઠ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>સ્ત્રીઓ</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ઉંમર</th>
+                        <th>નબળું</th>
+                        <th>સાધારણ</th>
+                        <th>સારું</th>
+                        <th>ઉત્તમ</th>
+                        <th>શ્રેષ્ઠ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>પદ્ધતિ: Rockport વૉકિંગ ટેસ્ટ</h2>
+
+        <div class="formula-box">
+            <h3>સમીકરણ</h3>
+            <pre>
+VO₂max (ml/kg/min) = 132.853
+                      - (0.0769 × વજન lbs માં)
+                      - (0.3877 × ઉંમર વર્ષમાં)
+                      + (6.315 × જાતિ) [1 = પુરુષ, 0 = સ્ત્રી]
+                      - (3.2649 × સમય મિનિટમાં)
+                      - (0.1565 × હાર્ટ રેટ bpm માં)
+
+માન્યતા:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - લેબ-માપેલા VO₂max સાથે સંબંધ: r = 0.88-0.93
+  - સ્ટાન્ડર્ડ એરર: ±5 ml/kg/min
+            </pre>
+        </div>
+
+        <h3>ટેસ્ટ પ્રોટોકોલ</h3>
+        <ol>
+            <li><strong>તૈયારી:</strong> ટેસ્ટના 24 કલાક પહેલાં કોઈ જોરદાર પ્રવૃત્તિ ટાળો; શરીરમાં પાણીનું સ્તર જાળવો
+            </li>
+            <li><strong>વોર્મ-અપ:</strong> 5-10 મિનિટ હળવું વૉકિંગ</li>
+            <li><strong>ટેસ્ટ:</strong> 1 માઈલ (1.61 કિમી) જેટલી ઝડપથી બની શકે તેટલું વૉકિંગ ગેટ જાળવીને (દોડ્યા વગર)
+                ચાલો</li>
+            <li><strong>માપન:</strong> પૂર્ણ કર્યા પછી તરત જ સમય (નજીકની સેકન્ડ સુધી) અને હાર્ટ રેટ નોંધો</li>
+            <li><strong>ટ્રેક:</strong> સપાટ 400m ટ્રેક (4 લેપ્સ) અથવા માપેલ 1-માઈલ રૂટનો ઉપયોગ કરો</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+    function calculateVO2max() {
+        const age = parseFloat(document.getElementById('age').value);
+        const sex = document.getElementById('sex').value;
+        let weight = parseFloat(document.getElementById('weight').value);
+        const weightUnit = document.getElementById('weight-unit').value;
+        const timeMin = parseFloat(document.getElementById('time-min').value);
+        const timeSec = parseFloat(document.getElementById('time-sec').value);
+        const hr = parseFloat(document.getElementById('hr').value);
+
+        // Validation
+        if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+            alert('મહેરબાની કરીને તમામ ફીલ્ડ્સમાં માન્ય નંબરો ભરો');
+            return;
+        }
+
+        // Convert weight to lbs if needed
+        if (weightUnit === 'kg') {
+            weight = weight * 2.20462;
+        }
+
+        // Convert time to minutes
+        const timeTotal = timeMin + (timeSec / 60);
+
+        // Sex value for equation
+        const sexValue = (sex === 'male') ? 1 : 0;
+
+        // Rockport equation
+        const vo2max = 132.853
+            - (0.0769 * weight)
+            - (0.3877 * age)
+            + (6.315 * sexValue)
+            - (3.2649 * timeTotal)
+            - (0.1565 * hr);
+
+        // Classify fitness
+        let fitnessClass = '';
+        let percentile = '';
+        let interpretation = '';
+
+        if (sex === 'male') {
+            if (vo2max < 30) {
+                fitnessClass = 'નબળું';
+                percentile = '20મા પર્સન્ટાઇલથી નીચે';
+                interpretation = 'સરેરાશથી ઓછી ફિટનેસ; ક્રમશઃ વૉકિંગ પ્રોગ્રામ શરૂ કરો';
+            } else if (vo2max < 36) {
+                fitnessClass = 'સાધારણ';
+                percentile = '20મા-40મા પર્સન્ટાઇલ';
+                interpretation = 'સરેરાશથી ઓછું; અઠવાડિયે 150 મિનિટ મધ્યમ વૉકિંગ સુધી પહોંચવાનો પ્રયત્ન કરો';
+            } else if (vo2max < 42) {
+                fitnessClass = 'સારું';
+                percentile = '40મા-60મા પર્સન્ટાઇલ';
+                interpretation = 'સરેરાશ ફિટનેસ; નિયમિત પ્રવૃત્તિ જાળવી રાખો';
+            } else if (vo2max < 48) {
+                fitnessClass = 'ઉત્તમ';
+                percentile = '60મા-80મા પર્સન્ટાઇલ';
+                interpretation = 'સરેરાશથી ઉપર; સારું હૃદય-ધમની સ્વાસ્થ્ય';
+            } else {
+                fitnessClass = 'શ્રેષ્ઠ';
+                percentile = '80મા પર્સન્ટાઇલથી ઉપર';
+                interpretation = 'ઉત્તમ એરોબિક ફિટનેસ; એથ્લેટ સ્તર';
+            }
+        } else {
+            if (vo2max < 25) {
+                fitnessClass = 'નબળું';
+                percentile = '20મા પર્સન્ટાઇલથી નીચે';
+                interpretation = 'સરેરાશથી ઓછી ફિટનેસ; ક્રમશઃ વૉકિંગ પ્રોગ્રામ શરૂ કરો';
+            } else if (vo2max < 30) {
+                fitnessClass = 'સાધારણ';
+                percentile = '20મા-40મા પર્સન્ટાઇલ';
+                interpretation = 'સરેરાશથી ઓછું; અઠવાડિયે 150 મિનિટ મધ્યમ વૉકિંગ સુધી પહોંચવાનો પ્રયત્ન કરો';
+            } else if (vo2max < 36) {
+                fitnessClass = 'સારું';
+                percentile = '40મા-60મા પર્સન્ટાઇલ';
+                interpretation = 'સરેરાશ ફિટનેસ; નિયમિત પ્રવૃત્તિ જાળવી રાખો';
+            } else if (vo2max < 42) {
+                fitnessClass = 'ઉત્તમ';
+                percentile = '60મા-80મા પર્સન્ટાઇલ';
+                interpretation = 'સરેરાશથી ઉપર; સારું હૃદય-ધમની સ્વાસ્થ્ય';
+            } else {
+                fitnessClass = 'શ્રેષ્ઠ';
+                percentile = '80મા પર્સન્ટાઇલથી ઉપર';
+                interpretation = 'ઉત્તમ એરોબિક ફિટનેસ; એથ્લેટ સ્તર';
+            }
+        }
+
+        document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+        document.getElementById('fitness-class').textContent = fitnessClass;
+        document.getElementById('percentile').textContent = percentile;
+        document.getElementById('interpretation').textContent = interpretation;
+        document.getElementById('results').style.display = 'block';
+    }
+</script>
+
+<style>
+    .calculator-box {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-group input,
+    .input-group select {
+        padding: 0.5rem;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1.1rem;
+    }
+
+    .input-group input {
+        width: 120px;
+    }
+
+    .input-group .unit {
+        margin-left: 0.5rem;
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+        background: #0056b3;
+    }
+
+    .result-item {
+        background: white;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-left: 4px solid #28a745;
+        border-radius: 4px;
+    }
+
+    .result-item strong {
+        color: #495057;
+    }
+
+    .result-item span {
+        color: #28a745;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+</style>
+
+
   </main>
 
   

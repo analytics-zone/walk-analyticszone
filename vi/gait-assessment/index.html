@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Công Cụ Đánh Giá Dáng Đi</h1>
+
+    <p class="lead">
+        Đánh giá dáng đi của bạn bằng các bài kiểm tra tự thực hiện đơn giản. Những chỉ số này giúp xác định sự mất cân đối, theo dõi quá trình hồi phục sau chấn thương hoặc theo dõi cải thiện hiệu quả đi bộ.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. Kiểm Tra Tốc Độ Đi Bộ (Đi 4 Mét)</h2>
+
+            <p>Đi bộ 4 mét với tốc độ thoải mái của bạn. Đo thời gian từ lúc bắt đầu đến lúc kết thúc.</p>
+
+            <div class="input-group">
+                <label for="time">Thời gian đi 4 mét (giây):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">giây</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">Tính Toán</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>Kết Quả</h3>
+                <div class="result-item">
+                    <strong>Tốc Độ Đi Bộ:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>Phân Loại:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Ý Nghĩa Lâm Sàng:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. Kiểm Tra Nhịp Bước (Đếm Trong 60 Giây)</h2>
+
+            <p>Đi bộ với tốc độ bình thường trong 60 giây. Đếm số bước của bạn.</p>
+
+            <div class="input-group">
+                <label for="steps">Tổng số bước trong 60 giây:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">bước</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">Đánh Giá</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>Kết Quả</h3>
+                <div class="result-item">
+                    <strong>Nhịp Bước:</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>METs Ước Tính:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>Cường Độ:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. Chỉ Số Cân Đối Dáng Đi (Chiều Dài Bước)</h2>
+
+            <p>Đo chiều dài bước cho mỗi chân (từ gót chân này đến gót chân kia). Bạn có thể sử dụng thước dây trên bề mặt phẳng.</p>
+
+            <div class="input-group">
+                <label for="right-step">Chiều dài bước chân phải (cm):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">Chiều dài bước chân trái (cm):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">Tính Chỉ Số GSI</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>Kết Quả</h3>
+                <div class="result-item">
+                    <strong>Chỉ Số Cân Đối Dáng Đi (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>Phân Loại Cân Đối:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Giải Thích:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Giá Trị Tham Khảo</h2>
+
+        <h3>Tốc Độ Đi Bộ (Người Trưởng Thành Khỏe Mạnh)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>Suy giảm nghiêm trọng</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>Suy giảm vừa phải</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>Suy giảm nhẹ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>Ngưỡng chức năng (khả năng di chuyển cộng đồng)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>Năng lực chức năng tốt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>Năng lực xuất sắc</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Chỉ Số Cân Đối Dáng Đi</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>Cân đối xuất sắc (người trưởng thành trẻ khỏe mạnh)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>Cân đối tốt (biến thiên bình thường)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>Mất cân đối nhẹ (cần theo dõi)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>Mất cân đối vừa phải (khuyến nghị tư vấn vật lý trị liệu)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>Mất cân đối nghiêm trọng (cần đánh giá y tế)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('Vui lòng nhập thời gian hợp lệ từ 2-20 giây');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'Suy giảm nghiêm trọng';
+        clinical = 'Phụ thuộc vào hầu hết các hoạt động; khuyến nghị đánh giá y tế';
+    } else if (speed < 0.80) {
+        classification = 'Suy giảm vừa phải';
+        clinical = 'Khả năng di chuyển trong nhà hạn chế; cân nhắc vật lý trị liệu';
+    } else if (speed < 1.00) {
+        classification = 'Suy giảm nhẹ';
+        clinical = 'Khả năng di chuyển cộng đồng hạn chế; có thể cải thiện với tập luyện';
+    } else if (speed < 1.20) {
+        classification = 'Ngưỡng chức năng';
+        clinical = 'Độc lập trong cộng đồng; đáp ứng tối thiểu để qua đường';
+    } else if (speed < 1.40) {
+        classification = 'Năng lực chức năng tốt';
+        clinical = 'Tốc độ người trưởng thành khỏe mạnh điển hình; nguy cơ khuyết tật thấp';
+    } else {
+        classification = 'Năng lực xuất sắc';
+        clinical = 'Sức khỏe mạnh mẽ; liên quan đến tuổi thọ';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('Vui lòng nhập số bước hợp lệ từ 40-180');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'Cường độ nhẹ';
+    else if (mets < 6.0) intensity = 'Cường độ vừa phải';
+    else intensity = 'Cường độ mạnh';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('Vui lòng nhập chiều dài bước hợp lệ từ 30-120 cm');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'Cân đối xuất sắc';
+        interpretation = 'Dáng đi người trưởng thành khỏe mạnh bình thường';
+    } else if (gsi < 5) {
+        classification = 'Cân đối tốt';
+        interpretation = 'Biến thiên bình thường, không đáng lo ngại';
+    } else if (gsi < 10) {
+        classification = 'Mất cân đối nhẹ';
+        interpretation = 'Có thể cho thấy mất cân bằng nhỏ; theo dõi theo thời gian';
+    } else if (gsi < 20) {
+        classification = 'Mất cân đối vừa phải';
+        interpretation = 'Cần chú ý; cân nhắc đánh giá vật lý trị liệu';
+    } else {
+        classification = 'Mất cân đối nghiêm trọng';
+        interpretation = 'Khuyến nghị đánh giá y tế; có khả năng bệnh lý';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

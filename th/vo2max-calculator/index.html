@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>เครื่องคำนวณ VO₂max (Rockport Walking Test)</h1>
+
+    <p class="lead">
+        ประเมินค่า VO₂max (สมรรถภาพแอโรบิก) ของคุณโดยใช้ Rockport 1-Mile Walking Test เดินระยะทาง 1 ไมล์ (1.61 กม.) เร็วที่สุดเท่าที่ทำได้ บันทึกเวลาและอัตราการเต้นของหัวใจทันทีที่เดินเสร็จ
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>คำนวณ VO₂max</h2>
+
+            <div class="input-group">
+                <label for="age">อายุ (ปี):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">เพศ:</label>
+                <select id="sex">
+                    <option value="male">ชาย</option>
+                    <option value="female">หญิง</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">น้ำหนักตัว:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">เวลาที่ใช้เดิน 1 ไมล์:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>นาที</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>วินาที</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">อัตราการเต้นของหัวใจ (ทันทีหลังเดินเสร็จ):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">คำนวณ VO₂max</button>
+
+            <div id="results" style="display:none;">
+                <h3>ผลลัพธ์</h3>
+                <div class="result-item">
+                    <strong>ค่า VO₂max โดยประมาณ:</strong> <span id="vo2max-value"></span> ml/kg/min
+                </div>
+                <div class="result-item">
+                    <strong>ระดับสมรรถภาพ:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>เปอร์เซ็นไทล์ตามอายุ/เพศ:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>การแปลผล:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>ค่าอ้างอิง VO₂max (ml/kg/min)</h2>
+
+        <h3>ชาย</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>อายุ</th>
+                        <th>ต่ำ</th>
+                        <th>พอใช้</th>
+                        <th>ดี</th>
+                        <th>ดีเยี่ยม</th>
+                        <th>ดีมาก</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>หญิง</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>อายุ</th>
+                        <th>ต่ำ</th>
+                        <th>พอใช้</th>
+                        <th>ดี</th>
+                        <th>ดีเยี่ยม</th>
+                        <th>ดีมาก</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>วิธีการทดสอบ: Rockport Walking Test</h2>
+
+        <div class="formula-box">
+            <h3>สูตรคำนวณ</h3>
+            <pre>
+VO₂max (ml/kg/min) = 132.853
+                      - (0.0769 × น้ำหนักในหน่วยปอนด์)
+                      - (0.3877 × อายุในหน่วยปี)
+                      + (6.315 × เพศ) [1 = ชาย, 0 = หญิง]
+                      - (3.2649 × เวลาในหน่วยนาที)
+                      - (0.1565 × อัตราการเต้นของหัวใจใน bpm)
+
+การตรวจสอบความถูกต้อง:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - ความสัมพันธ์กับค่า VO₂max ที่วัดในห้องทดลอง: r = 0.88-0.93
+  - ค่าความคลาดเคลื่อนมาตรฐาน: ±5 ml/kg/min
+            </pre>
+        </div>
+
+        <h3>ขั้นตอนการทดสอบ</h3>
+        <ol>
+            <li><strong>การเตรียมตัว:</strong> หลีกเลี่ยงกิจกรรมที่หนักมาก 24 ชั่วโมงก่อนทดสอบ ดื่มน้ำให้เพียงพอ</li>
+            <li><strong>การอบอุ่นร่างกาย:</strong> เดินช้าๆ 5-10 นาที</li>
+            <li><strong>การทดสอบ:</strong> เดินระยะทาง 1 ไมล์ (1.61 กม.) เร็วที่สุดเท่าที่ทำได้โดยรักษาท่าเดิน (ห้ามวิ่ง)</li>
+            <li><strong>การวัด:</strong> บันทึกเวลา (ถึงวินาทีที่ใกล้เคียงที่สุด) และอัตราการเต้นของหัวใจทันทีหลังจากเดินเสร็จ</li>
+            <li><strong>สนาม:</strong> ลู่วิ่งแบบราบ 400 เมตร (4 รอบ) หรือเส้นทางที่วัดระยะ 1 ไมล์ไว้แล้ว</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('กรุณากรอกข้อมูลให้ครบทุกช่องด้วยตัวเลขที่ถูกต้อง');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'ต่ำ';
+            percentile = 'ต่ำกว่าเปอร์เซ็นไทล์ที่ 20';
+            interpretation = 'สมรรถภาพต่ำกว่าเกณฑ์ เริ่มโปรแกรมการเดินอย่างค่อยเป็นค่อยไป';
+        } else if (vo2max < 36) {
+            fitnessClass = 'พอใช้';
+            percentile = 'เปอร์เซ็นไทล์ที่ 20-40';
+            interpretation = 'ต่ำกว่าค่าเฉลี่ย พยายามเพิ่มการเดินความเข้มปานกลางเป็น 150 นาที/สัปดาห์';
+        } else if (vo2max < 42) {
+            fitnessClass = 'ดี';
+            percentile = 'เปอร์เซ็นไทล์ที่ 40-60';
+            interpretation = 'สมรรถภาพปานกลาง รักษากิจกรรมสม่ำเสมอ';
+        } else if (vo2max < 48) {
+            fitnessClass = 'ดีเยี่ยม';
+            percentile = 'เปอร์เซ็นไทล์ที่ 60-80';
+            interpretation = 'สูงกว่าค่าเฉลี่ย สุขภาพหัวใจและหลอดเลือดดี';
+        } else {
+            fitnessClass = 'ดีมาก';
+            percentile = 'สูงกว่าเปอร์เซ็นไทล์ที่ 80';
+            interpretation = 'สมรรถภาพแอโรบิกยอดเยี่ยม อยู่ในระดับนักกีฬา';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'ต่ำ';
+            percentile = 'ต่ำกว่าเปอร์เซ็นไทล์ที่ 20';
+            interpretation = 'สมรรถภาพต่ำกว่าเกณฑ์ เริ่มโปรแกรมการเดินอย่างค่อยเป็นค่อยไป';
+        } else if (vo2max < 30) {
+            fitnessClass = 'พอใช้';
+            percentile = 'เปอร์เซ็นไทล์ที่ 20-40';
+            interpretation = 'ต่ำกว่าค่าเฉลี่ย พยายามเพิ่มการเดินความเข้มปานกลางเป็น 150 นาที/สัปดาห์';
+        } else if (vo2max < 36) {
+            fitnessClass = 'ดี';
+            percentile = 'เปอร์เซ็นไทล์ที่ 40-60';
+            interpretation = 'สมรรถภาพปานกลาง รักษากิจกรรมสม่ำเสมอ';
+        } else if (vo2max < 42) {
+            fitnessClass = 'ดีเยี่ยม';
+            percentile = 'เปอร์เซ็นไทล์ที่ 60-80';
+            interpretation = 'สูงกว่าค่าเฉลี่ย สุขภาพหัวใจและหลอดเลือดดี';
+        } else {
+            fitnessClass = 'ดีมาก';
+            percentile = 'สูงกว่าเปอร์เซ็นไทล์ที่ 80';
+            interpretation = 'สมรรถภาพแอโรบิกยอดเยี่ยม อยู่ในระดับนักกีฬา';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Tool para sa Pagsusuri ng Gait</h1>
+
+    <p class="lead">
+        Suriin ang iyong paraan ng paglakad gamit ang mga simpleng self-test. Ang mga metriks na ito ay tumutulong na matukoy ang mga asymmetry, subaybayan ang pagbawi mula sa pinsala, o sumubaybay sa mga pagpapabuti sa kahusayan ng paglakad.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. Gait Speed Test (4-Metro na Paglakad)</h2>
+
+            <p>Maglakad ng 4 metro sa iyong komportableng bilis. I-time ang iyong sarili mula simula hanggang dulo.</p>
+
+            <div class="input-group">
+                <label for="time">Oras para maglakad ng 4 metro (segundo):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">segundo</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">Kalkulahin</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>Mga Resulta</h3>
+                <div class="result-item">
+                    <strong>Bilis ng Lakad:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>Klasipikasyon:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Kahalagahan sa Klinika:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. Cadence Test (60-Segundo na Bilang)</h2>
+
+            <p>Maglakad sa iyong normal na bilis ng 60 segundo. Bilangin ang iyong mga hakbang.</p>
+
+            <div class="input-group">
+                <label for="steps">Kabuuang hakbang sa 60 segundo:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">hakbang</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">Suriin</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>Mga Resulta</h3>
+                <div class="result-item">
+                    <strong>Cadence:</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>Tinantyang METs:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>Intensidad:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. Gait Symmetry Index (Haba ng Hakbang)</h2>
+
+            <p>Sukatin ang haba ng hakbang para sa bawat binti (sakong hanggang sakong). Maaari kang gumamit ng tape measure sa patag na ibabaw.</p>
+
+            <div class="input-group">
+                <label for="right-step">Haba ng hakbang ng kanang binti (cm):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">Haba ng hakbang ng kaliwang binti (cm):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">Kalkulahin ang GSI</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>Mga Resulta</h3>
+                <div class="result-item">
+                    <strong>Gait Symmetry Index (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>Klasipikasyon ng Symmetry:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Interpretasyon:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Mga Halimbawang Halaga</h2>
+
+        <h3>Bilis ng Lakad (Malusog na Matatanda)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>Malubhang kapansanan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>Katamtamang kapansanan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>Bahagyang kapansanan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>Functional threshold (mobilidad sa komunidad)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>Mabuting functional capacity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>Napakahusay na kakayahan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Gait Symmetry Index</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>Napakahusay na symmetry (malusog na mga kabataan)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>Mabuting symmetry (normal na pagkakaiba)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>Bahagyang asymmetry (subaybayan)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>Katamtamang asymmetry (inirerekomenda ang konsultasyon sa PT)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>Malubhang asymmetry (kailangan ng medikal na pagsusuri)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('Mangyaring maglagay ng wastong oras sa pagitan ng 2-20 segundo');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'Malubhang kapansanan';
+        clinical = 'Umaasa sa iba para sa karamihan ng mga aktibidad; inirerekomenda ang medikal na pagsusuri';
+    } else if (speed < 0.80) {
+        classification = 'Katamtamang kapansanan';
+        clinical = 'Limitadong mobilidad sa bahay; isaalang-alang ang physical therapy';
+    } else if (speed < 1.00) {
+        classification = 'Bahagyang kapansanan';
+        clinical = 'Limitadong mobilidad sa komunidad; maaaring bumuti sa pagsasanay';
+    } else if (speed < 1.20) {
+        classification = 'Functional threshold';
+        clinical = 'Independyente sa komunidad; umabot sa minimum para sa pagtawid ng kalye';
+    } else if (speed < 1.40) {
+        classification = 'Mabuting functional capacity';
+        clinical = 'Malusog na karaniwang bilis ng matatanda; mababang panganib ng kapansanan';
+    } else {
+        classification = 'Napakahusay na kakayahan';
+        clinical = 'Malakas na kalusugan; nauugnay sa mahabang buhay';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('Mangyaring maglagay ng wastong bilang ng hakbang sa pagitan ng 40-180');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'Magaan na intensidad';
+    else if (mets < 6.0) intensity = 'Katamtamang intensidad';
+    else intensity = 'Mabigat na intensidad';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('Mangyaring maglagay ng wastong haba ng hakbang sa pagitan ng 30-120 cm');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'Napakahusay na symmetry';
+        interpretation = 'Normal na malusog na lakad ng matatanda';
+    } else if (gsi < 5) {
+        classification = 'Mabuting symmetry';
+        interpretation = 'Normal na pagkakaiba, walang problema';
+    } else if (gsi < 10) {
+        classification = 'Bahagyang asymmetry';
+        interpretation = 'Maaaring magpahiwatig ng maliliit na kawalan ng balanse; subaybayan sa paglipas ng panahon';
+    } else if (gsi < 20) {
+        classification = 'Katamtamang asymmetry';
+        interpretation = 'Nangangailangan ng pansin; isaalang-alang ang pagsusuri ng PT';
+    } else {
+        classification = 'Malubhang asymmetry';
+        interpretation = 'Inirerekomenda ang medikal na pagsusuri; malamang na may patholohiya';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

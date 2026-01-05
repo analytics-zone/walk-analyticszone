@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Kifaa cha Kutathmini Mwendo</h1>
+
+    <p class="lead">
+        Tathmini mwendo wako wa kutembea kwa kutumia vipimo rahisi vya kujipima. Vipimo hivi vinasaidia kutambua kutokuwa sawa, kufuatilia uponyaji kutokana na jeraha, au kufuatilia maboresho katika ufanisi wa kutembea.
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. Jaribio la Kasi ya Mwendo (Kutembea Mita 4)</h2>
+
+            <p>Tembea mita 4 kwa kasi yako ya kawaida. Jipimie muda kuanzia mwanzo hadi mwisho.</p>
+
+            <div class="input-group">
+                <label for="time">Muda wa kutembea mita 4 (sekunde):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">sekunde</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">Hesabu</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>Matokeo</h3>
+                <div class="result-item">
+                    <strong>Kasi ya Mwendo:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>Uainishaji:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Umuhimu wa Kikliniki:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. Jaribio la Mdundo wa Hatua (Hesabu ya Sekunde 60)</h2>
+
+            <p>Tembea kwa kasi yako ya kawaida kwa sekunde 60. Hesabu hatua zako.</p>
+
+            <div class="input-group">
+                <label for="steps">Jumla ya hatua katika sekunde 60:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">hatua</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">Tathmini</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>Matokeo</h3>
+                <div class="result-item">
+                    <strong>Mdundo wa Hatua:</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>METs Iliyokadiriwa:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>Ukali:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. Kipimo cha Usawa wa Mwendo (Urefu wa Hatua)</h2>
+
+            <p>Pima urefu wa hatua kwa kila mguu (kisigino hadi kisigino). Unaweza kutumia tepu ya kupimia kwenye uso sawa.</p>
+
+            <div class="input-group">
+                <label for="right-step">Urefu wa hatua ya mguu wa kulia (cm):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">Urefu wa hatua ya mguu wa kushoto (cm):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">Hesabu GSI</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>Matokeo</h3>
+                <div class="result-item">
+                    <strong>Kipimo cha Usawa wa Mwendo (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>Uainishaji wa Usawa:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Ufafanuzi:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Thamani za Kurejelea</h2>
+
+        <h3>Kasi ya Mwendo (Watu Wazima Wenye Afya)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>Ulemavu mkubwa</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>Ulemavu wa kati</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>Ulemavu mdogo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>Kizingiti cha utendaji (uhamaji wa jamii)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>Uwezo mzuri wa utendaji</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>Uwezo bora</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Kipimo cha Usawa wa Mwendo</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>Usawa bora (vijana wazima wenye afya)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>Usawa mzuri (tofauti ya kawaida)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>Kutokuwa sawa kidogo (fuatilia)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>Kutokuwa sawa kwa kiasi (ushauri wa PT unapendekezwa)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>Kutokuwa sawa sana (tathmini ya kimatibabu inahitajika)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('Tafadhali ingiza muda sahihi kati ya sekunde 2-20');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'Ulemavu mkubwa';
+        clinical = 'Tegemezi kwa shughuli nyingi; tathmini ya kimatibabu inapendekezwa';
+    } else if (speed < 0.80) {
+        classification = 'Ulemavu wa kati';
+        clinical = 'Uhamaji mdogo wa nyumbani; zingatia tiba ya kimwili';
+    } else if (speed < 1.00) {
+        classification = 'Ulemavu mdogo';
+        clinical = 'Uhamaji mdogo wa jamii; inaweza kuboreshwa kwa mafunzo';
+    } else if (speed < 1.20) {
+        classification = 'Kizingiti cha utendaji';
+        clinical = 'Huru katika jamii; inakidhi viwango vya chini vya kuvuka barabara';
+    } else if (speed < 1.40) {
+        classification = 'Uwezo mzuri wa utendaji';
+        clinical = 'Kasi ya kawaida ya mtu mzima mwenye afya; hatari ndogo ya ulemavu';
+    } else {
+        classification = 'Uwezo bora';
+        clinical = 'Afya imara; inahusishwa na maisha marefu';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('Tafadhali ingiza idadi sahihi ya hatua kati ya 40-180');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'Ukali mdogo';
+    else if (mets < 6.0) intensity = 'Ukali wa kati';
+    else intensity = 'Ukali mkubwa';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('Tafadhali ingiza urefu sahihi wa hatua kati ya cm 30-120');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'Usawa bora';
+        interpretation = 'Mwendo wa kawaida wa mtu mzima mwenye afya';
+    } else if (gsi < 5) {
+        classification = 'Usawa mzuri';
+        interpretation = 'Tofauti ya kawaida, hakuna wasiwasi';
+    } else if (gsi < 10) {
+        classification = 'Kutokuwa sawa kidogo';
+        interpretation = 'Inaweza kuonyesha kutokubaliana kidogo; fuatilia kwa muda';
+    } else if (gsi < 20) {
+        classification = 'Kutokuwa sawa kwa kiasi';
+        interpretation = 'Inahitaji umakini; zingatia tathmini ya PT';
+    } else {
+        classification = 'Kutokuwa sawa sana';
+        interpretation = 'Tathmini ya kimatibabu inapendekezwa; uwezekano wa ugonjwa';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

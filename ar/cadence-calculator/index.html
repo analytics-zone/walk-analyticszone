@@ -1034,6 +1034,268 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>حاسبة الإيقاع إلى METs</h1>
+
+    <p class="lead">
+        احسب نفقة الطاقة المقدّرة (METs) والشدة من إيقاع مشيك باستخدام معادلة Moore المصادق عليها (2019، دراسة CADENCE-Adults، R²=0.87).
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>احسب METs من الإيقاع</h2>
+
+            <div class="input-group">
+                <label for="cadence">إيقاع المشي (خطوة/دقيقة):</label>
+                <input type="number" id="cadence" min="40" max="160" value="100" />
+                <span class="unit">خطوة/دقيقة</span>
+            </div>
+
+            <button onclick="calculateMETs()" class="btn-primary">احسب</button>
+
+            <div id="results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>METs المقدّرة:</strong> <span id="mets-value"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>تصنيف الشدة:</strong> <span id="intensity"></span>
+                </div>
+                <div class="result-item">
+                    <strong>نفقة السعرات (شخص 70 كجم):</strong> <span id="calories"></span> سعرة/دقيقة
+                </div>
+                <div class="result-item">
+                    <strong>VO₂:</strong> <span id="vo2"></span> مل/كجم/دقيقة
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator-box">
+            <h2>اعثر على الإيقاع لـMETs المستهدفة</h2>
+
+            <div class="input-group">
+                <label for="target-mets">METs المستهدفة:</label>
+                <input type="number" id="target-mets" min="1" max="10" step="0.1" value="3.0" />
+                <span class="unit">METs</span>
+            </div>
+
+            <button onclick="calculateCadence()" class="btn-primary">احسب</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>الإيقاع المطلوب:</strong> <span id="cadence-value"></span> خطوة/دقيقة
+                </div>
+                <div class="result-item">
+                    <strong>الشدة:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>جدول مرجعي: الإيقاع → METs</h2>
+
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>الإيقاع (خطوة/دقيقة)</th>
+                        <th>METs</th>
+                        <th>الشدة</th>
+                        <th>سعرة/دقيقة (70 كجم)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>60</td>
+                        <td>2.0</td>
+                        <td>خفيف جداً</td>
+                        <td>2.3</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>2.5</td>
+                        <td>خفيف</td>
+                        <td>2.9</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>3.0</td>
+                        <td>متوسط (عتبة)</td>
+                        <td>3.5</td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>4.1</td>
+                        <td>متوسط-سريع</td>
+                        <td>4.8</td>
+                    </tr>
+                    <tr>
+                        <td>120</td>
+                        <td>5.3</td>
+                        <td>شديد-سريع</td>
+                        <td>6.2</td>
+                    </tr>
+                    <tr>
+                        <td>130</td>
+                        <td>6.6</td>
+                        <td>شديد (عتبة)</td>
+                        <td>7.7</td>
+                    </tr>
+                    <tr>
+                        <td>140</td>
+                        <td>7.8</td>
+                        <td>شديد جداً</td>
+                        <td>9.1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>المنهجية</h2>
+
+        <div class="formula-box">
+            <h3>معادلة Moore (2019)</h3>
+            <pre>
+METs = 0.0219 × الإيقاع (خطوة/دقيقة) + 0.72
+
+المصادقة:
+  - الدراسة: CADENCE-Adults (Tudor-Locke et al., 2019)
+  - العينة: 156 بالغاً، أعمار 21-85
+  - R² = 0.87 (ارتباط قوي)
+  - عتبة 100 خطوة/دقيقة: 3.0 METs (حساسية 86%، نوعية 89.6%)
+  - عتبة 130 خطوة/دقيقة: 6.0 METs (حساسية 81.3%، نوعية 84.7%)
+            </pre>
+        </div>
+
+        <p><strong>التحويلات:</strong></p>
+        <ul>
+            <li><strong>VO₂ (مل/كجم/دقيقة):</strong> METs × 3.5</li>
+            <li><strong>السعرات (سعرة/دقيقة):</strong> METs × 3.5 × وزن الجسم (كجم) / 200</li>
+        </ul>
+    </section>
+
+</div>
+
+<script>
+function calculateMETs() {
+    const cadence = parseFloat(document.getElementById('cadence').value);
+
+    if (isNaN(cadence) || cadence < 40 || cadence > 160) {
+        alert('يرجى إدخال إيقاع صالح بين 40-160 خطوة/دقيقة');
+        return;
+    }
+
+    // Moore's equation
+    const mets = (0.0219 * cadence) + 0.72;
+    const vo2 = mets * 3.5;
+    const calories = (mets * 3.5 * 70) / 200; // for 70 kg person
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'خفيف';
+    else if (mets < 6.0) intensity = 'متوسط';
+    else intensity = 'شديد';
+
+    document.getElementById('mets-value').textContent = mets.toFixed(1);
+    document.getElementById('intensity').textContent = intensity;
+    document.getElementById('calories').textContent = calories.toFixed(1);
+    document.getElementById('vo2').textContent = vo2.toFixed(1);
+    document.getElementById('results').style.display = 'block';
+}
+
+function calculateCadence() {
+    const targetMETs = parseFloat(document.getElementById('target-mets').value);
+
+    if (isNaN(targetMETs) || targetMETs < 1 || targetMETs > 10) {
+        alert('يرجى إدخال قيمة METs صالحة بين 1-10');
+        return;
+    }
+
+    // Inverse of Moore's equation
+    const cadence = (targetMETs - 0.72) / 0.0219;
+
+    let intensity = '';
+    if (targetMETs < 3.0) intensity = 'خفيف';
+    else if (targetMETs < 6.0) intensity = 'متوسط';
+    else intensity = 'شديد';
+
+    document.getElementById('cadence-value').textContent = Math.round(cadence);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

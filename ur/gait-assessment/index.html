@@ -1034,6 +1034,340 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>چال کی تشخیص کا آلہ</h1>
+
+    <p class="lead">
+        آسان خود ٹیسٹ استعمال کرتے ہوئے اپنی چال کا جائزہ لیں۔ یہ میٹرکس عدم توازن کی شناخت، چوٹ سے بحالی کی نگرانی، یا چلنے کی کارکردگی میں بہتری کو ٹریک کرنے میں مدد کرتی ہیں۔
+    </p>
+
+    <section id="gait-speed">
+        <div class="calculator-box">
+            <h2>1. چال کی رفتار کا ٹیسٹ (4 میٹر واک)</h2>
+
+            <p>اپنی آرام دہ رفتار سے 4 میٹر چلیں۔ شروع سے اختتام تک وقت نوٹ کریں۔</p>
+
+            <div class="input-group">
+                <label for="time">4 میٹر چلنے میں لگنے والا وقت (سیکنڈ):</label>
+                <input type="number" id="time" min="2" max="20" step="0.1" value="3.5" />
+                <span class="unit">سیکنڈ</span>
+            </div>
+
+            <button onclick="calculateGaitSpeed()" class="btn-primary">حساب لگائیں</button>
+
+            <div id="speed-results" style="display:none;">
+                <h3>نتائج</h3>
+                <div class="result-item">
+                    <strong>چال کی رفتار:</strong> <span id="speed-value"></span> m/s
+                </div>
+                <div class="result-item">
+                    <strong>درجہ بندی:</strong> <span id="speed-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>طبی اہمیت:</strong> <span id="speed-clinical"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadence-test">
+        <div class="calculator-box">
+            <h2>2. قدموں کی تعداد کا ٹیسٹ (60 سیکنڈ کی گنتی)</h2>
+
+            <p>60 سیکنڈ کے لیے اپنی عام رفتار سے چلیں۔ اپنے قدموں کی گنتی کریں۔</p>
+
+            <div class="input-group">
+                <label for="steps">60 سیکنڈ میں کل قدم:</label>
+                <input type="number" id="steps" min="40" max="180" value="100" />
+                <span class="unit">قدم</span>
+            </div>
+
+            <button onclick="assessCadence()" class="btn-primary">جائزہ لیں</button>
+
+            <div id="cadence-results" style="display:none;">
+                <h3>نتائج</h3>
+                <div class="result-item">
+                    <strong>قدموں کی تعداد:</strong> <span id="cadence-value"></span> spm
+                </div>
+                <div class="result-item">
+                    <strong>تخمینی METs:</strong> <span id="cadence-mets"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>شدت:</strong> <span id="cadence-intensity"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="symmetry">
+        <div class="calculator-box">
+            <h2>3. چال کی ہم آہنگی کا اشاریہ (قدم کی لمبائی)</h2>
+
+            <p>ہر ٹانگ کے لیے قدم کی لمبائی ناپیں (ایڑی سے ایڑی تک)۔ آپ فلیٹ سطح پر ٹیپ میژر استعمال کر سکتے ہیں۔</p>
+
+            <div class="input-group">
+                <label for="right-step">دائیں ٹانگ کے قدم کی لمبائی (سینٹی میٹر):</label>
+                <input type="number" id="right-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <div class="input-group">
+                <label for="left-step">بائیں ٹانگ کے قدم کی لمبائی (سینٹی میٹر):</label>
+                <input type="number" id="left-step" min="30" max="120" value="65" />
+                <span class="unit">cm</span>
+            </div>
+
+            <button onclick="calculateGSI()" class="btn-primary">GSI کا حساب لگائیں</button>
+
+            <div id="gsi-results" style="display:none;">
+                <h3>نتائج</h3>
+                <div class="result-item">
+                    <strong>چال کی ہم آہنگی کا اشاریہ (GSI):</strong> <span id="gsi-value"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>ہم آہنگی کی درجہ بندی:</strong> <span id="gsi-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>تشریح:</strong> <span id="gsi-interp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>حوالہ جاتی اقدار</h2>
+
+        <h3>چال کی رفتار (صحت مند بالغ افراد)</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;0.60 m/s</strong></td>
+                        <td>شدید خرابی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.60-0.80 m/s</strong></td>
+                        <td>اعتدال درجے کی خرابی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>0.80-1.00 m/s</strong></td>
+                        <td>ہلکی خرابی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.00-1.20 m/s</strong></td>
+                        <td>فعال حد (کمیونٹی نقل و حرکت)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.20-1.40 m/s</strong></td>
+                        <td>اچھی فعالیت کی صلاحیت</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;1.40 m/s</strong></td>
+                        <td>بہترین صلاحیت</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>چال کی ہم آہنگی کا اشاریہ</h3>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>&lt;2%</strong></td>
+                        <td>بہترین ہم آہنگی (صحت مند نوجوان بالغ)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-5%</strong></td>
+                        <td>اچھی ہم آہنگی (عام تغیرات)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-10%</strong></td>
+                        <td>ہلکا عدم توازن (نگرانی کریں)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-20%</strong></td>
+                        <td>اعتدال درجے کا عدم توازن (PT مشاورت تجویز کی جاتی ہے)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>&gt;20%</strong></td>
+                        <td>شدید عدم توازن (طبی جائزہ ضروری ہے)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function calculateGaitSpeed() {
+    const time = parseFloat(document.getElementById('time').value);
+
+    if (isNaN(time) || time < 2 || time > 20) {
+        alert('براہ کرم 2-20 سیکنڈ کے درمیان درست وقت درج کریں');
+        return;
+    }
+
+    const speed = 4.0 / time; // 4 meters / time
+
+    let classification = '';
+    let clinical = '';
+
+    if (speed < 0.60) {
+        classification = 'شدید خرابی';
+        clinical = 'زیادہ تر سرگرمیوں کے لیے انحصار؛ طبی جائزہ تجویز کیا جاتا ہے';
+    } else if (speed < 0.80) {
+        classification = 'اعتدال درجے کی خرابی';
+        clinical = 'محدود گھریلو نقل و حرکت؛ فزیوتھراپی پر غور کریں';
+    } else if (speed < 1.00) {
+        classification = 'ہلکی خرابی';
+        clinical = 'محدود کمیونٹی نقل و حرکت؛ تربیت سے بہتری آ سکتی ہے';
+    } else if (speed < 1.20) {
+        classification = 'فعال حد';
+        clinical = 'کمیونٹی میں خودمختار؛ سڑک پار کرنے کے لیے کم سے کم ضرورت پوری کرتا ہے';
+    } else if (speed < 1.40) {
+        classification = 'اچھی فعالیت کی صلاحیت';
+        clinical = 'صحت مند عام بالغ رفتار؛ کم معذوری کا خطرہ';
+    } else {
+        classification = 'بہترین صلاحیت';
+        clinical = 'مضبوط صحت؛ طویل عمر سے منسلک';
+    }
+
+    document.getElementById('speed-value').textContent = speed.toFixed(2);
+    document.getElementById('speed-class').textContent = classification;
+    document.getElementById('speed-clinical').textContent = clinical;
+    document.getElementById('speed-results').style.display = 'block';
+}
+
+function assessCadence() {
+    const steps = parseFloat(document.getElementById('steps').value);
+
+    if (isNaN(steps) || steps < 40 || steps > 180) {
+        alert('براہ کرم 40-180 کے درمیان درست قدموں کی تعداد درج کریں');
+        return;
+    }
+
+    const cadence = steps; // steps per minute
+    const mets = (0.0219 * cadence) + 0.72;
+
+    let intensity = '';
+    if (mets < 3.0) intensity = 'ہلکی شدت';
+    else if (mets < 6.0) intensity = 'اعتدال درجے کی شدت';
+    else intensity = 'تیز شدت';
+
+    document.getElementById('cadence-value').textContent = cadence;
+    document.getElementById('cadence-mets').textContent = mets.toFixed(1);
+    document.getElementById('cadence-intensity').textContent = intensity;
+    document.getElementById('cadence-results').style.display = 'block';
+}
+
+function calculateGSI() {
+    const right = parseFloat(document.getElementById('right-step').value);
+    const left = parseFloat(document.getElementById('left-step').value);
+
+    if (isNaN(right) || isNaN(left) || right < 30 || right > 120 || left < 30 || left > 120) {
+        alert('براہ کرم 30-120 سینٹی میٹر کے درمیان درست قدم کی لمبائی درج کریں');
+        return;
+    }
+
+    const gsi = Math.abs(right - left) / (0.5 * (right + left)) * 100;
+
+    let classification = '';
+    let interpretation = '';
+
+    if (gsi < 2) {
+        classification = 'بہترین ہم آہنگی';
+        interpretation = 'عام صحت مند بالغ چال';
+    } else if (gsi < 5) {
+        classification = 'اچھی ہم آہنگی';
+        interpretation = 'عام تغیرات، کوئی تشویش نہیں';
+    } else if (gsi < 10) {
+        classification = 'ہلکا عدم توازن';
+        interpretation = 'معمولی عدم توازن کی نشاندہی ہو سکتی ہے؛ وقت کے ساتھ نگرانی کریں';
+    } else if (gsi < 20) {
+        classification = 'اعتدال درجے کا عدم توازن';
+        interpretation = 'توجہ کی ضرورت ہے؛ PT جائزہ پر غور کریں';
+    } else {
+        classification = 'شدید عدم توازن';
+        interpretation = 'طبی جائزہ تجویز کیا جاتا ہے؛ ممکنہ طور پر بیماری موجود ہے';
+    }
+
+    document.getElementById('gsi-value').textContent = gsi.toFixed(1);
+    document.getElementById('gsi-class').textContent = classification;
+    document.getElementById('gsi-interp').textContent = interpretation;
+    document.getElementById('gsi-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 120px;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

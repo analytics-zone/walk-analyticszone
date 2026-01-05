@@ -1034,6 +1034,393 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>Máy Tính VO₂max (Kiểm Tra Đi Bộ Rockport)</h1>
+
+    <p class="lead">
+        Ước tính VO₂max (thể lực hiếu khí) của bạn bằng Kiểm Tra Đi Bộ 1 Dặm Rockport. Đi bộ 1 dặm (1,61 km) nhanh nhất có thể, ghi lại thời gian và nhịp tim ngay sau khi kết thúc.
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>Tính VO₂max</h2>
+
+            <div class="input-group">
+                <label for="age">Tuổi (năm):</label>
+                <input type="number" id="age" min="18" max="90" value="35" />
+            </div>
+
+            <div class="input-group">
+                <label for="sex">Giới tính:</label>
+                <select id="sex">
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Cân nặng:</label>
+                <input type="number" id="weight" min="40" max="200" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="time-min">Thời gian đi bộ 1 dặm:</label>
+                <input type="number" id="time-min" min="8" max="30" value="15" style="width:60px;" />
+                <span>phút</span>
+                <input type="number" id="time-sec" min="0" max="59" value="30" style="width:60px;" />
+                <span>giây</span>
+            </div>
+
+            <div class="input-group">
+                <label for="hr">Nhịp tim (ngay sau khi kết thúc):</label>
+                <input type="number" id="hr" min="80" max="200" value="130" />
+                <span class="unit">bpm</span>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">Tính VO₂max</button>
+
+            <div id="results" style="display:none;">
+                <h3>Kết quả</h3>
+                <div class="result-item">
+                    <strong>VO₂max ước tính:</strong> <span id="vo2max-value"></span> ml/kg/phút
+                </div>
+                <div class="result-item">
+                    <strong>Phân loại thể lực:</strong> <span id="fitness-class"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Phần trăm theo tuổi/giới tính:</strong> <span id="percentile"></span>
+                </div>
+                <div class="result-item">
+                    <strong>Giải thích:</strong> <span id="interpretation"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>Giá Trị Tham Chiếu VO₂max (ml/kg/phút)</h2>
+
+        <h3>Nam giới</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuổi</th>
+                        <th>Kém</th>
+                        <th>Trung bình</th>
+                        <th>Tốt</th>
+                        <th>Xuất sắc</th>
+                        <th>Vượt trội</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;33</td>
+                        <td>33-38</td>
+                        <td>39-45</td>
+                        <td>46-52</td>
+                        <td>&gt;52</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;31</td>
+                        <td>31-36</td>
+                        <td>37-43</td>
+                        <td>44-50</td>
+                        <td>&gt;50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;29</td>
+                        <td>29-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;26</td>
+                        <td>26-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;24</td>
+                        <td>24-28</td>
+                        <td>29-35</td>
+                        <td>36-42</td>
+                        <td>&gt;42</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Nữ giới</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuổi</th>
+                        <th>Kém</th>
+                        <th>Trung bình</th>
+                        <th>Tốt</th>
+                        <th>Xuất sắc</th>
+                        <th>Vượt trội</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>20-29</strong></td>
+                        <td>&lt;28</td>
+                        <td>28-33</td>
+                        <td>34-40</td>
+                        <td>41-47</td>
+                        <td>&gt;47</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30-39</strong></td>
+                        <td>&lt;27</td>
+                        <td>27-31</td>
+                        <td>32-38</td>
+                        <td>39-45</td>
+                        <td>&gt;45</td>
+                    </tr>
+                    <tr>
+                        <td><strong>40-49</strong></td>
+                        <td>&lt;25</td>
+                        <td>25-29</td>
+                        <td>30-36</td>
+                        <td>37-43</td>
+                        <td>&gt;43</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50-59</strong></td>
+                        <td>&lt;23</td>
+                        <td>23-27</td>
+                        <td>28-34</td>
+                        <td>35-41</td>
+                        <td>&gt;41</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60+</strong></td>
+                        <td>&lt;21</td>
+                        <td>21-25</td>
+                        <td>26-32</td>
+                        <td>33-39</td>
+                        <td>&gt;39</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>Phương pháp: Kiểm Tra Đi Bộ Rockport</h2>
+
+        <div class="formula-box">
+            <h3>Công thức</h3>
+            <pre>
+VO₂max (ml/kg/phút) = 132.853
+                      - (0.0769 × Cân nặng tính bằng lbs)
+                      - (0.3877 × Tuổi tính bằng năm)
+                      + (6.315 × Giới tính) [1 = nam, 0 = nữ]
+                      - (3.2649 × Thời gian tính bằng phút)
+                      - (0.1565 × Nhịp tim tính bằng bpm)
+
+Xác thực:
+  - Kline et al., Medicine & Science in Sports & Exercise (1987)
+  - Tương quan với VO₂max đo trong phòng thí nghiệm: r = 0.88-0.93
+  - Sai số chuẩn: ±5 ml/kg/phút
+            </pre>
+        </div>
+
+        <h3>Quy trình kiểm tra</h3>
+        <ol>
+            <li><strong>Chuẩn bị:</strong> Tránh hoạt động mạnh 24 giờ trước kiểm tra; uống đủ nước</li>
+            <li><strong>Khởi động:</strong> Đi bộ nhẹ 5-10 phút</li>
+            <li><strong>Kiểm tra:</strong> Đi bộ 1 dặm (1,61 km) nhanh nhất có thể trong khi duy trì dáng đi bộ (không chạy)</li>
+            <li><strong>Đo lường:</strong> Ghi lại thời gian (đến giây gần nhất) và nhịp tim ngay sau khi kết thúc</li>
+            <li><strong>Đường chạy:</strong> Đường chạy 400m phẳng (4 vòng) hoặc đường 1 dặm đã đo</li>
+        </ol>
+    </section>
+
+</div>
+
+<script>
+function calculateVO2max() {
+    const age = parseFloat(document.getElementById('age').value);
+    const sex = document.getElementById('sex').value;
+    let weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+    const timeMin = parseFloat(document.getElementById('time-min').value);
+    const timeSec = parseFloat(document.getElementById('time-sec').value);
+    const hr = parseFloat(document.getElementById('hr').value);
+
+    // Validation
+    if (isNaN(age) || isNaN(weight) || isNaN(timeMin) || isNaN(timeSec) || isNaN(hr)) {
+        alert('Vui lòng điền tất cả các trường với số hợp lệ');
+        return;
+    }
+
+    // Convert weight to lbs if needed
+    if (weightUnit === 'kg') {
+        weight = weight * 2.20462;
+    }
+
+    // Convert time to minutes
+    const timeTotal = timeMin + (timeSec / 60);
+
+    // Sex value for equation
+    const sexValue = (sex === 'male') ? 1 : 0;
+
+    // Rockport equation
+    const vo2max = 132.853
+                   - (0.0769 * weight)
+                   - (0.3877 * age)
+                   + (6.315 * sexValue)
+                   - (3.2649 * timeTotal)
+                   - (0.1565 * hr);
+
+    // Classify fitness
+    let fitnessClass = '';
+    let percentile = '';
+    let interpretation = '';
+
+    // Age-adjusted classification (simplified)
+    const adjustedVO2 = vo2max + (age - 35) * 0.4; // Rough adjustment
+
+    if (sex === 'male') {
+        if (vo2max < 30) {
+            fitnessClass = 'Kém';
+            percentile = 'Dưới phần trăm thứ 20';
+            interpretation = 'Thể lực dưới trung bình; bắt đầu chương trình đi bộ từ từ';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Trung bình';
+            percentile = 'Phần trăm thứ 20-40';
+            interpretation = 'Dưới trung bình; hướng đến tăng lên 150 phút/tuần đi bộ vừa phải';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Tốt';
+            percentile = 'Phần trăm thứ 40-60';
+            interpretation = 'Thể lực trung bình; duy trì hoạt động đều đặn';
+        } else if (vo2max < 48) {
+            fitnessClass = 'Xuất sắc';
+            percentile = 'Phần trăm thứ 60-80';
+            interpretation = 'Trên trung bình; sức khỏe tim mạch tốt';
+        } else {
+            fitnessClass = 'Vượt trội';
+            percentile = 'Trên phần trăm thứ 80';
+            interpretation = 'Thể lực hiếu khí xuất sắc; cấp độ vận động viên';
+        }
+    } else {
+        if (vo2max < 25) {
+            fitnessClass = 'Kém';
+            percentile = 'Dưới phần trăm thứ 20';
+            interpretation = 'Thể lực dưới trung bình; bắt đầu chương trình đi bộ từ từ';
+        } else if (vo2max < 30) {
+            fitnessClass = 'Trung bình';
+            percentile = 'Phần trăm thứ 20-40';
+            interpretation = 'Dưới trung bình; hướng đến tăng lên 150 phút/tuần đi bộ vừa phải';
+        } else if (vo2max < 36) {
+            fitnessClass = 'Tốt';
+            percentile = 'Phần trăm thứ 40-60';
+            interpretation = 'Thể lực trung bình; duy trì hoạt động đều đặn';
+        } else if (vo2max < 42) {
+            fitnessClass = 'Xuất sắc';
+            percentile = 'Phần trăm thứ 60-80';
+            interpretation = 'Trên trung bình; sức khỏe tim mạch tốt';
+        } else {
+            fitnessClass = 'Vượt trội';
+            percentile = 'Trên phần trăm thứ 80';
+            interpretation = 'Thể lực hiếu khí xuất sắc; cấp độ vận động viên';
+        }
+    }
+
+    document.getElementById('vo2max-value').textContent = vo2max.toFixed(1);
+    document.getElementById('fitness-class').textContent = fitnessClass;
+    document.getElementById('percentile').textContent = percentile;
+    document.getElementById('interpretation').textContent = interpretation;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+</style>
+
+
   </main>
 
   

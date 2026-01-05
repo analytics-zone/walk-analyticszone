@@ -1034,6 +1034,438 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
+<div class="content-wrapper">
+    <h1>حاسبة VO₂max للمشي</h1>
+
+    <p class="lead">
+        قدِّر VO₂max الخاص بك من بيانات المشي باستخدام معادلات ACSM المصادق عليها. VO₂max (الحد الأقصى لاستهلاك الأكسجين) هو المؤشر الأفضل للياقة القلبية التنفسية.
+    </p>
+
+    <section id="calculator">
+        <div class="calculator-box">
+            <h2>احسب VO₂max من المشي</h2>
+
+            <div class="input-group">
+                <label for="speed">سرعة المشي:</label>
+                <input type="number" id="speed" min="1" max="10" step="0.1" value="5.0" />
+                <select id="speed-unit">
+                    <option value="kmh">كم/ساعة</option>
+                    <option value="mph">ميل/ساعة</option>
+                    <option value="mps">م/ثانية</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="grade">الانحدار (%):</label>
+                <input type="number" id="grade" min="0" max="25" step="0.5" value="0" />
+                <span class="unit">%</span>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">وزن الجسم:</label>
+                <input type="number" id="weight" min="30" max="200" step="0.5" value="70" />
+                <select id="weight-unit">
+                    <option value="kg">كجم</option>
+                    <option value="lb">رطل</option>
+                </select>
+            </div>
+
+            <button onclick="calculateVO2max()" class="btn-primary">احسب</button>
+
+            <div id="results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>VO₂max المقدّر:</strong> <span id="vo2max-value"></span> مل/كجم/دقيقة
+                </div>
+                <div class="result-item">
+                    <strong>METs:</strong> <span id="mets-value"></span> METs
+                </div>
+                <div class="result-item">
+                    <strong>فئة اللياقة:</strong> <span id="fitness-category"></span>
+                </div>
+                <div class="result-item">
+                    <strong>نفقة الطاقة:</strong> <span id="energy-expenditure"></span> سعرة/دقيقة
+                </div>
+                <div class="result-item">
+                    <strong>الإيقاع المقترح:</strong> <span id="suggested-cadence"></span> خطوة/دقيقة
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator-box">
+            <h2>اعثر على السرعة/الانحدار لـ VO₂ المستهدفة</h2>
+
+            <div class="input-group">
+                <label for="target-vo2">VO₂ المستهدفة:</label>
+                <input type="number" id="target-vo2" min="5" max="60" step="0.5" value="20" />
+                <span class="unit">مل/كجم/دقيقة</span>
+            </div>
+
+            <div class="input-group">
+                <label for="fixed-speed">السرعة الثابتة:</label>
+                <input type="number" id="fixed-speed" min="1" max="10" step="0.1" value="5.0" />
+                <select id="fixed-speed-unit">
+                    <option value="kmh">كم/ساعة</option>
+                    <option value="mph">ميل/ساعة</option>
+                    <option value="mps">م/ثانية</option>
+                </select>
+            </div>
+
+            <button onclick="calculateRequiredGrade()" class="btn-primary">احسب الانحدار المطلوب</button>
+
+            <div id="reverse-results" style="display:none;">
+                <h3>النتائج</h3>
+                <div class="result-item">
+                    <strong>الانحدار المطلوب:</strong> <span id="required-grade"></span>%
+                </div>
+                <div class="result-item">
+                    <strong>الشدة:</strong> <span id="intensity-level"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <h2>جدول مرجعي: VO₂max حسب العمر والجنس</h2>
+
+        <h3>رجال</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>الفئة العمرية</th>
+                        <th>ممتاز</th>
+                        <th>جيد</th>
+                        <th>متوسط</th>
+                        <th>عادل</th>
+                        <th>ضعيف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20-29</td>
+                        <td>&gt;51</td>
+                        <td>43-51</td>
+                        <td>37-42</td>
+                        <td>31-36</td>
+                        <td>&lt;31</td>
+                    </tr>
+                    <tr>
+                        <td>30-39</td>
+                        <td>&gt;49</td>
+                        <td>41-49</td>
+                        <td>35-40</td>
+                        <td>29-34</td>
+                        <td>&lt;29</td>
+                    </tr>
+                    <tr>
+                        <td>40-49</td>
+                        <td>&gt;46</td>
+                        <td>38-46</td>
+                        <td>33-37</td>
+                        <td>27-32</td>
+                        <td>&lt;27</td>
+                    </tr>
+                    <tr>
+                        <td>50-59</td>
+                        <td>&gt;43</td>
+                        <td>36-43</td>
+                        <td>31-35</td>
+                        <td>25-30</td>
+                        <td>&lt;25</td>
+                    </tr>
+                    <tr>
+                        <td>60+</td>
+                        <td>&gt;39</td>
+                        <td>33-39</td>
+                        <td>28-32</td>
+                        <td>23-27</td>
+                        <td>&lt;23</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>نساء</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>الفئة العمرية</th>
+                        <th>ممتاز</th>
+                        <th>جيد</th>
+                        <th>متوسط</th>
+                        <th>عادل</th>
+                        <th>ضعيف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20-29</td>
+                        <td>&gt;44</td>
+                        <td>37-44</td>
+                        <td>31-36</td>
+                        <td>25-30</td>
+                        <td>&lt;25</td>
+                    </tr>
+                    <tr>
+                        <td>30-39</td>
+                        <td>&gt;42</td>
+                        <td>35-42</td>
+                        <td>29-34</td>
+                        <td>23-28</td>
+                        <td>&lt;23</td>
+                    </tr>
+                    <tr>
+                        <td>40-49</td>
+                        <td>&gt;39</td>
+                        <td>33-39</td>
+                        <td>27-32</td>
+                        <td>21-26</td>
+                        <td>&lt;21</td>
+                    </tr>
+                    <tr>
+                        <td>50-59</td>
+                        <td>&gt;36</td>
+                        <td>30-36</td>
+                        <td>25-29</td>
+                        <td>19-24</td>
+                        <td>&lt;19</td>
+                    </tr>
+                    <tr>
+                        <td>60+</td>
+                        <td>&gt;32</td>
+                        <td>27-32</td>
+                        <td>22-26</td>
+                        <td>17-21</td>
+                        <td>&lt;17</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="methodology">
+        <h2>المنهجية</h2>
+
+        <div class="formula-box">
+            <h3>معادلة ACSM للمشي</h3>
+            <pre>
+VO₂ (مل/كجم/دقيقة) =
+    [السرعة (م/دقيقة) × 0.1] +
+    [السرعة (م/دقيقة) × الانحدار (%) × 1.8] +
+    3.5
+
+التحويلات:
+  - 1 كم/ساعة = 16.67 م/دقيقة
+  - 1 ميل/ساعة = 26.82 م/دقيقة
+  - 1 م/ثانية = 60 م/دقيقة
+
+METs = VO₂ ÷ 3.5
+            </pre>
+        </div>
+
+        <p><strong>ملاحظات:</strong></p>
+        <ul>
+            <li><strong>نطاق الصلاحية:</strong> سرعات 50-100 م/دقيقة (3-6 كم/ساعة، 1.9-3.7 ميل/ساعة)</li>
+            <li><strong>الدقة:</strong> ±10-15% ضمن نطاق الصلاحية</li>
+            <li><strong>الافتراضات:</strong> حالة مستقرة (≥5 دقائق من المشي المستمر)</li>
+            <li><strong>التعديلات:</strong> قد يكون VO₂ الفعلي أقل للأفراد المدربين بشكل جيد</li>
+        </ul>
+
+        <p><strong>الإيقاع المقترح:</strong></p>
+        <p>المعادلة التجريبية المستخدمة: <code>الإيقاع (خطوة/دقيقة) ≈ 45.7 × السرعة (كم/ساعة) + 30</code></p>
+        <p>هذه علاقة تقريبية تختلف حسب طول الساق ونمط المشية الفردي.</p>
+    </section>
+
+</div>
+
+<script>
+function convertToMetersPerMinute(speed, unit) {
+    if (unit === 'kmh') return speed * 16.67;
+    if (unit === 'mph') return speed * 26.82;
+    if (unit === 'mps') return speed * 60;
+    return speed;
+}
+
+function convertWeight(weight, unit) {
+    if (unit === 'lb') return weight * 0.453592;
+    return weight;
+}
+
+function calculateVO2max() {
+    const speed = parseFloat(document.getElementById('speed').value);
+    const speedUnit = document.getElementById('speed-unit').value;
+    const grade = parseFloat(document.getElementById('grade').value) / 100;
+    const weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementById('weight-unit').value;
+
+    if (isNaN(speed) || isNaN(grade) || isNaN(weight)) {
+        alert('يرجى إدخال جميع القيم');
+        return;
+    }
+
+    const speedMperMin = convertToMetersPerMinute(speed, speedUnit);
+    const weightKg = convertWeight(weight, weightUnit);
+
+    // ACSM walking equation
+    const vo2 = (speedMperMin * 0.1) + (speedMperMin * grade * 1.8) + 3.5;
+    const mets = vo2 / 3.5;
+    const calories = (mets * 3.5 * weightKg) / 200;
+
+    // Suggested cadence (empirical)
+    const speedKmh = speedUnit === 'kmh' ? speed :
+                     speedUnit === 'mph' ? speed * 1.60934 :
+                     speed * 3.6;
+    const suggestedCadence = Math.round(45.7 * speedKmh + 30);
+
+    // Fitness category (using general population norms, age 30-39 male as baseline)
+    let category = '';
+    if (vo2 > 49) category = 'ممتاز';
+    else if (vo2 > 41) category = 'جيد';
+    else if (vo2 > 35) category = 'متوسط';
+    else if (vo2 > 29) category = 'عادل';
+    else category = 'ضعيف';
+
+    document.getElementById('vo2max-value').textContent = vo2.toFixed(1);
+    document.getElementById('mets-value').textContent = mets.toFixed(1);
+    document.getElementById('fitness-category').textContent = category;
+    document.getElementById('energy-expenditure').textContent = calories.toFixed(1);
+    document.getElementById('suggested-cadence').textContent = suggestedCadence;
+    document.getElementById('results').style.display = 'block';
+}
+
+function calculateRequiredGrade() {
+    const targetVO2 = parseFloat(document.getElementById('target-vo2').value);
+    const fixedSpeed = parseFloat(document.getElementById('fixed-speed').value);
+    const speedUnit = document.getElementById('fixed-speed-unit').value;
+
+    if (isNaN(targetVO2) || isNaN(fixedSpeed)) {
+        alert('يرجى إدخال جميع القيم');
+        return;
+    }
+
+    const speedMperMin = convertToMetersPerMinute(fixedSpeed, speedUnit);
+
+    // Solve ACSM equation for grade: VO₂ = (S × 0.1) + (S × G × 1.8) + 3.5
+    // G = (VO₂ - 3.5 - S × 0.1) / (S × 1.8)
+    const requiredGrade = ((targetVO2 - 3.5 - (speedMperMin * 0.1)) / (speedMperMin * 1.8)) * 100;
+
+    let intensity = '';
+    if (requiredGrade < 0) intensity = 'غير ممكن (تحتاج انحدار سلبي)';
+    else if (requiredGrade < 5) intensity = 'سهل';
+    else if (requiredGrade < 10) intensity = 'متوسط';
+    else if (requiredGrade < 15) intensity = 'صعب';
+    else intensity = 'شديد جداً';
+
+    document.getElementById('required-grade').textContent = requiredGrade.toFixed(1);
+    document.getElementById('intensity-level').textContent = intensity;
+    document.getElementById('reverse-results').style.display = 'block';
+}
+</script>
+
+<style>
+.calculator-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 120px;
+}
+
+.input-group select {
+    margin-left: 0.5rem;
+}
+
+.input-group .unit {
+    margin-left: 0.5rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+}
+
+.result-item strong {
+    color: #495057;
+}
+
+.result-item span {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.data-table {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.data-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+</style>
+
+
   </main>
 
   
