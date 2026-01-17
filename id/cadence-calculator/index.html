@@ -1063,18 +1063,19 @@ img[width][height] {
   <main id="main-content" class="main-content">
     
 <div class="content-wrapper">
-    <h1>Kalkulator Kadence-ke-METs</h1>
+    <h1>Kalkulator Kadensi-ke-MET</h1>
 
     <p class="lead">
-        Hitung estimasi pengeluaran energi (METs) dan intensitas dari kadence berjalan Anda menggunakan persamaan Moore yang tervalidasi (2019, studi CADENCE-Adults, R²=0,87).
+        Hitung estimasi pengeluaran energi (MET) dan intensitas dari kadensi jalan kaki Anda menggunakan persamaan Moore
+        yang tervalidasi (2019, studi CADENCE-Adults, R²=0,87).
     </p>
 
     <section id="calculator">
         <div class="calculator-box">
-            <h2>Hitung METs dari Kadence</h2>
+            <h2>Hitung MET dari Kadensi</h2>
 
             <div class="input-group">
-                <label for="cadence">Kadence Berjalan (langkah/menit):</label>
+                <label for="cadence">Kadensi Jalan Kaki (langkah/mnt):</label>
                 <input type="number" id="cadence" min="40" max="160" value="100" />
                 <span class="unit">spm</span>
             </div>
@@ -1084,27 +1085,27 @@ img[width][height] {
             <div id="results" style="display:none;">
                 <h3>Hasil</h3>
                 <div class="result-item">
-                    <strong>Estimasi METs:</strong> <span id="mets-value"></span> METs
+                    <strong>Estimasi MET:</strong> <span id="mets-value"></span> MET
                 </div>
                 <div class="result-item">
                     <strong>Klasifikasi Intensitas:</strong> <span id="intensity"></span>
                 </div>
                 <div class="result-item">
-                    <strong>Pengeluaran Kalori (orang 70 kg):</strong> <span id="calories"></span> kkal/menit
+                    <strong>Pengeluaran Kalori (orang 70 kg):</strong> <span id="calories"></span> kkal/mnt
                 </div>
                 <div class="result-item">
-                    <strong>VO₂:</strong> <span id="vo2"></span> ml/kg/menit
+                    <strong>VO₂:</strong> <span id="vo2"></span> ml/kg/mnt
                 </div>
             </div>
         </div>
 
         <div class="calculator-box">
-            <h2>Temukan Kadence untuk Target METs</h2>
+            <h2>Cari Kadensi untuk Target MET</h2>
 
             <div class="input-group">
-                <label for="target-mets">Target METs:</label>
+                <label for="target-mets">Target MET:</label>
                 <input type="number" id="target-mets" min="1" max="10" step="0.1" value="3.0" />
-                <span class="unit">METs</span>
+                <span class="unit">MET</span>
             </div>
 
             <button onclick="calculateCadence()" class="btn-primary">Hitung</button>
@@ -1112,7 +1113,7 @@ img[width][height] {
             <div id="cadence-results" style="display:none;">
                 <h3>Hasil</h3>
                 <div class="result-item">
-                    <strong>Kadence yang Diperlukan:</strong> <span id="cadence-value"></span> spm
+                    <strong>Kadensi yang Diperlukan:</strong> <span id="cadence-value"></span> spm
                 </div>
                 <div class="result-item">
                     <strong>Intensitas:</strong> <span id="cadence-intensity"></span>
@@ -1122,16 +1123,16 @@ img[width][height] {
     </section>
 
     <section id="reference">
-        <h2>Tabel Referensi: Kadence → METs</h2>
+        <h2>Tabel Referensi: Kadensi → MET</h2>
 
         <div class="data-table">
             <table>
                 <thead>
                     <tr>
-                        <th>Kadence (spm)</th>
-                        <th>METs</th>
+                        <th>Kadensi (spm)</th>
+                        <th>MET</th>
                         <th>Intensitas</th>
-                        <th>kkal/menit (70 kg)</th>
+                        <th>kkal/mnt (70 kg)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1162,19 +1163,19 @@ img[width][height] {
                     <tr>
                         <td>120</td>
                         <td>5,3</td>
-                        <td>Kuat-Cepat</td>
+                        <td>Vigorous-Cepat</td>
                         <td>6,2</td>
                     </tr>
                     <tr>
                         <td>130</td>
                         <td>6,6</td>
-                        <td>Kuat (ambang batas)</td>
+                        <td>Vigorous (ambang batas)</td>
                         <td>7,7</td>
                     </tr>
                     <tr>
                         <td>140</td>
                         <td>7,8</td>
-                        <td>Sangat Kuat</td>
+                        <td>Sangat Vigorous</td>
                         <td>9,1</td>
                     </tr>
                 </tbody>
@@ -1188,139 +1189,139 @@ img[width][height] {
         <div class="formula-box">
             <h3>Persamaan Moore (2019)</h3>
             <pre>
-METs = 0,0219 × Kadence (spm) + 0,72
+MET = 0,0219 × Kadensi (spm) + 0,72
 
 Validasi:
   - Studi: CADENCE-Adults (Tudor-Locke et al., 2019)
-  - Sampel: 156 orang dewasa, usia 21-85
+  - Sampel: 156 orang dewasa, usia 21-85 tahun
   - R² = 0,87 (korelasi kuat)
-  - Ambang batas 100 spm: 3,0 METs (sensitivitas 86%, spesifisitas 89,6%)
-  - Ambang batas 130 spm: 6,0 METs (sensitivitas 81,3%, spesifisitas 84,7%)
+  - Ambang batas 100 spm: 3,0 MET (sensitivitas 86%, spesifisitas 89,6%)
+  - Ambang batas 130 spm: 6,0 MET (sensitivitas 81,3%, spesifisitas 84,7%)
             </pre>
         </div>
 
         <p><strong>Konversi:</strong></p>
         <ul>
-            <li><strong>VO₂ (ml/kg/menit):</strong> METs × 3,5</li>
-            <li><strong>Kalori (kkal/menit):</strong> METs × 3,5 × berat badan (kg) / 200</li>
+            <li><strong>VO₂ (ml/kg/mnt):</strong> MET × 3,5</li>
+            <li><strong>Kalori (kkal/mnt):</strong> MET × 3,5 × berat badan (kg) / 200</li>
         </ul>
     </section>
 
 </div>
 
 <script>
-function calculateMETs() {
-    const cadence = parseFloat(document.getElementById('cadence').value);
+    function calculateMETs() {
+        const cadence = parseFloat(document.getElementById('cadence').value);
 
-    if (isNaN(cadence) || cadence < 40 || cadence > 160) {
-        alert('Harap masukkan kadence yang valid antara 40-160 spm');
-        return;
+        if (isNaN(cadence) || cadence < 40 || cadence > 160) {
+            alert('Silakan masukkan kadensi yang valid antara 40-160 spm');
+            return;
+        }
+
+        // Persamaan Moore
+        const mets = (0.0219 * cadence) + 0.72;
+        const vo2 = mets * 3.5;
+        const calories = (mets * 3.5 * 70) / 200; // untuk orang 70 kg
+
+        let intensity = '';
+        if (mets < 3.0) intensity = 'Ringan';
+        else if (mets < 6.0) intensity = 'Sedang';
+        else intensity = 'Vigorous';
+
+        document.getElementById('mets-value').textContent = mets.toFixed(1);
+        document.getElementById('intensity').textContent = intensity;
+        document.getElementById('calories').textContent = calories.toFixed(1);
+        document.getElementById('vo2').textContent = vo2.toFixed(1);
+        document.getElementById('results').style.display = 'block';
     }
 
-    // Moore's equation
-    const mets = (0.0219 * cadence) + 0.72;
-    const vo2 = mets * 3.5;
-    const calories = (mets * 3.5 * 70) / 200; // for 70 kg person
+    function calculateCadence() {
+        const targetMETs = parseFloat(document.getElementById('target-mets').value);
 
-    let intensity = '';
-    if (mets < 3.0) intensity = 'Ringan';
-    else if (mets < 6.0) intensity = 'Sedang';
-    else intensity = 'Kuat';
+        if (isNaN(targetMETs) || targetMETs < 1 || targetMETs > 10) {
+            alert('Silakan masukkan nilai MET yang valid antara 1-10');
+            return;
+        }
 
-    document.getElementById('mets-value').textContent = mets.toFixed(1);
-    document.getElementById('intensity').textContent = intensity;
-    document.getElementById('calories').textContent = calories.toFixed(1);
-    document.getElementById('vo2').textContent = vo2.toFixed(1);
-    document.getElementById('results').style.display = 'block';
-}
+        // Kebalikan dari persamaan Moore
+        const cadence = (targetMETs - 0.72) / 0.0219;
 
-function calculateCadence() {
-    const targetMETs = parseFloat(document.getElementById('target-mets').value);
+        let intensity = '';
+        if (targetMETs < 3.0) intensity = 'Ringan';
+        else if (targetMETs < 6.0) intensity = 'Sedang';
+        else intensity = 'Vigorous';
 
-    if (isNaN(targetMETs) || targetMETs < 1 || targetMETs > 10) {
-        alert('Harap masukkan nilai METs yang valid antara 1-10');
-        return;
+        document.getElementById('cadence-value').textContent = Math.round(cadence);
+        document.getElementById('cadence-intensity').textContent = intensity;
+        document.getElementById('cadence-results').style.display = 'block';
     }
-
-    // Inverse of Moore's equation
-    const cadence = (targetMETs - 0.72) / 0.0219;
-
-    let intensity = '';
-    if (targetMETs < 3.0) intensity = 'Ringan';
-    else if (targetMETs < 6.0) intensity = 'Sedang';
-    else intensity = 'Kuat';
-
-    document.getElementById('cadence-value').textContent = Math.round(cadence);
-    document.getElementById('cadence-intensity').textContent = intensity;
-    document.getElementById('cadence-results').style.display = 'block';
-}
 </script>
 
 <style>
-.calculator-box {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
+    .calculator-box {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
 
-.input-group {
-    margin-bottom: 1.5rem;
-}
+    .input-group {
+        margin-bottom: 1.5rem;
+    }
 
-.input-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
+    .input-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
 
-.input-group input {
-    width: 120px;
-    padding: 0.5rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1.1rem;
-}
+    .input-group input {
+        width: 120px;
+        padding: 0.5rem;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1.1rem;
+    }
 
-.input-group .unit {
-    margin-left: 0.5rem;
-    color: #6c757d;
-}
+    .input-group .unit {
+        margin-left: 0.5rem;
+        color: #6c757d;
+    }
 
-.btn-primary {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
+    .btn-primary {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
 
-.btn-primary:hover {
-    background: #0056b3;
-}
+    .btn-primary:hover {
+        background: #0056b3;
+    }
 
-.result-item {
-    background: white;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-left: 4px solid #28a745;
-    border-radius: 4px;
-}
+    .result-item {
+        background: white;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-left: 4px solid #28a745;
+        border-radius: 4px;
+    }
 
-.result-item strong {
-    color: #495057;
-}
+    .result-item strong {
+        color: #495057;
+    }
 
-.result-item span {
-    color: #28a745;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
+    .result-item span {
+        color: #28a745;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 </style>
 
 

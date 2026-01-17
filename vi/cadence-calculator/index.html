@@ -1062,267 +1062,296 @@ img[width][height] {
   
   <main id="main-content" class="main-content">
     
-<div class="content-wrapper">
-    <h1>Máy Tính Nhịp Bước sang METs</h1>
+<section class="page-hero">
+    <div class="container">
+        <h1>Máy Tính Nhịp Bước Đi Bộ</h1>
+        <p class="lead">Tính toán số bước mỗi phút của bạn để xác định cường độ đi bộ và lượng calo đốt cháy.</p>
+    </div>
+</section>
 
-    <p class="lead">
-        Tính toán mức tiêu hao năng lượng ước tính (METs) và cường độ từ nhịp bước đi của bạn bằng phương trình Moore đã được xác thực (2019, nghiên cứu CADENCE-Adults, R²=0.87).
-    </p>
+<section class="section">
+    <div class="container container-narrow">
+        <div class="calculator-card">
+            <h2 class="mb-4">Tính Nhịp Bước Của Bạn</h2>
 
-    <section id="calculator">
-        <div class="calculator-box">
-            <h2>Tính METs từ Nhịp Bước</h2>
-
-            <div class="input-group">
-                <label for="cadence">Nhịp Bước Đi (bước/phút):</label>
-                <input type="number" id="cadence" min="40" max="160" value="100" />
-                <span class="unit">spm</span>
-            </div>
-
-            <button onclick="calculateMETs()" class="btn-primary">Tính Toán</button>
-
-            <div id="results" style="display:none;">
-                <h3>Kết Quả</h3>
-                <div class="result-item">
-                    <strong>METs Ước Tính:</strong> <span id="mets-value"></span> METs
+            <form id="cadenceForm" class="calculator-form">
+                <div class="form-group">
+                    <label for="steps">Tổng số bước</label>
+                    <input type="number" id="steps" is="input-number" class="form-control" placeholder="Ví dụ: 3000"
+                        required min="1">
+                    <small class="form-hint">Kiểm tra đồng hồ hoặc điện thoại của bạn để biết số bước.</small>
                 </div>
-                <div class="result-item">
-                    <strong>Phân Loại Cường Độ:</strong> <span id="intensity"></span>
-                </div>
-                <div class="result-item">
-                    <strong>Tiêu Hao Calo (người 70 kg):</strong> <span id="calories"></span> kcal/phút
-                </div>
-                <div class="result-item">
-                    <strong>VO₂:</strong> <span id="vo2"></span> ml/kg/phút
-                </div>
-            </div>
-        </div>
 
-        <div class="calculator-box">
-            <h2>Tìm Nhịp Bước cho Mục Tiêu METs</h2>
-
-            <div class="input-group">
-                <label for="target-mets">METs Mục Tiêu:</label>
-                <input type="number" id="target-mets" min="1" max="10" step="0.1" value="3.0" />
-                <span class="unit">METs</span>
-            </div>
-
-            <button onclick="calculateCadence()" class="btn-primary">Tính Toán</button>
-
-            <div id="cadence-results" style="display:none;">
-                <h3>Kết Quả</h3>
-                <div class="result-item">
-                    <strong>Nhịp Bước Yêu Cầu:</strong> <span id="cadence-value"></span> spm
+                <div class="form-group">
+                    <label for="minutes">Thời gian (phút)</label>
+                    <input type="number" id="minutes" is="input-number" class="form-control" placeholder="Ví dụ: 30"
+                        required min="1">
+                    <small class="form-hint">Bạn đã đi bộ trong bao lâu?</small>
                 </div>
-                <div class="result-item">
-                    <strong>Cường Độ:</strong> <span id="cadence-intensity"></span>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Tính Nhịp Bước</button>
+            </form>
+
+            <div id="result" class="result-box hidden">
+                <h3 class="result-title">Nhịp Bước Của Bạn:</h3>
+                <div class="result-value"><span id="cadenceValue">0</span> <span class="result-unit">bước/phút</span>
+                </div>
+
+                <div id="intensityBadge" class="intensity-badge">
+                    <!-- Cường độ sẽ xuất hiện ở đây -->
+                </div>
+
+                <p id="intensityDescription" class="intensity-desc">
+                    <!-- Mô tả sẽ xuất hiện ở đây -->
+                </p>
+
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <span class="metric-label">Mức Độ Cường Độ</span>
+                        <span id="intensityLevel" class="metric-value">-</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">METs Ước Tính</span>
+                        <span id="metsValue" class="metric-value">-</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="reference">
-        <h2>Bảng Tham Khảo: Nhịp Bước → METs</h2>
+        <div class="content-block mt-5">
+            <h3>Về Nhịp Bước Đi Bộ</h3>
+            <p><strong>Nhịp bước</strong> (số bước mỗi phút) là cách chính xác nhất để đo cường độ đi bộ mà không cần
+                máy theo dõi nhịp tim. Nghiên cứu cho thấy nó tương quan trực tiếp với nhu cầu trao đổi chất (tiêu hao
+                năng lượng).</p>
 
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nhịp Bước (spm)</th>
-                        <th>METs</th>
-                        <th>Cường Độ</th>
-                        <th>kcal/phút (70 kg)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>60</td>
-                        <td>2.0</td>
-                        <td>Rất Nhẹ</td>
-                        <td>2.3</td>
-                    </tr>
-                    <tr>
-                        <td>80</td>
-                        <td>2.5</td>
-                        <td>Nhẹ</td>
-                        <td>2.9</td>
-                    </tr>
-                    <tr>
-                        <td>100</td>
-                        <td>3.0</td>
-                        <td>Vừa Phải (ngưỡng)</td>
-                        <td>3.5</td>
-                    </tr>
-                    <tr>
-                        <td>110</td>
-                        <td>4.1</td>
-                        <td>Vừa Phải-Nhanh</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>120</td>
-                        <td>5.3</td>
-                        <td>Mạnh-Nhanh</td>
-                        <td>6.2</td>
-                    </tr>
-                    <tr>
-                        <td>130</td>
-                        <td>6.6</td>
-                        <td>Mạnh (ngưỡng)</td>
-                        <td>7.7</td>
-                    </tr>
-                    <tr>
-                        <td>140</td>
-                        <td>7.8</td>
-                        <td>Rất Mạnh</td>
-                        <td>9.1</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nhịp Bước <small>(bước/phút)</small></th>
+                            <th>Cường Độ</th>
+                            <th>Giải Thích</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&lt; 80</td>
+                            <td>Rất Chậm</td>
+                            <td>Đi dạo, mua sắm, di chuyển chậm</td>
+                        </tr>
+                        <tr>
+                            <td>80-99</td>
+                            <td>Chậm</td>
+                            <td>Hoạt động nhẹ, dưới mức tập thể dục</td>
+                        </tr>
+                        <tr>
+                            <td>100-119</td>
+                            <td>Vừa Phải</td>
+                            <td><strong>Tập thể dục có mục đích.</strong> Ngưỡng tối thiểu cho lợi ích sức khỏe.</td>
+                        </tr>
+                        <tr>
+                            <td>120-135</td>
+                            <td>Nhanh</td>
+                            <td>Cường độ hiếu khí, tương tự như chạy bộ chậm.</td>
+                        </tr>
+                        <tr>
+                            <td>&gt; 135</td>
+                            <td>Rất Nhanh</td>
+                            <td>Đi bộ mạnh (Power walking) hoặc thể thao. Gần chuyển sang chạy.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-tip mt-4">
+                <h4>Quy Tắc Vàng</h4>
+                <p>Nghiên cứu khoa học đã thiết lập rằng <strong>100 bước mỗi phút</strong> là ngưỡng cho đi bộ cường độ
+                    vừa phải. Hãy cố gắng duy trì trên mức này để có sức khỏe tim mạch.</p>
+            </div>
         </div>
-    </section>
-
-    <section id="methodology">
-        <h2>Phương Pháp Luận</h2>
-
-        <div class="formula-box">
-            <h3>Phương Trình Moore (2019)</h3>
-            <pre>
-METs = 0.0219 × Nhịp Bước (spm) + 0.72
-
-Xác Thực:
-  - Nghiên cứu: CADENCE-Adults (Tudor-Locke et al., 2019)
-  - Mẫu: 156 người lớn, độ tuổi 21-85
-  - R² = 0.87 (tương quan mạnh)
-  - Ngưỡng 100 spm: 3.0 METs (độ nhạy 86%, độ đặc hiệu 89.6%)
-  - Ngưỡng 130 spm: 6.0 METs (độ nhạy 81.3%, độ đặc hiệu 84.7%)
-            </pre>
-        </div>
-
-        <p><strong>Chuyển Đổi:</strong></p>
-        <ul>
-            <li><strong>VO₂ (ml/kg/phút):</strong> METs × 3.5</li>
-            <li><strong>Calo (kcal/phút):</strong> METs × 3.5 × cân nặng (kg) / 200</li>
-        </ul>
-    </section>
-
-</div>
+    </div>
+</section>
 
 <script>
-function calculateMETs() {
-    const cadence = parseFloat(document.getElementById('cadence').value);
+    document.getElementById('cadenceForm').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    if (isNaN(cadence) || cadence < 40 || cadence > 160) {
-        alert('Vui lòng nhập nhịp bước hợp lệ trong khoảng 40-160 spm');
-        return;
-    }
+        // Lấy giá trị đầu vào
+        const steps = parseFloat(document.getElementById('steps').value);
+        const minutes = parseFloat(document.getElementById('minutes').value);
 
-    // Moore's equation
-    const mets = (0.0219 * cadence) + 0.72;
-    const vo2 = mets * 3.5;
-    const calories = (mets * 3.5 * 70) / 200; // for 70 kg person
+        // Xác thực
+        if (!steps || !minutes || minutes <= 0) return;
 
-    let intensity = '';
-    if (mets < 3.0) intensity = 'Nhẹ';
-    else if (mets < 6.0) intensity = 'Vừa Phải';
-    else intensity = 'Mạnh';
+        // Tính toán
+        const cadence = Math.round(steps / minutes);
 
-    document.getElementById('mets-value').textContent = mets.toFixed(1);
-    document.getElementById('intensity').textContent = intensity;
-    document.getElementById('calories').textContent = calories.toFixed(1);
-    document.getElementById('vo2').textContent = vo2.toFixed(1);
-    document.getElementById('results').style.display = 'block';
-}
+        // Hiển thị kết quả
+        const resultBox = document.getElementById('result');
+        const cadenceDisplay = document.getElementById('cadenceValue');
+        const intensityBadge = document.getElementById('intensityBadge');
+        const intensityDesc = document.getElementById('intensityDescription');
+        const intensityLevel = document.getElementById('intensityLevel');
+        const metsValue = document.getElementById('metsValue');
 
-function calculateCadence() {
-    const targetMETs = parseFloat(document.getElementById('target-mets').value);
+        // Cập nhật giá trị
+        cadenceDisplay.textContent = cadence;
 
-    if (isNaN(targetMETs) || targetMETs < 1 || targetMETs > 10) {
-        alert('Vui lòng nhập giá trị METs hợp lệ trong khoảng 1-10');
-        return;
-    }
+        // Xác định cường độ và METs
+        let intensity = '';
+        let intensityClass = '';
+        let description = '';
+        let mets = 0;
 
-    // Inverse of Moore's equation
-    const cadence = (targetMETs - 0.72) / 0.0219;
+        // Phương trình METs Moore et al.: METs = 0.0219 * cadence + 0.72
+        mets = (0.0219 * cadence + 0.72).toFixed(1);
 
-    let intensity = '';
-    if (targetMETs < 3.0) intensity = 'Nhẹ';
-    else if (targetMETs < 6.0) intensity = 'Vừa Phải';
-    else intensity = 'Mạnh';
+        if (cadence < 60) {
+            intensity = 'Rất Chậm';
+            intensityClass = 'badge-gray';
+            description = 'Tốc độ nhàn nhã. Tốt để phá vỡ thời gian ngồi, nhưng cường độ thấp.';
+        } else if (cadence < 80) {
+            intensity = 'Chậm';
+            intensityClass = 'badge-gray';
+            description = 'Đi bộ nhẹ nhàng. Tương tự như đi bộ mua sắm hoặc văn phòng.';
+        } else if (cadence < 100) {
+            intensity = 'Vừa Phải (Thấp)';
+            intensityClass = 'badge-yellow';
+            description = 'Hoạt động có mục đích. Tiếp cận ngưỡng thể dục.';
+        } else if (cadence < 105) {
+            intensity = 'Vừa Phải';
+            intensityClass = 'badge-green';
+            description = '<strong>Ngưỡng Thể Dục.</strong> Bạn đang đi bộ đủ nhanh để cải thiện sức khỏe tim mạch.';
+        } else if (cadence < 120) {
+            intensity = 'Nhanh';
+            intensityClass = 'badge-green';
+            description = 'Cường độ hiếu khí. Tuyệt vời để đốt cháy calo và rèn luyện tim.';
+        } else if (cadence < 135) {
+            intensity = 'Rất Nhanh';
+            intensityClass = 'badge-blue';
+            description = 'Đi bộ mạnh. Cường độ cao, đốt cháy calo tối đa khi đi bộ.';
+        } else {
+            intensity = 'Chuyển Tiếp Chạy';
+            intensityClass = 'badge-purple';
+            description = 'Tốc độ thể thao. Ở tốc độ này, nhiều người bắt đầu chạy bộ.';
+        }
 
-    document.getElementById('cadence-value').textContent = Math.round(cadence);
-    document.getElementById('cadence-intensity').textContent = intensity;
-    document.getElementById('cadence-results').style.display = 'block';
-}
+        intensityBadge.textContent = intensity;
+        intensityBadge.className = 'intensity-badge ' + intensityClass;
+        intensityDesc.innerHTML = description;
+        intensityLevel.textContent = intensity;
+        metsValue.textContent = mets + ' METs';
+
+        // Hiển thị hộp kết quả với hoạt ảnh
+        resultBox.classList.remove('hidden');
+        resultBox.style.opacity = '0';
+        setTimeout(() => {
+            resultBox.style.opacity = '1';
+        }, 10);
+    });
 </script>
 
 <style>
-.calculator-box {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
+    .calculator-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-color);
+    }
 
-.input-group {
-    margin-bottom: 1.5rem;
-}
+    .calculator-form .form-group {
+        margin-bottom: 1.5rem;
+    }
 
-.input-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
+    .result-box {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px dashed var(--border-color);
+        text-align: center;
+        transition: opacity 0.5s ease;
+    }
 
-.input-group input {
-    width: 120px;
-    padding: 0.5rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1.1rem;
-}
+    .result-box.hidden {
+        display: none;
+    }
 
-.input-group .unit {
-    margin-left: 0.5rem;
-    color: #6c757d;
-}
+    .result-value {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        line-height: 1;
+        margin: 1rem 0;
+    }
 
-.btn-primary {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
+    .result-unit {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--text-light);
+    }
 
-.btn-primary:hover {
-    background: #0056b3;
-}
+    .intensity-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
 
-.result-item {
-    background: white;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-left: 4px solid #28a745;
-    border-radius: 4px;
-}
+    .badge-gray {
+        background: #f3f4f6;
+        color: #4b5563;
+    }
 
-.result-item strong {
-    color: #495057;
-}
+    .badge-yellow {
+        background: #fef3c7;
+        color: #d97706;
+    }
 
-.result-item span {
-    color: #28a745;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
+    .badge-green {
+        background: #d1fae5;
+        color: #059669;
+    }
+
+    .badge-blue {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .badge-purple {
+        background: #ede9fe;
+        color: #7c3aed;
+    }
+
+    .metric-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        background: var(--bg-light);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .metric-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .metric-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-light);
+    }
+
+    .metric-value {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
 </style>
-
 
   </main>
 
