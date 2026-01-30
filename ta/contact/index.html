@@ -627,10 +627,15 @@ img[width][height] {
   
   <script>
     (function () {
-      const theme = localStorage.getItem('theme');
+      let theme = localStorage.getItem('theme');
+      // Older builds could persist a per-subdomain `theme=light` value without a UI
+      // to keep it consistent across apps. Treat it as stale and fall back to the OS.
       if (theme === 'light') {
-        document.documentElement.classList.add('light-mode');
-      } else if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        try { localStorage.removeItem('theme'); } catch (e) { /* ignore */ }
+        theme = null;
+      }
+
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark-mode');
       }
     })();
