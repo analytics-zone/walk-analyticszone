@@ -1,242 +1,61 @@
-<!DOCTYPE html>
-<html lang="ru" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья</title>
-  <meta name="description" content="Приватное iOS-приложение для ходьбы с анализом походки. Отслеживайте метрики шага, зоны ходьбы, WSS локально. Научные данные о здоровье. 7 дней бесплатно.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="приложение аналитики ходьбы, приложение анализа походки, приватное iOS-приложение, метрики здоровья ходьбы, анализ шага">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/ru/">
-
-  
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://walk.analyticszone.app/ru/">
-  <meta property="og:title" content="Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья">
-  <meta property="og:description" content="Приватное iOS-приложение для ходьбы с анализом походки. Отслеживайте метрики шага, зоны ходьбы, WSS локально. Научные данные о здоровье. 7 дней бесплатно.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/ru/">
-  <meta name="twitter:title" content="Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья">
-  <meta name="twitter:description" content="Приватное iOS-приложение для ходьбы с анализом походки. Отслеживайте метрики шага, зоны ходьбы, WSS локально. Научные данные о здоровье. 7 дней бесплатно.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="ru" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья</title><meta name="description" content="Частное приложение для ходьбы для iOS с расширенным анализом походки. Отслеживайте показатели шага, зоны ходьбы, WSS локально. Научно-обоснованные выводы для..."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="приложение аналитики ходьбы, приложение анализа походки, приватное iOS-приложение, метрики здоровья ходьбы, анализ шага"><link rel="canonical" href="https://walk.analyticszone.app/ru/"><meta property="og:type" content="website"><meta property="og:url" content="https://walk.analyticszone.app/ru/"><meta property="og:title" content="Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья"><meta property="og:description" content="Частное приложение для ходьбы для iOS с расширенным анализом походки. Отслеживайте показатели шага, зоны ходьбы, WSS локально. Научно-обоснованные выводы для..."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/ru/"><meta name="twitter:title" content="Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья"><meta name="twitter:description" content="Частное приложение для ходьбы для iOS с расширенным анализом походки. Отслеживайте показатели шага, зоны ходьбы, WSS локально. Научно-обоснованные выводы для..."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/"><link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -495,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -543,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -555,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "ru"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -574,34 +373,15 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Приватная аналитика ходьбы - Анализ походки, WSS, метрики здоровья",
-  "description": "Приватное iOS-приложение для ходьбы с анализом походки. Отслеживайте метрики шага, зоны ходьбы, WSS локально. Научные данные о здоровье. 7 дней бесплатно.",
+  "description": "Частное приложение для ходьбы для iOS с расширенным анализом походки. Отслеживайте показатели шага, зоны ходьбы, WSS локально. Научно-обоснованные выводы для...",
   "url": "https://walk.analyticszone.app/ru/"
 }
-</script>
-
-
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -615,1435 +395,455 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">Перейти к содержанию</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/ru/" class="site-logo">
-                <picture>
-                    <source srcset="../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/ru/" 
+  </script></head><body><a href="#main-content" class="skip-link">Перейти к содержанию</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/ru/" class="site-logo"><picture><source srcset="../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/ru/" 
                                 aria-current="">
                                 Главная
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ru/getting-started/" class="nav-label">Обучение</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ru/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/ru/getting-started/" class="nav-label">Обучение</a><ul class="submenu"><li><a href="/ru/getting-started/" 
                                         aria-current="">
                                         Начало работы
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/walking-zones/" 
+                                    </a></li><li><a href="/ru/walking-zones/" 
                                         aria-current="">
                                         Зоны ходьбы
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/gait-analysis/" 
+                                    </a></li><li><a href="/ru/gait-analysis/" 
                                         aria-current="">
                                         Анализ походки
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/training-load/" 
+                                    </a></li><li><a href="/ru/training-load/" 
                                         aria-current="">
                                         Нагрузка
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/wss-calculator/" 
+                                    </a></li><li><a href="/ru/wss-calculator/" 
                                         aria-current="">
                                         Калькулятор WSS
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ru/research/" class="nav-label">Наука</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ru/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ru/research/" class="nav-label">Наука</a><ul class="submenu"><li><a href="/ru/research/" 
                                         aria-current="">
                                         Исследования
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/formulas/" 
+                                    </a></li><li><a href="/ru/formulas/" 
                                         aria-current="">
                                         Формулы
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/gait-efficiency/" 
+                                    </a></li><li><a href="/ru/gait-efficiency/" 
                                         aria-current="">
                                         Эффективность
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/stride-mechanics/" 
+                                    </a></li><li><a href="/ru/stride-mechanics/" 
                                         aria-current="">
                                         Механика шага
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/walking-vs-running/" 
+                                    </a></li><li><a href="/ru/walking-vs-running/" 
                                         aria-current="">
                                         Ходьба vs Бег
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/benchmarks/" 
+                                    </a></li><li><a href="/ru/benchmarks/" 
                                         aria-current="">
                                         Показатели
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/bibliography/" 
+                                    </a></li><li><a href="/ru/bibliography/" 
                                         aria-current="">
                                         Библиография
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ru/for-health/" class="nav-label">Для вас</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ru/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ru/for-health/" class="nav-label">Для вас</a><ul class="submenu"><li><a href="/ru/for-health/" 
                                         aria-current="">
                                         Для здоровья
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/for-fitness/" 
+                                    </a></li><li><a href="/ru/for-fitness/" 
                                         aria-current="">
                                         Для фитнеса
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/for-seniors/" 
+                                    </a></li><li><a href="/ru/for-seniors/" 
                                         aria-current="">
                                         Для пожилых
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/for-rehabilitation/" 
+                                    </a></li><li><a href="/ru/for-rehabilitation/" 
                                         aria-current="">
                                         Для реабилитации
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ru/cadence-calculator/" class="nav-label">Инструменты</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ru/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ru/cadence-calculator/" class="nav-label">Инструменты</a><ul class="submenu"><li><a href="/ru/cadence-calculator/" 
                                         aria-current="">
                                         Калькулятор каденса
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/gait-assessment/" 
+                                    </a></li><li><a href="/ru/gait-assessment/" 
                                         aria-current="">
                                         Оценка походки
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ru/vo2max-calculator/" 
+                                    </a></li><li><a href="/ru/vo2max-calculator/" 
                                         aria-current="">
                                         Калькулятор VO₂max
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/ru/contact/" 
+                                    </a></li></ul></li><li><a href="/ru/contact/" 
                                 aria-current="">
                                 Контакты
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Выбрать язык">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Выбрать язык"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" selected>
+                        </option><option value="ru" selected>
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Переключить меню"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Walk Analytics App Landing Page - Homepage -->
-
-<!-- Hero Section with App Introduction -->
-<section class="app-hero">
-  <div class="container">
-    <div class="app-hero-content">
-      <div class="app-hero-text">
-        <div class="app-hero-badge">
-          <span>🚶</span>
-          <span>Научно обоснованная аналитика ходьбы</span>
-        </div>
-        <h1>Ходите умнее, живите здоровее</h1>
-        <p class="app-hero-subtitle">
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Переключить меню"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><main id="main-content" class="main-content"><section class="app-hero"><div class="container"><div class="app-hero-content"><div class="app-hero-text"><div class="app-hero-badge"><span>🚶</span><span>Научно обоснованная аналитика ходьбы</span></div><h1>Ходите умнее, живите здоровее</h1><p class="app-hero-subtitle">
           iOS-приложение с защитой конфиденциальности, основанное на научных исследованиях: анализ походки,
           тренировочные зоны на основе каденса и комплексное отслеживание здоровья.
           На основе рецензируемых исследований, включая CADENCE-Adults, Peak-30 и биомеханические науки.
-        </p>
-        <div class="app-hero-cta">
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+        </p><div class="app-hero-cta"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-large btn-accent" target="_blank" rel="noopener">
             Скачать в App Store
-          </a>
-          <a href="#science" class="btn btn-large btn-secondary">
+          </a><a href="#science" class="btn btn-large btn-secondary">
             Изучить научную основу
-          </a>
-        </div>
-        <p class="mt-6 text-sm-muted">
+          </a></div><p class="mt-6 text-sm-muted">
           ✓ 7-дневная пробная версия &nbsp;&nbsp; ✓ Без регистрации &nbsp;&nbsp; ✓ 100% локальные данные
-        </p>
-      </div>
-      <div class="app-hero-mockup">
-        <div class="mockup-phone">
-          <img src="../assets/images/screenshots/workouts-list.png"
+        </p></div><div class="app-hero-mockup"><div class="mockup-phone"><img src="../assets/images/screenshots/workouts-list.png"
             alt="iOS-приложение Walk Analytics с показателями походки и данными о здоровье на iPhone" width="400"
-            height="auto" loading="eager" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Scientific Foundation Section - NEW -->
-<section id="science" class="scientific-foundation">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Научно обоснованное</div>
-      <h2 class="section-title">Основано на научных данных</h2>
-      <p class="section-subtitle">Каждая метрика и рекомендация основана на рецензируемых исследованиях</p>
-    </div>
-    <div class="science-highlights">
-      <div class="science-card">
-        <div class="science-number">78,500</div>
-        <h3>Исследование Peak-30 каденса</h3>
-        <p>На основе исследования UK Biobank: ≥100 шаг/мин в течение 30 минут независимо предсказывает снижение риска
-          смертности на 40-50% (Del Pozo-Cruz et al., JAMA 2022)</p>
-      </div>
-      <div class="science-card">
-        <div class="science-number">100 шаг/мин</div>
-        <h3>Порог умеренной интенсивности</h3>
-        <p>Исследование CADENCE-Adults (Tudor-Locke et al., 2019) установило: 100 шагов/минуту = 3 MET с
-          чувствительностью 86%, специфичностью 89,6% — основа наших каденс-зон</p>
-      </div>
-      <div class="science-card">
-        <div class="science-number">2-4×</div>
-        <h3>Профилактика травм с ACWR</h3>
-        <p>Коэффициент острой:хронической нагрузки >1,50 увеличивает риск травм в 2-4 раза (Gabbett, Br J Sports Med
-          2016) — мы отслеживаем это автоматически для вашей безопасности</p>
-      </div>
-      <div class="science-card">
-        <div class="science-number">11</div>
-        <h3>Валидированные формулы</h3>
-        <p>От уравнения Мура каденс→MET до расчета стоимости передвижения, <a href="/ru/formulas/">каждая формула</a>
-          включает данные валидации и клиническую интерпретацию</p>
-      </div>
-    </div>
-    <div class="text-center mt-8">
-      <a href="/ru/bibliography/" class="btn btn-secondary">Просмотреть 50+ научных источников →</a>
-    </div>
-  </div>
-</section>
-
-<!-- Key Features Section -->
-<section id="features" class="app-features">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Возможности</div>
-      <h2 class="section-title">Расширенные метрики показателей ходьбы</h2>
-      <p class="section-subtitle">Профессиональный анализ для ходоков любого уровня</p>
-    </div>
-    <div class="app-features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg class="icon" aria-hidden="true">
-            <use href="../assets/images/icons-sprite.svg#icon-zones"></use>
-          </svg>
-        </div>
-        <h3>Тренировочные зоны на основе каденса</h3>
-        <p>Тренируйтесь с <a href="/ru/walking-zones/">5 научно обоснованными зонами</a> (от 60-99 шаг/мин до 130+
+            height="auto" loading="eager" /></div></div></div></div></section><section id="science" class="scientific-foundation"><div class="container"><div class="section-header"><div class="section-badge">Научно обоснованное</div><h2 class="section-title">Основано на научных данных</h2><p class="section-subtitle">Каждая метрика и рекомендация основана на рецензируемых исследованиях</p></div><div class="science-highlights"><div class="science-card"><div class="science-number">78,500</div><h3>Исследование Peak-30 каденса</h3><p>На основе исследования UK Biobank: ≥100 шаг/мин в течение 30 минут независимо предсказывает снижение риска
+          смертности на 40-50% (Del Pozo-Cruz et al., JAMA 2022)</p></div><div class="science-card"><div class="science-number">100 шаг/мин</div><h3>Порог умеренной интенсивности</h3><p>Исследование CADENCE-Adults (Tudor-Locke et al., 2019) установило: 100 шагов/минуту = 3 MET с
+          чувствительностью 86%, специфичностью 89,6% — основа наших каденс-зон</p></div><div class="science-card"><div class="science-number">2-4×</div><h3>Профилактика травм с ACWR</h3><p>Коэффициент острой:хронической нагрузки >1,50 увеличивает риск травм в 2-4 раза (Gabbett, Br J Sports Med
+          2016) — мы отслеживаем это автоматически для вашей безопасности</p></div><div class="science-card"><div class="science-number">11</div><h3>Валидированные формулы</h3><p>От уравнения Мура каденс→MET до расчета стоимости передвижения, <a href="/ru/formulas/">каждая формула</a>
+          включает данные валидации и клиническую интерпретацию</p></div></div><div class="text-center mt-8"><a href="/ru/bibliography/" class="btn btn-secondary">Просмотреть 50+ научных источников →</a></div></div></section><section id="features" class="app-features"><div class="container"><div class="section-header"><div class="section-badge">Возможности</div><h2 class="section-title">Расширенные метрики показателей ходьбы</h2><p class="section-subtitle">Профессиональный анализ для ходоков любого уровня</p></div><div class="app-features-grid"><div class="feature-card"><div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="../assets/images/icons-sprite.svg#icon-zones"></use></svg></div><h3>Тренировочные зоны на основе каденса</h3><p>Тренируйтесь с <a href="/ru/walking-zones/">5 научно обоснованными зонами</a> (от 60-99 шаг/мин до 130+
           шаг/мин) на основе исследования CADENCE-Adults. Практичнее зон пульса — не требуется нагрудный датчик.
-          Отслеживайте Peak-30 каденс ежедневно.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg class="icon" aria-hidden="true">
-            <use href="../assets/images/icons-sprite.svg#icon-chart"></use>
-          </svg>
-        </div>
-        <h3>Комплексный анализ походки</h3>
-        <p>Отслеживайте <a href="/ru/gait-analysis/">7 ключевых метрик походки</a>: каденс, длина шага (40-50% роста),
+          Отслеживайте Peak-30 каденс ежедневно.</p></div><div class="feature-card"><div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="../assets/images/icons-sprite.svg#icon-chart"></use></svg></div><h3>Комплексный анализ походки</h3><p>Отслеживайте <a href="/ru/gait-analysis/">7 ключевых метрик походки</a>: каденс, длина шага (40-50% роста),
           время контакта с землей (200-300 мс), двойная опора (20-30%), асимметрия (формула GSI), скорость и
-          вертикальные колебания (4-8 см).</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg class="icon" aria-hidden="true">
-            <use href="../assets/images/icons-sprite.svg#icon-load"></use>
-          </svg>
-        </div>
-        <h3>Управление тренировочной нагрузкой</h3>
-        <p>Предотвращайте перетренированность с помощью <a href="/ru/training-load/">Walking Stress Score (WSS)</a> и
+          вертикальные колебания (4-8 см).</p></div><div class="feature-card"><div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="../assets/images/icons-sprite.svg#icon-load"></use></svg></div><h3>Управление тренировочной нагрузкой</h3><p>Предотвращайте перетренированность с помощью <a href="/ru/training-load/">Walking Stress Score (WSS)</a> и
           отслеживания ACWR. Контролируйте соотношение острой:хронической нагрузки (поддерживайте 0,80-1,30) и получайте
-          персонализированные рекомендации по восстановлению на основе вашей нагрузки.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg class="icon" aria-hidden="true">
-            <use href="../assets/images/icons-sprite.svg#icon-stride"></use>
-          </svg>
-        </div>
-        <h3>Биомеханика и эффективность</h3>
-        <p>Глубокий <a href="/ru/stride-mechanics/">анализ механики шага</a> и отслеживание <a
+          персонализированные рекомендации по восстановлению на основе вашей нагрузки.</p></div><div class="feature-card"><div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="../assets/images/icons-sprite.svg#icon-stride"></use></svg></div><h3>Биомеханика и эффективность</h3><p>Глубокий <a href="/ru/stride-mechanics/">анализ механики шага</a> и отслеживание <a
             href="/ru/gait-efficiency/">экономичности ходьбы</a>. Оптимизируйте стоимость передвижения (~0,48-0,55
-          ккал/кг/км при 1,3 м/с), выявляйте отклонения походки, улучшайте эффективность на 10-15%.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg class="icon" aria-hidden="true">
-            <use href="../assets/images/icons-sprite.svg#icon-health"></use>
-          </svg>
-        </div>
-        <h3>Интеграция со здоровьем</h3>
-        <p>Бесшовная интеграция с Apple Health. Автоматически импортируйте тренировки ходьбы и синхронизируйте пульс,
+          ккал/кг/км при 1,3 м/с), выявляйте отклонения походки, улучшайте эффективность на 10-15%.</p></div><div class="feature-card"><div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="../assets/images/icons-sprite.svg#icon-health"></use></svg></div><h3>Интеграция со здоровьем</h3><p>Бесшовная интеграция с Apple Health. Автоматически импортируйте тренировки ходьбы и синхронизируйте пульс,
           дистанцию, шаги и показатели здоровья. Совместимо с метриками мобильности Apple Watch (устойчивость походки, %
-          двойной опоры, асимметрия).</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg class="icon" aria-hidden="true">
-            <use href="../assets/images/icons-sprite.svg#icon-privacy"></use>
-          </svg>
-        </div>
-        <h3>Полная конфиденциальность</h3>
-        <p>Все ваши данные о ходьбе остаются на вашем iPhone. Без облачной синхронизации, без аккаунтов, без
+          двойной опоры, асимметрия).</p></div><div class="feature-card"><div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="../assets/images/icons-sprite.svg#icon-privacy"></use></svg></div><h3>Полная конфиденциальность</h3><p>Все ваши данные о ходьбе остаются на вашем iPhone. Без облачной синхронизации, без аккаунтов, без
           отслеживания. Ваши показатели здоровья на 100% приватны и защищены локальной обработкой. Соответствует
-          философии GDPR и HIPAA.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Scientific Differentiators Section - NEW -->
-<section class="differentiators">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Почему Walk Analytics</div>
-      <h2 class="section-title">Единственное приложение для ходьбы, основанное на науке</h2>
-      <p class="section-subtitle">Не просто подсчет шагов — комплексная аналитика на основе биомеханических исследований
-      </p>
-    </div>
-    <div class="differentiator-list">
-      <div class="differentiator-item">
-        <div class="differentiator-icon">✓</div>
-        <div class="differentiator-content">
-          <h3>Каденс вместо пульса</h3>
-          <p><strong>Почему это важно:</strong> Пульс меняется от жары, стресса, кофеина, болезни. Каденс надежен,
+          философии GDPR и HIPAA.</p></div></div></div></section><section class="differentiators"><div class="container"><div class="section-header"><div class="section-badge">Почему Walk Analytics</div><h2 class="section-title">Единственное приложение для ходьбы, основанное на науке</h2><p class="section-subtitle">Не просто подсчет шагов — комплексная аналитика на основе биомеханических исследований
+      </p></div><div class="differentiator-list"><div class="differentiator-item"><div class="differentiator-icon">✓</div><div class="differentiator-content"><h3>Каденс вместо пульса</h3><p><strong>Почему это важно:</strong> Пульс меняется от жары, стресса, кофеина, болезни. Каденс надежен,
             практичен и проверен. Исследование CADENCE-Adults показало: 100 шаг/мин = умеренная интенсивность с
-            чувствительностью 86% — точнее оценки по пульсу.</p>
-        </div>
-      </div>
-      <div class="differentiator-item">
-        <div class="differentiator-icon">✓</div>
-        <div class="differentiator-content">
-          <h3>Отслеживание Peak-30 каденса</h3>
-          <p><strong>Революционная метрика:</strong> Ваши лучшие 30 последовательных минут ходьбы в день независимо
+            чувствительностью 86% — точнее оценки по пульсу.</p></div></div><div class="differentiator-item"><div class="differentiator-icon">✓</div><div class="differentiator-content"><h3>Отслеживание Peak-30 каденса</h3><p><strong>Революционная метрика:</strong> Ваши лучшие 30 последовательных минут ходьбы в день независимо
             предсказывают сердечно-сосудистое здоровье и смертность (78 500 участников UK Biobank). Мы отслеживаем это
-            ежедневно — никакое другое приложение для ходьбы этого не делает.</p>
-        </div>
-      </div>
-      <div class="differentiator-item">
-        <div class="differentiator-icon">✓</div>
-        <div class="differentiator-content">
-          <h3>Профилактика травм с ACWR</h3>
-          <p><strong>Спортивная наука, адаптированная для ходьбы:</strong> Отслеживайте коэффициент острой:хронической
+            ежедневно — никакое другое приложение для ходьбы этого не делает.</p></div></div><div class="differentiator-item"><div class="differentiator-icon">✓</div><div class="differentiator-content"><h3>Профилактика травм с ACWR</h3><p><strong>Спортивная наука, адаптированная для ходьбы:</strong> Отслеживайте коэффициент острой:хронической
             нагрузки для предотвращения травм от перегрузки. Исследования показывают: ACWR >1,50 = риск травм в 2-4 раза
-            выше. Мы предупреждаем вас до опасных скачков.</p>
-        </div>
-      </div>
-      <div class="differentiator-item">
-        <div class="differentiator-icon">✓</div>
-        <div class="differentiator-content">
-          <h3>Оптимизация экономичности ходьбы</h3>
-          <p><strong>Энергоэффективность:</strong> Отслеживайте стоимость передвижения и эффективность ходьбы (WEI, WALK
+            выше. Мы предупреждаем вас до опасных скачков.</p></div></div><div class="differentiator-item"><div class="differentiator-icon">✓</div><div class="differentiator-content"><h3>Оптимизация экономичности ходьбы</h3><p><strong>Энергоэффективность:</strong> Отслеживайте стоимость передвижения и эффективность ходьбы (WEI, WALK
             Score). Улучшайте экономичность на 10-15% через тренировки в зоне 2, оптимизацию шага и силовые упражнения —
-            с конкретными рекомендациями.</p>
-        </div>
-      </div>
-      <div class="differentiator-item">
-        <div class="differentiator-icon">✓</div>
-        <div class="differentiator-content">
-          <h3>Симметрия походки и риск падений</h3>
-          <p><strong>Клинические метрики:</strong> Рассчитывайте индекс симметрии походки (GSI) для выявления
+            с конкретными рекомендациями.</p></div></div><div class="differentiator-item"><div class="differentiator-icon">✓</div><div class="differentiator-content"><h3>Симметрия походки и риск падений</h3><p><strong>Клинические метрики:</strong> Рассчитывайте индекс симметрии походки (GSI) для выявления
             асимметрии. Двойная опора >35% и скорость ходьбы <0,8 м/с указывают на повышенный риск падений — критично
-              для пожилых людей и реабилитации.</p>
-        </div>
-      </div>
-      <div class="differentiator-item">
-        <div class="differentiator-icon">✓</div>
-        <div class="differentiator-content">
-          <h3>50+ рецензируемых источников</h3>
-          <p><strong>Рекомендации на основе доказательств:</strong> Каждая рекомендация ссылается на <a
+              для пожилых людей и реабилитации.</p></div></div><div class="differentiator-item"><div class="differentiator-icon">✓</div><div class="differentiator-content"><h3>50+ рецензируемых источников</h3><p><strong>Рекомендации на основе доказательств:</strong> Каждая рекомендация ссылается на <a
               href="/ru/bibliography/">опубликованные исследования</a>. От пороговых значений каденса Tudor-Locke до
-            скорости походки как жизненно важного показателя Studenski — прозрачность в науке.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- How It Works Section -->
-<section class="how-it-works">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Как это работает</div>
-      <h2 class="section-title">Начните ходить умнее за 3 шага</h2>
-    </div>
-    <div class="steps-container steps-grid">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <h3>Подключите Apple Health</h3>
-        <p>Автоматически импортируйте ваши тренировки ходьбы из Apple Health. Walk Analytics анализирует ваши
+            скорости походки как жизненно важного показателя Studenski — прозрачность в науке.</p></div></div></div></div></section><section class="how-it-works"><div class="container"><div class="section-header"><div class="section-badge">Как это работает</div><h2 class="section-title">Начните ходить умнее за 3 шага</h2></div><div class="steps-container steps-grid"><div class="step-card"><div class="step-number">1</div><h3>Подключите Apple Health</h3><p>Автоматически импортируйте ваши тренировки ходьбы из Apple Health. Walk Analytics анализирует ваши
           исторические данные для установления базовых метрик и расчета хронической тренировочной нагрузки (среднее за
-          28 дней).</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Получите научно обоснованные данные</h3>
-        <p>Получайте комплексный анализ, включая Peak-30 каденс, метрики походки, экономичность ходьбы (стоимость
-          передвижения) и ACWR. Понимайте свои паттерны с научно обоснованными пороговыми значениями.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <h3>Тренируйтесь научно</h3>
-        <p>Следуйте персонализированным рекомендациям по каденс-зонам, прогрессу тренировочной нагрузки (5-10%
+          28 дней).</p></div><div class="step-card"><div class="step-number">2</div><h3>Получите научно обоснованные данные</h3><p>Получайте комплексный анализ, включая Peak-30 каденс, метрики походки, экономичность ходьбы (стоимость
+          передвижения) и ACWR. Понимайте свои паттерны с научно обоснованными пороговыми значениями.</p></div><div class="step-card"><div class="step-number">3</div><h3>Тренируйтесь научно</h3><p>Следуйте персонализированным рекомендациям по каденс-зонам, прогрессу тренировочной нагрузки (5-10%
           еженедельно) и восстановлению. Отслеживайте улучшения эффективности, скорости и показателей здоровья со
-          временем.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Who It's For Section -->
-<section class="target-audience">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Для кого</div>
-      <h2 class="section-title">Идеально для каждого ходока</h2>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <h3>Энтузиасты здоровья</h3>
-        <p>Достигайте рекомендованных 150 мин/неделю умеренной активности (100+ шаг/мин). Отслеживайте Peak-30 каденс
-          для сердечно-сосудистого здоровья. Выполняйте рекомендации ВОЗ/CDC с точностью — не просто подсчет шагов.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Фитнес-ходоки</h3>
-        <p>Тренируйтесь с каденс-зонами (зона 2 на 100-110 шаг/мин для аэробной базы, интервалы на 120-130 шаг/мин).
+          временем.</p></div></div></div></section><section class="target-audience"><div class="container"><div class="section-header"><div class="section-badge">Для кого</div><h2 class="section-title">Идеально для каждого ходока</h2></div><div class="audience-grid"><div class="audience-card"><h3>Энтузиасты здоровья</h3><p>Достигайте рекомендованных 150 мин/неделю умеренной активности (100+ шаг/мин). Отслеживайте Peak-30 каденс
+          для сердечно-сосудистого здоровья. Выполняйте рекомендации ВОЗ/CDC с точностью — не просто подсчет шагов.</p></div><div class="audience-card"><h3>Фитнес-ходоки</h3><p>Тренируйтесь с каденс-зонами (зона 2 на 100-110 шаг/мин для аэробной базы, интервалы на 120-130 шаг/мин).
           Улучшайте экономичность ходьбы на 10-15% через систематические тренировки. Отслеживайте WSS для оптимизации
-          нагрузки.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Спортивные ходоки</h3>
-        <p>Осваивайте <a href="/ru/stride-mechanics/#race-walking">технику спортивной ходьбы</a> (130-160 шаг/мин,
+          нагрузки.</p></div><div class="audience-card"><h3>Спортивные ходоки</h3><p>Осваивайте <a href="/ru/stride-mechanics/#race-walking">технику спортивной ходьбы</a> (130-160 шаг/мин,
           прямая нога, преувеличенное вращение бедер). Отслеживайте биомеханику, контролируйте тренировочную нагрузку,
-          предотвращайте перетренированность с ACWR.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Пожилые люди (65+)</h3>
-        <p>Контролируйте <a href="/ru/gait-analysis/#gait-speed">скорость походки как жизненно важный показатель</a>
+          предотвращайте перетренированность с ACWR.</p></div><div class="audience-card"><h3>Пожилые люди (65+)</h3><p>Контролируйте <a href="/ru/gait-analysis/#gait-speed">скорость походки как жизненно важный показатель</a>
           (поддерживайте >1,0 м/с). Отслеживайте % двойной опоры (<35%=хорошая устойчивость), асимметрию и показатели
-            риска падений. Раннее выявление снижения мобильности.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Пациенты реабилитации</h3>
-        <p>Объективно отслеживайте улучшения походки с помощью формулы GSI (асимметрия <5%=хорошо), восстановление длины
-            шага и прогресс скорости ходьбы. Документируйте результаты для медицинских специалистов.</p>
-      </div>
-      <div class="audience-card">
-        <h3>Снижение веса и здоровье</h3>
-        <p>Оптимизируйте сжигание калорий с помощью зонных тренировок. Точно рассчитывайте расход энергии с уравнением
-          Мура каденс→MET. Формируйте устойчивые привычки к упражнениям с постепенным увеличением нагрузки.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Learning Resources Section - NEW -->
-<section class="learning-resources">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Обучение</div>
-      <h2 class="section-title">Глубокие научные знания</h2>
-      <p class="section-subtitle">Подробные руководства, объясняющие науку за каждой метрикой</p>
-    </div>
-    <div class="resources-grid">
-      <div class="resource-card">
-        <div class="resource-category">Основы</div>
-        <h3><a href="/ru/walking-zones/">Тренировочные зоны на основе каденса</a></h3>
-        <p>Полная смена парадигмы от пульса к каденсу. Изучите 5 зон (от 60-99 до 130+ шаг/мин), исследование
-          CADENCE-Adults, концепцию Peak-30 и протоколы IWT.</p>
-      </div>
-      <div class="resource-card">
-        <div class="resource-category">Биомеханика</div>
-        <h3><a href="/ru/stride-mechanics/">Механика шага при ходьбе</a></h3>
-        <p>Фазы цикла походки, техника спортивной ходьбы (правила World Athletics), различия между ходьбой и бегом.
-          Формула GSI для асимметрии, силы реакции опоры.</p>
-      </div>
-      <div class="resource-card">
-        <div class="resource-category">Производительность</div>
-        <h3><a href="/ru/gait-efficiency/">Экономичность ходьбы и CoT</a></h3>
-        <p>Оптимизация стоимости передвижения, модель перевернутого маятника (65-70% восстановления энергии), число
-          Фруда, U-образная кривая экономичности, переход ходьба-бег при 2,2 м/с.</p>
-      </div>
-      <div class="resource-card">
-        <div class="resource-category">Тренировки</div>
-        <h3><a href="/ru/training-load/">Управление тренировочной нагрузкой</a></h3>
-        <p>Peak-30 каденс (Del Pozo-Cruz 2022), концепция интенсивных отрезков, профилактика травм ACWR, периодизация
-          3:1, поляризованное vs пирамидальное распределение интенсивности.</p>
-      </div>
-      <div class="resource-card">
-        <div class="resource-category">Метрики</div>
-        <h3><a href="/ru/gait-analysis/">Метрики анализа походки</a></h3>
-        <p>7 ключевых метрик с клиническими пороговыми значениями: каденс (100 шаг/мин = 3 MET), длина шага (40-50%
-          роста), двойная опора (>35% = риск падений), асимметрия, скорость.</p>
-      </div>
-      <div class="resource-card">
-        <div class="resource-category">Формулы</div>
-        <h3><a href="/ru/formulas/">Научные формулы</a></h3>
-        <p>11 валидированных уравнений: Мур каденс→MET (R²=0,87), ACSM VO₂, расход энергии, GSI, WALK Score, стоимость
-          передвижения, тренировочная нагрузка, прогноз 6MWT.</p>
-      </div>
-    </div>
-    <div class="text-center mt-8">
-      <a href="/ru/research/" class="btn btn-secondary">Изучить все научные статьи →</a>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing Section -->
-<section class="pricing">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">Цены</div>
-      <h2 class="section-title">Простые, прозрачные цены</h2>
-      <p class="section-subtitle">Попробуйте Walk Analytics бесплатно в течение 7 дней. Кредитная карта не требуется.
-      </p>
-    </div>
-    <div class="pricing-card">
-      <div class="price-header">
-        <h3>Walk Analytics Premium</h3>
-        <div class="price">
-          <span class="amount">$3,99</span>
-          <span class="period">/месяц</span>
-        </div>
-      </div>
-      <ul class="features-list">
-        <li>Отслеживание Peak-30 каденса</li>
-        <li>Тренировочные зоны на основе каденса</li>
-        <li>Расширенный анализ походки (GSI, CoT, WEI)</li>
-        <li>Walking Stress Score (WSS)</li>
-        <li>Профилактика травм ACWR</li>
-        <li>11 валидированных формул</li>
-        <li>Полная конфиденциальность данных (локальная обработка)</li>
-        <li>Интеграция с Apple Health</li>
-        <li>Без рекламы, никогда</li>
-      </ul>
-      <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+            риска падений. Раннее выявление снижения мобильности.</p></div><div class="audience-card"><h3>Пациенты реабилитации</h3><p>Объективно отслеживайте улучшения походки с помощью формулы GSI (асимметрия <5%=хорошо), восстановление длины
+            шага и прогресс скорости ходьбы. Документируйте результаты для медицинских специалистов.</p></div><div class="audience-card"><h3>Снижение веса и здоровье</h3><p>Оптимизируйте сжигание калорий с помощью зонных тренировок. Точно рассчитывайте расход энергии с уравнением
+          Мура каденс→MET. Формируйте устойчивые привычки к упражнениям с постепенным увеличением нагрузки.</p></div></div></div></section><section class="learning-resources"><div class="container"><div class="section-header"><div class="section-badge">Обучение</div><h2 class="section-title">Глубокие научные знания</h2><p class="section-subtitle">Подробные руководства, объясняющие науку за каждой метрикой</p></div><div class="resources-grid"><div class="resource-card"><div class="resource-category">Основы</div><h3><a href="/ru/walking-zones/">Тренировочные зоны на основе каденса</a></h3><p>Полная смена парадигмы от пульса к каденсу. Изучите 5 зон (от 60-99 до 130+ шаг/мин), исследование
+          CADENCE-Adults, концепцию Peak-30 и протоколы IWT.</p></div><div class="resource-card"><div class="resource-category">Биомеханика</div><h3><a href="/ru/stride-mechanics/">Механика шага при ходьбе</a></h3><p>Фазы цикла походки, техника спортивной ходьбы (правила World Athletics), различия между ходьбой и бегом.
+          Формула GSI для асимметрии, силы реакции опоры.</p></div><div class="resource-card"><div class="resource-category">Производительность</div><h3><a href="/ru/gait-efficiency/">Экономичность ходьбы и CoT</a></h3><p>Оптимизация стоимости передвижения, модель перевернутого маятника (65-70% восстановления энергии), число
+          Фруда, U-образная кривая экономичности, переход ходьба-бег при 2,2 м/с.</p></div><div class="resource-card"><div class="resource-category">Тренировки</div><h3><a href="/ru/training-load/">Управление тренировочной нагрузкой</a></h3><p>Peak-30 каденс (Del Pozo-Cruz 2022), концепция интенсивных отрезков, профилактика травм ACWR, периодизация
+          3:1, поляризованное vs пирамидальное распределение интенсивности.</p></div><div class="resource-card"><div class="resource-category">Метрики</div><h3><a href="/ru/gait-analysis/">Метрики анализа походки</a></h3><p>7 ключевых метрик с клиническими пороговыми значениями: каденс (100 шаг/мин = 3 MET), длина шага (40-50%
+          роста), двойная опора (>35% = риск падений), асимметрия, скорость.</p></div><div class="resource-card"><div class="resource-category">Формулы</div><h3><a href="/ru/formulas/">Научные формулы</a></h3><p>11 валидированных уравнений: Мур каденс→MET (R²=0,87), ACSM VO₂, расход энергии, GSI, WALK Score, стоимость
+          передвижения, тренировочная нагрузка, прогноз 6MWT.</p></div></div><div class="text-center mt-8"><a href="/ru/research/" class="btn btn-secondary">Изучить все научные статьи →</a></div></div></section><section class="pricing"><div class="container"><div class="section-header"><div class="section-badge">Цены</div><h2 class="section-title">Простые, прозрачные цены</h2><p class="section-subtitle">Попробуйте Walk Analytics бесплатно в течение 7 дней. Кредитная карта не требуется.
+      </p></div><div class="pricing-card"><div class="price-header"><h3>Walk Analytics Premium</h3><div class="price"><span class="amount">$3,99</span><span class="period">/месяц</span></div></div><ul class="features-list"><li>Отслеживание Peak-30 каденса</li><li>Тренировочные зоны на основе каденса</li><li>Расширенный анализ походки (GSI, CoT, WEI)</li><li>Walking Stress Score (WSS)</li><li>Профилактика травм ACWR</li><li>11 валидированных формул</li><li>Полная конфиденциальность данных (локальная обработка)</li><li>Интеграция с Apple Health</li><li>Без рекламы, никогда</li></ul><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-large btn-accent" target="_blank" rel="noopener">
         Начать бесплатную пробную версию
-      </a>
-      <p class="trial-note">7-дневная пробная версия • Отмена в любое время • Кредитная карта не требуется</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="faq">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-badge">FAQ</div>
-      <h2 class="section-title">Часто задаваемые вопросы</h2>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>Чем Walk Analytics отличается от других приложений для ходьбы?</h3>
-        <p>Мы — единственное приложение для ходьбы, построенное на рецензируемых исследованиях. Каждая метрика — Peak-30
+      </a><p class="trial-note">7-дневная пробная версия • Отмена в любое время • Кредитная карта не требуется</p></div></div></section><section class="faq"><div class="container"><div class="section-header"><div class="section-badge">FAQ</div><h2 class="section-title">Часто задаваемые вопросы</h2></div><div class="faq-grid"><div class="faq-item"><h3>Чем Walk Analytics отличается от других приложений для ходьбы?</h3><p>Мы — единственное приложение для ходьбы, построенное на рецензируемых исследованиях. Каждая метрика — Peak-30
           каденс, ACWR, стоимость передвижения — происходит из опубликованных исследований. Мы цитируем 50+ научных
           работ и объясняем доказательства за каждой рекомендацией. Это не подсчет шагов; это биомеханика и физиология
-          упражнений, применяемая к ходьбе.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Что такое Peak-30 каденс и почему это важно?</h3>
-        <p>Peak-30 каденс — это ваши средние шаги в минуту во время лучших 30 последовательных минут ходьбы каждый день.
+          упражнений, применяемая к ходьбе.</p></div><div class="faq-item"><h3>Что такое Peak-30 каденс и почему это важно?</h3><p>Peak-30 каденс — это ваши средние шаги в минуту во время лучших 30 последовательных минут ходьбы каждый день.
           Революционное исследование 78 500 человек (Del Pozo-Cruz, JAMA 2022) показало, что это независимо
           предсказывает риск смертности — даже после контроля общего количества ежедневных шагов. Мы отслеживаем это
-          автоматически, чего не делает никакое другое приложение.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Как ACWR предотвращает травмы?</h3>
-        <p>Коэффициент острой:хронической нагрузки сравнивает вашу недавнюю тренировочную нагрузку (последние 7 дней) с
+          автоматически, чего не делает никакое другое приложение.</p></div><div class="faq-item"><h3>Как ACWR предотвращает травмы?</h3><p>Коэффициент острой:хронической нагрузки сравнивает вашу недавнюю тренировочную нагрузку (последние 7 дней) с
           вашим долгосрочным средним (28 дней). Исследования показывают, что ACWR >1,50 увеличивает риск травм в 2-4
           раза. Мы рассчитываем это ежедневно и предупреждаем вас перед опасными скачками, помогая вам безопасно
-          прогрессировать с еженедельным увеличением 5-10%.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Почему каденс-зоны вместо зон пульса?</h3>
-        <p>Каденс более надежен и практичен. Исследование CADENCE-Adults доказало: 100 шаг/мин = умеренная интенсивность
+          прогрессировать с еженедельным увеличением 5-10%.</p></div><div class="faq-item"><h3>Почему каденс-зоны вместо зон пульса?</h3><p>Каденс более надежен и практичен. Исследование CADENCE-Adults доказало: 100 шаг/мин = умеренная интенсивность
           (3 MET) с чувствительностью 86% и специфичностью 90%. Пульс меняется от жары, стресса, болезни, кофеина —
-          каденс нет. Плюс вам не нужен нагрудный датчик или часы; просто считайте шаги.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Может ли Walk Analytics помочь в профилактике падений?</h3>
-        <p>Да. Мы отслеживаем клинические показатели риска падений: скорость походки <0,8 м/с, двойная опора>35%,
+          каденс нет. Плюс вам не нужен нагрудный датчик или часы; просто считайте шаги.</p></div><div class="faq-item"><h3>Может ли Walk Analytics помочь в профилактике падений?</h3><p>Да. Мы отслеживаем клинические показатели риска падений: скорость походки <0,8 м/с, двойная опора>35%,
             асимметрия (GSI) >10% и устойчивость ходьбы. Это научно обоснованные пороговые значения из гериатрических
-            исследований. Раннее выявление позволяет вмешаться до возникновения падений — критично для взрослых 65+.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Как Walk Analytics защищает мою конфиденциальность?</h3>
-        <p>Все данные остаются на вашем iPhone — точка. Без облачной синхронизации, без аккаунтов, без серверов,
+            исследований. Раннее выявление позволяет вмешаться до возникновения падений — критично для взрослых 65+.</p></div><div class="faq-item"><h3>Как Walk Analytics защищает мою конфиденциальность?</h3><p>Все данные остаются на вашем iPhone — точка. Без облачной синхронизации, без аккаунтов, без серверов,
           получающих ваши данные о здоровье. Мы обрабатываем все локально, используя алгоритмы на устройстве. Ваши
           метрики ходьбы, местоположение, пульс — полностью приватны. Мы следуем философии GDPR и HIPAA, даже если не
-          обязаны юридически (поскольку мы никогда не видим ваши данные).</p>
-      </div>
-      <div class="faq-item">
-        <h3>Нужно ли мне специальное оборудование?</h3>
-        <p>Нет. Walk Analytics работает с iPhone или Apple Watch. Для базовых метрик (каденс, дистанция, шаги)
+          обязаны юридически (поскольку мы никогда не видим ваши данные).</p></div><div class="faq-item"><h3>Нужно ли мне специальное оборудование?</h3><p>Нет. Walk Analytics работает с iPhone или Apple Watch. Для базовых метрик (каденс, дистанция, шаги)
           достаточно вашего телефона. Для данных о пульсе и более точных метрик Apple Watch помогает, но не обязательны.
-          Мы интегрируемся с Apple Health, поэтому работает любое совместимое устройство.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Подходит ли Walk Analytics для реабилитации?</h3>
-        <p>Абсолютно. Нас используют пациенты реабилитации для объективного отслеживания восстановления. Формула индекса
+          Мы интегрируемся с Apple Health, поэтому работает любое совместимое устройство.</p></div><div class="faq-item"><h3>Подходит ли Walk Analytics для реабилитации?</h3><p>Абсолютно. Нас используют пациенты реабилитации для объективного отслеживания восстановления. Формула индекса
           симметрии походки (GSI) количественно определяет различия лево-право (<3% норма,>10% клинически значимо).
             Отслеживайте восстановление длины шага, улучшение скорости ходьбы и уменьшение асимметрии. Делитесь
-            объективными данными с вашим физиотерапевтом или врачом.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Какая научная основа у 11 формул?</h3>
-        <p>Каждая <a href="/ru/formulas/">формула</a> включает данные валидации и ссылку на оригинальное исследование.
+            объективными данными с вашим физиотерапевтом или врачом.</p></div><div class="faq-item"><h3>Какая научная основа у 11 формул?</h3><p>Каждая <a href="/ru/formulas/">формула</a> включает данные валидации и ссылку на оригинальное исследование.
           Пример: уравнение Мура каденс→MET (R²=0,87, точность ±0,5 MET, 76 взрослых) на 23-35% точнее старых уравнений
-          ACSM. Мы показываем науку, а не просто черные ящики вычислений.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-<section class="final-cta">
-  <div class="container">
-    <div class="cta-content">
-      <h2>Готовы ходить умнее?</h2>
-      <p>Присоединяйтесь к ходокам, улучшающим здоровье с научно обоснованным анализом походки и тренировочной наукой
-      </p>
-      <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-large btn-accent" target="_blank" rel="noopener">
+          ACSM. Мы показываем науку, а не просто черные ящики вычислений.</p></div></div></div></section><section class="final-cta"><div class="container"><div class="cta-content"><h2>Готовы ходить умнее?</h2><p>Присоединяйтесь к ходокам, улучшающим здоровье с научно обоснованным анализом походки и тренировочной наукой
+      </p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-large btn-accent" target="_blank" rel="noopener">
         Скачать Walk Analytics
-      </a>
-      <p class="cta-note">7-дневная пробная версия • iOS 16+ • Совместимо с Apple Health • Кредитная карта не требуется
-      </p>
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../assets/images/badge-app-store.svg"
+      </a><p class="cta-note">7-дневная пробная версия • iOS 16+ • Совместимо с Apple Health • Кредитная карта не требуется
+      </p></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link active"
+                </a><a href="/ru/" class="lang-link active"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. Все права защищены
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/ru/privacy/">Конфиденциальность</a></li>
-                <li><a href="/ru/terms/">Условия</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>Этот сайт использует cookies для улучшения вашего опыта.</p>
-            <a href="/ru/privacy/" class="text-sm">Узнать больше</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Отклонить</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Принять</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-  <script src="../assets/js/carousel.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/ru/privacy/">Конфиденциальность</a></li><li><a href="/ru/terms/">Условия</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Этот сайт использует cookies для улучшения вашего опыта.</p><a href="/ru/privacy/" class="text-sm">Узнать больше</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Отклонить</button><button id="cookie-accept" class="btn btn-primary btn-small">Принять</button></div></div></div><script src="../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../assets/js/carousel.min.js?v=8caa6f183969" defer></script><script src="../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../sw.js') }</script></body></html>

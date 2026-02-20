@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>فرمول‌های معیارهای پیاده‌روی - نحوه محاسبه WSS، راه رفتن و معیارهای</title>
-  <meta name="description" content="فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="فرمول‌های پیاده‌روی, فرمول WSS, محاسبه معیارهای راه رفتن, فرمول‌های علمی پیاده‌روی, محاسبه گام">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/fa/formulas/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-12-31T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/fa/formulas/">
-  <meta property="og:title" content="فرمول‌های معیارهای پیاده‌روی - نحوه محاسبه WSS، راه رفتن و معیارهای">
-  <meta property="og:description" content="فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="fa_IR">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/fa/formulas/">
-  <meta name="twitter:title" content="فرمول‌های معیارهای پیاده‌روی - نحوه محاسبه WSS، راه رفتن و معیارهای">
-  <meta name="twitter:description" content="فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>فرمول‌های معیارهای پیاده‌روی - نحوه محاسبه WSS، راه رفتن و معیارهای</title><meta name="description" content="فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="فرمول‌های پیاده‌روی, فرمول WSS, محاسبه معیارهای راه رفتن, فرمول‌های علمی پیاده‌روی, محاسبه گام"><link rel="canonical" href="https://walk.analyticszone.app/fa/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-31T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/fa/formulas/"><meta property="og:title" content="فرمول‌های معیارهای پیاده‌روی - نحوه محاسبه WSS، راه رفتن و معیارهای"><meta property="og:description" content="فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="fa_IR"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/fa/formulas/"><meta name="twitter:title" content="فرمول‌های معیارهای پیاده‌روی - نحوه محاسبه WSS، راه رفتن و معیارهای"><meta name="twitter:description" content="فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "fa"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "فرمول‌های ریاضی پشت تحلیل‌های پیاده‌روی. یادگیری نحوه محاسبه WSS، معیارهای گام، ریتم و امتیازهای کارایی. روش‌شناسی مبتنی بر علم.",
   "url": "https://walk.analyticszone.app/fa/formulas/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/fa/formulas/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1570 +449,365 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">پرش به محتوا</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/fa/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/fa/" 
+  </script></head><body><a href="#main-content" class="skip-link">پرش به محتوا</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/fa/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/fa/" 
                                 aria-current="">
                                 خانه
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/fa/getting-started/" class="nav-label">یادگیری</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/fa/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/fa/getting-started/" class="nav-label">یادگیری</a><ul class="submenu"><li><a href="/fa/getting-started/" 
                                         aria-current="">
                                         شروع کنید
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/walking-zones/" 
+                                    </a></li><li><a href="/fa/walking-zones/" 
                                         aria-current="">
                                         زون‌های پیاده‌روی
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/gait-analysis/" 
+                                    </a></li><li><a href="/fa/gait-analysis/" 
                                         aria-current="">
                                         تحلیل راه رفتن
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/training-load/" 
+                                    </a></li><li><a href="/fa/training-load/" 
                                         aria-current="">
                                         بار تمرینی
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/wss-calculator/" 
+                                    </a></li><li><a href="/fa/wss-calculator/" 
                                         aria-current="">
                                         ماشین‌حساب WSS
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/fa/research/" class="nav-label">علم</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/fa/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/fa/research/" class="nav-label">علم</a><ul class="submenu"><li><a href="/fa/research/" 
                                         aria-current="">
                                         تحقیقات
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/formulas/" class="active" 
+                                    </a></li><li><a href="/fa/formulas/" class="active" 
                                         aria-current="page">
                                         فرمول‌ها
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/gait-efficiency/" 
+                                    </a></li><li><a href="/fa/gait-efficiency/" 
                                         aria-current="">
                                         کارایی راه رفتن
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/stride-mechanics/" 
+                                    </a></li><li><a href="/fa/stride-mechanics/" 
                                         aria-current="">
                                         مکانیک گام
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/walking-vs-running/" 
+                                    </a></li><li><a href="/fa/walking-vs-running/" 
                                         aria-current="">
                                         پیاده‌روی در مقابل دویدن
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/benchmarks/" 
+                                    </a></li><li><a href="/fa/benchmarks/" 
                                         aria-current="">
                                         معیارهای عملکرد
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/bibliography/" 
+                                    </a></li><li><a href="/fa/bibliography/" 
                                         aria-current="">
                                         کتاب‌شناسی
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/fa/for-health/" class="nav-label">برای شما</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/fa/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/fa/for-health/" class="nav-label">برای شما</a><ul class="submenu"><li><a href="/fa/for-health/" 
                                         aria-current="">
                                         برای سلامتی
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/for-fitness/" 
+                                    </a></li><li><a href="/fa/for-fitness/" 
                                         aria-current="">
                                         برای آمادگی جسمانی
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/for-seniors/" 
+                                    </a></li><li><a href="/fa/for-seniors/" 
                                         aria-current="">
                                         برای سالمندان
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/for-rehabilitation/" 
+                                    </a></li><li><a href="/fa/for-rehabilitation/" 
                                         aria-current="">
                                         برای توانبخشی
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/fa/cadence-calculator/" class="nav-label">ابزارها</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/fa/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/fa/cadence-calculator/" class="nav-label">ابزارها</a><ul class="submenu"><li><a href="/fa/cadence-calculator/" 
                                         aria-current="">
                                         ماشین‌حساب ضربان گام
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/gait-assessment/" 
+                                    </a></li><li><a href="/fa/gait-assessment/" 
                                         aria-current="">
                                         ارزیابی راه رفتن
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fa/vo2max-calculator/" 
+                                    </a></li><li><a href="/fa/vo2max-calculator/" 
                                         aria-current="">
                                         ماشین‌حساب VO₂max
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/fa/contact/" 
+                                    </a></li></ul></li><li><a href="/fa/contact/" 
                                 aria-current="">
                                 تماس با ما
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="انتخاب زبان">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="انتخاب زبان"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" selected>
+                        </option><option value="fa" selected>
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="تغییر وضعیت منو"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/fa/">خانه</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/fa/research/">علم</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">فرمول‌ها</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- فرمول‌های معیارهای پیاده‌روی -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/fa/">خانه</a> / <a href="/fa/#science">علم</a> / فرمول‌ها
-    </div>
-    <h1>فرمول‌ها و معادلات معیارهای پیاده‌روی</h1>
-    <p class="lead">مبانی ریاضی تحلیل‌های پیاده‌روی – معادلات علمی معتبر برای شدت، انرژی و عملکرد</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <div class="intro-note">
-          <p>این صفحه فرمول‌های علمی معتبر استفاده‌شده در تحلیل‌های پیاده‌روی را ارائه می‌دهد. تمام معادلات با منابع تحقیقاتی و محدوده‌های دقت معتبر ذکر شده‌اند.</p>
-        </div>
-
-        <h2 id="cadence-mets">1. تبدیل کادنس به METs</h2>
-
-        <div class="formula-section featured">
-          <h3>معادله متابولیک مبتنی بر کادنس Moore و همکاران (2021)</h3>
-
-          <div class="formula-box primary">
-            <p class="formula-title">کادنس به METs</p>
-            <p class="formula-main"><strong>METs = 0.0219 × Cadence (steps/min) + 0.72</strong></p>
-            <p class="formula-meta">
-              <span class="accuracy">دقت: ±0.5 METs</span>
-              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
-            </p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>چرا این فرمول مهم است:</strong> این معادله <strong>23-35٪ دقیق‌تر</strong> از معادلات سنتی ACSM مبتنی بر سرعت برای پیاده‌روی است. این فرمول کار می‌کند زیرا کادنس مستقیماً فرکانس حرکت و هزینه انرژی را منعکس می‌کند، در حالی که سرعت به طول گام متغیر بستگی دارد.</p>
-          </div>
-
-          <h4>مثال‌ها:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>پیاده‌روی در 100 spm:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
-              <p class="example-interpretation">≈ 3 METs = <strong>آستانه شدت متوسط</strong> ✓</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>پیاده‌روی در 110 spm:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
-              <p class="example-interpretation">شدت متوسط محکم</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>پیاده‌روی در 120 spm:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
-              <p class="example-interpretation">شدت متوسط-بالا</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>پیاده‌روی در 130 spm:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
-              <p class="example-interpretation"><strong>آستانه شدت بالا</strong> (6 METs بر اساس اندازه‌گیری مستقیم CADENCE-Adults)</p>
-            </div>
-          </div>
-
-          <div class="formula-note">
-            <p><strong>توجه:</strong> مطالعه CADENCE-Adults به طور مستقیم اندازه‌گیری کرد که 130 spm = 6 METs در شرایط آزمایشگاهی کنترل‌شده. معادله Moore برای محدوده 80-130 spm طراحی شده است و ممکن است در کادنس‌های بسیار بالا کمتر از حد واقعی تخمین بزند.</p>
-          </div>
-
-          <h4>داده‌های اعتبارسنجی:</h4>
-          <ul>
-            <li><strong>نمونه:</strong> 76 بزرگسال 21 تا 40 ساله</li>
-            <li><strong>روش:</strong> کالریمتری غیرمستقیم (استاندارد طلایی)</li>
-            <li><strong>مقدار R²:</strong> 0.87 (همبستگی عالی)</li>
-            <li><strong>خطای مطلق میانگین:</strong> 0.47 METs</li>
-            <li><strong>محدوده قابل اعمال:</strong> 80-130 گام/دقیقه</li>
-          </ul>
-        </div>
-
-        <h2 id="acsm-vo2">2. معادلات ACSM VO₂ برای پیاده‌روی</h2>
-
-        <div class="formula-section">
-          <h3>محاسبات متابولیک ACSM</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">پیاده‌روی صاف (شیب 0٪)</p>
-            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × سرعت (m/min) + 3.5</strong></p>
-            <p class="formula-note">سرعت بر حسب متر در دقیقه (km/h را در 16.67 یا mph را در 26.82 ضرب کنید)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">پیاده‌روی با شیب (سربالایی/سرپایینی)</p>
-            <p class="formula-main"><strong>VO₂ = 0.1(Speed) + 1.8(Speed)(Grade) + 3.5</strong></p>
-            <p class="formula-note">شیب به صورت اعشاری بیان می‌شود (مثلاً، 5٪ = 0.05)</p>
-          </div>
-
-          <h4>مثال‌ها:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>پیاده‌روی 5 km/h (83.3 m/min) روی زمین صاف:</strong></p>
-              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
-              <p class="example-conversion">تبدیل به METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>پیاده‌روی 5 km/h روی شیب 5٪:</strong></p>
-              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
-              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
-              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
-              <p class="example-interpretation">شیب شدت را تا ~64٪ افزایش می‌دهد!</p>
-            </div>
-          </div>
-
-          <div class="conversion-helper">
-            <h4>تبدیل‌های سرعت:</h4>
-            <ul>
-              <li><strong>km/h به m/min:</strong> در 16.67 ضرب کنید</li>
-              <li><strong>mph به m/min:</strong> در 26.82 ضرب کنید</li>
-              <li><strong>m/s به m/min:</strong> در 60 ضرب کنید</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="energy-expenditure">3. هزینه انرژی و سوزاندن کالری</h2>
-
-        <div class="formula-section">
-          <h3>محاسبه دقیق کالری</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">کالری در دقیقه</p>
-            <p class="formula-main"><strong>Cal/min = (METs × 3.5 × وزن بدن kg) / 200</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">کل کالری برای جلسه</p>
-            <p class="formula-main"><strong>کل کالری = Cal/min × مدت زمان (دقیقه)</strong></p>
-          </div>
-
-          <h4>مثال‌ها:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>فرد 70 کیلوگرمی پیاده‌روی در 100 spm (3 METs) به مدت 45 دقیقه:</strong></p>
-              <p class="example-calc">Cal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/min</strong></p>
-              <p class="example-calc">کل = 3.675 × 45 = <strong>165.4 کالری</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>فرد 85 کیلوگرمی پیاده‌روی در 120 spm (5 METs) به مدت 30 دقیقه:</strong></p>
-              <p class="example-calc">Cal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p>
-              <p class="example-calc">کل = 7.44 × 30 = <strong>223.2 کالری</strong></p>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h4>چرا این فرمول؟</h4>
-            <p>این معادله از تعریف MET (معادل متابولیک وظیفه) ناشی می‌شود:</p>
-            <ul>
-              <li>1 MET = 3.5 mL O₂/kg/min (نرخ متابولیک استراحت)</li>
-              <li>1 لیتر O₂ مصرف‌شده ≈ 5 کیلوکالری سوزانده‌شده</li>
-              <li>تبدیل: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
-            </ul>
-          </div>
-
-          <h3>سوزاندن کالری خالص (فقط ورزش)</h3>
-          <div class="formula-box">
-            <p class="formula-title">کالری خالص (به استثنای استراحت)</p>
-            <p class="formula-main"><strong>Net Cal/min = [(METs - 1) × 3.5 × وزن بدن] / 200</strong></p>
-            <p class="formula-note">1 MET را کم می‌کند تا کالری‌هایی که به هر حال در حال استراحت می‌سوزانید حذف شود</p>
-          </div>
-
-          <div class="calc-example">
-            <p class="example-input"><strong>70 kg، 3 METs، 45 دقیقه – کالری خالص:</strong></p>
-            <p class="example-calc">خالص = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 کالری خالص</strong></p>
-            <p class="example-interpretation">در مقابل 165.4 کالری کل (55 کالری در حالت استراحت سوزانده می‌شد)</p>
-          </div>
-        </div>
-
-        <h2 id="gait-symmetry">4. شاخص تقارن راه‌رفتن (GSI)</h2>
-
-        <div class="formula-section">
-          <h3>کمی‌سازی عدم تقارن چپ-راست</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">شاخص تقارن راه‌رفتن</p>
-            <p class="formula-main"><strong>GSI (%) = |راست - چپ| / [0.5 × (راست + چپ)] × 100</strong></p>
-            <p class="formula-note">می‌توان برای طول گام، زمان قدم یا زمان تماس اعمال شود</p>
-          </div>
-
-          <h4>تفسیر:</h4>
-          <ul>
-            <li><strong>&lt;2-3٪:</strong> راه‌رفتن عادی، متقارن</li>
-            <li><strong>3-5٪:</strong> عدم تقارن خفیف</li>
-            <li><strong>5-10٪:</strong> عدم تقارن متوسط، نظارت شود</li>
-            <li><strong>&gt;10٪:</strong> از نظر بالینی قابل توجه، ارزیابی حرفه‌ای شود</li>
-          </ul>
-
-          <h4>مثال‌ها:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>زمان قدم: راست = 520 ms، چپ = 480 ms</strong></p>
-              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
-              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>عدم تقارن 8٪</strong></p>
-              <p class="example-interpretation">عدم تقارن متوسط – تقویت طرف ضعیف‌تر را در نظر بگیرید</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>طول گام: راست = 1.42 m، چپ = 1.38 m</strong></p>
-              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
-              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>عدم تقارن 2.86٪</strong></p>
-              <p class="example-interpretation">محدوده عادی، سالم ✓</p>
-            </div>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>نکته بالینی:</strong> عدم تقارن پیاده‌روی Apple HealthKit از محاسبه کمی متفاوت (اختلاف درصد ساده بین زمان قدم) استفاده می‌کند اما آستانه‌های تفسیر مشابه هستند.</p>
-          </div>
-        </div>
-
-        <h2 id="walk-score">5. امتیاز WALK (معیار اختصاصی Walk Analytics)</h2>
-
-        <div class="formula-section">
-          <h3>امتیاز کارایی پیاده‌روی</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">امتیاز WALK</p>
-            <p class="formula-main"><strong>امتیاز WALK = زمان (ثانیه) + قدم‌ها در هر 100 متر</strong></p>
-            <p class="formula-note">امتیاز کمتر = کارایی بهتر</p>
-          </div>
-
-          <h4>چگونه کار می‌کند:</h4>
-          <p>امتیاز WALK زمان و تعداد قدم را ترکیب می‌کند تا کارایی پیاده‌روی را کمی کند. یک پیاده‌رو که 100 متر را در 75 ثانیه با 140 قدم طی می‌کند، امتیاز WALK 215 دارد. بهبود سرعت یا کارایی گام، امتیاز را کاهش می‌دهد.</p>
-
-          <h4>مثال‌ها:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100 متر در 80 ثانیه، 120 قدم:</strong></p>
-              <p class="example-calc">امتیاز WALK = 80 + 120 = <strong>200</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100 متر در 70 ثانیه، 110 قدم:</strong></p>
-              <p class="example-calc">امتیاز WALK = 70 + 110 = <strong>180</strong></p>
-              <p class="example-interpretation">کارایی بهتر از طریق بهبود سرعت + گام</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100 متر در 60 ثانیه، 130 قدم (راه‌رفتن مسابقه‌ای):</strong></p>
-              <p class="example-calc">امتیاز WALK = 60 + 130 = <strong>190</strong></p>
-              <p class="example-interpretation">سریع اما با گام‌های کوتاه‌تر</p>
-            </div>
-          </div>
-
-          <h4>محدوده‌های معمول:</h4>
-          <ul>
-            <li><strong>&gt;250:</strong> راه‌رفتن کند/ناکارآمد، مشکلات احتمالی تحرک</li>
-            <li><strong>200-250:</strong> پیاده‌رو معمولی، کارایی متوسط</li>
-            <li><strong>170-200:</strong> پیاده‌رو تناسب اندام، کارایی خوب</li>
-            <li><strong>150-170:</strong> پیاده‌رو پیشرفته، کارایی عالی</li>
-            <li><strong>&lt;150:</strong> سطح نخبگان/راه‌رفتن مسابقه‌ای</li>
-          </ul>
-
-          <div class="tip-box">
-            <p><strong>تمرین با امتیاز WALK:</strong> امتیاز خود را روی همان مسیر 100 متری هفتگی پیگیری کنید. بهبودها هماهنگی عصبی-عضلانی، قدرت و اقتصاد پیاده‌روی پیشرفته را نشان می‌دهند.</p>
-          </div>
-        </div>
-
-        <h2 id="basic-metrics">6. معیارهای پایه راه‌رفتن</h2>
-
-        <div class="formula-section">
-          <h3>محاسبات بنیادی</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">سرعت پیاده‌روی</p>
-            <p class="formula-main"><strong>سرعت (m/s) = مسافت (m) / زمان (s)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">کادنس از کل قدم‌ها</p>
-            <p class="formula-main"><strong>کادنس (spm) = کل قدم‌ها / زمان (دقیقه)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">طول گام</p>
-            <p class="formula-main"><strong>طول گام (m) = مسافت (m) / (قدم‌ها / 2)</strong></p>
-            <p class="formula-note">قدم‌ها را بر 2 تقسیم کنید زیرا یک گام = دو قدم</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">طول قدم</p>
-            <p class="formula-main"><strong>طول قدم (m) = مسافت (m) / قدم‌ها</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">سرعت از کادنس و طول گام</p>
-            <p class="formula-main"><strong>سرعت = طول گام × (کادنس / 2) / 60</strong></p>
-            <p class="formula-note">یا: سرعت (m/s) = طول قدم × کادنس / 60</p>
-          </div>
-
-          <h4>نمونه گردش کار:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>پیاده‌روی 1000 متر در 12 دقیقه با 1320 قدم:</strong></p>
-            <p><strong>سرعت:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
-            <p><strong>کادنس:</strong> 1320 قدم / 12 دقیقه = <strong>110 spm</strong></p>
-            <p><strong>طول گام:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
-            <p><strong>طول قدم:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
-          </div>
-        </div>
-
-        <h2 id="heart-rate">7. محاسبات مناطق ضربان قلب</h2>
-
-        <div class="formula-section">
-          <h3>روش سنتی مناطق HR</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">تخمین حداکثر ضربان قلب</p>
-            <p class="formula-main"><strong>Max HR = 220 - سن</strong></p>
-            <p class="formula-note">ساده اما ±10-15 bpm تغییرات فردی</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">جایگزین: فرمول Tanaka (دقیق‌تر)</p>
-            <p class="formula-main"><strong>Max HR = 208 - (0.7 × سن)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">محاسبه محدوده منطقه</p>
-            <p class="formula-main"><strong>منطقه = Max HR × (پایین٪، بالا٪)</strong></p>
-          </div>
-
-          <h4>مثال: 40 ساله</h4>
-          <div class="calc-example">
-            <p><strong>سنتی:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p>
-            <p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
-            <p><strong>منطقه 2 (60-70٪):</strong> 180 × 0.60 = 108 bpm تا 180 × 0.70 = 126 bpm</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>توجه:</strong> در حالی که مناطق HR مفید هستند، <strong>مناطق مبتنی بر کادنس برای پیاده‌روی دقیق‌تر و عملی‌تر هستند</strong> (راهنمای مناطق پیاده‌روی را ببینید).</p>
-          </div>
-        </div>
-
-        <h2 id="cost-transport">8. هزینه حمل و نقل و اقتصاد پیاده‌روی</h2>
-
-        <div class="formula-section">
-          <h3>هزینه انرژی پیاده‌روی</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">هزینه حمل و نقل (C)</p>
-            <p class="formula-main"><strong>C = انرژی صرف‌شده / (توده بدن × مسافت)</strong></p>
-            <p class="formula-note">واحدها: J/kg/m یا mL O₂/kg/m</p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>منحنی U شکل:</strong> اقتصاد پیاده‌روی از یک منحنی U شکل پیروی می‌کند. یک سرعت بهینه وجود دارد (معمولاً 1.2-1.4 m/s یا 4.3-5.0 km/h) که در آن هزینه حمل و نقل به حداقل می‌رسد. پیاده‌روی کندتر یا سریع‌تر از این هزینه انرژی در هر مسافت طی‌شده را افزایش می‌دهد.</p>
-          </div>
-
-          <h4>عوامل مؤثر بر هزینه حمل و نقل:</h4>
-          <ul>
-            <li><strong>سرعت:</strong> رابطه U شکل (بهینه حدود 1.3 m/s)</li>
-            <li><strong>شیب:</strong> سربالایی به طور قابل توجهی هزینه را افزایش می‌دهد؛ سرپایینی هزینه غیرمتمرکز را افزایش می‌دهد</li>
-            <li><strong>توده بدن:</strong> افراد سنگین‌تر هزینه مطلق بالاتری دارند اما هزینه نسبی مشابه</li>
-            <li><strong>مکانیک گام:</strong> طول گام بهینه هزینه را به حداقل می‌رساند</li>
-            <li><strong>زمین:</strong> سطوح ناهموار هزینه را در مقایسه با سنگفرش صاف افزایش می‌دهند</li>
-          </ul>
-
-          <div class="formula-box">
-            <p class="formula-title">هزینه تعدیل‌شده شیب</p>
-            <p class="formula-main"><strong>ضریب هزینه = 1 + (شیب × 10)</strong></p>
-            <p class="formula-note">تقریب تقریبی: +10٪ هزینه در هر 1٪ شیب</p>
-          </div>
-
-          <h4>مثال:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>پیاده‌روی روی شیب 5٪:</strong></p>
-            <p class="example-calc">ضریب هزینه = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
-            <p class="example-interpretation">افزایش 50٪ در هزینه انرژی در مقایسه با زمین صاف</p>
-          </div>
-        </div>
-
-        <h2 id="training-load">9. بار تمرینی و امتیاز استرس</h2>
-
-        <div class="formula-section">
-          <h3>امتیاز استرس پیاده‌روی (WSS)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">WSS مبتنی بر منطقه</p>
-            <p class="formula-main"><strong>WSS = Σ (دقیقه در منطقه × ضریب منطقه)</strong></p>
-            <p>منطقه 1: ×1.0 | منطقه 2: ×2.0 | منطقه 3: ×3.0 | منطقه 4: ×4.0 | منطقه 5: ×5.0</p>
-          </div>
-
-          <h4>مثال: پیاده‌روی 60 دقیقه‌ای</h4>
-          <div class="calc-example">
-            <p>10 دقیقه منطقه 1 × 1 = 10 امتیاز</p>
-            <p>40 دقیقه منطقه 2 × 2 = 80 امتیاز</p>
-            <p>10 دقیقه منطقه 3 × 3 = 30 امتیاز</p>
-            <p><strong>کل WSS = 120</strong></p>
-          </div>
-
-          <h3>بار تمرینی هفتگی</h3>
-          <div class="formula-box">
-            <p class="formula-title">بار هفتگی</p>
-            <p class="formula-main"><strong>بار هفتگی = Σ WSS روزانه (7 روز)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">اضافه بار تدریجی</p>
-            <p class="formula-main"><strong>هفته بعد = هفته فعلی × 1.05-1.10</strong></p>
-            <p class="formula-note">حداکثر 5-10٪ افزایش در هفته</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">هفته بازیابی</p>
-            <p class="formula-main"><strong>هفته بازیابی = فعلی × 0.50-0.70</strong></p>
-            <p class="formula-note">هر 3-4 هفته، به 50-70٪ کاهش دهید</p>
-          </div>
-
-          <h4>بارهای هفتگی معمول:</h4>
-          <ul>
-            <li><strong>پیاده‌رو سلامت مبتدی:</strong> 200-400 WSS/هفته</li>
-            <li><strong>پیاده‌رو تناسب اندام معمولی:</strong> 400-700 WSS/هفته</li>
-            <li><strong>پیاده‌رو تناسب اندام جدی:</strong> 700-1000 WSS/هفته</li>
-            <li><strong>پیاده‌رو مسابقه‌ای رقابتی:</strong> 1000-1500+ WSS/هفته</li>
-          </ul>
-        </div>
-
-        <h2 id="predictions">10. معادلات پیش‌بینی</h2>
-
-        <div class="formula-section">
-          <h3>پیش‌بینی فاصله تست پیاده‌روی 6 دقیقه‌ای (6MWT)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">فاصله پیش‌بینی‌شده 6MWT (Enright & Sherrill)</p>
-            <p><strong>مردان:</strong> (7.57 × قد cm) - (5.02 × سن) - (1.76 × وزن kg) - 309</p>
-            <p><strong>زنان:</strong> (2.11 × قد cm) - (5.78 × سن) - (2.29 × وزن kg) + 667</p>
-            <p class="formula-note">فاصله را به متر برای بزرگسالان سالم پیش‌بینی می‌کند</p>
-          </div>
-
-          <h4>مثال: مرد 40 ساله، 175 سانتی‌متر، 75 کیلوگرم</h4>
-          <div class="calc-example">
-            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
-            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 متر</strong></p>
-            <p class="example-interpretation">ظرفیت عملکردی خوب برای سن</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>استفاده بالینی:</strong> 6MWT برای ارزیابی ظرفیت تمرین عملکردی در بیماران قلبی ریوی، ارزیابی قبل/بعد از جراحی و تناسب اندام عمومی در بزرگسالان مسن استفاده می‌شود.</p>
-          </div>
-        </div>
-
-        <h2 id="conversions">11. تبدیل واحدها</h2>
-
-        <div class="formula-section">
-          <h3>تبدیل‌های رایج معیارهای پیاده‌روی</h3>
-
-          <div class="conversion-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>از</th>
-                  <th>به</th>
-                  <th>فرمول</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>km/h</td>
-                  <td>m/s</td>
-                  <td>km/h ÷ 3.6</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>m/s</td>
-                  <td>mph × 0.447</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>km/h</td>
-                  <td>m/s × 3.6</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>mph</td>
-                  <td>m/s × 2.237</td>
-                </tr>
-                <tr>
-                  <td>km/h</td>
-                  <td>m/min</td>
-                  <td>km/h × 16.67</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>m/min</td>
-                  <td>mph × 26.82</td>
-                </tr>
-                <tr>
-                  <td>METs</td>
-                  <td>mL/kg/min</td>
-                  <td>METs × 3.5</td>
-                </tr>
-                <tr>
-                  <td>mL/kg/min</td>
-                  <td>METs</td>
-                  <td>VO₂ ÷ 3.5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h4>مرجع سریع:</h4>
-          <ul>
-            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (سرعت پیاده‌روی معمولی بزرگسالان سالم)</li>
-            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (پیاده‌روی تند)</li>
-            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (متابولیسم استراحت)</li>
-            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (آستانه شدت متوسط)</li>
-            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (آستانه شدت بالا)</li>
-          </ul>
-        </div>
-
-        <h2 id="next-steps">منابع مرتبط</h2>
-
-        <div class="next-steps-grid">
-          <div class="next-step-card">
-            <h3>اعمال فرمول‌ها: ماشین حساب WSS</h3>
-            <p>از ماشین حساب تعاملی ما برای محاسبه امتیاز استرس پیاده‌روی خود استفاده کنید.</p>
-            <a href="/fa/wss-calculator/" class="btn btn-secondary">محاسبه WSS ←</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>درک مناطق پیاده‌روی</h3>
-            <p>یاد بگیرید چگونه مناطق شدت مبتنی بر کادنس را در تمرین اعمال کنید.</p>
-            <a href="/fa/walking-zones/" class="btn btn-secondary">یادگیری مناطق ←</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>تحقیقات علمی</h3>
-            <p>مطالعاتی را که این فرمول‌ها را معتبر کرده‌اند بررسی کنید.</p>
-            <a href="/fa/research/" class="btn btn-secondary">مشاهده تحقیقات ←</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>کتابنامه کامل</h3>
-            <p>به استنادهای کامل برای تمام معادلات ارجاع‌شده دسترسی پیدا کنید.</p>
-            <a href="/fa/bibliography/" class="btn btn-secondary">مشاهده کتابنامه ←</a>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>فهرست فرمول‌ها</h3>
-          <ul>
-            <li><a href="#cadence-mets">1. کادنس ← METs</a></li>
-            <li><a href="#acsm-vo2">2. معادلات ACSM VO₂</a></li>
-            <li><a href="#energy-expenditure">3. انرژی و کالری</a></li>
-            <li><a href="#gait-symmetry">4. شاخص تقارن راه‌رفتن</a></li>
-            <li><a href="#walk-score">5. امتیاز WALK</a></li>
-            <li><a href="#basic-metrics">6. معیارهای پایه راه‌رفتن</a></li>
-            <li><a href="#heart-rate">7. مناطق ضربان قلب</a></li>
-            <li><a href="#cost-transport">8. هزینه حمل و نقل</a></li>
-            <li><a href="#training-load">9. بار تمرینی</a></li>
-            <li><a href="#predictions">10. معادلات پیش‌بینی</a></li>
-            <li><a href="#conversions">11. تبدیل واحدها</a></li>
-          </ul>
-        </div>
-
-        <div class="formula-highlight">
-          <h3>⭐ مهم‌ترین</h3>
-          <p><strong>کادنس به METs</strong></p>
-          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
-          <p class="small-text">این معادله واحد تمرین شدت مبتنی بر کادنس را بدون مانیتورهای ضربان قلب امکان‌پذیر می‌کند.</p>
-        </div>
-
-        <div class="cta-box">
-          <h3>اعمال این فرمول‌ها</h3>
-          <p>Walk Analytics از این معادلات معتبر علمی برای تحلیل پیاده‌روی‌های شما استفاده می‌کند.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">دانلود برنامه</a>
-        </div>
-
-        <div class="info-box">
-          <h4>📐 دقت فرمول</h4>
-          <p>تمام معادلات این صفحه از تحقیقات همتا-بازبینی‌شده هستند. برای استنادهای کامل <a href="/fa/bibliography/">کتابنامه</a> را ببینید.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="تغییر وضعیت منو"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/fa/">خانه</a></li><li><a href="/fa/research/">علم</a></li><li><span aria-current="page">فرمول‌ها</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/fa/">خانه</a> / <a href="/fa/#science">علم</a> / فرمول‌ها
+    </div><h1>فرمول‌ها و معادلات معیارهای پیاده‌روی</h1><p class="lead">مبانی ریاضی تحلیل‌های پیاده‌روی – معادلات علمی معتبر برای شدت، انرژی و عملکرد</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>این صفحه فرمول‌های علمی معتبر استفاده‌شده در تحلیل‌های پیاده‌روی را ارائه می‌دهد. تمام معادلات با منابع تحقیقاتی و محدوده‌های دقت معتبر ذکر شده‌اند.</p></div><h2 id="cadence-mets">1. تبدیل کادنس به METs</h2><div class="formula-section featured"><h3>معادله متابولیک مبتنی بر کادنس Moore و همکاران (2021)</h3><div class="formula-box primary"><p class="formula-title">کادنس به METs</p><p class="formula-main"><strong>METs = 0.0219 × Cadence (steps/min) + 0.72</strong></p><p class="formula-meta"><span class="accuracy">دقت: ±0.5 METs</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>چرا این فرمول مهم است:</strong> این معادله <strong>23-35٪ دقیق‌تر</strong> از معادلات سنتی ACSM مبتنی بر سرعت برای پیاده‌روی است. این فرمول کار می‌کند زیرا کادنس مستقیماً فرکانس حرکت و هزینه انرژی را منعکس می‌کند، در حالی که سرعت به طول گام متغیر بستگی دارد.</p></div><h4>مثال‌ها:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>پیاده‌روی در 100 spm:</strong></p><p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p><p class="example-interpretation">≈ 3 METs = <strong>آستانه شدت متوسط</strong> ✓</p></div><div class="calc-example"><p class="example-input"><strong>پیاده‌روی در 110 spm:</strong></p><p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p><p class="example-interpretation">شدت متوسط محکم</p></div><div class="calc-example"><p class="example-input"><strong>پیاده‌روی در 120 spm:</strong></p><p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p><p class="example-interpretation">شدت متوسط-بالا</p></div><div class="calc-example"><p class="example-input"><strong>پیاده‌روی در 130 spm:</strong></p><p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p><p class="example-interpretation"><strong>آستانه شدت بالا</strong> (6 METs بر اساس اندازه‌گیری مستقیم CADENCE-Adults)</p></div></div><div class="formula-note"><p><strong>توجه:</strong> مطالعه CADENCE-Adults به طور مستقیم اندازه‌گیری کرد که 130 spm = 6 METs در شرایط آزمایشگاهی کنترل‌شده. معادله Moore برای محدوده 80-130 spm طراحی شده است و ممکن است در کادنس‌های بسیار بالا کمتر از حد واقعی تخمین بزند.</p></div><h4>داده‌های اعتبارسنجی:</h4><ul><li><strong>نمونه:</strong> 76 بزرگسال 21 تا 40 ساله</li><li><strong>روش:</strong> کالریمتری غیرمستقیم (استاندارد طلایی)</li><li><strong>مقدار R²:</strong> 0.87 (همبستگی عالی)</li><li><strong>خطای مطلق میانگین:</strong> 0.47 METs</li><li><strong>محدوده قابل اعمال:</strong> 80-130 گام/دقیقه</li></ul></div><h2 id="acsm-vo2">2. معادلات ACSM VO₂ برای پیاده‌روی</h2><div class="formula-section"><h3>محاسبات متابولیک ACSM</h3><div class="formula-box"><p class="formula-title">پیاده‌روی صاف (شیب 0٪)</p><p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × سرعت (m/min) + 3.5</strong></p><p class="formula-note">سرعت بر حسب متر در دقیقه (km/h را در 16.67 یا mph را در 26.82 ضرب کنید)</p></div><div class="formula-box"><p class="formula-title">پیاده‌روی با شیب (سربالایی/سرپایینی)</p><p class="formula-main"><strong>VO₂ = 0.1(Speed) + 1.8(Speed)(Grade) + 3.5</strong></p><p class="formula-note">شیب به صورت اعشاری بیان می‌شود (مثلاً، 5٪ = 0.05)</p></div><h4>مثال‌ها:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>پیاده‌روی 5 km/h (83.3 m/min) روی زمین صاف:</strong></p><p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p><p class="example-conversion">تبدیل به METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p></div><div class="calc-example"><p class="example-input"><strong>پیاده‌روی 5 km/h روی شیب 5٪:</strong></p><p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p><p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p><p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p><p class="example-interpretation">شیب شدت را تا ~64٪ افزایش می‌دهد!</p></div></div><div class="conversion-helper"><h4>تبدیل‌های سرعت:</h4><ul><li><strong>km/h به m/min:</strong> در 16.67 ضرب کنید</li><li><strong>mph به m/min:</strong> در 26.82 ضرب کنید</li><li><strong>m/s به m/min:</strong> در 60 ضرب کنید</li></ul></div></div><h2 id="energy-expenditure">3. هزینه انرژی و سوزاندن کالری</h2><div class="formula-section"><h3>محاسبه دقیق کالری</h3><div class="formula-box"><p class="formula-title">کالری در دقیقه</p><p class="formula-main"><strong>Cal/min = (METs × 3.5 × وزن بدن kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">کل کالری برای جلسه</p><p class="formula-main"><strong>کل کالری = Cal/min × مدت زمان (دقیقه)</strong></p></div><h4>مثال‌ها:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>فرد 70 کیلوگرمی پیاده‌روی در 100 spm (3 METs) به مدت 45 دقیقه:</strong></p><p class="example-calc">Cal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/min</strong></p><p class="example-calc">کل = 3.675 × 45 = <strong>165.4 کالری</strong></p></div><div class="calc-example"><p class="example-input"><strong>فرد 85 کیلوگرمی پیاده‌روی در 120 spm (5 METs) به مدت 30 دقیقه:</strong></p><p class="example-calc">Cal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p><p class="example-calc">کل = 7.44 × 30 = <strong>223.2 کالری</strong></p></div></div><div class="info-box"><h4>چرا این فرمول؟</h4><p>این معادله از تعریف MET (معادل متابولیک وظیفه) ناشی می‌شود:</p><ul><li>1 MET = 3.5 mL O₂/kg/min (نرخ متابولیک استراحت)</li><li>1 لیتر O₂ مصرف‌شده ≈ 5 کیلوکالری سوزانده‌شده</li><li>تبدیل: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li></ul></div><h3>سوزاندن کالری خالص (فقط ورزش)</h3><div class="formula-box"><p class="formula-title">کالری خالص (به استثنای استراحت)</p><p class="formula-main"><strong>Net Cal/min = [(METs - 1) × 3.5 × وزن بدن] / 200</strong></p><p class="formula-note">1 MET را کم می‌کند تا کالری‌هایی که به هر حال در حال استراحت می‌سوزانید حذف شود</p></div><div class="calc-example"><p class="example-input"><strong>70 kg، 3 METs، 45 دقیقه – کالری خالص:</strong></p><p class="example-calc">خالص = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 کالری خالص</strong></p><p class="example-interpretation">در مقابل 165.4 کالری کل (55 کالری در حالت استراحت سوزانده می‌شد)</p></div></div><h2 id="gait-symmetry">4. شاخص تقارن راه‌رفتن (GSI)</h2><div class="formula-section"><h3>کمی‌سازی عدم تقارن چپ-راست</h3><div class="formula-box"><p class="formula-title">شاخص تقارن راه‌رفتن</p><p class="formula-main"><strong>GSI (%) = |راست - چپ| / [0.5 × (راست + چپ)] × 100</strong></p><p class="formula-note">می‌توان برای طول گام، زمان قدم یا زمان تماس اعمال شود</p></div><h4>تفسیر:</h4><ul><li><strong>&lt;2-3٪:</strong> راه‌رفتن عادی، متقارن</li><li><strong>3-5٪:</strong> عدم تقارن خفیف</li><li><strong>5-10٪:</strong> عدم تقارن متوسط، نظارت شود</li><li><strong>&gt;10٪:</strong> از نظر بالینی قابل توجه، ارزیابی حرفه‌ای شود</li></ul><h4>مثال‌ها:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>زمان قدم: راست = 520 ms، چپ = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>عدم تقارن 8٪</strong></p><p class="example-interpretation">عدم تقارن متوسط – تقویت طرف ضعیف‌تر را در نظر بگیرید</p></div><div class="calc-example"><p class="example-input"><strong>طول گام: راست = 1.42 m، چپ = 1.38 m</strong></p><p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p><p class="example-calc">= 0.04 / 1.4 × 100 = <strong>عدم تقارن 2.86٪</strong></p><p class="example-interpretation">محدوده عادی، سالم ✓</p></div></div><div class="warning-box"><p><strong>نکته بالینی:</strong> عدم تقارن پیاده‌روی Apple HealthKit از محاسبه کمی متفاوت (اختلاف درصد ساده بین زمان قدم) استفاده می‌کند اما آستانه‌های تفسیر مشابه هستند.</p></div></div><h2 id="walk-score">5. امتیاز WALK (معیار اختصاصی Walk Analytics)</h2><div class="formula-section"><h3>امتیاز کارایی پیاده‌روی</h3><div class="formula-box"><p class="formula-title">امتیاز WALK</p><p class="formula-main"><strong>امتیاز WALK = زمان (ثانیه) + قدم‌ها در هر 100 متر</strong></p><p class="formula-note">امتیاز کمتر = کارایی بهتر</p></div><h4>چگونه کار می‌کند:</h4><p>امتیاز WALK زمان و تعداد قدم را ترکیب می‌کند تا کارایی پیاده‌روی را کمی کند. یک پیاده‌رو که 100 متر را در 75 ثانیه با 140 قدم طی می‌کند، امتیاز WALK 215 دارد. بهبود سرعت یا کارایی گام، امتیاز را کاهش می‌دهد.</p><h4>مثال‌ها:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100 متر در 80 ثانیه، 120 قدم:</strong></p><p class="example-calc">امتیاز WALK = 80 + 120 = <strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100 متر در 70 ثانیه، 110 قدم:</strong></p><p class="example-calc">امتیاز WALK = 70 + 110 = <strong>180</strong></p><p class="example-interpretation">کارایی بهتر از طریق بهبود سرعت + گام</p></div><div class="calc-example"><p class="example-input"><strong>100 متر در 60 ثانیه، 130 قدم (راه‌رفتن مسابقه‌ای):</strong></p><p class="example-calc">امتیاز WALK = 60 + 130 = <strong>190</strong></p><p class="example-interpretation">سریع اما با گام‌های کوتاه‌تر</p></div></div><h4>محدوده‌های معمول:</h4><ul><li><strong>&gt;250:</strong> راه‌رفتن کند/ناکارآمد، مشکلات احتمالی تحرک</li><li><strong>200-250:</strong> پیاده‌رو معمولی، کارایی متوسط</li><li><strong>170-200:</strong> پیاده‌رو تناسب اندام، کارایی خوب</li><li><strong>150-170:</strong> پیاده‌رو پیشرفته، کارایی عالی</li><li><strong>&lt;150:</strong> سطح نخبگان/راه‌رفتن مسابقه‌ای</li></ul><div class="tip-box"><p><strong>تمرین با امتیاز WALK:</strong> امتیاز خود را روی همان مسیر 100 متری هفتگی پیگیری کنید. بهبودها هماهنگی عصبی-عضلانی، قدرت و اقتصاد پیاده‌روی پیشرفته را نشان می‌دهند.</p></div></div><h2 id="basic-metrics">6. معیارهای پایه راه‌رفتن</h2><div class="formula-section"><h3>محاسبات بنیادی</h3><div class="formula-box"><p class="formula-title">سرعت پیاده‌روی</p><p class="formula-main"><strong>سرعت (m/s) = مسافت (m) / زمان (s)</strong></p></div><div class="formula-box"><p class="formula-title">کادنس از کل قدم‌ها</p><p class="formula-main"><strong>کادنس (spm) = کل قدم‌ها / زمان (دقیقه)</strong></p></div><div class="formula-box"><p class="formula-title">طول گام</p><p class="formula-main"><strong>طول گام (m) = مسافت (m) / (قدم‌ها / 2)</strong></p><p class="formula-note">قدم‌ها را بر 2 تقسیم کنید زیرا یک گام = دو قدم</p></div><div class="formula-box"><p class="formula-title">طول قدم</p><p class="formula-main"><strong>طول قدم (m) = مسافت (m) / قدم‌ها</strong></p></div><div class="formula-box"><p class="formula-title">سرعت از کادنس و طول گام</p><p class="formula-main"><strong>سرعت = طول گام × (کادنس / 2) / 60</strong></p><p class="formula-note">یا: سرعت (m/s) = طول قدم × کادنس / 60</p></div><h4>نمونه گردش کار:</h4><div class="calc-example"><p class="example-input"><strong>پیاده‌روی 1000 متر در 12 دقیقه با 1320 قدم:</strong></p><p><strong>سرعت:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p><p><strong>کادنس:</strong> 1320 قدم / 12 دقیقه = <strong>110 spm</strong></p><p><strong>طول گام:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p><p><strong>طول قدم:</strong> 1000m / 1320 = <strong>0.76 m</strong></p></div></div><h2 id="heart-rate">7. محاسبات مناطق ضربان قلب</h2><div class="formula-section"><h3>روش سنتی مناطق HR</h3><div class="formula-box"><p class="formula-title">تخمین حداکثر ضربان قلب</p><p class="formula-main"><strong>Max HR = 220 - سن</strong></p><p class="formula-note">ساده اما ±10-15 bpm تغییرات فردی</p></div><div class="formula-box"><p class="formula-title">جایگزین: فرمول Tanaka (دقیق‌تر)</p><p class="formula-main"><strong>Max HR = 208 - (0.7 × سن)</strong></p></div><div class="formula-box"><p class="formula-title">محاسبه محدوده منطقه</p><p class="formula-main"><strong>منطقه = Max HR × (پایین٪، بالا٪)</strong></p></div><h4>مثال: 40 ساله</h4><div class="calc-example"><p><strong>سنتی:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p><p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p><p><strong>منطقه 2 (60-70٪):</strong> 180 × 0.60 = 108 bpm تا 180 × 0.70 = 126 bpm</p></div><div class="info-box"><p><strong>توجه:</strong> در حالی که مناطق HR مفید هستند، <strong>مناطق مبتنی بر کادنس برای پیاده‌روی دقیق‌تر و عملی‌تر هستند</strong> (راهنمای مناطق پیاده‌روی را ببینید).</p></div></div><h2 id="cost-transport">8. هزینه حمل و نقل و اقتصاد پیاده‌روی</h2><div class="formula-section"><h3>هزینه انرژی پیاده‌روی</h3><div class="formula-box"><p class="formula-title">هزینه حمل و نقل (C)</p><p class="formula-main"><strong>C = انرژی صرف‌شده / (توده بدن × مسافت)</strong></p><p class="formula-note">واحدها: J/kg/m یا mL O₂/kg/m</p></div><div class="key-insight"><p><strong>منحنی U شکل:</strong> اقتصاد پیاده‌روی از یک منحنی U شکل پیروی می‌کند. یک سرعت بهینه وجود دارد (معمولاً 1.2-1.4 m/s یا 4.3-5.0 km/h) که در آن هزینه حمل و نقل به حداقل می‌رسد. پیاده‌روی کندتر یا سریع‌تر از این هزینه انرژی در هر مسافت طی‌شده را افزایش می‌دهد.</p></div><h4>عوامل مؤثر بر هزینه حمل و نقل:</h4><ul><li><strong>سرعت:</strong> رابطه U شکل (بهینه حدود 1.3 m/s)</li><li><strong>شیب:</strong> سربالایی به طور قابل توجهی هزینه را افزایش می‌دهد؛ سرپایینی هزینه غیرمتمرکز را افزایش می‌دهد</li><li><strong>توده بدن:</strong> افراد سنگین‌تر هزینه مطلق بالاتری دارند اما هزینه نسبی مشابه</li><li><strong>مکانیک گام:</strong> طول گام بهینه هزینه را به حداقل می‌رساند</li><li><strong>زمین:</strong> سطوح ناهموار هزینه را در مقایسه با سنگفرش صاف افزایش می‌دهند</li></ul><div class="formula-box"><p class="formula-title">هزینه تعدیل‌شده شیب</p><p class="formula-main"><strong>ضریب هزینه = 1 + (شیب × 10)</strong></p><p class="formula-note">تقریب تقریبی: +10٪ هزینه در هر 1٪ شیب</p></div><h4>مثال:</h4><div class="calc-example"><p class="example-input"><strong>پیاده‌روی روی شیب 5٪:</strong></p><p class="example-calc">ضریب هزینه = 1 + (0.05 × 10) = <strong>1.5×</strong></p><p class="example-interpretation">افزایش 50٪ در هزینه انرژی در مقایسه با زمین صاف</p></div></div><h2 id="training-load">9. بار تمرینی و امتیاز استرس</h2><div class="formula-section"><h3>امتیاز استرس پیاده‌روی (WSS)</h3><div class="formula-box"><p class="formula-title">WSS مبتنی بر منطقه</p><p class="formula-main"><strong>WSS = Σ (دقیقه در منطقه × ضریب منطقه)</strong></p><p>منطقه 1: ×1.0 | منطقه 2: ×2.0 | منطقه 3: ×3.0 | منطقه 4: ×4.0 | منطقه 5: ×5.0</p></div><h4>مثال: پیاده‌روی 60 دقیقه‌ای</h4><div class="calc-example"><p>10 دقیقه منطقه 1 × 1 = 10 امتیاز</p><p>40 دقیقه منطقه 2 × 2 = 80 امتیاز</p><p>10 دقیقه منطقه 3 × 3 = 30 امتیاز</p><p><strong>کل WSS = 120</strong></p></div><h3>بار تمرینی هفتگی</h3><div class="formula-box"><p class="formula-title">بار هفتگی</p><p class="formula-main"><strong>بار هفتگی = Σ WSS روزانه (7 روز)</strong></p></div><div class="formula-box"><p class="formula-title">اضافه بار تدریجی</p><p class="formula-main"><strong>هفته بعد = هفته فعلی × 1.05-1.10</strong></p><p class="formula-note">حداکثر 5-10٪ افزایش در هفته</p></div><div class="formula-box"><p class="formula-title">هفته بازیابی</p><p class="formula-main"><strong>هفته بازیابی = فعلی × 0.50-0.70</strong></p><p class="formula-note">هر 3-4 هفته، به 50-70٪ کاهش دهید</p></div><h4>بارهای هفتگی معمول:</h4><ul><li><strong>پیاده‌رو سلامت مبتدی:</strong> 200-400 WSS/هفته</li><li><strong>پیاده‌رو تناسب اندام معمولی:</strong> 400-700 WSS/هفته</li><li><strong>پیاده‌رو تناسب اندام جدی:</strong> 700-1000 WSS/هفته</li><li><strong>پیاده‌رو مسابقه‌ای رقابتی:</strong> 1000-1500+ WSS/هفته</li></ul></div><h2 id="predictions">10. معادلات پیش‌بینی</h2><div class="formula-section"><h3>پیش‌بینی فاصله تست پیاده‌روی 6 دقیقه‌ای (6MWT)</h3><div class="formula-box"><p class="formula-title">فاصله پیش‌بینی‌شده 6MWT (Enright & Sherrill)</p><p><strong>مردان:</strong> (7.57 × قد cm) - (5.02 × سن) - (1.76 × وزن kg) - 309</p><p><strong>زنان:</strong> (2.11 × قد cm) - (5.78 × سن) - (2.29 × وزن kg) + 667</p><p class="formula-note">فاصله را به متر برای بزرگسالان سالم پیش‌بینی می‌کند</p></div><h4>مثال: مرد 40 ساله، 175 سانتی‌متر، 75 کیلوگرم</h4><div class="calc-example"><p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p><p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 متر</strong></p><p class="example-interpretation">ظرفیت عملکردی خوب برای سن</p></div><div class="info-box"><p><strong>استفاده بالینی:</strong> 6MWT برای ارزیابی ظرفیت تمرین عملکردی در بیماران قلبی ریوی، ارزیابی قبل/بعد از جراحی و تناسب اندام عمومی در بزرگسالان مسن استفاده می‌شود.</p></div></div><h2 id="conversions">11. تبدیل واحدها</h2><div class="formula-section"><h3>تبدیل‌های رایج معیارهای پیاده‌روی</h3><div class="conversion-table"><table><thead><tr><th>از</th><th>به</th><th>فرمول</th></tr></thead><tbody><tr><td>km/h</td><td>m/s</td><td>km/h ÷ 3.6</td></tr><tr><td>mph</td><td>m/s</td><td>mph × 0.447</td></tr><tr><td>m/s</td><td>km/h</td><td>m/s × 3.6</td></tr><tr><td>m/s</td><td>mph</td><td>m/s × 2.237</td></tr><tr><td>km/h</td><td>m/min</td><td>km/h × 16.67</td></tr><tr><td>mph</td><td>m/min</td><td>mph × 26.82</td></tr><tr><td>METs</td><td>mL/kg/min</td><td>METs × 3.5</td></tr><tr><td>mL/kg/min</td><td>METs</td><td>VO₂ ÷ 3.5</td></tr></tbody></table></div><h4>مرجع سریع:</h4><ul><li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (سرعت پیاده‌روی معمولی بزرگسالان سالم)</li><li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (پیاده‌روی تند)</li><li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (متابولیسم استراحت)</li><li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (آستانه شدت متوسط)</li><li><strong>6 METs =</strong> 21 mL O₂/kg/min (آستانه شدت بالا)</li></ul></div><h2 id="next-steps">منابع مرتبط</h2><div class="next-steps-grid"><div class="next-step-card"><h3>اعمال فرمول‌ها: ماشین حساب WSS</h3><p>از ماشین حساب تعاملی ما برای محاسبه امتیاز استرس پیاده‌روی خود استفاده کنید.</p><a href="/fa/wss-calculator/" class="btn btn-secondary">محاسبه WSS ←</a></div><div class="next-step-card"><h3>درک مناطق پیاده‌روی</h3><p>یاد بگیرید چگونه مناطق شدت مبتنی بر کادنس را در تمرین اعمال کنید.</p><a href="/fa/walking-zones/" class="btn btn-secondary">یادگیری مناطق ←</a></div><div class="next-step-card"><h3>تحقیقات علمی</h3><p>مطالعاتی را که این فرمول‌ها را معتبر کرده‌اند بررسی کنید.</p><a href="/fa/research/" class="btn btn-secondary">مشاهده تحقیقات ←</a></div><div class="next-step-card"><h3>کتابنامه کامل</h3><p>به استنادهای کامل برای تمام معادلات ارجاع‌شده دسترسی پیدا کنید.</p><a href="/fa/bibliography/" class="btn btn-secondary">مشاهده کتابنامه ←</a></div></div></div><aside class="sidebar"><div class="toc"><h3>فهرست فرمول‌ها</h3><ul><li><a href="#cadence-mets">1. کادنس ← METs</a></li><li><a href="#acsm-vo2">2. معادلات ACSM VO₂</a></li><li><a href="#energy-expenditure">3. انرژی و کالری</a></li><li><a href="#gait-symmetry">4. شاخص تقارن راه‌رفتن</a></li><li><a href="#walk-score">5. امتیاز WALK</a></li><li><a href="#basic-metrics">6. معیارهای پایه راه‌رفتن</a></li><li><a href="#heart-rate">7. مناطق ضربان قلب</a></li><li><a href="#cost-transport">8. هزینه حمل و نقل</a></li><li><a href="#training-load">9. بار تمرینی</a></li><li><a href="#predictions">10. معادلات پیش‌بینی</a></li><li><a href="#conversions">11. تبدیل واحدها</a></li></ul></div><div class="formula-highlight"><h3>⭐ مهم‌ترین</h3><p><strong>کادنس به METs</strong></p><p class="formula-compact">METs = 0.0219 × spm + 0.72</p><p class="small-text">این معادله واحد تمرین شدت مبتنی بر کادنس را بدون مانیتورهای ضربان قلب امکان‌پذیر می‌کند.</p></div><div class="cta-box"><h3>اعمال این فرمول‌ها</h3><p>Walk Analytics از این معادلات معتبر علمی برای تحلیل پیاده‌روی‌های شما استفاده می‌کند.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">دانلود برنامه</a></div><div class="info-box"><h4>📐 دقت فرمول</h4><p>تمام معادلات این صفحه از تحقیقات همتا-بازبینی‌شده هستند. برای استنادهای کامل <a href="/fa/bibliography/">کتابنامه</a> را ببینید.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link active"
+                </a><a href="/fa/" class="lang-link active"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. تمامی حقوق محفوظ است
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/fa/privacy/">حریم خصوصی</a></li>
-                <li><a href="/fa/terms/">شرایط استفاده</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>این وب‌سایت از کوکی‌ها برای بهبود تجربه شما استفاده می‌کند.</p>
-            <a href="/fa/privacy/" class="text-sm">بیشتر بدانید</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">رد</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">قبول</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/fa/privacy/">حریم خصوصی</a></li><li><a href="/fa/terms/">شرایط استفاده</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>این وب‌سایت از کوکی‌ها برای بهبود تجربه شما استفاده می‌کند.</p><a href="/fa/privacy/" class="text-sm">بیشتر بدانید</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">رد</button><button id="cookie-accept" class="btn btn-primary btn-small">قبول</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

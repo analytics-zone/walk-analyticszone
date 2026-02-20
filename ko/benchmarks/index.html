@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="ko" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>걷기 성능 벤치마크 - 연령별 보행 속도, 케이던스 및 대칭성 표준</title>
-  <meta name="description" content="연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="걷기 벤치마크, 보행 속도 표준, 케이던스 표준, 걷기 성능, 연령 조정 벤치마크">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/ko/benchmarks/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-11-25T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/ko/benchmarks/">
-  <meta property="og:title" content="걷기 성능 벤치마크 - 연령별 보행 속도, 케이던스 및 대칭성 표준">
-  <meta property="og:description" content="연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/ko/benchmarks/">
-  <meta name="twitter:title" content="걷기 성능 벤치마크 - 연령별 보행 속도, 케이던스 및 대칭성 표준">
-  <meta name="twitter:description" content="연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/benchmarks/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/benchmarks/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/benchmarks/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/benchmarks/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/benchmarks/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/benchmarks/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/benchmarks/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/benchmarks/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/benchmarks/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/benchmarks/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/benchmarks/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/benchmarks/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/benchmarks/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/benchmarks/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/benchmarks/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/benchmarks/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/benchmarks/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/benchmarks/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/benchmarks/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/benchmarks/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/benchmarks/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/benchmarks/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/benchmarks/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/benchmarks/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/benchmarks/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/benchmarks/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/benchmarks/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/benchmarks/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/benchmarks/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/benchmarks/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/benchmarks/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/benchmarks/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/benchmarks/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/benchmarks/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/benchmarks/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/benchmarks/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/benchmarks/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/benchmarks/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/benchmarks/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/benchmarks/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/benchmarks/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/benchmarks/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/benchmarks/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/benchmarks/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/benchmarks/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/benchmarks/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/benchmarks/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/benchmarks/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/benchmarks/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/benchmarks/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/benchmarks/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/benchmarks/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/benchmarks/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/benchmarks/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/benchmarks/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/benchmarks/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="ko" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>걷기 성능 벤치마크 - 연령별 보행 속도, 케이던스 및 대칭성 표준</title><meta name="description" content="연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="걷기 벤치마크, 보행 속도 표준, 케이던스 표준, 걷기 성능, 연령 조정 벤치마크"><link rel="canonical" href="https://walk.analyticszone.app/ko/benchmarks/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-02-05T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/ko/benchmarks/"><meta property="og:title" content="걷기 성능 벤치마크 - 연령별 보행 속도, 케이던스 및 대칭성 표준"><meta property="og:description" content="연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/ko/benchmarks/"><meta name="twitter:title" content="걷기 성능 벤치마크 - 연령별 보행 속도, 케이던스 및 대칭성 표준"><meta name="twitter:description" content="연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/benchmarks/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/benchmarks/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/benchmarks/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/benchmarks/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/benchmarks/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/benchmarks/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/benchmarks/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/benchmarks/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/benchmarks/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/benchmarks/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/benchmarks/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/benchmarks/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/benchmarks/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/benchmarks/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/benchmarks/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/benchmarks/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/benchmarks/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/benchmarks/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/benchmarks/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/benchmarks/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/benchmarks/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/benchmarks/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/benchmarks/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/benchmarks/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/benchmarks/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/benchmarks/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/benchmarks/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/benchmarks/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/benchmarks/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/benchmarks/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/benchmarks/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/benchmarks/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/benchmarks/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/benchmarks/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/benchmarks/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/benchmarks/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/benchmarks/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/benchmarks/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/benchmarks/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/benchmarks/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/benchmarks/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/benchmarks/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/benchmarks/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/benchmarks/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/benchmarks/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/benchmarks/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/benchmarks/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/benchmarks/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/benchmarks/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/benchmarks/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/benchmarks/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/benchmarks/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/benchmarks/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/benchmarks/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/benchmarks/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/benchmarks/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "ko"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "연령 및 성별에 따른 증거 기반 걷기 벤치마크. 보행 속도 표준, 케이던스 임계값, Peak-30 목표, GSI 참조 값. 성능 추적. Walk Analytics, 케이던스 표준, 걷기 성능",
   "url": "https://walk.analyticszone.app/ko/benchmarks/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -647,23 +429,13 @@ img[width][height] {
     }
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2025-11-25",
+  "dateModified": "2026-02-05",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://walk.analyticszone.app/ko/benchmarks/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,2085 +449,425 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/ko/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/ko/" 
+  </script></head><body><a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/ko/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/ko/" 
                                 aria-current="">
                                 홈
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/getting-started/" class="nav-label">학습</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/ko/getting-started/" class="nav-label">학습</a><ul class="submenu"><li><a href="/ko/getting-started/" 
                                         aria-current="">
                                         시작하기
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/walking-zones/" 
+                                    </a></li><li><a href="/ko/walking-zones/" 
                                         aria-current="">
                                         걷기 존
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/gait-analysis/" 
+                                    </a></li><li><a href="/ko/gait-analysis/" 
                                         aria-current="">
                                         보행 분석
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/training-load/" 
+                                    </a></li><li><a href="/ko/training-load/" 
                                         aria-current="">
                                         트레이닝 부하
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/wss-calculator/" 
+                                    </a></li><li><a href="/ko/wss-calculator/" 
                                         aria-current="">
                                         WSS 계산기
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/research/" class="nav-label">과학</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ko/research/" class="nav-label">과학</a><ul class="submenu"><li><a href="/ko/research/" 
                                         aria-current="">
                                         연구
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/formulas/" 
+                                    </a></li><li><a href="/ko/formulas/" 
                                         aria-current="">
                                         공식
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/gait-efficiency/" 
+                                    </a></li><li><a href="/ko/gait-efficiency/" 
                                         aria-current="">
                                         보행 효율성
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/stride-mechanics/" 
+                                    </a></li><li><a href="/ko/stride-mechanics/" 
                                         aria-current="">
                                         보폭 역학
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/walking-vs-running/" 
+                                    </a></li><li><a href="/ko/walking-vs-running/" 
                                         aria-current="">
                                         걷기 vs 달리기
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/benchmarks/" class="active" 
+                                    </a></li><li><a href="/ko/benchmarks/" class="active" 
                                         aria-current="page">
                                         벤치마크
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/bibliography/" 
+                                    </a></li><li><a href="/ko/bibliography/" 
                                         aria-current="">
                                         참고문헌
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/for-health/" class="nav-label">사용자 맞춤</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ko/for-health/" class="nav-label">사용자 맞춤</a><ul class="submenu"><li><a href="/ko/for-health/" 
                                         aria-current="">
                                         건강용
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/for-fitness/" 
+                                    </a></li><li><a href="/ko/for-fitness/" 
                                         aria-current="">
                                         피트니스용
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/for-seniors/" 
+                                    </a></li><li><a href="/ko/for-seniors/" 
                                         aria-current="">
                                         노인용
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/for-rehabilitation/" 
+                                    </a></li><li><a href="/ko/for-rehabilitation/" 
                                         aria-current="">
                                         재활용
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/cadence-calculator/" class="nav-label">도구</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ko/cadence-calculator/" class="nav-label">도구</a><ul class="submenu"><li><a href="/ko/cadence-calculator/" 
                                         aria-current="">
                                         케이던스 계산기
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/gait-assessment/" 
+                                    </a></li><li><a href="/ko/gait-assessment/" 
                                         aria-current="">
                                         보행 평가
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/vo2max-calculator/" 
+                                    </a></li><li><a href="/ko/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max 계산기
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/ko/contact/" 
+                                    </a></li></ul></li><li><a href="/ko/contact/" 
                                 aria-current="">
                                 문의
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="언어 선택">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="언어 선택"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" selected>
+                        </option><option value="ko" selected>
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="메뉴 토글"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/ko/">홈</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/ko/research/">과학</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">벤치마크</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-<div class="content-wrapper">
-    <h1>걷기 퍼포먼스 벤치마크</h1>
-
-    <nav class="page-navigation">
-        <ul>
-            <li><a href="#introduction">소개</a></li>
-            <li><a href="#gait-speed">보행 속도 기준</a></li>
-            <li><a href="#cadence">케이던스 기준</a></li>
-            <li><a href="#peak30">Peak‑30 케이던스 목표</a></li>
-            <li><a href="#distance">거리 달성 기준</a></li>
-            <li><a href="#symmetry">보행 대칭성 기준</a></li>
-            <li><a href="#fitness">체력 기반 분류</a></li>
-            <li><a href="#race-walking">레이스 워킹 기준</a></li>
-        </ul>
-    </nav>
-
-    <!-- Introduction -->
-    <section id="introduction">
-        <p class="lead">
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="메뉴 토글"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/ko/">홈</a></li><li><a href="/ko/research/">과학</a></li><li><span aria-current="page">벤치마크</span></li></ol></div></nav><main id="main-content" class="main-content"><div class="content-wrapper"><h1>걷기 퍼포먼스 벤치마크</h1><nav class="page-navigation"><ul><li><a href="#introduction">소개</a></li><li><a href="#gait-speed">보행 속도 기준</a></li><li><a href="#cadence">케이던스 기준</a></li><li><a href="#peak30">Peak‑30 케이던스 목표</a></li><li><a href="#distance">거리 달성 기준</a></li><li><a href="#symmetry">보행 대칭성 기준</a></li><li><a href="#fitness">체력 기반 분류</a></li><li><a href="#race-walking">레이스 워킹 기준</a></li></ul></nav><section id="introduction"><p class="lead">
             걷기 퍼포먼스는 연령, 성별, 체력 수준, 건강 상태에 따라 크게 달라집니다.
             이 과학적 근거 기반 벤치마크는 자신의 걷기 지표를 맥락 속에서 이해하고,
             현실적인 목표를 설정하며, 시간에 따른 의미 있는 변화를 추적하는 데 도움을 줍니다.
-        </p>
-
-        <div class="key-finding">
-            <strong>중요한 맥락:</strong> 이 기준들은 <strong>건강한 성인에서 일반적으로 관찰되는 범위</strong>를 나타냅니다.
+        </p><div class="key-finding"><strong>중요한 맥락:</strong> 이 기준들은 <strong>건강한 성인에서 일반적으로 관찰되는 범위</strong>를 나타냅니다.
             개인 간 차이는 정상이며 예상되는 현상입니다. 이 표를 엄격한 “필수 기준”이 아니라
             전반적인 참고 지표로 활용하세요. 심혈관 질환, COPD, 관절염 등 임상 집단에서는
             다른 기준값이 적용될 수 있으므로, 구체적인 목표 설정은 의료 전문가와 상의하는 것이 좋습니다.
-        </div>
-    </section>
-
-    <!-- Gait Speed -->
-    <section id="gait-speed">
-        <h2>보행 속도 기준</h2>
-
-        <div class="key-finding">
-            <strong>"보행 속도는 여섯 번째 활력징후"</strong> (Studenski et al., JAMA 2011).
+        </div></section><section id="gait-speed"><h2>보행 속도 기준</h2><div class="key-finding"><strong>"보행 속도는 여섯 번째 활력징후"</strong> (Studenski et al., JAMA 2011).
             보행 속도는 고령자의 사망률, 입원, 기능 저하, 전반적인 건강 상태를 예측하는 강력한 지표입니다.
             일반적으로 <strong>1.0 m/s 초과</strong>는 양호한 기능적 능력을 의미합니다.
-        </div>
-
-        <h3>연령별 보행 속도 기준 (건강한 성인)</h3>
-
-        <h4>남성 – 편안한 보행 속도</h4>
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>연령대</th>
-                        <th>느림</th>
-                        <th>보통</th>
-                        <th>빠름</th>
-                        <th>매우 빠름</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>20–29세</strong></td>
-                        <td>&lt;1.30 m/s</td>
-                        <td>1.30–1.45 m/s</td>
-                        <td>1.45–1.60 m/s</td>
-                        <td>&gt;1.60 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>30–39세</strong></td>
-                        <td>&lt;1.28 m/s</td>
-                        <td>1.28–1.43 m/s</td>
-                        <td>1.43–1.58 m/s</td>
-                        <td>&gt;1.58 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>40–49세</strong></td>
-                        <td>&lt;1.25 m/s</td>
-                        <td>1.25–1.40 m/s</td>
-                        <td>1.40–1.55 m/s</td>
-                        <td>&gt;1.55 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>50–59세</strong></td>
-                        <td>&lt;1.20 m/s</td>
-                        <td>1.20–1.35 m/s</td>
-                        <td>1.35–1.50 m/s</td>
-                        <td>&gt;1.50 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>60–69세</strong></td>
-                        <td>&lt;1.15 m/s</td>
-                        <td>1.15–1.30 m/s</td>
-                        <td>1.30–1.45 m/s</td>
-                        <td>&gt;1.45 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>70–79세</strong></td>
-                        <td>&lt;1.05 m/s</td>
-                        <td>1.05–1.20 m/s</td>
-                        <td>1.20–1.35 m/s</td>
-                        <td>&gt;1.35 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>80세 이상</strong></td>
-                        <td>&lt;0.90 m/s</td>
-                        <td>0.90–1.05 m/s</td>
-                        <td>1.05–1.20 m/s</td>
-                        <td>&gt;1.20 m/s</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h4>여성 – 편안한 보행 속도</h4>
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>연령대</th>
-                        <th>느림</th>
-                        <th>보통</th>
-                        <th>빠름</th>
-                        <th>매우 빠름</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>20–29세</strong></td>
-                        <td>&lt;1.25 m/s</td>
-                        <td>1.25–1.40 m/s</td>
-                        <td>1.40–1.55 m/s</td>
-                        <td>&gt;1.55 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>30–39세</strong></td>
-                        <td>&lt;1.23 m/s</td>
-                        <td>1.23–1.38 m/s</td>
-                        <td>1.38–1.53 m/s</td>
-                        <td>&gt;1.53 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>40–49세</strong></td>
-                        <td>&lt;1.20 m/s</td>
-                        <td>1.20–1.35 m/s</td>
-                        <td>1.35–1.50 m/s</td>
-                        <td>&gt;1.50 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>50–59세</strong></td>
-                        <td>&lt;1.15 m/s</td>
-                        <td>1.15–1.30 m/s</td>
-                        <td>1.30–1.45 m/s</td>
-                        <td>&gt;1.45 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>60–69세</strong></td>
-                        <td>&lt;1.10 m/s</td>
-                        <td>1.10–1.25 m/s</td>
-                        <td>1.25–1.40 m/s</td>
-                        <td>&gt;1.40 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>70–79세</strong></td>
-                        <td>&lt;0.95 m/s</td>
-                        <td>0.95–1.10 m/s</td>
-                        <td>1.10–1.25 m/s</td>
-                        <td>&gt;1.25 m/s</td>
-                    </tr>
-                    <tr>
-                        <td><strong>80세 이상</strong></td>
-                        <td>&lt;0.80 m/s</td>
-                        <td>0.80–0.95 m/s</td>
-                        <td>0.95–1.10 m/s</td>
-                        <td>&gt;1.10 m/s</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>보행 속도의 임상적 의미</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>보행 속도</th>
-                        <th>분류</th>
-                        <th>기능적 해석</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>&lt;0.60 m/s</strong></td>
-                        <td>심한 장애</td>
-                        <td>일상생활동작(ADL)의 대부분에서 타인 도움 필요, 지역사회 이동에는 휠체어 사용이 흔함</td>
-                    </tr>
-                    <tr>
-                        <td><strong>0.60–0.80 m/s</strong></td>
-                        <td>중등도 장애</td>
-                        <td>주로 실내 보행 가능, 지역사회 활동에는 도움 필요</td>
-                    </tr>
-                    <tr>
-                        <td><strong>0.80–1.00 m/s</strong></td>
-                        <td>경도 장애</td>
-                        <td>제한적인 지역사회 보행, 횡단보도 건너기는 가능하나 여유가 적음</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1.00–1.20 m/s</strong></td>
-                        <td>기능적 임계값</td>
-                        <td>지역사회에서 독립 보행 가능, 3–4차선 도로(약 1.22 m/s 필요) 횡단 가능</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1.20–1.40 m/s</strong></td>
-                        <td>양호한 기능</td>
-                        <td>완전한 독립 생활, 건강한 고령자에서 흔한 속도</td>
-                    </tr>
-                    <tr>
-                        <td><strong>&gt;1.40 m/s</strong></td>
-                        <td>매우 우수</td>
-                        <td>건강 상태가 매우 양호, 낮은 사망 위험, 젊은·중년 성인에서 일반적인 속도</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="key-finding">
-            <strong>메타분석 (Studenski et al., 2011):</strong> 65세 이상 성인에서
+        </div><h3>연령별 보행 속도 기준 (건강한 성인)</h3><h4>남성 – 편안한 보행 속도</h4><div class="data-table"><table><thead><tr><th>연령대</th><th>느림</th><th>보통</th><th>빠름</th><th>매우 빠름</th></tr></thead><tbody><tr><td><strong>20–29세</strong></td><td>&lt;1.30 m/s</td><td>1.30–1.45 m/s</td><td>1.45–1.60 m/s</td><td>&gt;1.60 m/s</td></tr><tr><td><strong>30–39세</strong></td><td>&lt;1.28 m/s</td><td>1.28–1.43 m/s</td><td>1.43–1.58 m/s</td><td>&gt;1.58 m/s</td></tr><tr><td><strong>40–49세</strong></td><td>&lt;1.25 m/s</td><td>1.25–1.40 m/s</td><td>1.40–1.55 m/s</td><td>&gt;1.55 m/s</td></tr><tr><td><strong>50–59세</strong></td><td>&lt;1.20 m/s</td><td>1.20–1.35 m/s</td><td>1.35–1.50 m/s</td><td>&gt;1.50 m/s</td></tr><tr><td><strong>60–69세</strong></td><td>&lt;1.15 m/s</td><td>1.15–1.30 m/s</td><td>1.30–1.45 m/s</td><td>&gt;1.45 m/s</td></tr><tr><td><strong>70–79세</strong></td><td>&lt;1.05 m/s</td><td>1.05–1.20 m/s</td><td>1.20–1.35 m/s</td><td>&gt;1.35 m/s</td></tr><tr><td><strong>80세 이상</strong></td><td>&lt;0.90 m/s</td><td>0.90–1.05 m/s</td><td>1.05–1.20 m/s</td><td>&gt;1.20 m/s</td></tr></tbody></table></div><h4>여성 – 편안한 보행 속도</h4><div class="data-table"><table><thead><tr><th>연령대</th><th>느림</th><th>보통</th><th>빠름</th><th>매우 빠름</th></tr></thead><tbody><tr><td><strong>20–29세</strong></td><td>&lt;1.25 m/s</td><td>1.25–1.40 m/s</td><td>1.40–1.55 m/s</td><td>&gt;1.55 m/s</td></tr><tr><td><strong>30–39세</strong></td><td>&lt;1.23 m/s</td><td>1.23–1.38 m/s</td><td>1.38–1.53 m/s</td><td>&gt;1.53 m/s</td></tr><tr><td><strong>40–49세</strong></td><td>&lt;1.20 m/s</td><td>1.20–1.35 m/s</td><td>1.35–1.50 m/s</td><td>&gt;1.50 m/s</td></tr><tr><td><strong>50–59세</strong></td><td>&lt;1.15 m/s</td><td>1.15–1.30 m/s</td><td>1.30–1.45 m/s</td><td>&gt;1.45 m/s</td></tr><tr><td><strong>60–69세</strong></td><td>&lt;1.10 m/s</td><td>1.10–1.25 m/s</td><td>1.25–1.40 m/s</td><td>&gt;1.40 m/s</td></tr><tr><td><strong>70–79세</strong></td><td>&lt;0.95 m/s</td><td>0.95–1.10 m/s</td><td>1.10–1.25 m/s</td><td>&gt;1.25 m/s</td></tr><tr><td><strong>80세 이상</strong></td><td>&lt;0.80 m/s</td><td>0.80–0.95 m/s</td><td>0.95–1.10 m/s</td><td>&gt;1.10 m/s</td></tr></tbody></table></div><h3>보행 속도의 임상적 의미</h3><div class="data-table"><table><thead><tr><th>보행 속도</th><th>분류</th><th>기능적 해석</th></tr></thead><tbody><tr><td><strong>&lt;0.60 m/s</strong></td><td>심한 장애</td><td>일상생활동작(ADL)의 대부분에서 타인 도움 필요, 지역사회 이동에는 휠체어 사용이 흔함</td></tr><tr><td><strong>0.60–0.80 m/s</strong></td><td>중등도 장애</td><td>주로 실내 보행 가능, 지역사회 활동에는 도움 필요</td></tr><tr><td><strong>0.80–1.00 m/s</strong></td><td>경도 장애</td><td>제한적인 지역사회 보행, 횡단보도 건너기는 가능하나 여유가 적음</td></tr><tr><td><strong>1.00–1.20 m/s</strong></td><td>기능적 임계값</td><td>지역사회에서 독립 보행 가능, 3–4차선 도로(약 1.22 m/s 필요) 횡단 가능</td></tr><tr><td><strong>1.20–1.40 m/s</strong></td><td>양호한 기능</td><td>완전한 독립 생활, 건강한 고령자에서 흔한 속도</td></tr><tr><td><strong>&gt;1.40 m/s</strong></td><td>매우 우수</td><td>건강 상태가 매우 양호, 낮은 사망 위험, 젊은·중년 성인에서 일반적인 속도</td></tr></tbody></table></div><div class="key-finding"><strong>메타분석 (Studenski et al., 2011):</strong> 65세 이상 성인에서
             보행 속도가 0.1 m/s 빨라질 때마다 <strong>사망 위험이 약 12% 감소</strong>했습니다.
             보행 속도 &gt;1.0 m/s는 19–21년의 중앙 생존 기간을, &lt;0.6 m/s는 6–7년을 예측했습니다.
-        </div>
-    </section>
-
-    <!-- Cadence -->
-    <section id="cadence">
-        <h2>케이던스 기준</h2>
-
-        <h3>자기 선택 속도에서의 연령별 케이던스</h3>
-
-        <p>
+        </div></section><section id="cadence"><h2>케이던스 기준</h2><h3>자기 선택 속도에서의 연령별 케이던스</h3><p>
             아래 값은 편안한 자기 선택 속도로 걷는 동안의 전형적인 케이던스를 나타냅니다.
             Tudor‑Locke et al. (2019)의 CADENCE‑Adults 보정 연구(N=156, 21–85세) 데이터를 기반으로 합니다.
-        </p>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>연령대</th>
-                        <th>남성 (평균 ± SD)</th>
-                        <th>여성 (평균 ± SD)</th>
-                        <th>전체</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>21–30세</strong></td>
-                        <td>102 ± 10 spm</td>
-                        <td>105 ± 12 spm</td>
-                        <td>103–104 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>31–40세</strong></td>
-                        <td>100 ± 11 spm</td>
-                        <td>103 ± 11 spm</td>
-                        <td>101–102 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>41–50세</strong></td>
-                        <td>98 ± 10 spm</td>
-                        <td>101 ± 12 spm</td>
-                        <td>99–100 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>51–60세</strong></td>
-                        <td>96 ± 11 spm</td>
-                        <td>99 ± 11 spm</td>
-                        <td>97–98 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>61–70세</strong></td>
-                        <td>93 ± 12 spm</td>
-                        <td>96 ± 12 spm</td>
-                        <td>94–95 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>71–80세</strong></td>
-                        <td>89 ± 13 spm</td>
-                        <td>92 ± 13 spm</td>
-                        <td>90–91 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>81세 이상</strong></td>
-                        <td>84 ± 14 spm</td>
-                        <td>87 ± 14 spm</td>
-                        <td>85–86 spm</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>강도 기반 케이던스 임계값 (전 연령)</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>케이던스</th>
-                        <th>METs</th>
-                        <th>강도</th>
-                        <th>민감도</th>
-                        <th>특이도</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>100 spm</strong></td>
-                        <td>≥3.0</td>
-                        <td>중강도 (휴리스틱 임계값)</td>
-                        <td>86.0%</td>
-                        <td>89.6%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>110 spm</strong></td>
-                        <td>~4.0</td>
-                        <td>빠른 걷기</td>
-                        <td>–</td>
-                        <td>–</td>
-                    </tr>
-                    <tr>
-                        <td><strong>120 spm</strong></td>
-                        <td>~5.0</td>
-                        <td>매우 빠른 걷기</td>
-                        <td>–</td>
-                        <td>–</td>
-                    </tr>
-                    <tr>
-                        <td><strong>130 spm</strong></td>
-                        <td>≥6.0</td>
-                        <td>고강도 (휴리스틱 임계값)</td>
-                        <td>81.3%</td>
-                        <td>84.7%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="key-finding">
-            <strong>Moore 방정식:</strong> METs = 0.0219 × 케이던스(spm) + 0.72 (R² = 0.87)<br>
+        </p><div class="data-table"><table><thead><tr><th>연령대</th><th>남성 (평균 ± SD)</th><th>여성 (평균 ± SD)</th><th>전체</th></tr></thead><tbody><tr><td><strong>21–30세</strong></td><td>102 ± 10 spm</td><td>105 ± 12 spm</td><td>103–104 spm</td></tr><tr><td><strong>31–40세</strong></td><td>100 ± 11 spm</td><td>103 ± 11 spm</td><td>101–102 spm</td></tr><tr><td><strong>41–50세</strong></td><td>98 ± 10 spm</td><td>101 ± 12 spm</td><td>99–100 spm</td></tr><tr><td><strong>51–60세</strong></td><td>96 ± 11 spm</td><td>99 ± 11 spm</td><td>97–98 spm</td></tr><tr><td><strong>61–70세</strong></td><td>93 ± 12 spm</td><td>96 ± 12 spm</td><td>94–95 spm</td></tr><tr><td><strong>71–80세</strong></td><td>89 ± 13 spm</td><td>92 ± 13 spm</td><td>90–91 spm</td></tr><tr><td><strong>81세 이상</strong></td><td>84 ± 14 spm</td><td>87 ± 14 spm</td><td>85–86 spm</td></tr></tbody></table></div><h3>강도 기반 케이던스 임계값 (전 연령)</h3><div class="data-table"><table><thead><tr><th>케이던스</th><th>METs</th><th>강도</th><th>민감도</th><th>특이도</th></tr></thead><tbody><tr><td><strong>100 spm</strong></td><td>≥3.0</td><td>중강도 (휴리스틱 임계값)</td><td>86.0%</td><td>89.6%</td></tr><tr><td><strong>110 spm</strong></td><td>~4.0</td><td>빠른 걷기</td><td>–</td><td>–</td></tr><tr><td><strong>120 spm</strong></td><td>~5.0</td><td>매우 빠른 걷기</td><td>–</td><td>–</td></tr><tr><td><strong>130 spm</strong></td><td>≥6.0</td><td>고강도 (휴리스틱 임계값)</td><td>81.3%</td><td>84.7%</td></tr></tbody></table></div><div class="key-finding"><strong>Moore 방정식:</strong> METs = 0.0219 × 케이던스(spm) + 0.72 (R² = 0.87)<br>
             이 방정식을 이용하면 속도나 보폭 길이와 무관하게 케이던스로부터 직접 에너지 소비를 추정할 수 있습니다.
-        </div>
-
-        <h3>연령별 중강도 케이던스 임계값</h3>
-
-        <p>
+        </div><h3>연령별 중강도 케이던스 임계값</h3><p>
             100 spm은 전 연령에 적용 가능한 일반적인 휴리스틱이지만,
             실제 중강도(3.0 METs)에 해당하는 정확한 케이던스는 연령에 따라 약간씩 달라집니다.
             아래 값은 연령대별 3.0 METs에 해당하는 케이던스를 요약한 것입니다.
-        </p>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>연령대</th>
-                        <th>남성 (3 METs)</th>
-                        <th>여성 (3 METs)</th>
-                        <th>실용적 권장값</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>21–40세</strong></td>
-                        <td>~102 spm</td>
-                        <td>~105 spm</td>
-                        <td>≥100 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>41–60세</strong></td>
-                        <td>~98 spm</td>
-                        <td>~100 spm</td>
-                        <td>≥95 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>61–80세</strong></td>
-                        <td>~92 spm</td>
-                        <td>~94 spm</td>
-                        <td>≥90 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>81세 이상</strong></td>
-                        <td>~87 spm</td>
-                        <td>~89 spm</td>
-                        <td>≥85 spm</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Peak-30 -->
-    <section id="peak30">
-        <h2>Peak‑30 케이던스 목표</h2>
-
-        <div class="key-finding">
-            <strong>주요 연구 (Del Pozo‑Cruz et al., 2022):</strong>
+        </p><div class="data-table"><table><thead><tr><th>연령대</th><th>남성 (3 METs)</th><th>여성 (3 METs)</th><th>실용적 권장값</th></tr></thead><tbody><tr><td><strong>21–40세</strong></td><td>~102 spm</td><td>~105 spm</td><td>≥100 spm</td></tr><tr><td><strong>41–60세</strong></td><td>~98 spm</td><td>~100 spm</td><td>≥95 spm</td></tr><tr><td><strong>61–80세</strong></td><td>~92 spm</td><td>~94 spm</td><td>≥90 spm</td></tr><tr><td><strong>81세 이상</strong></td><td>~87 spm</td><td>~89 spm</td><td>≥85 spm</td></tr></tbody></table></div></section><section id="peak30"><h2>Peak‑30 케이던스 목표</h2><div class="key-finding"><strong>주요 연구 (Del Pozo‑Cruz et al., 2022):</strong>
             UK Biobank 참가자 78,500명을 분석한 결과,
             <strong>Peak‑30 케이던스</strong>(하루 중 가장 빠른 연속 30분 동안의 평균 케이던스)가
             일일 총 걸음 수와는 독립적으로 사망 및 심혈관 질환 위험을 예측하는 지표임이 밝혀졌습니다.
             건강 결과 측면에서 Peak‑30은 단순 총 걸음 수보다 더 중요한 것으로 보입니다.
-        </div>
-
-        <h3>Peak‑30 케이던스 건강 분류</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Peak‑30 케이던스</th>
-                        <th>분류</th>
-                        <th>사망 위험</th>
-                        <th>심혈관 질환 위험</th>
-                        <th>주 대상</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>&lt;70 spm</strong></td>
-                        <td>매우 낮음</td>
-                        <td>기준 (가장 높은 위험)</td>
-                        <td>기준</td>
-                        <td>임상 집단, 심한 기능 제한</td>
-                    </tr>
-                    <tr>
-                        <td><strong>70–79 spm</strong></td>
-                        <td>낮음</td>
-                        <td>~15% 위험 감소</td>
-                        <td>~12% 감소</td>
-                        <td>활동을 막 시작한 좌식 생활자</td>
-                    </tr>
-                    <tr>
-                        <td><strong>80–89 spm</strong></td>
-                        <td>중간</td>
-                        <td>~25% 위험 감소</td>
-                        <td>~20% 감소</td>
-                        <td>일상 생활에서 규칙적으로 활동적인 사람</td>
-                    </tr>
-                    <tr>
-                        <td><strong>90–99 spm</strong></td>
-                        <td>좋음</td>
-                        <td>~35% 위험 감소</td>
-                        <td>~30% 감소</td>
-                        <td>목적성 있는 걷기를 꾸준히 하는 사람</td>
-                    </tr>
-                    <tr>
-                        <td><strong>100–109 spm</strong></td>
-                        <td>빠름</td>
-                        <td>~40% 위험 감소</td>
-                        <td>~35% 감소</td>
-                        <td>건강 가이드라인(주 150분) 달성을 목표로 하는 일반 성인</td>
-                    </tr>
-                    <tr>
-                        <td><strong>≥110 spm</strong></td>
-                        <td>매우 빠름</td>
-                        <td>~50% 위험 감소</td>
-                        <td>~45% 감소</td>
-                        <td>높은 체력을 가진 사람, 선수·고수준 피트니스 인구</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>목표에 따른 Peak‑30 트레이닝 타깃</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>목표</th>
-                        <th>Peak‑30 목표</th>
-                        <th>빈도</th>
-                        <th>지속 시간</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>최소 건강 이득</strong></td>
-                        <td>≥80 spm</td>
-                        <td>주 5일</td>
-                        <td>30분</td>
-                    </tr>
-                    <tr>
-                        <td><strong>중간 수준 건강 이득</strong></td>
-                        <td>≥90 spm</td>
-                        <td>주 5일</td>
-                        <td>30분</td>
-                    </tr>
-                    <tr>
-                        <td><strong>가이드라인 충족</strong></td>
-                        <td>≥100 spm</td>
-                        <td>주 5일</td>
-                        <td>30분 (주 150분)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>상당한 건강 이득</strong></td>
-                        <td>≥110 spm</td>
-                        <td>주 5일</td>
-                        <td>30분</td>
-                    </tr>
-                    <tr>
-                        <td><strong>최적 건강 이득</strong></td>
-                        <td>≥120 spm</td>
-                        <td>주 5–7일</td>
-                        <td>30–60분</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p>
-            <strong>실용적 적용:</strong> 단순히 “하루 10,000보”에만 집중하기보다,
+        </div><h3>Peak‑30 케이던스 건강 분류</h3><div class="data-table"><table><thead><tr><th>Peak‑30 케이던스</th><th>분류</th><th>사망 위험</th><th>심혈관 질환 위험</th><th>주 대상</th></tr></thead><tbody><tr><td><strong>&lt;70 spm</strong></td><td>매우 낮음</td><td>기준 (가장 높은 위험)</td><td>기준</td><td>임상 집단, 심한 기능 제한</td></tr><tr><td><strong>70–79 spm</strong></td><td>낮음</td><td>~15% 위험 감소</td><td>~12% 감소</td><td>활동을 막 시작한 좌식 생활자</td></tr><tr><td><strong>80–89 spm</strong></td><td>중간</td><td>~25% 위험 감소</td><td>~20% 감소</td><td>일상 생활에서 규칙적으로 활동적인 사람</td></tr><tr><td><strong>90–99 spm</strong></td><td>좋음</td><td>~35% 위험 감소</td><td>~30% 감소</td><td>목적성 있는 걷기를 꾸준히 하는 사람</td></tr><tr><td><strong>100–109 spm</strong></td><td>빠름</td><td>~40% 위험 감소</td><td>~35% 감소</td><td>건강 가이드라인(주 150분) 달성을 목표로 하는 일반 성인</td></tr><tr><td><strong>≥110 spm</strong></td><td>매우 빠름</td><td>~50% 위험 감소</td><td>~45% 감소</td><td>높은 체력을 가진 사람, 선수·고수준 피트니스 인구</td></tr></tbody></table></div><h3>목표에 따른 Peak‑30 트레이닝 타깃</h3><div class="data-table"><table><thead><tr><th>목표</th><th>Peak‑30 목표</th><th>빈도</th><th>지속 시간</th></tr></thead><tbody><tr><td><strong>최소 건강 이득</strong></td><td>≥80 spm</td><td>주 5일</td><td>30분</td></tr><tr><td><strong>중간 수준 건강 이득</strong></td><td>≥90 spm</td><td>주 5일</td><td>30분</td></tr><tr><td><strong>가이드라인 충족</strong></td><td>≥100 spm</td><td>주 5일</td><td>30분 (주 150분)</td></tr><tr><td><strong>상당한 건강 이득</strong></td><td>≥110 spm</td><td>주 5일</td><td>30분</td></tr><tr><td><strong>최적 건강 이득</strong></td><td>≥120 spm</td><td>주 5–7일</td><td>30–60분</td></tr></tbody></table></div><p><strong>실용적 적용:</strong> 단순히 “하루 10,000보”에만 집중하기보다,
             자신의 Peak‑30 목표 달성에 더 초점을 맞추세요. <strong>하루 30분 이상 100 spm 이상으로 걷는 것</strong>이
             낮은 강도의 긴 산책보다 건강 결과를 더 잘 예측하는 것으로 나타났습니다.
-        </p>
-    </section>
-
-    <!-- Distance -->
-    <section id="distance">
-        <h2>거리 달성 벤치마크</h2>
-
-        <h3>단일 세션 거리 (레크리에이션 걷기)</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>거리</th>
-                        <th>시간 (1.3 m/s 기준)</th>
-                        <th>달성 수준</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>2 km (1.2 mi)</strong></td>
-                        <td>~25분</td>
-                        <td>초보자 마일스톤</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5 km (3.1 mi)</strong></td>
-                        <td>~60분</td>
-                        <td>전형적인 레크리에이션 워킹</td>
-                    </tr>
-                    <tr>
-                        <td><strong>10 km (6.2 mi)</strong></td>
-                        <td>~2시간</td>
-                        <td>중급 수준 달성</td>
-                    </tr>
-                    <tr>
-                        <td><strong>하프 마라톤 (21.1 km)</strong></td>
-                        <td>~4–5시간</td>
-                        <td>상급 레크리에이션</td>
-                    </tr>
-                    <tr>
-                        <td><strong>마라톤 (42.2 km)</strong></td>
-                        <td>~8–10시간</td>
-                        <td>엘리트 레크리에이션</td>
-                    </tr>
-                    <tr>
-                        <td><strong>50 km</strong></td>
-                        <td>~10–12시간</td>
-                        <td>울트라 워킹</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>주간 거리 볼륨</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>주간 거리</th>
-                        <th>분류</th>
-                        <th>전형적인 프로파일</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>&lt;10 km/주</strong></td>
-                        <td>낮은 활동 수준</td>
-                        <td>주로 좌식 생활, 일상 생활에서만 걷기</td>
-                    </tr>
-                    <tr>
-                        <td><strong>10–20 km/주</strong></td>
-                        <td>중간 활동</td>
-                        <td>규칙적인 워커, 최소 권장 수준 충족</td>
-                    </tr>
-                    <tr>
-                        <td><strong>20–40 km/주</strong></td>
-                        <td>활동적</td>
-                        <td>피트니스를 위해 거의 매일 걷는 사람</td>
-                    </tr>
-                    <tr>
-                        <td><strong>40–70 km/주</strong></td>
-                        <td>매우 활동적</td>
-                        <td>대회·이벤트를 준비하는 열성적인 취미 러/워커</td>
-                    </tr>
-                    <tr>
-                        <td><strong>&gt;70 km/주</strong></td>
-                        <td>선수 수준</td>
-                        <td>경보 선수 또는 울트라 워커</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>일일 걸음 수 맥락</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>일일 걸음 수</th>
-                        <th>대략 거리</th>
-                        <th>분류</th>
-                        <th>건강 의미</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>&lt;3,000</strong></td>
-                        <td>&lt;2 km</td>
-                        <td>좌식</td>
-                        <td>높은 사망 위험, 다수의 동반 질환과 연관</td>
-                    </tr>
-                    <tr>
-                        <td><strong>3,000–5,000</strong></td>
-                        <td>2–3 km</td>
-                        <td>낮은 활동</td>
-                        <td>어느 정도 이득은 있으나 가이드라인에는 못 미침</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5,000–7,500</strong></td>
-                        <td>3–5 km</td>
-                        <td>중간 정도 활동</td>
-                        <td>최소 신체 활동 가이드라인 충족</td>
-                    </tr>
-                    <tr>
-                        <td><strong>7,500–10,000</strong></td>
-                        <td>5–7 km</td>
-                        <td>활동적</td>
-                        <td>양호한 건강, 사망 위험 상당히 감소</td>
-                    </tr>
-                    <tr>
-                        <td><strong>10,000–12,500</strong></td>
-                        <td>7–9 km</td>
-                        <td>매우 활동적</td>
-                        <td>최적 건강 이득 (~40–50% 사망 위험 감소)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>&gt;12,500</strong></td>
-                        <td>&gt;9 km</td>
-                        <td>극도로 활동적</td>
-                        <td>최대 수준 이득(약 15,000보 이상부터는 추가 이득이 점감)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="key-finding">
-            <strong>중요한 점:</strong> 최근 메타분석에 따르면,
+        </p></section><section id="distance"><h2>거리 달성 벤치마크</h2><h3>단일 세션 거리 (레크리에이션 걷기)</h3><div class="data-table"><table><thead><tr><th>거리</th><th>시간 (1.3 m/s 기준)</th><th>달성 수준</th></tr></thead><tbody><tr><td><strong>2 km (1.2 mi)</strong></td><td>~25분</td><td>초보자 마일스톤</td></tr><tr><td><strong>5 km (3.1 mi)</strong></td><td>~60분</td><td>전형적인 레크리에이션 워킹</td></tr><tr><td><strong>10 km (6.2 mi)</strong></td><td>~2시간</td><td>중급 수준 달성</td></tr><tr><td><strong>하프 마라톤 (21.1 km)</strong></td><td>~4–5시간</td><td>상급 레크리에이션</td></tr><tr><td><strong>마라톤 (42.2 km)</strong></td><td>~8–10시간</td><td>엘리트 레크리에이션</td></tr><tr><td><strong>50 km</strong></td><td>~10–12시간</td><td>울트라 워킹</td></tr></tbody></table></div><h3>주간 거리 볼륨</h3><div class="data-table"><table><thead><tr><th>주간 거리</th><th>분류</th><th>전형적인 프로파일</th></tr></thead><tbody><tr><td><strong>&lt;10 km/주</strong></td><td>낮은 활동 수준</td><td>주로 좌식 생활, 일상 생활에서만 걷기</td></tr><tr><td><strong>10–20 km/주</strong></td><td>중간 활동</td><td>규칙적인 워커, 최소 권장 수준 충족</td></tr><tr><td><strong>20–40 km/주</strong></td><td>활동적</td><td>피트니스를 위해 거의 매일 걷는 사람</td></tr><tr><td><strong>40–70 km/주</strong></td><td>매우 활동적</td><td>대회·이벤트를 준비하는 열성적인 취미 러/워커</td></tr><tr><td><strong>&gt;70 km/주</strong></td><td>선수 수준</td><td>경보 선수 또는 울트라 워커</td></tr></tbody></table></div><h3>일일 걸음 수 맥락</h3><div class="data-table"><table><thead><tr><th>일일 걸음 수</th><th>대략 거리</th><th>분류</th><th>건강 의미</th></tr></thead><tbody><tr><td><strong>&lt;3,000</strong></td><td>&lt;2 km</td><td>좌식</td><td>높은 사망 위험, 다수의 동반 질환과 연관</td></tr><tr><td><strong>3,000–5,000</strong></td><td>2–3 km</td><td>낮은 활동</td><td>어느 정도 이득은 있으나 가이드라인에는 못 미침</td></tr><tr><td><strong>5,000–7,500</strong></td><td>3–5 km</td><td>중간 정도 활동</td><td>최소 신체 활동 가이드라인 충족</td></tr><tr><td><strong>7,500–10,000</strong></td><td>5–7 km</td><td>활동적</td><td>양호한 건강, 사망 위험 상당히 감소</td></tr><tr><td><strong>10,000–12,500</strong></td><td>7–9 km</td><td>매우 활동적</td><td>최적 건강 이득 (~40–50% 사망 위험 감소)</td></tr><tr><td><strong>&gt;12,500</strong></td><td>&gt;9 km</td><td>극도로 활동적</td><td>최대 수준 이득(약 15,000보 이상부터는 추가 이득이 점감)</td></tr></tbody></table></div><div class="key-finding"><strong>중요한 점:</strong> 최근 메타분석에 따르면,
             <strong>사망률 감소를 위한 걸음 수 이득은 대략 8,000–10,000보/일에서 포화</strong>됩니다.
             다만 <strong>강도</strong>가 매우 중요하며,
             10,000보를 천천히 걷는 것보다 <strong>하루 30분 이상 100 spm 이상으로 걷는 것(Peak‑30)</strong>이
             건강 측면에서 더 큰 이득을 제공합니다.
-        </div>
-    </section>
-
-    <!-- Symmetry -->
-    <section id="symmetry">
-        <h2>보행 대칭성 기준</h2>
-
-        <h3>보행 대칭 지수(GSI)</h3>
-
-        <div class="formula-box">
-            <pre>
+        </div></section><section id="symmetry"><h2>보행 대칭성 기준</h2><h3>보행 대칭 지수(GSI)</h3><div class="formula-box"><pre>
 GSI (%) = |오른쪽 - 왼쪽| / [0.5 × (오른쪽 + 왼쪽)] × 100
 
 여기서 오른쪽/왼쪽 = 보폭 길이, 입각 시간, 유각 시간 등
 
 값이 낮을수록 대칭성이 좋음 (0% = 완전 대칭)
-            </pre>
-        </div>
-
-        <h3>GSI 기준값 (건강한 성인)</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>GSI 값</th>
-                        <th>분류</th>
-                        <th>해석</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>&lt;2%</strong></td>
-                        <td>매우 우수한 대칭성</td>
-                        <td>정상 건강한 성인, 효율적인 보행</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2–5%</strong></td>
-                        <td>좋은 대칭성</td>
-                        <td>정상 범위 내 변동, 특별한 문제 없음</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5–10%</strong></td>
-                        <td>경도 비대칭</td>
-                        <td>경미한 불균형, 피로, 자연스러운 변이 가능성</td>
-                    </tr>
-                    <tr>
-                        <td><strong>10–20%</strong></td>
-                        <td>중등도 비대칭</td>
-                        <td>주의 필요 – 부상, 근력 약화, 보상 패턴 가능성</td>
-                    </tr>
-                    <tr>
-                        <td><strong>&gt;20%</strong></td>
-                        <td>심한 비대칭</td>
-                        <td>임상적 우려 – 뇌졸중 이후, 큰 부상, 하지 길이 차이 등 병적 상태 가능성</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>연령에 따른 대칭성 변화</h3>
-
-        <p>
+            </pre></div><h3>GSI 기준값 (건강한 성인)</h3><div class="data-table"><table><thead><tr><th>GSI 값</th><th>분류</th><th>해석</th></tr></thead><tbody><tr><td><strong>&lt;2%</strong></td><td>매우 우수한 대칭성</td><td>정상 건강한 성인, 효율적인 보행</td></tr><tr><td><strong>2–5%</strong></td><td>좋은 대칭성</td><td>정상 범위 내 변동, 특별한 문제 없음</td></tr><tr><td><strong>5–10%</strong></td><td>경도 비대칭</td><td>경미한 불균형, 피로, 자연스러운 변이 가능성</td></tr><tr><td><strong>10–20%</strong></td><td>중등도 비대칭</td><td>주의 필요 – 부상, 근력 약화, 보상 패턴 가능성</td></tr><tr><td><strong>&gt;20%</strong></td><td>심한 비대칭</td><td>임상적 우려 – 뇌졸중 이후, 큰 부상, 하지 길이 차이 등 병적 상태 가능성</td></tr></tbody></table></div><h3>연령에 따른 대칭성 변화</h3><p>
             건강한 젊은 성인(20–40세)은 일반적으로 GSI &lt;3%를 보입니다.
             반면 65세 이상 고령자는 다음과 같은 이유로 약간 더 높은 비대칭(GSI 3–6%)을 보일 수 있습니다.
-        </p>
-        <ul>
-            <li>근력 감소, 특히 한쪽 다리의 상대적 약화</li>
-            <li>관절 강직 및 관절염</li>
-            <li>균형감 및 고유수용감각 감소</li>
-            <li>오랜 기간 누적된 경미한 부상과 보상 패턴</li>
-        </ul>
-
-        <div class="key-finding">
-            <strong>임상적 활용:</strong> GSI 모니터링은 다음 상황에서 특히 유용합니다.
-            <ul>
-                <li><strong>부상 후 재활:</strong> 회복이 진행되면서 대칭성이 어떻게 개선되는지 추적</li>
-                <li><strong>뇌졸중 재활:</strong> 편마비 보행의 개선 정도를 정량화</li>
-                <li><strong>보조기·의족 피팅:</strong> 장치 정렬을 최적화하여 대칭성 향상</li>
-                <li><strong>트레이닝 모니터링:</strong> 부상 전조가 될 수 있는 비대칭 증가를 조기에 발견</li>
-            </ul>
-        </div>
-
-        <h3>보폭 길이 대칭 기준</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>집단</th>
-                        <th>평균 GSI</th>
-                        <th>범위</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>건강한 젊은 성인 (20–40세)</strong></td>
-                        <td>1.8 ± 0.9%</td>
-                        <td>0.5–3.5%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>건강한 고령자 (65세 이상)</strong></td>
-                        <td>4.2 ± 2.1%</td>
-                        <td>2.0–7.0%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>레크리에이션 선수</strong></td>
-                        <td>2.1 ± 1.2%</td>
-                        <td>0.8–4.0%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ACL 재건술 후 6개월</strong></td>
-                        <td>8.5 ± 4.3%</td>
-                        <td>4.0–15.0%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>만성 뇌졸중 (지역사회 보행자)</strong></td>
-                        <td>18.2 ± 9.7%</td>
-                        <td>8.0–35.0%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Fitness -->
-    <section id="fitness">
-        <h2>체력 기반 분류</h2>
-
-        <h3>The Rockport Walking Test (1마일 걷기 테스트)</h3>
-
-        <p>
+        </p><ul><li>근력 감소, 특히 한쪽 다리의 상대적 약화</li><li>관절 강직 및 관절염</li><li>균형감 및 고유수용감각 감소</li><li>오랜 기간 누적된 경미한 부상과 보상 패턴</li></ul><div class="key-finding"><strong>임상적 활용:</strong> GSI 모니터링은 다음 상황에서 특히 유용합니다.
+            <ul><li><strong>부상 후 재활:</strong> 회복이 진행되면서 대칭성이 어떻게 개선되는지 추적</li><li><strong>뇌졸중 재활:</strong> 편마비 보행의 개선 정도를 정량화</li><li><strong>보조기·의족 피팅:</strong> 장치 정렬을 최적화하여 대칭성 향상</li><li><strong>트레이닝 모니터링:</strong> 부상 전조가 될 수 있는 비대칭 증가를 조기에 발견</li></ul></div><h3>보폭 길이 대칭 기준</h3><div class="data-table"><table><thead><tr><th>집단</th><th>평균 GSI</th><th>범위</th></tr></thead><tbody><tr><td><strong>건강한 젊은 성인 (20–40세)</strong></td><td>1.8 ± 0.9%</td><td>0.5–3.5%</td></tr><tr><td><strong>건강한 고령자 (65세 이상)</strong></td><td>4.2 ± 2.1%</td><td>2.0–7.0%</td></tr><tr><td><strong>레크리에이션 선수</strong></td><td>2.1 ± 1.2%</td><td>0.8–4.0%</td></tr><tr><td><strong>ACL 재건술 후 6개월</strong></td><td>8.5 ± 4.3%</td><td>4.0–15.0%</td></tr><tr><td><strong>만성 뇌졸중 (지역사회 보행자)</strong></td><td>18.2 ± 9.7%</td><td>8.0–35.0%</td></tr></tbody></table></div></section><section id="fitness"><h2>체력 기반 분류</h2><h3>The Rockport Walking Test (1마일 걷기 테스트)</h3><p>
             Rockport 걷기 테스트는 1마일(1.61 km)을 가능한 한 빠르게 걷고,
             소요 시간과 운동 직후 심박수를 이용해 VO₂max를 추정하는 검사입니다.
-        </p>
-
-        <div class="formula-box">
-            <pre>
+        </p><div class="formula-box"><pre>
 VO₂max (ml/kg/min) = 132.853
                       - (0.0769 × 체중(lbs))
                       - (0.3877 × 나이(년))
                       + (6.315 × 성별) [남성 = 1, 여성 = 0]
                       - (3.2649 × 시간(분))
                       - (0.1565 × 심박수(bpm))
-            </pre>
-        </div>
-
-        <h3>연령별 1마일 걷기 기록 벤치마크</h3>
-
-        <h4>남성 – 체력 수준</h4>
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>연령</th>
-                        <th>Poor</th>
-                        <th>Fair</th>
-                        <th>Good</th>
-                        <th>Excellent</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>20–29</strong></td>
-                        <td>&gt;18:00</td>
-                        <td>16:00–18:00</td>
-                        <td>14:00–16:00</td>
-                        <td>&lt;14:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>30–39</strong></td>
-                        <td>&gt;18:30</td>
-                        <td>16:30–18:30</td>
-                        <td>14:30–16:30</td>
-                        <td>&lt;14:30</td>
-                    </tr>
-                    <tr>
-                        <td><strong>40–49</strong></td>
-                        <td>&gt;19:00</td>
-                        <td>17:00–19:00</td>
-                        <td>15:00–17:00</td>
-                        <td>&lt;15:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>50–59</strong></td>
-                        <td>&gt;20:00</td>
-                        <td>18:00–20:00</td>
-                        <td>16:00–18:00</td>
-                        <td>&lt;16:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>60+</strong></td>
-                        <td>&gt;21:00</td>
-                        <td>19:00–21:00</td>
-                        <td>17:00–19:00</td>
-                        <td>&lt;17:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h4>여성 – 체력 수준</h4>
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>연령</th>
-                        <th>Poor</th>
-                        <th>Fair</th>
-                        <th>Good</th>
-                        <th>Excellent</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>20–29</strong></td>
-                        <td>&gt;19:00</td>
-                        <td>17:00–19:00</td>
-                        <td>15:00–17:00</td>
-                        <td>&lt;15:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>30–39</strong></td>
-                        <td>&gt;19:30</td>
-                        <td>17:30–19:30</td>
-                        <td>15:30–17:30</td>
-                        <td>&lt;15:30</td>
-                    </tr>
-                    <tr>
-                        <td><strong>40–49</strong></td>
-                        <td>&gt;20:00</td>
-                        <td>18:00–20:00</td>
-                        <td>16:00–18:00</td>
-                        <td>&lt;16:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>50–59</strong></td>
-                        <td>&gt;21:00</td>
-                        <td>19:00–21:00</td>
-                        <td>17:00–19:00</td>
-                        <td>&lt;17:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>60+</strong></td>
-                        <td>&gt;22:00</td>
-                        <td>20:00–22:00</td>
-                        <td>18:00–20:00</td>
-                        <td>&lt;18:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Race Walking -->
-    <section id="race-walking">
-        <h2>레이스 워킹 퍼포먼스 기준</h2>
-
-        <h3>엘리트 레이스 워킹 기록</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>거리</th>
-                        <th>남자 (세계 기록)</th>
-                        <th>여자 (세계 기록)</th>
-                        <th>평균 속도</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>20 km</strong></td>
-                        <td>1:16:36 (Toshikazu Yamanishi, JPN, 2024)</td>
-                        <td>1:24:38 (Yang Jiayu, CHN, 2021)</td>
-                        <td>4.35–3.94 m/s (15.7–14.2 km/h)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>35 km</strong></td>
-                        <td>2:23:57 (Yohann Diniz, FRA, 2017)</td>
-                        <td>2:39:41 (Lyudmila Olyanovska, UKR, 2012)</td>
-                        <td>4.07–3.67 m/s (14.6–13.2 km/h)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>50 km</strong></td>
-                        <td>3:32:33 (Yohann Diniz, FRA, 2014)</td>
-                        <td>3:59:15 (Yin Hang, CHN, 2019)</td>
-                        <td>3.91–3.48 m/s (14.1–12.5 km/h)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>비엘리트 레이스 워킹 기준</h3>
-
-        <h4>20 km 레이스 워킹</h4>
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>수준</th>
-                        <th>남자</th>
-                        <th>여자</th>
-                        <th>페이스 (분/km)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>국가 대표급</strong></td>
-                        <td>&lt;1:25:00</td>
-                        <td>&lt;1:35:00</td>
-                        <td>&lt;4:15–4:45</td>
-                    </tr>
-                    <tr>
-                        <td><strong>지역 경쟁급</strong></td>
-                        <td>1:25:00–1:40:00</td>
-                        <td>1:35:00–1:50:00</td>
-                        <td>4:15–5:30</td>
-                    </tr>
-                    <tr>
-                        <td><strong>클럽 레벨</strong></td>
-                        <td>1:40:00–2:00:00</td>
-                        <td>1:50:00–2:15:00</td>
-                        <td>5:00–6:45</td>
-                    </tr>
-                    <tr>
-                        <td><strong>레크리에이션</strong></td>
-                        <td>&gt;2:00:00</td>
-                        <td>&gt;2:15:00</td>
-                        <td>&gt;6:00–6:45</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3>레이스 워킹 기술 벤치마크</h3>
-
-        <div class="data-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>지표</th>
-                        <th>엘리트 레이스 워커</th>
-                        <th>일반 워커</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>케이던스</strong></td>
-                        <td>180–220 spm</td>
-                        <td>90–120 spm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>보폭 길이</strong></td>
-                        <td>1.0–1.3 m</td>
-                        <td>0.6–0.9 m</td>
-                    </tr>
-                    <tr>
-                        <td><strong>속도</strong></td>
-                        <td>3.9–4.5 m/s (14–16 km/h)</td>
-                        <td>1.2–1.5 m/s (4.3–5.4 km/h)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>수직 진동</strong></td>
-                        <td>2–4 cm (매우 적음)</td>
-                        <td>4–7 cm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>고관절 회전</strong></td>
-                        <td>15–20° (과장된 회전)</td>
-                        <td>5–8° (자연스러운 회전)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>지면 접촉 시간</strong></td>
-                        <td>0.25–0.35 s</td>
-                        <td>0.6–0.8 s</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Summary -->
-    <section id="summary">
-        <h2>벤치마크를 효과적으로 활용하기</h2>
-
-        <div class="key-points">
-            <h3>핵심 원칙:</h3>
-            <ol>
-                <li><strong>맥락이 중요:</strong> 보편적인 기준이 아니라, 자신의 연령·성별·건강 상태에 맞는 규범과 비교하세요.</li>
-
-                <li><strong>개인차 허용:</strong> 벤치마크에서 ±10–20% 정도의 차이는 정상입니다. 유전, 운동 이력, 생체역학적 차이가 큰 변이를 만듭니다.</li>
-
-                <li><strong>완벽보다 향상:</strong> 임의의 목표 값을 맞추는 것보다, 보행 속도를 0.1 m/s 높이는 등
-                    <strong>자신의 지표를 시간이 지남에 따라 개선</strong>하는 것이 더 중요합니다.</li>
-
-                <li><strong>임상적 임계값:</strong> 어떤 기준은 임상적으로 매우 중요합니다
-                    (예: 보행 속도 &gt;1.0 m/s, Peak‑30 ≥100 spm). 다른 값들은 설명적 지표일 뿐입니다.</li>
-
-                <li><strong>단일 지표에 의존 금지:</strong> 보행 속도, 케이던스, Peak‑30, 대칭성, 거리 등을
-                    함께 보아야 전체적인 그림을 얻을 수 있습니다.</li>
-
-                <li><strong>현실적인 목표 설정:</strong> 현재 수준을 기준으로 SMART 목표를 설정하세요.
-                    <ul>
-                        <li>좌식 → 낮은 활동: 케이던스 +20–30 spm, 속도 +0.2 m/s</li>
-                        <li>낮은 활동 → 중간 활동: Peak‑30 ≥90 spm을 일관되게 달성</li>
-                        <li>중간 활동 → 활동적: Peak‑30 ≥100 spm, 하루 7,500보 이상</li>
-                    </ul>
-                </li>
-
-                <li><strong>추세 모니터링:</strong> 월별·분기별로 지표를 추적하고,
-                    개선이 지속되고 있는지 혹은 우려되는 감소가 있는지 확인하세요.</li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- Related Resources -->
-    <section id="related">
-        <h2>관련 자료</h2>
-        <div class="resource-links">
-            <ul>
-                <li><a href="/ko/walking-zones/">케이던스 기반 트레이닝 존</a> – 이 벤치마크를 활용해 강도를 설정하세요</li>
-                <li><a href="/ko/gait-analysis/">보행 분석 지표</a> – 7가지 핵심 지표 이해하기</li>
-                <li><a href="/ko/training-load/">트레이닝 부하 관리</a> – Peak‑30 추적과 ACWR</li>
-                <li><a href="/ko/for-seniors/">고령자를 위한 걷기</a> – 연령별 권장 가이드라인</li>
-                <li><a href="/ko/formulas/">과학적 공식</a> – 직접 자신의 지표를 계산해 보기</li>
-                <li><a href="/ko/bibliography/">참고 문헌</a> – 모든 벤치마크의 근거가 되는 연구</li>
-            </ul>
-        </div>
-    </section>
-
-</div>
-
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+            </pre></div><h3>연령별 1마일 걷기 기록 벤치마크</h3><h4>남성 – 체력 수준</h4><div class="data-table"><table><thead><tr><th>연령</th><th>Poor</th><th>Fair</th><th>Good</th><th>Excellent</th></tr></thead><tbody><tr><td><strong>20–29</strong></td><td>&gt;18:00</td><td>16:00–18:00</td><td>14:00–16:00</td><td>&lt;14:00</td></tr><tr><td><strong>30–39</strong></td><td>&gt;18:30</td><td>16:30–18:30</td><td>14:30–16:30</td><td>&lt;14:30</td></tr><tr><td><strong>40–49</strong></td><td>&gt;19:00</td><td>17:00–19:00</td><td>15:00–17:00</td><td>&lt;15:00</td></tr><tr><td><strong>50–59</strong></td><td>&gt;20:00</td><td>18:00–20:00</td><td>16:00–18:00</td><td>&lt;16:00</td></tr><tr><td><strong>60+</strong></td><td>&gt;21:00</td><td>19:00–21:00</td><td>17:00–19:00</td><td>&lt;17:00</td></tr></tbody></table></div><h4>여성 – 체력 수준</h4><div class="data-table"><table><thead><tr><th>연령</th><th>Poor</th><th>Fair</th><th>Good</th><th>Excellent</th></tr></thead><tbody><tr><td><strong>20–29</strong></td><td>&gt;19:00</td><td>17:00–19:00</td><td>15:00–17:00</td><td>&lt;15:00</td></tr><tr><td><strong>30–39</strong></td><td>&gt;19:30</td><td>17:30–19:30</td><td>15:30–17:30</td><td>&lt;15:30</td></tr><tr><td><strong>40–49</strong></td><td>&gt;20:00</td><td>18:00–20:00</td><td>16:00–18:00</td><td>&lt;16:00</td></tr><tr><td><strong>50–59</strong></td><td>&gt;21:00</td><td>19:00–21:00</td><td>17:00–19:00</td><td>&lt;17:00</td></tr><tr><td><strong>60+</strong></td><td>&gt;22:00</td><td>20:00–22:00</td><td>18:00–20:00</td><td>&lt;18:00</td></tr></tbody></table></div></section><section id="race-walking"><h2>레이스 워킹 퍼포먼스 기준</h2><h3>엘리트 레이스 워킹 기록</h3><div class="data-table"><table><thead><tr><th>거리</th><th>남자 (세계 기록)</th><th>여자 (세계 기록)</th><th>평균 속도</th></tr></thead><tbody><tr><td><strong>20 km</strong></td><td>1:16:36 (Toshikazu Yamanishi, JPN, 2024)</td><td>1:24:38 (Yang Jiayu, CHN, 2021)</td><td>4.35–3.94 m/s (15.7–14.2 km/h)</td></tr><tr><td><strong>35 km</strong></td><td>2:23:57 (Yohann Diniz, FRA, 2017)</td><td>2:39:41 (Lyudmila Olyanovska, UKR, 2012)</td><td>4.07–3.67 m/s (14.6–13.2 km/h)</td></tr><tr><td><strong>50 km</strong></td><td>3:32:33 (Yohann Diniz, FRA, 2014)</td><td>3:59:15 (Yin Hang, CHN, 2019)</td><td>3.91–3.48 m/s (14.1–12.5 km/h)</td></tr></tbody></table></div><h3>비엘리트 레이스 워킹 기준</h3><h4>20 km 레이스 워킹</h4><div class="data-table"><table><thead><tr><th>수준</th><th>남자</th><th>여자</th><th>페이스 (분/km)</th></tr></thead><tbody><tr><td><strong>국가 대표급</strong></td><td>&lt;1:25:00</td><td>&lt;1:35:00</td><td>&lt;4:15–4:45</td></tr><tr><td><strong>지역 경쟁급</strong></td><td>1:25:00–1:40:00</td><td>1:35:00–1:50:00</td><td>4:15–5:30</td></tr><tr><td><strong>클럽 레벨</strong></td><td>1:40:00–2:00:00</td><td>1:50:00–2:15:00</td><td>5:00–6:45</td></tr><tr><td><strong>레크리에이션</strong></td><td>&gt;2:00:00</td><td>&gt;2:15:00</td><td>&gt;6:00–6:45</td></tr></tbody></table></div><h3>레이스 워킹 기술 벤치마크</h3><div class="data-table"><table><thead><tr><th>지표</th><th>엘리트 레이스 워커</th><th>일반 워커</th></tr></thead><tbody><tr><td><strong>케이던스</strong></td><td>180–220 spm</td><td>90–120 spm</td></tr><tr><td><strong>보폭 길이</strong></td><td>1.0–1.3 m</td><td>0.6–0.9 m</td></tr><tr><td><strong>속도</strong></td><td>3.9–4.5 m/s (14–16 km/h)</td><td>1.2–1.5 m/s (4.3–5.4 km/h)</td></tr><tr><td><strong>수직 진동</strong></td><td>2–4 cm (매우 적음)</td><td>4–7 cm</td></tr><tr><td><strong>고관절 회전</strong></td><td>15–20° (과장된 회전)</td><td>5–8° (자연스러운 회전)</td></tr><tr><td><strong>지면 접촉 시간</strong></td><td>0.25–0.35 s</td><td>0.6–0.8 s</td></tr></tbody></table></div></section><section id="summary"><h2>벤치마크를 효과적으로 활용하기</h2><div class="key-points"><h3>핵심 원칙:</h3><ol><li><strong>맥락이 중요:</strong> 보편적인 기준이 아니라, 자신의 연령·성별·건강 상태에 맞는 규범과 비교하세요.</li><li><strong>개인차 허용:</strong> 벤치마크에서 ±10–20% 정도의 차이는 정상입니다. 유전, 운동 이력, 생체역학적 차이가 큰 변이를 만듭니다.</li><li><strong>완벽보다 향상:</strong> 임의의 목표 값을 맞추는 것보다, 보행 속도를 0.1 m/s 높이는 등
+                    <strong>자신의 지표를 시간이 지남에 따라 개선</strong>하는 것이 더 중요합니다.</li><li><strong>임상적 임계값:</strong> 어떤 기준은 임상적으로 매우 중요합니다
+                    (예: 보행 속도 &gt;1.0 m/s, Peak‑30 ≥100 spm). 다른 값들은 설명적 지표일 뿐입니다.</li><li><strong>단일 지표에 의존 금지:</strong> 보행 속도, 케이던스, Peak‑30, 대칭성, 거리 등을
+                    함께 보아야 전체적인 그림을 얻을 수 있습니다.</li><li><strong>현실적인 목표 설정:</strong> 현재 수준을 기준으로 SMART 목표를 설정하세요.
+                    <ul><li>좌식 → 낮은 활동: 케이던스 +20–30 spm, 속도 +0.2 m/s</li><li>낮은 활동 → 중간 활동: Peak‑30 ≥90 spm을 일관되게 달성</li><li>중간 활동 → 활동적: Peak‑30 ≥100 spm, 하루 7,500보 이상</li></ul></li><li><strong>추세 모니터링:</strong> 월별·분기별로 지표를 추적하고,
+                    개선이 지속되고 있는지 혹은 우려되는 감소가 있는지 확인하세요.</li></ol></div></section><section id="related"><h2>관련 자료</h2><div class="resource-links"><ul><li><a href="/ko/walking-zones/">케이던스 기반 트레이닝 존</a> – 이 벤치마크를 활용해 강도를 설정하세요</li><li><a href="/ko/gait-analysis/">보행 분석 지표</a> – 7가지 핵심 지표 이해하기</li><li><a href="/ko/training-load/">트레이닝 부하 관리</a> – Peak‑30 추적과 ACWR</li><li><a href="/ko/for-seniors/">고령자를 위한 걷기</a> – 연령별 권장 가이드라인</li><li><a href="/ko/formulas/">과학적 공식</a> – 직접 자신의 지표를 계산해 보기</li><li><a href="/ko/bibliography/">참고 문헌</a> – 모든 벤치마크의 근거가 되는 연구</li></ul></div></section></div></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link active"
+                </a><a href="/ko/" class="lang-link active"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. 모든 권리 보유
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/ko/privacy/">개인정보 보호</a></li>
-                <li><a href="/ko/terms/">이용약관</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>이 웹사이트는 사용자 경험을 개선하기 위해 쿠키를 사용합니다.</p>
-            <a href="/ko/privacy/" class="text-sm">자세히 알아보기</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">거부</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">수락</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/ko/privacy/">개인정보 보호</a></li><li><a href="/ko/terms/">이용약관</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>이 웹사이트는 사용자 경험을 개선하기 위해 쿠키를 사용합니다.</p><a href="/ko/privacy/" class="text-sm">자세히 알아보기</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">거부</button><button id="cookie-accept" class="btn btn-primary btn-small">수락</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

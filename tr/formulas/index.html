@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="tr" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Yürüyüş Metrikleri Formülleri - WSS, Yürüyüş ve Sağlık Metrikleri</title>
-  <meta name="description" content="Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="yürüyüş formülleri, WSS formülü, yürüyüş metrikleri hesaplaması, kadans formülü, yürüyüş verimlilik hesaplaması">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/tr/formulas/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-12-31T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/tr/formulas/">
-  <meta property="og:title" content="Yürüyüş Metrikleri Formülleri - WSS, Yürüyüş ve Sağlık Metrikleri">
-  <meta property="og:description" content="Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="tr_TR">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/tr/formulas/">
-  <meta name="twitter:title" content="Yürüyüş Metrikleri Formülleri - WSS, Yürüyüş ve Sağlık Metrikleri">
-  <meta name="twitter:description" content="Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Yürüyüş Metrikleri Formülleri - WSS, Yürüyüş ve Sağlık Metrikleri</title><meta name="description" content="Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="yürüyüş formülleri, WSS formülü, yürüyüş metrikleri hesaplaması, kadans formülü, yürüyüş verimlilik hesaplaması"><link rel="canonical" href="https://walk.analyticszone.app/tr/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-31T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/tr/formulas/"><meta property="og:title" content="Yürüyüş Metrikleri Formülleri - WSS, Yürüyüş ve Sağlık Metrikleri"><meta property="og:description" content="Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="tr_TR"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/tr/formulas/"><meta name="twitter:title" content="Yürüyüş Metrikleri Formülleri - WSS, Yürüyüş ve Sağlık Metrikleri"><meta name="twitter:description" content="Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "tr"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "Yürüyüş analitiğinin arkasındaki matematiksel formüller. WSS, adım metrikleri, kadans ve verimlilik skorlarının nasıl hesaplandığını öğrenin. Bilime dayalı metodoloji.",
   "url": "https://walk.analyticszone.app/tr/formulas/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/tr/formulas/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1570 +449,365 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">İçeriğe atla</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/tr/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/tr/" 
+  </script></head><body><a href="#main-content" class="skip-link">İçeriğe atla</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/tr/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/tr/" 
                                 aria-current="">
                                 Ana Sayfa
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tr/getting-started/" class="nav-label">Öğren</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tr/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/tr/getting-started/" class="nav-label">Öğren</a><ul class="submenu"><li><a href="/tr/getting-started/" 
                                         aria-current="">
                                         Başlangıç
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/walking-zones/" 
+                                    </a></li><li><a href="/tr/walking-zones/" 
                                         aria-current="">
                                         Yürüyüş Bölgeleri
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/gait-analysis/" 
+                                    </a></li><li><a href="/tr/gait-analysis/" 
                                         aria-current="">
                                         Yürüyüş Analizi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/training-load/" 
+                                    </a></li><li><a href="/tr/training-load/" 
                                         aria-current="">
                                         Antrenman Yükü
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/wss-calculator/" 
+                                    </a></li><li><a href="/tr/wss-calculator/" 
                                         aria-current="">
                                         WSS Hesaplayıcı
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tr/research/" class="nav-label">Bilim</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tr/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/tr/research/" class="nav-label">Bilim</a><ul class="submenu"><li><a href="/tr/research/" 
                                         aria-current="">
                                         Araştırma
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/formulas/" class="active" 
+                                    </a></li><li><a href="/tr/formulas/" class="active" 
                                         aria-current="page">
                                         Formüller
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/gait-efficiency/" 
+                                    </a></li><li><a href="/tr/gait-efficiency/" 
                                         aria-current="">
                                         Yürüyüş Verimliliği
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/stride-mechanics/" 
+                                    </a></li><li><a href="/tr/stride-mechanics/" 
                                         aria-current="">
                                         Adım Mekaniği
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/walking-vs-running/" 
+                                    </a></li><li><a href="/tr/walking-vs-running/" 
                                         aria-current="">
                                         Yürüyüş vs Koşu
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/benchmarks/" 
+                                    </a></li><li><a href="/tr/benchmarks/" 
                                         aria-current="">
                                         Performans Kriterleri
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/bibliography/" 
+                                    </a></li><li><a href="/tr/bibliography/" 
                                         aria-current="">
                                         Kaynakça
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tr/for-health/" class="nav-label">Senin İçin</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tr/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/tr/for-health/" class="nav-label">Senin İçin</a><ul class="submenu"><li><a href="/tr/for-health/" 
                                         aria-current="">
                                         Sağlık İçin
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/for-fitness/" 
+                                    </a></li><li><a href="/tr/for-fitness/" 
                                         aria-current="">
                                         Fitness İçin
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/for-seniors/" 
+                                    </a></li><li><a href="/tr/for-seniors/" 
                                         aria-current="">
                                         Yaşlılar İçin
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/for-rehabilitation/" 
+                                    </a></li><li><a href="/tr/for-rehabilitation/" 
                                         aria-current="">
                                         Rehabilitasyon İçin
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tr/cadence-calculator/" class="nav-label">Araçlar</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tr/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/tr/cadence-calculator/" class="nav-label">Araçlar</a><ul class="submenu"><li><a href="/tr/cadence-calculator/" 
                                         aria-current="">
                                         Kadans Hesaplayıcı
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/gait-assessment/" 
+                                    </a></li><li><a href="/tr/gait-assessment/" 
                                         aria-current="">
                                         Yürüyüş Değerlendirmesi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tr/vo2max-calculator/" 
+                                    </a></li><li><a href="/tr/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max Hesaplayıcı
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/tr/contact/" 
+                                    </a></li></ul></li><li><a href="/tr/contact/" 
                                 aria-current="">
                                 İletişim
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Dil seçin">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Dil seçin"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" selected>
+                        </option><option value="tr" selected>
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/tr/">Ana Sayfa</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/tr/research/">Bilim</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">Formüller</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Walking Metrics Formulas -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/tr/">Ana Sayfa</a> / <a href="/tr/#science">Bilim</a> / Formüller
-    </div>
-    <h1>Yürüyüş Metrikleri Formülleri ve Denklemleri</h1>
-    <p class="lead">Yürüyüş analitiğinin matematiksel temelleri – yoğunluk, enerji ve performans için bilimsel olarak doğrulanmış denklemler</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <div class="intro-note">
-          <p>Bu sayfa, yürüyüş analitiğinde kullanılan bilimsel olarak doğrulanmış formülleri sunmaktadır. Tüm denklemler araştırma referansları ve doğrulanmış doğruluk aralıklarıyla birlikte verilmiştir.</p>
-        </div>
-
-        <h2 id="cadence-mets">1. Kadans'tan METs'e Dönüşüm</h2>
-
-        <div class="formula-section featured">
-          <h3>Moore ve ark. (2021) Kadans Tabanlı Metabolik Denklem</h3>
-
-          <div class="formula-box primary">
-            <p class="formula-title">Kadans'tan METs'e</p>
-            <p class="formula-main"><strong>METs = 0.0219 × Kadans (adım/dk) + 0.72</strong></p>
-            <p class="formula-meta">
-              <span class="accuracy">Doğruluk: ±0.5 METs</span>
-              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
-            </p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Bu formülün önemi:</strong> Bu denklem, yürüyüş için geleneksel ACSM hız tabanlı denklemlerden <strong>%23-35 daha doğrudur</strong>. Çalışır çünkü kadans doğrudan hareket sıklığını ve enerji harcamasını yansıtır, oysa hız değişken adım uzunluğuna bağlıdır.</p>
-          </div>
-
-          <h4>Örnekler:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100 adım/dk'da yürüme:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
-              <p class="example-interpretation">≈ 3 METs = <strong>Orta yoğunluk eşiği</strong> ✓</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>110 adım/dk'da yürüme:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
-              <p class="example-interpretation">Sağlam orta yoğunluk</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>120 adım/dk'da yürüme:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
-              <p class="example-interpretation">Orta-yüksek yoğunluk</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>130 adım/dk'da yürüme:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
-              <p class="example-interpretation"><strong>Yüksek yoğunluk eşiği</strong> (CADENCE-Adults doğrudan ölçümüyle 6 METs)</p>
-            </div>
-          </div>
-
-          <div class="formula-note">
-            <p><strong>Not:</strong> CADENCE-Adults çalışması, kontrollü laboratuvar koşullarında 130 adım/dk'nın 6 METs'e eşit olduğunu doğrudan ölçmüştür. Moore denklemi 80-130 adım/dk aralığı için tasarlanmıştır ve çok yüksek kadanslarda düşük tahmin verebilir.</p>
-          </div>
-
-          <h4>Doğrulama Verileri:</h4>
-          <ul>
-            <li><strong>Örneklem:</strong> 21-40 yaş arası 76 yetişkin</li>
-            <li><strong>Yöntem:</strong> Endirekt kalorimetri (altın standart)</li>
-            <li><strong>R² değeri:</strong> 0.87 (mükemmel korelasyon)</li>
-            <li><strong>Ortalama mutlak hata:</strong> 0.47 METs</li>
-            <li><strong>Geçerli aralık:</strong> 80-130 adım/dk</li>
-          </ul>
-        </div>
-
-        <h2 id="acsm-vo2">2. Yürüyüş için ACSM VO₂ Denklemleri</h2>
-
-        <div class="formula-section">
-          <h3>ACSM Metabolik Hesaplamaları</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Düz Yürüyüş (0% eğim)</p>
-            <p class="formula-main"><strong>VO₂ (mL/kg/dk) = 0.1 × Hız (m/dk) + 3.5</strong></p>
-            <p class="formula-note">Hız metre/dakika cinsindendir (km/sa'i 16.67 ile veya mil/sa'i 26.82 ile çarpın)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Eğimli Yürüyüş (yokuş yukarı/aşağı)</p>
-            <p class="formula-main"><strong>VO₂ = 0.1(Hız) + 1.8(Hız)(Eğim) + 3.5</strong></p>
-            <p class="formula-note">Eğim ondalık olarak ifade edilir (örn. %5 = 0.05)</p>
-          </div>
-
-          <h4>Örnekler:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Düz zeminde 5 km/sa (83.3 m/dk) hızla yürüme:</strong></p>
-              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/dk</strong></p>
-              <p class="example-conversion">METs'e dönüştürme: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>%5 eğimde 5 km/sa hızla yürüme:</strong></p>
-              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
-              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/dk</strong></p>
-              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
-              <p class="example-interpretation">Eğim yoğunluğu ~%64 artırır!</p>
-            </div>
-          </div>
-
-          <div class="conversion-helper">
-            <h4>Hız Dönüşümleri:</h4>
-            <ul>
-              <li><strong>km/sa'den m/dk'ya:</strong> 16.67 ile çarpın</li>
-              <li><strong>mil/sa'den m/dk'ya:</strong> 26.82 ile çarpın</li>
-              <li><strong>m/s'den m/dk'ya:</strong> 60 ile çarpın</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="energy-expenditure">3. Enerji Harcaması ve Kalori Yakımı</h2>
-
-        <div class="formula-section">
-          <h3>Doğru Kalori Hesaplaması</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Dakika Başına Kalori</p>
-            <p class="formula-main"><strong>Kal/dk = (METs × 3.5 × Vücut Ağırlığı kg) / 200</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Seans İçin Toplam Kalori</p>
-            <p class="formula-main"><strong>Toplam Kalori = Kal/dk × Süre (dakika)</strong></p>
-          </div>
-
-          <h4>Örnekler:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>70 kg kişi 45 dakika boyunca 100 adım/dk'da (3 METs) yürüyor:</strong></p>
-              <p class="example-calc">Kal/dk = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 kal/dk</strong></p>
-              <p class="example-calc">Toplam = 3.675 × 45 = <strong>165.4 kalori</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>85 kg kişi 30 dakika boyunca 120 adım/dk'da (5 METs) yürüyor:</strong></p>
-              <p class="example-calc">Kal/dk = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 kal/dk</strong></p>
-              <p class="example-calc">Toplam = 7.44 × 30 = <strong>223.2 kalori</strong></p>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h4>Neden Bu Formül?</h4>
-            <p>Bu denklem MET (Metabolik Eşdeğer Görev) tanımından gelir:</p>
-            <ul>
-              <li>1 MET = 3.5 mL O₂/kg/dk (dinlenme metabolik hızı)</li>
-              <li>1 litre tüketilen O₂ ≈ 5 kkal yakılır</li>
-              <li>Dönüştürme: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
-            </ul>
-          </div>
-
-          <h3>Net Kalori Yakımı (Sadece Egzersiz)</h3>
-          <div class="formula-box">
-            <p class="formula-title">Net Kalori (dinlenme hariç)</p>
-            <p class="formula-main"><strong>Net Kal/dk = [(METs - 1) × 3.5 × Vücut Ağırlığı] / 200</strong></p>
-            <p class="formula-note">Dinlenme durumunda zaten yakacağınız kalorileri hariç tutmak için 1 MET çıkarılır</p>
-          </div>
-
-          <div class="calc-example">
-            <p class="example-input"><strong>70 kg, 3 METs, 45 dk – Net kalori:</strong></p>
-            <p class="example-calc">Net = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 net kalori</strong></p>
-            <p class="example-interpretation">toplam 165.4 kaloriye karşı (55 kalori zaten dinlenme halinde yakılırdı)</p>
-          </div>
-        </div>
-
-        <h2 id="gait-symmetry">4. Yürüyüş Simetri İndeksi (GSI)</h2>
-
-        <div class="formula-section">
-          <h3>Sol-Sağ Asimetrinin Ölçülmesi</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Yürüyüş Simetri İndeksi</p>
-            <p class="formula-main"><strong>GSI (%) = |Sağ - Sol| / [0.5 × (Sağ + Sol)] × 100</strong></p>
-            <p class="formula-note">Adım uzunluğu, adım süresi veya temas süresine uygulanabilir</p>
-          </div>
-
-          <h4>Yorumlama:</h4>
-          <ul>
-            <li><strong>&lt;%2-3:</strong> Normal, simetrik yürüyüş</li>
-            <li><strong>%3-5:</strong> Hafif asimetri</li>
-            <li><strong>%5-10:</strong> Orta asimetri, izlenmeli</li>
-            <li><strong>&gt;%10:</strong> Klinik olarak anlamlı, profesyonel değerlendirme gerekli</li>
-          </ul>
-
-          <h4>Örnekler:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Adım süreleri: Sağ = 520 ms, Sol = 480 ms</strong></p>
-              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
-              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>%8 asimetri</strong></p>
-              <p class="example-interpretation">Orta asimetri – zayıf tarafı güçlendirmeyi düşünün</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Adım uzunlukları: Sağ = 1.42 m, Sol = 1.38 m</strong></p>
-              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
-              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>%2.86 asimetri</strong></p>
-              <p class="example-interpretation">Normal, sağlıklı aralık ✓</p>
-            </div>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>Klinik Not:</strong> Apple HealthKit'in Yürüyüş Asimetrisi biraz farklı bir hesaplama kullanır (adım süreleri arasında basit yüzde farkı) ancak yorumlama eşikleri benzerdir.</p>
-          </div>
-        </div>
-
-        <h2 id="walk-score">5. WALK Skoru (Walk Analytics Özel Metriği)</h2>
-
-        <div class="formula-section">
-          <h3>Yürüyüş Verimliliği Skoru</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">WALK Skoru</p>
-            <p class="formula-main"><strong>WALK Skoru = Süre (saniye) + 100 metre başına adım</strong></p>
-            <p class="formula-note">Düşük skor = daha iyi verimlilik</p>
-          </div>
-
-          <h4>Nasıl Çalışır:</h4>
-          <p>WALK Skoru, yürüyüş verimliliğini ölçmek için süre ve adım sayısını birleştirir. 100m'yi 75 saniyede 140 adımla kaplayan bir yürüyücü 215 WALK Skoruna sahiptir. Hızı VEYA adım verimliliğini iyileştirmek skoru düşürür.</p>
-
-          <h4>Örnekler:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100m'yi 80 saniyede, 120 adımla:</strong></p>
-              <p class="example-calc">WALK Skoru = 80 + 120 = <strong>200</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100m'yi 70 saniyede, 110 adımla:</strong></p>
-              <p class="example-calc">WALK Skoru = 70 + 110 = <strong>180</strong></p>
-              <p class="example-interpretation">Gelişmiş hız + adım ile daha iyi verimlilik</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100m'yi 60 saniyede, 130 adımla (yarış yürüyüşü):</strong></p>
-              <p class="example-calc">WALK Skoru = 60 + 130 = <strong>190</strong></p>
-              <p class="example-interpretation">Hızlı ama daha kısa adımlar</p>
-            </div>
-          </div>
-
-          <h4>Tipik Aralıklar:</h4>
-          <ul>
-            <li><strong>&gt;250:</strong> Yavaş/verimsiz yürüyüş, olası mobilite sorunları</li>
-            <li><strong>200-250:</strong> Gündelik yürüyücü, ortalama verimlilik</li>
-            <li><strong>170-200:</strong> Fitness yürüyücüsü, iyi verimlilik</li>
-            <li><strong>150-170:</strong> İleri düzey yürüyücü, mükemmel verimlilik</li>
-            <li><strong>&lt;150:</strong> Elit/yarış yürüyüşü seviyesi</li>
-          </ul>
-
-          <div class="tip-box">
-            <p><strong>WALK Skoru ile Antrenman:</strong> Aynı 100m parkurda haftalık olarak skorunuzu takip edin. İyileştirmeler gelişmiş nöromüsküler koordinasyon, güç ve yürüyüş ekonomisi gösterir.</p>
-          </div>
-        </div>
-
-        <h2 id="basic-metrics">6. Temel Yürüyüş Metrikleri</h2>
-
-        <div class="formula-section">
-          <h3>Temel Hesaplamalar</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Yürüyüş Hızı</p>
-            <p class="formula-main"><strong>Hız (m/s) = Mesafe (m) / Süre (s)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Toplam Adımdan Kadans</p>
-            <p class="formula-main"><strong>Kadans (adım/dk) = Toplam Adım / Süre (dakika)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Adım Uzunluğu</p>
-            <p class="formula-main"><strong>Adım Uzunluğu (m) = Mesafe (m) / (Adım / 2)</strong></p>
-            <p class="formula-note">Adımı 2'ye bölün çünkü bir adım = iki step</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Step Uzunluğu</p>
-            <p class="formula-main"><strong>Step Uzunluğu (m) = Mesafe (m) / Adım</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Kadans ve Adım Uzunluğundan Hız</p>
-            <p class="formula-main"><strong>Hız = Adım Uzunluğu × (Kadans / 2) / 60</strong></p>
-            <p class="formula-note">Veya: Hız (m/s) = Step Uzunluğu × Kadans / 60</p>
-          </div>
-
-          <h4>Örnek İş Akışı:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>1000m'yi 12 dakikada 1320 adımla yürüme:</strong></p>
-            <p><strong>Hız:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
-            <p><strong>Kadans:</strong> 1320 adım / 12 dk = <strong>110 adım/dk</strong></p>
-            <p><strong>Adım Uzunluğu:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
-            <p><strong>Step Uzunluğu:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
-          </div>
-        </div>
-
-        <h2 id="heart-rate">7. Kalp Hızı Bölgesi Hesaplamaları</h2>
-
-        <div class="formula-section">
-          <h3>Geleneksel Kalp Hızı Bölgesi Yöntemi</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Maksimum Kalp Hızı Tahmini</p>
-            <p class="formula-main"><strong>Maks KH = 220 - Yaş</strong></p>
-            <p class="formula-note">Basit ama ±10-15 vuru/dk bireysel varyasyon</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Alternatif: Tanaka Formülü (daha doğru)</p>
-            <p class="formula-main"><strong>Maks KH = 208 - (0.7 × Yaş)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Bölge Aralığı Hesaplaması</p>
-            <p class="formula-main"><strong>Bölge = Maks KH × (Alt%, Üst%)</strong></p>
-          </div>
-
-          <h4>Örnek: 40 yaşında</h4>
-          <div class="calc-example">
-            <p><strong>Geleneksel:</strong> Maks KH = 220 - 40 = <strong>180 vuru/dk</strong></p>
-            <p><strong>Tanaka:</strong> Maks KH = 208 - (0.7 × 40) = 208 - 28 = <strong>180 vuru/dk</strong></p>
-            <p><strong>Bölge 2 (%60-70):</strong> 180 × 0.60 = 108 vuru/dk ile 180 × 0.70 = 126 vuru/dk arası</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Not:</strong> Kalp hızı bölgeleri yararlı olsa da, <strong>kadans tabanlı bölgeler yürüyüş için daha doğru ve pratiktir</strong> (Yürüyüş Bölgeleri kılavuzuna bakın).</p>
-          </div>
-        </div>
-
-        <h2 id="cost-transport">8. Taşıma Maliyeti ve Yürüyüş Ekonomisi</h2>
-
-        <div class="formula-section">
-          <h3>Yürüyüşün Enerji Maliyeti</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Taşıma Maliyeti (C)</p>
-            <p class="formula-main"><strong>C = Harcanan Enerji / (Vücut Kütlesi × Mesafe)</strong></p>
-            <p class="formula-note">Birimler: J/kg/m veya mL O₂/kg/m</p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>U-Şekilli Eğri:</strong> Yürüyüş ekonomisi U-şekilli bir eğri izler. Taşıma maliyetinin minimize edildiği optimal bir hız vardır (tipik olarak 1.2-1.4 m/s veya 4.3-5.0 km/sa). Bu hızdan daha yavaş VEYA daha hızlı yürümek kat edilen mesafe başına enerji maliyetini artırır.</p>
-          </div>
-
-          <h4>Taşıma Maliyetini Etkileyen Faktörler:</h4>
-          <ul>
-            <li><strong>Hız:</strong> U-şekilli ilişki (optimal yaklaşık 1.3 m/s civarında)</li>
-            <li><strong>Eğim:</strong> Yokuş yukarı maliyeti önemli ölçüde artırır; yokuş aşağı eksentrik maliyeti artırır</li>
-            <li><strong>Vücut kütlesi:</strong> Daha ağır bireyler daha yüksek mutlak ancak benzer göreli maliyete sahiptir</li>
-            <li><strong>Adım mekaniği:</strong> Optimal adım uzunluğu maliyeti minimize eder</li>
-            <li><strong>Arazi:</strong> Engebeli yüzeyler düz kaldırıma göre maliyeti artırır</li>
-          </ul>
-
-          <div class="formula-box">
-            <p class="formula-title">Eğime Göre Ayarlanmış Maliyet</p>
-            <p class="formula-main"><strong>Maliyet çarpanı = 1 + (Eğim × 10)</strong></p>
-            <p class="formula-note">Kaba yaklaşım: %1 eğim başına +%10 maliyet</p>
-          </div>
-
-          <h4>Örnek:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>%5 eğimde yürüme:</strong></p>
-            <p class="example-calc">Maliyet çarpanı = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
-            <p class="example-interpretation">Düz zemine göre enerji maliyetinde %50 artış</p>
-          </div>
-        </div>
-
-        <h2 id="training-load">9. Antrenman Yükü ve Stres Skoru</h2>
-
-        <div class="formula-section">
-          <h3>Yürüyüş Stres Skoru (WSS)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Bölge Tabanlı WSS</p>
-            <p class="formula-main"><strong>WSS = Σ (Bölgedeki Dakika × Bölge Faktörü)</strong></p>
-            <p>Bölge 1: ×1.0 | Bölge 2: ×2.0 | Bölge 3: ×3.0 | Bölge 4: ×4.0 | Bölge 5: ×5.0</p>
-          </div>
-
-          <h4>Örnek: 60 dakikalık yürüyüş</h4>
-          <div class="calc-example">
-            <p>10 dk Bölge 1 × 1 = 10 puan</p>
-            <p>40 dk Bölge 2 × 2 = 80 puan</p>
-            <p>10 dk Bölge 3 × 3 = 30 puan</p>
-            <p><strong>Toplam WSS = 120</strong></p>
-          </div>
-
-          <h3>Haftalık Antrenman Yükü</h3>
-          <div class="formula-box">
-            <p class="formula-title">Haftalık Yük</p>
-            <p class="formula-main"><strong>Haftalık Yük = Σ Günlük WSS (7 gün)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Aşamalı Aşırı Yükleme</p>
-            <p class="formula-main"><strong>Sonraki Hafta = Mevcut Hafta × 1.05-1.10</strong></p>
-            <p class="formula-note">Hafta başına maksimum %5-10 artış</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Toparlanma Haftası</p>
-            <p class="formula-main"><strong>Toparlanma Haftası = Mevcut × 0.50-0.70</strong></p>
-            <p class="formula-note">Her 3-4 haftada bir, %50-70'e düşürün</p>
-          </div>
-
-          <h4>Tipik Haftalık Yükler:</h4>
-          <ul>
-            <li><strong>Başlangıç sağlık yürüyücüsü:</strong> 200-400 WSS/hafta</li>
-            <li><strong>Düzenli fitness yürüyücüsü:</strong> 400-700 WSS/hafta</li>
-            <li><strong>Ciddi fitness yürüyücüsü:</strong> 700-1000 WSS/hafta</li>
-            <li><strong>Yarışmacı yarış yürüyücüsü:</strong> 1000-1500+ WSS/hafta</li>
-          </ul>
-        </div>
-
-        <h2 id="predictions">10. Tahmin Denklemleri</h2>
-
-        <div class="formula-section">
-          <h3>6 Dakikalık Yürüme Testi (6MWT) Mesafe Tahmini</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Tahmini 6MWT Mesafesi (Enright ve Sherrill)</p>
-            <p><strong>Erkekler:</strong> (7.57 × Boy cm) - (5.02 × Yaş) - (1.76 × Kilo kg) - 309</p>
-            <p><strong>Kadınlar:</strong> (2.11 × Boy cm) - (5.78 × Yaş) - (2.29 × Kilo kg) + 667</p>
-            <p class="formula-note">Sağlıklı yetişkinler için mesafeyi metre cinsinden tahmin eder</p>
-          </div>
-
-          <h4>Örnek: 40 yaşında erkek, 175 cm, 75 kg</h4>
-          <div class="calc-example">
-            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
-            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 metre</strong></p>
-            <p class="example-interpretation">Yaşa göre iyi fonksiyonel kapasite</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Klinik Kullanım:</strong> 6MWT, kardiyopulmoner hastalarda fonksiyonel egzersiz kapasitesini değerlendirmek, ameliyat öncesi/sonrası değerlendirme ve yaşlı yetişkinlerde genel fitness değerlendirmesi için kullanılır.</p>
-          </div>
-        </div>
-
-        <h2 id="conversions">11. Birim Dönüşümleri</h2>
-
-        <div class="formula-section">
-          <h3>Yaygın Yürüyüş Metrik Dönüşümleri</h3>
-
-          <div class="conversion-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Kaynak</th>
-                  <th>Hedef</th>
-                  <th>Formül</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>km/sa</td>
-                  <td>m/s</td>
-                  <td>km/sa ÷ 3.6</td>
-                </tr>
-                <tr>
-                  <td>mil/sa</td>
-                  <td>m/s</td>
-                  <td>mil/sa × 0.447</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>km/sa</td>
-                  <td>m/s × 3.6</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>mil/sa</td>
-                  <td>m/s × 2.237</td>
-                </tr>
-                <tr>
-                  <td>km/sa</td>
-                  <td>m/dk</td>
-                  <td>km/sa × 16.67</td>
-                </tr>
-                <tr>
-                  <td>mil/sa</td>
-                  <td>m/dk</td>
-                  <td>mil/sa × 26.82</td>
-                </tr>
-                <tr>
-                  <td>METs</td>
-                  <td>mL/kg/dk</td>
-                  <td>METs × 3.5</td>
-                </tr>
-                <tr>
-                  <td>mL/kg/dk</td>
-                  <td>METs</td>
-                  <td>VO₂ ÷ 3.5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h4>Hızlı Referans:</h4>
-          <ul>
-            <li><strong>1.0 m/s =</strong> 3.6 km/sa = 2.24 mil/sa (tipik sağlıklı yetişkin yürüyüş hızı)</li>
-            <li><strong>1.4 m/s =</strong> 5.0 km/sa = 3.1 mil/sa (tempolu yürüyüş)</li>
-            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/dk (dinlenme metabolizması)</li>
-            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/dk (orta yoğunluk eşiği)</li>
-            <li><strong>6 METs =</strong> 21 mL O₂/kg/dk (yüksek yoğunluk eşiği)</li>
-          </ul>
-        </div>
-
-        <h2 id="next-steps">İlgili Kaynaklar</h2>
-
-        <div class="next-steps-grid">
-          <div class="next-step-card">
-            <h3>Formülleri Uygulayın: WSS Hesaplayıcı</h3>
-            <p>Yürüyüş Stres Skorunuzu hesaplamak için interaktif hesaplayıcımızı kullanın.</p>
-            <a href="/tr/wss-calculator/" class="btn btn-secondary">WSS Hesapla →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Yürüyüş Bölgelerini Anlama</h3>
-            <p>Antrenmanınızda kadans tabanlı yoğunluk bölgelerini nasıl uygulayacağınızı öğrenin.</p>
-            <a href="/tr/walking-zones/" class="btn btn-secondary">Bölgeleri Öğren →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Bilimsel Araştırma</h3>
-            <p>Bu formülleri doğrulayan çalışmaları inceleyin.</p>
-            <a href="/tr/research/" class="btn btn-secondary">Araştırmayı Görüntüle →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Tam Kaynakça</h3>
-            <p>Referans gösterilen tüm denklemler için tam atıflara erişin.</p>
-            <a href="/tr/bibliography/" class="btn btn-secondary">Kaynakçayı Görüntüle →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>Formüller İndeksi</h3>
-          <ul>
-            <li><a href="#cadence-mets">1. Kadans → METs</a></li>
-            <li><a href="#acsm-vo2">2. ACSM VO₂ Denklemleri</a></li>
-            <li><a href="#energy-expenditure">3. Enerji ve Kalori</a></li>
-            <li><a href="#gait-symmetry">4. Yürüyüş Simetri İndeksi</a></li>
-            <li><a href="#walk-score">5. WALK Skoru</a></li>
-            <li><a href="#basic-metrics">6. Temel Yürüyüş Metrikleri</a></li>
-            <li><a href="#heart-rate">7. Kalp Hızı Bölgeleri</a></li>
-            <li><a href="#cost-transport">8. Taşıma Maliyeti</a></li>
-            <li><a href="#training-load">9. Antrenman Yükü</a></li>
-            <li><a href="#predictions">10. Tahmin Denklemleri</a></li>
-            <li><a href="#conversions">11. Birim Dönüşümleri</a></li>
-          </ul>
-        </div>
-
-        <div class="formula-highlight">
-          <h3>⭐ En Önemlisi</h3>
-          <p><strong>Kadans'tan METs'e</strong></p>
-          <p class="formula-compact">METs = 0.0219 × adım/dk + 0.72</p>
-          <p class="small-text">Bu tek denklem, kalp hızı monitörü olmadan kadans tabanlı yoğunluk antrenmanını mümkün kılar.</p>
-        </div>
-
-        <div class="cta-box">
-          <h3>Bu Formülleri Uygulayın</h3>
-          <p>Walk Analytics, yürüyüşlerinizi analiz etmek için bu bilimsel olarak doğrulanmış denklemleri kullanır.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Uygulamayı İndir</a>
-        </div>
-
-        <div class="info-box">
-          <h4>📐 Formül Doğruluğu</h4>
-          <p>Bu sayfadaki tüm denklemler hakemli araştırmalardan alınmıştır. Tam atıflar için <a href="/tr/bibliography/">Kaynakça</a> bölümüne bakın.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/tr/">Ana Sayfa</a></li><li><a href="/tr/research/">Bilim</a></li><li><span aria-current="page">Formüller</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/tr/">Ana Sayfa</a> / <a href="/tr/#science">Bilim</a> / Formüller
+    </div><h1>Yürüyüş Metrikleri Formülleri ve Denklemleri</h1><p class="lead">Yürüyüş analitiğinin matematiksel temelleri – yoğunluk, enerji ve performans için bilimsel olarak doğrulanmış denklemler</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>Bu sayfa, yürüyüş analitiğinde kullanılan bilimsel olarak doğrulanmış formülleri sunmaktadır. Tüm denklemler araştırma referansları ve doğrulanmış doğruluk aralıklarıyla birlikte verilmiştir.</p></div><h2 id="cadence-mets">1. Kadans'tan METs'e Dönüşüm</h2><div class="formula-section featured"><h3>Moore ve ark. (2021) Kadans Tabanlı Metabolik Denklem</h3><div class="formula-box primary"><p class="formula-title">Kadans'tan METs'e</p><p class="formula-main"><strong>METs = 0.0219 × Kadans (adım/dk) + 0.72</strong></p><p class="formula-meta"><span class="accuracy">Doğruluk: ±0.5 METs</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>Bu formülün önemi:</strong> Bu denklem, yürüyüş için geleneksel ACSM hız tabanlı denklemlerden <strong>%23-35 daha doğrudur</strong>. Çalışır çünkü kadans doğrudan hareket sıklığını ve enerji harcamasını yansıtır, oysa hız değişken adım uzunluğuna bağlıdır.</p></div><h4>Örnekler:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100 adım/dk'da yürüme:</strong></p><p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p><p class="example-interpretation">≈ 3 METs = <strong>Orta yoğunluk eşiği</strong> ✓</p></div><div class="calc-example"><p class="example-input"><strong>110 adım/dk'da yürüme:</strong></p><p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p><p class="example-interpretation">Sağlam orta yoğunluk</p></div><div class="calc-example"><p class="example-input"><strong>120 adım/dk'da yürüme:</strong></p><p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p><p class="example-interpretation">Orta-yüksek yoğunluk</p></div><div class="calc-example"><p class="example-input"><strong>130 adım/dk'da yürüme:</strong></p><p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p><p class="example-interpretation"><strong>Yüksek yoğunluk eşiği</strong> (CADENCE-Adults doğrudan ölçümüyle 6 METs)</p></div></div><div class="formula-note"><p><strong>Not:</strong> CADENCE-Adults çalışması, kontrollü laboratuvar koşullarında 130 adım/dk'nın 6 METs'e eşit olduğunu doğrudan ölçmüştür. Moore denklemi 80-130 adım/dk aralığı için tasarlanmıştır ve çok yüksek kadanslarda düşük tahmin verebilir.</p></div><h4>Doğrulama Verileri:</h4><ul><li><strong>Örneklem:</strong> 21-40 yaş arası 76 yetişkin</li><li><strong>Yöntem:</strong> Endirekt kalorimetri (altın standart)</li><li><strong>R² değeri:</strong> 0.87 (mükemmel korelasyon)</li><li><strong>Ortalama mutlak hata:</strong> 0.47 METs</li><li><strong>Geçerli aralık:</strong> 80-130 adım/dk</li></ul></div><h2 id="acsm-vo2">2. Yürüyüş için ACSM VO₂ Denklemleri</h2><div class="formula-section"><h3>ACSM Metabolik Hesaplamaları</h3><div class="formula-box"><p class="formula-title">Düz Yürüyüş (0% eğim)</p><p class="formula-main"><strong>VO₂ (mL/kg/dk) = 0.1 × Hız (m/dk) + 3.5</strong></p><p class="formula-note">Hız metre/dakika cinsindendir (km/sa'i 16.67 ile veya mil/sa'i 26.82 ile çarpın)</p></div><div class="formula-box"><p class="formula-title">Eğimli Yürüyüş (yokuş yukarı/aşağı)</p><p class="formula-main"><strong>VO₂ = 0.1(Hız) + 1.8(Hız)(Eğim) + 3.5</strong></p><p class="formula-note">Eğim ondalık olarak ifade edilir (örn. %5 = 0.05)</p></div><h4>Örnekler:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Düz zeminde 5 km/sa (83.3 m/dk) hızla yürüme:</strong></p><p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/dk</strong></p><p class="example-conversion">METs'e dönüştürme: 11.83 / 3.5 = <strong>3.38 METs</strong></p></div><div class="calc-example"><p class="example-input"><strong>%5 eğimde 5 km/sa hızla yürüme:</strong></p><p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p><p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/dk</strong></p><p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p><p class="example-interpretation">Eğim yoğunluğu ~%64 artırır!</p></div></div><div class="conversion-helper"><h4>Hız Dönüşümleri:</h4><ul><li><strong>km/sa'den m/dk'ya:</strong> 16.67 ile çarpın</li><li><strong>mil/sa'den m/dk'ya:</strong> 26.82 ile çarpın</li><li><strong>m/s'den m/dk'ya:</strong> 60 ile çarpın</li></ul></div></div><h2 id="energy-expenditure">3. Enerji Harcaması ve Kalori Yakımı</h2><div class="formula-section"><h3>Doğru Kalori Hesaplaması</h3><div class="formula-box"><p class="formula-title">Dakika Başına Kalori</p><p class="formula-main"><strong>Kal/dk = (METs × 3.5 × Vücut Ağırlığı kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">Seans İçin Toplam Kalori</p><p class="formula-main"><strong>Toplam Kalori = Kal/dk × Süre (dakika)</strong></p></div><h4>Örnekler:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>70 kg kişi 45 dakika boyunca 100 adım/dk'da (3 METs) yürüyor:</strong></p><p class="example-calc">Kal/dk = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 kal/dk</strong></p><p class="example-calc">Toplam = 3.675 × 45 = <strong>165.4 kalori</strong></p></div><div class="calc-example"><p class="example-input"><strong>85 kg kişi 30 dakika boyunca 120 adım/dk'da (5 METs) yürüyor:</strong></p><p class="example-calc">Kal/dk = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 kal/dk</strong></p><p class="example-calc">Toplam = 7.44 × 30 = <strong>223.2 kalori</strong></p></div></div><div class="info-box"><h4>Neden Bu Formül?</h4><p>Bu denklem MET (Metabolik Eşdeğer Görev) tanımından gelir:</p><ul><li>1 MET = 3.5 mL O₂/kg/dk (dinlenme metabolik hızı)</li><li>1 litre tüketilen O₂ ≈ 5 kkal yakılır</li><li>Dönüştürme: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li></ul></div><h3>Net Kalori Yakımı (Sadece Egzersiz)</h3><div class="formula-box"><p class="formula-title">Net Kalori (dinlenme hariç)</p><p class="formula-main"><strong>Net Kal/dk = [(METs - 1) × 3.5 × Vücut Ağırlığı] / 200</strong></p><p class="formula-note">Dinlenme durumunda zaten yakacağınız kalorileri hariç tutmak için 1 MET çıkarılır</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 METs, 45 dk – Net kalori:</strong></p><p class="example-calc">Net = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 net kalori</strong></p><p class="example-interpretation">toplam 165.4 kaloriye karşı (55 kalori zaten dinlenme halinde yakılırdı)</p></div></div><h2 id="gait-symmetry">4. Yürüyüş Simetri İndeksi (GSI)</h2><div class="formula-section"><h3>Sol-Sağ Asimetrinin Ölçülmesi</h3><div class="formula-box"><p class="formula-title">Yürüyüş Simetri İndeksi</p><p class="formula-main"><strong>GSI (%) = |Sağ - Sol| / [0.5 × (Sağ + Sol)] × 100</strong></p><p class="formula-note">Adım uzunluğu, adım süresi veya temas süresine uygulanabilir</p></div><h4>Yorumlama:</h4><ul><li><strong>&lt;%2-3:</strong> Normal, simetrik yürüyüş</li><li><strong>%3-5:</strong> Hafif asimetri</li><li><strong>%5-10:</strong> Orta asimetri, izlenmeli</li><li><strong>&gt;%10:</strong> Klinik olarak anlamlı, profesyonel değerlendirme gerekli</li></ul><h4>Örnekler:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Adım süreleri: Sağ = 520 ms, Sol = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>%8 asimetri</strong></p><p class="example-interpretation">Orta asimetri – zayıf tarafı güçlendirmeyi düşünün</p></div><div class="calc-example"><p class="example-input"><strong>Adım uzunlukları: Sağ = 1.42 m, Sol = 1.38 m</strong></p><p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p><p class="example-calc">= 0.04 / 1.4 × 100 = <strong>%2.86 asimetri</strong></p><p class="example-interpretation">Normal, sağlıklı aralık ✓</p></div></div><div class="warning-box"><p><strong>Klinik Not:</strong> Apple HealthKit'in Yürüyüş Asimetrisi biraz farklı bir hesaplama kullanır (adım süreleri arasında basit yüzde farkı) ancak yorumlama eşikleri benzerdir.</p></div></div><h2 id="walk-score">5. WALK Skoru (Walk Analytics Özel Metriği)</h2><div class="formula-section"><h3>Yürüyüş Verimliliği Skoru</h3><div class="formula-box"><p class="formula-title">WALK Skoru</p><p class="formula-main"><strong>WALK Skoru = Süre (saniye) + 100 metre başına adım</strong></p><p class="formula-note">Düşük skor = daha iyi verimlilik</p></div><h4>Nasıl Çalışır:</h4><p>WALK Skoru, yürüyüş verimliliğini ölçmek için süre ve adım sayısını birleştirir. 100m'yi 75 saniyede 140 adımla kaplayan bir yürüyücü 215 WALK Skoruna sahiptir. Hızı VEYA adım verimliliğini iyileştirmek skoru düşürür.</p><h4>Örnekler:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100m'yi 80 saniyede, 120 adımla:</strong></p><p class="example-calc">WALK Skoru = 80 + 120 = <strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100m'yi 70 saniyede, 110 adımla:</strong></p><p class="example-calc">WALK Skoru = 70 + 110 = <strong>180</strong></p><p class="example-interpretation">Gelişmiş hız + adım ile daha iyi verimlilik</p></div><div class="calc-example"><p class="example-input"><strong>100m'yi 60 saniyede, 130 adımla (yarış yürüyüşü):</strong></p><p class="example-calc">WALK Skoru = 60 + 130 = <strong>190</strong></p><p class="example-interpretation">Hızlı ama daha kısa adımlar</p></div></div><h4>Tipik Aralıklar:</h4><ul><li><strong>&gt;250:</strong> Yavaş/verimsiz yürüyüş, olası mobilite sorunları</li><li><strong>200-250:</strong> Gündelik yürüyücü, ortalama verimlilik</li><li><strong>170-200:</strong> Fitness yürüyücüsü, iyi verimlilik</li><li><strong>150-170:</strong> İleri düzey yürüyücü, mükemmel verimlilik</li><li><strong>&lt;150:</strong> Elit/yarış yürüyüşü seviyesi</li></ul><div class="tip-box"><p><strong>WALK Skoru ile Antrenman:</strong> Aynı 100m parkurda haftalık olarak skorunuzu takip edin. İyileştirmeler gelişmiş nöromüsküler koordinasyon, güç ve yürüyüş ekonomisi gösterir.</p></div></div><h2 id="basic-metrics">6. Temel Yürüyüş Metrikleri</h2><div class="formula-section"><h3>Temel Hesaplamalar</h3><div class="formula-box"><p class="formula-title">Yürüyüş Hızı</p><p class="formula-main"><strong>Hız (m/s) = Mesafe (m) / Süre (s)</strong></p></div><div class="formula-box"><p class="formula-title">Toplam Adımdan Kadans</p><p class="formula-main"><strong>Kadans (adım/dk) = Toplam Adım / Süre (dakika)</strong></p></div><div class="formula-box"><p class="formula-title">Adım Uzunluğu</p><p class="formula-main"><strong>Adım Uzunluğu (m) = Mesafe (m) / (Adım / 2)</strong></p><p class="formula-note">Adımı 2'ye bölün çünkü bir adım = iki step</p></div><div class="formula-box"><p class="formula-title">Step Uzunluğu</p><p class="formula-main"><strong>Step Uzunluğu (m) = Mesafe (m) / Adım</strong></p></div><div class="formula-box"><p class="formula-title">Kadans ve Adım Uzunluğundan Hız</p><p class="formula-main"><strong>Hız = Adım Uzunluğu × (Kadans / 2) / 60</strong></p><p class="formula-note">Veya: Hız (m/s) = Step Uzunluğu × Kadans / 60</p></div><h4>Örnek İş Akışı:</h4><div class="calc-example"><p class="example-input"><strong>1000m'yi 12 dakikada 1320 adımla yürüme:</strong></p><p><strong>Hız:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p><p><strong>Kadans:</strong> 1320 adım / 12 dk = <strong>110 adım/dk</strong></p><p><strong>Adım Uzunluğu:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p><p><strong>Step Uzunluğu:</strong> 1000m / 1320 = <strong>0.76 m</strong></p></div></div><h2 id="heart-rate">7. Kalp Hızı Bölgesi Hesaplamaları</h2><div class="formula-section"><h3>Geleneksel Kalp Hızı Bölgesi Yöntemi</h3><div class="formula-box"><p class="formula-title">Maksimum Kalp Hızı Tahmini</p><p class="formula-main"><strong>Maks KH = 220 - Yaş</strong></p><p class="formula-note">Basit ama ±10-15 vuru/dk bireysel varyasyon</p></div><div class="formula-box"><p class="formula-title">Alternatif: Tanaka Formülü (daha doğru)</p><p class="formula-main"><strong>Maks KH = 208 - (0.7 × Yaş)</strong></p></div><div class="formula-box"><p class="formula-title">Bölge Aralığı Hesaplaması</p><p class="formula-main"><strong>Bölge = Maks KH × (Alt%, Üst%)</strong></p></div><h4>Örnek: 40 yaşında</h4><div class="calc-example"><p><strong>Geleneksel:</strong> Maks KH = 220 - 40 = <strong>180 vuru/dk</strong></p><p><strong>Tanaka:</strong> Maks KH = 208 - (0.7 × 40) = 208 - 28 = <strong>180 vuru/dk</strong></p><p><strong>Bölge 2 (%60-70):</strong> 180 × 0.60 = 108 vuru/dk ile 180 × 0.70 = 126 vuru/dk arası</p></div><div class="info-box"><p><strong>Not:</strong> Kalp hızı bölgeleri yararlı olsa da, <strong>kadans tabanlı bölgeler yürüyüş için daha doğru ve pratiktir</strong> (Yürüyüş Bölgeleri kılavuzuna bakın).</p></div></div><h2 id="cost-transport">8. Taşıma Maliyeti ve Yürüyüş Ekonomisi</h2><div class="formula-section"><h3>Yürüyüşün Enerji Maliyeti</h3><div class="formula-box"><p class="formula-title">Taşıma Maliyeti (C)</p><p class="formula-main"><strong>C = Harcanan Enerji / (Vücut Kütlesi × Mesafe)</strong></p><p class="formula-note">Birimler: J/kg/m veya mL O₂/kg/m</p></div><div class="key-insight"><p><strong>U-Şekilli Eğri:</strong> Yürüyüş ekonomisi U-şekilli bir eğri izler. Taşıma maliyetinin minimize edildiği optimal bir hız vardır (tipik olarak 1.2-1.4 m/s veya 4.3-5.0 km/sa). Bu hızdan daha yavaş VEYA daha hızlı yürümek kat edilen mesafe başına enerji maliyetini artırır.</p></div><h4>Taşıma Maliyetini Etkileyen Faktörler:</h4><ul><li><strong>Hız:</strong> U-şekilli ilişki (optimal yaklaşık 1.3 m/s civarında)</li><li><strong>Eğim:</strong> Yokuş yukarı maliyeti önemli ölçüde artırır; yokuş aşağı eksentrik maliyeti artırır</li><li><strong>Vücut kütlesi:</strong> Daha ağır bireyler daha yüksek mutlak ancak benzer göreli maliyete sahiptir</li><li><strong>Adım mekaniği:</strong> Optimal adım uzunluğu maliyeti minimize eder</li><li><strong>Arazi:</strong> Engebeli yüzeyler düz kaldırıma göre maliyeti artırır</li></ul><div class="formula-box"><p class="formula-title">Eğime Göre Ayarlanmış Maliyet</p><p class="formula-main"><strong>Maliyet çarpanı = 1 + (Eğim × 10)</strong></p><p class="formula-note">Kaba yaklaşım: %1 eğim başına +%10 maliyet</p></div><h4>Örnek:</h4><div class="calc-example"><p class="example-input"><strong>%5 eğimde yürüme:</strong></p><p class="example-calc">Maliyet çarpanı = 1 + (0.05 × 10) = <strong>1.5×</strong></p><p class="example-interpretation">Düz zemine göre enerji maliyetinde %50 artış</p></div></div><h2 id="training-load">9. Antrenman Yükü ve Stres Skoru</h2><div class="formula-section"><h3>Yürüyüş Stres Skoru (WSS)</h3><div class="formula-box"><p class="formula-title">Bölge Tabanlı WSS</p><p class="formula-main"><strong>WSS = Σ (Bölgedeki Dakika × Bölge Faktörü)</strong></p><p>Bölge 1: ×1.0 | Bölge 2: ×2.0 | Bölge 3: ×3.0 | Bölge 4: ×4.0 | Bölge 5: ×5.0</p></div><h4>Örnek: 60 dakikalık yürüyüş</h4><div class="calc-example"><p>10 dk Bölge 1 × 1 = 10 puan</p><p>40 dk Bölge 2 × 2 = 80 puan</p><p>10 dk Bölge 3 × 3 = 30 puan</p><p><strong>Toplam WSS = 120</strong></p></div><h3>Haftalık Antrenman Yükü</h3><div class="formula-box"><p class="formula-title">Haftalık Yük</p><p class="formula-main"><strong>Haftalık Yük = Σ Günlük WSS (7 gün)</strong></p></div><div class="formula-box"><p class="formula-title">Aşamalı Aşırı Yükleme</p><p class="formula-main"><strong>Sonraki Hafta = Mevcut Hafta × 1.05-1.10</strong></p><p class="formula-note">Hafta başına maksimum %5-10 artış</p></div><div class="formula-box"><p class="formula-title">Toparlanma Haftası</p><p class="formula-main"><strong>Toparlanma Haftası = Mevcut × 0.50-0.70</strong></p><p class="formula-note">Her 3-4 haftada bir, %50-70'e düşürün</p></div><h4>Tipik Haftalık Yükler:</h4><ul><li><strong>Başlangıç sağlık yürüyücüsü:</strong> 200-400 WSS/hafta</li><li><strong>Düzenli fitness yürüyücüsü:</strong> 400-700 WSS/hafta</li><li><strong>Ciddi fitness yürüyücüsü:</strong> 700-1000 WSS/hafta</li><li><strong>Yarışmacı yarış yürüyücüsü:</strong> 1000-1500+ WSS/hafta</li></ul></div><h2 id="predictions">10. Tahmin Denklemleri</h2><div class="formula-section"><h3>6 Dakikalık Yürüme Testi (6MWT) Mesafe Tahmini</h3><div class="formula-box"><p class="formula-title">Tahmini 6MWT Mesafesi (Enright ve Sherrill)</p><p><strong>Erkekler:</strong> (7.57 × Boy cm) - (5.02 × Yaş) - (1.76 × Kilo kg) - 309</p><p><strong>Kadınlar:</strong> (2.11 × Boy cm) - (5.78 × Yaş) - (2.29 × Kilo kg) + 667</p><p class="formula-note">Sağlıklı yetişkinler için mesafeyi metre cinsinden tahmin eder</p></div><h4>Örnek: 40 yaşında erkek, 175 cm, 75 kg</h4><div class="calc-example"><p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p><p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 metre</strong></p><p class="example-interpretation">Yaşa göre iyi fonksiyonel kapasite</p></div><div class="info-box"><p><strong>Klinik Kullanım:</strong> 6MWT, kardiyopulmoner hastalarda fonksiyonel egzersiz kapasitesini değerlendirmek, ameliyat öncesi/sonrası değerlendirme ve yaşlı yetişkinlerde genel fitness değerlendirmesi için kullanılır.</p></div></div><h2 id="conversions">11. Birim Dönüşümleri</h2><div class="formula-section"><h3>Yaygın Yürüyüş Metrik Dönüşümleri</h3><div class="conversion-table"><table><thead><tr><th>Kaynak</th><th>Hedef</th><th>Formül</th></tr></thead><tbody><tr><td>km/sa</td><td>m/s</td><td>km/sa ÷ 3.6</td></tr><tr><td>mil/sa</td><td>m/s</td><td>mil/sa × 0.447</td></tr><tr><td>m/s</td><td>km/sa</td><td>m/s × 3.6</td></tr><tr><td>m/s</td><td>mil/sa</td><td>m/s × 2.237</td></tr><tr><td>km/sa</td><td>m/dk</td><td>km/sa × 16.67</td></tr><tr><td>mil/sa</td><td>m/dk</td><td>mil/sa × 26.82</td></tr><tr><td>METs</td><td>mL/kg/dk</td><td>METs × 3.5</td></tr><tr><td>mL/kg/dk</td><td>METs</td><td>VO₂ ÷ 3.5</td></tr></tbody></table></div><h4>Hızlı Referans:</h4><ul><li><strong>1.0 m/s =</strong> 3.6 km/sa = 2.24 mil/sa (tipik sağlıklı yetişkin yürüyüş hızı)</li><li><strong>1.4 m/s =</strong> 5.0 km/sa = 3.1 mil/sa (tempolu yürüyüş)</li><li><strong>1 MET =</strong> 3.5 mL O₂/kg/dk (dinlenme metabolizması)</li><li><strong>3 METs =</strong> 10.5 mL O₂/kg/dk (orta yoğunluk eşiği)</li><li><strong>6 METs =</strong> 21 mL O₂/kg/dk (yüksek yoğunluk eşiği)</li></ul></div><h2 id="next-steps">İlgili Kaynaklar</h2><div class="next-steps-grid"><div class="next-step-card"><h3>Formülleri Uygulayın: WSS Hesaplayıcı</h3><p>Yürüyüş Stres Skorunuzu hesaplamak için interaktif hesaplayıcımızı kullanın.</p><a href="/tr/wss-calculator/" class="btn btn-secondary">WSS Hesapla →</a></div><div class="next-step-card"><h3>Yürüyüş Bölgelerini Anlama</h3><p>Antrenmanınızda kadans tabanlı yoğunluk bölgelerini nasıl uygulayacağınızı öğrenin.</p><a href="/tr/walking-zones/" class="btn btn-secondary">Bölgeleri Öğren →</a></div><div class="next-step-card"><h3>Bilimsel Araştırma</h3><p>Bu formülleri doğrulayan çalışmaları inceleyin.</p><a href="/tr/research/" class="btn btn-secondary">Araştırmayı Görüntüle →</a></div><div class="next-step-card"><h3>Tam Kaynakça</h3><p>Referans gösterilen tüm denklemler için tam atıflara erişin.</p><a href="/tr/bibliography/" class="btn btn-secondary">Kaynakçayı Görüntüle →</a></div></div></div><aside class="sidebar"><div class="toc"><h3>Formüller İndeksi</h3><ul><li><a href="#cadence-mets">1. Kadans → METs</a></li><li><a href="#acsm-vo2">2. ACSM VO₂ Denklemleri</a></li><li><a href="#energy-expenditure">3. Enerji ve Kalori</a></li><li><a href="#gait-symmetry">4. Yürüyüş Simetri İndeksi</a></li><li><a href="#walk-score">5. WALK Skoru</a></li><li><a href="#basic-metrics">6. Temel Yürüyüş Metrikleri</a></li><li><a href="#heart-rate">7. Kalp Hızı Bölgeleri</a></li><li><a href="#cost-transport">8. Taşıma Maliyeti</a></li><li><a href="#training-load">9. Antrenman Yükü</a></li><li><a href="#predictions">10. Tahmin Denklemleri</a></li><li><a href="#conversions">11. Birim Dönüşümleri</a></li></ul></div><div class="formula-highlight"><h3>⭐ En Önemlisi</h3><p><strong>Kadans'tan METs'e</strong></p><p class="formula-compact">METs = 0.0219 × adım/dk + 0.72</p><p class="small-text">Bu tek denklem, kalp hızı monitörü olmadan kadans tabanlı yoğunluk antrenmanını mümkün kılar.</p></div><div class="cta-box"><h3>Bu Formülleri Uygulayın</h3><p>Walk Analytics, yürüyüşlerinizi analiz etmek için bu bilimsel olarak doğrulanmış denklemleri kullanır.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Uygulamayı İndir</a></div><div class="info-box"><h4>📐 Formül Doğruluğu</h4><p>Bu sayfadaki tüm denklemler hakemli araştırmalardan alınmıştır. Tam atıflar için <a href="/tr/bibliography/">Kaynakça</a> bölümüne bakın.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link active"
+                </a><a href="/tr/" class="lang-link active"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. Tüm hakları saklıdır
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/tr/privacy/">Gizlilik</a></li>
-                <li><a href="/tr/terms/">Koşullar</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>Bu web sitesi deneyiminizi iyileştirmek için çerezler kullanır.</p>
-            <a href="/tr/privacy/" class="text-sm">Daha fazla bilgi</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Reddet</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Kabul Et</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/tr/privacy/">Gizlilik</a></li><li><a href="/tr/terms/">Koşullar</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Bu web sitesi deneyiminizi iyileştirmek için çerezler kullanır.</p><a href="/tr/privacy/" class="text-sm">Daha fazla bilgi</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Reddet</button><button id="cookie-accept" class="btn btn-primary btn-small">Kabul Et</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

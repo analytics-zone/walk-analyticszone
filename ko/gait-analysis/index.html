@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="ko" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표</title>
-  <meta name="description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="보행 분석, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표, 걷기 생체역학">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/ko/gait-analysis/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-12-02T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/ko/gait-analysis/">
-  <meta property="og:title" content="보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표">
-  <meta property="og:description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/ko/gait-analysis/">
-  <meta name="twitter:title" content="보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표">
-  <meta name="twitter:description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/gait-analysis/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/gait-analysis/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/gait-analysis/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/gait-analysis/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/gait-analysis/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/gait-analysis/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/gait-analysis/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/gait-analysis/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/gait-analysis/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/gait-analysis/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/gait-analysis/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/gait-analysis/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/gait-analysis/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/gait-analysis/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/gait-analysis/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/gait-analysis/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/gait-analysis/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/gait-analysis/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/gait-analysis/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/gait-analysis/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/gait-analysis/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/gait-analysis/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/gait-analysis/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/gait-analysis/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/gait-analysis/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/gait-analysis/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/gait-analysis/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/gait-analysis/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/gait-analysis/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/gait-analysis/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/gait-analysis/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/gait-analysis/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/gait-analysis/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/gait-analysis/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/gait-analysis/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/gait-analysis/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/gait-analysis/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/gait-analysis/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/gait-analysis/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/gait-analysis/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/gait-analysis/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/gait-analysis/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/gait-analysis/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/gait-analysis/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/gait-analysis/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/gait-analysis/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/gait-analysis/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="ko" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표</title><meta name="description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="보행 분석, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표, 걷기 생체역학"><link rel="canonical" href="https://walk.analyticszone.app/ko/gait-analysis/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-02T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/ko/gait-analysis/"><meta property="og:title" content="보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표"><meta property="og:description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/ko/gait-analysis/"><meta name="twitter:title" content="보행자를 위한 보행 분석 - 보폭 대칭성, 케이던스 및 균형 지표"><meta name="twitter:description" content="완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/gait-analysis/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/gait-analysis/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/gait-analysis/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/gait-analysis/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/gait-analysis/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/gait-analysis/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/gait-analysis/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/gait-analysis/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/gait-analysis/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/gait-analysis/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/gait-analysis/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/gait-analysis/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/gait-analysis/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/gait-analysis/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/gait-analysis/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/gait-analysis/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/gait-analysis/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/gait-analysis/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/gait-analysis/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/gait-analysis/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/gait-analysis/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/gait-analysis/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/gait-analysis/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/gait-analysis/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/gait-analysis/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/gait-analysis/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/gait-analysis/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/gait-analysis/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/gait-analysis/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/gait-analysis/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/gait-analysis/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/gait-analysis/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/gait-analysis/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/gait-analysis/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/gait-analysis/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/gait-analysis/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/gait-analysis/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/gait-analysis/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/gait-analysis/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/gait-analysis/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/gait-analysis/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/gait-analysis/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/gait-analysis/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/gait-analysis/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/gait-analysis/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/gait-analysis/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/gait-analysis/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/gait-analysis/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/gait-analysis/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/gait-analysis/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/gait-analysis/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/gait-analysis/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/gait-analysis/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/gait-analysis/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/gait-analysis/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/gait-analysis/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "ko"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "완전한 보행 분석 가이드. 보폭 길이, 케이던스, 대칭성 및 균형 지표 이해. 걷기 효율성 향상 및 부상 예방. Walk Analytics, 보폭 대칭성, 걷기 케이던스, 보행 균형 지표",
   "url": "https://walk.analyticszone.app/ko/gait-analysis/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/ko/gait-analysis/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1122 +449,373 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/ko/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/ko/" 
+  </script></head><body><a href="#main-content" class="skip-link">콘텐츠로 건너뛰기</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/ko/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/ko/" 
                                 aria-current="">
                                 홈
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/getting-started/" class="nav-label">학습</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/ko/getting-started/" class="nav-label">학습</a><ul class="submenu"><li><a href="/ko/getting-started/" 
                                         aria-current="">
                                         시작하기
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/walking-zones/" 
+                                    </a></li><li><a href="/ko/walking-zones/" 
                                         aria-current="">
                                         걷기 존
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/gait-analysis/" class="active" 
+                                    </a></li><li><a href="/ko/gait-analysis/" class="active" 
                                         aria-current="page">
                                         보행 분석
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/training-load/" 
+                                    </a></li><li><a href="/ko/training-load/" 
                                         aria-current="">
                                         트레이닝 부하
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/wss-calculator/" 
+                                    </a></li><li><a href="/ko/wss-calculator/" 
                                         aria-current="">
                                         WSS 계산기
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/research/" class="nav-label">과학</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ko/research/" class="nav-label">과학</a><ul class="submenu"><li><a href="/ko/research/" 
                                         aria-current="">
                                         연구
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/formulas/" 
+                                    </a></li><li><a href="/ko/formulas/" 
                                         aria-current="">
                                         공식
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/gait-efficiency/" 
+                                    </a></li><li><a href="/ko/gait-efficiency/" 
                                         aria-current="">
                                         보행 효율성
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/stride-mechanics/" 
+                                    </a></li><li><a href="/ko/stride-mechanics/" 
                                         aria-current="">
                                         보폭 역학
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/walking-vs-running/" 
+                                    </a></li><li><a href="/ko/walking-vs-running/" 
                                         aria-current="">
                                         걷기 vs 달리기
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/benchmarks/" 
+                                    </a></li><li><a href="/ko/benchmarks/" 
                                         aria-current="">
                                         벤치마크
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/bibliography/" 
+                                    </a></li><li><a href="/ko/bibliography/" 
                                         aria-current="">
                                         참고문헌
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/for-health/" class="nav-label">사용자 맞춤</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ko/for-health/" class="nav-label">사용자 맞춤</a><ul class="submenu"><li><a href="/ko/for-health/" 
                                         aria-current="">
                                         건강용
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/for-fitness/" 
+                                    </a></li><li><a href="/ko/for-fitness/" 
                                         aria-current="">
                                         피트니스용
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/for-seniors/" 
+                                    </a></li><li><a href="/ko/for-seniors/" 
                                         aria-current="">
                                         노인용
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/for-rehabilitation/" 
+                                    </a></li><li><a href="/ko/for-rehabilitation/" 
                                         aria-current="">
                                         재활용
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/ko/cadence-calculator/" class="nav-label">도구</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/ko/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/ko/cadence-calculator/" class="nav-label">도구</a><ul class="submenu"><li><a href="/ko/cadence-calculator/" 
                                         aria-current="">
                                         케이던스 계산기
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/gait-assessment/" 
+                                    </a></li><li><a href="/ko/gait-assessment/" 
                                         aria-current="">
                                         보행 평가
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/ko/vo2max-calculator/" 
+                                    </a></li><li><a href="/ko/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max 계산기
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/ko/contact/" 
+                                    </a></li></ul></li><li><a href="/ko/contact/" 
                                 aria-current="">
                                 문의
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="언어 선택">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="언어 선택"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" selected>
+                        </option><option value="ko" selected>
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="메뉴 토글"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/ko/">홈</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/ko/getting-started/">학습</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">보행 분석</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Gait Analysis Guide -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/ko/">홈</a> / <a href="/ko/#learn">학습</a> / 보행 분석
-    </div>
-    <h1>걷기 보행 분석</h1>
-    <p class="lead">보행 메커니즘을 과학적으로 분석해, 퍼포먼스 향상·건강 증진·부상 예방에 활용하는 방법을 설명합니다.</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <h2 id="what-is-gait">보행 분석이란?</h2>
-
-        <p>보행 분석(gait analysis)은 걷는 동안의 움직임 패턴과 생체역학을 체계적으로 평가하는 과정입니다.
-          발이 지면에 닿는 방식, 보폭, 케이던스, 대칭성 등을 살펴, 비효율·비대칭·부상 위험 요인을 찾아냅니다.</p>
-
-        <div class="key-insight">
-          <p><strong>왜 중요할까요?</strong> 보행 분석은 과거에는 전문 연구실·병원에서만 가능했지만,
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="메뉴 토글"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/ko/">홈</a></li><li><a href="/ko/getting-started/">학습</a></li><li><span aria-current="page">보행 분석</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/ko/">홈</a> / <a href="/ko/#learn">학습</a> / 보행 분석
+    </div><h1>걷기 보행 분석</h1><p class="lead">보행 메커니즘을 과학적으로 분석해, 퍼포먼스 향상·건강 증진·부상 예방에 활용하는 방법을 설명합니다.</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><h2 id="what-is-gait">보행 분석이란?</h2><p>보행 분석(gait analysis)은 걷는 동안의 움직임 패턴과 생체역학을 체계적으로 평가하는 과정입니다.
+          발이 지면에 닿는 방식, 보폭, 케이던스, 대칭성 등을 살펴, 비효율·비대칭·부상 위험 요인을 찾아냅니다.</p><div class="key-insight"><p><strong>왜 중요할까요?</strong> 보행 분석은 과거에는 전문 연구실·병원에서만 가능했지만,
             이제는 스마트워치와 스마트폰 덕분에 일반 사용자도 접근할 수 있는 기술이 되었습니다.
-            연구에 따르면, 보행 패턴 분석은 건강 상태 예측, 신경계 질환의 조기 변화 탐지, 보행 효율 최적화에 도움이 됩니다.</p>
-        </div>
-
-        <p>Walk Analytics는 Apple HealthKit과 연동하여 iPhone과 Apple Watch가 수집하는 보행 데이터를 활용하고,
-          이를 기반으로 임상 수준에 가까운 보행 지표 인사이트를 제공합니다.</p>
-
-        <h2 id="key-metrics">핵심 보행 지표</h2>
-
-        <h3 id="cadence">1. 케이던스(분당 걸음 수)</h3>
-
-        <div class="metric-detail">
-          <p><strong>정의:</strong> 1분 동안 내딛는 걸음 수(spm)</p>
-
-          <p><strong>가장 중요한 보행 지표인 이유:</strong>
+            연구에 따르면, 보행 패턴 분석은 건강 상태 예측, 신경계 질환의 조기 변화 탐지, 보행 효율 최적화에 도움이 됩니다.</p></div><p>Walk Analytics는 Apple HealthKit과 연동하여 iPhone과 Apple Watch가 수집하는 보행 데이터를 활용하고,
+          이를 기반으로 임상 수준에 가까운 보행 지표 인사이트를 제공합니다.</p><h2 id="key-metrics">핵심 보행 지표</h2><h3 id="cadence">1. 케이던스(분당 걸음 수)</h3><div class="metric-detail"><p><strong>정의:</strong> 1분 동안 내딛는 걸음 수(spm)</p><p><strong>가장 중요한 보행 지표인 이유:</strong>
             케이던스는 걷기 강도와 에너지 소비량을 예측하는 데 가장 강력한 지표입니다.
-            속도는 보폭 길이에 따라 달라지지만, 케이던스는 움직임 빈도와 대사 부담을 직접 반영합니다.</p>
-
-          <div class="science-box">
-            <h4>과학적 근거: 100 spm 임계값</h4>
-            <p>대표적인 CADENCE-Adults 연구(Tudor-Locke et al., 2019)는 성인 76명을 대상으로 다음 사실을 확인했습니다.</p>
-            <ul>
-              <li><strong>100 걸음/분 = 3 METs</strong> (중강도) – 민감도 86%, 특이도 89.6%</li>
-              <li><strong>110 spm ≈ 4 METs</strong> (중–고강도)</li>
-              <li><strong>120 spm ≈ 5 METs</strong> (고강도)</li>
-              <li><strong>130 spm = 6 METs</strong> (아주 높은 강도)</li>
-            </ul>
-            <p>이 관계는 <strong>21–85세 사이에서 매우 일관되게</strong> 관찰되어, 케이던스를 “보편적인 강도 지표”로 사용할 수 있게 합니다.</p>
-          </div>
-
-          <div class="data-table">
-            <h4>케이던스 범위와 활용</h4>
-            <table>
-              <thead>
-                <tr>
-                  <th>케이던스 (spm)</th>
-                  <th>범주</th>
-                  <th>활용</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>60–90</td>
-                  <td>매우 느림</td>
-                  <td>회복, 이동성 제한</td>
-                </tr>
-                <tr>
-                  <td>90–100</td>
-                  <td>가벼운 강도</td>
-                  <td>가벼운 활동, 워밍업</td>
-                </tr>
-                <tr class="highlight-row">
-                  <td><strong>100–110</strong></td>
-                  <td><strong>중강도</strong></td>
-                  <td><strong>건강 증진, 지방 연소, 기본 권장 수준</strong></td>
-                </tr>
-                <tr>
-                  <td>110–120</td>
-                  <td>중–고강도</td>
-                  <td>심폐 지구력 향상, 빠른 걷기</td>
-                </tr>
-                <tr>
-                  <td>120–130</td>
-                  <td>고강도</td>
-                  <td>VO₂max 자극, 퍼포먼스 향상</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <h3 id="stride-length">2. 보폭(Stride Length)</h3>
-
-        <div class="metric-detail">
-          <p><strong>정의:</strong> 한쪽 발이 다시 땅에 닿을 때까지 이동한 거리</p>
-          <p>보폭은 키, 유연성, 근력, 케이던스에 따라 달라집니다. 효율적인 보행에서는 보폭 길이가 키의 약 40–50% 범위에 위치하는 경우가 많습니다.</p>
-        </div>
-
-        <h3 id="symmetry">3. 보행 대칭성(Gait Symmetry)</h3>
-
-        <div class="metric-detail">
-          <p><strong>정의:</strong> 왼쪽·오른쪽 다리의 보폭, 접촉 시간, 케이던스가 서로 얼마나 비슷한지를 나타내는 지표</p>
-          <p>대칭성이 100%에 가까울수록 좌우 활용이 균형잡혀 있고, 90% 이하로 떨어지면 부상 위험이 증가합니다.</p>
-        </div>
-
-        <h3 id="ground-contact">4. 지면 접촉 시간(GCT)</h3>
-
-        <p>발이 지면에 닿아 있는 시간으로, 보행 안정성과 충격 흡수 능력을 반영합니다. 너무 길면 비효율적이고 느린 보행일 수 있고, 너무 짧으면 러닝에 가까운 패턴일 수 있습니다.</p>
-
-        <h3 id="double-support">5. 이중 지지 시간(Double Support)</h3>
-
-        <p>두 발이 동시에 지면에 닿아 있는 시간 비율입니다. 보행 속도가 빠를수록 이중 지지 시간이 줄어듭니다.
-          고령자나 균형 문제를 가진 사람에게서는 이 지표가 낙상 위험 평가에 중요합니다.</p>
-
-        <h3 id="efficiency">6. 걷기 효율(운동 효율)</h3>
-
-        <p>동일한 거리·속도를 달성하는 데 필요한 에너지나 걸음 수를 의미합니다.
-          효율이 높은 보행은 <strong>더 적은 걸음·더 낮은 WSS</strong>로 같은 거리를 이동합니다.</p>
-      </div>
-
-      <aside class="sidebar">
-        <div class="sidebar-box">
-          <h3>Walk Analytics에서 보는 보행 지표</h3>
-          <ul>
-            <li>케이던스(분당 걸음 수)</li>
-            <li>보폭 길이</li>
-            <li>보행 속도</li>
-            <li>보행 대칭성(GSI)</li>
-            <li>WSS(걷기 스트레스 점수)</li>
-          </ul>
-          <p>이 모든 지표는 Apple Health에서 가져온 데이터를 기반으로, 기기 안에서 로컬로 계산됩니다.</p>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+            속도는 보폭 길이에 따라 달라지지만, 케이던스는 움직임 빈도와 대사 부담을 직접 반영합니다.</p><div class="science-box"><h4>과학적 근거: 100 spm 임계값</h4><p>대표적인 CADENCE-Adults 연구(Tudor-Locke et al., 2019)는 성인 76명을 대상으로 다음 사실을 확인했습니다.</p><ul><li><strong>100 걸음/분 = 3 METs</strong> (중강도) – 민감도 86%, 특이도 89.6%</li><li><strong>110 spm ≈ 4 METs</strong> (중–고강도)</li><li><strong>120 spm ≈ 5 METs</strong> (고강도)</li><li><strong>130 spm = 6 METs</strong> (아주 높은 강도)</li></ul><p>이 관계는 <strong>21–85세 사이에서 매우 일관되게</strong> 관찰되어, 케이던스를 “보편적인 강도 지표”로 사용할 수 있게 합니다.</p></div><div class="data-table"><h4>케이던스 범위와 활용</h4><table><thead><tr><th>케이던스 (spm)</th><th>범주</th><th>활용</th></tr></thead><tbody><tr><td>60–90</td><td>매우 느림</td><td>회복, 이동성 제한</td></tr><tr><td>90–100</td><td>가벼운 강도</td><td>가벼운 활동, 워밍업</td></tr><tr class="highlight-row"><td><strong>100–110</strong></td><td><strong>중강도</strong></td><td><strong>건강 증진, 지방 연소, 기본 권장 수준</strong></td></tr><tr><td>110–120</td><td>중–고강도</td><td>심폐 지구력 향상, 빠른 걷기</td></tr><tr><td>120–130</td><td>고강도</td><td>VO₂max 자극, 퍼포먼스 향상</td></tr></tbody></table></div></div><h3 id="stride-length">2. 보폭(Stride Length)</h3><div class="metric-detail"><p><strong>정의:</strong> 한쪽 발이 다시 땅에 닿을 때까지 이동한 거리</p><p>보폭은 키, 유연성, 근력, 케이던스에 따라 달라집니다. 효율적인 보행에서는 보폭 길이가 키의 약 40–50% 범위에 위치하는 경우가 많습니다.</p></div><h3 id="symmetry">3. 보행 대칭성(Gait Symmetry)</h3><div class="metric-detail"><p><strong>정의:</strong> 왼쪽·오른쪽 다리의 보폭, 접촉 시간, 케이던스가 서로 얼마나 비슷한지를 나타내는 지표</p><p>대칭성이 100%에 가까울수록 좌우 활용이 균형잡혀 있고, 90% 이하로 떨어지면 부상 위험이 증가합니다.</p></div><h3 id="ground-contact">4. 지면 접촉 시간(GCT)</h3><p>발이 지면에 닿아 있는 시간으로, 보행 안정성과 충격 흡수 능력을 반영합니다. 너무 길면 비효율적이고 느린 보행일 수 있고, 너무 짧으면 러닝에 가까운 패턴일 수 있습니다.</p><h3 id="double-support">5. 이중 지지 시간(Double Support)</h3><p>두 발이 동시에 지면에 닿아 있는 시간 비율입니다. 보행 속도가 빠를수록 이중 지지 시간이 줄어듭니다.
+          고령자나 균형 문제를 가진 사람에게서는 이 지표가 낙상 위험 평가에 중요합니다.</p><h3 id="efficiency">6. 걷기 효율(운동 효율)</h3><p>동일한 거리·속도를 달성하는 데 필요한 에너지나 걸음 수를 의미합니다.
+          효율이 높은 보행은 <strong>더 적은 걸음·더 낮은 WSS</strong>로 같은 거리를 이동합니다.</p></div><aside class="sidebar"><div class="sidebar-box"><h3>Walk Analytics에서 보는 보행 지표</h3><ul><li>케이던스(분당 걸음 수)</li><li>보폭 길이</li><li>보행 속도</li><li>보행 대칭성(GSI)</li><li>WSS(걷기 스트레스 점수)</li></ul><p>이 모든 지표는 Apple Health에서 가져온 데이터를 기반으로, 기기 안에서 로컬로 계산됩니다.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link active"
+                </a><a href="/ko/" class="lang-link active"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. 모든 권리 보유
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/ko/privacy/">개인정보 보호</a></li>
-                <li><a href="/ko/terms/">이용약관</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>이 웹사이트는 사용자 경험을 개선하기 위해 쿠키를 사용합니다.</p>
-            <a href="/ko/privacy/" class="text-sm">자세히 알아보기</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">거부</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">수락</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/ko/privacy/">개인정보 보호</a></li><li><a href="/ko/terms/">이용약관</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>이 웹사이트는 사용자 경험을 개선하기 위해 쿠키를 사용합니다.</p><a href="/ko/privacy/" class="text-sm">자세히 알아보기</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">거부</button><button id="cookie-accept" class="btn btn-primary btn-small">수락</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="id" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Rumus Metrik Jalan - Bagaimana WSS, Gaya Berjalan &amp; Metrik Kesehatan</title>
-  <meta name="description" content="Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="rumus jalan, rumus WSS, perhitungan metrik gaya berjalan, rumus analitik jalan, perhitungan sains jalan">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/id/formulas/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2026-01-13T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/id/formulas/">
-  <meta property="og:title" content="Rumus Metrik Jalan - Bagaimana WSS, Gaya Berjalan &amp; Metrik Kesehatan">
-  <meta property="og:description" content="Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/id/formulas/">
-  <meta name="twitter:title" content="Rumus Metrik Jalan - Bagaimana WSS, Gaya Berjalan &amp; Metrik Kesehatan">
-  <meta name="twitter:description" content="Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="id" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Rumus Metrik Jalan - Bagaimana WSS, Gaya Berjalan &amp; Metrik Kesehatan</title><meta name="description" content="Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="rumus jalan, rumus WSS, perhitungan metrik gaya berjalan, rumus analitik jalan, perhitungan sains jalan"><link rel="canonical" href="https://walk.analyticszone.app/id/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-01-13T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/id/formulas/"><meta property="og:title" content="Rumus Metrik Jalan - Bagaimana WSS, Gaya Berjalan &amp; Metrik Kesehatan"><meta property="og:description" content="Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="id_ID"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/id/formulas/"><meta name="twitter:title" content="Rumus Metrik Jalan - Bagaimana WSS, Gaya Berjalan &amp; Metrik Kesehatan"><meta name="twitter:description" content="Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "id"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "Rumus matematis di balik analitik jalan. Pelajari bagaimana WSS, metrik langkah, irama, dan skor efisiensi dihitung. Metodologi berbasis sains.",
   "url": "https://walk.analyticszone.app/id/formulas/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/id/formulas/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1601 +449,396 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">Lewati ke konten</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/id/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/id/" 
+  </script></head><body><a href="#main-content" class="skip-link">Lewati ke konten</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/id/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/id/" 
                                 aria-current="">
                                 Beranda
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/id/getting-started/" class="nav-label">Pelajari</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/id/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/id/getting-started/" class="nav-label">Pelajari</a><ul class="submenu"><li><a href="/id/getting-started/" 
                                         aria-current="">
                                         Memulai
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/walking-zones/" 
+                                    </a></li><li><a href="/id/walking-zones/" 
                                         aria-current="">
                                         Zona Jalan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/gait-analysis/" 
+                                    </a></li><li><a href="/id/gait-analysis/" 
                                         aria-current="">
                                         Analisis Gaya Berjalan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/training-load/" 
+                                    </a></li><li><a href="/id/training-load/" 
                                         aria-current="">
                                         Beban Latihan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/wss-calculator/" 
+                                    </a></li><li><a href="/id/wss-calculator/" 
                                         aria-current="">
                                         Kalkulator WSS
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/id/research/" class="nav-label">Sains</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/id/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/id/research/" class="nav-label">Sains</a><ul class="submenu"><li><a href="/id/research/" 
                                         aria-current="">
                                         Penelitian
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/formulas/" class="active" 
+                                    </a></li><li><a href="/id/formulas/" class="active" 
                                         aria-current="page">
                                         Rumus
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/gait-efficiency/" 
+                                    </a></li><li><a href="/id/gait-efficiency/" 
                                         aria-current="">
                                         Efisiensi Gaya Berjalan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/stride-mechanics/" 
+                                    </a></li><li><a href="/id/stride-mechanics/" 
                                         aria-current="">
                                         Mekanika Langkah
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/walking-vs-running/" 
+                                    </a></li><li><a href="/id/walking-vs-running/" 
                                         aria-current="">
                                         Jalan vs Lari
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/benchmarks/" 
+                                    </a></li><li><a href="/id/benchmarks/" 
                                         aria-current="">
                                         Acuan Kinerja
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/bibliography/" 
+                                    </a></li><li><a href="/id/bibliography/" 
                                         aria-current="">
                                         Bibliografi
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/id/for-health/" class="nav-label">Untuk Anda</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/id/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/id/for-health/" class="nav-label">Untuk Anda</a><ul class="submenu"><li><a href="/id/for-health/" 
                                         aria-current="">
                                         Untuk Kesehatan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/for-fitness/" 
+                                    </a></li><li><a href="/id/for-fitness/" 
                                         aria-current="">
                                         Untuk Kebugaran
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/for-seniors/" 
+                                    </a></li><li><a href="/id/for-seniors/" 
                                         aria-current="">
                                         Untuk Lansia
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/for-rehabilitation/" 
+                                    </a></li><li><a href="/id/for-rehabilitation/" 
                                         aria-current="">
                                         Untuk Rehabilitasi
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/id/cadence-calculator/" class="nav-label">Alat</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/id/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/id/cadence-calculator/" class="nav-label">Alat</a><ul class="submenu"><li><a href="/id/cadence-calculator/" 
                                         aria-current="">
                                         Kalkulator Irama
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/gait-assessment/" 
+                                    </a></li><li><a href="/id/gait-assessment/" 
                                         aria-current="">
                                         Penilaian Gaya Berjalan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/id/vo2max-calculator/" 
+                                    </a></li><li><a href="/id/vo2max-calculator/" 
                                         aria-current="">
                                         Kalkulator VO₂max
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/id/contact/" 
+                                    </a></li></ul></li><li><a href="/id/contact/" 
                                 aria-current="">
                                 Kontak
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Pilih bahasa">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Pilih bahasa"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" selected>
+                        </option><option value="id" selected>
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Alihkan menu"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/id/">Beranda</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/id/research/">Sains</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">Rumus</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Walking Metrics Formulas -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/id/">Beranda</a> / <a href="/id/#science">Sains</a> / Rumus
-    </div>
-    <h1>Rumus & Persamaan Metrik Jalan Kaki</h1>
-    <p class="lead">Landasan matematis analitik jalan kaki – persamaan yang divalidasi secara ilmiah untuk intensitas,
-      energi, dan performa</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <div class="intro-note">
-          <p>Halaman ini menyajikan rumus-rumus yang divalidasi secara ilmiah yang digunakan dalam analitik jalan kaki.
-            Semua persamaan disertai dengan referensi penelitian dan rentang akurasi yang divalidasi.</p>
-        </div>
-
-        <h2 id="cadence-mets">1. Konversi Kadensi ke MET</h2>
-
-        <div class="formula-section featured">
-          <h3>Persamaan Metabolik Berbasis Kadensi Moore et al. (2021)</h3>
-
-          <div class="formula-box primary">
-            <p class="formula-title">Kadensi ke MET</p>
-            <p class="formula-main"><strong>MET = 0,0219 × Kadensi (langkah/mnt) + 0,72</strong></p>
-            <p class="formula-meta">
-              <span class="accuracy">Akurasi: ±0,5 MET</span>
-              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
-            </p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Mengapa rumus ini penting:</strong> Persamaan ini <strong>23-35% lebih akurat</strong> daripada
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Alihkan menu"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/id/">Beranda</a></li><li><a href="/id/research/">Sains</a></li><li><span aria-current="page">Rumus</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/id/">Beranda</a> / <a href="/id/#science">Sains</a> / Rumus
+    </div><h1>Rumus & Persamaan Metrik Jalan Kaki</h1><p class="lead">Landasan matematis analitik jalan kaki – persamaan yang divalidasi secara ilmiah untuk intensitas,
+      energi, dan performa</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>Halaman ini menyajikan rumus-rumus yang divalidasi secara ilmiah yang digunakan dalam analitik jalan kaki.
+            Semua persamaan disertai dengan referensi penelitian dan rentang akurasi yang divalidasi.</p></div><h2 id="cadence-mets">1. Konversi Kadensi ke MET</h2><div class="formula-section featured"><h3>Persamaan Metabolik Berbasis Kadensi Moore et al. (2021)</h3><div class="formula-box primary"><p class="formula-title">Kadensi ke MET</p><p class="formula-main"><strong>MET = 0,0219 × Kadensi (langkah/mnt) + 0,72</strong></p><p class="formula-meta"><span class="accuracy">Akurasi: ±0,5 MET</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>Mengapa rumus ini penting:</strong> Persamaan ini <strong>23-35% lebih akurat</strong> daripada
               persamaan berbasis kecepatan ACSM tradisional untuk jalan kaki. Hal ini dikarenakan kadensi secara
               langsung mencerminkan frekuensi gerakan dan pengeluaran energi, sementara kecepatan bergantung pada
-              panjang langkah yang bervariasi.</p>
-          </div>
-
-          <h4>Contoh:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Berjalan pada 100 spm:</strong></p>
-              <p class="example-calc">MET = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 MET</strong></p>
-              <p class="example-interpretation">≈ 3 MET = <strong>Ambang batas intensitas sedang</strong> ✓</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Berjalan pada 110 spm:</strong></p>
-              <p class="example-calc">MET = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 MET</strong></p>
-              <p class="example-interpretation">Intensitas sedang yang mantap</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Berjalan pada 120 spm:</strong></p>
-              <p class="example-calc">MET = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 MET</strong></p>
-              <p class="example-interpretation">Intensitas sedang-berat</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Berjalan pada 130 spm:</strong></p>
-              <p class="example-calc">MET = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 MET</strong></p>
-              <p class="example-interpretation"><strong>Ambang batas intensitas berat</strong> (6 MET berdasarkan
-                pengukuran langsung CADENCE-Adults)</p>
-            </div>
-          </div>
-
-          <div class="formula-note">
-            <p><strong>Catatan:</strong> Studi CADENCE-Adults secara langsung mengukur bahwa 130 spm = 6 MET dalam
+              panjang langkah yang bervariasi.</p></div><h4>Contoh:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Berjalan pada 100 spm:</strong></p><p class="example-calc">MET = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 MET</strong></p><p class="example-interpretation">≈ 3 MET = <strong>Ambang batas intensitas sedang</strong> ✓</p></div><div class="calc-example"><p class="example-input"><strong>Berjalan pada 110 spm:</strong></p><p class="example-calc">MET = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 MET</strong></p><p class="example-interpretation">Intensitas sedang yang mantap</p></div><div class="calc-example"><p class="example-input"><strong>Berjalan pada 120 spm:</strong></p><p class="example-calc">MET = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 MET</strong></p><p class="example-interpretation">Intensitas sedang-berat</p></div><div class="calc-example"><p class="example-input"><strong>Berjalan pada 130 spm:</strong></p><p class="example-calc">MET = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 MET</strong></p><p class="example-interpretation"><strong>Ambang batas intensitas berat</strong> (6 MET berdasarkan
+                pengukuran langsung CADENCE-Adults)</p></div></div><div class="formula-note"><p><strong>Catatan:</strong> Studi CADENCE-Adults secara langsung mengukur bahwa 130 spm = 6 MET dalam
               kondisi laboratorium yang terkontrol. Persamaan Moore dirancang untuk rentang 80-130 spm dan mungkin
-              meremehkan (*underestimate*) pada kadensi yang sangat tinggi.</p>
-          </div>
-
-          <h4>Data Validasi:</h4>
-          <ul>
-            <li><strong>Sampel:</strong> 76 orang dewasa berusia 21-40 tahun</li>
-            <li><strong>Metode:</strong> Kalorimetri tidak langsung (standar emas)</li>
-            <li><strong>Nilai R²:</strong> 0,87 (korelasi sangat baik)</li>
-            <li><strong>Kesalahan absolut rata-rata:</strong> 0,47 MET</li>
-            <li><strong>Rentang yang berlaku:</strong> 80-130 langkah/mnt</li>
-          </ul>
-        </div>
-
-        <h2 id="acsm-vo2">2. Persamaan VO₂ ACSM untuk Jalan Kaki</h2>
-
-        <div class="formula-section">
-          <h3>Penghitungan Metabolik ACSM</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Jalan Kaki Datar (Kemiringan 0%)</p>
-            <p class="formula-main"><strong>VO₂ (mL/kg/mnt) = 0,1 × Kecepatan (m/mnt) + 3,5</strong></p>
-            <p class="formula-note">Kecepatan dalam meter per menit (kalikan km/jam dengan 16,67 atau mil/jam dengan
-              26,82)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Jalan Kaki dengan Kemiringan (Tanjakan/Turunan)</p>
-            <p class="formula-main"><strong>VO₂ = 0,1(Kecepatan) + 1,8(Kecepatan)(Kemiringan) + 3,5</strong></p>
-            <p class="formula-note">Kemiringan dinyatakan dalam desimal (misal: 5% = 0,05)</p>
-          </div>
-
-          <h4>Contoh:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Berjalan 5 km/jam (83,3 m/mnt) di medan datar:</strong></p>
-              <p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 mL/kg/mnt</strong></p>
-              <p class="example-conversion">Konversi ke MET: 11,83 / 3,5 = <strong>3,38 MET</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Berjalan 5 km/jam pada tanjakan 5%:</strong></p>
-              <p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p>
-              <p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 mL/kg/mnt</strong></p>
-              <p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 MET</strong></p>
-              <p class="example-interpretation">Tanjakan meningkatkan intensitas sebesar ~64%!</p>
-            </div>
-          </div>
-
-          <div class="conversion-helper">
-            <h4>Konversi Kecepatan:</h4>
-            <ul>
-              <li><strong>km/jam ke m/mnt:</strong> kalikan dengan 16,67</li>
-              <li><strong>mil/jam ke m/mnt:</strong> kalikan dengan 26,82</li>
-              <li><strong>m/dtk ke m/mnt:</strong> kalikan dengan 60</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="energy-expenditure">3. Pengeluaran Energi & Pembakaran Kalori</h2>
-
-        <div class="formula-section">
-          <h3>Penghitungan Kalori yang Akurat</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Kalori per Menit</p>
-            <p class="formula-main"><strong>Kal/mnt = (MET × 3,5 × Berat Badan kg) / 200</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Total Kalori per Sesi</p>
-            <p class="formula-main"><strong>Total Kalori = Kal/mnt × Durasi (menit)</strong></p>
-          </div>
-
-          <h4>Contoh:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Orang dengan berat 70 kg berjalan 100 spm (3 MET) selama 45
-                  menit:</strong></p>
-              <p class="example-calc">Kal/mnt = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 kal/mnt</strong></p>
-              <p class="example-calc">Total = 3,675 × 45 = <strong>165,4 kalori</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Orang dengan berat 85 kg berjalan 120 spm (5 MET) selama 30
-                  menit:</strong></p>
-              <p class="example-calc">Kal/mnt = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 kal/mnt</strong></p>
-              <p class="example-calc">Total = 7,44 × 30 = <strong>223,2 kalori</strong></p>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h4>Mengapa Menggunakan Rumus Ini?</h4>
-            <p>Persamaan ini berasal dari definisi MET (*Metabolic Equivalent of Task*):</p>
-            <ul>
-              <li>1 MET = 3,5 mL O₂/kg/mnt (laju metabolisme istirahat)</li>
-              <li>1 liter O₂ yang dikonsumsi ≈ 5 kkal yang dibakar</li>
-              <li>Konversi: (MET × 3,5 × kg × 5) / 1000 = (MET × 3,5 × kg) / 200</li>
-            </ul>
-          </div>
-
-          <h3>Pembakaran Kalori Bersih (Hanya Latihan)</h3>
-          <div class="formula-box">
-            <p class="formula-title">Kalori Bersih (tidak termasuk istirahat)</p>
-            <p class="formula-main"><strong>Kal Bersih/mnt = [(MET - 1) × 3,5 × Berat Badan] / 200</strong></p>
-            <p class="formula-note">Mengurangi 1 MET untuk mengecualikan kalori yang tetap Anda bakar saat istirahat</p>
-          </div>
-
-          <div class="calc-example">
-            <p class="example-input"><strong>70 kg, 3 MET, 45 mnt – Kalori bersih:</strong></p>
-            <p class="example-calc">Bersih = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3 kalori
-                bersih</strong></p>
-            <p class="example-interpretation">vs 165,4 total kalori (55 kalori akan tetap dibakar saat istirahat)</p>
-          </div>
-        </div>
-
-        <h2 id="gait-symmetry">4. Indeks Simetri Gaya Berjalan (GSI)</h2>
-
-        <div class="formula-section">
-          <h3>Menguantifikasi Asimetri Kiri-Kanan</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Indeks Simetri Gaya Berjalan (GSI)</p>
-            <p class="formula-main"><strong>GSI (%) = |Kanan - Kiri| / [0,5 × (Kanan + Kiri)] × 100</strong></p>
-            <p class="formula-note">Dapat diterapkan pada panjang langkah (*stride length*), waktu langkah (*step
-              time*), atau waktu kontak</p>
-          </div>
-
-          <h4>Interpretasi:</h4>
-          <ul>
-            <li><strong>&lt;2-3%:</strong> Normal, gaya berjalan simetris</li>
-            <li><strong>3-5%:</strong> Asimetri ringan</li>
-            <li><strong>5-10%:</strong> Asimetri sedang, perlu dipantau</li>
-            <li><strong>&gt;10%:</strong> Signifikan secara medis, perlu penilaian profesional</li>
-          </ul>
-
-          <h4>Contoh:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Waktu langkah: Kanan = 520 md, Kiri = 480 md</strong></p>
-              <p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p>
-              <p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asimetri</strong></p>
-              <p class="example-interpretation">Asimetri sedang – pertimbangkan untuk memperkuat sisi yang lebih lemah
-              </p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Panjang langkah: Kanan = 1,42 m, Kiri = 1,38 m</strong></p>
-              <p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p>
-              <p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% asimetri</strong></p>
-              <p class="example-interpretation">Rentang normal dan sehat ✓</p>
-            </div>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>Catatan Klinis:</strong> Asimetri Jalan Kaki di Apple HealthKit menggunakan penghitungan yang
+              meremehkan (*underestimate*) pada kadensi yang sangat tinggi.</p></div><h4>Data Validasi:</h4><ul><li><strong>Sampel:</strong> 76 orang dewasa berusia 21-40 tahun</li><li><strong>Metode:</strong> Kalorimetri tidak langsung (standar emas)</li><li><strong>Nilai R²:</strong> 0,87 (korelasi sangat baik)</li><li><strong>Kesalahan absolut rata-rata:</strong> 0,47 MET</li><li><strong>Rentang yang berlaku:</strong> 80-130 langkah/mnt</li></ul></div><h2 id="acsm-vo2">2. Persamaan VO₂ ACSM untuk Jalan Kaki</h2><div class="formula-section"><h3>Penghitungan Metabolik ACSM</h3><div class="formula-box"><p class="formula-title">Jalan Kaki Datar (Kemiringan 0%)</p><p class="formula-main"><strong>VO₂ (mL/kg/mnt) = 0,1 × Kecepatan (m/mnt) + 3,5</strong></p><p class="formula-note">Kecepatan dalam meter per menit (kalikan km/jam dengan 16,67 atau mil/jam dengan
+              26,82)</p></div><div class="formula-box"><p class="formula-title">Jalan Kaki dengan Kemiringan (Tanjakan/Turunan)</p><p class="formula-main"><strong>VO₂ = 0,1(Kecepatan) + 1,8(Kecepatan)(Kemiringan) + 3,5</strong></p><p class="formula-note">Kemiringan dinyatakan dalam desimal (misal: 5% = 0,05)</p></div><h4>Contoh:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Berjalan 5 km/jam (83,3 m/mnt) di medan datar:</strong></p><p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 mL/kg/mnt</strong></p><p class="example-conversion">Konversi ke MET: 11,83 / 3,5 = <strong>3,38 MET</strong></p></div><div class="calc-example"><p class="example-input"><strong>Berjalan 5 km/jam pada tanjakan 5%:</strong></p><p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p><p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 mL/kg/mnt</strong></p><p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 MET</strong></p><p class="example-interpretation">Tanjakan meningkatkan intensitas sebesar ~64%!</p></div></div><div class="conversion-helper"><h4>Konversi Kecepatan:</h4><ul><li><strong>km/jam ke m/mnt:</strong> kalikan dengan 16,67</li><li><strong>mil/jam ke m/mnt:</strong> kalikan dengan 26,82</li><li><strong>m/dtk ke m/mnt:</strong> kalikan dengan 60</li></ul></div></div><h2 id="energy-expenditure">3. Pengeluaran Energi & Pembakaran Kalori</h2><div class="formula-section"><h3>Penghitungan Kalori yang Akurat</h3><div class="formula-box"><p class="formula-title">Kalori per Menit</p><p class="formula-main"><strong>Kal/mnt = (MET × 3,5 × Berat Badan kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">Total Kalori per Sesi</p><p class="formula-main"><strong>Total Kalori = Kal/mnt × Durasi (menit)</strong></p></div><h4>Contoh:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Orang dengan berat 70 kg berjalan 100 spm (3 MET) selama 45
+                  menit:</strong></p><p class="example-calc">Kal/mnt = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 kal/mnt</strong></p><p class="example-calc">Total = 3,675 × 45 = <strong>165,4 kalori</strong></p></div><div class="calc-example"><p class="example-input"><strong>Orang dengan berat 85 kg berjalan 120 spm (5 MET) selama 30
+                  menit:</strong></p><p class="example-calc">Kal/mnt = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 kal/mnt</strong></p><p class="example-calc">Total = 7,44 × 30 = <strong>223,2 kalori</strong></p></div></div><div class="info-box"><h4>Mengapa Menggunakan Rumus Ini?</h4><p>Persamaan ini berasal dari definisi MET (*Metabolic Equivalent of Task*):</p><ul><li>1 MET = 3,5 mL O₂/kg/mnt (laju metabolisme istirahat)</li><li>1 liter O₂ yang dikonsumsi ≈ 5 kkal yang dibakar</li><li>Konversi: (MET × 3,5 × kg × 5) / 1000 = (MET × 3,5 × kg) / 200</li></ul></div><h3>Pembakaran Kalori Bersih (Hanya Latihan)</h3><div class="formula-box"><p class="formula-title">Kalori Bersih (tidak termasuk istirahat)</p><p class="formula-main"><strong>Kal Bersih/mnt = [(MET - 1) × 3,5 × Berat Badan] / 200</strong></p><p class="formula-note">Mengurangi 1 MET untuk mengecualikan kalori yang tetap Anda bakar saat istirahat</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 MET, 45 mnt – Kalori bersih:</strong></p><p class="example-calc">Bersih = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3 kalori
+                bersih</strong></p><p class="example-interpretation">vs 165,4 total kalori (55 kalori akan tetap dibakar saat istirahat)</p></div></div><h2 id="gait-symmetry">4. Indeks Simetri Gaya Berjalan (GSI)</h2><div class="formula-section"><h3>Menguantifikasi Asimetri Kiri-Kanan</h3><div class="formula-box"><p class="formula-title">Indeks Simetri Gaya Berjalan (GSI)</p><p class="formula-main"><strong>GSI (%) = |Kanan - Kiri| / [0,5 × (Kanan + Kiri)] × 100</strong></p><p class="formula-note">Dapat diterapkan pada panjang langkah (*stride length*), waktu langkah (*step
+              time*), atau waktu kontak</p></div><h4>Interpretasi:</h4><ul><li><strong>&lt;2-3%:</strong> Normal, gaya berjalan simetris</li><li><strong>3-5%:</strong> Asimetri ringan</li><li><strong>5-10%:</strong> Asimetri sedang, perlu dipantau</li><li><strong>&gt;10%:</strong> Signifikan secara medis, perlu penilaian profesional</li></ul><h4>Contoh:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Waktu langkah: Kanan = 520 md, Kiri = 480 md</strong></p><p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asimetri</strong></p><p class="example-interpretation">Asimetri sedang – pertimbangkan untuk memperkuat sisi yang lebih lemah
+              </p></div><div class="calc-example"><p class="example-input"><strong>Panjang langkah: Kanan = 1,42 m, Kiri = 1,38 m</strong></p><p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p><p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% asimetri</strong></p><p class="example-interpretation">Rentang normal dan sehat ✓</p></div></div><div class="warning-box"><p><strong>Catatan Klinis:</strong> Asimetri Jalan Kaki di Apple HealthKit menggunakan penghitungan yang
               sedikit berbeda (perbedaan persentase sederhana antara waktu langkah) tetapi ambang batas interpretasinya
-              serupa.</p>
-          </div>
-        </div>
-
-        <h2 id="walk-score">5. Skor WALK (Metrik Eksklusif Analitik Jalan Kaki)</h2>
-
-        <div class="formula-section">
-          <h3>Skor Efisiensi Jalan Kaki</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Skor WALK</p>
-            <p class="formula-main"><strong>Skor WALK = Waktu (detik) + Langkah per 100 meter</strong></p>
-            <p class="formula-note">Skor lebih rendah = efisiensi lebih baik</p>
-          </div>
-
-          <h4>Cara Kerja:</h4>
-          <p>Skor WALK menggabungkan waktu dan jumlah langkah untuk menguantifikasi efisiensi jalan kaki. Pejalan kaki
+              serupa.</p></div></div><h2 id="walk-score">5. Skor WALK (Metrik Eksklusif Analitik Jalan Kaki)</h2><div class="formula-section"><h3>Skor Efisiensi Jalan Kaki</h3><div class="formula-box"><p class="formula-title">Skor WALK</p><p class="formula-main"><strong>Skor WALK = Waktu (detik) + Langkah per 100 meter</strong></p><p class="formula-note">Skor lebih rendah = efisiensi lebih baik</p></div><h4>Cara Kerja:</h4><p>Skor WALK menggabungkan waktu dan jumlah langkah untuk menguantifikasi efisiensi jalan kaki. Pejalan kaki
             yang menempuh 100 m dalam 75 detik dengan 140 langkah memiliki Skor WALK 215. Meningkatkan kecepatan ATAU
-            efisiensi langkah akan menurunkan skor.</p>
-
-          <h4>Contoh:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100 m dalam 80 detik, 120 langkah:</strong></p>
-              <p class="example-calc">Skor WALK = 80 + 120 = <strong>200</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100 m dalam 70 detik, 110 langkah:</strong></p>
-              <p class="example-calc">Skor WALK = 70 + 110 = <strong>180</strong></p>
-              <p class="example-interpretation">Efisiensi lebih baik melalui peningkatan kecepatan + langkah</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100 m dalam 60 detik, 130 langkah (jalan cepat atletik):</strong></p>
-              <p class="example-calc">Skor WALK = 60 + 130 = <strong>190</strong></p>
-              <p class="example-interpretation">Cepat tetapi langkah lebih pendek</p>
-            </div>
-          </div>
-
-          <h4>Rentang Tipikal:</h4>
-          <ul>
-            <li><strong>&gt;250:</strong> Gaya berjalan lambat/tidak efisien, kemungkinan masalah mobilitas</li>
-            <li><strong>200-250:</strong> Pejalan kaki santai, efisiensi rata-rata</li>
-            <li><strong>170-200:</strong> Pejalan kaki kebugaran, efisiensi baik</li>
-            <li><strong>150-170:</strong> Pejalan kaki lanjutan, efisiensi sangat baik</li>
-            <li><strong>&lt;150:</strong> Tingkat elit/jalan cepat atletik</li>
-          </ul>
-
-          <div class="tip-box">
-            <p><strong>Berlatih dengan Skor WALK:</strong> Pantau skor Anda pada lintasan 100 m yang sama setiap minggu.
-              Peningkatan menunjukkan penguatan koordinasi neuromuskular, kekuatan, dan ekonomi jalan kaki.</p>
-          </div>
-        </div>
-
-        <h2 id="basic-metrics">6. Metrik Dasar Gaya Berjalan</h2>
-
-        <div class="formula-section">
-          <h3>Penghitungan Dasar</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Kecepatan Jalan Kaki</p>
-            <p class="formula-main"><strong>Kecepatan (m/dtk) = Jarak (m) / Waktu (dtk)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Kadensi dari Total Langkah</p>
-            <p class="formula-main"><strong>Kadensi (spm) = Total Langkah / Waktu (menit)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Panjang Langkah (*Stride Length*)</p>
-            <p class="formula-main"><strong>Panjang Langkah (m) = Jarak (m) / (Langkah / 2)</strong></p>
-            <p class="formula-note">Bagi langkah dengan 2 karena satu *stride* = dua langkah</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Panjang Langkah (*Step Length*)</p>
-            <p class="formula-main"><strong>Panjang Langkah (m) = Jarak (m) / Langkah</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Kecepatan dari Kadensi & Panjang Langkah (*Stride*)</p>
-            <p class="formula-main"><strong>Kecepatan = Panjang Langkah × (Kadensi / 2) / 60</strong></p>
-            <p class="formula-note">Atau: Kecepatan (m/dtk) = Panjang Langkah (*Step*) × Kadensi / 60</p>
-          </div>
-
-          <h4>Contoh Alur Kerja:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>Jalan kaki 1000 m dalam 12 menit dengan 1320 langkah:</strong></p>
-            <p><strong>Kecepatan:</strong> 1000 m / 720 dtk = <strong>1,39 m/dtk</strong></p>
-            <p><strong>Kadensi:</strong> 1320 langkah / 12 mnt = <strong>110 spm</strong></p>
-            <p><strong>Panjang Langkah (*Stride*):</strong> 1000 m / (1320/2) = 1000 / 660 = <strong>1,52 m</strong></p>
-            <p><strong>Panjang Langkah (*Step*):</strong> 1000 m / 1320 = <strong>0,76 m</strong></p>
-          </div>
-        </div>
-
-        <h2 id="heart-rate">7. Penghitungan Zona Detak Jantung</h2>
-
-        <div class="formula-section">
-          <h3>Metode Zona HR Tradisional</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Estimasi Detak Jantung Maksimal</p>
-            <p class="formula-main"><strong>HR Maks = 220 - Usia</strong></p>
-            <p class="formula-note">Sederhana tetapi terdapat variasi individual ±10-15 bpm</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Alternatif: Rumus Tanaka (lebih akurat)</p>
-            <p class="formula-main"><strong>HR Maks = 208 - (0,7 × Usia)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Penghitungan Rentang Zona</p>
-            <p class="formula-main"><strong>Zona = HR Maks × (%Bawah, %Atas)</strong></p>
-          </div>
-
-          <h4>Contoh: Usia 40 tahun</h4>
-          <div class="calc-example">
-            <p><strong>Tradisional:</strong> HR Maks = 220 - 40 = <strong>180 bpm</strong></p>
-            <p><strong>Tanaka:</strong> HR Maks = 208 - (0,7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
-            <p><strong>Zona 2 (60-70%):</strong> 180 × 0,60 = 108 bpm sampai 180 × 0,70 = 126 bpm</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Catatan:</strong> Meskipun zona HR berguna, <strong>zona berbasis kadensi lebih akurat dan
-                praktis untuk jalan kaki</strong> (lihat panduan Zona Jalan Kaki).</p>
-          </div>
-        </div>
-
-        <h2 id="cost-transport">8. Biaya Transportasi & Ekonomi Jalan Kaki</h2>
-
-        <div class="formula-section">
-          <h3>Biaya Energi Jalan Kaki</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Biaya Transportasi (C)</p>
-            <p class="formula-main"><strong>C = Energi yang Dikeluarkan / (Massa Tubuh × Jarak)</strong></p>
-            <p class="formula-note">Satuan: J/kg/m atau mL O₂/kg/m</p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Kurva Berbentuk U:</strong> Ekonomi jalan kaki mengikuti kurva berbentuk U. Terdapat kecepatan
+            efisiensi langkah akan menurunkan skor.</p><h4>Contoh:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100 m dalam 80 detik, 120 langkah:</strong></p><p class="example-calc">Skor WALK = 80 + 120 = <strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100 m dalam 70 detik, 110 langkah:</strong></p><p class="example-calc">Skor WALK = 70 + 110 = <strong>180</strong></p><p class="example-interpretation">Efisiensi lebih baik melalui peningkatan kecepatan + langkah</p></div><div class="calc-example"><p class="example-input"><strong>100 m dalam 60 detik, 130 langkah (jalan cepat atletik):</strong></p><p class="example-calc">Skor WALK = 60 + 130 = <strong>190</strong></p><p class="example-interpretation">Cepat tetapi langkah lebih pendek</p></div></div><h4>Rentang Tipikal:</h4><ul><li><strong>&gt;250:</strong> Gaya berjalan lambat/tidak efisien, kemungkinan masalah mobilitas</li><li><strong>200-250:</strong> Pejalan kaki santai, efisiensi rata-rata</li><li><strong>170-200:</strong> Pejalan kaki kebugaran, efisiensi baik</li><li><strong>150-170:</strong> Pejalan kaki lanjutan, efisiensi sangat baik</li><li><strong>&lt;150:</strong> Tingkat elit/jalan cepat atletik</li></ul><div class="tip-box"><p><strong>Berlatih dengan Skor WALK:</strong> Pantau skor Anda pada lintasan 100 m yang sama setiap minggu.
+              Peningkatan menunjukkan penguatan koordinasi neuromuskular, kekuatan, dan ekonomi jalan kaki.</p></div></div><h2 id="basic-metrics">6. Metrik Dasar Gaya Berjalan</h2><div class="formula-section"><h3>Penghitungan Dasar</h3><div class="formula-box"><p class="formula-title">Kecepatan Jalan Kaki</p><p class="formula-main"><strong>Kecepatan (m/dtk) = Jarak (m) / Waktu (dtk)</strong></p></div><div class="formula-box"><p class="formula-title">Kadensi dari Total Langkah</p><p class="formula-main"><strong>Kadensi (spm) = Total Langkah / Waktu (menit)</strong></p></div><div class="formula-box"><p class="formula-title">Panjang Langkah (*Stride Length*)</p><p class="formula-main"><strong>Panjang Langkah (m) = Jarak (m) / (Langkah / 2)</strong></p><p class="formula-note">Bagi langkah dengan 2 karena satu *stride* = dua langkah</p></div><div class="formula-box"><p class="formula-title">Panjang Langkah (*Step Length*)</p><p class="formula-main"><strong>Panjang Langkah (m) = Jarak (m) / Langkah</strong></p></div><div class="formula-box"><p class="formula-title">Kecepatan dari Kadensi & Panjang Langkah (*Stride*)</p><p class="formula-main"><strong>Kecepatan = Panjang Langkah × (Kadensi / 2) / 60</strong></p><p class="formula-note">Atau: Kecepatan (m/dtk) = Panjang Langkah (*Step*) × Kadensi / 60</p></div><h4>Contoh Alur Kerja:</h4><div class="calc-example"><p class="example-input"><strong>Jalan kaki 1000 m dalam 12 menit dengan 1320 langkah:</strong></p><p><strong>Kecepatan:</strong> 1000 m / 720 dtk = <strong>1,39 m/dtk</strong></p><p><strong>Kadensi:</strong> 1320 langkah / 12 mnt = <strong>110 spm</strong></p><p><strong>Panjang Langkah (*Stride*):</strong> 1000 m / (1320/2) = 1000 / 660 = <strong>1,52 m</strong></p><p><strong>Panjang Langkah (*Step*):</strong> 1000 m / 1320 = <strong>0,76 m</strong></p></div></div><h2 id="heart-rate">7. Penghitungan Zona Detak Jantung</h2><div class="formula-section"><h3>Metode Zona HR Tradisional</h3><div class="formula-box"><p class="formula-title">Estimasi Detak Jantung Maksimal</p><p class="formula-main"><strong>HR Maks = 220 - Usia</strong></p><p class="formula-note">Sederhana tetapi terdapat variasi individual ±10-15 bpm</p></div><div class="formula-box"><p class="formula-title">Alternatif: Rumus Tanaka (lebih akurat)</p><p class="formula-main"><strong>HR Maks = 208 - (0,7 × Usia)</strong></p></div><div class="formula-box"><p class="formula-title">Penghitungan Rentang Zona</p><p class="formula-main"><strong>Zona = HR Maks × (%Bawah, %Atas)</strong></p></div><h4>Contoh: Usia 40 tahun</h4><div class="calc-example"><p><strong>Tradisional:</strong> HR Maks = 220 - 40 = <strong>180 bpm</strong></p><p><strong>Tanaka:</strong> HR Maks = 208 - (0,7 × 40) = 208 - 28 = <strong>180 bpm</strong></p><p><strong>Zona 2 (60-70%):</strong> 180 × 0,60 = 108 bpm sampai 180 × 0,70 = 126 bpm</p></div><div class="info-box"><p><strong>Catatan:</strong> Meskipun zona HR berguna, <strong>zona berbasis kadensi lebih akurat dan
+                praktis untuk jalan kaki</strong> (lihat panduan Zona Jalan Kaki).</p></div></div><h2 id="cost-transport">8. Biaya Transportasi & Ekonomi Jalan Kaki</h2><div class="formula-section"><h3>Biaya Energi Jalan Kaki</h3><div class="formula-box"><p class="formula-title">Biaya Transportasi (C)</p><p class="formula-main"><strong>C = Energi yang Dikeluarkan / (Massa Tubuh × Jarak)</strong></p><p class="formula-note">Satuan: J/kg/m atau mL O₂/kg/m</p></div><div class="key-insight"><p><strong>Kurva Berbentuk U:</strong> Ekonomi jalan kaki mengikuti kurva berbentuk U. Terdapat kecepatan
               optimal (biasanya 1,2-1,4 m/dtk atau 4,3-5,0 km/jam) di mana biaya transportasi diminimalkan. Berjalan
-              lebih lambat ATAU lebih cepat dari ini akan meningkatkan biaya energi per jarak yang ditempuh.</p>
-          </div>
-
-          <h4>Faktor yang Memengaruhi Biaya Transportasi:</h4>
-          <ul>
-            <li><strong>Kecepatan:</strong> Hubungan berbentuk U (optimal sekitar 1,3 m/dtk)</li>
-            <li><strong>Gradien:</strong> Tanjakan secara signifikan meningkatkan biaya; turunan meningkatkan biaya
-              eksentrik</li>
-            <li><strong>Massa tubuh:</strong> Individu yang lebih berat memiliki biaya absolut yang lebih tinggi tetapi
-              biaya relatif yang serupa</li>
-            <li><strong>Mekanika gaya berjalan:</strong> Panjang langkah yang optimal meminimalkan biaya</li>
-            <li><strong>Medan:</strong> Permukaan yang tidak rata meningkatkan biaya dibandingkan jalan aspal yang halus
-            </li>
-          </ul>
-
-          <div class="formula-box">
-            <p class="formula-title">Biaya yang Disesuaikan dengan Kemiringan</p>
-            <p class="formula-main"><strong>Pengali biaya = 1 + (Kemiringan × 10)</strong></p>
-            <p class="formula-note">Perkiraan kasar: +10% biaya per 1% kemiringan</p>
-          </div>
-
-          <h4>Contoh:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>Berjalan pada tanjakan 5%:</strong></p>
-            <p class="example-calc">Pengali biaya = 1 + (0,05 × 10) = <strong>1,5×</strong></p>
-            <p class="example-interpretation">Peningkatan biaya energi sebesar 50% dibandingkan medan datar</p>
-          </div>
-        </div>
-
-        <h2 id="training-load">9. Beban Latihan & Skor Stres</h2>
-
-        <div class="formula-section">
-          <h3>Skor Stres Jalan Kaki (WSS)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">WSS Berbasis Zona</p>
-            <p class="formula-main"><strong>WSS = Σ (Menit dalam Zona × Faktor Zona)</strong></p>
-            <p>Zona 1: ×1,0 | Zona 2: ×2,0 | Zona 3: ×3,0 | Zona 4: ×4,0 | Zona 5: ×5,0</p>
-          </div>
-
-          <h4>Contoh: Jalan kaki 60 menit</h4>
-          <div class="calc-example">
-            <p>10 mnt Zona 1 × 1 = 10 poin</p>
-            <p>40 mnt Zona 2 × 2 = 80 poin</p>
-            <p>10 mnt Zona 3 × 3 = 30 poin</p>
-            <p><strong>Total WSS = 120</strong></p>
-          </div>
-
-          <h3>Beban Latihan Mingguan</h3>
-          <div class="formula-box">
-            <p class="formula-title">Beban Mingguan</p>
-            <p class="formula-main"><strong>Beban Mingguan = Σ WSS Harian (7 hari)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Beban Berlebih Progresif (*Progressive Overload*)</p>
-            <p class="formula-main"><strong>Minggu Depan = Minggu Sekarang × 1,05-1,10</strong></p>
-            <p class="formula-note">Maksimal peningkatan 5-10% per minggu</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Minggu Pemulihan</p>
-            <p class="formula-main"><strong>Minggu Pemulihan = Minggu Sekarang × 0,50-0,70</strong></p>
-            <p class="formula-note">Setiap 3-4 minggu, kurangi menjadi 50-70%</p>
-          </div>
-
-          <h4>Beban Mingguan Tipikal:</h4>
-          <ul>
-            <li><strong>Pejalan kaki kesehatan pemula:</strong> 200-400 WSS/minggu</li>
-            <li><strong>Pejalan kaki kebugaran rutin:</strong> 400-700 WSS/minggu</li>
-            <li><strong>Pejalan kaki kebugaran serius:</strong> 700-1000 WSS/minggu</li>
-            <li><strong>Pejalan kaki jalan cepat kompetitif:</strong> 1000-1500+ WSS/minggu</li>
-          </ul>
-        </div>
-
-        <h2 id="predictions">10. Persamaan Prediktif</h2>
-
-        <div class="formula-section">
-          <h3>Prediksi Jarak Tes Jalan Kaki 6 Menit (6MWT)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Prediksi Jarak 6MWT (Enright & Sherrill)</p>
-            <p><strong>Laki-laki:</strong> (7,57 × Tinggi cm) - (5,02 × Usia) - (1,76 × Berat kg) - 309</p>
-            <p><strong>Perempuan:</strong> (2,11 × Tinggi cm) - (5,78 × Usia) - (2,29 × Berat kg) + 667</p>
-            <p class="formula-note">Memprediksi jarak dalam meter untuk orang dewasa yang sehat</p>
-          </div>
-
-          <h4>Contoh: Laki-laki berusia 40 tahun, 175 cm, 75 kg</h4>
-          <div class="calc-example">
-            <p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p>
-            <p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 meter</strong></p>
-            <p class="example-interpretation">Kapasitas fungsional yang baik untuk usianya</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Penggunaan Klinis:</strong> 6MWT digunakan untuk menilai kapasitas latihan fungsional pada pasien
-              kardiopulmoner, evaluasi pra/pasca operasi, dan kebugaran umum pada lansia.</p>
-          </div>
-        </div>
-
-        <h2 id="conversions">11. Konversi Satuan</h2>
-
-        <div class="formula-section">
-          <h3>Konversi Metrik Jalan Kaki Umum</h3>
-
-          <div class="conversion-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Dari</th>
-                  <th>Ke</th>
-                  <th>Rumus</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>km/jam</td>
-                  <td>m/dtk</td>
-                  <td>km/jam ÷ 3,6</td>
-                </tr>
-                <tr>
-                  <td>mil/jam</td>
-                  <td>m/dtk</td>
-                  <td>mil/jam × 0,447</td>
-                </tr>
-                <tr>
-                  <td>m/dtk</td>
-                  <td>km/jam</td>
-                  <td>m/dtk × 3,6</td>
-                </tr>
-                <tr>
-                  <td>m/dtk</td>
-                  <td>mil/jam</td>
-                  <td>m/dtk × 2,237</td>
-                </tr>
-                <tr>
-                  <td>km/jam</td>
-                  <td>m/mnt</td>
-                  <td>km/jam × 16,67</td>
-                </tr>
-                <tr>
-                  <td>mil/jam</td>
-                  <td>m/mnt</td>
-                  <td>mil/jam × 26,82</td>
-                </tr>
-                <tr>
-                  <td>MET</td>
-                  <td>mL/kg/mnt</td>
-                  <td>MET × 3,5</td>
-                </tr>
-                <tr>
-                  <td>mL/kg/mnt</td>
-                  <td>MET</td>
-                  <td>VO₂ ÷ 3,5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h4>Referensi Cepat:</h4>
-          <ul>
-            <li><strong>1,0 m/dtk =</strong> 3,6 km/jam = 2,24 mil/jam (kecepatan jalan kaki orang dewasa sehat yang
-              tipikal)</li>
-            <li><strong>1,4 m/dtk =</strong> 5,0 km/jam = 3,1 mil/jam (jalan cepat)</li>
-            <li><strong>1 MET =</strong> 3,5 mL O₂/kg/mnt (metabolisme istirahat)</li>
-            <li><strong>3 MET =</strong> 10,5 mL O₂/kg/mnt (ambang batas intensitas sedang)</li>
-            <li><strong>6 MET =</strong> 21 mL O₂/kg/mnt (ambang batas intensitas berat)</li>
-          </ul>
-        </div>
-
-        <h2 id="next-steps">Sumber Daya Terkait</h2>
-
-        <div class="next-steps-grid">
-          <div class="next-step-card">
-            <h3>Terapkan Rumus: Kalkulator WSS</h3>
-            <p>Gunakan kalkulator interaktif kami untuk menghitung Skor Stres Jalan Kaki Anda.</p>
-            <a href="/id/wss-calculator/" class="btn btn-secondary">Hitung WSS →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Memahami Zona Jalan Kaki</h3>
-            <p>Pelajari cara menerapkan zona intensitas berbasis kadensi dalam latihan.</p>
-            <a href="/id/walking-zones/" class="btn btn-secondary">Pelajari Zona →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Penelitian Ilmiah</h3>
-            <p>Tinjau studi-studi yang memvalidasi rumus-rumus ini.</p>
-            <a href="/id/research/" class="btn btn-secondary">Lihat Penelitian →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Bibliografi Lengkap</h3>
-            <p>Akses kutipan lengkap untuk semua persamaan yang dirujuk.</p>
-            <a href="/id/bibliography/" class="btn btn-secondary">Lihat Bibliografi →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>Indeks Rumus</h3>
-          <ul>
-            <li><a href="#cadence-mets">1. Kadensi → MET</a></li>
-            <li><a href="#acsm-vo2">2. Persamaan VO₂ ACSM</a></li>
-            <li><a href="#energy-expenditure">3. Energi & Kalori</a></li>
-            <li><a href="#gait-symmetry">4. Indeks Simetri Gaya Berjalan</a></li>
-            <li><a href="#walk-score">5. Skor WALK</a></li>
-            <li><a href="#basic-metrics">6. Metrik Dasar</a></li>
-            <li><a href="#heart-rate">7. Zona Detak Jantung</a></li>
-            <li><a href="#cost-transport">8. Biaya Transportasi</a></li>
-            <li><a href="#training-load">9. Beban Latihan</a></li>
-            <li><a href="#predictions">10. Persamaan Prediktif</a></li>
-            <li><a href="#conversions">11. Konversi Satuan</a></li>
-          </ul>
-        </div>
-
-        <div class="formula-highlight">
-          <h3>⭐ Paling Penting</h3>
-          <p><strong>Kadensi ke MET</strong></p>
-          <p class="formula-compact">MET = 0,0219 × spm + 0,72</p>
-          <p class="small-text">Satu persamaan ini memungkinkan latihan intensitas berbasis kadensi tanpa monitor detak
-            jantung.</p>
-        </div>
-
-        <div class="cta-box">
-          <h3>Terapkan Rumus Ini</h3>
-          <p>Analitik Jalan Kaki menggunakan persamaan yang divalidasi secara ilmiah ini untuk menganalisis jalan kaki
-            Anda.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Unduh
-            Aplikasi</a>
-        </div>
-
-        <div class="info-box">
-          <h4>📐 Akurasi Rumus</h4>
-          <p>Semua persamaan di halaman ini berasal dari penelitian yang ditinjau sejawat. Lihat <a
-              href="/id/bibliography/">Bibliografi</a> untuk kutipan lengkap.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+              lebih lambat ATAU lebih cepat dari ini akan meningkatkan biaya energi per jarak yang ditempuh.</p></div><h4>Faktor yang Memengaruhi Biaya Transportasi:</h4><ul><li><strong>Kecepatan:</strong> Hubungan berbentuk U (optimal sekitar 1,3 m/dtk)</li><li><strong>Gradien:</strong> Tanjakan secara signifikan meningkatkan biaya; turunan meningkatkan biaya
+              eksentrik</li><li><strong>Massa tubuh:</strong> Individu yang lebih berat memiliki biaya absolut yang lebih tinggi tetapi
+              biaya relatif yang serupa</li><li><strong>Mekanika gaya berjalan:</strong> Panjang langkah yang optimal meminimalkan biaya</li><li><strong>Medan:</strong> Permukaan yang tidak rata meningkatkan biaya dibandingkan jalan aspal yang halus
+            </li></ul><div class="formula-box"><p class="formula-title">Biaya yang Disesuaikan dengan Kemiringan</p><p class="formula-main"><strong>Pengali biaya = 1 + (Kemiringan × 10)</strong></p><p class="formula-note">Perkiraan kasar: +10% biaya per 1% kemiringan</p></div><h4>Contoh:</h4><div class="calc-example"><p class="example-input"><strong>Berjalan pada tanjakan 5%:</strong></p><p class="example-calc">Pengali biaya = 1 + (0,05 × 10) = <strong>1,5×</strong></p><p class="example-interpretation">Peningkatan biaya energi sebesar 50% dibandingkan medan datar</p></div></div><h2 id="training-load">9. Beban Latihan & Skor Stres</h2><div class="formula-section"><h3>Skor Stres Jalan Kaki (WSS)</h3><div class="formula-box"><p class="formula-title">WSS Berbasis Zona</p><p class="formula-main"><strong>WSS = Σ (Menit dalam Zona × Faktor Zona)</strong></p><p>Zona 1: ×1,0 | Zona 2: ×2,0 | Zona 3: ×3,0 | Zona 4: ×4,0 | Zona 5: ×5,0</p></div><h4>Contoh: Jalan kaki 60 menit</h4><div class="calc-example"><p>10 mnt Zona 1 × 1 = 10 poin</p><p>40 mnt Zona 2 × 2 = 80 poin</p><p>10 mnt Zona 3 × 3 = 30 poin</p><p><strong>Total WSS = 120</strong></p></div><h3>Beban Latihan Mingguan</h3><div class="formula-box"><p class="formula-title">Beban Mingguan</p><p class="formula-main"><strong>Beban Mingguan = Σ WSS Harian (7 hari)</strong></p></div><div class="formula-box"><p class="formula-title">Beban Berlebih Progresif (*Progressive Overload*)</p><p class="formula-main"><strong>Minggu Depan = Minggu Sekarang × 1,05-1,10</strong></p><p class="formula-note">Maksimal peningkatan 5-10% per minggu</p></div><div class="formula-box"><p class="formula-title">Minggu Pemulihan</p><p class="formula-main"><strong>Minggu Pemulihan = Minggu Sekarang × 0,50-0,70</strong></p><p class="formula-note">Setiap 3-4 minggu, kurangi menjadi 50-70%</p></div><h4>Beban Mingguan Tipikal:</h4><ul><li><strong>Pejalan kaki kesehatan pemula:</strong> 200-400 WSS/minggu</li><li><strong>Pejalan kaki kebugaran rutin:</strong> 400-700 WSS/minggu</li><li><strong>Pejalan kaki kebugaran serius:</strong> 700-1000 WSS/minggu</li><li><strong>Pejalan kaki jalan cepat kompetitif:</strong> 1000-1500+ WSS/minggu</li></ul></div><h2 id="predictions">10. Persamaan Prediktif</h2><div class="formula-section"><h3>Prediksi Jarak Tes Jalan Kaki 6 Menit (6MWT)</h3><div class="formula-box"><p class="formula-title">Prediksi Jarak 6MWT (Enright & Sherrill)</p><p><strong>Laki-laki:</strong> (7,57 × Tinggi cm) - (5,02 × Usia) - (1,76 × Berat kg) - 309</p><p><strong>Perempuan:</strong> (2,11 × Tinggi cm) - (5,78 × Usia) - (2,29 × Berat kg) + 667</p><p class="formula-note">Memprediksi jarak dalam meter untuk orang dewasa yang sehat</p></div><h4>Contoh: Laki-laki berusia 40 tahun, 175 cm, 75 kg</h4><div class="calc-example"><p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p><p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 meter</strong></p><p class="example-interpretation">Kapasitas fungsional yang baik untuk usianya</p></div><div class="info-box"><p><strong>Penggunaan Klinis:</strong> 6MWT digunakan untuk menilai kapasitas latihan fungsional pada pasien
+              kardiopulmoner, evaluasi pra/pasca operasi, dan kebugaran umum pada lansia.</p></div></div><h2 id="conversions">11. Konversi Satuan</h2><div class="formula-section"><h3>Konversi Metrik Jalan Kaki Umum</h3><div class="conversion-table"><table><thead><tr><th>Dari</th><th>Ke</th><th>Rumus</th></tr></thead><tbody><tr><td>km/jam</td><td>m/dtk</td><td>km/jam ÷ 3,6</td></tr><tr><td>mil/jam</td><td>m/dtk</td><td>mil/jam × 0,447</td></tr><tr><td>m/dtk</td><td>km/jam</td><td>m/dtk × 3,6</td></tr><tr><td>m/dtk</td><td>mil/jam</td><td>m/dtk × 2,237</td></tr><tr><td>km/jam</td><td>m/mnt</td><td>km/jam × 16,67</td></tr><tr><td>mil/jam</td><td>m/mnt</td><td>mil/jam × 26,82</td></tr><tr><td>MET</td><td>mL/kg/mnt</td><td>MET × 3,5</td></tr><tr><td>mL/kg/mnt</td><td>MET</td><td>VO₂ ÷ 3,5</td></tr></tbody></table></div><h4>Referensi Cepat:</h4><ul><li><strong>1,0 m/dtk =</strong> 3,6 km/jam = 2,24 mil/jam (kecepatan jalan kaki orang dewasa sehat yang
+              tipikal)</li><li><strong>1,4 m/dtk =</strong> 5,0 km/jam = 3,1 mil/jam (jalan cepat)</li><li><strong>1 MET =</strong> 3,5 mL O₂/kg/mnt (metabolisme istirahat)</li><li><strong>3 MET =</strong> 10,5 mL O₂/kg/mnt (ambang batas intensitas sedang)</li><li><strong>6 MET =</strong> 21 mL O₂/kg/mnt (ambang batas intensitas berat)</li></ul></div><h2 id="next-steps">Sumber Daya Terkait</h2><div class="next-steps-grid"><div class="next-step-card"><h3>Terapkan Rumus: Kalkulator WSS</h3><p>Gunakan kalkulator interaktif kami untuk menghitung Skor Stres Jalan Kaki Anda.</p><a href="/id/wss-calculator/" class="btn btn-secondary">Hitung WSS →</a></div><div class="next-step-card"><h3>Memahami Zona Jalan Kaki</h3><p>Pelajari cara menerapkan zona intensitas berbasis kadensi dalam latihan.</p><a href="/id/walking-zones/" class="btn btn-secondary">Pelajari Zona →</a></div><div class="next-step-card"><h3>Penelitian Ilmiah</h3><p>Tinjau studi-studi yang memvalidasi rumus-rumus ini.</p><a href="/id/research/" class="btn btn-secondary">Lihat Penelitian →</a></div><div class="next-step-card"><h3>Bibliografi Lengkap</h3><p>Akses kutipan lengkap untuk semua persamaan yang dirujuk.</p><a href="/id/bibliography/" class="btn btn-secondary">Lihat Bibliografi →</a></div></div></div><aside class="sidebar"><div class="toc"><h3>Indeks Rumus</h3><ul><li><a href="#cadence-mets">1. Kadensi → MET</a></li><li><a href="#acsm-vo2">2. Persamaan VO₂ ACSM</a></li><li><a href="#energy-expenditure">3. Energi & Kalori</a></li><li><a href="#gait-symmetry">4. Indeks Simetri Gaya Berjalan</a></li><li><a href="#walk-score">5. Skor WALK</a></li><li><a href="#basic-metrics">6. Metrik Dasar</a></li><li><a href="#heart-rate">7. Zona Detak Jantung</a></li><li><a href="#cost-transport">8. Biaya Transportasi</a></li><li><a href="#training-load">9. Beban Latihan</a></li><li><a href="#predictions">10. Persamaan Prediktif</a></li><li><a href="#conversions">11. Konversi Satuan</a></li></ul></div><div class="formula-highlight"><h3>⭐ Paling Penting</h3><p><strong>Kadensi ke MET</strong></p><p class="formula-compact">MET = 0,0219 × spm + 0,72</p><p class="small-text">Satu persamaan ini memungkinkan latihan intensitas berbasis kadensi tanpa monitor detak
+            jantung.</p></div><div class="cta-box"><h3>Terapkan Rumus Ini</h3><p>Analitik Jalan Kaki menggunakan persamaan yang divalidasi secara ilmiah ini untuk menganalisis jalan kaki
+            Anda.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Unduh
+            Aplikasi</a></div><div class="info-box"><h4>📐 Akurasi Rumus</h4><p>Semua persamaan di halaman ini berasal dari penelitian yang ditinjau sejawat. Lihat <a
+              href="/id/bibliography/">Bibliografi</a> untuk kutipan lengkap.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link active"
+                </a><a href="/id/" class="lang-link active"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. Hak cipta dilindungi
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/id/privacy/">Privasi</a></li>
-                <li><a href="/id/terms/">Ketentuan</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>Situs web ini menggunakan cookies untuk meningkatkan pengalaman Anda.</p>
-            <a href="/id/privacy/" class="text-sm">Pelajari lebih lanjut</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Tolak</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Terima</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/id/privacy/">Privasi</a></li><li><a href="/id/terms/">Ketentuan</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Situs web ini menggunakan cookies untuk meningkatkan pengalaman Anda.</p><a href="/id/privacy/" class="text-sm">Pelajari lebih lanjut</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Tolak</button><button id="cookie-accept" class="btn btn-primary btn-small">Terima</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

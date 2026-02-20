@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="te" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>నడక మెట్రిక్స్ ఫార్ములాలు | WSS మరియు శాస్త్రీయ పద్ధతులు</title>
-  <meta name="description" content="నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="నడక సూత్రాలు, WSS సూత్రం, నడక కొలతల గుర్తింపు, నడక శాస్త్ర సూత్రాలు, అడుగుల లెక్కింపు">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/te/formulas/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2026-01-17T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/te/formulas/">
-  <meta property="og:title" content="నడక మెట్రిక్స్ ఫార్ములాలు | WSS మరియు శాస్త్రీయ పద్ధతులు">
-  <meta property="og:description" content="నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="te_IN">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/te/formulas/">
-  <meta name="twitter:title" content="నడక మెట్రిక్స్ ఫార్ములాలు | WSS మరియు శాస్త్రీయ పద్ధతులు">
-  <meta name="twitter:description" content="నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="te" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>నడక మెట్రిక్స్ ఫార్ములాలు | WSS మరియు శాస్త్రీయ పద్ధతులు</title><meta name="description" content="నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="నడక సూత్రాలు, WSS సూత్రం, నడక కొలతల గుర్తింపు, నడక శాస్త్ర సూత్రాలు, అడుగుల లెక్కింపు"><link rel="canonical" href="https://walk.analyticszone.app/te/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-02-05T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/te/formulas/"><meta property="og:title" content="నడక మెట్రిక్స్ ఫార్ములాలు | WSS మరియు శాస్త్రీయ పద్ధతులు"><meta property="og:description" content="నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="te_IN"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/te/formulas/"><meta name="twitter:title" content="నడక మెట్రిక్స్ ఫార్ములాలు | WSS మరియు శాస్త్రీయ పద్ధతులు"><meta name="twitter:description" content="నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "te"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "నడక విశ్లేషణ వెనుక ఉన్న గణిత సూత్రాలు. WSS, స్ట్రైడ్ మెట్రిక్స్ మరియు సామర్థ్యం స్కోర్లు ఎలా లెక్కించబడతాయో తెలుసుకోండి.",
   "url": "https://walk.analyticszone.app/te/formulas/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -647,23 +429,13 @@ img[width][height] {
     }
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2026-01-17",
+  "dateModified": "2026-02-05",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://walk.analyticszone.app/te/formulas/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1589 +449,387 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">మెయిన్ కంటెంట్‌కి వెళ్ళండి</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/te/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/te/" 
+  </script></head><body><a href="#main-content" class="skip-link">మెయిన్ కంటెంట్‌కి వెళ్ళండి</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/te/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/te/" 
                                 aria-current="">
                                 హోమ్
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/te/getting-started/" class="nav-label">నేర్చుకోండి</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/te/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/te/getting-started/" class="nav-label">నేర్చుకోండి</a><ul class="submenu"><li><a href="/te/getting-started/" 
                                         aria-current="">
                                         ప్రారంభించడం
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/walking-zones/" 
+                                    </a></li><li><a href="/te/walking-zones/" 
                                         aria-current="">
                                         వాకింగ్ జోన్లు
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/gait-analysis/" 
+                                    </a></li><li><a href="/te/gait-analysis/" 
                                         aria-current="">
                                         గేట్ విశ్లేషణ
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/training-load/" 
+                                    </a></li><li><a href="/te/training-load/" 
                                         aria-current="">
                                         శిక్షణ భారం
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/wss-calculator/" 
+                                    </a></li><li><a href="/te/wss-calculator/" 
                                         aria-current="">
                                         WSS కాలిక్యులేటర్
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/te/research/" class="nav-label">శాస్త్రం</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/te/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/te/research/" class="nav-label">శాస్త్రం</a><ul class="submenu"><li><a href="/te/research/" 
                                         aria-current="">
                                         పరిశోధన
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/formulas/" class="active" 
+                                    </a></li><li><a href="/te/formulas/" class="active" 
                                         aria-current="page">
                                         ఫార్ములాలు
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/gait-efficiency/" 
+                                    </a></li><li><a href="/te/gait-efficiency/" 
                                         aria-current="">
                                         గేట్ సామర్థ్యం
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/stride-mechanics/" 
+                                    </a></li><li><a href="/te/stride-mechanics/" 
                                         aria-current="">
                                         స్ట్రైడ్ మెకానిక్స్
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/walking-vs-running/" 
+                                    </a></li><li><a href="/te/walking-vs-running/" 
                                         aria-current="">
                                         వాకింగ్ vs రన్నింగ్
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/benchmarks/" 
+                                    </a></li><li><a href="/te/benchmarks/" 
                                         aria-current="">
                                         బెంచ్‌మార్క్‌లు
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/bibliography/" 
+                                    </a></li><li><a href="/te/bibliography/" 
                                         aria-current="">
                                         బిబ్లియోగ్రఫీ
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/te/for-health/" class="nav-label">మీ కోసం</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/te/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/te/for-health/" class="nav-label">మీ కోసం</a><ul class="submenu"><li><a href="/te/for-health/" 
                                         aria-current="">
                                         ఆరోగ్యం కోసం
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/for-fitness/" 
+                                    </a></li><li><a href="/te/for-fitness/" 
                                         aria-current="">
                                         ఫిట్‌నెస్ కోసం
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/for-seniors/" 
+                                    </a></li><li><a href="/te/for-seniors/" 
                                         aria-current="">
                                         సీనియర్ల కోసం
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/for-rehabilitation/" 
+                                    </a></li><li><a href="/te/for-rehabilitation/" 
                                         aria-current="">
                                         పునరావాసం కోసం
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/te/cadence-calculator/" class="nav-label">సాధనాలు</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/te/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/te/cadence-calculator/" class="nav-label">సాధనాలు</a><ul class="submenu"><li><a href="/te/cadence-calculator/" 
                                         aria-current="">
                                         కాడెన్స్ కాలిక్యులేటర్
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/gait-assessment/" 
+                                    </a></li><li><a href="/te/gait-assessment/" 
                                         aria-current="">
                                         గేట్ అసెస్‌మెంట్
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/te/vo2max-calculator/" 
+                                    </a></li><li><a href="/te/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max కాలిక్యులేటర్
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/te/contact/" 
+                                    </a></li></ul></li><li><a href="/te/contact/" 
                                 aria-current="">
                                 సంప్రదించండి
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="భాషను ఎంచుకోండి">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="భాషను ఎంచుకోండి"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" selected>
+                        </option><option value="te" selected>
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="మెనూ టోగుల్"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/te/">హోమ్</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/te/research/">శాస్త్రం</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">ఫార్ములాలు</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/te/">హోమ్</a> / <a href="/te/#science">సైన్స్</a> / సూత్రాలు (Formulas)
-    </div>
-    <h1>నడక కొలతల సూత్రాలు & సమీకరణాలు</h1>
-    <p class="lead">నడక విశ్లేషణ యొక్క గణిత పునాదులు – తీవ్రత, శక్తి మరియు పనితీరు కోసం శాస్త్రీయంగా ధృవీకరించబడిన
-      సమీకరణాలు</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <div class="intro-note">
-          <p>ఈ పేజీ నడక విశ్లేషణలో ఉపయోగించే శాస్త్రీయంగా ధృవీకరించబడిన సూత్రాలను అందిస్తుంది. అన్ని సమీకరణాలు పరిశోధన
-            ఆధారాలతో మరియు నిరూపితమైన ఖచ్చితత్వ పరిధులతో ఇవ్వబడ్డాయి.</p>
-        </div>
-
-        <h2 id="cadence-mets">1. క్యాడెన్స్ నుండి METs మార్పిడి</h2>
-
-        <div class="formula-section featured">
-          <h3>Moore et al. (2021) క్యాడెన్స్ ఆధారిత జీవక్రియ సమీకరణం</h3>
-
-          <div class="formula-box primary">
-            <p class="formula-title">క్యాడెన్స్ నుండి METs</p>
-            <p class="formula-main"><strong>METs = 0.0219 × క్యాడెన్స్ (అడుగులు/నిమి) + 0.72</strong></p>
-            <p class="formula-meta">
-              <span class="accuracy">ఖచ్చితత్వం: ±0.5 METs</span>
-              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
-            </p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>ఈ సూత్రం ఎందుకు ముఖ్యమైనది:</strong> నడక కోసం సాంప్రదాయ ACSM వేగ ఆధారిత సమీకరణాల కంటే ఈ సమీకరణం
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="మెనూ టోగుల్"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/te/">హోమ్</a></li><li><a href="/te/research/">శాస్త్రం</a></li><li><span aria-current="page">ఫార్ములాలు</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/te/">హోమ్</a> / <a href="/te/#science">సైన్స్</a> / సూత్రాలు (Formulas)
+    </div><h1>నడక కొలతల సూత్రాలు & సమీకరణాలు</h1><p class="lead">నడక విశ్లేషణ యొక్క గణిత పునాదులు – తీవ్రత, శక్తి మరియు పనితీరు కోసం శాస్త్రీయంగా ధృవీకరించబడిన
+      సమీకరణాలు</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>ఈ పేజీ నడక విశ్లేషణలో ఉపయోగించే శాస్త్రీయంగా ధృవీకరించబడిన సూత్రాలను అందిస్తుంది. అన్ని సమీకరణాలు పరిశోధన
+            ఆధారాలతో మరియు నిరూపితమైన ఖచ్చితత్వ పరిధులతో ఇవ్వబడ్డాయి.</p></div><h2 id="cadence-mets">1. క్యాడెన్స్ నుండి METs మార్పిడి</h2><div class="formula-section featured"><h3>Moore et al. (2021) క్యాడెన్స్ ఆధారిత జీవక్రియ సమీకరణం</h3><div class="formula-box primary"><p class="formula-title">క్యాడెన్స్ నుండి METs</p><p class="formula-main"><strong>METs = 0.0219 × క్యాడెన్స్ (అడుగులు/నిమి) + 0.72</strong></p><p class="formula-meta"><span class="accuracy">ఖచ్చితత్వం: ±0.5 METs</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>ఈ సూత్రం ఎందుకు ముఖ్యమైనది:</strong> నడక కోసం సాంప్రదాయ ACSM వేగ ఆధారిత సమీకరణాల కంటే ఈ సమీకరణం
               <strong>23-35% ఎక్కువ ఖచ్చితత్వంతో</strong> ఉంటుంది. క్యాడెన్స్ నేరుగా కదలిక పౌనఃపున్యం మరియు ఖర్చయ్యే
               శక్తిని ప్రతిబింబిస్తుంది, కానీ వేగం అనేది ఒక్కొక్కరి అడుగు పొడవుపై ఆధారపడి మారుతుంది.
-            </p>
-          </div>
-
-          <h4>ఉదాహరణలు:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100 spm వేగంతో నడక:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
-              <p class="example-interpretation">≈ 3 METs = <strong>మధ్యస్థ తీవ్రత ప్రారంభం</strong> ✓</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>110 spm వేగంతో నడక:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
-              <p class="example-interpretation">మంచి మధ్యస్థ తీవ్రత</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>120 spm వేగంతో నడక:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
-              <p class="example-interpretation">మధ్యస్థ-చురుకైన తీవ్రత</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>130 spm వేగంతో నడక:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
-              <p class="example-interpretation"><strong>చురుకైన తీవ్రత ప్రారంభం</strong> (CADENCE-Adults ప్రత్యక్ష కొలత
-                ప్రకారం 6 METs)</p>
-            </div>
-          </div>
-
-          <div class="formula-note">
-            <p><strong>గమనిక:</strong> CADENCE-Adults అధ్యయనం ప్రకారం ల్యాబ్ పరిస్థితుల్లో 130 spm = 6 METs కి సమానం.
+            </p></div><h4>ఉదాహరణలు:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100 spm వేగంతో నడక:</strong></p><p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p><p class="example-interpretation">≈ 3 METs = <strong>మధ్యస్థ తీవ్రత ప్రారంభం</strong> ✓</p></div><div class="calc-example"><p class="example-input"><strong>110 spm వేగంతో నడక:</strong></p><p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p><p class="example-interpretation">మంచి మధ్యస్థ తీవ్రత</p></div><div class="calc-example"><p class="example-input"><strong>120 spm వేగంతో నడక:</strong></p><p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p><p class="example-interpretation">మధ్యస్థ-చురుకైన తీవ్రత</p></div><div class="calc-example"><p class="example-input"><strong>130 spm వేగంతో నడక:</strong></p><p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p><p class="example-interpretation"><strong>చురుకైన తీవ్రత ప్రారంభం</strong> (CADENCE-Adults ప్రత్యక్ష కొలత
+                ప్రకారం 6 METs)</p></div></div><div class="formula-note"><p><strong>గమనిక:</strong> CADENCE-Adults అధ్యయనం ప్రకారం ల్యాబ్ పరిస్థితుల్లో 130 spm = 6 METs కి సమానం.
               మూరే సమీకరణం 80-130 spm పరిధి కోసం రూపొందించబడింది మరియు చాలా ఎక్కువ క్యాడెన్స్ వద్ద ఫలితాలు కొద్దిగా
-              తక్కువగా చూపవచ్చు.</p>
-          </div>
-
-          <h4>ధృవీకరణ డేటా:</h4>
-          <ul>
-            <li><strong>నమూనా:</strong> 21-40 ఏళ్ల వయస్సు గల 76 మంది పెద్దలు</li>
-            <li><strong>పద్ధతి:</strong> పరోక్ష కెలోరీమెట్రీ (అత్యుత్తమ ప్రమాణం)</li>
-            <li><strong>R² విలువ:</strong> 0.87 (అద్భుతమైన సంబంధం)</li>
-            <li><strong>సగటు దోషం:</strong> 0.47 METs</li>
-            <li><strong>వర్తించే పరిధి:</strong> 80-130 అడుగులు/నిమి</li>
-          </ul>
-        </div>
-
-        <h2 id="acsm-vo2">2. నడక కోసం ACSM VO₂ సమీకరణాలు</h2>
-
-        <div class="formula-section">
-          <h3>ACSM జీవక్రియ లెక్కలు</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">సమతల నడక (0% గ్రేడ్)</p>
-            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × వేగం (మీ/నిమి) + 3.5</strong></p>
-            <p class="formula-note">వేగం మీటర్లు/నిమిషంలో (km/h ని 16.67 తో లేదా mph ని 26.82 తో గుణించండి)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">వాలులో నడక (ఎత్తు/పల్లం)</p>
-            <p class="formula-main"><strong>VO₂ = 0.1(వేగం) + 1.8(వేగం)(గ్రేడ్) + 3.5</strong></p>
-            <p class="formula-note">గ్రేడ్‌ను దశాంశాల్లో తెలపాలి (ఉదా: 5% = 0.05)</p>
-          </div>
-
-          <h4>ఉదాహరణలు:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>సమతల నేలపై 5 km/h (83.3 మీ/నిమి) వేగంతో నడక:</strong></p>
-              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p>
-              <p class="example-conversion">METs లోకి మార్చండి: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>5% వాలుపై 5 km/h వేగంతో నడక:</strong></p>
-              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
-              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p>
-              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
-              <p class="example-interpretation">వాలు వల్ల తీవ్రత ~64% పెరుగుతుంది!</p>
-            </div>
-          </div>
-
-          <div class="conversion-helper">
-            <h4>వేగ మార్పిడి:</h4>
-            <ul>
-              <li><strong>km/h నుండి మీ/నిమి:</strong> 16.67 తో గుణించండి</li>
-              <li><strong>mph నుండి మీ/నిమి:</strong> 26.82 తో గుణించండి</li>
-              <li><strong>మీ/సె నుండి మీ/నిమి:</strong> 60 తో గుణించండి</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="energy-expenditure">3. శక్తి వినియోగం & కెలోరీల ఖర్చు</h2>
-
-        <div class="formula-section">
-          <h3>ఖచ్చితమైన కెలోరీల గణన</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">నిమిషానికి కెలోరీలు</p>
-            <p class="formula-main"><strong>Cal/min = (METs × 3.5 × శరీర బరువు kg) / 200</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">మొత్తం కెలోరీలు</p>
-            <p class="formula-main"><strong>మొత్తం కెలోరీలు = Cal/min × సమయం (నిమిషాలు)</strong></p>
-          </div>
-
-          <h4>ఉదాహరణలు:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>70 kg వ్యక్తి 100 spm వేగంతో (3 METs) 45 నిమిషాల నడక:</strong></p>
-              <p class="example-calc">Cal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/min</strong></p>
-              <p class="example-calc">మొత్తం = 3.675 × 45 = <strong>165.4 కెలోరీలు</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>85 kg వ్యక్తి 120 spm వేగంతో (5 METs) 30 నిమిషాల నడక:</strong></p>
-              <p class="example-calc">Cal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p>
-              <p class="example-calc">మొత్తం = 7.44 × 30 = <strong>223.2 కెలోరీలు</strong></p>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h4>ఈ సూత్రం ఎందుకు?</h4>
-            <p>ఈ సమీకరణం MET (Metabolic Equivalent of Task) నిర్వచనం నుండి వచ్చింది:</p>
-            <ul>
-              <li>1 MET = 3.5 mL O₂/kg/min (విశ్రాంతి సమయంలో జీవక్రియ రేటు)</li>
-              <li>1 లీటరు O₂ ఖర్చయితే ≈ 5 kcal శక్తి విడుదలవుతుంది</li>
-              <li>మార్పిడి: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
-            </ul>
-          </div>
-
-          <h3>నికర కెలోరీల ఖర్చు (కేవలం వ్యాయామం ద్వారా)</h3>
-          <div class="formula-box">
-            <p class="formula-title">నికర కెలోరీలు (విశ్రాంతి సమయం కాకుండా)</p>
-            <p class="formula-main"><strong>Net Cal/min = [(METs - 1) × 3.5 × శరీర బరువు] / 200</strong></p>
-            <p class="formula-note">సాధారణంగా విశ్రాంతి సమయంలో ఖర్చయ్యే 1 MET ని తీసివేస్తుంది</p>
-          </div>
-
-          <div class="calc-example">
-            <p class="example-input"><strong>70 kg, 3 METs, 45 నిమి - నికర కెలోరీలు:</strong></p>
-            <p class="example-calc">Net = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 నికర
-                కెలోరీలు</strong></p>
-            <p class="example-interpretation">మొత్తం 165.4 కెలోరీల్లో 55 కెలోరీలు మీరు ఖాళీగా ఉన్నా ఖర్చయ్యేవి</p>
-          </div>
-        </div>
-
-        <h2 id="gait-symmetry">4. గైట్ సిమెట్రీ ఇండెక్స్ (GSI)</h2>
-
-        <div class="formula-section">
-          <h3>ఎడమ-కుడి అసమానతను కొలవడం</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">గైట్ సిమెట్రీ ఇండెక్స్</p>
-            <p class="formula-main"><strong>GSI (%) = |కుడి - ఎడమ| / [0.5 × (కుడి + ఎడమ)] × 100</strong></p>
-            <p class="formula-note">దీన్ని అడుగు దూరం (stride length), సమయం లేదా కాంటాక్ట్ టైమ్ కి వాడవచ్చు</p>
-          </div>
-
-          <h4>విశ్లేషణ:</h4>
-          <ul>
-            <li><strong>&lt;2-3%:</strong> సాధారణం, సమతుల్యమైన నడక</li>
-            <li><strong>3-5%:</strong> స్వల్ప అసమానత</li>
-            <li><strong>5-10%:</strong> మధ్యస్థ అసమానత, గమనిస్తూ ఉండాలి</li>
-            <li><strong>&gt;10%:</strong> తీవ్రమైన అసమానత, నిపుణులను సంప్రదించాలి</li>
-          </ul>
-
-          <h4>ఉదాహరణలు:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>అడుగు సమయం: కుడి = 520 ms, ఎడమ = 480 ms</strong></p>
-              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
-              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% అసమానత</strong></p>
-              <p class="example-interpretation">మధ్యస్థ అసమానత – బలహీనంగా ఉన్న వైపు దృష్టి పెట్టండి</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>అడుగు దూరం: కుడి = 1.42 మీ, ఎడమ = 1.38 మీ</strong></p>
-              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
-              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% అసమానత</strong></p>
-              <p class="example-interpretation">సాధారణం, ఆరోగ్యకరమైన పరిధి ✓</p>
-            </div>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>గమనిక:</strong> Apple HealthKit లోని 'Walking Asymmetry' కొద్దిగా భిన్నమైన పద్ధతిని
-              ఉపయోగిస్తుంది, కానీ ముప్పు స్థాయిలు దాదాపు ఇలాగే ఉంటాయి.</p>
-          </div>
-        </div>
-
-        <h2 id="walk-score">5. WALK స్కోర్ (WALK Analytics ప్రత్యేకం)</h2>
-
-        <div class="formula-section">
-          <h3>నడక సామర్థ్యపు స్కోర్</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">WALK స్కోర్</p>
-            <p class="formula-main"><strong>WALK స్కోర్ = సమయం (సెకన్లు) + ప్రతి 100 మీటర్లకు అడుగులు</strong></p>
-            <p class="formula-note">స్కోర్ తక్కువగా ఉంటే సామర్థ్యం ఎక్కువగా ఉన్నట్లు అర్థం</p>
-          </div>
-
-          <h4>ఇది ఎలా పనిచేస్తుంది?</h4>
-          <p>WALK స్కోర్ సమయం మరియు అడుగుల సంఖ్యను కలిపి నడక సామర్థ్యాన్ని తెలియజేస్తుంది. ఒక వ్యక్తి 100 మీటర్లను 140
+              తక్కువగా చూపవచ్చు.</p></div><h4>ధృవీకరణ డేటా:</h4><ul><li><strong>నమూనా:</strong> 21-40 ఏళ్ల వయస్సు గల 76 మంది పెద్దలు</li><li><strong>పద్ధతి:</strong> పరోక్ష కెలోరీమెట్రీ (అత్యుత్తమ ప్రమాణం)</li><li><strong>R² విలువ:</strong> 0.87 (అద్భుతమైన సంబంధం)</li><li><strong>సగటు దోషం:</strong> 0.47 METs</li><li><strong>వర్తించే పరిధి:</strong> 80-130 అడుగులు/నిమి</li></ul></div><h2 id="acsm-vo2">2. నడక కోసం ACSM VO₂ సమీకరణాలు</h2><div class="formula-section"><h3>ACSM జీవక్రియ లెక్కలు</h3><div class="formula-box"><p class="formula-title">సమతల నడక (0% గ్రేడ్)</p><p class="formula-main"><strong>VO₂ (mL/kg/min) = 0.1 × వేగం (మీ/నిమి) + 3.5</strong></p><p class="formula-note">వేగం మీటర్లు/నిమిషంలో (km/h ని 16.67 తో లేదా mph ని 26.82 తో గుణించండి)</p></div><div class="formula-box"><p class="formula-title">వాలులో నడక (ఎత్తు/పల్లం)</p><p class="formula-main"><strong>VO₂ = 0.1(వేగం) + 1.8(వేగం)(గ్రేడ్) + 3.5</strong></p><p class="formula-note">గ్రేడ్‌ను దశాంశాల్లో తెలపాలి (ఉదా: 5% = 0.05)</p></div><h4>ఉదాహరణలు:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>సమతల నేలపై 5 km/h (83.3 మీ/నిమి) వేగంతో నడక:</strong></p><p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/min</strong></p><p class="example-conversion">METs లోకి మార్చండి: 11.83 / 3.5 = <strong>3.38 METs</strong></p></div><div class="calc-example"><p class="example-input"><strong>5% వాలుపై 5 km/h వేగంతో నడక:</strong></p><p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p><p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/min</strong></p><p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p><p class="example-interpretation">వాలు వల్ల తీవ్రత ~64% పెరుగుతుంది!</p></div></div><div class="conversion-helper"><h4>వేగ మార్పిడి:</h4><ul><li><strong>km/h నుండి మీ/నిమి:</strong> 16.67 తో గుణించండి</li><li><strong>mph నుండి మీ/నిమి:</strong> 26.82 తో గుణించండి</li><li><strong>మీ/సె నుండి మీ/నిమి:</strong> 60 తో గుణించండి</li></ul></div></div><h2 id="energy-expenditure">3. శక్తి వినియోగం & కెలోరీల ఖర్చు</h2><div class="formula-section"><h3>ఖచ్చితమైన కెలోరీల గణన</h3><div class="formula-box"><p class="formula-title">నిమిషానికి కెలోరీలు</p><p class="formula-main"><strong>Cal/min = (METs × 3.5 × శరీర బరువు kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">మొత్తం కెలోరీలు</p><p class="formula-main"><strong>మొత్తం కెలోరీలు = Cal/min × సమయం (నిమిషాలు)</strong></p></div><h4>ఉదాహరణలు:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>70 kg వ్యక్తి 100 spm వేగంతో (3 METs) 45 నిమిషాల నడక:</strong></p><p class="example-calc">Cal/min = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/min</strong></p><p class="example-calc">మొత్తం = 3.675 × 45 = <strong>165.4 కెలోరీలు</strong></p></div><div class="calc-example"><p class="example-input"><strong>85 kg వ్యక్తి 120 spm వేగంతో (5 METs) 30 నిమిషాల నడక:</strong></p><p class="example-calc">Cal/min = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/min</strong></p><p class="example-calc">మొత్తం = 7.44 × 30 = <strong>223.2 కెలోరీలు</strong></p></div></div><div class="info-box"><h4>ఈ సూత్రం ఎందుకు?</h4><p>ఈ సమీకరణం MET (Metabolic Equivalent of Task) నిర్వచనం నుండి వచ్చింది:</p><ul><li>1 MET = 3.5 mL O₂/kg/min (విశ్రాంతి సమయంలో జీవక్రియ రేటు)</li><li>1 లీటరు O₂ ఖర్చయితే ≈ 5 kcal శక్తి విడుదలవుతుంది</li><li>మార్పిడి: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li></ul></div><h3>నికర కెలోరీల ఖర్చు (కేవలం వ్యాయామం ద్వారా)</h3><div class="formula-box"><p class="formula-title">నికర కెలోరీలు (విశ్రాంతి సమయం కాకుండా)</p><p class="formula-main"><strong>Net Cal/min = [(METs - 1) × 3.5 × శరీర బరువు] / 200</strong></p><p class="formula-note">సాధారణంగా విశ్రాంతి సమయంలో ఖర్చయ్యే 1 MET ని తీసివేస్తుంది</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 METs, 45 నిమి - నికర కెలోరీలు:</strong></p><p class="example-calc">Net = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 నికర
+                కెలోరీలు</strong></p><p class="example-interpretation">మొత్తం 165.4 కెలోరీల్లో 55 కెలోరీలు మీరు ఖాళీగా ఉన్నా ఖర్చయ్యేవి</p></div></div><h2 id="gait-symmetry">4. గైట్ సిమెట్రీ ఇండెక్స్ (GSI)</h2><div class="formula-section"><h3>ఎడమ-కుడి అసమానతను కొలవడం</h3><div class="formula-box"><p class="formula-title">గైట్ సిమెట్రీ ఇండెక్స్</p><p class="formula-main"><strong>GSI (%) = |కుడి - ఎడమ| / [0.5 × (కుడి + ఎడమ)] × 100</strong></p><p class="formula-note">దీన్ని అడుగు దూరం (stride length), సమయం లేదా కాంటాక్ట్ టైమ్ కి వాడవచ్చు</p></div><h4>విశ్లేషణ:</h4><ul><li><strong>&lt;2-3%:</strong> సాధారణం, సమతుల్యమైన నడక</li><li><strong>3-5%:</strong> స్వల్ప అసమానత</li><li><strong>5-10%:</strong> మధ్యస్థ అసమానత, గమనిస్తూ ఉండాలి</li><li><strong>&gt;10%:</strong> తీవ్రమైన అసమానత, నిపుణులను సంప్రదించాలి</li></ul><h4>ఉదాహరణలు:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>అడుగు సమయం: కుడి = 520 ms, ఎడమ = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% అసమానత</strong></p><p class="example-interpretation">మధ్యస్థ అసమానత – బలహీనంగా ఉన్న వైపు దృష్టి పెట్టండి</p></div><div class="calc-example"><p class="example-input"><strong>అడుగు దూరం: కుడి = 1.42 మీ, ఎడమ = 1.38 మీ</strong></p><p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p><p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% అసమానత</strong></p><p class="example-interpretation">సాధారణం, ఆరోగ్యకరమైన పరిధి ✓</p></div></div><div class="warning-box"><p><strong>గమనిక:</strong> Apple HealthKit లోని 'Walking Asymmetry' కొద్దిగా భిన్నమైన పద్ధతిని
+              ఉపయోగిస్తుంది, కానీ ముప్పు స్థాయిలు దాదాపు ఇలాగే ఉంటాయి.</p></div></div><h2 id="walk-score">5. WALK స్కోర్ (WALK Analytics ప్రత్యేకం)</h2><div class="formula-section"><h3>నడక సామర్థ్యపు స్కోర్</h3><div class="formula-box"><p class="formula-title">WALK స్కోర్</p><p class="formula-main"><strong>WALK స్కోర్ = సమయం (సెకన్లు) + ప్రతి 100 మీటర్లకు అడుగులు</strong></p><p class="formula-note">స్కోర్ తక్కువగా ఉంటే సామర్థ్యం ఎక్కువగా ఉన్నట్లు అర్థం</p></div><h4>ఇది ఎలా పనిచేస్తుంది?</h4><p>WALK స్కోర్ సమయం మరియు అడుగుల సంఖ్యను కలిపి నడక సామర్థ్యాన్ని తెలియజేస్తుంది. ఒక వ్యక్తి 100 మీటర్లను 140
             అడుగులతో 75 సెకన్లలో పూర్తి చేస్తే, అతని WALK స్కోర్ 215. వేగం పెరగడం లేదా అడుగుల సామర్థ్యం పెరగడం వల్ల ఈ
-            స్కోర్ తగ్గుతుంది.</p>
-
-          <h4>ఉదాహరణలు:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100 మీటర్లు 80 సెకన్లలో, 120 అడుగులు:</strong></p>
-              <p class="example-calc">WALK స్కోర్ = 80 + 120 = <strong>200</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100 మీటర్లు 70 సెకన్లలో, 110 అడుగులు:</strong></p>
-              <p class="example-calc">WALK స్కోర్ = 70 + 110 = <strong>180</strong></p>
-              <p class="example-interpretation">మెరుగైన వేగం మరియు సామర్థ్యం వల్ల స్కోర్ తగ్గింది</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100 మీటర్లు 60 సెకన్లలో, 130 అడుగులు (race walking):</strong></p>
-              <p class="example-calc">WALK స్కోర్ = 60 + 130 = <strong>190</strong></p>
-              <p class="example-interpretation">వేగంగా నడిచినా అడుగులు చిన్నవిగా ఉన్నాయి</p>
-            </div>
-          </div>
-
-          <h4>సాధారణ పరిధులు:</h4>
-          <ul>
-            <li><strong>&gt;250:</strong> నెమ్మదైన లేదా తక్కువ సామర్థ్యం గల నడక</li>
-            <li><strong>200-250:</strong> సాధారణ నడక, సగటు సామర్థ్యం</li>
-            <li><strong>170-200:</strong> ఫిట్‌నెస్ నడక, మంచి సామర్థ్యం</li>
-            <li><strong>150-170:</strong> అడ్వాన్స్‌డ్ నడక, అత్యుత్తమ సామర్థ్యం</li>
-            <li><strong>&lt;150:</strong> ఎలైట్/రేస్ వాకింగ్ స్థాయి</li>
-          </ul>
-
-          <div class="tip-box">
-            <p><strong>WALK స్కోర్‌తో శిక్షణ:</strong> ప్రతి వారం ఒకే 100 మీటర్ల దూరంలో మీ స్కోర్‌ను గమనించండి. స్కోర్
-              తగ్గడం అనేది మీ శక్తి మరియు సామర్థ్యం మెరుగుపడుతున్నాయనడానికి సంకేతం.</p>
-          </div>
-        </div>
-
-        <h2 id="basic-metrics">6. ప్రాథమిక నడక కొలతలు (Basic Gait Metrics)</h2>
-
-        <div class="formula-section">
-          <h3>మౌలిక లెక్కలు</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">నడక వేగం</p>
-            <p class="formula-main"><strong>వేగం (మీ/సె) = దూరం (మీ) / సమయం (సె)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">మొత్తం అడుగుల నుండి క్యాడెన్స్</p>
-            <p class="formula-main"><strong>క్యాడెన్స్ (spm) = మొత్తం అడుగులు / సమయం (నిమిషాలు)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">అడుగు దూరం (Stride Length)</p>
-            <p class="formula-main"><strong>అడుగు దూరం (మీ) = దూరం (మీ) / (అడుగులు / 2)</strong></p>
-            <p class="formula-note">ఒక స్ట్రైడ్ అంటే రెండు అడుగులు, కాబట్టి అడుగులను 2 తో భాగించాలి</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">స్టెప్ లెంగ్త్ (Step Length)</p>
-            <p class="formula-main"><strong>స్టెప్ లెంగ్త్ (మీ) = దూరం (మీ) / అడుగులు</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">క్యాడెన్స్ & స్ట్రైడ్ లెంగ్త్ నుండి వేగం</p>
-            <p class="formula-main"><strong>వేగం = అడుగు దూరం × (క్యాడెన్స్ / 2) / 60</strong></p>
-            <p class="formula-note">లేదా: వేగం (మీ/సె) = స్టెప్ లెంగ్త్ × క్యాడెన్స్ / 60</p>
-          </div>
-
-          <h4>ఉదాహరణ:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>1000 మీటర్లను 12 నిమిషాల్లో 1320 అడుగులతో నడిస్తే:</strong></p>
-            <p><strong>వేగం:</strong> 1000మీ / 720సె = <strong>1.39 మీ/సె</strong></p>
-            <p><strong>క్యాడెన్స్:</strong> 1320 అడుగులు / 12 నిమి = <strong>110 spm</strong></p>
-            <p><strong>అడుగు దూరం:</strong> 1000మీ / (1320/2) = 1000 / 660 = <strong>1.52 మీ</strong></p>
-            <p><strong>స్టెప్ లెంగ్త్:</strong> 1000మీ / 1320 = <strong>0.76 మీ</strong></p>
-          </div>
-        </div>
-
-        <h2 id="heart-rate">7. హార్ట్ రేట్ జోన్ లెక్కలు</h2>
-
-        <div class="formula-section">
-          <h3>సాంప్రదాయ HR జోన్ పద్ధతి</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">గరిష్ట హృదయ స్పందన రేటు (Max HR) అంచనా</p>
-            <p class="formula-main"><strong>Max HR = 220 - వయస్సు</strong></p>
-            <p class="formula-note">ఇది సులభమైన పద్ధతి, కానీ వ్యక్తిని బట్టి ±10-15 bpm తేడా ఉండవచ్చు</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">ప్రత్యామ్నాయం: తనకా సూత్రం (మరింత ఖచ్చితమైనది)</p>
-            <p class="formula-main"><strong>Max HR = 208 - (0.7 × వయస్సు)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">జోన్ పరిధి గణన</p>
-            <p class="formula-main"><strong>జోన్ = Max HR × (కనీస%, గరిష్ట%)</strong></p>
-          </div>
-
-          <h4>ఉదాహరణ: 40 ఏళ్ల వ్యక్తికి</h4>
-          <div class="calc-example">
-            <p><strong>సాంప్రదాయ పద్ధతి:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p>
-            <p><strong>తనకా పద్ధతి:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
-            <p><strong>జోన్ 2 (60-70%):</strong> 180 × 0.60 = 108 bpm నుండి 180 × 0.70 = 126 bpm వరకు</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>గమనిక:</strong> హార్ట్ రేట్ జోన్లు ఉపయోగకరమే అయినా, <strong>నడక కోసం క్యాడెన్స్ ఆధారిత జోన్లు
-                మరింత ఖచ్చితమైనవి మరియు ఆచరణాత్మకమైనవి</strong> (నడక జోన్ల గైడ్ చూడండి).</p>
-          </div>
-        </div>
-
-        <h2 id="cost-transport">8. కోస్ట్ ఆఫ్ ట్రాన్స్‌పోర్ట్ & నడక పొదుపు (Economy)</h2>
-
-        <div class="formula-section">
-          <h3>నడకకు అయ్యే శక్తి ఖర్చు</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">కోస్ట్ ఆఫ్ ట్రాన్స్‌పోర్ట్ (C)</p>
-            <p class="formula-main"><strong>C = ఖర్చయిన శక్తి / (శరీర బరువు × దూరం)</strong></p>
-            <p class="formula-note">యూనిట్లు: J/kg/m లేదా mL O₂/kg/m</p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>U-ఆకారపు కర్వ్:</strong> నడక సామర్థ్యం U-ఆకారంలో ఉంటుంది. ఒక నిర్దిష్ట వేగం వద్ద (సాధారణంగా
+            స్కోర్ తగ్గుతుంది.</p><h4>ఉదాహరణలు:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100 మీటర్లు 80 సెకన్లలో, 120 అడుగులు:</strong></p><p class="example-calc">WALK స్కోర్ = 80 + 120 = <strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100 మీటర్లు 70 సెకన్లలో, 110 అడుగులు:</strong></p><p class="example-calc">WALK స్కోర్ = 70 + 110 = <strong>180</strong></p><p class="example-interpretation">మెరుగైన వేగం మరియు సామర్థ్యం వల్ల స్కోర్ తగ్గింది</p></div><div class="calc-example"><p class="example-input"><strong>100 మీటర్లు 60 సెకన్లలో, 130 అడుగులు (race walking):</strong></p><p class="example-calc">WALK స్కోర్ = 60 + 130 = <strong>190</strong></p><p class="example-interpretation">వేగంగా నడిచినా అడుగులు చిన్నవిగా ఉన్నాయి</p></div></div><h4>సాధారణ పరిధులు:</h4><ul><li><strong>&gt;250:</strong> నెమ్మదైన లేదా తక్కువ సామర్థ్యం గల నడక</li><li><strong>200-250:</strong> సాధారణ నడక, సగటు సామర్థ్యం</li><li><strong>170-200:</strong> ఫిట్‌నెస్ నడక, మంచి సామర్థ్యం</li><li><strong>150-170:</strong> అడ్వాన్స్‌డ్ నడక, అత్యుత్తమ సామర్థ్యం</li><li><strong>&lt;150:</strong> ఎలైట్/రేస్ వాకింగ్ స్థాయి</li></ul><div class="tip-box"><p><strong>WALK స్కోర్‌తో శిక్షణ:</strong> ప్రతి వారం ఒకే 100 మీటర్ల దూరంలో మీ స్కోర్‌ను గమనించండి. స్కోర్
+              తగ్గడం అనేది మీ శక్తి మరియు సామర్థ్యం మెరుగుపడుతున్నాయనడానికి సంకేతం.</p></div></div><h2 id="basic-metrics">6. ప్రాథమిక నడక కొలతలు (Basic Gait Metrics)</h2><div class="formula-section"><h3>మౌలిక లెక్కలు</h3><div class="formula-box"><p class="formula-title">నడక వేగం</p><p class="formula-main"><strong>వేగం (మీ/సె) = దూరం (మీ) / సమయం (సె)</strong></p></div><div class="formula-box"><p class="formula-title">మొత్తం అడుగుల నుండి క్యాడెన్స్</p><p class="formula-main"><strong>క్యాడెన్స్ (spm) = మొత్తం అడుగులు / సమయం (నిమిషాలు)</strong></p></div><div class="formula-box"><p class="formula-title">అడుగు దూరం (Stride Length)</p><p class="formula-main"><strong>అడుగు దూరం (మీ) = దూరం (మీ) / (అడుగులు / 2)</strong></p><p class="formula-note">ఒక స్ట్రైడ్ అంటే రెండు అడుగులు, కాబట్టి అడుగులను 2 తో భాగించాలి</p></div><div class="formula-box"><p class="formula-title">స్టెప్ లెంగ్త్ (Step Length)</p><p class="formula-main"><strong>స్టెప్ లెంగ్త్ (మీ) = దూరం (మీ) / అడుగులు</strong></p></div><div class="formula-box"><p class="formula-title">క్యాడెన్స్ & స్ట్రైడ్ లెంగ్త్ నుండి వేగం</p><p class="formula-main"><strong>వేగం = అడుగు దూరం × (క్యాడెన్స్ / 2) / 60</strong></p><p class="formula-note">లేదా: వేగం (మీ/సె) = స్టెప్ లెంగ్త్ × క్యాడెన్స్ / 60</p></div><h4>ఉదాహరణ:</h4><div class="calc-example"><p class="example-input"><strong>1000 మీటర్లను 12 నిమిషాల్లో 1320 అడుగులతో నడిస్తే:</strong></p><p><strong>వేగం:</strong> 1000మీ / 720సె = <strong>1.39 మీ/సె</strong></p><p><strong>క్యాడెన్స్:</strong> 1320 అడుగులు / 12 నిమి = <strong>110 spm</strong></p><p><strong>అడుగు దూరం:</strong> 1000మీ / (1320/2) = 1000 / 660 = <strong>1.52 మీ</strong></p><p><strong>స్టెప్ లెంగ్త్:</strong> 1000మీ / 1320 = <strong>0.76 మీ</strong></p></div></div><h2 id="heart-rate">7. హార్ట్ రేట్ జోన్ లెక్కలు</h2><div class="formula-section"><h3>సాంప్రదాయ HR జోన్ పద్ధతి</h3><div class="formula-box"><p class="formula-title">గరిష్ట హృదయ స్పందన రేటు (Max HR) అంచనా</p><p class="formula-main"><strong>Max HR = 220 - వయస్సు</strong></p><p class="formula-note">ఇది సులభమైన పద్ధతి, కానీ వ్యక్తిని బట్టి ±10-15 bpm తేడా ఉండవచ్చు</p></div><div class="formula-box"><p class="formula-title">ప్రత్యామ్నాయం: తనకా సూత్రం (మరింత ఖచ్చితమైనది)</p><p class="formula-main"><strong>Max HR = 208 - (0.7 × వయస్సు)</strong></p></div><div class="formula-box"><p class="formula-title">జోన్ పరిధి గణన</p><p class="formula-main"><strong>జోన్ = Max HR × (కనీస%, గరిష్ట%)</strong></p></div><h4>ఉదాహరణ: 40 ఏళ్ల వ్యక్తికి</h4><div class="calc-example"><p><strong>సాంప్రదాయ పద్ధతి:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p><p><strong>తనకా పద్ధతి:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p><p><strong>జోన్ 2 (60-70%):</strong> 180 × 0.60 = 108 bpm నుండి 180 × 0.70 = 126 bpm వరకు</p></div><div class="info-box"><p><strong>గమనిక:</strong> హార్ట్ రేట్ జోన్లు ఉపయోగకరమే అయినా, <strong>నడక కోసం క్యాడెన్స్ ఆధారిత జోన్లు
+                మరింత ఖచ్చితమైనవి మరియు ఆచరణాత్మకమైనవి</strong> (నడక జోన్ల గైడ్ చూడండి).</p></div></div><h2 id="cost-transport">8. కోస్ట్ ఆఫ్ ట్రాన్స్‌పోర్ట్ & నడక పొదుపు (Economy)</h2><div class="formula-section"><h3>నడకకు అయ్యే శక్తి ఖర్చు</h3><div class="formula-box"><p class="formula-title">కోస్ట్ ఆఫ్ ట్రాన్స్‌పోర్ట్ (C)</p><p class="formula-main"><strong>C = ఖర్చయిన శక్తి / (శరీర బరువు × దూరం)</strong></p><p class="formula-note">యూనిట్లు: J/kg/m లేదా mL O₂/kg/m</p></div><div class="key-insight"><p><strong>U-ఆకారపు కర్వ్:</strong> నడక సామర్థ్యం U-ఆకారంలో ఉంటుంది. ఒక నిర్దిష్ట వేగం వద్ద (సాధారణంగా
               1.2-1.4 మీ/సె లేదా 4.3-5.0 km/h) శక్తి ఖర్చు కనిష్టంగా ఉంటుంది. దీని కంటే నెమ్మదిగా లేదా వేగంగా నడిస్తే
-              ప్రతి కిలోమీటరుకు ఖర్చయ్యే శక్తి పెరుగుతుంది.</p>
-          </div>
-
-          <h4>శక్తి ఖర్చును ప్రభావితం చేసే అంశాలు:</h4>
-          <ul>
-            <li><strong>వేగం:</strong> U-ఆకారపు సంబంధం (సుమారు 1.3 మీ/సె వద్ద అత్యుత్తమ సామర్థ్యం)</li>
-            <li><strong>వాలు (Gradient):</strong> పైనకి నడిస్తే శక్తి ఖర్చు భారీగా పెరుగుతుంది; కిందకి నడిస్తే నియంత్రణ
-              కోసం శక్తి ఖర్చవుతుంది</li>
-            <li><strong>శరీర బరువు:</strong> బరువు ఎక్కువ ఉన్నవారికి మొత్తం శక్తి ఎక్కువగా ఖర్చవుతుంది, కానీ బరువుకు
-              తగినట్లుగా చూస్తే అందరికీ దాదాపు ఒకేలా ఉంటుంది</li>
-            <li><strong>అడుగు వేసే తీరు:</strong> సరైన అడుగు దూరం శక్తి వినియోగాన్ని తగ్గిస్తుంది</li>
-            <li><strong>నేల స్వభావం:</strong> గతుకుల నేల మీద నడిస్తే సాఫీగా ఉండే నేల కంటే ఎక్కువ శక్తి ఖర్చవుతుంది</li>
-          </ul>
-
-          <div class="formula-box">
-            <p class="formula-title">వాలు ఆధారిత ఖర్చు (Grade-Adjusted Cost)</p>
-            <p class="formula-main"><strong>ఖర్చు గుణకం (multiplier) = 1 + (గ్రేడ్ × 10)</strong></p>
-            <p class="formula-note">సుమారుగా: ప్రతి 1% వాలుకి 10% అదనపు శక్తి ఖర్చవుతుంది</p>
-          </div>
-
-          <h4>ఉదాహరణ:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>5% వాలుపై నడక:</strong></p>
-            <p class="example-calc">ఖర్చు గుణకం = 1 + (0.05 × 10) = <strong>1.5 రెట్లు</strong></p>
-            <p class="example-interpretation">సమతల నేలతో పోలిస్తే 50% అదనపు శక్తి ఖర్చవుతుంది</p>
-          </div>
-        </div>
-
-        <h2 id="training-load">9. ట్రైనింగ్ లోడ్ & స్ట్రెస్ స్కోర్</h2>
-
-        <div class="formula-section">
-          <h3>వాలింగ్ స్ట్రెస్ స్కోర్ (WSS)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">జోన్ ఆధారిత WSS</p>
-            <p class="formula-main"><strong>WSS = Σ (జోన్‌లో గడిపిన నిమిషాలు × జోన్ ఫ్యాక్టర్)</strong></p>
-            <p>జోన్ 1: ×1.0 | జోన్ 2: ×2.0 | జోన్ 3: ×3.0 | జోన్ 4: ×4.0 | జోన్ 5: ×5.0</p>
-          </div>
-
-          <h4>ఉదాహరణ: 60 నిమిషాల నడక</h4>
-          <div class="calc-example">
-            <p>10 నిమి జోన్ 1 × 1 = 10 పాయింట్లు</p>
-            <p>40 నిమి జోన్ 2 × 2 = 80 పాయింట్లు</p>
-            <p>10 నిమి జోన్ 3 × 3 = 30 పాయింట్లు</p>
-            <p><strong>మొత్తం WSS = 120</strong></p>
-          </div>
-
-          <h3>వారపు ట్రైనింగ్ లోడ్</h3>
-          <div class="formula-box">
-            <p class="formula-title">వారపు లోడ్</p>
-            <p class="formula-main"><strong>వారపు లోడ్ = Σ రోజువారీ WSS (7 రోజులు)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">క్రమేణా లోడ్ పెంచడం (Progressive Overload)</p>
-            <p class="formula-main"><strong>తర్వాతి వారం = ప్రస్తుత వారం × 1.05-1.10</strong></p>
-            <p class="formula-note">వారానికి గరిష్టంగా 5-10% లోడ్ మాత్రమే పెంచాలి</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">రికవరీ వీక్ (విశ్రాంతి వారం)</p>
-            <p class="formula-main"><strong>రికవరీ వీక్ = ప్రస్తుత వీక్ × 0.50-0.70</strong></p>
-            <p class="formula-note">ప్రతి 3-4 వారాలకొకసారి, లోడ్‌ను 50-70% కి తగ్గించాలి</p>
-          </div>
-
-          <h4>సాధారణ వారపు లోడ్లు:</h4>
-          <ul>
-            <li><strong>ప్రారంభ ఆరోగ్య నడక:</strong> వారానికి 200-400 WSS</li>
-            <li><strong>సాధారణ ఫిట్‌నెస్ నడక:</strong> వారానికి 400-700 WSS</li>
-            <li><strong>తీవ్రమైన ఫిట్‌నెస్ నడక:</strong> వారానికి 700-1000 WSS</li>
-            <li><strong>పోటీతత్వ రేస్ వాకింగ్:</strong> వారానికి 1000-1500+ WSS</li>
-          </ul>
-        </div>
-
-        <h2 id="predictions">10. అంచనా వేసే సమీకరణాలు (Predictive Equations)</h2>
-
-        <div class="formula-section">
-          <h3>6-నిమిషాల నడక పరీక్ష (6MWT) దూరం అంచనా</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">అంచనా వేసిన 6MWT దూరం (Enright & Sherrill)</p>
-            <p><strong>పురుషులు:</strong> (7.57 × ఎత్తు cm) - (5.02 × వయస్సు) - (1.76 × బరువు kg) - 309</p>
-            <p><strong>స్త్రీలు:</strong> (2.11 × ఎత్తు cm) - (5.78 × వయస్సు) - (2.29 × బరువు kg) + 667</p>
-            <p class="formula-note">ఆరోగ్యవంతులైన పెద్దలు నడవగల దూరాన్ని మీటర్లలో అంచనా వేస్తుంది</p>
-          </div>
-
-          <h4>ఉదాహరణ: 40 ఏళ్ల వ్యక్తి, 175 cm ఎత్తు, 75 kg బరువు</h4>
-          <div class="calc-example">
-            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
-            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 మీటర్లు</strong></p>
-            <p class="example-interpretation">వయస్సుకి తగిన మంచి శారీరక సామర్థ్యం</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>క్లినికల్ ఉపయోగం:</strong> గుండె మరియు ఊపిరితిత్తుల సంబంధిత రోగులలో, సర్జరీకి ముందు/తర్వాత
-              సామర్థ్యాన్ని అంచనా వేయడానికి మరియు వృద్ధులలో సాధారణ ఫిట్‌నెస్ను తనిఖీ చేయడానికి 6MWTని ఉపయోగిస్తారు.</p>
-          </div>
-        </div>
-
-        <h2 id="next-steps">సంబంధిత సమాచారం</h2>
-
-        <div class="next-steps-grid">
-          <div class="next-step-card">
-            <h3>సూత్రాలను వర్తింపజేయండి: WSS క్యాలిక్యులేటర్</h3>
-            <p>మీ నడక స్ట్రెస్ స్కోర్‌ను లెక్కించడానికి మా ఇంటరాక్టివ్ క్యాలిక్యులేటర్‌ని ఉపయోగించండి.</p>
-            <a href="/te/wss-calculator/" class="btn btn-secondary">WSS లెక్కించండి →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>నడక జోన్లను అర్థం చేసుకోవడం</h3>
-            <p>శిక్షణలో క్యాడెన్స్ ఆధారిత తీవ్రత జోన్లను ఎలా ఉపయోగించాలో తెలుసుకోండి.</p>
-            <a href="/te/walking-zones/" class="btn btn-secondary">జోన్ల గురించి తెలుసుకోండి →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>శాస్త్రీయ పరిశోధన</h3>
-            <p>ఈ సూత్రాలను ధృవీకరించిన అధ్యయనాలను సమీక్షించండి.</p>
-            <a href="/te/research/" class="btn btn-secondary">పరిశోధన చూడండి →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>పూర్తి గ్రంథ పట్టిక (Bibliography)</h3>
-            <p>పేర్కొన్న అన్ని సమీకరణాల పూర్తి ఆధారాలను పొందండి.</p>
-            <a href="/te/bibliography/" class="btn btn-secondary">గ్రంథ పట్టిక చూడండి →</a>
-          </div>
-        </div>
-
-        <h2 id="conversions">11. యూనిట్ మార్పిడులు (Unit Conversions)</h2>
-
-        <div class="formula-section">
-          <h3>సాధారణ నడక కొలతల మార్పిడి</h3>
-
-          <div class="conversion-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>నుండి</th>
-                  <th>కు</th>
-                  <th>సూత్రం</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>km/h</td>
-                  <td>మీ/సె</td>
-                  <td>km/h ÷ 3.6</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>మీ/సె</td>
-                  <td>mph × 0.447</td>
-                </tr>
-                <tr>
-                  <td>మీ/సె</td>
-                  <td>km/h</td>
-                  <td>మీ/సె × 3.6</td>
-                </tr>
-                <tr>
-                  <td>మీ/సె</td>
-                  <td>mph</td>
-                  <td>మీ/సె × 2.237</td>
-                </tr>
-                <tr>
-                  <td>km/h</td>
-                  <td>మీ/నిమి</td>
-                  <td>km/h × 16.67</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>మీ/నిమి</td>
-                  <td>mph × 26.82</td>
-                </tr>
-                <tr>
-                  <td>METs</td>
-                  <td>mL/kg/min</td>
-                  <td>METs × 3.5</td>
-                </tr>
-                <tr>
-                  <td>mL/kg/min</td>
-                  <td>METs</td>
-                  <td>VO₂ ÷ 3.5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h4>శీఘ్ర సూచన (Quick Reference):</h4>
-          <ul>
-            <li><strong>1.0 మీ/సె =</strong> 3.6 km/h = 2.24 mph (సాధారణ ఆరోగ్యవంతుల నడక వేగం)</li>
-            <li><strong>1.4 మీ/సె =</strong> 5.0 km/h = 3.1 mph (చురుకైన నడక)</li>
-            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (విశ్రాంతి సమయంలో జీవక్రియ)</li>
-            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (మధ్యస్థ తీవ్రత ప్రారంభం)</li>
-            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (చురుకైన తీవ్రత ప్రారంభం)</li>
-          </ul>
-        </div>
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>సూత్రాల సూచిక</h3>
-          <ul>
-            <li><a href="#cadence-mets">1. క్యాడెన్స్ → METs</a></li>
-            <li><a href="#acsm-vo2">2. ACSM VO₂ సమీకరణాలు</a></li>
-            <li><a href="#energy-expenditure">3. శక్తి & కెలోరీలు</a></li>
-            <li><a href="#gait-symmetry">4. గైట్ సిమెట్రీ ఇండెక్స్</a></li>
-            <li><a href="#walk-score">5. WALK స్కోర్</a></li>
-            <li><a href="#basic-metrics">6. ప్రాథమిక కొలతలు</a></li>
-            <li><a href="#heart-rate">7. హార్ట్ రేట్ జోన్లు</a></li>
-            <li><a href="#cost-transport">8. కోస్ట్ ఆఫ్ ట్రాన్స్‌పోర్ట్</a></li>
-            <li><a href="#training-load">9. ట్రైనింగ్ లోడ్</a></li>
-            <li><a href="#predictions">10. అంచనా సమీకరణాలు</a></li>
-            <li><a href="#conversions">11. యూనిట్ మార్పిడులు</a></li>
-          </ul>
-        </div>
-
-        <div class="formula-highlight">
-          <h3>⭐ అత్యంత ముఖ్యం</h3>
-          <p><strong>క్యాడెన్స్ నుండి METs</strong></p>
-          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
-          <p class="small-text">ఈ ఒక్క సమీకరణం హార్ట్ రేట్ మానిటర్లు లేకుండానే క్యాడెన్స్ ఆధారిత తీవ్రత శిక్షణను సాధ్యం
-            చేస్తుంది.</p>
-        </div>
-
-        <div class="cta-box">
-          <h3>ఈ సూత్రాలను వాడండి</h3>
-          <p>మీ నడకలను విశ్లేషించడానికి Walk Analytics ఈ శాస్త్రీయంగా ధృవీకరించబడిన సమీకరణాలను ఉపయోగిస్తుంది.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">యాప్‌ని డౌన్‌లోడ్
-            చేయండి</a>
-        </div>
-
-        <div class="info-box">
-          <h4>📐 సూత్రాల ఖచ్చితత్వం</h4>
-          <p>ఈ పేజీలోని అన్ని సమీకరణాలు పీర్-రివ్యూడ్ పరిశోధనల నుండి తీసుకోబడ్డాయి. పూర్తి ఆధారాల కోసం <a
-              href="/te/bibliography/">గ్రంథ పట్టిక</a> చూడండి.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+              ప్రతి కిలోమీటరుకు ఖర్చయ్యే శక్తి పెరుగుతుంది.</p></div><h4>శక్తి ఖర్చును ప్రభావితం చేసే అంశాలు:</h4><ul><li><strong>వేగం:</strong> U-ఆకారపు సంబంధం (సుమారు 1.3 మీ/సె వద్ద అత్యుత్తమ సామర్థ్యం)</li><li><strong>వాలు (Gradient):</strong> పైనకి నడిస్తే శక్తి ఖర్చు భారీగా పెరుగుతుంది; కిందకి నడిస్తే నియంత్రణ
+              కోసం శక్తి ఖర్చవుతుంది</li><li><strong>శరీర బరువు:</strong> బరువు ఎక్కువ ఉన్నవారికి మొత్తం శక్తి ఎక్కువగా ఖర్చవుతుంది, కానీ బరువుకు
+              తగినట్లుగా చూస్తే అందరికీ దాదాపు ఒకేలా ఉంటుంది</li><li><strong>అడుగు వేసే తీరు:</strong> సరైన అడుగు దూరం శక్తి వినియోగాన్ని తగ్గిస్తుంది</li><li><strong>నేల స్వభావం:</strong> గతుకుల నేల మీద నడిస్తే సాఫీగా ఉండే నేల కంటే ఎక్కువ శక్తి ఖర్చవుతుంది</li></ul><div class="formula-box"><p class="formula-title">వాలు ఆధారిత ఖర్చు (Grade-Adjusted Cost)</p><p class="formula-main"><strong>ఖర్చు గుణకం (multiplier) = 1 + (గ్రేడ్ × 10)</strong></p><p class="formula-note">సుమారుగా: ప్రతి 1% వాలుకి 10% అదనపు శక్తి ఖర్చవుతుంది</p></div><h4>ఉదాహరణ:</h4><div class="calc-example"><p class="example-input"><strong>5% వాలుపై నడక:</strong></p><p class="example-calc">ఖర్చు గుణకం = 1 + (0.05 × 10) = <strong>1.5 రెట్లు</strong></p><p class="example-interpretation">సమతల నేలతో పోలిస్తే 50% అదనపు శక్తి ఖర్చవుతుంది</p></div></div><h2 id="training-load">9. ట్రైనింగ్ లోడ్ & స్ట్రెస్ స్కోర్</h2><div class="formula-section"><h3>వాలింగ్ స్ట్రెస్ స్కోర్ (WSS)</h3><div class="formula-box"><p class="formula-title">జోన్ ఆధారిత WSS</p><p class="formula-main"><strong>WSS = Σ (జోన్‌లో గడిపిన నిమిషాలు × జోన్ ఫ్యాక్టర్)</strong></p><p>జోన్ 1: ×1.0 | జోన్ 2: ×2.0 | జోన్ 3: ×3.0 | జోన్ 4: ×4.0 | జోన్ 5: ×5.0</p></div><h4>ఉదాహరణ: 60 నిమిషాల నడక</h4><div class="calc-example"><p>10 నిమి జోన్ 1 × 1 = 10 పాయింట్లు</p><p>40 నిమి జోన్ 2 × 2 = 80 పాయింట్లు</p><p>10 నిమి జోన్ 3 × 3 = 30 పాయింట్లు</p><p><strong>మొత్తం WSS = 120</strong></p></div><h3>వారపు ట్రైనింగ్ లోడ్</h3><div class="formula-box"><p class="formula-title">వారపు లోడ్</p><p class="formula-main"><strong>వారపు లోడ్ = Σ రోజువారీ WSS (7 రోజులు)</strong></p></div><div class="formula-box"><p class="formula-title">క్రమేణా లోడ్ పెంచడం (Progressive Overload)</p><p class="formula-main"><strong>తర్వాతి వారం = ప్రస్తుత వారం × 1.05-1.10</strong></p><p class="formula-note">వారానికి గరిష్టంగా 5-10% లోడ్ మాత్రమే పెంచాలి</p></div><div class="formula-box"><p class="formula-title">రికవరీ వీక్ (విశ్రాంతి వారం)</p><p class="formula-main"><strong>రికవరీ వీక్ = ప్రస్తుత వీక్ × 0.50-0.70</strong></p><p class="formula-note">ప్రతి 3-4 వారాలకొకసారి, లోడ్‌ను 50-70% కి తగ్గించాలి</p></div><h4>సాధారణ వారపు లోడ్లు:</h4><ul><li><strong>ప్రారంభ ఆరోగ్య నడక:</strong> వారానికి 200-400 WSS</li><li><strong>సాధారణ ఫిట్‌నెస్ నడక:</strong> వారానికి 400-700 WSS</li><li><strong>తీవ్రమైన ఫిట్‌నెస్ నడక:</strong> వారానికి 700-1000 WSS</li><li><strong>పోటీతత్వ రేస్ వాకింగ్:</strong> వారానికి 1000-1500+ WSS</li></ul></div><h2 id="predictions">10. అంచనా వేసే సమీకరణాలు (Predictive Equations)</h2><div class="formula-section"><h3>6-నిమిషాల నడక పరీక్ష (6MWT) దూరం అంచనా</h3><div class="formula-box"><p class="formula-title">అంచనా వేసిన 6MWT దూరం (Enright & Sherrill)</p><p><strong>పురుషులు:</strong> (7.57 × ఎత్తు cm) - (5.02 × వయస్సు) - (1.76 × బరువు kg) - 309</p><p><strong>స్త్రీలు:</strong> (2.11 × ఎత్తు cm) - (5.78 × వయస్సు) - (2.29 × బరువు kg) + 667</p><p class="formula-note">ఆరోగ్యవంతులైన పెద్దలు నడవగల దూరాన్ని మీటర్లలో అంచనా వేస్తుంది</p></div><h4>ఉదాహరణ: 40 ఏళ్ల వ్యక్తి, 175 cm ఎత్తు, 75 kg బరువు</h4><div class="calc-example"><p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p><p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 మీటర్లు</strong></p><p class="example-interpretation">వయస్సుకి తగిన మంచి శారీరక సామర్థ్యం</p></div><div class="info-box"><p><strong>క్లినికల్ ఉపయోగం:</strong> గుండె మరియు ఊపిరితిత్తుల సంబంధిత రోగులలో, సర్జరీకి ముందు/తర్వాత
+              సామర్థ్యాన్ని అంచనా వేయడానికి మరియు వృద్ధులలో సాధారణ ఫిట్‌నెస్ను తనిఖీ చేయడానికి 6MWTని ఉపయోగిస్తారు.</p></div></div><h2 id="next-steps">సంబంధిత సమాచారం</h2><div class="next-steps-grid"><div class="next-step-card"><h3>సూత్రాలను వర్తింపజేయండి: WSS క్యాలిక్యులేటర్</h3><p>మీ నడక స్ట్రెస్ స్కోర్‌ను లెక్కించడానికి మా ఇంటరాక్టివ్ క్యాలిక్యులేటర్‌ని ఉపయోగించండి.</p><a href="/te/wss-calculator/" class="btn btn-secondary">WSS లెక్కించండి →</a></div><div class="next-step-card"><h3>నడక జోన్లను అర్థం చేసుకోవడం</h3><p>శిక్షణలో క్యాడెన్స్ ఆధారిత తీవ్రత జోన్లను ఎలా ఉపయోగించాలో తెలుసుకోండి.</p><a href="/te/walking-zones/" class="btn btn-secondary">జోన్ల గురించి తెలుసుకోండి →</a></div><div class="next-step-card"><h3>శాస్త్రీయ పరిశోధన</h3><p>ఈ సూత్రాలను ధృవీకరించిన అధ్యయనాలను సమీక్షించండి.</p><a href="/te/research/" class="btn btn-secondary">పరిశోధన చూడండి →</a></div><div class="next-step-card"><h3>పూర్తి గ్రంథ పట్టిక (Bibliography)</h3><p>పేర్కొన్న అన్ని సమీకరణాల పూర్తి ఆధారాలను పొందండి.</p><a href="/te/bibliography/" class="btn btn-secondary">గ్రంథ పట్టిక చూడండి →</a></div></div><h2 id="conversions">11. యూనిట్ మార్పిడులు (Unit Conversions)</h2><div class="formula-section"><h3>సాధారణ నడక కొలతల మార్పిడి</h3><div class="conversion-table"><table><thead><tr><th>నుండి</th><th>కు</th><th>సూత్రం</th></tr></thead><tbody><tr><td>km/h</td><td>మీ/సె</td><td>km/h ÷ 3.6</td></tr><tr><td>mph</td><td>మీ/సె</td><td>mph × 0.447</td></tr><tr><td>మీ/సె</td><td>km/h</td><td>మీ/సె × 3.6</td></tr><tr><td>మీ/సె</td><td>mph</td><td>మీ/సె × 2.237</td></tr><tr><td>km/h</td><td>మీ/నిమి</td><td>km/h × 16.67</td></tr><tr><td>mph</td><td>మీ/నిమి</td><td>mph × 26.82</td></tr><tr><td>METs</td><td>mL/kg/min</td><td>METs × 3.5</td></tr><tr><td>mL/kg/min</td><td>METs</td><td>VO₂ ÷ 3.5</td></tr></tbody></table></div><h4>శీఘ్ర సూచన (Quick Reference):</h4><ul><li><strong>1.0 మీ/సె =</strong> 3.6 km/h = 2.24 mph (సాధారణ ఆరోగ్యవంతుల నడక వేగం)</li><li><strong>1.4 మీ/సె =</strong> 5.0 km/h = 3.1 mph (చురుకైన నడక)</li><li><strong>1 MET =</strong> 3.5 mL O₂/kg/min (విశ్రాంతి సమయంలో జీవక్రియ)</li><li><strong>3 METs =</strong> 10.5 mL O₂/kg/min (మధ్యస్థ తీవ్రత ప్రారంభం)</li><li><strong>6 METs =</strong> 21 mL O₂/kg/min (చురుకైన తీవ్రత ప్రారంభం)</li></ul></div></div><aside class="sidebar"><div class="toc"><h3>సూత్రాల సూచిక</h3><ul><li><a href="#cadence-mets">1. క్యాడెన్స్ → METs</a></li><li><a href="#acsm-vo2">2. ACSM VO₂ సమీకరణాలు</a></li><li><a href="#energy-expenditure">3. శక్తి & కెలోరీలు</a></li><li><a href="#gait-symmetry">4. గైట్ సిమెట్రీ ఇండెక్స్</a></li><li><a href="#walk-score">5. WALK స్కోర్</a></li><li><a href="#basic-metrics">6. ప్రాథమిక కొలతలు</a></li><li><a href="#heart-rate">7. హార్ట్ రేట్ జోన్లు</a></li><li><a href="#cost-transport">8. కోస్ట్ ఆఫ్ ట్రాన్స్‌పోర్ట్</a></li><li><a href="#training-load">9. ట్రైనింగ్ లోడ్</a></li><li><a href="#predictions">10. అంచనా సమీకరణాలు</a></li><li><a href="#conversions">11. యూనిట్ మార్పిడులు</a></li></ul></div><div class="formula-highlight"><h3>⭐ అత్యంత ముఖ్యం</h3><p><strong>క్యాడెన్స్ నుండి METs</strong></p><p class="formula-compact">METs = 0.0219 × spm + 0.72</p><p class="small-text">ఈ ఒక్క సమీకరణం హార్ట్ రేట్ మానిటర్లు లేకుండానే క్యాడెన్స్ ఆధారిత తీవ్రత శిక్షణను సాధ్యం
+            చేస్తుంది.</p></div><div class="cta-box"><h3>ఈ సూత్రాలను వాడండి</h3><p>మీ నడకలను విశ్లేషించడానికి Walk Analytics ఈ శాస్త్రీయంగా ధృవీకరించబడిన సమీకరణాలను ఉపయోగిస్తుంది.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">యాప్‌ని డౌన్‌లోడ్
+            చేయండి</a></div><div class="info-box"><h4>📐 సూత్రాల ఖచ్చితత్వం</h4><p>ఈ పేజీలోని అన్ని సమీకరణాలు పీర్-రివ్యూడ్ పరిశోధనల నుండి తీసుకోబడ్డాయి. పూర్తి ఆధారాల కోసం <a
+              href="/te/bibliography/">గ్రంథ పట్టిక</a> చూడండి.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link active"
+                </a><a href="/te/" class="lang-link active"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/te/privacy/">గోప్యత</a></li>
-                <li><a href="/te/terms/">నిబంధనలు</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>మీ అనుభవాన్ని మెరుగుపరచడానికి ఈ వెబ్‌సైట్ కుకీలను ఉపయోగిస్తుంది.</p>
-            <a href="/te/privacy/" class="text-sm">మరింత తెలుసుకోండి</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">తిరస్కరించు</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">అంగీకరించు</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/te/privacy/">గోప్యత</a></li><li><a href="/te/terms/">నిబంధనలు</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>మీ అనుభవాన్ని మెరుగుపరచడానికి ఈ వెబ్‌సైట్ కుకీలను ఉపయోగిస్తుంది.</p><a href="/te/privacy/" class="text-sm">మరింత తెలుసుకోండి</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">తిరస్కరించు</button><button id="cookie-accept" class="btn btn-primary btn-small">అంగీకరించు</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

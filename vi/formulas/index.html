@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="vi" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Công thức chỉ số đi bộ - Cách tính WSS, dáng đi và chỉ số sức khỏe</title>
-  <meta name="description" content="Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="công thức đi bộ, công thức WSS, tính toán chỉ số dáng đi, công thức phân tích đi bộ, toán học thể lực">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/vi/formulas/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2026-01-13T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/vi/formulas/">
-  <meta property="og:title" content="Công thức chỉ số đi bộ - Cách tính WSS, dáng đi và chỉ số sức khỏe">
-  <meta property="og:description" content="Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/vi/formulas/">
-  <meta name="twitter:title" content="Công thức chỉ số đi bộ - Cách tính WSS, dáng đi và chỉ số sức khỏe">
-  <meta name="twitter:description" content="Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Công thức chỉ số đi bộ - Cách tính WSS, dáng đi và chỉ số sức khỏe</title><meta name="description" content="Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="công thức đi bộ, công thức WSS, tính toán chỉ số dáng đi, công thức phân tích đi bộ, toán học thể lực"><link rel="canonical" href="https://walk.analyticszone.app/vi/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-01-13T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/vi/formulas/"><meta property="og:title" content="Công thức chỉ số đi bộ - Cách tính WSS, dáng đi và chỉ số sức khỏe"><meta property="og:description" content="Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="vi_VN"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/vi/formulas/"><meta name="twitter:title" content="Công thức chỉ số đi bộ - Cách tính WSS, dáng đi và chỉ số sức khỏe"><meta name="twitter:description" content="Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "vi"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "Công thức toán học đằng sau phân tích đi bộ. Tìm hiểu cách tính WSS, chỉ số bước đi, nhịp bước và điểm hiệu suất. Phương pháp khoa học.",
   "url": "https://walk.analyticszone.app/vi/formulas/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/vi/formulas/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1593 +449,387 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">Chuyển đến nội dung</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/vi/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/vi/" 
+  </script></head><body><a href="#main-content" class="skip-link">Chuyển đến nội dung</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/vi/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/vi/" 
                                 aria-current="">
                                 Trang chủ
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/vi/getting-started/" class="nav-label">Học tập</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/vi/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/vi/getting-started/" class="nav-label">Học tập</a><ul class="submenu"><li><a href="/vi/getting-started/" 
                                         aria-current="">
                                         Bắt đầu
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/walking-zones/" 
+                                    </a></li><li><a href="/vi/walking-zones/" 
                                         aria-current="">
                                         Vùng đi bộ
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/gait-analysis/" 
+                                    </a></li><li><a href="/vi/gait-analysis/" 
                                         aria-current="">
                                         Phân tích dáng đi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/training-load/" 
+                                    </a></li><li><a href="/vi/training-load/" 
                                         aria-current="">
                                         Tải lượng tập luyện
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/wss-calculator/" 
+                                    </a></li><li><a href="/vi/wss-calculator/" 
                                         aria-current="">
                                         Máy tính WSS
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/vi/research/" class="nav-label">Khoa học</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/vi/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/vi/research/" class="nav-label">Khoa học</a><ul class="submenu"><li><a href="/vi/research/" 
                                         aria-current="">
                                         Nghiên cứu
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/formulas/" class="active" 
+                                    </a></li><li><a href="/vi/formulas/" class="active" 
                                         aria-current="page">
                                         Công thức
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/gait-efficiency/" 
+                                    </a></li><li><a href="/vi/gait-efficiency/" 
                                         aria-current="">
                                         Hiệu suất dáng đi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/stride-mechanics/" 
+                                    </a></li><li><a href="/vi/stride-mechanics/" 
                                         aria-current="">
                                         Cơ học bước đi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/walking-vs-running/" 
+                                    </a></li><li><a href="/vi/walking-vs-running/" 
                                         aria-current="">
                                         Đi bộ vs Chạy bộ
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/benchmarks/" 
+                                    </a></li><li><a href="/vi/benchmarks/" 
                                         aria-current="">
                                         Tiêu chuẩn hiệu suất
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/bibliography/" 
+                                    </a></li><li><a href="/vi/bibliography/" 
                                         aria-current="">
                                         Thư mục
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/vi/for-health/" class="nav-label">Dành cho bạn</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/vi/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/vi/for-health/" class="nav-label">Dành cho bạn</a><ul class="submenu"><li><a href="/vi/for-health/" 
                                         aria-current="">
                                         Cho sức khỏe
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/for-fitness/" 
+                                    </a></li><li><a href="/vi/for-fitness/" 
                                         aria-current="">
                                         Cho thể lực
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/for-seniors/" 
+                                    </a></li><li><a href="/vi/for-seniors/" 
                                         aria-current="">
                                         Cho người cao tuổi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/for-rehabilitation/" 
+                                    </a></li><li><a href="/vi/for-rehabilitation/" 
                                         aria-current="">
                                         Cho phục hồi chức năng
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/vi/cadence-calculator/" class="nav-label">Công cụ</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/vi/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/vi/cadence-calculator/" class="nav-label">Công cụ</a><ul class="submenu"><li><a href="/vi/cadence-calculator/" 
                                         aria-current="">
                                         Máy tính nhịp bước
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/gait-assessment/" 
+                                    </a></li><li><a href="/vi/gait-assessment/" 
                                         aria-current="">
                                         Đánh giá dáng đi
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/vi/vo2max-calculator/" 
+                                    </a></li><li><a href="/vi/vo2max-calculator/" 
                                         aria-current="">
                                         Máy tính VO₂max
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/vi/contact/" 
+                                    </a></li></ul></li><li><a href="/vi/contact/" 
                                 aria-current="">
                                 Liên hệ
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Chọn ngôn ngữ">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Chọn ngôn ngữ"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" selected>
+                        </option><option value="vi" selected>
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Chuyển đổi menu"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/vi/">Trang chủ</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/vi/research/">Khoa học</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">Công thức</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Walking Metrics Formulas -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/vi/">Trang chủ</a> / <a href="/vi/#science">Khoa Học</a> / Công Thức
-    </div>
-    <h1>Các Công Thức & Phương Trình Chỉ Số Đi Bộ</h1>
-    <p class="lead">Nền tảng toán học của phân tích đi bộ – các phương trình đã được kiểm chứng khoa học cho cường độ,
-      năng lượng và hiệu suất</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <div class="intro-note">
-          <p>Trang này trình bày các công thức đã được kiểm chứng khoa học sử dụng trong phân tích đi bộ. Tất cả các
-            phương trình đều được trích dẫn với các tài liệu nghiên cứu và phạm vi độ chính xác đã được xác nhận.</p>
-        </div>
-
-        <h2 id="cadence-mets">1. Chuyển Đổi Nhịp Bước sang METs</h2>
-
-        <div class="formula-section featured">
-          <h3>Phương Trình Trao Đổi Chất Dựa Trên Nhịp Bước của Moore et al. (2021)</h3>
-
-          <div class="formula-box primary">
-            <p class="formula-title">Nhịp Bước sang METs</p>
-            <p class="formula-main"><strong>METs = 0.0219 × Nhịp bước (bước/phút) + 0.72</strong></p>
-            <p class="formula-meta">
-              <span class="accuracy">Độ chính xác: ±0.5 METs</span>
-              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
-            </p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Tại sao công thức này quan trọng:</strong> Phương trình này <strong>chính xác hơn 23-35%</strong>
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Chuyển đổi menu"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/vi/">Trang chủ</a></li><li><a href="/vi/research/">Khoa học</a></li><li><span aria-current="page">Công thức</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/vi/">Trang chủ</a> / <a href="/vi/#science">Khoa Học</a> / Công Thức
+    </div><h1>Các Công Thức & Phương Trình Chỉ Số Đi Bộ</h1><p class="lead">Nền tảng toán học của phân tích đi bộ – các phương trình đã được kiểm chứng khoa học cho cường độ,
+      năng lượng và hiệu suất</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>Trang này trình bày các công thức đã được kiểm chứng khoa học sử dụng trong phân tích đi bộ. Tất cả các
+            phương trình đều được trích dẫn với các tài liệu nghiên cứu và phạm vi độ chính xác đã được xác nhận.</p></div><h2 id="cadence-mets">1. Chuyển Đổi Nhịp Bước sang METs</h2><div class="formula-section featured"><h3>Phương Trình Trao Đổi Chất Dựa Trên Nhịp Bước của Moore et al. (2021)</h3><div class="formula-box primary"><p class="formula-title">Nhịp Bước sang METs</p><p class="formula-main"><strong>METs = 0.0219 × Nhịp bước (bước/phút) + 0.72</strong></p><p class="formula-meta"><span class="accuracy">Độ chính xác: ±0.5 METs</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>Tại sao công thức này quan trọng:</strong> Phương trình này <strong>chính xác hơn 23-35%</strong>
               so với các phương trình dựa trên tốc độ truyền thống của ACSM cho đi bộ. Nó hoạt động vì nhịp bước phản
               ánh trực tiếp tần suất chuyển động và tiêu hao năng lượng, trong khi tốc độ phụ thuộc vào độ dài sải bước
-              thay đổi.</p>
-          </div>
-
-          <h4>Ví dụ:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Đi bộ ở 100 bước/phút (spm):</strong></p>
-              <p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p>
-              <p class="example-interpretation">≈ 3 METs = <strong>Ngưỡng cường độ trung bình</strong> ✓</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Đi bộ ở 110 bước/phút:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p>
-              <p class="example-interpretation">Cường độ trung bình vững chắc</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Đi bộ ở 120 bước/phút:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p>
-              <p class="example-interpretation">Cường độ trung bình-mạnh</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Đi bộ ở 130 bước/phút:</strong></p>
-              <p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p>
-              <p class="example-interpretation"><strong>Ngưỡng cường độ mạnh</strong> (6 METs theo đo lường trực tiếp
-                của CADENCE-Adults)</p>
-            </div>
-          </div>
-
-          <div class="formula-note">
-            <p><strong>Lưu ý:</strong> Nghiên cứu CADENCE-Adults đã đo lường trực tiếp rằng 130 bước/phút = 6 METs trong
+              thay đổi.</p></div><h4>Ví dụ:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Đi bộ ở 100 bước/phút (spm):</strong></p><p class="example-calc">METs = 0.0219 × 100 + 0.72 = 2.19 + 0.72 = <strong>2.91 METs</strong></p><p class="example-interpretation">≈ 3 METs = <strong>Ngưỡng cường độ trung bình</strong> ✓</p></div><div class="calc-example"><p class="example-input"><strong>Đi bộ ở 110 bước/phút:</strong></p><p class="example-calc">METs = 0.0219 × 110 + 0.72 = 2.409 + 0.72 = <strong>3.13 METs</strong></p><p class="example-interpretation">Cường độ trung bình vững chắc</p></div><div class="calc-example"><p class="example-input"><strong>Đi bộ ở 120 bước/phút:</strong></p><p class="example-calc">METs = 0.0219 × 120 + 0.72 = 2.628 + 0.72 = <strong>3.35 METs</strong></p><p class="example-interpretation">Cường độ trung bình-mạnh</p></div><div class="calc-example"><p class="example-input"><strong>Đi bộ ở 130 bước/phút:</strong></p><p class="example-calc">METs = 0.0219 × 130 + 0.72 = 2.847 + 0.72 = <strong>3.57 METs</strong></p><p class="example-interpretation"><strong>Ngưỡng cường độ mạnh</strong> (6 METs theo đo lường trực tiếp
+                của CADENCE-Adults)</p></div></div><div class="formula-note"><p><strong>Lưu ý:</strong> Nghiên cứu CADENCE-Adults đã đo lường trực tiếp rằng 130 bước/phút = 6 METs trong
               điều kiện phòng thí nghiệm được kiểm soát. Phương trình Moore được thiết kế cho phạm vi 80-130 bước/phút
-              và có thể ước tính thấp hơn ở các nhịp bước rất cao.</p>
-          </div>
-
-          <h4>Dữ Liệu Xác Nhận:</h4>
-          <ul>
-            <li><strong>Mẫu:</strong> 76 người lớn tuổi 21-40</li>
-            <li><strong>Phương pháp:</strong> Đo nhiệt lượng gián tiếp (tiêu chuẩn vàng)</li>
-            <li><strong>Giá trị R²:</strong> 0.87 (tương quan xuất sắc)</li>
-            <li><strong>Sai số tuyệt đối trung bình:</strong> 0.47 METs</li>
-            <li><strong>Phạm vi áp dụng:</strong> 80-130 bước/phút</li>
-          </ul>
-        </div>
-
-        <h2 id="acsm-vo2">2. Phương Trình VO₂ ACSM Cho Đi Bộ</h2>
-
-        <div class="formula-section">
-          <h3>Các Tính Toán Trao Đổi Chất ACSM</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Đi Bộ Đường Bằng (độ dốc 0%)</p>
-            <p class="formula-main"><strong>VO₂ (mL/kg/phút) = 0.1 × Tốc độ (m/phút) + 3.5</strong></p>
-            <p class="formula-note">Tốc độ tính bằng mét trên phút (nhân km/h với 16.67 hoặc mph với 26.82)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Đi Bộ Có Độ Dốc (lên/xuống dốc)</p>
-            <p class="formula-main"><strong>VO₂ = 0.1(Tốc độ) + 1.8(Tốc độ)(Độ dốc) + 3.5</strong></p>
-            <p class="formula-note">Độ dốc biểu thị dưới dạng thập phân (ví dụ: 5% = 0.05)</p>
-          </div>
-
-          <h4>Ví dụ:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Đi bộ 5 km/h (83.3 m/phút) trên mặt đất bằng phẳng:</strong></p>
-              <p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/phút</strong></p>
-              <p class="example-conversion">Chuyển sang METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Đi bộ 5 km/h trên độ dốc 5%:</strong></p>
-              <p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p>
-              <p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/phút</strong></p>
-              <p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p>
-              <p class="example-interpretation">Độ dốc làm tăng cường độ khoảng ~64%!</p>
-            </div>
-          </div>
-
-          <div class="conversion-helper">
-            <h4>Chuyển Đổi Tốc Độ:</h4>
-            <ul>
-              <li><strong>km/h sang m/phút:</strong> nhân với 16.67</li>
-              <li><strong>mph sang m/phút:</strong> nhân với 26.82</li>
-              <li><strong>m/s sang m/phút:</strong> nhân với 60</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="energy-expenditure">3. Tiêu Hao Năng Lượng & Đốt Cháy Calo</h2>
-
-        <div class="formula-section">
-          <h3>Tính Toán Calo Chính Xác</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Calo mỗi Phút</p>
-            <p class="formula-main"><strong>Cal/phút = (METs × 3.5 × Trọng Lượng Cơ Thể kg) / 200</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Tổng Calo cho Buổi Tập</p>
-            <p class="formula-main"><strong>Tổng Calo = Cal/phút × Thời lượng (phút)</strong></p>
-          </div>
-
-          <h4>Ví dụ:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Người 70 kg đi bộ 100 bước/phút (3 METs) trong 45 phút:</strong></p>
-              <p class="example-calc">Cal/phút = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/phút</strong></p>
-              <p class="example-calc">Tổng = 3.675 × 45 = <strong>165.4 calo</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Người 85 kg đi bộ 120 bước/phút (5 METs) trong 30 phút:</strong></p>
-              <p class="example-calc">Cal/phút = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/phút</strong>
-              </p>
-              <p class="example-calc">Tổng = 7.44 × 30 = <strong>223.2 calo</strong></p>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h4>Tại Sao Công Thức Này?</h4>
-            <p>Phương trình này xuất phát từ định nghĩa của MET (Metabolic Equivalent of Task - Đương lượng chuyển hóa):
-            </p>
-            <ul>
-              <li>1 MET = 3.5 mL O₂/kg/phút (tỷ lệ trao đổi chất khi nghỉ ngơi)</li>
-              <li>1 lít O₂ tiêu thụ ≈ 5 kcal được đốt cháy</li>
-              <li>Chuyển đổi: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li>
-            </ul>
-          </div>
-
-          <h3>Đốt Cháy Calo Thực (Chỉ tập thể dục)</h3>
-          <div class="formula-box">
-            <p class="formula-title">Calo Thực (trừ phần nghỉ ngơi)</p>
-            <p class="formula-main"><strong>Cal Thực/phút = [(METs - 1) × 3.5 × Trọng Lượng Cơ Thể] / 200</strong></p>
-            <p class="formula-note">Trừ 1 MET để loại trừ lượng calo bạn vẫn sẽ đốt cháy khi nghỉ ngơi</p>
-          </div>
-
-          <div class="calc-example">
-            <p class="example-input"><strong>70 kg, 3 METs, 45 phút – Calo thực:</strong></p>
-            <p class="example-calc">Thực = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 calo
-                thực</strong></p>
-            <p class="example-interpretation">so với 165.4 tổng calo (55 calo sẽ được đốt cháy khi nghỉ ngơi)</p>
-          </div>
-        </div>
-
-        <h2 id="gait-symmetry">4. Chỉ Số Đối Xứng Dáng Đi (GSI)</h2>
-
-        <div class="formula-section">
-          <h3>Định Lượng Bất Đối Xứng Trái-Phải</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Chỉ Số Đối Xứng Dáng Đi</p>
-            <p class="formula-main"><strong>GSI (%) = |Phải - Trái| / [0.5 × (Phải + Trái)] × 100</strong></p>
-            <p class="formula-note">Có thể áp dụng cho độ dài sải bước, thời gian bước, hoặc thời gian tiếp đất</p>
-          </div>
-
-          <h4>Diễn Giải:</h4>
-          <ul>
-            <li><strong>&lt;2-3%:</strong> Dáng đi bình thường, đối xứng</li>
-            <li><strong>3-5%:</strong> Bất đối xứng nhẹ</li>
-            <li><strong>5-10%:</strong> Bất đối xứng trung bình, cần theo dõi</li>
-            <li><strong>&gt;10%:</strong> Có ý nghĩa lâm sàng, cần đánh giá chuyên môn</li>
-          </ul>
-
-          <h4>Ví dụ:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Thời gian bước: Phải = 520 ms, Trái = 480 ms</strong></p>
-              <p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p>
-              <p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% bất đối xứng</strong></p>
-              <p class="example-interpretation">Bất đối xứng trung bình – cân nhắc tăng cường sức mạnh bên yếu hơn</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Độ dài sải bước: Phải = 1.42 m, Trái = 1.38 m</strong></p>
-              <p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p>
-              <p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% bất đối xứng</strong></p>
-              <p class="example-interpretation">Bình thường, phạm vi khỏe mạnh ✓</p>
-            </div>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>Lưu ý Lâm sàng:</strong> Tính năng Bất đối xứng đi bộ của Apple HealthKit sử dụng cách tính hơi
-              khác (chênh lệch phần trăm đơn giản giữa thời gian bước) nhưng các ngưỡng diễn giải là tương tự.</p>
-          </div>
-        </div>
-
-        <h2 id="walk-score">5. Điểm WALK (Chỉ Số Độc Quyền Của Walk Analytics)</h2>
-
-        <div class="formula-section">
-          <h3>Điểm Hiệu Quả Đi Bộ</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Điểm WALK</p>
-            <p class="formula-main"><strong>Điểm WALK = Thời gian (giây) + Số bước trên 100 mét</strong></p>
-            <p class="formula-note">Điểm thấp hơn = hiệu quả tốt hơn</p>
-          </div>
-
-          <h4>Cách Thức Hoạt Động:</h4>
-          <p>Điểm WALK kết hợp thời gian và số bước để định lượng hiệu quả đi bộ. Một người đi bộ đi hết 100m trong 75
-            giây với 140 bước có Điểm WALK là 215. Cải thiện tốc độ HOẶC hiệu quả sải bước đều làm giảm điểm số.</p>
-
-          <h4>Ví dụ:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100m trong 80 giây, 120 bước:</strong></p>
-              <p class="example-calc">Điểm WALK = 80 + 120 = <strong>200</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100m trong 70 giây, 110 bước:</strong></p>
-              <p class="example-calc">Điểm WALK = 70 + 110 = <strong>180</strong></p>
-              <p class="example-interpretation">Hiệu quả tốt hơn nhờ cải thiện tốc độ + sải bước</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100m trong 60 giây, 130 bước (đi bộ thể thao):</strong></p>
-              <p class="example-calc">Điểm WALK = 60 + 130 = <strong>190</strong></p>
-              <p class="example-interpretation">Nhanh nhưng sải bước ngắn hơn</p>
-            </div>
-          </div>
-
-          <h4>Các Phạm Vi Điển Hình:</h4>
-          <ul>
-            <li><strong>&gt;250:</strong> Dáng đi chậm/không hiệu quả, có thể có vấn đề về di chuyển</li>
-            <li><strong>200-250:</strong> Người đi bộ bình thường, hiệu quả trung bình</li>
-            <li><strong>170-200:</strong> Người đi bộ thể dục, hiệu quả tốt</li>
-            <li><strong>150-170:</strong> Người đi bộ nâng cao, hiệu quả xuất sắc</li>
-            <li><strong>&lt;150:</strong> Mức độ ưu tú/đi bộ thể thao (race walking)</li>
-          </ul>
-
-          <div class="tip-box">
-            <p><strong>Tập luyện với Điểm WALK:</strong> Theo dõi điểm số của bạn trên cùng một quãng đường 100m hàng
-              tuần. Sự cải thiện cho thấy sự tăng cường phối hợp thần kinh cơ, sức mạnh và kinh tế đi bộ.</p>
-          </div>
-        </div>
-
-        <h2 id="basic-metrics">6. Các Chỉ Số Dáng Đi Cơ Bản</h2>
-
-        <div class="formula-section">
-          <h3>Các Tính Toán Căn Bản</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Tốc Độ Đi Bộ</p>
-            <p class="formula-main"><strong>Tốc độ (m/s) = Quãng đường (m) / Thời gian (s)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Nhịp Bước từ Tổng Số Bước</p>
-            <p class="formula-main"><strong>Nhịp Bước (spm) = Tổng Số Bước / Thời gian (phút)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Độ Dài Sải Bước (Stride Length)</p>
-            <p class="formula-main"><strong>Độ Dài Sải Bước (m) = Quãng đường (m) / (Số bước / 2)</strong></p>
-            <p class="formula-note">Chia số bước cho 2 vì một sải bước (stride) = hai bước chân (steps)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Độ Dài Bước Chân (Step Length)</p>
-            <p class="formula-main"><strong>Độ Dài Bước Chân (m) = Quãng đường (m) / Số bước</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Tốc độ từ Nhịp Bước & Độ Dài Sải Bước</p>
-            <p class="formula-main"><strong>Tốc độ = Độ Dài Sải Bước × (Nhịp Bước / 2) / 60</strong></p>
-            <p class="formula-note">Hoặc: Tốc độ (m/s) = Độ Dài Bước Chân × Nhịp Bước / 60</p>
-          </div>
-
-          <h4>Quy Trình Ví Dụ:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>Đi bộ 1000m trong 12 phút với 1320 bước:</strong></p>
-            <p><strong>Tốc độ:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p>
-            <p><strong>Nhịp Bước:</strong> 1320 bước / 12 phút = <strong>110 spm</strong></p>
-            <p><strong>Độ Dài Sải Bước:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p>
-            <p><strong>Độ Dài Bước Chân:</strong> 1000m / 1320 = <strong>0.76 m</strong></p>
-          </div>
-        </div>
-
-        <h2 id="heart-rate">7. Tính Toán Vùng Nhịp Tim</h2>
-
-        <div class="formula-section">
-          <h3>Phương Pháp Vùng Nhịp Tim Truyền Thống</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Ước Tính Nhịp Tim Tối Đa</p>
-            <p class="formula-main"><strong>Max HR = 220 - Tuổi</strong></p>
-            <p class="formula-note">Đơn giản nhưng biến thiên cá nhân ±10-15 bpm</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Thay thế: Công thức Tanaka (chính xác hơn)</p>
-            <p class="formula-main"><strong>Max HR = 208 - (0.7 × Tuổi)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Tính Toán Phạm Vi Vùng</p>
-            <p class="formula-main"><strong>Vùng = Max HR × (Dưới%, Trên%)</strong></p>
-          </div>
-
-          <h4>Ví dụ: Người 40 tuổi</h4>
-          <div class="calc-example">
-            <p><strong>Truyền thống:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p>
-            <p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p>
-            <p><strong>Vùng 2 (60-70%):</strong> 180 × 0.60 = 108 bpm đến 180 × 0.70 = 126 bpm</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Lưu ý:</strong> Mặc dù các vùng nhịp tim hữu ích, <strong>các vùng dựa trên nhịp bước chính xác
-                và thực tế hơn cho đi bộ</strong> (xem hướng dẫn Các Vùng Đi Bộ).</p>
-          </div>
-        </div>
-
-        <h2 id="cost-transport">8. Chi Phí Năng Lượng Di Chuyển & Kinh Tế Đi Bộ</h2>
-
-        <div class="formula-section">
-          <h3>Chi Phí Năng Lượng Của Việc Đi Bộ</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Chi Phí Di Chuyển (C)</p>
-            <p class="formula-main"><strong>C = Năng Lượng Tiêu Hao / (Khối Lượng Cơ Thể × Quãng Đường)</strong></p>
-            <p class="formula-note">Đơn vị: J/kg/m hoặc mL O₂/kg/m</p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Đường Cong Hình Chữ U:</strong> Kinh tế đi bộ tuân theo đường cong hình chữ U. Có một tốc độ tối
+              và có thể ước tính thấp hơn ở các nhịp bước rất cao.</p></div><h4>Dữ Liệu Xác Nhận:</h4><ul><li><strong>Mẫu:</strong> 76 người lớn tuổi 21-40</li><li><strong>Phương pháp:</strong> Đo nhiệt lượng gián tiếp (tiêu chuẩn vàng)</li><li><strong>Giá trị R²:</strong> 0.87 (tương quan xuất sắc)</li><li><strong>Sai số tuyệt đối trung bình:</strong> 0.47 METs</li><li><strong>Phạm vi áp dụng:</strong> 80-130 bước/phút</li></ul></div><h2 id="acsm-vo2">2. Phương Trình VO₂ ACSM Cho Đi Bộ</h2><div class="formula-section"><h3>Các Tính Toán Trao Đổi Chất ACSM</h3><div class="formula-box"><p class="formula-title">Đi Bộ Đường Bằng (độ dốc 0%)</p><p class="formula-main"><strong>VO₂ (mL/kg/phút) = 0.1 × Tốc độ (m/phút) + 3.5</strong></p><p class="formula-note">Tốc độ tính bằng mét trên phút (nhân km/h với 16.67 hoặc mph với 26.82)</p></div><div class="formula-box"><p class="formula-title">Đi Bộ Có Độ Dốc (lên/xuống dốc)</p><p class="formula-main"><strong>VO₂ = 0.1(Tốc độ) + 1.8(Tốc độ)(Độ dốc) + 3.5</strong></p><p class="formula-note">Độ dốc biểu thị dưới dạng thập phân (ví dụ: 5% = 0.05)</p></div><h4>Ví dụ:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Đi bộ 5 km/h (83.3 m/phút) trên mặt đất bằng phẳng:</strong></p><p class="example-calc">VO₂ = 0.1 × 83.3 + 3.5 = 8.33 + 3.5 = <strong>11.83 mL/kg/phút</strong></p><p class="example-conversion">Chuyển sang METs: 11.83 / 3.5 = <strong>3.38 METs</strong></p></div><div class="calc-example"><p class="example-input"><strong>Đi bộ 5 km/h trên độ dốc 5%:</strong></p><p class="example-calc">VO₂ = 0.1(83.3) + 1.8(83.3)(0.05) + 3.5</p><p class="example-calc">= 8.33 + 7.497 + 3.5 = <strong>19.33 mL/kg/phút</strong></p><p class="example-conversion">= 19.33 / 3.5 = <strong>5.52 METs</strong></p><p class="example-interpretation">Độ dốc làm tăng cường độ khoảng ~64%!</p></div></div><div class="conversion-helper"><h4>Chuyển Đổi Tốc Độ:</h4><ul><li><strong>km/h sang m/phút:</strong> nhân với 16.67</li><li><strong>mph sang m/phút:</strong> nhân với 26.82</li><li><strong>m/s sang m/phút:</strong> nhân với 60</li></ul></div></div><h2 id="energy-expenditure">3. Tiêu Hao Năng Lượng & Đốt Cháy Calo</h2><div class="formula-section"><h3>Tính Toán Calo Chính Xác</h3><div class="formula-box"><p class="formula-title">Calo mỗi Phút</p><p class="formula-main"><strong>Cal/phút = (METs × 3.5 × Trọng Lượng Cơ Thể kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">Tổng Calo cho Buổi Tập</p><p class="formula-main"><strong>Tổng Calo = Cal/phút × Thời lượng (phút)</strong></p></div><h4>Ví dụ:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Người 70 kg đi bộ 100 bước/phút (3 METs) trong 45 phút:</strong></p><p class="example-calc">Cal/phút = (3 × 3.5 × 70) / 200 = 735 / 200 = <strong>3.675 cal/phút</strong></p><p class="example-calc">Tổng = 3.675 × 45 = <strong>165.4 calo</strong></p></div><div class="calc-example"><p class="example-input"><strong>Người 85 kg đi bộ 120 bước/phút (5 METs) trong 30 phút:</strong></p><p class="example-calc">Cal/phút = (5 × 3.5 × 85) / 200 = 1487.5 / 200 = <strong>7.44 cal/phút</strong></p><p class="example-calc">Tổng = 7.44 × 30 = <strong>223.2 calo</strong></p></div></div><div class="info-box"><h4>Tại Sao Công Thức Này?</h4><p>Phương trình này xuất phát từ định nghĩa của MET (Metabolic Equivalent of Task - Đương lượng chuyển hóa):
+            </p><ul><li>1 MET = 3.5 mL O₂/kg/phút (tỷ lệ trao đổi chất khi nghỉ ngơi)</li><li>1 lít O₂ tiêu thụ ≈ 5 kcal được đốt cháy</li><li>Chuyển đổi: (METs × 3.5 × kg × 5) / 1000 = (METs × 3.5 × kg) / 200</li></ul></div><h3>Đốt Cháy Calo Thực (Chỉ tập thể dục)</h3><div class="formula-box"><p class="formula-title">Calo Thực (trừ phần nghỉ ngơi)</p><p class="formula-main"><strong>Cal Thực/phút = [(METs - 1) × 3.5 × Trọng Lượng Cơ Thể] / 200</strong></p><p class="formula-note">Trừ 1 MET để loại trừ lượng calo bạn vẫn sẽ đốt cháy khi nghỉ ngơi</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 METs, 45 phút – Calo thực:</strong></p><p class="example-calc">Thực = [(3 - 1) × 3.5 × 70] / 200 × 45 = 2.45 × 45 = <strong>110.3 calo
+                thực</strong></p><p class="example-interpretation">so với 165.4 tổng calo (55 calo sẽ được đốt cháy khi nghỉ ngơi)</p></div></div><h2 id="gait-symmetry">4. Chỉ Số Đối Xứng Dáng Đi (GSI)</h2><div class="formula-section"><h3>Định Lượng Bất Đối Xứng Trái-Phải</h3><div class="formula-box"><p class="formula-title">Chỉ Số Đối Xứng Dáng Đi</p><p class="formula-main"><strong>GSI (%) = |Phải - Trái| / [0.5 × (Phải + Trái)] × 100</strong></p><p class="formula-note">Có thể áp dụng cho độ dài sải bước, thời gian bước, hoặc thời gian tiếp đất</p></div><h4>Diễn Giải:</h4><ul><li><strong>&lt;2-3%:</strong> Dáng đi bình thường, đối xứng</li><li><strong>3-5%:</strong> Bất đối xứng nhẹ</li><li><strong>5-10%:</strong> Bất đối xứng trung bình, cần theo dõi</li><li><strong>&gt;10%:</strong> Có ý nghĩa lâm sàng, cần đánh giá chuyên môn</li></ul><h4>Ví dụ:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Thời gian bước: Phải = 520 ms, Trái = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0.5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0.5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% bất đối xứng</strong></p><p class="example-interpretation">Bất đối xứng trung bình – cân nhắc tăng cường sức mạnh bên yếu hơn</p></div><div class="calc-example"><p class="example-input"><strong>Độ dài sải bước: Phải = 1.42 m, Trái = 1.38 m</strong></p><p class="example-calc">GSI = |1.42 - 1.38| / [0.5 × (1.42 + 1.38)] × 100</p><p class="example-calc">= 0.04 / 1.4 × 100 = <strong>2.86% bất đối xứng</strong></p><p class="example-interpretation">Bình thường, phạm vi khỏe mạnh ✓</p></div></div><div class="warning-box"><p><strong>Lưu ý Lâm sàng:</strong> Tính năng Bất đối xứng đi bộ của Apple HealthKit sử dụng cách tính hơi
+              khác (chênh lệch phần trăm đơn giản giữa thời gian bước) nhưng các ngưỡng diễn giải là tương tự.</p></div></div><h2 id="walk-score">5. Điểm WALK (Chỉ Số Độc Quyền Của Walk Analytics)</h2><div class="formula-section"><h3>Điểm Hiệu Quả Đi Bộ</h3><div class="formula-box"><p class="formula-title">Điểm WALK</p><p class="formula-main"><strong>Điểm WALK = Thời gian (giây) + Số bước trên 100 mét</strong></p><p class="formula-note">Điểm thấp hơn = hiệu quả tốt hơn</p></div><h4>Cách Thức Hoạt Động:</h4><p>Điểm WALK kết hợp thời gian và số bước để định lượng hiệu quả đi bộ. Một người đi bộ đi hết 100m trong 75
+            giây với 140 bước có Điểm WALK là 215. Cải thiện tốc độ HOẶC hiệu quả sải bước đều làm giảm điểm số.</p><h4>Ví dụ:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100m trong 80 giây, 120 bước:</strong></p><p class="example-calc">Điểm WALK = 80 + 120 = <strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100m trong 70 giây, 110 bước:</strong></p><p class="example-calc">Điểm WALK = 70 + 110 = <strong>180</strong></p><p class="example-interpretation">Hiệu quả tốt hơn nhờ cải thiện tốc độ + sải bước</p></div><div class="calc-example"><p class="example-input"><strong>100m trong 60 giây, 130 bước (đi bộ thể thao):</strong></p><p class="example-calc">Điểm WALK = 60 + 130 = <strong>190</strong></p><p class="example-interpretation">Nhanh nhưng sải bước ngắn hơn</p></div></div><h4>Các Phạm Vi Điển Hình:</h4><ul><li><strong>&gt;250:</strong> Dáng đi chậm/không hiệu quả, có thể có vấn đề về di chuyển</li><li><strong>200-250:</strong> Người đi bộ bình thường, hiệu quả trung bình</li><li><strong>170-200:</strong> Người đi bộ thể dục, hiệu quả tốt</li><li><strong>150-170:</strong> Người đi bộ nâng cao, hiệu quả xuất sắc</li><li><strong>&lt;150:</strong> Mức độ ưu tú/đi bộ thể thao (race walking)</li></ul><div class="tip-box"><p><strong>Tập luyện với Điểm WALK:</strong> Theo dõi điểm số của bạn trên cùng một quãng đường 100m hàng
+              tuần. Sự cải thiện cho thấy sự tăng cường phối hợp thần kinh cơ, sức mạnh và kinh tế đi bộ.</p></div></div><h2 id="basic-metrics">6. Các Chỉ Số Dáng Đi Cơ Bản</h2><div class="formula-section"><h3>Các Tính Toán Căn Bản</h3><div class="formula-box"><p class="formula-title">Tốc Độ Đi Bộ</p><p class="formula-main"><strong>Tốc độ (m/s) = Quãng đường (m) / Thời gian (s)</strong></p></div><div class="formula-box"><p class="formula-title">Nhịp Bước từ Tổng Số Bước</p><p class="formula-main"><strong>Nhịp Bước (spm) = Tổng Số Bước / Thời gian (phút)</strong></p></div><div class="formula-box"><p class="formula-title">Độ Dài Sải Bước (Stride Length)</p><p class="formula-main"><strong>Độ Dài Sải Bước (m) = Quãng đường (m) / (Số bước / 2)</strong></p><p class="formula-note">Chia số bước cho 2 vì một sải bước (stride) = hai bước chân (steps)</p></div><div class="formula-box"><p class="formula-title">Độ Dài Bước Chân (Step Length)</p><p class="formula-main"><strong>Độ Dài Bước Chân (m) = Quãng đường (m) / Số bước</strong></p></div><div class="formula-box"><p class="formula-title">Tốc độ từ Nhịp Bước & Độ Dài Sải Bước</p><p class="formula-main"><strong>Tốc độ = Độ Dài Sải Bước × (Nhịp Bước / 2) / 60</strong></p><p class="formula-note">Hoặc: Tốc độ (m/s) = Độ Dài Bước Chân × Nhịp Bước / 60</p></div><h4>Quy Trình Ví Dụ:</h4><div class="calc-example"><p class="example-input"><strong>Đi bộ 1000m trong 12 phút với 1320 bước:</strong></p><p><strong>Tốc độ:</strong> 1000m / 720s = <strong>1.39 m/s</strong></p><p><strong>Nhịp Bước:</strong> 1320 bước / 12 phút = <strong>110 spm</strong></p><p><strong>Độ Dài Sải Bước:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1.52 m</strong></p><p><strong>Độ Dài Bước Chân:</strong> 1000m / 1320 = <strong>0.76 m</strong></p></div></div><h2 id="heart-rate">7. Tính Toán Vùng Nhịp Tim</h2><div class="formula-section"><h3>Phương Pháp Vùng Nhịp Tim Truyền Thống</h3><div class="formula-box"><p class="formula-title">Ước Tính Nhịp Tim Tối Đa</p><p class="formula-main"><strong>Max HR = 220 - Tuổi</strong></p><p class="formula-note">Đơn giản nhưng biến thiên cá nhân ±10-15 bpm</p></div><div class="formula-box"><p class="formula-title">Thay thế: Công thức Tanaka (chính xác hơn)</p><p class="formula-main"><strong>Max HR = 208 - (0.7 × Tuổi)</strong></p></div><div class="formula-box"><p class="formula-title">Tính Toán Phạm Vi Vùng</p><p class="formula-main"><strong>Vùng = Max HR × (Dưới%, Trên%)</strong></p></div><h4>Ví dụ: Người 40 tuổi</h4><div class="calc-example"><p><strong>Truyền thống:</strong> Max HR = 220 - 40 = <strong>180 bpm</strong></p><p><strong>Tanaka:</strong> Max HR = 208 - (0.7 × 40) = 208 - 28 = <strong>180 bpm</strong></p><p><strong>Vùng 2 (60-70%):</strong> 180 × 0.60 = 108 bpm đến 180 × 0.70 = 126 bpm</p></div><div class="info-box"><p><strong>Lưu ý:</strong> Mặc dù các vùng nhịp tim hữu ích, <strong>các vùng dựa trên nhịp bước chính xác
+                và thực tế hơn cho đi bộ</strong> (xem hướng dẫn Các Vùng Đi Bộ).</p></div></div><h2 id="cost-transport">8. Chi Phí Năng Lượng Di Chuyển & Kinh Tế Đi Bộ</h2><div class="formula-section"><h3>Chi Phí Năng Lượng Của Việc Đi Bộ</h3><div class="formula-box"><p class="formula-title">Chi Phí Di Chuyển (C)</p><p class="formula-main"><strong>C = Năng Lượng Tiêu Hao / (Khối Lượng Cơ Thể × Quãng Đường)</strong></p><p class="formula-note">Đơn vị: J/kg/m hoặc mL O₂/kg/m</p></div><div class="key-insight"><p><strong>Đường Cong Hình Chữ U:</strong> Kinh tế đi bộ tuân theo đường cong hình chữ U. Có một tốc độ tối
               ưu (thường là 1.2-1.4 m/s hoặc 4.3-5.0 km/h) nơi chi phí di chuyển được giảm thiểu. Đi bộ chậm hơn HOẶC
-              nhanh hơn mức này đều làm tăng chi phí năng lượng trên mỗi quãng đường di chuyển.</p>
-          </div>
-
-          <h4>Các Yếu Tố Ảnh Hưởng Đến Chi Phí Di Chuyển:</h4>
-          <ul>
-            <li><strong>Tốc độ:</strong> Mối quan hệ hình chữ U (tối ưu khoảng 1.3 m/s)</li>
-            <li><strong>Độ dốc:</strong> Lên dốc làm tăng đáng kể chi phí; xuống dốc làm tăng chi phí ly tâm (eccentric
-              cost)</li>
-            <li><strong>Khối lượng cơ thể:</strong> Người nặng hơn có chi phí tuyệt đối cao hơn nhưng chi phí tương đối
-              tương tự</li>
-            <li><strong>Cơ sinh học sải bước:</strong> Độ dài sải bước tối ưu giảm thiểu chi phí</li>
-            <li><strong>Địa hình:</strong> Bề mặt không bằng phẳng làm tăng chi phí so với vỉa hè nhẵn</li>
-          </ul>
-
-          <div class="formula-box">
-            <p class="formula-title">Chi Phí Điều Chỉnh Theo Độ Dốc</p>
-            <p class="formula-main"><strong>Hệ số nhân chi phí = 1 + (Độ dốc × 10)</strong></p>
-            <p class="formula-note">Ước tính sơ bộ: +10% chi phí cho mỗi 1% độ dốc</p>
-          </div>
-
-          <h4>Ví dụ:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>Đi bộ trên độ dốc 5%:</strong></p>
-            <p class="example-calc">Hệ số nhân chi phí = 1 + (0.05 × 10) = <strong>1.5×</strong></p>
-            <p class="example-interpretation">Tăng 50% chi phí năng lượng so với mặt đất bằng phẳng</p>
-          </div>
-        </div>
-
-        <h2 id="training-load">9. Tải Trọng Tập Luyện & Điểm Căng Thẳng</h2>
-
-        <div class="formula-section">
-          <h3>Điểm Căng Thẳng Đi Bộ (WSS)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">WSS Dựa Trên Vùng</p>
-            <p class="formula-main"><strong>WSS = Σ (Phút trong Vùng × Hệ Số Vùng)</strong></p>
-            <p>Vùng 1: ×1.0 | Vùng 2: ×2.0 | Vùng 3: ×3.0 | Vùng 4: ×4.0 | Vùng 5: ×5.0</p>
-          </div>
-
-          <h4>Ví dụ: Đi bộ 60 phút</h4>
-          <div class="calc-example">
-            <p>10 phút Vùng 1 × 1 = 10 điểm</p>
-            <p>40 phút Vùng 2 × 2 = 80 điểm</p>
-            <p>10 phút Vùng 3 × 3 = 30 điểm</p>
-            <p><strong>Tổng WSS = 120</strong></p>
-          </div>
-
-          <h3>Tải Trọng Tập Luyện Hàng Tuần</h3>
-          <div class="formula-box">
-            <p class="formula-title">Tải Trọng Tuần</p>
-            <p class="formula-main"><strong>Tải Trọng Tuần = Σ WSS Hàng Ngày (7 ngày)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Quá Tải Lũy Tiến</p>
-            <p class="formula-main"><strong>Tuần Tiếp Theo = Tuần Hiện Tại × 1.05-1.10</strong></p>
-            <p class="formula-note">Tăng tối đa 5-10% mỗi tuần</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Tuần Phục Hồi</p>
-            <p class="formula-main"><strong>Tuần Phục Hồi = Hiện Tại × 0.50-0.70</strong></p>
-            <p class="formula-note">Mỗi 3-4 tuần, giảm xuống 50-70%</p>
-          </div>
-
-          <h4>Tải Trọng Hàng Tuần Điển Hình:</h4>
-          <ul>
-            <li><strong>Người đi bộ sức khỏe mới bắt đầu:</strong> 200-400 WSS/tuần</li>
-            <li><strong>Người đi bộ thể dục thường xuyên:</strong> 400-700 WSS/tuần</li>
-            <li><strong>Người đi bộ thể dục nghiêm túc:</strong> 700-1000 WSS/tuần</li>
-            <li><strong>Vận động viên đi bộ cạnh tranh:</strong> 1000-1500+ WSS/tuần</li>
-          </ul>
-        </div>
-
-        <h2 id="predictions">10. Các Phương Trình Dự Đoán</h2>
-
-        <div class="formula-section">
-          <h3>Dự Đoán Quãng Đường Đi Bộ 6 Phút (6MWT)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Dự Đoán Quãng Đường 6MWT (Enright & Sherrill)</p>
-            <p><strong>Nam:</strong> (7.57 × Chiều cao cm) - (5.02 × Tuổi) - (1.76 × Cân nặng kg) - 309</p>
-            <p><strong>Nữ:</strong> (2.11 × Chiều cao cm) - (5.78 × Tuổi) - (2.29 × Cân nặng kg) + 667</p>
-            <p class="formula-note">Dự đoán quãng đường tính bằng mét cho người lớn khỏe mạnh</p>
-          </div>
-
-          <h4>Ví dụ: Nam giới 40 tuổi, 175 cm, 75 kg</h4>
-          <div class="calc-example">
-            <p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p>
-            <p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 mét</strong></p>
-            <p class="example-interpretation">Năng lực chức năng tốt cho độ tuổi</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Sử Dụng Lâm Sàng:</strong> 6MWT được sử dụng để đánh giá năng lực tập thể dục chức năng ở bệnh
-              nhân tim phổi, đánh giá trước/sau phẫu thuật và thể lực chung ở người cao tuổi.</p>
-          </div>
-        </div>
-
-        <h2 id="conversions">11. Chuyển Đổi Đơn Vị</h2>
-
-        <div class="formula-section">
-          <h3>Chuyển Đổi Các Chỉ Số Đi Bộ Phổ Biến</h3>
-
-          <div class="conversion-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Từ</th>
-                  <th>Sang</th>
-                  <th>Công Thức</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>km/h</td>
-                  <td>m/s</td>
-                  <td>km/h ÷ 3.6</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>m/s</td>
-                  <td>mph × 0.447</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>km/h</td>
-                  <td>m/s × 3.6</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>mph</td>
-                  <td>m/s × 2.237</td>
-                </tr>
-                <tr>
-                  <td>km/h</td>
-                  <td>m/phút</td>
-                  <td>km/h × 16.67</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>m/phút</td>
-                  <td>mph × 26.82</td>
-                </tr>
-                <tr>
-                  <td>METs</td>
-                  <td>mL/kg/phút</td>
-                  <td>METs × 3.5</td>
-                </tr>
-                <tr>
-                  <td>mL/kg/phút</td>
-                  <td>METs</td>
-                  <td>VO₂ ÷ 3.5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h4>Tham Khảo Nhanh:</h4>
-          <ul>
-            <li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (tốc độ đi bộ điển hình của người lớn khỏe mạnh)</li>
-            <li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (đi bộ nhanh)</li>
-            <li><strong>1 MET =</strong> 3.5 mL O₂/kg/phút (trao đổi chất khi nghỉ ngơi)</li>
-            <li><strong>3 METs =</strong> 10.5 mL O₂/kg/phút (ngưỡng cường độ trung bình)</li>
-            <li><strong>6 METs =</strong> 21 mL O₂/kg/phút (ngưỡng cường độ mạnh)</li>
-          </ul>
-        </div>
-
-        <h2 id="next-steps">Tài Nguyên Liên Quan</h2>
-
-        <div class="next-steps-grid">
-          <div class="next-step-card">
-            <h3>Áp Dụng Công Thức: Máy Tính WSS</h3>
-            <p>Sử dụng máy tính tương tác của chúng tôi để tính Điểm Căng Thẳng Đi Bộ (WSS) của bạn.</p>
-            <a href="/vi/wss-calculator/" class="btn btn-secondary">Tính WSS →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Hiểu Về Các Vùng Đi Bộ</h3>
-            <p>Tìm hiểu cách áp dụng các vùng cường độ dựa trên nhịp bước trong tập luyện.</p>
-            <a href="/vi/walking-zones/" class="btn btn-secondary">Tìm Hiểu Về Các Vùng →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Nghiên Cứu Khoa Học</h3>
-            <p>Xem xét các nghiên cứu đã xác nhận các công thức này.</p>
-            <a href="/vi/research/" class="btn btn-secondary">Xem Nghiên Cứu →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Thư Mục Đầy Đủ</h3>
-            <p>Truy cập trích dẫn đầy đủ cho tất cả các phương trình được tham chiếu.</p>
-            <a href="/vi/bibliography/" class="btn btn-secondary">Xem Thư Mục →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>Mục Lục Công Thức</h3>
-          <ul>
-            <li><a href="#cadence-mets">1. Nhịp Bước → METs</a></li>
-            <li><a href="#acsm-vo2">2. Phương Trình VO₂ ACSM</a></li>
-            <li><a href="#energy-expenditure">3. Năng Lượng & Calo</a></li>
-            <li><a href="#gait-symmetry">4. Chỉ Số Đối Xứng Dáng Đi</a></li>
-            <li><a href="#walk-score">5. Điểm WALK</a></li>
-            <li><a href="#basic-metrics">6. Các Chỉ Số Dáng Đi Cơ Bản</a></li>
-            <li><a href="#heart-rate">7. Các Vùng Nhịp Tim</a></li>
-            <li><a href="#cost-transport">8. Chi Phí Di Chuyển</a></li>
-            <li><a href="#training-load">9. Tải Trọng Tập Luyện</a></li>
-            <li><a href="#predictions">10. Phương Trình Dự Đoán</a></li>
-            <li><a href="#conversions">11. Chuyển Đổi Đơn Vị</a></li>
-          </ul>
-        </div>
-
-        <div class="formula-highlight">
-          <h3>⭐ Quan Trọng Nhất</h3>
-          <p><strong>Nhịp Bước sang METs</strong></p>
-          <p class="formula-compact">METs = 0.0219 × spm + 0.72</p>
-          <p class="small-text">Phương trình đơn lẻ này cho phép tập luyện cường độ dựa trên nhịp bước mà không cần máy
-            đo nhịp tim.</p>
-        </div>
-
-        <div class="cta-box">
-          <h3>Áp Dụng Các Công Thức Này</h3>
-          <p>Walk Analytics sử dụng các phương trình đã được kiểm chứng khoa học này để phân tích các buổi đi bộ của
-            bạn.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Tải Ứng Dụng</a>
-        </div>
-
-        <div class="info-box">
-          <h4>📐 Độ Chính Xác Công Thức</h4>
-          <p>Tất cả các phương trình trên trang này đều từ nghiên cứu được bình duyệt. Xem <a
-              href="/vi/bibliography/">Thư Mục</a> để biết trích dẫn đầy đủ.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+              nhanh hơn mức này đều làm tăng chi phí năng lượng trên mỗi quãng đường di chuyển.</p></div><h4>Các Yếu Tố Ảnh Hưởng Đến Chi Phí Di Chuyển:</h4><ul><li><strong>Tốc độ:</strong> Mối quan hệ hình chữ U (tối ưu khoảng 1.3 m/s)</li><li><strong>Độ dốc:</strong> Lên dốc làm tăng đáng kể chi phí; xuống dốc làm tăng chi phí ly tâm (eccentric
+              cost)</li><li><strong>Khối lượng cơ thể:</strong> Người nặng hơn có chi phí tuyệt đối cao hơn nhưng chi phí tương đối
+              tương tự</li><li><strong>Cơ sinh học sải bước:</strong> Độ dài sải bước tối ưu giảm thiểu chi phí</li><li><strong>Địa hình:</strong> Bề mặt không bằng phẳng làm tăng chi phí so với vỉa hè nhẵn</li></ul><div class="formula-box"><p class="formula-title">Chi Phí Điều Chỉnh Theo Độ Dốc</p><p class="formula-main"><strong>Hệ số nhân chi phí = 1 + (Độ dốc × 10)</strong></p><p class="formula-note">Ước tính sơ bộ: +10% chi phí cho mỗi 1% độ dốc</p></div><h4>Ví dụ:</h4><div class="calc-example"><p class="example-input"><strong>Đi bộ trên độ dốc 5%:</strong></p><p class="example-calc">Hệ số nhân chi phí = 1 + (0.05 × 10) = <strong>1.5×</strong></p><p class="example-interpretation">Tăng 50% chi phí năng lượng so với mặt đất bằng phẳng</p></div></div><h2 id="training-load">9. Tải Trọng Tập Luyện & Điểm Căng Thẳng</h2><div class="formula-section"><h3>Điểm Căng Thẳng Đi Bộ (WSS)</h3><div class="formula-box"><p class="formula-title">WSS Dựa Trên Vùng</p><p class="formula-main"><strong>WSS = Σ (Phút trong Vùng × Hệ Số Vùng)</strong></p><p>Vùng 1: ×1.0 | Vùng 2: ×2.0 | Vùng 3: ×3.0 | Vùng 4: ×4.0 | Vùng 5: ×5.0</p></div><h4>Ví dụ: Đi bộ 60 phút</h4><div class="calc-example"><p>10 phút Vùng 1 × 1 = 10 điểm</p><p>40 phút Vùng 2 × 2 = 80 điểm</p><p>10 phút Vùng 3 × 3 = 30 điểm</p><p><strong>Tổng WSS = 120</strong></p></div><h3>Tải Trọng Tập Luyện Hàng Tuần</h3><div class="formula-box"><p class="formula-title">Tải Trọng Tuần</p><p class="formula-main"><strong>Tải Trọng Tuần = Σ WSS Hàng Ngày (7 ngày)</strong></p></div><div class="formula-box"><p class="formula-title">Quá Tải Lũy Tiến</p><p class="formula-main"><strong>Tuần Tiếp Theo = Tuần Hiện Tại × 1.05-1.10</strong></p><p class="formula-note">Tăng tối đa 5-10% mỗi tuần</p></div><div class="formula-box"><p class="formula-title">Tuần Phục Hồi</p><p class="formula-main"><strong>Tuần Phục Hồi = Hiện Tại × 0.50-0.70</strong></p><p class="formula-note">Mỗi 3-4 tuần, giảm xuống 50-70%</p></div><h4>Tải Trọng Hàng Tuần Điển Hình:</h4><ul><li><strong>Người đi bộ sức khỏe mới bắt đầu:</strong> 200-400 WSS/tuần</li><li><strong>Người đi bộ thể dục thường xuyên:</strong> 400-700 WSS/tuần</li><li><strong>Người đi bộ thể dục nghiêm túc:</strong> 700-1000 WSS/tuần</li><li><strong>Vận động viên đi bộ cạnh tranh:</strong> 1000-1500+ WSS/tuần</li></ul></div><h2 id="predictions">10. Các Phương Trình Dự Đoán</h2><div class="formula-section"><h3>Dự Đoán Quãng Đường Đi Bộ 6 Phút (6MWT)</h3><div class="formula-box"><p class="formula-title">Dự Đoán Quãng Đường 6MWT (Enright & Sherrill)</p><p><strong>Nam:</strong> (7.57 × Chiều cao cm) - (5.02 × Tuổi) - (1.76 × Cân nặng kg) - 309</p><p><strong>Nữ:</strong> (2.11 × Chiều cao cm) - (5.78 × Tuổi) - (2.29 × Cân nặng kg) + 667</p><p class="formula-note">Dự đoán quãng đường tính bằng mét cho người lớn khỏe mạnh</p></div><h4>Ví dụ: Nam giới 40 tuổi, 175 cm, 75 kg</h4><div class="calc-example"><p class="example-calc">6MWT = (7.57 × 175) - (5.02 × 40) - (1.76 × 75) - 309</p><p>= 1324.75 - 200.8 - 132 - 309 = <strong>682.95 mét</strong></p><p class="example-interpretation">Năng lực chức năng tốt cho độ tuổi</p></div><div class="info-box"><p><strong>Sử Dụng Lâm Sàng:</strong> 6MWT được sử dụng để đánh giá năng lực tập thể dục chức năng ở bệnh
+              nhân tim phổi, đánh giá trước/sau phẫu thuật và thể lực chung ở người cao tuổi.</p></div></div><h2 id="conversions">11. Chuyển Đổi Đơn Vị</h2><div class="formula-section"><h3>Chuyển Đổi Các Chỉ Số Đi Bộ Phổ Biến</h3><div class="conversion-table"><table><thead><tr><th>Từ</th><th>Sang</th><th>Công Thức</th></tr></thead><tbody><tr><td>km/h</td><td>m/s</td><td>km/h ÷ 3.6</td></tr><tr><td>mph</td><td>m/s</td><td>mph × 0.447</td></tr><tr><td>m/s</td><td>km/h</td><td>m/s × 3.6</td></tr><tr><td>m/s</td><td>mph</td><td>m/s × 2.237</td></tr><tr><td>km/h</td><td>m/phút</td><td>km/h × 16.67</td></tr><tr><td>mph</td><td>m/phút</td><td>mph × 26.82</td></tr><tr><td>METs</td><td>mL/kg/phút</td><td>METs × 3.5</td></tr><tr><td>mL/kg/phút</td><td>METs</td><td>VO₂ ÷ 3.5</td></tr></tbody></table></div><h4>Tham Khảo Nhanh:</h4><ul><li><strong>1.0 m/s =</strong> 3.6 km/h = 2.24 mph (tốc độ đi bộ điển hình của người lớn khỏe mạnh)</li><li><strong>1.4 m/s =</strong> 5.0 km/h = 3.1 mph (đi bộ nhanh)</li><li><strong>1 MET =</strong> 3.5 mL O₂/kg/phút (trao đổi chất khi nghỉ ngơi)</li><li><strong>3 METs =</strong> 10.5 mL O₂/kg/phút (ngưỡng cường độ trung bình)</li><li><strong>6 METs =</strong> 21 mL O₂/kg/phút (ngưỡng cường độ mạnh)</li></ul></div><h2 id="next-steps">Tài Nguyên Liên Quan</h2><div class="next-steps-grid"><div class="next-step-card"><h3>Áp Dụng Công Thức: Máy Tính WSS</h3><p>Sử dụng máy tính tương tác của chúng tôi để tính Điểm Căng Thẳng Đi Bộ (WSS) của bạn.</p><a href="/vi/wss-calculator/" class="btn btn-secondary">Tính WSS →</a></div><div class="next-step-card"><h3>Hiểu Về Các Vùng Đi Bộ</h3><p>Tìm hiểu cách áp dụng các vùng cường độ dựa trên nhịp bước trong tập luyện.</p><a href="/vi/walking-zones/" class="btn btn-secondary">Tìm Hiểu Về Các Vùng →</a></div><div class="next-step-card"><h3>Nghiên Cứu Khoa Học</h3><p>Xem xét các nghiên cứu đã xác nhận các công thức này.</p><a href="/vi/research/" class="btn btn-secondary">Xem Nghiên Cứu →</a></div><div class="next-step-card"><h3>Thư Mục Đầy Đủ</h3><p>Truy cập trích dẫn đầy đủ cho tất cả các phương trình được tham chiếu.</p><a href="/vi/bibliography/" class="btn btn-secondary">Xem Thư Mục →</a></div></div></div><aside class="sidebar"><div class="toc"><h3>Mục Lục Công Thức</h3><ul><li><a href="#cadence-mets">1. Nhịp Bước → METs</a></li><li><a href="#acsm-vo2">2. Phương Trình VO₂ ACSM</a></li><li><a href="#energy-expenditure">3. Năng Lượng & Calo</a></li><li><a href="#gait-symmetry">4. Chỉ Số Đối Xứng Dáng Đi</a></li><li><a href="#walk-score">5. Điểm WALK</a></li><li><a href="#basic-metrics">6. Các Chỉ Số Dáng Đi Cơ Bản</a></li><li><a href="#heart-rate">7. Các Vùng Nhịp Tim</a></li><li><a href="#cost-transport">8. Chi Phí Di Chuyển</a></li><li><a href="#training-load">9. Tải Trọng Tập Luyện</a></li><li><a href="#predictions">10. Phương Trình Dự Đoán</a></li><li><a href="#conversions">11. Chuyển Đổi Đơn Vị</a></li></ul></div><div class="formula-highlight"><h3>⭐ Quan Trọng Nhất</h3><p><strong>Nhịp Bước sang METs</strong></p><p class="formula-compact">METs = 0.0219 × spm + 0.72</p><p class="small-text">Phương trình đơn lẻ này cho phép tập luyện cường độ dựa trên nhịp bước mà không cần máy
+            đo nhịp tim.</p></div><div class="cta-box"><h3>Áp Dụng Các Công Thức Này</h3><p>Walk Analytics sử dụng các phương trình đã được kiểm chứng khoa học này để phân tích các buổi đi bộ của
+            bạn.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Tải Ứng Dụng</a></div><div class="info-box"><h4>📐 Độ Chính Xác Công Thức</h4><p>Tất cả các phương trình trên trang này đều từ nghiên cứu được bình duyệt. Xem <a
+              href="/vi/bibliography/">Thư Mục</a> để biết trích dẫn đầy đủ.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link active"
+                </a><a href="/vi/" class="lang-link active"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. Bảo lưu mọi quyền
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/vi/privacy/">Quyền riêng tư</a></li>
-                <li><a href="/vi/terms/">Điều khoản</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>Trang web này sử dụng cookie để cải thiện trải nghiệm của bạn.</p>
-            <a href="/vi/privacy/" class="text-sm">Tìm hiểu thêm</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Từ chối</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Chấp nhận</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/vi/privacy/">Quyền riêng tư</a></li><li><a href="/vi/terms/">Điều khoản</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Trang web này sử dụng cookie để cải thiện trải nghiệm của bạn.</p><a href="/vi/privacy/" class="text-sm">Tìm hiểu thêm</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Từ chối</button><button id="cookie-accept" class="btn btn-primary btn-small">Chấp nhận</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

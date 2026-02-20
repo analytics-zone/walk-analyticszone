@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="hu" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Walking Training Load Management</title>
-  <meta name="description" content="Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="walking stress score, WSS calculator, walking training load, weekly walking volume, walking fitness tracking">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/hu/training-load/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-12-23T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/hu/training-load/">
-  <meta property="og:title" content="Walking Training Load Management">
-  <meta property="og:description" content="Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="hu_HU">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/hu/training-load/">
-  <meta name="twitter:title" content="Walking Training Load Management">
-  <meta name="twitter:description" content="Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/training-load/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/training-load/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/training-load/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/training-load/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/training-load/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/training-load/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/training-load/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/training-load/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/training-load/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/training-load/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/training-load/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/training-load/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/training-load/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/training-load/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/training-load/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/training-load/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/training-load/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/training-load/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/training-load/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/training-load/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/training-load/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/training-load/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/training-load/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/training-load/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/training-load/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/training-load/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/training-load/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/training-load/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/training-load/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/training-load/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/training-load/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/training-load/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/training-load/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/training-load/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/training-load/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/training-load/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/training-load/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/training-load/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/training-load/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/training-load/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/training-load/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/training-load/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/training-load/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/training-load/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/training-load/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/training-load/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/training-load/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/training-load/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/training-load/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/training-load/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/training-load/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/training-load/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/training-load/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/training-load/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/training-load/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/training-load/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="hu" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Walking Training Load Management</title><meta name="description" content="Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="walking stress score, WSS calculator, walking training load, weekly walking volume, walking fitness tracking"><link rel="canonical" href="https://walk.analyticszone.app/hu/training-load/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-23T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/hu/training-load/"><meta property="og:title" content="Walking Training Load Management"><meta property="og:description" content="Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="hu_HU"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/hu/training-load/"><meta name="twitter:title" content="Walking Training Load Management"><meta name="twitter:description" content="Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/training-load/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/training-load/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/training-load/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/training-load/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/training-load/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/training-load/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/training-load/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/training-load/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/training-load/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/training-load/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/training-load/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/training-load/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/training-load/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/training-load/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/training-load/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/training-load/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/training-load/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/training-load/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/training-load/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/training-load/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/training-load/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/training-load/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/training-load/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/training-load/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/training-load/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/training-load/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/training-load/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/training-load/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/training-load/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/training-load/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/training-load/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/training-load/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/training-load/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/training-load/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/training-load/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/training-load/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/training-load/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/training-load/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/training-load/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/training-load/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/training-load/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/training-load/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/training-load/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/training-load/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/training-load/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/training-load/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/training-load/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/training-load/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/training-load/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/training-load/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/training-load/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/training-load/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/training-load/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/training-load/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/training-load/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/training-load/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "hu"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "Scientific approach to balancing training stimulus, adaptation, and recovery Walk Analytics, walking stress score",
   "url": "https://walk.analyticszone.app/hu/training-load/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/hu/training-load/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,2048 +449,458 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">Skip to content</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/hu/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/hu/" 
+  </script></head><body><a href="#main-content" class="skip-link">Skip to content</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/hu/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/hu/" 
                                 aria-current="">
                                 Home
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/hu/getting-started/" class="nav-label">Learn</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/hu/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/hu/getting-started/" class="nav-label">Learn</a><ul class="submenu"><li><a href="/hu/getting-started/" 
                                         aria-current="">
                                         Getting Started
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/walking-zones/" 
+                                    </a></li><li><a href="/hu/walking-zones/" 
                                         aria-current="">
                                         Walking Zones
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/gait-analysis/" 
+                                    </a></li><li><a href="/hu/gait-analysis/" 
                                         aria-current="">
                                         Gait Analysis
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/training-load/" class="active" 
+                                    </a></li><li><a href="/hu/training-load/" class="active" 
                                         aria-current="page">
                                         Training Load
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/wss-calculator/" 
+                                    </a></li><li><a href="/hu/wss-calculator/" 
                                         aria-current="">
                                         WSS Calculator
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/hu/research/" class="nav-label">Science</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/hu/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/hu/research/" class="nav-label">Science</a><ul class="submenu"><li><a href="/hu/research/" 
                                         aria-current="">
                                         Research
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/formulas/" 
+                                    </a></li><li><a href="/hu/formulas/" 
                                         aria-current="">
                                         Formulas
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/gait-efficiency/" 
+                                    </a></li><li><a href="/hu/gait-efficiency/" 
                                         aria-current="">
                                         Gait Efficiency
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/stride-mechanics/" 
+                                    </a></li><li><a href="/hu/stride-mechanics/" 
                                         aria-current="">
                                         Stride Mechanics
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/walking-vs-running/" 
+                                    </a></li><li><a href="/hu/walking-vs-running/" 
                                         aria-current="">
                                         Walking vs Running
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/benchmarks/" 
+                                    </a></li><li><a href="/hu/benchmarks/" 
                                         aria-current="">
                                         Benchmarks
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/bibliography/" 
+                                    </a></li><li><a href="/hu/bibliography/" 
                                         aria-current="">
                                         Bibliography
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/hu/for-health/" class="nav-label">For You</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/hu/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/hu/for-health/" class="nav-label">For You</a><ul class="submenu"><li><a href="/hu/for-health/" 
                                         aria-current="">
                                         For Health
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/for-fitness/" 
+                                    </a></li><li><a href="/hu/for-fitness/" 
                                         aria-current="">
                                         For Fitness
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/for-seniors/" 
+                                    </a></li><li><a href="/hu/for-seniors/" 
                                         aria-current="">
                                         For Seniors
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/for-rehabilitation/" 
+                                    </a></li><li><a href="/hu/for-rehabilitation/" 
                                         aria-current="">
                                         For Rehabilitation
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/hu/cadence-calculator/" class="nav-label">Tools</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/hu/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/hu/cadence-calculator/" class="nav-label">Tools</a><ul class="submenu"><li><a href="/hu/cadence-calculator/" 
                                         aria-current="">
                                         Cadence Calculator
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/gait-assessment/" 
+                                    </a></li><li><a href="/hu/gait-assessment/" 
                                         aria-current="">
                                         Gait Assessment
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/hu/vo2max-calculator/" 
+                                    </a></li><li><a href="/hu/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max Calculator
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/hu/contact/" 
+                                    </a></li></ul></li><li><a href="/hu/contact/" 
                                 aria-current="">
                                 Contact
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Select language">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Select language"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" selected>
+                        </option><option value="hu" selected>
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/hu/">Home</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/hu/getting-started/">Learn</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">Training Load</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Training Load Guide -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/hu/">Főoldal</a> / <a href="/hu/#learn">Tanulás</a> / Edzésterhelés
-    </div>
-    <h1>A gyalogló edzésterhelés kezelése</h1>
-    <p class="lead">Tudományos megközelítés az edzésingerek, az alkalmazkodás és a regeneráció egyensúlyához</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <!-- Introduction -->
-        <h2 id="intro">Mi az az edzésterhelés?</h2>
-
-        <p>Az <strong>edzésterhelés</strong> számszerűsíti azt a kumulatív fiziológiai stresszt, amelyet a teste a
-          gyalogló edzések során tapasztal. Három kulcsfontosságú dimenziót integrál:</p>
-
-        <ol>
-          <li><strong>Időtartam:</strong> Mennyi ideig gyalogol</li>
-          <li><strong>Intenzitás:</strong> Milyen erősen gyalogol (kadencia, pulzusszám, sebesség)</li>
-          <li><strong>Gyakoriság:</strong> Milyen gyakran gyalogol</li>
-        </ol>
-
-        <p>A megfelelő edzésterhelés-kezelés lehetővé teszi a folyamatos fejlődést, miközben minimalizálja a sérülések
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/hu/">Home</a></li><li><a href="/hu/getting-started/">Learn</a></li><li><span aria-current="page">Training Load</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/hu/">Főoldal</a> / <a href="/hu/#learn">Tanulás</a> / Edzésterhelés
+    </div><h1>A gyalogló edzésterhelés kezelése</h1><p class="lead">Tudományos megközelítés az edzésingerek, az alkalmazkodás és a regeneráció egyensúlyához</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><h2 id="intro">Mi az az edzésterhelés?</h2><p>Az <strong>edzésterhelés</strong> számszerűsíti azt a kumulatív fiziológiai stresszt, amelyet a teste a
+          gyalogló edzések során tapasztal. Három kulcsfontosságú dimenziót integrál:</p><ol><li><strong>Időtartam:</strong> Mennyi ideig gyalogol</li><li><strong>Intenzitás:</strong> Milyen erősen gyalogol (kadencia, pulzusszám, sebesség)</li><li><strong>Gyakoriság:</strong> Milyen gyakran gyalogol</li></ol><p>A megfelelő edzésterhelés-kezelés lehetővé teszi a folyamatos fejlődést, miközben minimalizálja a sérülések
           kockázatát és a túledzést. Szemben a közlekedési célú, alkalmi gyaloglással, az <strong>edzésorientált
-            gyaloglás</strong> szisztematikus progressziót és regenerációs tervezést igényel.</p>
-
-        <div class="key-finding">
-          <strong>Kutatási felismerés:</strong> Az edzésterhelés és az alkalmazkodás közötti kapcsolat egy fordított
+            gyaloglás</strong> szisztematikus progressziót és regenerációs tervezést igényel.</p><div class="key-finding"><strong>Kutatási felismerés:</strong> Az edzésterhelés és az alkalmazkodás közötti kapcsolat egy fordított
           U-görbét követ: a túl kevés terhelés nem vált ki alkalmazkodást, az optimális terhelés fejlődést eredményez, a
           túlzott terhelés pedig túledzéshez és sérüléshez vezet (Soligard et al., 2016).
-        </div>
-
-        <!-- Peak-30 Cadence -->
-        <h2 id="peak30">Peak-30 kadencia: Egy áttörést jelentő mérőszám</h2>
-
-        <p>A közelmúlt kutatásai azonosították a <strong>Peak-30 kadenciát</strong> mint az egészségügyi kimenetelek és
-          a halálozási kockázat erős előrejelzőjét, függetlenül a teljes napi lépésszámtól.</p>
-
-        <h3>Mi az a Peak-30 kadencia?</h3>
-
-        <p>A <strong>Peak-30 kadencia</strong> az átlagos kadencia (lépés per perc) a nap <strong>legjobb 30 egymást
+        </div><h2 id="peak30">Peak-30 kadencia: Egy áttörést jelentő mérőszám</h2><p>A közelmúlt kutatásai azonosították a <strong>Peak-30 kadenciát</strong> mint az egészségügyi kimenetelek és
+          a halálozási kockázat erős előrejelzőjét, függetlenül a teljes napi lépésszámtól.</p><h3>Mi az a Peak-30 kadencia?</h3><p>A <strong>Peak-30 kadencia</strong> az átlagos kadencia (lépés per perc) a nap <strong>legjobb 30 egymást
             követő gyalogló percében</strong>. Ez a mérőszám rögzíti az Ön képességét a tartós, céltudatos és tempós
-          gyaloglásra.</p>
-
-        <div class="key-finding">
-          <strong>Áttörést jelentő tanulmány:</strong> Del Pozo-Cruz és munkatársai (2022) 78 500 UK Biobank résztvevőt
+          gyaloglásra.</p><div class="key-finding"><strong>Áttörést jelentő tanulmány:</strong> Del Pozo-Cruz és munkatársai (2022) 78 500 UK Biobank résztvevőt
           vizsgáltak, és megállapították, hogy a Peak-30 kadencia független módon jelezte előre az összhalálozást és a
           kardiovaszkuláris betegségek kockázatát, még a teljes napi lépésszám figyelembevétele után is.
-        </div>
-
-        <h3>Peak-30 kadencia küszöbértékek és egészségügyi hatások</h3>
-
-        <div class="data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Peak-30 kadencia</th>
-                <th>Besorolás</th>
-                <th>Halálozási kockázat</th>
-                <th>Egészségi állapot</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>&lt;60 lépés/perc</td>
-                <td>Nagyon alacsony</td>
-                <td>Referencia (legmagasabb)</td>
-                <td>Mozgásszegény életmód</td>
-              </tr>
-              <tr>
-                <td>60-79 lépés/perc</td>
-                <td>Alacsony</td>
-                <td>~15%-kal alacsonyabb kockázat</td>
-                <td>Alkalmi gyaloglás</td>
-              </tr>
-              <tr>
-                <td>80-99 lépés/perc</td>
-                <td>Mérsékelt</td>
-                <td>~30%-kal alacsonyabb kockázat</td>
-                <td>Rendszeres gyaloglás</td>
-              </tr>
-              <tr>
-                <td>100-109 lépés/perc</td>
-                <td>Tempós</td>
-                <td>~40%-kal alacsonyabb kockázat</td>
-                <td>Fitnesz-orientált</td>
-              </tr>
-              <tr>
-                <td>≥110 lépés/perc</td>
-                <td>Nagyon tempós</td>
-                <td>~50%-kal alacsonyabb kockázat</td>
-                <td>Magas edzettség</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p><strong>Kulcsfontosságú felismerés:</strong> A ≥100 lépés/perces Peak-30 kadencia megfelel a
+        </div><h3>Peak-30 kadencia küszöbértékek és egészségügyi hatások</h3><div class="data-table"><table><thead><tr><th>Peak-30 kadencia</th><th>Besorolás</th><th>Halálozási kockázat</th><th>Egészségi állapot</th></tr></thead><tbody><tr><td>&lt;60 lépés/perc</td><td>Nagyon alacsony</td><td>Referencia (legmagasabb)</td><td>Mozgásszegény életmód</td></tr><tr><td>60-79 lépés/perc</td><td>Alacsony</td><td>~15%-kal alacsonyabb kockázat</td><td>Alkalmi gyaloglás</td></tr><tr><td>80-99 lépés/perc</td><td>Mérsékelt</td><td>~30%-kal alacsonyabb kockázat</td><td>Rendszeres gyaloglás</td></tr><tr><td>100-109 lépés/perc</td><td>Tempós</td><td>~40%-kal alacsonyabb kockázat</td><td>Fitnesz-orientált</td></tr><tr><td>≥110 lépés/perc</td><td>Nagyon tempós</td><td>~50%-kal alacsonyabb kockázat</td><td>Magas edzettség</td></tr></tbody></table></div><p><strong>Kulcsfontosságú felismerés:</strong> A ≥100 lépés/perces Peak-30 kadencia megfelel a
           <strong>közepestől erős intenzitású fizikai aktivitásnak</strong> (MVPA), és a jelentős egészségügyi előnyök
-          küszöbértékét képviseli.</p>
-
-        <h3>Edzésre vonatkozó következtetések</h3>
-
-        <p>A Peak-30 kadencia gyakorlati edzésvezetést biztosít:</p>
-
-        <ul>
-          <li><strong>Célkitűzés:</strong> Törekedjen 100+ lépés/perces Peak-30 kadenciára hetente legalább 5 napon</li>
-          <li><strong>Edzésfelépítés:</strong> Iktatson be legalább egy 30 perces tempós szakaszt a napi gyaloglásaiba
-          </li>
-          <li><strong>Fejlődés követése:</strong> Figyelje a Peak-30 kadencia növekedését az edzettség javulásával</li>
-          <li><strong>Intenzitás meghatározása:</strong> Alkalmazzon kadenciazónákat a pulzus helyett a praktikusabb
-            edzés érdekében</li>
-        </ul>
-
-        <!-- Brisk Bouts -->
-        <h2 id="brisk-bouts">Tempós szakaszok: Minőség a mennyiség felett</h2>
-
-        <p>A <strong>tempós szakasz</strong> (brisk bout) egy folyamatos, legalább 100 lépés/perccel (közepes
+          küszöbértékét képviseli.</p><h3>Edzésre vonatkozó következtetések</h3><p>A Peak-30 kadencia gyakorlati edzésvezetést biztosít:</p><ul><li><strong>Célkitűzés:</strong> Törekedjen 100+ lépés/perces Peak-30 kadenciára hetente legalább 5 napon</li><li><strong>Edzésfelépítés:</strong> Iktatson be legalább egy 30 perces tempós szakaszt a napi gyaloglásaiba
+          </li><li><strong>Fejlődés követése:</strong> Figyelje a Peak-30 kadencia növekedését az edzettség javulásával</li><li><strong>Intenzitás meghatározása:</strong> Alkalmazzon kadenciazónákat a pulzus helyett a praktikusabb
+            edzés érdekében</li></ul><h2 id="brisk-bouts">Tempós szakaszok: Minőség a mennyiség felett</h2><p>A <strong>tempós szakasz</strong> (brisk bout) egy folyamatos, legalább 100 lépés/perccel (közepes
           intenzitási küszöb) végzett gyaloglási időszak, amely legalább 10 percig tart anélkül, hogy a kadencia 1-2
-          percnél tovább a küszöbérték alá esne.</p>
-
-        <h3>Tudományos háttér</h3>
-
-        <p>A 2018-as amerikai fizikai aktivitási irányelvek eltörölték azt a korábbi követelményt, miszerint az aerob
+          percnél tovább a küszöbérték alá esne.</p><h3>Tudományos háttér</h3><p>A 2018-as amerikai fizikai aktivitási irányelvek eltörölték azt a korábbi követelményt, miszerint az aerob
           aktivitásnak legalább 10 perces szakaszokban kell történnie. A kutatások azonban azt mutatják, hogy a
-          <strong>tartós tempós szakaszok</strong> egyedi előnyöket kínálnak:</p>
-
-        <ul>
-          <li><strong>Kardiovaszkuláris alkalmazkodás:</strong> A tartósan emelkedett pulzusszám aerob fejlődést
-            eredményez</li>
-          <li><strong>Metabolikus hatékonyság:</strong> 10+ perc szükséges a metabolikus folyamatok teljes beindulásához
-          </li>
-          <li><strong>Készségfejlesztés:</strong> A tartósan magasabb kadencia javítja a gyalogló mechanikát</li>
-          <li><strong>Pszichológiai előny:</strong> Tudatos "edzés" szemlélet az alkalmi mozgással szemben</li>
-        </ul>
-
-        <h3>Heti tempós szakasz célkitűzések</h3>
-
-        <div class="data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Edzettségi szint</th>
-                <th>Heti tempós percek</th>
-                <th>Szakaszok száma</th>
-                <th>Példa ütemterv</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Kezdő</strong></td>
-                <td>75-100 perc</td>
-                <td>3-4 szakasz 20-30 perc</td>
-                <td>Hét/Szer/Pén: 25 perc szakaszok</td>
-              </tr>
-              <tr>
-                <td><strong>Középhaladó</strong></td>
-                <td>150-200 perc</td>
-                <td>5-6 szakasz 25-40 perc</td>
-                <td>Napi 30 perc + 1 hosszú hétvégi séta</td>
-              </tr>
-              <tr>
-                <td><strong>Haladó</strong></td>
-                <td>200-300+ perc</td>
-                <td>5-7 szakasz 30-60 perc</td>
-                <td>Napi 40 perc + intervallum + hosszú séta</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p><strong>A közegészségügyi irányelvek teljesítése:</strong> Heti 150 perc közepes intenzitású aktivitás (100+
-          lépés/perc kadencia) megfelel a WHO és a CDC egészségügyi ajánlásainak.</p>
-
-        <h3>A tempós szakaszok minőségi mutatói</h3>
-
-        <p>Nem minden tempós szakasz egyforma. A minőség a következők alapján értékelhető:</p>
-
-        <ol>
-          <li><strong>Kadencia stabilitása:</strong> Minimális fluktuáció a célkadencia körül (±5 lépés/perc)</li>
-          <li><strong>Időtartam:</strong> A hosszabb szakaszok (30-45 perc) értékesebbek a több rövid szakasszal szemben
-          </li>
-          <li><strong>Intenzitás:</strong> Magasabb átlagos kadencia a szakaszon belül (110 lépés/perc &gt; 100
-            lépés/perc)</li>
-          <li><strong>Következetesség:</strong> A tempós napok száma hetente (5-7 nap &gt; 3 nap)</li>
-        </ol>
-
-        <!-- Walking Stress Score -->
-        <h2 id="wss">Gyaloglási stresszpontszám (WSS)</h2>
-
-        <p>A <strong>Walking Stress Score (WSS)</strong> egy saját mérőszám, amely az egyedi edzések edzésterhelését
-          számszerűsíti. A kerékpározásban és futásban használt Training Stress Score (TSS) fogalmait adaptálja.</p>
-
-        <h3>WSS számítási módszerek</h3>
-
-        <p>A WSS kiszámítható a <strong>pulzusszám</strong> vagy a <strong>kadencia</strong> segítségével mint
-          intenzitási mérőszám:</p>
-
-        <h4>1. módszer: Pulzusalapú WSS</h4>
-
-        <p>Pulzus zónákkal súlyozott idő:</p>
-
-        <div class="formula-box">
-          <pre>WSS = Σ (Zónában töltött percek × Zónaszorzó)
+          <strong>tartós tempós szakaszok</strong> egyedi előnyöket kínálnak:</p><ul><li><strong>Kardiovaszkuláris alkalmazkodás:</strong> A tartósan emelkedett pulzusszám aerob fejlődést
+            eredményez</li><li><strong>Metabolikus hatékonyság:</strong> 10+ perc szükséges a metabolikus folyamatok teljes beindulásához
+          </li><li><strong>Készségfejlesztés:</strong> A tartósan magasabb kadencia javítja a gyalogló mechanikát</li><li><strong>Pszichológiai előny:</strong> Tudatos "edzés" szemlélet az alkalmi mozgással szemben</li></ul><h3>Heti tempós szakasz célkitűzések</h3><div class="data-table"><table><thead><tr><th>Edzettségi szint</th><th>Heti tempós percek</th><th>Szakaszok száma</th><th>Példa ütemterv</th></tr></thead><tbody><tr><td><strong>Kezdő</strong></td><td>75-100 perc</td><td>3-4 szakasz 20-30 perc</td><td>Hét/Szer/Pén: 25 perc szakaszok</td></tr><tr><td><strong>Középhaladó</strong></td><td>150-200 perc</td><td>5-6 szakasz 25-40 perc</td><td>Napi 30 perc + 1 hosszú hétvégi séta</td></tr><tr><td><strong>Haladó</strong></td><td>200-300+ perc</td><td>5-7 szakasz 30-60 perc</td><td>Napi 40 perc + intervallum + hosszú séta</td></tr></tbody></table></div><p><strong>A közegészségügyi irányelvek teljesítése:</strong> Heti 150 perc közepes intenzitású aktivitás (100+
+          lépés/perc kadencia) megfelel a WHO és a CDC egészségügyi ajánlásainak.</p><h3>A tempós szakaszok minőségi mutatói</h3><p>Nem minden tempós szakasz egyforma. A minőség a következők alapján értékelhető:</p><ol><li><strong>Kadencia stabilitása:</strong> Minimális fluktuáció a célkadencia körül (±5 lépés/perc)</li><li><strong>Időtartam:</strong> A hosszabb szakaszok (30-45 perc) értékesebbek a több rövid szakasszal szemben
+          </li><li><strong>Intenzitás:</strong> Magasabb átlagos kadencia a szakaszon belül (110 lépés/perc &gt; 100
+            lépés/perc)</li><li><strong>Következetesség:</strong> A tempós napok száma hetente (5-7 nap &gt; 3 nap)</li></ol><h2 id="wss">Gyaloglási stresszpontszám (WSS)</h2><p>A <strong>Walking Stress Score (WSS)</strong> egy saját mérőszám, amely az egyedi edzések edzésterhelését
+          számszerűsíti. A kerékpározásban és futásban használt Training Stress Score (TSS) fogalmait adaptálja.</p><h3>WSS számítási módszerek</h3><p>A WSS kiszámítható a <strong>pulzusszám</strong> vagy a <strong>kadencia</strong> segítségével mint
+          intenzitási mérőszám:</p><h4>1. módszer: Pulzusalapú WSS</h4><p>Pulzus zónákkal súlyozott idő:</p><div class="formula-box"><pre>WSS = Σ (Zónában töltött percek × Zónaszorzó)
 
 Zónaszorzók:
   1. zóna (max pulzus 50-60%-a): 1,0
   2. zóna (max pulzus 60-70%-a): 2,0
   3. zóna (max pulzus 70-80%-a): 3,0
   4. zóna (max pulzus 80-90%-a): 4,0
-  5. zóna (max pulzus 90-100%-a): 5,0</pre>
-        </div>
-
-        <p><strong>Példa:</strong> 60 perces séta:</p>
-        <ul>
-          <li>10 perc bemelegítés az 1. zónában = 10 × 1,0 = 10</li>
-          <li>40 perc folyamatos a 2. zónában = 40 × 2,0 = 80</li>
-          <li>10 perc levezetés az 1. zónában = 10 × 1,0 = 10</li>
-          <li><strong>Összes WSS = 100</strong></li>
-        </ul>
-
-        <h4>2. módszer: Kadenciaalapú WSS</h4>
-
-        <p>Kadencia intenzitással súlyozott idő:</p>
-
-        <div class="formula-box">
-          <pre>WSS = Σ (Kadencián töltött percek × Kadenciaszorzó)
+  5. zóna (max pulzus 90-100%-a): 5,0</pre></div><p><strong>Példa:</strong> 60 perces séta:</p><ul><li>10 perc bemelegítés az 1. zónában = 10 × 1,0 = 10</li><li>40 perc folyamatos a 2. zónában = 40 × 2,0 = 80</li><li>10 perc levezetés az 1. zónában = 10 × 1,0 = 10</li><li><strong>Összes WSS = 100</strong></li></ul><h4>2. módszer: Kadenciaalapú WSS</h4><p>Kadencia intenzitással súlyozott idő:</p><div class="formula-box"><pre>WSS = Σ (Kadencián töltött percek × Kadenciaszorzó)
 
 Kadenciaszorzók:
   60-99 lépés/perc (könnyű): 1,0
   100-109 lépés/perc (közepes): 2,5
   110-119 lépés/perc (közepes-erős): 3,5
   120-129 lépés/perc (erős): 4,5
-  ≥130 lépés/perc (nagyon erős): 6,0</pre>
-        </div>
-
-        <p><strong>Előny:</strong> A kadenciaalapú WSS nem igényel pulzusmérőt, és a legtöbb gyalogló számára
-          praktikusabb.</p>
-
-        <h3>Tipikus WSS értékek edzéstípusonként</h3>
-
-        <div class="data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Edzéstípus</th>
-                <th>Időtartam</th>
-                <th>Átlagos intenzitás</th>
-                <th>Tipikus WSS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Regeneráló séta</td>
-                <td>20-30 perc</td>
-                <td>1. zóna, &lt;100 lépés/perc</td>
-                <td>20-30</td>
-              </tr>
-              <tr>
-                <td>Könnyű aerob séta</td>
-                <td>30-45 perc</td>
-                <td>2. zóna, 100-105 lépés/perc</td>
-                <td>60-90</td>
-              </tr>
-              <tr>
-                <td>Tempós folyamatos séta</td>
-                <td>45-60 perc</td>
-                <td>2. zóna, 105-110 lépés/perc</td>
-                <td>90-150</td>
-              </tr>
-              <tr>
-                <td>Tempó séta</td>
-                <td>30-40 perc</td>
-                <td>3. zóna, 110-120 lépés/perc</td>
-                <td>90-140</td>
-              </tr>
-              <tr>
-                <td>Intervallum edzés</td>
-                <td>40-50 perc</td>
-                <td>Vegyes zónák, csúcsok 120+ lépés/percnél</td>
-                <td>120-200</td>
-              </tr>
-              <tr>
-                <td>Hosszú állóképességi séta</td>
-                <td>90-120 perc</td>
-                <td>2. zóna, 100-110 lépés/perc</td>
-                <td>180-300</td>
-              </tr>
-              <tr>
-                <td>Versenygyalogló edzés</td>
-                <td>60-90 perc</td>
-                <td>3-4. zóna, 120-140 lépés/perc</td>
-                <td>200-400</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Weekly Training Load -->
-        <h2 id="weekly-load">Heti edzésterhelési irányelvek</h2>
-
-        <p>A heti edzésterhelést az edzettségi szintnek, a céloknak és a rendelkezésre álló időnek megfelelően egyénre
+  ≥130 lépés/perc (nagyon erős): 6,0</pre></div><p><strong>Előny:</strong> A kadenciaalapú WSS nem igényel pulzusmérőt, és a legtöbb gyalogló számára
+          praktikusabb.</p><h3>Tipikus WSS értékek edzéstípusonként</h3><div class="data-table"><table><thead><tr><th>Edzéstípus</th><th>Időtartam</th><th>Átlagos intenzitás</th><th>Tipikus WSS</th></tr></thead><tbody><tr><td>Regeneráló séta</td><td>20-30 perc</td><td>1. zóna, &lt;100 lépés/perc</td><td>20-30</td></tr><tr><td>Könnyű aerob séta</td><td>30-45 perc</td><td>2. zóna, 100-105 lépés/perc</td><td>60-90</td></tr><tr><td>Tempós folyamatos séta</td><td>45-60 perc</td><td>2. zóna, 105-110 lépés/perc</td><td>90-150</td></tr><tr><td>Tempó séta</td><td>30-40 perc</td><td>3. zóna, 110-120 lépés/perc</td><td>90-140</td></tr><tr><td>Intervallum edzés</td><td>40-50 perc</td><td>Vegyes zónák, csúcsok 120+ lépés/percnél</td><td>120-200</td></tr><tr><td>Hosszú állóképességi séta</td><td>90-120 perc</td><td>2. zóna, 100-110 lépés/perc</td><td>180-300</td></tr><tr><td>Versenygyalogló edzés</td><td>60-90 perc</td><td>3-4. zóna, 120-140 lépés/perc</td><td>200-400</td></tr></tbody></table></div><h2 id="weekly-load">Heti edzésterhelési irányelvek</h2><p>A heti edzésterhelést az edzettségi szintnek, a céloknak és a rendelkezésre álló időnek megfelelően egyénre
           kell szabni. Az irányelvek a rugalmasság érdekében <strong>WSS</strong> és <strong>tempós percek</strong>
-          formájában is meg vannak határozva.</p>
-
-        <h3>Kezdő (0-6 hónap edzéstapasztalat)</h3>
-
-        <ul>
-          <li><strong>Heti WSS:</strong> 150-300</li>
-          <li><strong>Tempós percek (≥100 lépés/perc):</strong> 75-120 perc/hét</li>
-          <li><strong>Összes gyaloglási idő:</strong> 120-200 perc/hét</li>
-          <li><strong>Peak-30 cél:</strong> 90-100 lépés/perc</li>
-          <li><strong>Edzések száma hetente:</strong> 4-5</li>
-          <li><strong>Fókusz:</strong> Következetesség, szokás kialakítása, technikai fejlesztés</li>
-          <li><strong>Progresszió:</strong> Heti 5-10%-os növekedés</li>
-        </ul>
-
-        <p><strong>Minta hét (Összes WSS: 250):</strong></p>
-        <ul>
-          <li>Hétfő: 30 perc könnyű séta, 100 lépés/perc (WSS 50)</li>
-          <li>Kedd: Pihenő vagy könnyű 20 perces séta</li>
-          <li>Szerda: 35 perc tempós séta, 105 lépés/perc (WSS 70)</li>
-          <li>Csütörtök: 25 perc könnyű séta, 95 lépés/perc (WSS 40)</li>
-          <li>Péntek: Pihenő</li>
-          <li>Szombat: 45 perc folyamatos séta, 102 lépés/perc (WSS 90)</li>
-          <li>Vasárnap: Könnyű 20-30 perc</li>
-        </ul>
-
-        <h3>Középhaladó (6-18 hónap edzéstapasztalat)</h3>
-
-        <ul>
-          <li><strong>Heti WSS:</strong> 300-550</li>
-          <li><strong>Tempós percek (≥100 lépés/perc):</strong> 150-250 perc/hét</li>
-          <li><strong>Összes gyaloglási idő:</strong> 250-400 perc/hét</li>
-          <li><strong>Peak-30 cél:</strong> 105-115 lépés/perc</li>
-          <li><strong>Edzések száma hetente:</strong> 5-6</li>
-          <li><strong>Fókusz:</strong> Aerob kapacitás építése, gyorsasági állóképesség, intervallumok bevezetése</li>
-          <li><strong>Progresszió:</strong> Heti 10%-os növekedés, regenerációs hetekkel</li>
-        </ul>
-
-        <p><strong>Minta hét (Összes WSS: 420):</strong></p>
-        <ul>
-          <li>Hétfő: 40 perc folyamatos séta, 108 lépés/perc (WSS 100)</li>
-          <li>Kedd: 30 perc könnyű regeneráció, 95 lépés/perc (WSS 45)</li>
-          <li>Szerda: 45 perc intervallum (5×4 perc @ 120 lépés/perc / 3 perc könnyű) (WSS 130)</li>
-          <li>Csütörtök: 35 perc könnyű séta, 100 lépés/perc (WSS 60)</li>
-          <li>Péntek: Pihenő vagy 20 perces könnyű séta</li>
-          <li>Szombat: 75 perc hosszú séta, 105 lépés/perc (WSS 150)</li>
-          <li>Vasárnap: 30 perc könnyű regeneráció (WSS 40)</li>
-        </ul>
-
-        <h3>Haladó (18+ hónap edzéstapasztalat)</h3>
-
-        <ul>
-          <li><strong>Heti WSS:</strong> 500-900+</li>
-          <li><strong>Tempós percek (≥100 lépés/perc):</strong> 250-400+ perc/hét</li>
-          <li><strong>Összes gyaloglási idő:</strong> 400-700+ perc/hét</li>
-          <li><strong>Peak-30 cél:</strong> 115-130+ lépés/perc</li>
-          <li><strong>Edzések száma hetente:</strong> 6-7</li>
-          <li><strong>Fókusz:</strong> Teljesítmény, versenyzés, versenygyalogló technika</li>
-          <li><strong>Progresszió:</strong> Periodizált edzés különböző fázisokkal</li>
-        </ul>
-
-        <p><strong>Minta hét (Összes WSS: 720):</strong></p>
-        <ul>
-          <li>Hétfő: 50 perc folyamatos séta, 110 lépés/perc (WSS 120)</li>
-          <li>Kedd: 40 perc könnyű séta, 100 lépés/perc (WSS 70)</li>
-          <li>Szerda: 60 perc tempó (40 perc @ 115-120 lépés/perc) (WSS 180)</li>
-          <li>Csütörtök: 35 perc regeneráló séta, 95 lépés/perc (WSS 50)</li>
-          <li>Péntek: 50 perc intervallum (10×2 perc @ 130+ lépés/perc / 2 perc könnyű) (WSS 180)</li>
-          <li>Szombat: 90 perc hosszú séta, 108 lépés/perc (WSS 200)</li>
-          <li>Vasárnap: 40 perc könnyű séta (WSS 60)</li>
-        </ul>
-
-        <!-- Acute vs Chronic Load -->
-        <h2 id="acwr">Akut-krónikus terhelési arány (ACWR)</h2>
-
-        <p>Az <strong>Akut-krónikus terhelési arány</strong> egy hatékony eszköz a sérülésveszély kezelésére a
-          közelmúltbeli edzésterhelés (akut) és a hosszabb távú edzésterhelés (krónikus) összehasonlításával.</p>
-
-        <h3>Számítás</h3>
-
-        <div class="formula-box">
-          <pre>ACWR = Akut terhelés (7 nap) / Krónikus terhelés (utolsó 28 nap átlaga)
+          formájában is meg vannak határozva.</p><h3>Kezdő (0-6 hónap edzéstapasztalat)</h3><ul><li><strong>Heti WSS:</strong> 150-300</li><li><strong>Tempós percek (≥100 lépés/perc):</strong> 75-120 perc/hét</li><li><strong>Összes gyaloglási idő:</strong> 120-200 perc/hét</li><li><strong>Peak-30 cél:</strong> 90-100 lépés/perc</li><li><strong>Edzések száma hetente:</strong> 4-5</li><li><strong>Fókusz:</strong> Következetesség, szokás kialakítása, technikai fejlesztés</li><li><strong>Progresszió:</strong> Heti 5-10%-os növekedés</li></ul><p><strong>Minta hét (Összes WSS: 250):</strong></p><ul><li>Hétfő: 30 perc könnyű séta, 100 lépés/perc (WSS 50)</li><li>Kedd: Pihenő vagy könnyű 20 perces séta</li><li>Szerda: 35 perc tempós séta, 105 lépés/perc (WSS 70)</li><li>Csütörtök: 25 perc könnyű séta, 95 lépés/perc (WSS 40)</li><li>Péntek: Pihenő</li><li>Szombat: 45 perc folyamatos séta, 102 lépés/perc (WSS 90)</li><li>Vasárnap: Könnyű 20-30 perc</li></ul><h3>Középhaladó (6-18 hónap edzéstapasztalat)</h3><ul><li><strong>Heti WSS:</strong> 300-550</li><li><strong>Tempós percek (≥100 lépés/perc):</strong> 150-250 perc/hét</li><li><strong>Összes gyaloglási idő:</strong> 250-400 perc/hét</li><li><strong>Peak-30 cél:</strong> 105-115 lépés/perc</li><li><strong>Edzések száma hetente:</strong> 5-6</li><li><strong>Fókusz:</strong> Aerob kapacitás építése, gyorsasági állóképesség, intervallumok bevezetése</li><li><strong>Progresszió:</strong> Heti 10%-os növekedés, regenerációs hetekkel</li></ul><p><strong>Minta hét (Összes WSS: 420):</strong></p><ul><li>Hétfő: 40 perc folyamatos séta, 108 lépés/perc (WSS 100)</li><li>Kedd: 30 perc könnyű regeneráció, 95 lépés/perc (WSS 45)</li><li>Szerda: 45 perc intervallum (5×4 perc @ 120 lépés/perc / 3 perc könnyű) (WSS 130)</li><li>Csütörtök: 35 perc könnyű séta, 100 lépés/perc (WSS 60)</li><li>Péntek: Pihenő vagy 20 perces könnyű séta</li><li>Szombat: 75 perc hosszú séta, 105 lépés/perc (WSS 150)</li><li>Vasárnap: 30 perc könnyű regeneráció (WSS 40)</li></ul><h3>Haladó (18+ hónap edzéstapasztalat)</h3><ul><li><strong>Heti WSS:</strong> 500-900+</li><li><strong>Tempós percek (≥100 lépés/perc):</strong> 250-400+ perc/hét</li><li><strong>Összes gyaloglási idő:</strong> 400-700+ perc/hét</li><li><strong>Peak-30 cél:</strong> 115-130+ lépés/perc</li><li><strong>Edzések száma hetente:</strong> 6-7</li><li><strong>Fókusz:</strong> Teljesítmény, versenyzés, versenygyalogló technika</li><li><strong>Progresszió:</strong> Periodizált edzés különböző fázisokkal</li></ul><p><strong>Minta hét (Összes WSS: 720):</strong></p><ul><li>Hétfő: 50 perc folyamatos séta, 110 lépés/perc (WSS 120)</li><li>Kedd: 40 perc könnyű séta, 100 lépés/perc (WSS 70)</li><li>Szerda: 60 perc tempó (40 perc @ 115-120 lépés/perc) (WSS 180)</li><li>Csütörtök: 35 perc regeneráló séta, 95 lépés/perc (WSS 50)</li><li>Péntek: 50 perc intervallum (10×2 perc @ 130+ lépés/perc / 2 perc könnyű) (WSS 180)</li><li>Szombat: 90 perc hosszú séta, 108 lépés/perc (WSS 200)</li><li>Vasárnap: 40 perc könnyű séta (WSS 60)</li></ul><h2 id="acwr">Akut-krónikus terhelési arány (ACWR)</h2><p>Az <strong>Akut-krónikus terhelési arány</strong> egy hatékony eszköz a sérülésveszély kezelésére a
+          közelmúltbeli edzésterhelés (akut) és a hosszabb távú edzésterhelés (krónikus) összehasonlításával.</p><h3>Számítás</h3><div class="formula-box"><pre>ACWR = Akut terhelés (7 nap) / Krónikus terhelés (utolsó 28 nap átlaga)
 
 Példa:
   Utolsó 7 nap WSS: 450
   Előző 28 nap átlaga: 380
-  ACWR = 450 / 380 = 1,18</pre>
-        </div>
-
-        <h3>Az ACWR értelmezése</h3>
-
-        <div class="data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>ACWR tartomány</th>
-                <th>Sérülésveszély</th>
-                <th>Edzettségi állapot</th>
-                <th>Teendő</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>&lt;0,80</td>
-                <td>Alacsony-közepes</td>
-                <td>Lehetséges edzettségcsökkenés</td>
-                <td>Terhelés növelése fontolgatható</td>
-              </tr>
-              <tr>
-                <td>0,80-1,00</td>
-                <td>Alacsony</td>
-                <td>Stabil edzés</td>
-                <td>Jelenlegi terhelés fenntartása</td>
-              </tr>
-              <tr>
-                <td>1,00-1,30</td>
-                <td>Alacsony</td>
-                <td>Optimális progresszió</td>
-                <td>Az alkalmazkodás "Sweet spotja"</td>
-              </tr>
-              <tr>
-                <td>1,30-1,50</td>
-                <td>Mérsékelt</td>
-                <td>Gyors növekedés</td>
-                <td>Fáradtság jeleinek figyelése</td>
-              </tr>
-              <tr>
-                <td>&gt;1,50</td>
-                <td>Magas</td>
-                <td>Veszélyes megugrás</td>
-                <td>Terhelés csökkentése, regeneráció</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="key-finding">
-          <strong>Kutatási eredmény:</strong> Az 1,50 feletti ACWR értékkel rendelkező sportolóknál 2-4-szer magasabb a
+  ACWR = 450 / 380 = 1,18</pre></div><h3>Az ACWR értelmezése</h3><div class="data-table"><table><thead><tr><th>ACWR tartomány</th><th>Sérülésveszély</th><th>Edzettségi állapot</th><th>Teendő</th></tr></thead><tbody><tr><td>&lt;0,80</td><td>Alacsony-közepes</td><td>Lehetséges edzettségcsökkenés</td><td>Terhelés növelése fontolgatható</td></tr><tr><td>0,80-1,00</td><td>Alacsony</td><td>Stabil edzés</td><td>Jelenlegi terhelés fenntartása</td></tr><tr><td>1,00-1,30</td><td>Alacsony</td><td>Optimális progresszió</td><td>Az alkalmazkodás "Sweet spotja"</td></tr><tr><td>1,30-1,50</td><td>Mérsékelt</td><td>Gyors növekedés</td><td>Fáradtság jeleinek figyelése</td></tr><tr><td>&gt;1,50</td><td>Magas</td><td>Veszélyes megugrás</td><td>Terhelés csökkentése, regeneráció</td></tr></tbody></table></div><div class="key-finding"><strong>Kutatási eredmény:</strong> Az 1,50 feletti ACWR értékkel rendelkező sportolóknál 2-4-szer magasabb a
           sérülés kockázata az 0,80-1,30 tartományban lévőkhöz képest (Gabbett, 2016). Ez az elv minden sportra
           érvényes, beleértve a gyalogló edzést is.
-        </div>
-
-        <h3>Gyakorlati alkalmazás</h3>
-
-        <p><strong>1. forgatókönyv: Visszatérés betegség után</strong></p>
-        <ul>
-          <li>A betegség előtti hét: 400 WSS</li>
-          <li>Kihagyott 10 nap (a 28 napos átlag 285-re esik)</li>
-          <li>Ne ugorjon vissza azonnal 400-ra (ACWR = 1,40)</li>
-          <li>Ehelyett: Kezdjen 250-300 WSS-sel (ACWR = 0,88-1,05)</li>
-        </ul>
-
-        <p><strong>2. forgatókönyv: Ambiciózus fejlődés</strong></p>
-        <ul>
-          <li>Jelenlegi 4 hetes átlag: 350 WSS/hét</li>
-          <li>Következő heti terv: 500 WSS-t szeretne</li>
-          <li>Az ACWR 1,43 lenne (mérsékelten magas kockázat)</li>
-          <li>Jobb megközelítés: 420-450 WSS (ACWR 1,20-1,29)</li>
-        </ul>
-
-        <!-- Training Load Progression -->
-        <h2 id="progression">Edzésterhelés-progressziós stratégiák</h2>
-
-        <h3>A 10%-os szabály (árnyaltabban)</h3>
-
-        <p>A hagyományos <strong>10%-os szabály</strong> azt sugallja, hogy a heti edzésvolument legfeljebb 10%-kal
-          növeljük hetente. Bár irányelvnek hasznos, a modern kutatások árnyaltabb megközelítéseket javasolnak:</p>
-
-        <ul>
-          <li><strong>Kezdőknek:</strong> A heti 5-10%-os emelés megfelelő</li>
-          <li><strong>Tapasztalt gyaloglóknak:</strong> A 10-15%-os növekedés tolerálható, ha az ACWR 1,30 alatt marad
-          </li>
-          <li><strong>Szünetek után:</strong> A lassabb progresszió (5%) biztonságosabb</li>
-          <li><strong>Magas terhelésnél:</strong> Inkább tartsuk szinten vagy csökkentsük, mintsem tovább növeljük</li>
-        </ul>
-
-        <h3>Periodizáció: A 3:1-es modell</h3>
-
-        <p>A legtöbb tudományos bizonyítékkal alátámasztott progressziómodell váltogatja a <strong>3 héten át tartó
-            terhelésnövelést</strong> <strong>1 regenerációs héttel</strong>:</p>
-
-        <p><strong>Példa egy 8 hetes blokkra (300 WSS-ről indulva):</strong></p>
-
-        <div class="data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Hét</th>
-                <th>Heti WSS</th>
-                <th>Változás</th>
-                <th>Fázis</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>300</td>
-                <td>Alapérték</td>
-                <td>Építő</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>330</td>
-                <td>+10%</td>
-                <td>Építő</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>365</td>
-                <td>+11%</td>
-                <td>Építő</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>220</td>
-                <td>-40%</td>
-                <td><strong>Regeneráció</strong></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>400</td>
-                <td>+10%</td>
-                <td>Építő</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>440</td>
-                <td>+10%</td>
-                <td>Építő</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>485</td>
-                <td>+10%</td>
-                <td>Építő</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>290</td>
-                <td>-40%</td>
-                <td><strong>Regeneráció</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p><strong>A regenerációs hetek előnyei:</strong></p>
-        <ul>
-          <li>Lehetővé teszik a fiziológiai alkalmazkodást (szuperkompenzáció)</li>
-          <li>Feltöltik a glikogénraktárakat</li>
-          <li>Helyreállítják a szövetek mikrosérüléseit</li>
-          <li>Csökkentik a felhalmozódott fáradtságot</li>
-          <li>Frissítik a motivációt és a mentális energiát</li>
-          <li>Felkészítik a testet a következő edzésblokkra</li>
-        </ul>
-
-        <h3>Blokk periodizáció</h3>
-
-        <p>A teljesítményre vagy eseményekre készülő haladó gyaloglók számára az edzést különálló
-          <strong>mezociklusokba</strong> (4-8 hetes blokkokba) érdemes szervezni:</p>
-
-        <p><strong>Példa az éves periodizációra:</strong></p>
-
-        <ol>
-          <li>
-            <strong>Alapozó fázis (8-12 hét):</strong>
-            <ul>
-              <li>Fókusz: Aerob alapok építése 2. zónás volumennel</li>
-              <li>Heti WSS: 400-550</li>
-              <li>Az idő 80%-a 100-110 lépés per perc mellett</li>
-              <li>A hosszú séták 60-ról 120 percre nőnek</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Felépítő fázis (6-8 hét):</strong>
-            <ul>
-              <li>Fókusz: 3. zónás tempómunka és rövid intervallumok hozzáadása</li>
-              <li>Heti WSS: 500-650</li>
-              <li>70% 2. zóna, 20% 3. zóna, 10% 4. zóna</li>
-              <li>Hetente 2 minőségi edzés</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Csúcs fázis (4-6 hét):</strong>
-            <ul>
-              <li>Fókusz: Nagy intenzitású, verseny-specifikus munka</li>
-              <li>Heti WSS: 550-750</li>
-              <li>Verseny-tempójú intervallumok és szimulációk</li>
-              <li>Némi könnyű volumen fenntartása</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Formábahozás / Taper (1-2 hét):</strong>
-            <ul>
-              <li>Fókusz: Volumen csökkentése, intenzitás fenntartása</li>
-              <li>Heti WSS: 200-350 (50%-os csökkenés)</li>
-              <li>1-2 rövid, éles edzés megtartása</li>
-              <li>Pihenés és készenlét prioritása</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Regeneráció / Átmenet (2-4 hét):</strong>
-            <ul>
-              <li>Fókusz: Aktív regeneráció, kiegészítő sportok</li>
-              <li>Heti WSS: 150-300</li>
-              <li>Mindegyik könnyű gyaloglás, kötöttségek nélkül</li>
-              <li>Mentális és fizikai feltöltődés</li>
-            </ul>
-          </li>
-        </ol>
-
-        <!-- Monitoring Training Load -->
-        <h2 id="monitoring">Az edzésterhelés figyelése és beállítása</h2>
-
-        <h3>Objektív mérőszámok</h3>
-
-        <p><strong>Kövesse ezeket napi/heti szinten:</strong></p>
-
-        <ol>
-          <li>
-            <strong>Nyugalmi pulzusszám (RHR):</strong>
-            <ul>
-              <li>Mérje ébredés után, mielőtt felkelne az ágyból</li>
-              <li>Kövesse a 7 napos gördülő átlagot</li>
-              <li>Az 5-10 bpm emelkedés hiányos regenerációra utal</li>
-              <li>A tartós emelkedés (&gt;1 hét) túledzési kockázatot jelez</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Pulzusvariabilitás (HRV):</strong>
-            <ul>
-              <li>Magasabb HRV = jobb regeneráció és készenlét</li>
-              <li>&gt;10%-os csökkenés az alapértéktől = csökkent készenlét</li>
-              <li>Használjon szakalkalmazást vagy okosgyűrűt</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Peak-30 kadencia:</strong>
-            <ul>
-              <li>Kövesse naponta az intenzitásfenntartó képesség felméréséhez</li>
-              <li>A csökkenő trend felhalmozódott fáradtságot jelezhet</li>
-              <li>Használja az edzéskészenlét mutatójaként</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Gyaloglási sebesség standard erőfeszítésnél:</strong>
-            <ul>
-              <li>Havi teszt: 20-30 perc azonos észlelt erőfeszítés mellett</li>
-              <li>A javuló sebesség azonos erőfeszítésnél = pozitív alkalmazkodás</li>
-              <li>Csökkenő sebesség = hiányos regeneráció vagy túledzés</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Szubjektív mérőszámok</h3>
-
-        <p><strong>Napi jólléti kérdőív (mindegyik 1-5 pont):</strong></p>
-
-        <ol>
-          <li><strong>Alvásminőség:</strong> 1 = borzalmas, 5 = kiváló</li>
-          <li><strong>Fáradtsági szint:</strong> 1 = kimerült, 5 = energikus</li>
-          <li><strong>Izomláz:</strong> 1 = nagyon erős, 5 = nincs</li>
-          <li><strong>Hangulat/motiváció:</strong> 1 = rossz, 5 = remek</li>
-          <li><strong>Stressz-szint:</strong> 1 = nagyon magas, 5 = nagyon alacsony</li>
-        </ol>
-
-        <p><strong>A jólléti pontszám értelmezése:</strong></p>
-        <ul>
-          <li><strong>20-25:</strong> Kiváló készenlét, folytassa a tervezett edzést</li>
-          <li><strong>15-19:</strong> Jó készenlét, edzés terv szerint vagy enyhén csökkentve</li>
-          <li><strong>10-14:</strong> Mérsékelt aggályok, fontoljon meg egy könnyebb napot</li>
-          <li><strong>5-9:</strong> Gyenge készenlét, tegye a napot nagyon könnyűvé vagy pihenjen</li>
-        </ul>
-
-        <h3>A megfelelő edzésterhelés jelei</h3>
-
-        <ul>
-          <li>Energikusnak és motiváltnak érzi magát a legtöbb sétánál</li>
-          <li>Fokozatos teljesítményjavulás hetek/hónapok alatt</li>
-          <li>Konzisztens alvásminőség (7-9 óra, pihenten ébredés)</li>
-          <li>Stabil vagy javuló nyugalmi pulzusszám</li>
-          <li>Minimális izomláz az edzés utáni 24-48 órán túl</li>
-          <li>Lelkesedés fenntartása a gyalogláshoz</li>
-          <li>Képes a célpace-eket/kadenciákat következetesen hozni</li>
-        </ul>
-
-        <h3>A túlzott edzésterhelés figyelmeztető jelei</h3>
-
-        <ul>
-          <li><strong>Teljesítmény:</strong> Csökkenő sebesség, képtelenség a célkadencia elérésére, megnövekedett
-            észlelt erőfeszítés</li>
-          <li><strong>Fiziológia:</strong> Emelkedett RHR (5-10+ bpm felett), csökkent HRV, tartós fáradtság pihenés
-            ellenére is</li>
-          <li><strong>Vázizomrendszer:</strong> Tartós izomláz, apró fájdalmak, gyakoribb sérülések</li>
-          <li><strong>Pszichológia:</strong> Motivációvesztés, ingerlékenység, hangulatzavarok, koncentrációs nehézségek
-          </li>
-          <li><strong>Alvás:</strong> Elalvási nehézségek, gyakori ébredés, nem pihentető alvás</li>
-          <li><strong>Immunrendszer:</strong> Gyakori megfázások vagy fertőzések, kisebb sérülések lassú gyógyulása</li>
-        </ul>
-
-        <p><strong>Akcióterv figyelmeztető jelek esetén:</strong></p>
-        <ol>
-          <li>Azonnal csökkentse az edzésterhelést 30-50%-kal</li>
-          <li>Csak könnyű, élvezetes sétákra koncentráljon</li>
-          <li>Priorizálja az alvást (célozzon meg 8-9 órát)</li>
-          <li>Tekintse át a táplálkozást és a hidratáltságot</li>
-          <li>Vegye figyelembe a nem edzés jellegű stresszt (munka, magánélet)</li>
-          <li>Ha a tünetek 1 hétnél tovább fennállnak, forduljon orvoshoz</li>
-        </ol>
-
-        <!-- Intensity Distribution -->
-        <h2 id="intensity">Intenzitás-eloszlási modellek</h2>
-
-        <p>Az edzésintenzitás heti elosztása jelentősen befolyásolja az alkalmazkodást és a teljesítményt. Két fő
-          modellt alkalmazunk:</p>
-
-        <h3>Polarizált edzés (80/20-as modell)</h3>
-
-        <p>A <strong>80/20-as modell</strong> az edzésidőt két véglet között osztja meg, minimális közepes
-          intenzitással:</p>
-
-        <ul>
-          <li><strong>80% könnyű (1-2. zóna):</strong> 95-105 lépés/perc, beszélgetős tempó</li>
-          <li><strong>0-5% közepes (3. zóna):</strong> Minimális idő 110-120 lépés/perc mellett</li>
-          <li><strong>15-20% nehéz (4-5. zóna):</strong> 120+ lépés/perces intervallumok és tempó</li>
-        </ul>
-
-        <p><strong>Érvek:</strong> Maximalizálja az aerob fejlődést (könnyű volumen), miközben nagy intenzitású ingert
+        </div><h3>Gyakorlati alkalmazás</h3><p><strong>1. forgatókönyv: Visszatérés betegség után</strong></p><ul><li>A betegség előtti hét: 400 WSS</li><li>Kihagyott 10 nap (a 28 napos átlag 285-re esik)</li><li>Ne ugorjon vissza azonnal 400-ra (ACWR = 1,40)</li><li>Ehelyett: Kezdjen 250-300 WSS-sel (ACWR = 0,88-1,05)</li></ul><p><strong>2. forgatókönyv: Ambiciózus fejlődés</strong></p><ul><li>Jelenlegi 4 hetes átlag: 350 WSS/hét</li><li>Következő heti terv: 500 WSS-t szeretne</li><li>Az ACWR 1,43 lenne (mérsékelten magas kockázat)</li><li>Jobb megközelítés: 420-450 WSS (ACWR 1,20-1,29)</li></ul><h2 id="progression">Edzésterhelés-progressziós stratégiák</h2><h3>A 10%-os szabály (árnyaltabban)</h3><p>A hagyományos <strong>10%-os szabály</strong> azt sugallja, hogy a heti edzésvolument legfeljebb 10%-kal
+          növeljük hetente. Bár irányelvnek hasznos, a modern kutatások árnyaltabb megközelítéseket javasolnak:</p><ul><li><strong>Kezdőknek:</strong> A heti 5-10%-os emelés megfelelő</li><li><strong>Tapasztalt gyaloglóknak:</strong> A 10-15%-os növekedés tolerálható, ha az ACWR 1,30 alatt marad
+          </li><li><strong>Szünetek után:</strong> A lassabb progresszió (5%) biztonságosabb</li><li><strong>Magas terhelésnél:</strong> Inkább tartsuk szinten vagy csökkentsük, mintsem tovább növeljük</li></ul><h3>Periodizáció: A 3:1-es modell</h3><p>A legtöbb tudományos bizonyítékkal alátámasztott progressziómodell váltogatja a <strong>3 héten át tartó
+            terhelésnövelést</strong><strong>1 regenerációs héttel</strong>:</p><p><strong>Példa egy 8 hetes blokkra (300 WSS-ről indulva):</strong></p><div class="data-table"><table><thead><tr><th>Hét</th><th>Heti WSS</th><th>Változás</th><th>Fázis</th></tr></thead><tbody><tr><td>1</td><td>300</td><td>Alapérték</td><td>Építő</td></tr><tr><td>2</td><td>330</td><td>+10%</td><td>Építő</td></tr><tr><td>3</td><td>365</td><td>+11%</td><td>Építő</td></tr><tr><td>4</td><td>220</td><td>-40%</td><td><strong>Regeneráció</strong></td></tr><tr><td>5</td><td>400</td><td>+10%</td><td>Építő</td></tr><tr><td>6</td><td>440</td><td>+10%</td><td>Építő</td></tr><tr><td>7</td><td>485</td><td>+10%</td><td>Építő</td></tr><tr><td>8</td><td>290</td><td>-40%</td><td><strong>Regeneráció</strong></td></tr></tbody></table></div><p><strong>A regenerációs hetek előnyei:</strong></p><ul><li>Lehetővé teszik a fiziológiai alkalmazkodást (szuperkompenzáció)</li><li>Feltöltik a glikogénraktárakat</li><li>Helyreállítják a szövetek mikrosérüléseit</li><li>Csökkentik a felhalmozódott fáradtságot</li><li>Frissítik a motivációt és a mentális energiát</li><li>Felkészítik a testet a következő edzésblokkra</li></ul><h3>Blokk periodizáció</h3><p>A teljesítményre vagy eseményekre készülő haladó gyaloglók számára az edzést különálló
+          <strong>mezociklusokba</strong> (4-8 hetes blokkokba) érdemes szervezni:</p><p><strong>Példa az éves periodizációra:</strong></p><ol><li><strong>Alapozó fázis (8-12 hét):</strong><ul><li>Fókusz: Aerob alapok építése 2. zónás volumennel</li><li>Heti WSS: 400-550</li><li>Az idő 80%-a 100-110 lépés per perc mellett</li><li>A hosszú séták 60-ról 120 percre nőnek</li></ul></li><li><strong>Felépítő fázis (6-8 hét):</strong><ul><li>Fókusz: 3. zónás tempómunka és rövid intervallumok hozzáadása</li><li>Heti WSS: 500-650</li><li>70% 2. zóna, 20% 3. zóna, 10% 4. zóna</li><li>Hetente 2 minőségi edzés</li></ul></li><li><strong>Csúcs fázis (4-6 hét):</strong><ul><li>Fókusz: Nagy intenzitású, verseny-specifikus munka</li><li>Heti WSS: 550-750</li><li>Verseny-tempójú intervallumok és szimulációk</li><li>Némi könnyű volumen fenntartása</li></ul></li><li><strong>Formábahozás / Taper (1-2 hét):</strong><ul><li>Fókusz: Volumen csökkentése, intenzitás fenntartása</li><li>Heti WSS: 200-350 (50%-os csökkenés)</li><li>1-2 rövid, éles edzés megtartása</li><li>Pihenés és készenlét prioritása</li></ul></li><li><strong>Regeneráció / Átmenet (2-4 hét):</strong><ul><li>Fókusz: Aktív regeneráció, kiegészítő sportok</li><li>Heti WSS: 150-300</li><li>Mindegyik könnyű gyaloglás, kötöttségek nélkül</li><li>Mentális és fizikai feltöltődés</li></ul></li></ol><h2 id="monitoring">Az edzésterhelés figyelése és beállítása</h2><h3>Objektív mérőszámok</h3><p><strong>Kövesse ezeket napi/heti szinten:</strong></p><ol><li><strong>Nyugalmi pulzusszám (RHR):</strong><ul><li>Mérje ébredés után, mielőtt felkelne az ágyból</li><li>Kövesse a 7 napos gördülő átlagot</li><li>Az 5-10 bpm emelkedés hiányos regenerációra utal</li><li>A tartós emelkedés (&gt;1 hét) túledzési kockázatot jelez</li></ul></li><li><strong>Pulzusvariabilitás (HRV):</strong><ul><li>Magasabb HRV = jobb regeneráció és készenlét</li><li>&gt;10%-os csökkenés az alapértéktől = csökkent készenlét</li><li>Használjon szakalkalmazást vagy okosgyűrűt</li></ul></li><li><strong>Peak-30 kadencia:</strong><ul><li>Kövesse naponta az intenzitásfenntartó képesség felméréséhez</li><li>A csökkenő trend felhalmozódott fáradtságot jelezhet</li><li>Használja az edzéskészenlét mutatójaként</li></ul></li><li><strong>Gyaloglási sebesség standard erőfeszítésnél:</strong><ul><li>Havi teszt: 20-30 perc azonos észlelt erőfeszítés mellett</li><li>A javuló sebesség azonos erőfeszítésnél = pozitív alkalmazkodás</li><li>Csökkenő sebesség = hiányos regeneráció vagy túledzés</li></ul></li></ol><h3>Szubjektív mérőszámok</h3><p><strong>Napi jólléti kérdőív (mindegyik 1-5 pont):</strong></p><ol><li><strong>Alvásminőség:</strong> 1 = borzalmas, 5 = kiváló</li><li><strong>Fáradtsági szint:</strong> 1 = kimerült, 5 = energikus</li><li><strong>Izomláz:</strong> 1 = nagyon erős, 5 = nincs</li><li><strong>Hangulat/motiváció:</strong> 1 = rossz, 5 = remek</li><li><strong>Stressz-szint:</strong> 1 = nagyon magas, 5 = nagyon alacsony</li></ol><p><strong>A jólléti pontszám értelmezése:</strong></p><ul><li><strong>20-25:</strong> Kiváló készenlét, folytassa a tervezett edzést</li><li><strong>15-19:</strong> Jó készenlét, edzés terv szerint vagy enyhén csökkentve</li><li><strong>10-14:</strong> Mérsékelt aggályok, fontoljon meg egy könnyebb napot</li><li><strong>5-9:</strong> Gyenge készenlét, tegye a napot nagyon könnyűvé vagy pihenjen</li></ul><h3>A megfelelő edzésterhelés jelei</h3><ul><li>Energikusnak és motiváltnak érzi magát a legtöbb sétánál</li><li>Fokozatos teljesítményjavulás hetek/hónapok alatt</li><li>Konzisztens alvásminőség (7-9 óra, pihenten ébredés)</li><li>Stabil vagy javuló nyugalmi pulzusszám</li><li>Minimális izomláz az edzés utáni 24-48 órán túl</li><li>Lelkesedés fenntartása a gyalogláshoz</li><li>Képes a célpace-eket/kadenciákat következetesen hozni</li></ul><h3>A túlzott edzésterhelés figyelmeztető jelei</h3><ul><li><strong>Teljesítmény:</strong> Csökkenő sebesség, képtelenség a célkadencia elérésére, megnövekedett
+            észlelt erőfeszítés</li><li><strong>Fiziológia:</strong> Emelkedett RHR (5-10+ bpm felett), csökkent HRV, tartós fáradtság pihenés
+            ellenére is</li><li><strong>Vázizomrendszer:</strong> Tartós izomláz, apró fájdalmak, gyakoribb sérülések</li><li><strong>Pszichológia:</strong> Motivációvesztés, ingerlékenység, hangulatzavarok, koncentrációs nehézségek
+          </li><li><strong>Alvás:</strong> Elalvási nehézségek, gyakori ébredés, nem pihentető alvás</li><li><strong>Immunrendszer:</strong> Gyakori megfázások vagy fertőzések, kisebb sérülések lassú gyógyulása</li></ul><p><strong>Akcióterv figyelmeztető jelek esetén:</strong></p><ol><li>Azonnal csökkentse az edzésterhelést 30-50%-kal</li><li>Csak könnyű, élvezetes sétákra koncentráljon</li><li>Priorizálja az alvást (célozzon meg 8-9 órát)</li><li>Tekintse át a táplálkozást és a hidratáltságot</li><li>Vegye figyelembe a nem edzés jellegű stresszt (munka, magánélet)</li><li>Ha a tünetek 1 hétnél tovább fennállnak, forduljon orvoshoz</li></ol><h2 id="intensity">Intenzitás-eloszlási modellek</h2><p>Az edzésintenzitás heti elosztása jelentősen befolyásolja az alkalmazkodást és a teljesítményt. Két fő
+          modellt alkalmazunk:</p><h3>Polarizált edzés (80/20-as modell)</h3><p>A <strong>80/20-as modell</strong> az edzésidőt két véglet között osztja meg, minimális közepes
+          intenzitással:</p><ul><li><strong>80% könnyű (1-2. zóna):</strong> 95-105 lépés/perc, beszélgetős tempó</li><li><strong>0-5% közepes (3. zóna):</strong> Minimális idő 110-120 lépés/perc mellett</li><li><strong>15-20% nehéz (4-5. zóna):</strong> 120+ lépés/perces intervallumok és tempó</li></ul><p><strong>Érvek:</strong> Maximalizálja az aerob fejlődést (könnyű volumen), miközben nagy intenzitású ingert
           biztosít a teljesítményhez anélkül, hogy a túlzott közepes intenzitású munka miatti fáradtság felhalmozódna.
-        </p>
-
-        <p><strong>Kinek ajánlott:</strong> Haladó gyaloglóknak, versenygyaloglóknak, teljesítményorientált edzéshez</p>
-
-        <h3>Piramis edzés (60/30/10-es modell)</h3>
-
-        <p>A <strong>piramis modell</strong> az intenzitást minden zónában elosztja:</p>
-
-        <ul>
-          <li><strong>60-70% könnyű (1-2. zóna):</strong> Alapvető aerob fejlődés</li>
-          <li><strong>20-30% közepes (3. zóna):</strong> Tempó és tartós tempós munka</li>
-          <li><strong>10% nehéz (4-5. zóna):</strong> Nagy intenzitású intervallumok</li>
-        </ul>
-
-        <p><strong>Érvek:</strong> Fokozatosabb intenzitásnövekedés, jobb a közepes intenzitású kapacitás fejlesztésére,
-          könnyebb belőle regenerálódni.</p>
-
-        <p><strong>Kinek ajánlott:</strong> Kezdőtől a középhaladóig, egészségfókuszú edzéshez, sérülésre hajlamosaknak
-        </p>
-
-        <div class="key-finding">
-          <strong>Kutatási felismerés:</strong> Az elit állóképességi sportolók következetesen a polarizált edzést
+        </p><p><strong>Kinek ajánlott:</strong> Haladó gyaloglóknak, versenygyaloglóknak, teljesítményorientált edzéshez</p><h3>Piramis edzés (60/30/10-es modell)</h3><p>A <strong>piramis modell</strong> az intenzitást minden zónában elosztja:</p><ul><li><strong>60-70% könnyű (1-2. zóna):</strong> Alapvető aerob fejlődés</li><li><strong>20-30% közepes (3. zóna):</strong> Tempó és tartós tempós munka</li><li><strong>10% nehéz (4-5. zóna):</strong> Nagy intenzitású intervallumok</li></ul><p><strong>Érvek:</strong> Fokozatosabb intenzitásnövekedés, jobb a közepes intenzitású kapacitás fejlesztésére,
+          könnyebb belőle regenerálódni.</p><p><strong>Kinek ajánlott:</strong> Kezdőtől a középhaladóig, egészségfókuszú edzéshez, sérülésre hajlamosaknak
+        </p><div class="key-finding"><strong>Kutatási felismerés:</strong> Az elit állóképességi sportolók következetesen a polarizált edzést
           alkalmazzák. Azonban az egészség és a fitnesz célok eléréséhez a piramismodellek kiváló eredményeket hoznak
           alacsonyabb sérülésveszély mellett (Stöggl & Sperlich, 2014).
-        </div>
-
-        <!-- Recovery Strategies -->
-        <h2 id="recovery">Regenerációs és alkalmazkodási stratégiák</h2>
-
-        <p>Az edzésingerek csak megfelelő regenerációval párosítva váltanak ki alkalmazkodást. Regeneráció nélkül az
-          edzésterhelés csak edzésstresszé válik hasznosulás nélkül.</p>
-
-        <h3>Aktív regenerációs technikák</h3>
-
-        <ol>
-          <li>
-            <strong>Könnyű séták (60-90 lépés/perc):</strong>
-            <ul>
-              <li>20-30 perc nagyon alacsony intenzitáson</li>
-              <li>Elősegíti a véráramlást extra stressz nélkül</li>
-              <li>Pszichológiai előnyt jelent a mozgás</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Kiegészítő sportok (cross-training):</strong>
-            <ul>
-              <li>Úszás, kerékpározás, jóga, tai chi</li>
-              <li>Az eltérő mozgásminták csökkentik az ismétlődő stresszt</li>
-              <li>Változatosan tartja fenn az edzettséget</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Dinamikus nyújtás és mobilitás:</strong>
-            <ul>
-              <li>Napi 15-20 perc</li>
-              <li>Fókusz a csípőn, bokán, vádlin, combhajlítókon</li>
-              <li>Fenntartja a mozgástartományt a hatékony járáshoz</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Passzív regenerációs technikák</h3>
-
-        <ol>
-          <li>
-            <strong>Alvás optimalizálása:</strong>
-            <ul>
-              <li>7-9 óra éjszakánként felnőtteknek</li>
-              <li>Konzisztens alvási és ébredési idő</li>
-              <li>Hűvös, sötét szoba (16-19°C)</li>
-              <li>Képernyők hanyagolása 1 órával lefekvés előtt</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Táplálkozás a regenerációért:</strong>
-            <ul>
-              <li>Fehérje: Napi 1,2-1,6 g/testsúlykilogramm</li>
-              <li>Szénhidrát: Megfelelő mennyiség a glikogénpótláshoz (3-5 g/kg)</li>
-              <li>Hidratálás: Figyelje a vizelet színét (világossárga)</li>
-              <li>Gyulladáscsökkentő ételek: Bogyós gyümölcsök, zsíros halak, leveles zöldek</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Masszázs és miofasciális lazítás:</strong>
-            <ul>
-              <li>Hengerlés (SMR) 10-15 percig séta után</li>
-              <li>Fókusz a vádlin, a comb külső oldalán, a csípőhajlítókon, a farizmokon</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Mentális regeneráció</h3>
-
-        <ul>
-          <li><strong>Változatosság:</strong> Váltogassa az útvonalakat, a terepet a monotónia ellen</li>
-          <li><strong>Társasági séták:</strong> Sétáljon barátokkal az élvezetért</li>
-          <li><strong>Mindfulness:</strong> Gyakorolja a jelenlét tudatosságát a könnyű séták során</li>
-          <li><strong>Deload hetek:</strong> Mentális szünet a kötött edzéstől 3-4 hetente</li>
-          <li><strong>Szezonon kívüli időszak:</strong> Évente 2-4 hét minimális kötött gyaloglással</li>
-        </ul>
-
-        <!-- Advanced Concepts -->
-        <h2 id="advanced">Haladó edzésterhelési fogalmak</h2>
-
-        <h3>Edzésimpulzus (TRIMP)</h3>
-
-        <p>A <strong>TRIMP</strong> (Training Impulse) a pulzusadatokat használja a terhelés számszerűsítésére,
-          exponenciális súlyozással a magasabb intenzitásokra.</p>
-
-        <div class="formula-box">
-          <pre>TRIMP = Időtartam (perc) × ΔHR arány × 0,64e^(1,92 × ΔHR arány)
+        </div><h2 id="recovery">Regenerációs és alkalmazkodási stratégiák</h2><p>Az edzésingerek csak megfelelő regenerációval párosítva váltanak ki alkalmazkodást. Regeneráció nélkül az
+          edzésterhelés csak edzésstresszé válik hasznosulás nélkül.</p><h3>Aktív regenerációs technikák</h3><ol><li><strong>Könnyű séták (60-90 lépés/perc):</strong><ul><li>20-30 perc nagyon alacsony intenzitáson</li><li>Elősegíti a véráramlást extra stressz nélkül</li><li>Pszichológiai előnyt jelent a mozgás</li></ul></li><li><strong>Kiegészítő sportok (cross-training):</strong><ul><li>Úszás, kerékpározás, jóga, tai chi</li><li>Az eltérő mozgásminták csökkentik az ismétlődő stresszt</li><li>Változatosan tartja fenn az edzettséget</li></ul></li><li><strong>Dinamikus nyújtás és mobilitás:</strong><ul><li>Napi 15-20 perc</li><li>Fókusz a csípőn, bokán, vádlin, combhajlítókon</li><li>Fenntartja a mozgástartományt a hatékony járáshoz</li></ul></li></ol><h3>Passzív regenerációs technikák</h3><ol><li><strong>Alvás optimalizálása:</strong><ul><li>7-9 óra éjszakánként felnőtteknek</li><li>Konzisztens alvási és ébredési idő</li><li>Hűvös, sötét szoba (16-19°C)</li><li>Képernyők hanyagolása 1 órával lefekvés előtt</li></ul></li><li><strong>Táplálkozás a regenerációért:</strong><ul><li>Fehérje: Napi 1,2-1,6 g/testsúlykilogramm</li><li>Szénhidrát: Megfelelő mennyiség a glikogénpótláshoz (3-5 g/kg)</li><li>Hidratálás: Figyelje a vizelet színét (világossárga)</li><li>Gyulladáscsökkentő ételek: Bogyós gyümölcsök, zsíros halak, leveles zöldek</li></ul></li><li><strong>Masszázs és miofasciális lazítás:</strong><ul><li>Hengerlés (SMR) 10-15 percig séta után</li><li>Fókusz a vádlin, a comb külső oldalán, a csípőhajlítókon, a farizmokon</li></ul></li></ol><h3>Mentális regeneráció</h3><ul><li><strong>Változatosság:</strong> Váltogassa az útvonalakat, a terepet a monotónia ellen</li><li><strong>Társasági séták:</strong> Sétáljon barátokkal az élvezetért</li><li><strong>Mindfulness:</strong> Gyakorolja a jelenlét tudatosságát a könnyű séták során</li><li><strong>Deload hetek:</strong> Mentális szünet a kötött edzéstől 3-4 hetente</li><li><strong>Szezonon kívüli időszak:</strong> Évente 2-4 hét minimális kötött gyaloglással</li></ul><h2 id="advanced">Haladó edzésterhelési fogalmak</h2><h3>Edzésimpulzus (TRIMP)</h3><p>A <strong>TRIMP</strong> (Training Impulse) a pulzusadatokat használja a terhelés számszerűsítésére,
+          exponenciális súlyozással a magasabb intenzitásokra.</p><div class="formula-box"><pre>TRIMP = Időtartam (perc) × ΔHR arány × 0,64e^(1,92 × ΔHR arány)
 
 Ahol:
-  ΔHR arány = (Átlagpulzus - Nyugalmi pulzus) / (Max pulzus - Nyugalmi pulzus)</pre>
-        </div>
-
-        <h3>Fitnesz-Fáradtság modell</h3>
-
-        <p>Az edzés két ellentétes hatást vált ki:</p>
-
-        <ul>
-          <li><strong>Fitnesz:</strong> Lassan épülő, lassan elapadó pozitív alkalmazkodás (42 napos időállandó)</li>
-          <li><strong>Fáradtság:</strong> Gyorsan felépülő, gyorsan elapadó negatív hatás (7 napos időállandó)</li>
-        </ul>
-
-        <p><strong>Teljesítmény = Fitnesz - Fáradtság</strong></p>
-
-        <h3>Krónikus edzésterhelés (CTL) és forma</h3>
-
-        <ul>
-          <li><strong>CTL (Krónikus edzésterhelés):</strong> A napi WSS 42 napos exponenciálisan súlyozott átlaga — a
-            fitneszt jelképezi</li>
-          <li><strong>ATL (Akut edzésterhelés):</strong> A napi WSS 7 napos exponenciálisan súlyozott átlaga — a
-            fáradtságot jelképezi</li>
-          <li><strong>TSB (Edzési stresszegyensúly):</strong> CTL - ATL — a formát/frissességet jelképezi</li>
-        </ul>
-
-        <!-- Practical Application -->
-        <h2 id="practical">Gyakorlati edzésterhelés-management</h2>
-
-        <h3>Heti tervezési sablon</h3>
-
-        <ol>
-          <li><strong>1-2 minőségi edzés:</strong> Intervallum, tempó vagy verseny-tempójú munka</li>
-          <li><strong>1 hosszú séta:</strong> 60-120 perc könnyű-közepes tempóban</li>
-          <li><strong>3-4 könnyű séta:</strong> Regeneráció és volumen gyűjtése</li>
-          <li><strong>1 pihenőnap:</strong> Teljes pihenés vagy nagyon kíméletes mozgás</li>
-        </ol>
-
-        <p><strong>Példa középhaladó hétre (Cél: 420 WSS körül):</strong></p>
-
-        <div class="data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Nap</th>
-                <th>Edzés</th>
-                <th>Időtartam</th>
-                <th>Intenzitás</th>
-                <th>WSS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Hétfő</td>
-                <td>Folyamatos séta</td>
-                <td>45 perc</td>
-                <td>105 lépés/perc (2. zóna)</td>
-                <td>90</td>
-              </tr>
-              <tr>
-                <td>Kedd</td>
-                <td>Könnyű regeneráció</td>
-                <td>30 perc</td>
-                <td>95 lépés/perc (1. zóna)</td>
-                <td>40</td>
-              </tr>
-              <tr>
-                <td>Szerda</td>
-                <td><strong>Intervallum</strong></td>
-                <td>Összesen 50 perc</td>
-                <td>5×5 perc @ 120 lépés/perc</td>
-                <td>140</td>
-              </tr>
-              <tr>
-                <td>Csütörtök</td>
-                <td>Könnyű séta</td>
-                <td>35 perc</td>
-                <td>100 lépés/perc (2. zóna)</td>
-                <td>55</td>
-              </tr>
-              <tr>
-                <td>Péntek</td>
-                <td>Pihenőnap</td>
-                <td>—</td>
-                <td>—</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Szombat</td>
-                <td><strong>Hosszú séta</strong></td>
-                <td>75 perc</td>
-                <td>105 lépés/perc (2. zóna)</td>
-                <td>150</td>
-              </tr>
-              <tr>
-                <td>Vasárnap</td>
-                <td>Könnyű regeneráció</td>
-                <td>30 perc</td>
-                <td>95 lépés/perc (1. zóna)</td>
-                <td>40</td>
-              </tr>
-              <tr>
-                <td colspan="4"><strong>Heti összesített</strong></td>
-                <td><strong>515 WSS</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Summary -->
-        <h2 id="summary">Összegzés: Kulcsfontosságú edzésterhelési elvek</h2>
-
-        <div class="key-finding">
-          <strong>Az edzésterhelés-kezelés öt pillére:</strong>
-          <ol>
-            <li><strong>Mérje a terhelést:</strong> Használja a WSS-t, a tempós perceket vagy a TRIMP-et az ingerek
-              követésére</li>
-            <li><strong>Fokozatosan fejlődjön:</strong> Heti 5-10%-os emelés, 3:1 arányú építő:regeneráló felépítéssel
-            </li>
-            <li><strong>Figyelje az ACWR-t:</strong> Tartsa az akut:krónikus arányt 0,80-1,30 között a sérülések
-              minimalizálására</li>
-            <li><strong>Priorizálja a regenerációt:</strong> Edzés + Regeneráció = Alkalmazkodás (bármelyik hiánya
-              akadályozza a fejlődést)</li>
-            <li><strong>Egyénre szabás:</strong> Állítsa be objektív (RHR, HRV, teljesítmény) és szubjektív szempontok
-              alapján</li>
-          </ol>
-        </div>
-
-        <!-- Calculator and Tools -->
-        <h2 id="calculating">Számítsa ki edzésterhelését</h2>
-
-        <p>Használja ingyenes kalkulátorainkat az edzésterhelése meghatározásához:</p>
-
-        <ul>
-          <li><a href="/hu/wss-calculator/"><strong>WSS kalkulátor</strong></a> — Számítsa ki az egyes edzések
+  ΔHR arány = (Átlagpulzus - Nyugalmi pulzus) / (Max pulzus - Nyugalmi pulzus)</pre></div><h3>Fitnesz-Fáradtság modell</h3><p>Az edzés két ellentétes hatást vált ki:</p><ul><li><strong>Fitnesz:</strong> Lassan épülő, lassan elapadó pozitív alkalmazkodás (42 napos időállandó)</li><li><strong>Fáradtság:</strong> Gyorsan felépülő, gyorsan elapadó negatív hatás (7 napos időállandó)</li></ul><p><strong>Teljesítmény = Fitnesz - Fáradtság</strong></p><h3>Krónikus edzésterhelés (CTL) és forma</h3><ul><li><strong>CTL (Krónikus edzésterhelés):</strong> A napi WSS 42 napos exponenciálisan súlyozott átlaga — a
+            fitneszt jelképezi</li><li><strong>ATL (Akut edzésterhelés):</strong> A napi WSS 7 napos exponenciálisan súlyozott átlaga — a
+            fáradtságot jelképezi</li><li><strong>TSB (Edzési stresszegyensúly):</strong> CTL - ATL — a formát/frissességet jelképezi</li></ul><h2 id="practical">Gyakorlati edzésterhelés-management</h2><h3>Heti tervezési sablon</h3><ol><li><strong>1-2 minőségi edzés:</strong> Intervallum, tempó vagy verseny-tempójú munka</li><li><strong>1 hosszú séta:</strong> 60-120 perc könnyű-közepes tempóban</li><li><strong>3-4 könnyű séta:</strong> Regeneráció és volumen gyűjtése</li><li><strong>1 pihenőnap:</strong> Teljes pihenés vagy nagyon kíméletes mozgás</li></ol><p><strong>Példa középhaladó hétre (Cél: 420 WSS körül):</strong></p><div class="data-table"><table><thead><tr><th>Nap</th><th>Edzés</th><th>Időtartam</th><th>Intenzitás</th><th>WSS</th></tr></thead><tbody><tr><td>Hétfő</td><td>Folyamatos séta</td><td>45 perc</td><td>105 lépés/perc (2. zóna)</td><td>90</td></tr><tr><td>Kedd</td><td>Könnyű regeneráció</td><td>30 perc</td><td>95 lépés/perc (1. zóna)</td><td>40</td></tr><tr><td>Szerda</td><td><strong>Intervallum</strong></td><td>Összesen 50 perc</td><td>5×5 perc @ 120 lépés/perc</td><td>140</td></tr><tr><td>Csütörtök</td><td>Könnyű séta</td><td>35 perc</td><td>100 lépés/perc (2. zóna)</td><td>55</td></tr><tr><td>Péntek</td><td>Pihenőnap</td><td>—</td><td>—</td><td>0</td></tr><tr><td>Szombat</td><td><strong>Hosszú séta</strong></td><td>75 perc</td><td>105 lépés/perc (2. zóna)</td><td>150</td></tr><tr><td>Vasárnap</td><td>Könnyű regeneráció</td><td>30 perc</td><td>95 lépés/perc (1. zóna)</td><td>40</td></tr><tr><td colspan="4"><strong>Heti összesített</strong></td><td><strong>515 WSS</strong></td></tr></tbody></table></div><h2 id="summary">Összegzés: Kulcsfontosságú edzésterhelési elvek</h2><div class="key-finding"><strong>Az edzésterhelés-kezelés öt pillére:</strong><ol><li><strong>Mérje a terhelést:</strong> Használja a WSS-t, a tempós perceket vagy a TRIMP-et az ingerek
+              követésére</li><li><strong>Fokozatosan fejlődjön:</strong> Heti 5-10%-os emelés, 3:1 arányú építő:regeneráló felépítéssel
+            </li><li><strong>Figyelje az ACWR-t:</strong> Tartsa az akut:krónikus arányt 0,80-1,30 között a sérülések
+              minimalizálására</li><li><strong>Priorizálja a regenerációt:</strong> Edzés + Regeneráció = Alkalmazkodás (bármelyik hiánya
+              akadályozza a fejlődést)</li><li><strong>Egyénre szabás:</strong> Állítsa be objektív (RHR, HRV, teljesítmény) és szubjektív szempontok
+              alapján</li></ol></div><h2 id="calculating">Számítsa ki edzésterhelését</h2><p>Használja ingyenes kalkulátorainkat az edzésterhelése meghatározásához:</p><ul><li><a href="/hu/wss-calculator/"><strong>WSS kalkulátor</strong></a> — Számítsa ki az egyes edzések
             stresszpontszámát</li>
             progresszív terveket</li>
-            arányt a sérülésmegelőzéshez</li>
-        </ul>
-
-        <!-- Scientific References -->
-        <h2 id="references">Tudományos referenciák</h2>
-
-        <p>Ez az útmutató az edzésfiziológia, a sporttudomány és a specifikus gyaloglási tanulmányok eredményeit
-          összegzi:</p>
-
-        <ul>
-          <li><strong>Del Pozo-Cruz B, et al. (2022).</strong> "Association of Daily Step Count and Intensity With
-            Incident Cardiovascular Disease." <em>JAMA Network Open</em>. [Peak-30 kadencia kutatás]</li>
-          <li><strong>Gabbett TJ. (2016).</strong> "The training-injury prevention paradox." <em>British Journal of
-              Sports Medicine</em>. [ACWR és sérülésveszély]</li>
-          <li><strong>Stöggl TL, Sperlich B. (2014).</strong> "Polarized training has greater impact on key endurance
+            arányt a sérülésmegelőzéshez</li></ul><h2 id="references">Tudományos referenciák</h2><p>Ez az útmutató az edzésfiziológia, a sporttudomány és a specifikus gyaloglási tanulmányok eredményeit
+          összegzi:</p><ul><li><strong>Del Pozo-Cruz B, et al. (2022).</strong> "Association of Daily Step Count and Intensity With
+            Incident Cardiovascular Disease." <em>JAMA Network Open</em>. [Peak-30 kadencia kutatás]</li><li><strong>Gabbett TJ. (2016).</strong> "The training-injury prevention paradox." <em>British Journal of
+              Sports Medicine</em>. [ACWR és sérülésveszély]</li><li><strong>Stöggl TL, Sperlich B. (2014).</strong> "Polarized training has greater impact on key endurance
             variables than threshold, high intensity, or high volume training." <em>Frontiers in Physiology</em>.
-            [Intenzitás eloszlás]</li>
-          <li><strong>Banister EW. (1991).</strong> "Modeling elite athletic performance." [Fitnesz-fáradtság modell,
-            TRIMP]</li>
-          <li><strong>Tudor-Locke C, et al. (2019).</strong> "Walking cadence (steps/min) and intensity in 21-40 year
-            olds: CADENCE-adults." [Kadencia küszöbértékek]</li>
-        </ul>
-
-        <p><strong>További kutatások:</strong></p>
-        <ul>
-          <li><a href="/hu/bibliography/">Teljes tudományos bibliográfia</a></li>
-          <li><a href="/hu/research/">Legfrissebb gyaloglási kutatások</a></li>
-        </ul>
-
-        <!-- Next Steps -->
-        <h2 id="next-steps">Következő lépések</h2>
-
-        <ul>
-          <li><a href="/hu/walking-zones/">Tanuljon a kadenciaalapú edzészónákról</a></li>
-          <li><a href="/hu/formulas/">Fedezze fel az edzésterhelési képleteket és számításokat</a></li>
-          <li><a href="/hu/gait-analysis/">Ismerje meg a nyomon követéshez szükséges járási mutatókat</a></li>
-          <li><a href="/hu/stride-mechanics/">Optimalizálja a gyalogló biomechanikáját</a></li>
-        </ul>
-
-      </div>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>Tartalomjegyzék</h3>
-          <ul>
-            <li><a href="#intro">Mi az az edzésterhelés?</a></li>
-            <li><a href="#peak30">Peak-30 kadencia</a></li>
-            <li><a href="#brisk-bouts">Tempós szakaszok</a></li>
-            <li><a href="#wss">Edzési stresszpontszám (WSS)</a></li>
-            <li><a href="#weekly-load">Heti irányelvek</a></li>
-            <li><a href="#acwr">Akut-krónikus arány</a></li>
-            <li><a href="#progression">Progressziós stratégiák</a></li>
-            <li><a href="#monitoring">Terhelés figyelése</a></li>
-            <li><a href="#intensity">Intenzitás eloszlása</a></li>
-            <li><a href="#recovery">Regenerációs stratégiák</a></li>
-            <li><a href="#advanced">Haladó fogalmak</a></li>
-            <li><a href="#practical">Gyakorlati alkalmazás</a></li>
-            <li><a href="#summary">Összegzés</a></li>
-            <li><a href="#calculating">Kalkulátorok</a></li>
-            <li><a href="#references">Referenciák</a></li>
-          </ul>
-        </div>
-
-        <div class="cta-box">
-          <h3>Kövesse a terhelését</h3>
-          <p>Kövesse a WSS-t, a Peak-30 kadenciát és az ACWR-t automatikusan a Walk Analytics segítségével.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Alkalmazás
-            letöltése</a>
-        </div>
-
-        <div class="tip-box">
-          <h4>💡 Gyors tipp</h4>
-          <p>Kezdje el ma követni a Peak-30 kadenciáját! Törekedjen ≥100 lépés/percre legalább 30 percen át az
-            egészségügyi előnyök eléréséhez.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+            [Intenzitás eloszlás]</li><li><strong>Banister EW. (1991).</strong> "Modeling elite athletic performance." [Fitnesz-fáradtság modell,
+            TRIMP]</li><li><strong>Tudor-Locke C, et al. (2019).</strong> "Walking cadence (steps/min) and intensity in 21-40 year
+            olds: CADENCE-adults." [Kadencia küszöbértékek]</li></ul><p><strong>További kutatások:</strong></p><ul><li><a href="/hu/bibliography/">Teljes tudományos bibliográfia</a></li><li><a href="/hu/research/">Legfrissebb gyaloglási kutatások</a></li></ul><h2 id="next-steps">Következő lépések</h2><ul><li><a href="/hu/walking-zones/">Tanuljon a kadenciaalapú edzészónákról</a></li><li><a href="/hu/formulas/">Fedezze fel az edzésterhelési képleteket és számításokat</a></li><li><a href="/hu/gait-analysis/">Ismerje meg a nyomon követéshez szükséges járási mutatókat</a></li><li><a href="/hu/stride-mechanics/">Optimalizálja a gyalogló biomechanikáját</a></li></ul></div><aside class="sidebar"><div class="toc"><h3>Tartalomjegyzék</h3><ul><li><a href="#intro">Mi az az edzésterhelés?</a></li><li><a href="#peak30">Peak-30 kadencia</a></li><li><a href="#brisk-bouts">Tempós szakaszok</a></li><li><a href="#wss">Edzési stresszpontszám (WSS)</a></li><li><a href="#weekly-load">Heti irányelvek</a></li><li><a href="#acwr">Akut-krónikus arány</a></li><li><a href="#progression">Progressziós stratégiák</a></li><li><a href="#monitoring">Terhelés figyelése</a></li><li><a href="#intensity">Intenzitás eloszlása</a></li><li><a href="#recovery">Regenerációs stratégiák</a></li><li><a href="#advanced">Haladó fogalmak</a></li><li><a href="#practical">Gyakorlati alkalmazás</a></li><li><a href="#summary">Összegzés</a></li><li><a href="#calculating">Kalkulátorok</a></li><li><a href="#references">Referenciák</a></li></ul></div><div class="cta-box"><h3>Kövesse a terhelését</h3><p>Kövesse a WSS-t, a Peak-30 kadenciát és az ACWR-t automatikusan a Walk Analytics segítségével.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Alkalmazás
+            letöltése</a></div><div class="tip-box"><h4>💡 Gyors tipp</h4><p>Kezdje el ma követni a Peak-30 kadenciáját! Törekedjen ≥100 lépés/percre legalább 30 percen át az
+            egészségügyi előnyök eléréséhez.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link active"
+                </a><a href="/hu/" class="lang-link active"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. All rights reserved
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/hu/privacy/">Privacy</a></li>
-                <li><a href="/hu/terms/">Terms</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>This website uses cookies to improve your experience.</p>
-            <a href="/hu/privacy/" class="text-sm">Learn more</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Decline</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Accept</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/hu/privacy/">Privacy</a></li><li><a href="/hu/terms/">Terms</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>This website uses cookies to improve your experience.</p><a href="/hu/privacy/" class="text-sm">Learn more</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Decline</button><button id="cookie-accept" class="btn btn-primary btn-small">Accept</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

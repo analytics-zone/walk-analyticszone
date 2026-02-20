@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Fórmulas Métricas Caminar - Cómo se Calculan WSS, Marcha y Métricas</title>
-  <meta name="description" content="Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="fórmulas caminar, fórmula WSS, cálculo métricas marcha, fórmulas ciencia caminar, cálculo zancada">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/es/formulas/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-12-31T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/es/formulas/">
-  <meta property="og:title" content="Fórmulas Métricas Caminar - Cómo se Calculan WSS, Marcha y Métricas">
-  <meta property="og:description" content="Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/es/formulas/">
-  <meta name="twitter:title" content="Fórmulas Métricas Caminar - Cómo se Calculan WSS, Marcha y Métricas">
-  <meta name="twitter:description" content="Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="es" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Fórmulas Métricas Caminar - Cómo se Calculan WSS, Marcha y Métricas</title><meta name="description" content="Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="fórmulas caminar, fórmula WSS, cálculo métricas marcha, fórmulas ciencia caminar, cálculo zancada"><link rel="canonical" href="https://walk.analyticszone.app/es/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-31T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/es/formulas/"><meta property="og:title" content="Fórmulas Métricas Caminar - Cómo se Calculan WSS, Marcha y Métricas"><meta property="og:description" content="Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/es/formulas/"><meta name="twitter:title" content="Fórmulas Métricas Caminar - Cómo se Calculan WSS, Marcha y Métricas"><meta name="twitter:description" content="Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "es"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,11 +402,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -624,11 +410,7 @@ img[width][height] {
   "description": "Fórmulas matemáticas detrás analítica caminar. Aprende cómo se calculan WSS, métricas zancada, cadencia y puntuaciones eficiencia. Metodología basada ciencia.",
   "url": "https://walk.analyticszone.app/es/formulas/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/es/formulas/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1570 +449,365 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">Saltar al contenido</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/es/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/es/" 
+  </script></head><body><a href="#main-content" class="skip-link">Saltar al contenido</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/es/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/es/" 
                                 aria-current="">
                                 Inicio
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/es/getting-started/" class="nav-label">Aprende</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/es/getting-started/" 
+                            </a></li><li class="has-submenu" ><a href="/es/getting-started/" class="nav-label">Aprende</a><ul class="submenu"><li><a href="/es/getting-started/" 
                                         aria-current="">
                                         Comenzar
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/walking-zones/" 
+                                    </a></li><li><a href="/es/walking-zones/" 
                                         aria-current="">
                                         Zonas
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/gait-analysis/" 
+                                    </a></li><li><a href="/es/gait-analysis/" 
                                         aria-current="">
                                         Análisis de la Marcha
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/training-load/" 
+                                    </a></li><li><a href="/es/training-load/" 
                                         aria-current="">
                                         Carga
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/wss-calculator/" 
+                                    </a></li><li><a href="/es/wss-calculator/" 
                                         aria-current="">
                                         Calculadora WSS
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/es/research/" class="nav-label">Ciencia</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/es/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/es/research/" class="nav-label">Ciencia</a><ul class="submenu"><li><a href="/es/research/" 
                                         aria-current="">
                                         Investigación
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/formulas/" class="active" 
+                                    </a></li><li><a href="/es/formulas/" class="active" 
                                         aria-current="page">
                                         Fórmulas
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/gait-efficiency/" 
+                                    </a></li><li><a href="/es/gait-efficiency/" 
                                         aria-current="">
                                         Eficiencia
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/stride-mechanics/" 
+                                    </a></li><li><a href="/es/stride-mechanics/" 
                                         aria-current="">
                                         Mecánica
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/walking-vs-running/" 
+                                    </a></li><li><a href="/es/walking-vs-running/" 
                                         aria-current="">
                                         Caminar vs Correr
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/benchmarks/" 
+                                    </a></li><li><a href="/es/benchmarks/" 
                                         aria-current="">
                                         Referencias de Rendimiento
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/bibliography/" 
+                                    </a></li><li><a href="/es/bibliography/" 
                                         aria-current="">
                                         Bibliografía
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/es/for-health/" class="nav-label">Para Ti</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/es/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/es/for-health/" class="nav-label">Para Ti</a><ul class="submenu"><li><a href="/es/for-health/" 
                                         aria-current="">
                                         Para Salud
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/for-fitness/" 
+                                    </a></li><li><a href="/es/for-fitness/" 
                                         aria-current="">
                                         Para Fitness
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/for-seniors/" 
+                                    </a></li><li><a href="/es/for-seniors/" 
                                         aria-current="">
                                         Para Adultos Mayores
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/for-rehabilitation/" 
+                                    </a></li><li><a href="/es/for-rehabilitation/" 
                                         aria-current="">
                                         Para Rehabilitación
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/es/cadence-calculator/" class="nav-label">Herramientas</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/es/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/es/cadence-calculator/" class="nav-label">Herramientas</a><ul class="submenu"><li><a href="/es/cadence-calculator/" 
                                         aria-current="">
                                         Calculadora de Cadencia
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/gait-assessment/" 
+                                    </a></li><li><a href="/es/gait-assessment/" 
                                         aria-current="">
                                         Evaluación de la Marcha
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/es/vo2max-calculator/" 
+                                    </a></li><li><a href="/es/vo2max-calculator/" 
                                         aria-current="">
                                         Calculadora de VO₂max
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/es/contact/" 
+                                    </a></li></ul></li><li><a href="/es/contact/" 
                                 aria-current="">
                                 Contacto
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Seleccionar idioma">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Seleccionar idioma"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" selected>
+                        </option><option value="es" selected>
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" >
+                        </option><option value="tl" >
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Alternar menú"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/es/">Inicio</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/es/research/">Ciencia</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">Fórmulas</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Fórmulas de Métricas de Caminar -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/es/">Inicio</a> / <a href="/es/#science">Ciencia</a> / Fórmulas
-    </div>
-    <h1>Fórmulas y Ecuaciones de Métricas de Caminar</h1>
-    <p class="lead">Fundamentos matemáticos de analítica de caminar – ecuaciones científicamente validadas para intensidad, energía y rendimiento</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <div class="intro-note">
-          <p>Esta página presenta fórmulas científicamente validadas utilizadas en analítica de caminar. Todas las ecuaciones están citadas con referencias de investigación y rangos de precisión validados.</p>
-        </div>
-
-        <h2 id="cadence-mets">1. Conversión de Cadencia a METs</h2>
-
-        <div class="formula-section featured">
-          <h3>Ecuación Metabólica Basada en Cadencia de Moore et al. (2021)</h3>
-
-          <div class="formula-box primary">
-            <p class="formula-title">Cadencia a METs</p>
-            <p class="formula-main"><strong>METs = 0,0219 × Cadencia (pasos/min) + 0,72</strong></p>
-            <p class="formula-meta">
-              <span class="accuracy">Precisión: ±0,5 METs</span>
-              <span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span>
-            </p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Por qué esta fórmula es importante:</strong> Esta ecuación es <strong>23-35% más precisa</strong> que las ecuaciones tradicionales basadas en velocidad del ACSM para caminar. Funciona porque la cadencia refleja directamente la frecuencia de movimiento y el gasto energético, mientras que la velocidad depende de la longitud de zancada variable.</p>
-          </div>
-
-          <h4>Ejemplos:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Caminando a 100 ppm:</strong></p>
-              <p class="example-calc">METs = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 METs</strong></p>
-              <p class="example-interpretation">≈ 3 METs = <strong>Umbral de intensidad moderada</strong> ✓</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Caminando a 110 ppm:</strong></p>
-              <p class="example-calc">METs = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 METs</strong></p>
-              <p class="example-interpretation">Intensidad moderada sólida</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Caminando a 120 ppm:</strong></p>
-              <p class="example-calc">METs = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 METs</strong></p>
-              <p class="example-interpretation">Intensidad moderada-vigorosa</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Caminando a 130 ppm:</strong></p>
-              <p class="example-calc">METs = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 METs</strong></p>
-              <p class="example-interpretation"><strong>Umbral de intensidad vigorosa</strong> (6 METs por medición directa CADENCE-Adults)</p>
-            </div>
-          </div>
-
-          <div class="formula-note">
-            <p><strong>Nota:</strong> El estudio CADENCE-Adults midió directamente que 130 ppm = 6 METs en condiciones de laboratorio controladas. La ecuación de Moore está diseñada para el rango 80-130 ppm y puede subestimar en cadencias muy altas.</p>
-          </div>
-
-          <h4>Datos de Validación:</h4>
-          <ul>
-            <li><strong>Muestra:</strong> 76 adultos de 21-40 años</li>
-            <li><strong>Método:</strong> Calorimetría indirecta (estándar de oro)</li>
-            <li><strong>Valor R²:</strong> 0,87 (excelente correlación)</li>
-            <li><strong>Error absoluto medio:</strong> 0,47 METs</li>
-            <li><strong>Rango aplicable:</strong> 80-130 pasos/min</li>
-          </ul>
-        </div>
-
-        <h2 id="acsm-vo2">2. Ecuaciones de VO₂ del ACSM para Caminar</h2>
-
-        <div class="formula-section">
-          <h3>Cálculos Metabólicos del ACSM</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Caminar en Plano (0% pendiente)</p>
-            <p class="formula-main"><strong>VO₂ (mL/kg/min) = 0,1 × Velocidad (m/min) + 3,5</strong></p>
-            <p class="formula-note">Velocidad en metros por minuto (multiplicar km/h por 16,67 o mph por 26,82)</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Caminar con Pendiente (inclinación/declive)</p>
-            <p class="formula-main"><strong>VO₂ = 0,1(Velocidad) + 1,8(Velocidad)(Pendiente) + 3,5</strong></p>
-            <p class="formula-note">Pendiente expresada como decimal (ej., 5% = 0,05)</p>
-          </div>
-
-          <h4>Ejemplos:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Caminando 5 km/h (83,3 m/min) en terreno plano:</strong></p>
-              <p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 mL/kg/min</strong></p>
-              <p class="example-conversion">Convertir a METs: 11,83 / 3,5 = <strong>3,38 METs</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Caminando 5 km/h en pendiente del 5%:</strong></p>
-              <p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p>
-              <p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 mL/kg/min</strong></p>
-              <p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 METs</strong></p>
-              <p class="example-interpretation">¡La inclinación aumenta la intensidad en ~64%!</p>
-            </div>
-          </div>
-
-          <div class="conversion-helper">
-            <h4>Conversiones de Velocidad:</h4>
-            <ul>
-              <li><strong>km/h a m/min:</strong> multiplicar por 16,67</li>
-              <li><strong>mph a m/min:</strong> multiplicar por 26,82</li>
-              <li><strong>m/s a m/min:</strong> multiplicar por 60</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="energy-expenditure">3. Gasto Energético y Quema de Calorías</h2>
-
-        <div class="formula-section">
-          <h3>Cálculo Preciso de Calorías</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Calorías por Minuto</p>
-            <p class="formula-main"><strong>Cal/min = (METs × 3,5 × Peso Corporal kg) / 200</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Calorías Totales para Sesión</p>
-            <p class="formula-main"><strong>Calorías Totales = Cal/min × Duración (minutos)</strong></p>
-          </div>
-
-          <h4>Ejemplos:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Persona de 70 kg caminando 100 ppm (3 METs) durante 45 minutos:</strong></p>
-              <p class="example-calc">Cal/min = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 cal/min</strong></p>
-              <p class="example-calc">Total = 3,675 × 45 = <strong>165,4 calorías</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Persona de 85 kg caminando 120 ppm (5 METs) durante 30 minutos:</strong></p>
-              <p class="example-calc">Cal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 cal/min</strong></p>
-              <p class="example-calc">Total = 7,44 × 30 = <strong>223,2 calorías</strong></p>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h4>¿Por Qué Esta Fórmula?</h4>
-            <p>Esta ecuación proviene de la definición de MET (Equivalente Metabólico de Tarea):</p>
-            <ul>
-              <li>1 MET = 3,5 mL O₂/kg/min (tasa metabólica en reposo)</li>
-              <li>1 litro de O₂ consumido ≈ 5 kcal quemadas</li>
-              <li>Convirtiendo: (METs × 3,5 × kg × 5) / 1000 = (METs × 3,5 × kg) / 200</li>
-            </ul>
-          </div>
-
-          <h3>Quema Neta de Calorías (Solo Ejercicio)</h3>
-          <div class="formula-box">
-            <p class="formula-title">Calorías Netas (excluyendo reposo)</p>
-            <p class="formula-main"><strong>Cal Netas/min = [(METs - 1) × 3,5 × Peso Corporal] / 200</strong></p>
-            <p class="formula-note">Resta 1 MET para excluir calorías que quemarías de todos modos en reposo</p>
-          </div>
-
-          <div class="calc-example">
-            <p class="example-input"><strong>70 kg, 3 METs, 45 min – Calorías netas:</strong></p>
-            <p class="example-calc">Netas = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3 calorías netas</strong></p>
-            <p class="example-interpretation">vs 165,4 calorías totales (55 calorías se habrían quemado en reposo)</p>
-          </div>
-        </div>
-
-        <h2 id="gait-symmetry">4. Índice de Simetría de Marcha (GSI)</h2>
-
-        <div class="formula-section">
-          <h3>Cuantificando Asimetría Izquierda-Derecha</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Índice de Simetría de Marcha</p>
-            <p class="formula-main"><strong>GSI (%) = |Derecha - Izquierda| / [0,5 × (Derecha + Izquierda)] × 100</strong></p>
-            <p class="formula-note">Se puede aplicar a longitud de zancada, tiempo de paso o tiempo de contacto</p>
-          </div>
-
-          <h4>Interpretación:</h4>
-          <ul>
-            <li><strong>&lt;2-3%:</strong> Marcha normal, simétrica</li>
-            <li><strong>3-5%:</strong> Asimetría leve</li>
-            <li><strong>5-10%:</strong> Asimetría moderada, monitorear</li>
-            <li><strong>&gt;10%:</strong> Clínicamente significativo, evaluar profesionalmente</li>
-          </ul>
-
-          <h4>Ejemplos:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>Tiempos de paso: Derecha = 520 ms, Izquierda = 480 ms</strong></p>
-              <p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p>
-              <p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asimetría</strong></p>
-              <p class="example-interpretation">Asimetría moderada – considerar fortalecer lado más débil</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>Longitudes de zancada: Derecha = 1,42 m, Izquierda = 1,38 m</strong></p>
-              <p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p>
-              <p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% asimetría</strong></p>
-              <p class="example-interpretation">Normal, rango saludable ✓</p>
-            </div>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>Nota Clínica:</strong> La Asimetría al Caminar de Apple HealthKit usa un cálculo ligeramente diferente (diferencia porcentual simple entre tiempos de paso) pero los umbrales de interpretación son similares.</p>
-          </div>
-        </div>
-
-        <h2 id="walk-score">5. Puntuación WALK (Métrica Propietaria de Walk Analytics)</h2>
-
-        <div class="formula-section">
-          <h3>Puntuación de Eficiencia de Caminar</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Puntuación WALK</p>
-            <p class="formula-main"><strong>Puntuación WALK = Tiempo (segundos) + Pasos por 100 metros</strong></p>
-            <p class="formula-note">Puntuación más baja = mejor eficiencia</p>
-          </div>
-
-          <h4>Cómo Funciona:</h4>
-          <p>La Puntuación WALK combina tiempo y conteo de pasos para cuantificar eficiencia de caminar. Un caminante que recorre 100m en 75 segundos con 140 pasos tiene una Puntuación WALK de 215. Mejorar velocidad O eficiencia de zancada reduce la puntuación.</p>
-
-          <h4>Ejemplos:</h4>
-          <div class="calculation-examples">
-            <div class="calc-example">
-              <p class="example-input"><strong>100m en 80 segundos, 120 pasos:</strong></p>
-              <p class="example-calc">Puntuación WALK = 80 + 120 = <strong>200</strong></p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100m en 70 segundos, 110 pasos:</strong></p>
-              <p class="example-calc">Puntuación WALK = 70 + 110 = <strong>180</strong></p>
-              <p class="example-interpretation">Mejor eficiencia a través de velocidad mejorada + zancada</p>
-            </div>
-
-            <div class="calc-example">
-              <p class="example-input"><strong>100m en 60 segundos, 130 pasos (marcha atlética):</strong></p>
-              <p class="example-calc">Puntuación WALK = 60 + 130 = <strong>190</strong></p>
-              <p class="example-interpretation">Rápido pero zancadas más cortas</p>
-            </div>
-          </div>
-
-          <h4>Rangos Típicos:</h4>
-          <ul>
-            <li><strong>&gt;250:</strong> Marcha lenta/ineficiente, posibles problemas de movilidad</li>
-            <li><strong>200-250:</strong> Caminante casual, eficiencia promedio</li>
-            <li><strong>170-200:</strong> Caminante de fitness, buena eficiencia</li>
-            <li><strong>150-170:</strong> Caminante avanzado, excelente eficiencia</li>
-            <li><strong>&lt;150:</strong> Nivel élite/marcha atlética</li>
-          </ul>
-
-          <div class="tip-box">
-            <p><strong>Entrenando con Puntuación WALK:</strong> Rastrea tu puntuación en el mismo recorrido de 100m semanalmente. Las mejoras muestran coordinación neuromuscular mejorada, fuerza y economía de caminar.</p>
-          </div>
-        </div>
-
-        <h2 id="basic-metrics">6. Métricas Básicas de Marcha</h2>
-
-        <div class="formula-section">
-          <h3>Cálculos Fundamentales</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Velocidad de Caminar</p>
-            <p class="formula-main"><strong>Velocidad (m/s) = Distancia (m) / Tiempo (s)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Cadencia desde Pasos Totales</p>
-            <p class="formula-main"><strong>Cadencia (ppm) = Pasos Totales / Tiempo (minutos)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Longitud de Zancada</p>
-            <p class="formula-main"><strong>Longitud de Zancada (m) = Distancia (m) / (Pasos / 2)</strong></p>
-            <p class="formula-note">Dividir pasos por 2 porque una zancada = dos pasos</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Longitud de Paso</p>
-            <p class="formula-main"><strong>Longitud de Paso (m) = Distancia (m) / Pasos</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Velocidad desde Cadencia y Longitud de Zancada</p>
-            <p class="formula-main"><strong>Velocidad = Longitud de Zancada × (Cadencia / 2) / 60</strong></p>
-            <p class="formula-note">O: Velocidad (m/s) = Longitud de Paso × Cadencia / 60</p>
-          </div>
-
-          <h4>Ejemplo de Flujo de Trabajo:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>Caminar 1000m en 12 minutos con 1320 pasos:</strong></p>
-            <p><strong>Velocidad:</strong> 1000m / 720s = <strong>1,39 m/s</strong></p>
-            <p><strong>Cadencia:</strong> 1320 pasos / 12 min = <strong>110 ppm</strong></p>
-            <p><strong>Longitud de Zancada:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1,52 m</strong></p>
-            <p><strong>Longitud de Paso:</strong> 1000m / 1320 = <strong>0,76 m</strong></p>
-          </div>
-        </div>
-
-        <h2 id="heart-rate">7. Cálculos de Zonas de Frecuencia Cardíaca</h2>
-
-        <div class="formula-section">
-          <h3>Método Tradicional de Zonas FC</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Estimación de Frecuencia Cardíaca Máxima</p>
-            <p class="formula-main"><strong>FC Máx = 220 - Edad</strong></p>
-            <p class="formula-note">Simple pero ±10-15 lpm variación individual</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Alternativa: Fórmula de Tanaka (más precisa)</p>
-            <p class="formula-main"><strong>FC Máx = 208 - (0,7 × Edad)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Cálculo de Rango de Zona</p>
-            <p class="formula-main"><strong>Zona = FC Máx × (% Inferior, % Superior)</strong></p>
-          </div>
-
-          <h4>Ejemplo: Persona de 40 años</h4>
-          <div class="calc-example">
-            <p><strong>Tradicional:</strong> FC Máx = 220 - 40 = <strong>180 lpm</strong></p>
-            <p><strong>Tanaka:</strong> FC Máx = 208 - (0,7 × 40) = 208 - 28 = <strong>180 lpm</strong></p>
-            <p><strong>Zona 2 (60-70%):</strong> 180 × 0,60 = 108 lpm a 180 × 0,70 = 126 lpm</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Nota:</strong> Aunque las zonas FC son útiles, las <strong>zonas basadas en cadencia son más precisas y prácticas para caminar</strong> (ver guía de Zonas de Caminar).</p>
-          </div>
-        </div>
-
-        <h2 id="cost-transport">8. Costo de Transporte y Economía de Caminar</h2>
-
-        <div class="formula-section">
-          <h3>Costo Energético de Caminar</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Costo de Transporte (C)</p>
-            <p class="formula-main"><strong>C = Energía Gastada / (Masa Corporal × Distancia)</strong></p>
-            <p class="formula-note">Unidades: J/kg/m o mL O₂/kg/m</p>
-          </div>
-
-          <div class="key-insight">
-            <p><strong>Curva en Forma de U:</strong> La economía de caminar sigue una curva en forma de U. Hay una velocidad óptima (típicamente 1,2-1,4 m/s o 4,3-5,0 km/h) donde se minimiza el costo de transporte. Caminar más lento O más rápido que esto aumenta el costo energético por distancia recorrida.</p>
-          </div>
-
-          <h4>Factores que Afectan el Costo de Transporte:</h4>
-          <ul>
-            <li><strong>Velocidad:</strong> Relación en forma de U (óptimo alrededor de 1,3 m/s)</li>
-            <li><strong>Gradiente:</strong> Subida aumenta significativamente el costo; bajada aumenta costo excéntrico</li>
-            <li><strong>Masa corporal:</strong> Individuos más pesados tienen costo absoluto mayor pero costo relativo similar</li>
-            <li><strong>Mecánica de zancada:</strong> Longitud de zancada óptima minimiza costo</li>
-            <li><strong>Terreno:</strong> Superficies irregulares aumentan costo vs pavimento liso</li>
-          </ul>
-
-          <div class="formula-box">
-            <p class="formula-title">Costo Ajustado por Pendiente</p>
-            <p class="formula-main"><strong>Multiplicador de costo = 1 + (Pendiente × 10)</strong></p>
-            <p class="formula-note">Aproximación general: +10% costo por 1% pendiente</p>
-          </div>
-
-          <h4>Ejemplo:</h4>
-          <div class="calc-example">
-            <p class="example-input"><strong>Caminando en pendiente del 5%:</strong></p>
-            <p class="example-calc">Multiplicador de costo = 1 + (0,05 × 10) = <strong>1,5×</strong></p>
-            <p class="example-interpretation">50% aumento en costo energético comparado con terreno plano</p>
-          </div>
-        </div>
-
-        <h2 id="training-load">9. Carga de Entrenamiento y Puntuación de Estrés</h2>
-
-        <div class="formula-section">
-          <h3>Puntuación de Estrés de Caminar (WSS)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">WSS Basado en Zonas</p>
-            <p class="formula-main"><strong>WSS = Σ (Minutos en Zona × Factor de Zona)</strong></p>
-            <p>Zona 1: ×1,0 | Zona 2: ×2,0 | Zona 3: ×3,0 | Zona 4: ×4,0 | Zona 5: ×5,0</p>
-          </div>
-
-          <h4>Ejemplo: Caminata de 60 minutos</h4>
-          <div class="calc-example">
-            <p>10 min Zona 1 × 1 = 10 puntos</p>
-            <p>40 min Zona 2 × 2 = 80 puntos</p>
-            <p>10 min Zona 3 × 3 = 30 puntos</p>
-            <p><strong>WSS Total = 120</strong></p>
-          </div>
-
-          <h3>Carga de Entrenamiento Semanal</h3>
-          <div class="formula-box">
-            <p class="formula-title">Carga Semanal</p>
-            <p class="formula-main"><strong>Carga Semanal = Σ WSS Diario (7 días)</strong></p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Sobrecarga Progresiva</p>
-            <p class="formula-main"><strong>Próxima Semana = Semana Actual × 1,05-1,10</strong></p>
-            <p class="formula-note">Aumentar 5-10% por semana máximo</p>
-          </div>
-
-          <div class="formula-box">
-            <p class="formula-title">Semana de Recuperación</p>
-            <p class="formula-main"><strong>Semana de Recuperación = Actual × 0,50-0,70</strong></p>
-            <p class="formula-note">Cada 3-4 semanas, reducir a 50-70%</p>
-          </div>
-
-          <h4>Cargas Semanales Típicas:</h4>
-          <ul>
-            <li><strong>Caminante de salud principiante:</strong> 200-400 WSS/semana</li>
-            <li><strong>Caminante de fitness regular:</strong> 400-700 WSS/semana</li>
-            <li><strong>Caminante de fitness serio:</strong> 700-1000 WSS/semana</li>
-            <li><strong>Marchador competitivo:</strong> 1000-1500+ WSS/semana</li>
-          </ul>
-        </div>
-
-        <h2 id="predictions">10. Ecuaciones Predictivas</h2>
-
-        <div class="formula-section">
-          <h3>Predicción de Distancia Prueba de Caminata de 6 Minutos (6MWT)</h3>
-
-          <div class="formula-box">
-            <p class="formula-title">Distancia Predicha 6MWT (Enright & Sherrill)</p>
-            <p><strong>Hombres:</strong> (7,57 × Altura cm) - (5,02 × Edad) - (1,76 × Peso kg) - 309</p>
-            <p><strong>Mujeres:</strong> (2,11 × Altura cm) - (5,78 × Edad) - (2,29 × Peso kg) + 667</p>
-            <p class="formula-note">Predice distancia en metros para adultos sanos</p>
-          </div>
-
-          <h4>Ejemplo: Hombre de 40 años, 175 cm, 75 kg</h4>
-          <div class="calc-example">
-            <p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p>
-            <p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 metros</strong></p>
-            <p class="example-interpretation">Buena capacidad funcional para la edad</p>
-          </div>
-
-          <div class="info-box">
-            <p><strong>Uso Clínico:</strong> El 6MWT se usa para evaluar capacidad funcional de ejercicio en pacientes cardiopulmonares, evaluación pre/post-cirugía y condición física general en adultos mayores.</p>
-          </div>
-        </div>
-
-        <h2 id="conversions">11. Conversiones de Unidades</h2>
-
-        <div class="formula-section">
-          <h3>Conversiones Comunes de Métricas de Caminar</h3>
-
-          <div class="conversion-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Desde</th>
-                  <th>Hasta</th>
-                  <th>Fórmula</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>km/h</td>
-                  <td>m/s</td>
-                  <td>km/h ÷ 3,6</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>m/s</td>
-                  <td>mph × 0,447</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>km/h</td>
-                  <td>m/s × 3,6</td>
-                </tr>
-                <tr>
-                  <td>m/s</td>
-                  <td>mph</td>
-                  <td>m/s × 2,237</td>
-                </tr>
-                <tr>
-                  <td>km/h</td>
-                  <td>m/min</td>
-                  <td>km/h × 16,67</td>
-                </tr>
-                <tr>
-                  <td>mph</td>
-                  <td>m/min</td>
-                  <td>mph × 26,82</td>
-                </tr>
-                <tr>
-                  <td>METs</td>
-                  <td>mL/kg/min</td>
-                  <td>METs × 3,5</td>
-                </tr>
-                <tr>
-                  <td>mL/kg/min</td>
-                  <td>METs</td>
-                  <td>VO₂ ÷ 3,5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h4>Referencia Rápida:</h4>
-          <ul>
-            <li><strong>1,0 m/s =</strong> 3,6 km/h = 2,24 mph (velocidad típica adulto sano caminando)</li>
-            <li><strong>1,4 m/s =</strong> 5,0 km/h = 3,1 mph (caminata rápida)</li>
-            <li><strong>1 MET =</strong> 3,5 mL O₂/kg/min (metabolismo en reposo)</li>
-            <li><strong>3 METs =</strong> 10,5 mL O₂/kg/min (umbral intensidad moderada)</li>
-            <li><strong>6 METs =</strong> 21 mL O₂/kg/min (umbral intensidad vigorosa)</li>
-          </ul>
-        </div>
-
-        <h2 id="next-steps">Recursos Relacionados</h2>
-
-        <div class="next-steps-grid">
-          <div class="next-step-card">
-            <h3>Aplicar Fórmulas: Calculadora WSS</h3>
-            <p>Usa nuestra calculadora interactiva para calcular tu Puntuación de Estrés de Caminar.</p>
-            <a href="/es/wss-calculator/" class="btn btn-secondary">Calcular WSS →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Comprender Zonas de Caminar</h3>
-            <p>Aprende cómo aplicar zonas de intensidad basadas en cadencia en entrenamiento.</p>
-            <a href="/es/walking-zones/" class="btn btn-secondary">Aprender Zonas →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Investigación Científica</h3>
-            <p>Revisa los estudios que validaron estas fórmulas.</p>
-            <a href="/es/research/" class="btn btn-secondary">Ver Investigación →</a>
-          </div>
-
-          <div class="next-step-card">
-            <h3>Bibliografía Completa</h3>
-            <p>Accede a citas completas para todas las ecuaciones referenciadas.</p>
-            <a href="/es/bibliography/" class="btn btn-secondary">Ver Bibliografía →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>Índice de Fórmulas</h3>
-          <ul>
-            <li><a href="#cadence-mets">1. Cadencia → METs</a></li>
-            <li><a href="#acsm-vo2">2. Ecuaciones VO₂ ACSM</a></li>
-            <li><a href="#energy-expenditure">3. Energía y Calorías</a></li>
-            <li><a href="#gait-symmetry">4. Índice Simetría Marcha</a></li>
-            <li><a href="#walk-score">5. Puntuación WALK</a></li>
-            <li><a href="#basic-metrics">6. Métricas Básicas Marcha</a></li>
-            <li><a href="#heart-rate">7. Zonas Frecuencia Cardíaca</a></li>
-            <li><a href="#cost-transport">8. Costo de Transporte</a></li>
-            <li><a href="#training-load">9. Carga Entrenamiento</a></li>
-            <li><a href="#predictions">10. Ecuaciones Predictivas</a></li>
-            <li><a href="#conversions">11. Conversiones Unidades</a></li>
-          </ul>
-        </div>
-
-        <div class="formula-highlight">
-          <h3>⭐ Más Importante</h3>
-          <p><strong>Cadencia a METs</strong></p>
-          <p class="formula-compact">METs = 0,0219 × ppm + 0,72</p>
-          <p class="small-text">Esta ecuación única permite entrenamiento de intensidad basado en cadencia sin monitores de frecuencia cardíaca.</p>
-        </div>
-
-        <div class="cta-box">
-          <h3>Aplica Estas Fórmulas</h3>
-          <p>Walk Analytics usa estas ecuaciones científicamente validadas para analizar tus caminatas.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Descargar App</a>
-        </div>
-
-        <div class="info-box">
-          <h4>📐 Precisión de Fórmulas</h4>
-          <p>Todas las ecuaciones en esta página provienen de investigación revisada por pares. Ver <a href="/es/bibliography/">Bibliografía</a> para citas completas.</p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Descargar</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Consíguelo en el App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Alternar menú"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/es/">Inicio</a></li><li><a href="/es/research/">Ciencia</a></li><li><span aria-current="page">Fórmulas</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/es/">Inicio</a> / <a href="/es/#science">Ciencia</a> / Fórmulas
+    </div><h1>Fórmulas y Ecuaciones de Métricas de Caminar</h1><p class="lead">Fundamentos matemáticos de analítica de caminar – ecuaciones científicamente validadas para intensidad, energía y rendimiento</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>Esta página presenta fórmulas científicamente validadas utilizadas en analítica de caminar. Todas las ecuaciones están citadas con referencias de investigación y rangos de precisión validados.</p></div><h2 id="cadence-mets">1. Conversión de Cadencia a METs</h2><div class="formula-section featured"><h3>Ecuación Metabólica Basada en Cadencia de Moore et al. (2021)</h3><div class="formula-box primary"><p class="formula-title">Cadencia a METs</p><p class="formula-main"><strong>METs = 0,0219 × Cadencia (pasos/min) + 0,72</strong></p><p class="formula-meta"><span class="accuracy">Precisión: ±0,5 METs</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>Por qué esta fórmula es importante:</strong> Esta ecuación es <strong>23-35% más precisa</strong> que las ecuaciones tradicionales basadas en velocidad del ACSM para caminar. Funciona porque la cadencia refleja directamente la frecuencia de movimiento y el gasto energético, mientras que la velocidad depende de la longitud de zancada variable.</p></div><h4>Ejemplos:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Caminando a 100 ppm:</strong></p><p class="example-calc">METs = 0,0219 × 100 + 0,72 = 2,19 + 0,72 = <strong>2,91 METs</strong></p><p class="example-interpretation">≈ 3 METs = <strong>Umbral de intensidad moderada</strong> ✓</p></div><div class="calc-example"><p class="example-input"><strong>Caminando a 110 ppm:</strong></p><p class="example-calc">METs = 0,0219 × 110 + 0,72 = 2,409 + 0,72 = <strong>3,13 METs</strong></p><p class="example-interpretation">Intensidad moderada sólida</p></div><div class="calc-example"><p class="example-input"><strong>Caminando a 120 ppm:</strong></p><p class="example-calc">METs = 0,0219 × 120 + 0,72 = 2,628 + 0,72 = <strong>3,35 METs</strong></p><p class="example-interpretation">Intensidad moderada-vigorosa</p></div><div class="calc-example"><p class="example-input"><strong>Caminando a 130 ppm:</strong></p><p class="example-calc">METs = 0,0219 × 130 + 0,72 = 2,847 + 0,72 = <strong>3,57 METs</strong></p><p class="example-interpretation"><strong>Umbral de intensidad vigorosa</strong> (6 METs por medición directa CADENCE-Adults)</p></div></div><div class="formula-note"><p><strong>Nota:</strong> El estudio CADENCE-Adults midió directamente que 130 ppm = 6 METs en condiciones de laboratorio controladas. La ecuación de Moore está diseñada para el rango 80-130 ppm y puede subestimar en cadencias muy altas.</p></div><h4>Datos de Validación:</h4><ul><li><strong>Muestra:</strong> 76 adultos de 21-40 años</li><li><strong>Método:</strong> Calorimetría indirecta (estándar de oro)</li><li><strong>Valor R²:</strong> 0,87 (excelente correlación)</li><li><strong>Error absoluto medio:</strong> 0,47 METs</li><li><strong>Rango aplicable:</strong> 80-130 pasos/min</li></ul></div><h2 id="acsm-vo2">2. Ecuaciones de VO₂ del ACSM para Caminar</h2><div class="formula-section"><h3>Cálculos Metabólicos del ACSM</h3><div class="formula-box"><p class="formula-title">Caminar en Plano (0% pendiente)</p><p class="formula-main"><strong>VO₂ (mL/kg/min) = 0,1 × Velocidad (m/min) + 3,5</strong></p><p class="formula-note">Velocidad en metros por minuto (multiplicar km/h por 16,67 o mph por 26,82)</p></div><div class="formula-box"><p class="formula-title">Caminar con Pendiente (inclinación/declive)</p><p class="formula-main"><strong>VO₂ = 0,1(Velocidad) + 1,8(Velocidad)(Pendiente) + 3,5</strong></p><p class="formula-note">Pendiente expresada como decimal (ej., 5% = 0,05)</p></div><h4>Ejemplos:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Caminando 5 km/h (83,3 m/min) en terreno plano:</strong></p><p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 = <strong>11,83 mL/kg/min</strong></p><p class="example-conversion">Convertir a METs: 11,83 / 3,5 = <strong>3,38 METs</strong></p></div><div class="calc-example"><p class="example-input"><strong>Caminando 5 km/h en pendiente del 5%:</strong></p><p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p><p class="example-calc">= 8,33 + 7,497 + 3,5 = <strong>19,33 mL/kg/min</strong></p><p class="example-conversion">= 19,33 / 3,5 = <strong>5,52 METs</strong></p><p class="example-interpretation">¡La inclinación aumenta la intensidad en ~64%!</p></div></div><div class="conversion-helper"><h4>Conversiones de Velocidad:</h4><ul><li><strong>km/h a m/min:</strong> multiplicar por 16,67</li><li><strong>mph a m/min:</strong> multiplicar por 26,82</li><li><strong>m/s a m/min:</strong> multiplicar por 60</li></ul></div></div><h2 id="energy-expenditure">3. Gasto Energético y Quema de Calorías</h2><div class="formula-section"><h3>Cálculo Preciso de Calorías</h3><div class="formula-box"><p class="formula-title">Calorías por Minuto</p><p class="formula-main"><strong>Cal/min = (METs × 3,5 × Peso Corporal kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">Calorías Totales para Sesión</p><p class="formula-main"><strong>Calorías Totales = Cal/min × Duración (minutos)</strong></p></div><h4>Ejemplos:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Persona de 70 kg caminando 100 ppm (3 METs) durante 45 minutos:</strong></p><p class="example-calc">Cal/min = (3 × 3,5 × 70) / 200 = 735 / 200 = <strong>3,675 cal/min</strong></p><p class="example-calc">Total = 3,675 × 45 = <strong>165,4 calorías</strong></p></div><div class="calc-example"><p class="example-input"><strong>Persona de 85 kg caminando 120 ppm (5 METs) durante 30 minutos:</strong></p><p class="example-calc">Cal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 = <strong>7,44 cal/min</strong></p><p class="example-calc">Total = 7,44 × 30 = <strong>223,2 calorías</strong></p></div></div><div class="info-box"><h4>¿Por Qué Esta Fórmula?</h4><p>Esta ecuación proviene de la definición de MET (Equivalente Metabólico de Tarea):</p><ul><li>1 MET = 3,5 mL O₂/kg/min (tasa metabólica en reposo)</li><li>1 litro de O₂ consumido ≈ 5 kcal quemadas</li><li>Convirtiendo: (METs × 3,5 × kg × 5) / 1000 = (METs × 3,5 × kg) / 200</li></ul></div><h3>Quema Neta de Calorías (Solo Ejercicio)</h3><div class="formula-box"><p class="formula-title">Calorías Netas (excluyendo reposo)</p><p class="formula-main"><strong>Cal Netas/min = [(METs - 1) × 3,5 × Peso Corporal] / 200</strong></p><p class="formula-note">Resta 1 MET para excluir calorías que quemarías de todos modos en reposo</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 METs, 45 min – Calorías netas:</strong></p><p class="example-calc">Netas = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 = <strong>110,3 calorías netas</strong></p><p class="example-interpretation">vs 165,4 calorías totales (55 calorías se habrían quemado en reposo)</p></div></div><h2 id="gait-symmetry">4. Índice de Simetría de Marcha (GSI)</h2><div class="formula-section"><h3>Cuantificando Asimetría Izquierda-Derecha</h3><div class="formula-box"><p class="formula-title">Índice de Simetría de Marcha</p><p class="formula-main"><strong>GSI (%) = |Derecha - Izquierda| / [0,5 × (Derecha + Izquierda)] × 100</strong></p><p class="formula-note">Se puede aplicar a longitud de zancada, tiempo de paso o tiempo de contacto</p></div><h4>Interpretación:</h4><ul><li><strong>&lt;2-3%:</strong> Marcha normal, simétrica</li><li><strong>3-5%:</strong> Asimetría leve</li><li><strong>5-10%:</strong> Asimetría moderada, monitorear</li><li><strong>&gt;10%:</strong> Clínicamente significativo, evaluar profesionalmente</li></ul><h4>Ejemplos:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Tiempos de paso: Derecha = 520 ms, Izquierda = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 = <strong>8% asimetría</strong></p><p class="example-interpretation">Asimetría moderada – considerar fortalecer lado más débil</p></div><div class="calc-example"><p class="example-input"><strong>Longitudes de zancada: Derecha = 1,42 m, Izquierda = 1,38 m</strong></p><p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p><p class="example-calc">= 0,04 / 1,4 × 100 = <strong>2,86% asimetría</strong></p><p class="example-interpretation">Normal, rango saludable ✓</p></div></div><div class="warning-box"><p><strong>Nota Clínica:</strong> La Asimetría al Caminar de Apple HealthKit usa un cálculo ligeramente diferente (diferencia porcentual simple entre tiempos de paso) pero los umbrales de interpretación son similares.</p></div></div><h2 id="walk-score">5. Puntuación WALK (Métrica Propietaria de Walk Analytics)</h2><div class="formula-section"><h3>Puntuación de Eficiencia de Caminar</h3><div class="formula-box"><p class="formula-title">Puntuación WALK</p><p class="formula-main"><strong>Puntuación WALK = Tiempo (segundos) + Pasos por 100 metros</strong></p><p class="formula-note">Puntuación más baja = mejor eficiencia</p></div><h4>Cómo Funciona:</h4><p>La Puntuación WALK combina tiempo y conteo de pasos para cuantificar eficiencia de caminar. Un caminante que recorre 100m en 75 segundos con 140 pasos tiene una Puntuación WALK de 215. Mejorar velocidad O eficiencia de zancada reduce la puntuación.</p><h4>Ejemplos:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100m en 80 segundos, 120 pasos:</strong></p><p class="example-calc">Puntuación WALK = 80 + 120 = <strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100m en 70 segundos, 110 pasos:</strong></p><p class="example-calc">Puntuación WALK = 70 + 110 = <strong>180</strong></p><p class="example-interpretation">Mejor eficiencia a través de velocidad mejorada + zancada</p></div><div class="calc-example"><p class="example-input"><strong>100m en 60 segundos, 130 pasos (marcha atlética):</strong></p><p class="example-calc">Puntuación WALK = 60 + 130 = <strong>190</strong></p><p class="example-interpretation">Rápido pero zancadas más cortas</p></div></div><h4>Rangos Típicos:</h4><ul><li><strong>&gt;250:</strong> Marcha lenta/ineficiente, posibles problemas de movilidad</li><li><strong>200-250:</strong> Caminante casual, eficiencia promedio</li><li><strong>170-200:</strong> Caminante de fitness, buena eficiencia</li><li><strong>150-170:</strong> Caminante avanzado, excelente eficiencia</li><li><strong>&lt;150:</strong> Nivel élite/marcha atlética</li></ul><div class="tip-box"><p><strong>Entrenando con Puntuación WALK:</strong> Rastrea tu puntuación en el mismo recorrido de 100m semanalmente. Las mejoras muestran coordinación neuromuscular mejorada, fuerza y economía de caminar.</p></div></div><h2 id="basic-metrics">6. Métricas Básicas de Marcha</h2><div class="formula-section"><h3>Cálculos Fundamentales</h3><div class="formula-box"><p class="formula-title">Velocidad de Caminar</p><p class="formula-main"><strong>Velocidad (m/s) = Distancia (m) / Tiempo (s)</strong></p></div><div class="formula-box"><p class="formula-title">Cadencia desde Pasos Totales</p><p class="formula-main"><strong>Cadencia (ppm) = Pasos Totales / Tiempo (minutos)</strong></p></div><div class="formula-box"><p class="formula-title">Longitud de Zancada</p><p class="formula-main"><strong>Longitud de Zancada (m) = Distancia (m) / (Pasos / 2)</strong></p><p class="formula-note">Dividir pasos por 2 porque una zancada = dos pasos</p></div><div class="formula-box"><p class="formula-title">Longitud de Paso</p><p class="formula-main"><strong>Longitud de Paso (m) = Distancia (m) / Pasos</strong></p></div><div class="formula-box"><p class="formula-title">Velocidad desde Cadencia y Longitud de Zancada</p><p class="formula-main"><strong>Velocidad = Longitud de Zancada × (Cadencia / 2) / 60</strong></p><p class="formula-note">O: Velocidad (m/s) = Longitud de Paso × Cadencia / 60</p></div><h4>Ejemplo de Flujo de Trabajo:</h4><div class="calc-example"><p class="example-input"><strong>Caminar 1000m en 12 minutos con 1320 pasos:</strong></p><p><strong>Velocidad:</strong> 1000m / 720s = <strong>1,39 m/s</strong></p><p><strong>Cadencia:</strong> 1320 pasos / 12 min = <strong>110 ppm</strong></p><p><strong>Longitud de Zancada:</strong> 1000m / (1320/2) = 1000 / 660 = <strong>1,52 m</strong></p><p><strong>Longitud de Paso:</strong> 1000m / 1320 = <strong>0,76 m</strong></p></div></div><h2 id="heart-rate">7. Cálculos de Zonas de Frecuencia Cardíaca</h2><div class="formula-section"><h3>Método Tradicional de Zonas FC</h3><div class="formula-box"><p class="formula-title">Estimación de Frecuencia Cardíaca Máxima</p><p class="formula-main"><strong>FC Máx = 220 - Edad</strong></p><p class="formula-note">Simple pero ±10-15 lpm variación individual</p></div><div class="formula-box"><p class="formula-title">Alternativa: Fórmula de Tanaka (más precisa)</p><p class="formula-main"><strong>FC Máx = 208 - (0,7 × Edad)</strong></p></div><div class="formula-box"><p class="formula-title">Cálculo de Rango de Zona</p><p class="formula-main"><strong>Zona = FC Máx × (% Inferior, % Superior)</strong></p></div><h4>Ejemplo: Persona de 40 años</h4><div class="calc-example"><p><strong>Tradicional:</strong> FC Máx = 220 - 40 = <strong>180 lpm</strong></p><p><strong>Tanaka:</strong> FC Máx = 208 - (0,7 × 40) = 208 - 28 = <strong>180 lpm</strong></p><p><strong>Zona 2 (60-70%):</strong> 180 × 0,60 = 108 lpm a 180 × 0,70 = 126 lpm</p></div><div class="info-box"><p><strong>Nota:</strong> Aunque las zonas FC son útiles, las <strong>zonas basadas en cadencia son más precisas y prácticas para caminar</strong> (ver guía de Zonas de Caminar).</p></div></div><h2 id="cost-transport">8. Costo de Transporte y Economía de Caminar</h2><div class="formula-section"><h3>Costo Energético de Caminar</h3><div class="formula-box"><p class="formula-title">Costo de Transporte (C)</p><p class="formula-main"><strong>C = Energía Gastada / (Masa Corporal × Distancia)</strong></p><p class="formula-note">Unidades: J/kg/m o mL O₂/kg/m</p></div><div class="key-insight"><p><strong>Curva en Forma de U:</strong> La economía de caminar sigue una curva en forma de U. Hay una velocidad óptima (típicamente 1,2-1,4 m/s o 4,3-5,0 km/h) donde se minimiza el costo de transporte. Caminar más lento O más rápido que esto aumenta el costo energético por distancia recorrida.</p></div><h4>Factores que Afectan el Costo de Transporte:</h4><ul><li><strong>Velocidad:</strong> Relación en forma de U (óptimo alrededor de 1,3 m/s)</li><li><strong>Gradiente:</strong> Subida aumenta significativamente el costo; bajada aumenta costo excéntrico</li><li><strong>Masa corporal:</strong> Individuos más pesados tienen costo absoluto mayor pero costo relativo similar</li><li><strong>Mecánica de zancada:</strong> Longitud de zancada óptima minimiza costo</li><li><strong>Terreno:</strong> Superficies irregulares aumentan costo vs pavimento liso</li></ul><div class="formula-box"><p class="formula-title">Costo Ajustado por Pendiente</p><p class="formula-main"><strong>Multiplicador de costo = 1 + (Pendiente × 10)</strong></p><p class="formula-note">Aproximación general: +10% costo por 1% pendiente</p></div><h4>Ejemplo:</h4><div class="calc-example"><p class="example-input"><strong>Caminando en pendiente del 5%:</strong></p><p class="example-calc">Multiplicador de costo = 1 + (0,05 × 10) = <strong>1,5×</strong></p><p class="example-interpretation">50% aumento en costo energético comparado con terreno plano</p></div></div><h2 id="training-load">9. Carga de Entrenamiento y Puntuación de Estrés</h2><div class="formula-section"><h3>Puntuación de Estrés de Caminar (WSS)</h3><div class="formula-box"><p class="formula-title">WSS Basado en Zonas</p><p class="formula-main"><strong>WSS = Σ (Minutos en Zona × Factor de Zona)</strong></p><p>Zona 1: ×1,0 | Zona 2: ×2,0 | Zona 3: ×3,0 | Zona 4: ×4,0 | Zona 5: ×5,0</p></div><h4>Ejemplo: Caminata de 60 minutos</h4><div class="calc-example"><p>10 min Zona 1 × 1 = 10 puntos</p><p>40 min Zona 2 × 2 = 80 puntos</p><p>10 min Zona 3 × 3 = 30 puntos</p><p><strong>WSS Total = 120</strong></p></div><h3>Carga de Entrenamiento Semanal</h3><div class="formula-box"><p class="formula-title">Carga Semanal</p><p class="formula-main"><strong>Carga Semanal = Σ WSS Diario (7 días)</strong></p></div><div class="formula-box"><p class="formula-title">Sobrecarga Progresiva</p><p class="formula-main"><strong>Próxima Semana = Semana Actual × 1,05-1,10</strong></p><p class="formula-note">Aumentar 5-10% por semana máximo</p></div><div class="formula-box"><p class="formula-title">Semana de Recuperación</p><p class="formula-main"><strong>Semana de Recuperación = Actual × 0,50-0,70</strong></p><p class="formula-note">Cada 3-4 semanas, reducir a 50-70%</p></div><h4>Cargas Semanales Típicas:</h4><ul><li><strong>Caminante de salud principiante:</strong> 200-400 WSS/semana</li><li><strong>Caminante de fitness regular:</strong> 400-700 WSS/semana</li><li><strong>Caminante de fitness serio:</strong> 700-1000 WSS/semana</li><li><strong>Marchador competitivo:</strong> 1000-1500+ WSS/semana</li></ul></div><h2 id="predictions">10. Ecuaciones Predictivas</h2><div class="formula-section"><h3>Predicción de Distancia Prueba de Caminata de 6 Minutos (6MWT)</h3><div class="formula-box"><p class="formula-title">Distancia Predicha 6MWT (Enright & Sherrill)</p><p><strong>Hombres:</strong> (7,57 × Altura cm) - (5,02 × Edad) - (1,76 × Peso kg) - 309</p><p><strong>Mujeres:</strong> (2,11 × Altura cm) - (5,78 × Edad) - (2,29 × Peso kg) + 667</p><p class="formula-note">Predice distancia en metros para adultos sanos</p></div><h4>Ejemplo: Hombre de 40 años, 175 cm, 75 kg</h4><div class="calc-example"><p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p><p>= 1324,75 - 200,8 - 132 - 309 = <strong>682,95 metros</strong></p><p class="example-interpretation">Buena capacidad funcional para la edad</p></div><div class="info-box"><p><strong>Uso Clínico:</strong> El 6MWT se usa para evaluar capacidad funcional de ejercicio en pacientes cardiopulmonares, evaluación pre/post-cirugía y condición física general en adultos mayores.</p></div></div><h2 id="conversions">11. Conversiones de Unidades</h2><div class="formula-section"><h3>Conversiones Comunes de Métricas de Caminar</h3><div class="conversion-table"><table><thead><tr><th>Desde</th><th>Hasta</th><th>Fórmula</th></tr></thead><tbody><tr><td>km/h</td><td>m/s</td><td>km/h ÷ 3,6</td></tr><tr><td>mph</td><td>m/s</td><td>mph × 0,447</td></tr><tr><td>m/s</td><td>km/h</td><td>m/s × 3,6</td></tr><tr><td>m/s</td><td>mph</td><td>m/s × 2,237</td></tr><tr><td>km/h</td><td>m/min</td><td>km/h × 16,67</td></tr><tr><td>mph</td><td>m/min</td><td>mph × 26,82</td></tr><tr><td>METs</td><td>mL/kg/min</td><td>METs × 3,5</td></tr><tr><td>mL/kg/min</td><td>METs</td><td>VO₂ ÷ 3,5</td></tr></tbody></table></div><h4>Referencia Rápida:</h4><ul><li><strong>1,0 m/s =</strong> 3,6 km/h = 2,24 mph (velocidad típica adulto sano caminando)</li><li><strong>1,4 m/s =</strong> 5,0 km/h = 3,1 mph (caminata rápida)</li><li><strong>1 MET =</strong> 3,5 mL O₂/kg/min (metabolismo en reposo)</li><li><strong>3 METs =</strong> 10,5 mL O₂/kg/min (umbral intensidad moderada)</li><li><strong>6 METs =</strong> 21 mL O₂/kg/min (umbral intensidad vigorosa)</li></ul></div><h2 id="next-steps">Recursos Relacionados</h2><div class="next-steps-grid"><div class="next-step-card"><h3>Aplicar Fórmulas: Calculadora WSS</h3><p>Usa nuestra calculadora interactiva para calcular tu Puntuación de Estrés de Caminar.</p><a href="/es/wss-calculator/" class="btn btn-secondary">Calcular WSS →</a></div><div class="next-step-card"><h3>Comprender Zonas de Caminar</h3><p>Aprende cómo aplicar zonas de intensidad basadas en cadencia en entrenamiento.</p><a href="/es/walking-zones/" class="btn btn-secondary">Aprender Zonas →</a></div><div class="next-step-card"><h3>Investigación Científica</h3><p>Revisa los estudios que validaron estas fórmulas.</p><a href="/es/research/" class="btn btn-secondary">Ver Investigación →</a></div><div class="next-step-card"><h3>Bibliografía Completa</h3><p>Accede a citas completas para todas las ecuaciones referenciadas.</p><a href="/es/bibliography/" class="btn btn-secondary">Ver Bibliografía →</a></div></div></div><aside class="sidebar"><div class="toc"><h3>Índice de Fórmulas</h3><ul><li><a href="#cadence-mets">1. Cadencia → METs</a></li><li><a href="#acsm-vo2">2. Ecuaciones VO₂ ACSM</a></li><li><a href="#energy-expenditure">3. Energía y Calorías</a></li><li><a href="#gait-symmetry">4. Índice Simetría Marcha</a></li><li><a href="#walk-score">5. Puntuación WALK</a></li><li><a href="#basic-metrics">6. Métricas Básicas Marcha</a></li><li><a href="#heart-rate">7. Zonas Frecuencia Cardíaca</a></li><li><a href="#cost-transport">8. Costo de Transporte</a></li><li><a href="#training-load">9. Carga Entrenamiento</a></li><li><a href="#predictions">10. Ecuaciones Predictivas</a></li><li><a href="#conversions">11. Conversiones Unidades</a></li></ul></div><div class="formula-highlight"><h3>⭐ Más Importante</h3><p><strong>Cadencia a METs</strong></p><p class="formula-compact">METs = 0,0219 × ppm + 0,72</p><p class="small-text">Esta ecuación única permite entrenamiento de intensidad basado en cadencia sin monitores de frecuencia cardíaca.</p></div><div class="cta-box"><h3>Aplica Estas Fórmulas</h3><p>Walk Analytics usa estas ecuaciones científicamente validadas para analizar tus caminatas.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">Descargar App</a></div><div class="info-box"><h4>📐 Precisión de Fórmulas</h4><p>Todas las ecuaciones en esta página provienen de investigación revisada por pares. Ver <a href="/es/bibliography/">Bibliografía</a> para citas completas.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Descargar</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Consíguelo en el App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Consíguelo en el App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Disponible en Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Disponible en Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Disponible en Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Disponible en</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Disponible en</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link active"
+                </a><a href="/es/" class="lang-link active"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link"
+                </a><a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. Todos los derechos reservados
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/es/privacy/">Privacidad</a></li>
-                <li><a href="/es/terms/">Términos</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>Este sitio web utiliza cookies para mejorar tu experiencia.</p>
-            <a href="/es/privacy/" class="text-sm">Saber más</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Rechazar</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Aceptar</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/es/privacy/">Privacidad</a></li><li><a href="/es/terms/">Términos</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Este sitio web utiliza cookies para mejorar tu experiencia.</p><a href="/es/privacy/" class="text-sm">Saber más</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Rechazar</button><button id="cookie-accept" class="btn btn-primary btn-small">Aceptar</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

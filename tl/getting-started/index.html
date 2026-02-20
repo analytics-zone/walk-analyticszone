@@ -1,246 +1,61 @@
-<!DOCTYPE html>
-<html lang="tl" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  
-  <title>Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis</title>
-  <meta name="description" content="Kumpletong Walk Analytics guide para sa beginners. Gait analysis tutorial, walking tracking setup, WSS explained. Step-by-step integration + 7-araw na libreng trial.">
-  <meta name="author" content="AnalyticsZone Team">
-
-  
-  
-  <meta name="keywords" content="Walk Analytics guide, gait analysis tutorial, walking app tutorial, paano gumamit ng Walk Analytics, walking analytics guide, setup guide Philippines">
-  
-
-  
-  <link rel="canonical" href="https://walk.analyticszone.app/tl/getting-started/">
-
-  
-  
-  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
-  <meta property="article:modified_time" content="2025-12-02T14:30:00Z">
-  <meta property="article:author" content="AnalyticsZone Team">
-  
-
-  
-  
-
-  
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://walk.analyticszone.app/tl/getting-started/">
-  <meta property="og:title" content="Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis">
-  <meta property="og:description" content="Kumpletong Walk Analytics guide para sa beginners. Gait analysis tutorial, walking tracking setup, WSS explained. Step-by-step integration + 7-araw na libreng trial.">
-  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  <meta property="og:locale" content="tl_PH">
-  <meta property="og:site_name" content="Walk Analytics">
-
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://walk.analyticszone.app/tl/getting-started/">
-  <meta name="twitter:title" content="Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis">
-  <meta name="twitter:description" content="Kumpletong Walk Analytics guide para sa beginners. Gait analysis tutorial, walking tracking setup, WSS explained. Step-by-step integration + 7-araw na libreng trial.">
-  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
-  
-  <meta name="twitter:site" content="@walkanalytics">
-  <meta name="twitter:creator" content="@walkanalytics">
-  
-
-  
-  
-  <link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/getting-started/">
-  
-  <link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/getting-started/">
-  
-  <link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/getting-started/">
-  
-  <link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/getting-started/">
-  
-  <link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/getting-started/">
-  
-  <link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/getting-started/">
-  
-  <link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/getting-started/">
-  
-  <link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/getting-started/">
-  
-  <link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/getting-started/">
-  
-  <link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/getting-started/">
-  
-  <link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/getting-started/">
-  
-  <link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/getting-started/">
-  
-  <link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/getting-started/">
-  
-  <link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/getting-started/">
-  
-  <link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/getting-started/">
-  
-  <link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/getting-started/">
-  
-  <link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/getting-started/">
-  
-  <link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/getting-started/">
-  
-  <link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/getting-started/">
-  
-  <link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/getting-started/">
-  
-  <link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/getting-started/">
-  
-  <link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/getting-started/">
-  
-  <link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/getting-started/">
-  
-  <link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/getting-started/">
-  
-  <link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/getting-started/">
-  
-  <link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/getting-started/">
-  
-  <link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/getting-started/">
-  
-  <link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/getting-started/">
-  
-  <link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/getting-started/">
-  
-  <link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/getting-started/">
-  
-  <link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/getting-started/">
-  
-  <link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/getting-started/">
-  
-  <link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/getting-started/">
-  
-  <link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/getting-started/">
-  
-  <link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/getting-started/">
-  
-  <link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/getting-started/">
-  
-  <link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/getting-started/">
-  
-  <link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/getting-started/">
-  
-  <link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/getting-started/">
-  
-  <link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/getting-started/">
-  
-  <link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/getting-started/">
-  
-  <link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/getting-started/">
-  
-  <link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/getting-started/">
-  
-  <link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/getting-started/">
-  
-  <link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/getting-started/">
-  
-  <link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/getting-started/">
-  
-  <link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/getting-started/">
-  
-  <link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/getting-started/">
-  
-  <link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/getting-started/">
-  
-  <link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/getting-started/">
-  
-  <link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/getting-started/">
-  
-  <link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/getting-started/">
-  
-  <link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/getting-started/">
-  
-  <link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/getting-started/">
-  
-  <link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/getting-started/">
-  
-  <link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/getting-started/">
-
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="robots" content="index, follow">
-
-  
-  
-  
-  <meta name="apple-itunes-app" content="app-id=6755187154">
-  
-
-  
-  <style>
+<!DOCTYPE html><html lang="tl" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"><title>Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis</title><meta name="description" content="Kumpletuhin ang gabay sa Walk Analytics para sa mga nagsisimula. Gait analysis tutorial, walking tracking setup, ipinaliwanag ng WSS. Hakbang-hakbang na onboarding +..."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="Walk Analytics guide, gait analysis tutorial, walking app tutorial, paano gumamit ng Walk Analytics, walking analytics guide, setup guide Philippines"><link rel="canonical" href="https://walk.analyticszone.app/tl/getting-started/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-02T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/tl/getting-started/"><meta property="og:title" content="Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis"><meta property="og:description" content="Kumpletuhin ang gabay sa Walk Analytics para sa mga nagsisimula. Gait analysis tutorial, walking tracking setup, ipinaliwanag ng WSS. Hakbang-hakbang na onboarding +..."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="tl_PH"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/tl/getting-started/"><meta name="twitter:title" content="Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis"><meta name="twitter:description" content="Kumpletuhin ang gabay sa Walk Analytics para sa mga nagsisimula. Gait analysis tutorial, walking tracking setup, ipinaliwanag ng WSS. Hakbang-hakbang na onboarding +..."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/getting-started/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/getting-started/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/getting-started/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/getting-started/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/getting-started/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/getting-started/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/getting-started/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/getting-started/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/getting-started/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/getting-started/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/getting-started/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/getting-started/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/getting-started/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/getting-started/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/getting-started/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/getting-started/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/getting-started/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/getting-started/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/getting-started/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/getting-started/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/getting-started/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/getting-started/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/getting-started/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/getting-started/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/getting-started/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/getting-started/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/getting-started/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/getting-started/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/getting-started/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/getting-started/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/getting-started/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/getting-started/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/getting-started/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/getting-started/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/getting-started/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/getting-started/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/getting-started/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/getting-started/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/getting-started/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/getting-started/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/getting-started/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/getting-started/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/getting-started/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/getting-started/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/getting-started/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/getting-started/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/getting-started/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/getting-started/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/getting-started/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/getting-started/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/getting-started/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/getting-started/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/getting-started/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/getting-started/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/getting-started/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/getting-started/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -499,20 +314,7 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style>
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  
-  <link rel="stylesheet" href="../../assets/css/main.min.css?v=540c31aabebc">
-
-  
-  
-
-
-<script type="application/ld+json">
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=8caa6f183969"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -547,10 +349,7 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -559,11 +358,7 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "tl"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -578,12 +373,7 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script>
-
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -612,28 +402,20 @@ img[width][height] {
     
   ]
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis",
-  "description": "Kumpletong Walk Analytics guide para sa beginners. Gait analysis tutorial, walking tracking setup, WSS explained. Step-by-step integration + 7-araw na libreng trial.",
+  "description": "Kumpletuhin ang gabay sa Walk Analytics para sa mga nagsisimula. Gait analysis tutorial, walking tracking setup, ipinaliwanag ng WSS. Hakbang-hakbang na onboarding +...",
   "url": "https://walk.analyticszone.app/tl/getting-started/"
 }
-</script>
-
-
-
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Magsimula sa Walk Analytics - Kumpletong Setup Guide | Gait Analysis",
-  "description": "Kumpletong Walk Analytics guide para sa beginners. Gait analysis tutorial, walking tracking setup, WSS explained. Step-by-step integration + 7-araw na libreng trial.",
+  "description": "Kumpletuhin ang gabay sa Walk Analytics para sa mga nagsisimula. Gait analysis tutorial, walking tracking setup, ipinaliwanag ng WSS. Hakbang-hakbang na onboarding +...",
   "author": {
     "@type": "Person",
     "name": "AnalyticsZone Team"
@@ -653,17 +435,7 @@ img[width][height] {
     "@id": "https://walk.analyticszone.app/tl/getting-started/"
   }
 }
-</script>
-
-
-
-
-
-  
-  
-
-  
-  <script>
+</script><script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -677,1180 +449,365 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script>
-</head>
-
-<body>
-  
-  <a href="#main-content" class="skip-link">Tumalon sa content</a>
-
-  
-  <header class="site-header">
-    <div class="container">
-        <div class="header-inner">
-            
-            <a href="/tl/" class="site-logo">
-                <picture>
-                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)">
-                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
-                </picture>
-                <span class="logo-text">Walk Analytics</span>
-            </a>
-
-            
-            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
-                <div class="nav-group-left">
-                    <ul>
-                        
-                        <li>
-                            
-                            <a href="/tl/" 
+  </script></head><body><a href="#main-content" class="skip-link">Tumalon sa content</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/tl/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/tl/" 
                                 aria-current="">
                                 Home
-                            </a>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tl/getting-started/" class="nav-label">Matutunan</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tl/getting-started/" class="active" 
+                            </a></li><li class="has-submenu" ><a href="/tl/getting-started/" class="nav-label">Matutunan</a><ul class="submenu"><li><a href="/tl/getting-started/" class="active" 
                                         aria-current="page">
                                         Magsimula
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/walking-zones/" 
+                                    </a></li><li><a href="/tl/walking-zones/" 
                                         aria-current="">
                                         Walking Zones
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/gait-analysis/" 
+                                    </a></li><li><a href="/tl/gait-analysis/" 
                                         aria-current="">
                                         Gait Analysis
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/training-load/" 
+                                    </a></li><li><a href="/tl/training-load/" 
                                         aria-current="">
                                         Training Load
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/wss-calculator/" 
+                                    </a></li><li><a href="/tl/wss-calculator/" 
                                         aria-current="">
                                         WSS Calculator
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tl/research/" class="nav-label">Agham</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tl/research/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/tl/research/" class="nav-label">Agham</a><ul class="submenu"><li><a href="/tl/research/" 
                                         aria-current="">
                                         Pananaliksik
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/formulas/" 
+                                    </a></li><li><a href="/tl/formulas/" 
                                         aria-current="">
                                         Mga Formula
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/gait-efficiency/" 
+                                    </a></li><li><a href="/tl/gait-efficiency/" 
                                         aria-current="">
                                         Gait Efficiency
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/stride-mechanics/" 
+                                    </a></li><li><a href="/tl/stride-mechanics/" 
                                         aria-current="">
                                         Stride Mechanics
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/walking-vs-running/" 
+                                    </a></li><li><a href="/tl/walking-vs-running/" 
                                         aria-current="">
                                         Paglakad vs Pagtakbo
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/benchmarks/" 
+                                    </a></li><li><a href="/tl/benchmarks/" 
                                         aria-current="">
                                         Mga Benchmark
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/bibliography/" 
+                                    </a></li><li><a href="/tl/bibliography/" 
                                         aria-current="">
                                         Bibliograpiya
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tl/for-health/" class="nav-label">Para sa Iyo</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tl/for-health/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/tl/for-health/" class="nav-label">Para sa Iyo</a><ul class="submenu"><li><a href="/tl/for-health/" 
                                         aria-current="">
                                         Para sa Kalusugan
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/for-fitness/" 
+                                    </a></li><li><a href="/tl/for-fitness/" 
                                         aria-current="">
                                         Para sa Fitness
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/for-seniors/" 
+                                    </a></li><li><a href="/tl/for-seniors/" 
                                         aria-current="">
                                         Para sa Matatanda
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/for-rehabilitation/" 
+                                    </a></li><li><a href="/tl/for-rehabilitation/" 
                                         aria-current="">
                                         Para sa Rehabilitation
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li class="has-submenu" >
-                            
-                            
-                            <a href="/tl/cadence-calculator/" class="nav-label">Mga Tool</a>
-                            
-                            <ul class="submenu">
-                                
-                                <li>
-                                    <a href="/tl/cadence-calculator/" 
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/tl/cadence-calculator/" class="nav-label">Mga Tool</a><ul class="submenu"><li><a href="/tl/cadence-calculator/" 
                                         aria-current="">
                                         Cadence Calculator
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/gait-assessment/" 
+                                    </a></li><li><a href="/tl/gait-assessment/" 
                                         aria-current="">
                                         Gait Assessment
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/tl/vo2max-calculator/" 
+                                    </a></li><li><a href="/tl/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max Calculator
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            
-                            </li>
-                            
-                        <li>
-                            
-                            <a href="/tl/contact/" 
+                                    </a></li></ul></li><li><a href="/tl/contact/" 
                                 aria-current="">
                                 Makipag-ugnayan
-                            </a>
-                            
-                            </li>
-                            
-                    </ul>
-
-                    
-                    <div class="search-container">
-                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
-                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
-                    </div>
-
-                    
-                    <select class="language-selector" id="language-select" aria-label="Pumili ng wika">
-                        
-                        <option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Pumili ng wika"><option value="af" >
                             Afrikaans
-                        </option>
-                        
-                        <option value="am" >
+                        </option><option value="am" >
                             አမ္ဟာ
-                        </option>
-                        
-                        <option value="ar" >
+                        </option><option value="ar" >
                             العربية
-                        </option>
-                        
-                        <option value="bg" >
+                        </option><option value="bg" >
                             Български
-                        </option>
-                        
-                        <option value="bn" >
+                        </option><option value="bn" >
                             বাংলা
-                        </option>
-                        
-                        <option value="ca" >
+                        </option><option value="ca" >
                             Català
-                        </option>
-                        
-                        <option value="cs" >
+                        </option><option value="cs" >
                             Čeština
-                        </option>
-                        
-                        <option value="da" >
+                        </option><option value="da" >
                             Dansk
-                        </option>
-                        
-                        <option value="de" >
+                        </option><option value="de" >
                             Deutsch
-                        </option>
-                        
-                        <option value="el" >
+                        </option><option value="el" >
                             Ελληνικά
-                        </option>
-                        
-                        <option value="en" >
+                        </option><option value="en" >
                             English
-                        </option>
-                        
-                        <option value="es" >
+                        </option><option value="es" >
                             Español
-                        </option>
-                        
-                        <option value="et" >
+                        </option><option value="et" >
                             Eesti
-                        </option>
-                        
-                        <option value="fa" >
+                        </option><option value="fa" >
                             فارسی
-                        </option>
-                        
-                        <option value="fi" >
+                        </option><option value="fi" >
                             Suomi
-                        </option>
-                        
-                        <option value="fr" >
+                        </option><option value="fr" >
                             Français
-                        </option>
-                        
-                        <option value="gu" >
+                        </option><option value="gu" >
                             ગુજરાતી
-                        </option>
-                        
-                        <option value="ha" >
+                        </option><option value="ha" >
                             Hausa
-                        </option>
-                        
-                        <option value="he" >
+                        </option><option value="he" >
                             עברית
-                        </option>
-                        
-                        <option value="hi" >
+                        </option><option value="hi" >
                             हिन्दी
-                        </option>
-                        
-                        <option value="hr" >
+                        </option><option value="hr" >
                             Hrvatski
-                        </option>
-                        
-                        <option value="hu" >
+                        </option><option value="hu" >
                             Magyar
-                        </option>
-                        
-                        <option value="id" >
+                        </option><option value="id" >
                             Bahasa Indonesia
-                        </option>
-                        
-                        <option value="is" >
+                        </option><option value="is" >
                             Íslenska
-                        </option>
-                        
-                        <option value="it" >
+                        </option><option value="it" >
                             Italiano
-                        </option>
-                        
-                        <option value="ja" >
+                        </option><option value="ja" >
                             日本語
-                        </option>
-                        
-                        <option value="km" >
+                        </option><option value="km" >
                             ភាសាខ្មែរ
-                        </option>
-                        
-                        <option value="kn" >
+                        </option><option value="kn" >
                             ಕನ್ನಡ
-                        </option>
-                        
-                        <option value="ko" >
+                        </option><option value="ko" >
                             한국어
-                        </option>
-                        
-                        <option value="lt" >
+                        </option><option value="lt" >
                             Lietuvių
-                        </option>
-                        
-                        <option value="lv" >
+                        </option><option value="lv" >
                             Latviešu
-                        </option>
-                        
-                        <option value="ms" >
+                        </option><option value="ms" >
                             Bahasa Melayu
-                        </option>
-                        
-                        <option value="my" >
+                        </option><option value="my" >
                             မြန်မာ
-                        </option>
-                        
-                        <option value="nb" >
+                        </option><option value="nb" >
                             Norsk Bokmål
-                        </option>
-                        
-                        <option value="nl" >
+                        </option><option value="nl" >
                             Nederlands
-                        </option>
-                        
-                        <option value="pl" >
+                        </option><option value="pl" >
                             Polski
-                        </option>
-                        
-                        <option value="pt" >
+                        </option><option value="pt" >
                             Português
-                        </option>
-                        
-                        <option value="pt-br" >
+                        </option><option value="pt-br" >
                             Português (Brasil)
-                        </option>
-                        
-                        <option value="ro" >
+                        </option><option value="ro" >
                             Română
-                        </option>
-                        
-                        <option value="ru" >
+                        </option><option value="ru" >
                             Русский
-                        </option>
-                        
-                        <option value="sk" >
+                        </option><option value="sk" >
                             Slovenčina
-                        </option>
-                        
-                        <option value="sl" >
+                        </option><option value="sl" >
                             Slovenščina
-                        </option>
-                        
-                        <option value="sr" >
+                        </option><option value="sr" >
                             Српски
-                        </option>
-                        
-                        <option value="sv" >
+                        </option><option value="sv" >
                             Svenska
-                        </option>
-                        
-                        <option value="sw" >
+                        </option><option value="sw" >
                             Kiswahili
-                        </option>
-                        
-                        <option value="ta" >
+                        </option><option value="ta" >
                             தமிழ்
-                        </option>
-                        
-                        <option value="te" >
+                        </option><option value="te" >
                             తెలుగు
-                        </option>
-                        
-                        <option value="th" >
+                        </option><option value="th" >
                             ไทย
-                        </option>
-                        
-                        <option value="tl" selected>
+                        </option><option value="tl" selected>
                             Tagalog
-                        </option>
-                        
-                        <option value="tr" >
+                        </option><option value="tr" >
                             Türkçe
-                        </option>
-                        
-                        <option value="uk" >
+                        </option><option value="uk" >
                             Українська
-                        </option>
-                        
-                        <option value="ur" >
+                        </option><option value="ur" >
                             اردو
-                        </option>
-                        
-                        <option value="vi" >
+                        </option><option value="vi" >
                             Tiếng Việt
-                        </option>
-                        
-                        <option value="yo" >
+                        </option><option value="yo" >
                             Yorùbá
-                        </option>
-                        
-                        <option value="zh" >
+                        </option><option value="zh" >
                             中文
-                        </option>
-                        
-                    </select>
-                </div>
-
-                <div class="nav-group-right">
-                    
-
-
-                    
-                    <div class="header-app-buttons">
-                        
-                        
-                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                            </svg>
-                        </a>
-                        
-
-                        
-                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
-                            </svg>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    <div class="suite-menu-container">
-                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <div class="suite-dropdown hidden" id="suite-dropdown">
-                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
-                            <div class="suite-apps-grid">
-                                
-                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
-                                
-                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
-                                
-                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
-                                
-                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
-                                
-                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
-                                
-                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
-                                
-                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="I-toggle ang menu"
-                aria-expanded="false" aria-controls="nav-primary">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-  
-  
-
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-    <div class="container">
-        <ol>
-            
-            <li>
-                
-                <a href="/tl/">Home</a>
-                
-            </li>
-            
-            <li>
-                
-                <a href="/tl/getting-started/">Matutunan</a>
-                
-            </li>
-            
-            <li>
-                
-                <span aria-current="page">Magsimula</span>
-                
-            </li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-  
-  <main id="main-content" class="main-content">
-    
-    <!-- Pagsisimula sa Walk Analytics -->
-
-<section class="guide-hero">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/tl/">Tahanan</a> / <a href="/tl/#learn">Matuto</a> / Pagsisimula
-    </div>
-    <h1>Pagsisimula sa Walk Analytics</h1>
-    <p class="lead">Kumpletong gabay sa pag-set up ng Walk Analytics at pag-unawa sa iyong walking analytics journey</p>
-  </div>
-</section>
-
-<section class="guide-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="main-content">
-
-        <h2 id="quick-start">Mabilis na Gabay sa Pagsisimula</h2>
-        <p>Maligayang pagdating sa Walk Analytics! Tutulungan ka ng gabay na ito na magsimula sa advanced gait analysis at walking performance tracking sa loob lamang ng ilang minuto.</p>
-
-        <h3>Hakbang 1: Mag-download at Mag-install</h3>
-        <ol>
-          <li>I-download ang Walk Analytics mula sa <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener">App Store</a></li>
-          <li>Buksan ang app sa iyong iPhone o iPad</li>
-          <li>Pahintulutan ang access sa Apple Health kapag hiniling</li>
-          <li>Simulan ang iyong 7-araw na libreng trial (walang credit card na kailangan)</li>
-        </ol>
-
-        <h3>Hakbang 2: Ikonekta ang Apple Health</h3>
-        <p>Sinusuri ng Walk Analytics ang iyong mga walking workouts mula sa Apple Health:</p>
-        <ul>
-          <li><strong>Awtomatikong Pag-import:</strong> Ang iyong mga existing walking workouts ay awtomatikong na-import</li>
-          <li><strong>Real-time Sync:</strong> Ang mga bagong lakad mula sa Apple Watch o iPhone ay agad na sinusuri</li>
-          <li><strong>Privacy First:</strong> Lahat ng data ay nananatili sa iyong device - walang cloud upload</li>
-        </ul>
-
-        <h3>Hakbang 3: Unawain ang Iyong Dashboard</h3>
-        <p>Ipinakikita ng main dashboard ang iyong mga pangunahing walking metrics:</p>
-        <ul>
-          <li><strong>Mga Kamakailang Lakad:</strong> Ang iyong mga pinakabagong walking workouts kasama ang mga key stats</li>
-          <li><strong>Weekly Summary:</strong> Kabuuang distansya, oras, at Walking Stress Score (WSS)</li>
-          <li><strong>Gait Metrics:</strong> Stride symmetry, cadence, at efficiency scores</li>
-          <li><strong>Training Zones:</strong> Oras na ginugol sa bawat heart rate zone</li>
-        </ul>
-
-        <h2 id="key-concepts">Mga Pangunahing Konsepto</h2>
-
-        <h3>Gait Analysis</h3>
-        <p>Sinusuri ng gait analysis kung paano ka naglalakad. Sinusubaybayan ng Walk Analytics ang:</p>
-        <ul>
-          <li><strong>Stride Length:</strong> Distansyang natatagpuan bawat stride</li>
-          <li><strong>Cadence:</strong> Hakbang bawat minuto</li>
-          <li><strong>Stride Symmetry:</strong> Balanse sa pagitan ng kaliwang at kanang binti</li>
-          <li><strong>Ground Contact Time:</strong> Gaano katagal ang iyong paa ay dumikit sa lupa</li>
-          <li><strong>Double Support Time:</strong> Kapag ang dalawang paa ay nasa lupa nang sabay-sabay</li>
-        </ul>
-        <p>Matuto pa tungkol sa <a href="/tl/gait-analysis/">mga pundasyon ng gait analysis</a>.</p>
-
-        <h3>Walking Zones</h3>
-        <p>Ang pagsasanay sa iba't ibang intensity zones ay nagbibigay ng mga partikular na benepisyo sa kalusugan:</p>
-        <ul>
-          <li><strong>Zone 1 (Recovery):</strong> Napaka-light na paglalakad para sa recovery</li>
-          <li><strong>Zone 2 (Fat Burn):</strong> Optimal para sa fat burning at aerobic base</li>
-          <li><strong>Zone 3 (Aerobic):</strong> Pagpapabuti ng cardiovascular fitness</li>
-          <li><strong>Zone 4 (Threshold):</strong> High-intensity aerobic capacity</li>
-          <li><strong>Zone 5 (Peak):</strong> Maximum effort para sa maikling bursts</li>
-        </ul>
-        <p>Tuklasin ang kumpletong <a href="/tl/walking-zones/">gabay sa walking zones</a>.</p>
-
-        <h3>Walking Stress Score (WSS)</h3>
-        <p>Sinusukat ng WSS ang physiological stress ng bawat lakad:</p>
-        <ul>
-          <li>Batay sa heart rate intensity at tagal</li>
-          <li>Tumutulong na balansehin ang training load sa recovery</li>
-          <li>Pinipigilan ang overtraining at ino-optimize ang pag-unlad</li>
-          <li>Subaybayan ang lingguhan at buwanang trends</li>
-        </ul>
-        <p>Kalkulahin ang iyong WSS gamit ang aming <a href="/tl/wss-calculator/">WSS calculator</a>.</p>
-
-        <h2 id="first-walk">Pagtatala ng Iyong Unang Lakad</h2>
-
-        <h3>Gamit ang Apple Watch</h3>
-        <ol>
-          <li>Magsimula ng "Walking" workout sa iyong Apple Watch</li>
-          <li>Maglakad nang natural - walang kailangang baguhin sa iyong form</li>
-          <li>Tapusin ang workout kapag natapos na</li>
-          <li>Awtomatikong ini-import at sinusuri ito ng Walk Analytics</li>
-        </ol>
-
-        <h3>Gamit ang iPhone Lamang</h3>
-        <ol>
-          <li>I-enable ang "Fitness Tracking" sa iPhone Settings</li>
-          <li>Dalhin ang iyong iPhone habang naglalakad</li>
-          <li>Ang mga walking activities ay awtomatikong natatala</li>
-          <li>I-review sa Walk Analytics para sa analysis</li>
-        </ol>
-
-        <h2 id="interpreting-metrics">Pagbibigay-kahulugan sa Iyong Metrics</h2>
-
-        <h3>Mabuti vs. Mga Nakababahala na Senyales</h3>
-        <table class="metrics-table">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Mabuting Range</th>
-              <th>Kahulugan Nito</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Stride Symmetry</td>
-              <td>&gt; 95%</td>
-              <td>Balanseng lakad, mababang panganib ng pinsala</td>
-            </tr>
-            <tr>
-              <td>Cadence</td>
-              <td>100-130 hakbang/min</td>
-              <td>Mahusay na bilis ng paglalakad</td>
-            </tr>
-            <tr>
-              <td>Weekly WSS</td>
-              <td>200-500</td>
-              <td>Malusog na training load</td>
-            </tr>
-            <tr>
-              <td>Zone 2 Time</td>
-              <td>60-80% ng kabuuan</td>
-              <td>Malakas na aerobic base</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2 id="tips">Mga Pro Tips para sa Tagumpay</h2>
-
-        <h3>1. Magsimula sa Baseline Assessment</h3>
-        <p>Magtala muna ng 2-3 normal na lakad para maitatag ang iyong baseline metrics bago gumawa ng mga pagbabago.</p>
-
-        <h3>2. Mag-focus sa Zone 2 Walking</h3>
-        <p>Gumugol ng 60-80% ng iyong walking time sa Zone 2 para sa optimal na benepisyo sa kalusugan at fat burning.</p>
-
-        <h3>3. Bantayan ang Gait Symmetry</h3>
-        <p>Kung bumaba ang symmetry sa ibaba ng 90%, isaalang-alang ang form work o konsultasyon sa propesyonal upang maiwasan ang pinsala.</p>
-
-        <h3>4. Magpatayo nang Unti-unti</h3>
-        <p>Dagdagan ang lingguhang WSS ng hindi hihigit sa 10% bawat linggo upang maiwasan ang overtraining.</p>
-
-        <h3>5. Consistency Over Intensity</h3>
-        <p>Ang regular na katamtamang paglalakad ay mas mainam kaysa paminsan-minsang matinding lakad para sa pangmatagalang kalusugan.</p>
-
-        <h2 id="troubleshooting">Troubleshooting</h2>
-
-        <h3>Hindi Lumalabas ang Metrics</h3>
-        <ul>
-          <li>Tiyaking naibigay ang mga Apple Health permissions</li>
-          <li>I-check na ang mga workouts ay tama ang label bilang "Walking" sa Health app</li>
-          <li>Para sa heart rate zones, i-verify na ang heart rate data ay nirerekord</li>
-        </ul>
-
-        <h3>Hindi Tumpak ang Stride Metrics</h3>
-        <ul>
-          <li>I-calibrate ang Apple Watch sa pamamagitan ng paglalakad sa outdoor routes na may tumpak na GPS</li>
-          <li>Tiyaking tama ang pagkakasuot ng watch (mahigpit pero komportable)</li>
-          <li>Maglakad na may natural na arm swing para sa mas mahusay na motion detection</li>
-        </ul>
-
-        <h2 id="next-steps">Susunod na Mga Hakbang</h2>
-        <ul>
-          <li>Matuto tungkol sa <a href="/tl/walking-zones/">training zones</a> para sa optimal na intensity</li>
-          <li>Unawain ang <a href="/tl/gait-analysis/">gait analysis metrics</a> nang mas malalim</li>
-          <li>Kalkulahin ang iyong <a href="/tl/wss-calculator/">Walking Stress Score</a></li>
-          <li>Tuklasin ang <a href="/tl/research/">agham sa likod ng walking analytics</a></li>
-        </ul>
-
-      </div>
-
-      <aside class="sidebar">
-        <div class="toc">
-          <h3>Talaan ng mga Nilalaman</h3>
-          <ul>
-            <li><a href="#quick-start">Mabilis na Gabay sa Pagsisimula</a></li>
-            <li><a href="#key-concepts">Mga Pangunahing Konsepto</a></li>
-            <li><a href="#first-walk">Pagtatala ng Iyong Unang Lakad</a></li>
-            <li><a href="#interpreting-metrics">Pagbibigay-kahulugan sa Iyong Metrics</a></li>
-            <li><a href="#tips">Mga Pro Tips para sa Tagumpay</a></li>
-            <li><a href="#troubleshooting">Troubleshooting</a></li>
-            <li><a href="#next-steps">Susunod na Mga Hakbang</a></li>
-          </ul>
-        </div>
-
-        <div class="cta-box">
-          <h3>Simulan ang Iyong Journey</h3>
-          <p>I-download ang Walk Analytics at simulan ang pagsubaybay sa iyong gait ngayon.</p>
-          <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">I-download ang App</a>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-</section>
-    
-  </main>
-
-  
-  <footer class="site-footer">
-    <div class="container">
-        
-        <div class="footer-top">
-            <div class="footer-brand-section">
-                
-                <h2>Walk Analytics</h2>
-                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
-                
-            </div>
-
-            
-            <div class="footer-download">
-                <h3 class="footer-heading">Download</h3>
-                <div class="footer-badges">
-                    
-                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Download on the App Store">
-                        <img src="../../assets/images/badge-app-store.svg"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="I-toggle ang menu"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/tl/">Home</a></li><li><a href="/tl/getting-started/">Matutunan</a></li><li><span aria-current="page">Magsimula</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/tl/">Tahanan</a> / <a href="/tl/#learn">Matuto</a> / Pagsisimula
+    </div><h1>Pagsisimula sa Walk Analytics</h1><p class="lead">Kumpletong gabay sa pag-set up ng Walk Analytics at pag-unawa sa iyong walking analytics journey</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><h2 id="quick-start">Mabilis na Gabay sa Pagsisimula</h2><p>Maligayang pagdating sa Walk Analytics! Tutulungan ka ng gabay na ito na magsimula sa advanced gait analysis at walking performance tracking sa loob lamang ng ilang minuto.</p><h3>Hakbang 1: Mag-download at Mag-install</h3><ol><li>I-download ang Walk Analytics mula sa <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener">App Store</a></li><li>Buksan ang app sa iyong iPhone o iPad</li><li>Pahintulutan ang access sa Apple Health kapag hiniling</li><li>Simulan ang iyong 7-araw na libreng trial (walang credit card na kailangan)</li></ol><h3>Hakbang 2: Ikonekta ang Apple Health</h3><p>Sinusuri ng Walk Analytics ang iyong mga walking workouts mula sa Apple Health:</p><ul><li><strong>Awtomatikong Pag-import:</strong> Ang iyong mga existing walking workouts ay awtomatikong na-import</li><li><strong>Real-time Sync:</strong> Ang mga bagong lakad mula sa Apple Watch o iPhone ay agad na sinusuri</li><li><strong>Privacy First:</strong> Lahat ng data ay nananatili sa iyong device - walang cloud upload</li></ul><h3>Hakbang 3: Unawain ang Iyong Dashboard</h3><p>Ipinakikita ng main dashboard ang iyong mga pangunahing walking metrics:</p><ul><li><strong>Mga Kamakailang Lakad:</strong> Ang iyong mga pinakabagong walking workouts kasama ang mga key stats</li><li><strong>Weekly Summary:</strong> Kabuuang distansya, oras, at Walking Stress Score (WSS)</li><li><strong>Gait Metrics:</strong> Stride symmetry, cadence, at efficiency scores</li><li><strong>Training Zones:</strong> Oras na ginugol sa bawat heart rate zone</li></ul><h2 id="key-concepts">Mga Pangunahing Konsepto</h2><h3>Gait Analysis</h3><p>Sinusuri ng gait analysis kung paano ka naglalakad. Sinusubaybayan ng Walk Analytics ang:</p><ul><li><strong>Stride Length:</strong> Distansyang natatagpuan bawat stride</li><li><strong>Cadence:</strong> Hakbang bawat minuto</li><li><strong>Stride Symmetry:</strong> Balanse sa pagitan ng kaliwang at kanang binti</li><li><strong>Ground Contact Time:</strong> Gaano katagal ang iyong paa ay dumikit sa lupa</li><li><strong>Double Support Time:</strong> Kapag ang dalawang paa ay nasa lupa nang sabay-sabay</li></ul><p>Matuto pa tungkol sa <a href="/tl/gait-analysis/">mga pundasyon ng gait analysis</a>.</p><h3>Walking Zones</h3><p>Ang pagsasanay sa iba't ibang intensity zones ay nagbibigay ng mga partikular na benepisyo sa kalusugan:</p><ul><li><strong>Zone 1 (Recovery):</strong> Napaka-light na paglalakad para sa recovery</li><li><strong>Zone 2 (Fat Burn):</strong> Optimal para sa fat burning at aerobic base</li><li><strong>Zone 3 (Aerobic):</strong> Pagpapabuti ng cardiovascular fitness</li><li><strong>Zone 4 (Threshold):</strong> High-intensity aerobic capacity</li><li><strong>Zone 5 (Peak):</strong> Maximum effort para sa maikling bursts</li></ul><p>Tuklasin ang kumpletong <a href="/tl/walking-zones/">gabay sa walking zones</a>.</p><h3>Walking Stress Score (WSS)</h3><p>Sinusukat ng WSS ang physiological stress ng bawat lakad:</p><ul><li>Batay sa heart rate intensity at tagal</li><li>Tumutulong na balansehin ang training load sa recovery</li><li>Pinipigilan ang overtraining at ino-optimize ang pag-unlad</li><li>Subaybayan ang lingguhan at buwanang trends</li></ul><p>Kalkulahin ang iyong WSS gamit ang aming <a href="/tl/wss-calculator/">WSS calculator</a>.</p><h2 id="first-walk">Pagtatala ng Iyong Unang Lakad</h2><h3>Gamit ang Apple Watch</h3><ol><li>Magsimula ng "Walking" workout sa iyong Apple Watch</li><li>Maglakad nang natural - walang kailangang baguhin sa iyong form</li><li>Tapusin ang workout kapag natapos na</li><li>Awtomatikong ini-import at sinusuri ito ng Walk Analytics</li></ol><h3>Gamit ang iPhone Lamang</h3><ol><li>I-enable ang "Fitness Tracking" sa iPhone Settings</li><li>Dalhin ang iyong iPhone habang naglalakad</li><li>Ang mga walking activities ay awtomatikong natatala</li><li>I-review sa Walk Analytics para sa analysis</li></ol><h2 id="interpreting-metrics">Pagbibigay-kahulugan sa Iyong Metrics</h2><h3>Mabuti vs. Mga Nakababahala na Senyales</h3><table class="metrics-table"><thead><tr><th>Metric</th><th>Mabuting Range</th><th>Kahulugan Nito</th></tr></thead><tbody><tr><td>Stride Symmetry</td><td>&gt; 95%</td><td>Balanseng lakad, mababang panganib ng pinsala</td></tr><tr><td>Cadence</td><td>100-130 hakbang/min</td><td>Mahusay na bilis ng paglalakad</td></tr><tr><td>Weekly WSS</td><td>200-500</td><td>Malusog na training load</td></tr><tr><td>Zone 2 Time</td><td>60-80% ng kabuuan</td><td>Malakas na aerobic base</td></tr></tbody></table><h2 id="tips">Mga Pro Tips para sa Tagumpay</h2><h3>1. Magsimula sa Baseline Assessment</h3><p>Magtala muna ng 2-3 normal na lakad para maitatag ang iyong baseline metrics bago gumawa ng mga pagbabago.</p><h3>2. Mag-focus sa Zone 2 Walking</h3><p>Gumugol ng 60-80% ng iyong walking time sa Zone 2 para sa optimal na benepisyo sa kalusugan at fat burning.</p><h3>3. Bantayan ang Gait Symmetry</h3><p>Kung bumaba ang symmetry sa ibaba ng 90%, isaalang-alang ang form work o konsultasyon sa propesyonal upang maiwasan ang pinsala.</p><h3>4. Magpatayo nang Unti-unti</h3><p>Dagdagan ang lingguhang WSS ng hindi hihigit sa 10% bawat linggo upang maiwasan ang overtraining.</p><h3>5. Consistency Over Intensity</h3><p>Ang regular na katamtamang paglalakad ay mas mainam kaysa paminsan-minsang matinding lakad para sa pangmatagalang kalusugan.</p><h2 id="troubleshooting">Troubleshooting</h2><h3>Hindi Lumalabas ang Metrics</h3><ul><li>Tiyaking naibigay ang mga Apple Health permissions</li><li>I-check na ang mga workouts ay tama ang label bilang "Walking" sa Health app</li><li>Para sa heart rate zones, i-verify na ang heart rate data ay nirerekord</li></ul><h3>Hindi Tumpak ang Stride Metrics</h3><ul><li>I-calibrate ang Apple Watch sa pamamagitan ng paglalakad sa outdoor routes na may tumpak na GPS</li><li>Tiyaking tama ang pagkakasuot ng watch (mahigpit pero komportable)</li><li>Maglakad na may natural na arm swing para sa mas mahusay na motion detection</li></ul><h2 id="next-steps">Susunod na Mga Hakbang</h2><ul><li>Matuto tungkol sa <a href="/tl/walking-zones/">training zones</a> para sa optimal na intensity</li><li>Unawain ang <a href="/tl/gait-analysis/">gait analysis metrics</a> nang mas malalim</li><li>Kalkulahin ang iyong <a href="/tl/wss-calculator/">Walking Stress Score</a></li><li>Tuklasin ang <a href="/tl/research/">agham sa likod ng walking analytics</a></li></ul></div><aside class="sidebar"><div class="toc"><h3>Talaan ng mga Nilalaman</h3><ul><li><a href="#quick-start">Mabilis na Gabay sa Pagsisimula</a></li><li><a href="#key-concepts">Mga Pangunahing Konsepto</a></li><li><a href="#first-walk">Pagtatala ng Iyong Unang Lakad</a></li><li><a href="#interpreting-metrics">Pagbibigay-kahulugan sa Iyong Metrics</a></li><li><a href="#tips">Mga Pro Tips para sa Tagumpay</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#next-steps">Susunod na Mga Hakbang</a></li></ul></div><div class="cta-box"><h3>Simulan ang Iyong Journey</h3><p>I-download ang Walk Analytics at simulan ang pagsubaybay sa iyong gait ngayon.</p><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="btn btn-accent" target="_blank" rel="noopener">I-download ang App</a></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Download</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Download on the App Store"><img src="../../assets/images/badge-app-store.svg"
                             alt="Download on the App Store" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Get it on Google Play">
-                        <img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Get it on Google Play"><img src="../../assets/images/badge-google-play.svg"
                             alt="Get it on Google Play" width="135"
-                            height="40" loading="lazy">
-                    </a>
-                    
-                </div>
-            </div>
-            
-        </div>
-
-        
-        <div class="footer-languages">
-            <h3 class="footer-heading">Available in</h3>
-            <div class="lang-grid">
-                
-                <a href="/af/" class="lang-link"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Available in</h3><div class="lang-grid"><a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a>
-                
-                <a href="/am/" class="lang-link"
+                </a><a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a>
-                
-                <a href="/ar/" class="lang-link"
+                </a><a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a>
-                
-                <a href="/bg/" class="lang-link"
+                </a><a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a>
-                
-                <a href="/bn/" class="lang-link"
+                </a><a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a>
-                
-                <a href="/ca/" class="lang-link"
+                </a><a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a>
-                
-                <a href="/cs/" class="lang-link"
+                </a><a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a>
-                
-                <a href="/da/" class="lang-link"
+                </a><a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a>
-                
-                <a href="/de/" class="lang-link"
+                </a><a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a>
-                
-                <a href="/el/" class="lang-link"
+                </a><a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a>
-                
-                <a href="/en/" class="lang-link"
+                </a><a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a>
-                
-                <a href="/es/" class="lang-link"
+                </a><a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a>
-                
-                <a href="/et/" class="lang-link"
+                </a><a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a>
-                
-                <a href="/fa/" class="lang-link"
+                </a><a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a>
-                
-                <a href="/fi/" class="lang-link"
+                </a><a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a>
-                
-                <a href="/fr/" class="lang-link"
+                </a><a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a>
-                
-                <a href="/gu/" class="lang-link"
+                </a><a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a>
-                
-                <a href="/ha/" class="lang-link"
+                </a><a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a>
-                
-                <a href="/he/" class="lang-link"
+                </a><a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a>
-                
-                <a href="/hi/" class="lang-link"
+                </a><a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a>
-                
-                <a href="/hr/" class="lang-link"
+                </a><a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a>
-                
-                <a href="/hu/" class="lang-link"
+                </a><a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a>
-                
-                <a href="/id/" class="lang-link"
+                </a><a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a>
-                
-                <a href="/is/" class="lang-link"
+                </a><a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a>
-                
-                <a href="/it/" class="lang-link"
+                </a><a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a>
-                
-                <a href="/ja/" class="lang-link"
+                </a><a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a>
-                
-                <a href="/km/" class="lang-link"
+                </a><a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a>
-                
-                <a href="/kn/" class="lang-link"
+                </a><a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a>
-                
-                <a href="/ko/" class="lang-link"
+                </a><a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a>
-                
-                <a href="/lt/" class="lang-link"
+                </a><a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a>
-                
-                <a href="/lv/" class="lang-link"
+                </a><a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a>
-                
-                <a href="/ms/" class="lang-link"
+                </a><a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a>
-                
-                <a href="/my/" class="lang-link"
+                </a><a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a>
-                
-                <a href="/nb/" class="lang-link"
+                </a><a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a>
-                
-                <a href="/nl/" class="lang-link"
+                </a><a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a>
-                
-                <a href="/pl/" class="lang-link"
+                </a><a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a>
-                
-                <a href="/pt/" class="lang-link"
+                </a><a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a>
-                
-                <a href="/pt-br/" class="lang-link"
+                </a><a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a>
-                
-                <a href="/ro/" class="lang-link"
+                </a><a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a>
-                
-                <a href="/ru/" class="lang-link"
+                </a><a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a>
-                
-                <a href="/sk/" class="lang-link"
+                </a><a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a>
-                
-                <a href="/sl/" class="lang-link"
+                </a><a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a>
-                
-                <a href="/sr/" class="lang-link"
+                </a><a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a>
-                
-                <a href="/sv/" class="lang-link"
+                </a><a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a>
-                
-                <a href="/sw/" class="lang-link"
+                </a><a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a>
-                
-                <a href="/ta/" class="lang-link"
+                </a><a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a>
-                
-                <a href="/te/" class="lang-link"
+                </a><a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a>
-                
-                <a href="/th/" class="lang-link"
+                </a><a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a>
-                
-                <a href="/tl/" class="lang-link active"
+                </a><a href="/tl/" class="lang-link active"
                     hreflang="tl" >
                     Tagalog
-                </a>
-                
-                <a href="/tr/" class="lang-link"
+                </a><a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a>
-                
-                <a href="/uk/" class="lang-link"
+                </a><a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a>
-                
-                <a href="/ur/" class="lang-link"
+                </a><a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a>
-                
-                <a href="/vi/" class="lang-link"
+                </a><a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a>
-                
-                <a href="/yo/" class="lang-link"
+                </a><a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a>
-                
-                <a href="/zh/" class="lang-link"
+                </a><a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        
-        <div class="footer-bottom">
-            <p class="copyright">
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
                 &copy; 2026 Walk Analytics. Lahat ng karapatan ay nakalaan
-            </p>
-            <ul class="footer-legal">
-                <li><a href="/tl/privacy/">Privacy</a></li>
-                <li><a href="/tl/terms/">Mga Tuntunin</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-    <div class="cookie-banner-content">
-        <div>
-            <p>Gumagamit ang website na ito ng cookies upang mapabuti ang iyong karanasan.</p>
-            <a href="/tl/privacy/" class="text-sm">Matuto pa</a>
-        </div>
-        <div class="cookie-banner-actions">
-            <button id="cookie-decline" class="btn btn-secondary btn-small">Tanggihan</button>
-            <button id="cookie-accept" class="btn btn-primary btn-small">Tanggapin</button>
-        </div>
-    </div>
-</div>
-
-  
-  <script src="../../assets/js/core.min.js?v=540c31aabebc" defer></script>
-  <script src="../../assets/js/search.min.js?v=540c31aabebc" defer></script>
-  
-
-  
-  
-  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
-  
-
-  
-  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
-</body>
-
-</html>
+            </p><ul class="footer-legal"><li><a href="/tl/privacy/">Privacy</a></li><li><a href="/tl/terms/">Mga Tuntunin</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Gumagamit ang website na ito ng cookies upang mapabuti ang iyong karanasan.</p><a href="/tl/privacy/" class="text-sm">Matuto pa</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Tanggihan</button><button id="cookie-accept" class="btn btn-primary btn-small">Tanggapin</button></div></div></div><script src="../../assets/js/core.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/search.min.js?v=8caa6f183969" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>
