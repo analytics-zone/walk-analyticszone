@@ -1,61 +1,251 @@
-<!DOCTYPE html><html lang="lt" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
-    rel="stylesheet"><title>Ėjimo rodiklių formulės ir lygtys | Walk Analytics</title><meta name="description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="ėjimo formulės, WSS formulė, ėjimo rodiklių skaičiavimas, ėjimo mokslo formulės, žingsnių skaičiavimas"><link rel="canonical" href="https://walk.analyticszone.app/lt/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-31T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/lt/formulas/"><meta property="og:title" content="Ėjimo rodiklių formulės ir lygtys | Walk Analytics"><meta property="og:description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="lt_LT"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/lt/formulas/"><meta name="twitter:title" content="Ėjimo rodiklių formulės ir lygtys | Walk Analytics"><meta name="twitter:description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/formulas/"><link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/formulas/"><link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/formulas/"><link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/formulas/"><link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/formulas/"><link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/formulas/"><link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/formulas/"><link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/formulas/"><link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/formulas/"><link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/formulas/"><link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/formulas/"><link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/formulas/"><link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/formulas/"><link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/formulas/"><link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/formulas/"><link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/formulas/"><link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/formulas/"><link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/formulas/"><link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/formulas/"><link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/formulas/"><link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/formulas/"><link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/formulas/"><link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/formulas/"><link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/formulas/"><link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/formulas/"><link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/formulas/"><link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/formulas/"><link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/formulas/"><link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/formulas/"><link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/formulas/"><link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/formulas/"><link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/formulas/"><link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/formulas/"><link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/formulas/"><link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/formulas/"><link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/formulas/"><link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/formulas/"><link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
+<!DOCTYPE html>
+<html lang="lt" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+    rel="stylesheet">
+
+  
+  <title>Ėjimo rodiklių formulės ir lygtys | Walk Analytics</title>
+  <meta name="description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance">
+  <meta name="author" content="AnalyticsZone Team">
+
+  
+  
+  <meta name="keywords" content="ėjimo formulės, WSS formulė, ėjimo rodiklių skaičiavimas, ėjimo mokslo formulės, žingsnių skaičiavimas">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/lt/formulas/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2026-03-24T14:30:00Z">
+  <meta property="article:author" content="AnalyticsZone Team">
+  
+
+  
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/lt/formulas/">
+  <meta property="og:title" content="Ėjimo rodiklių formulės ir lygtys | Walk Analytics">
+  <meta property="og:description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance">
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  <meta property="og:locale" content="lt_LT">
+  <meta property="og:site_name" content="Walk Analytics">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/lt/formulas/">
+  <meta name="twitter:title" content="Ėjimo rodiklių formulės ir lygtys | Walk Analytics">
+  <meta name="twitter:description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance">
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+  <meta name="twitter:site" content="@walkanalytics">
+  <meta name="twitter:creator" content="@walkanalytics">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/formulas/">
+  
+  <link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/formulas/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/formulas/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/formulas/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/formulas/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/formulas/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/formulas/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/formulas/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/">
+  
+  <link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/formulas/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/formulas/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/formulas/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/">
+  
+  <link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/formulas/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/formulas/">
+  
+  <link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/formulas/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/">
+  
+  <link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/formulas/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/formulas/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/formulas/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/">
+  
+  <link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/formulas/">
+  
+  <link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/formulas/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/">
+  
+  <link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/formulas/">
+  
+  <link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/formulas/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/formulas/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/formulas/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/formulas/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/">
+  
+  <link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/formulas/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/">
+  
+  <link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/formulas/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/formulas/">
+  
+  <link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/formulas/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/formulas/">
+  
+  <link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/formulas/">
+  
+  <link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/formulas/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/formulas/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/formulas/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/">
+  
+  <link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/formulas/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/formulas/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/formulas/">
+  
+  <link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/formulas/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../manifest.json">
+  <meta name="theme-color" content="#2563EB">
+  
+  
+  
+  
+  <meta name="robots" content="index, follow">
+  
+
+  
+  
+  
+  <meta name="apple-itunes-app" content="app-id=6755187154">
+  
+
+  
+  <style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -314,7 +504,20 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=635348535bde"><script type="application/ld+json">
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="stylesheet" href="../../assets/css/main.min.css?v=19fdca55b3da">
+
+  
+  
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -349,7 +552,10 @@ img[width][height] {
     
   ]
 }
-</script><script type="application/ld+json">
+</script>
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -358,7 +564,11 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "lt"
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -373,7 +583,12 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -402,7 +617,11 @@ img[width][height] {
     
   ]
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -416,7 +635,7 @@ img[width][height] {
     "url": "https://walk.analyticszone.app"
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2025-12-31",
+  "dateModified": "2026-03-24",
   "keywords": ["ėjimo formulės", "WSS formulė", "ėjimo rodiklių skaičiavimas", "ėjimo mokslo formulės", "žingsnių skaičiavimas"],
   "about": [
     {
@@ -445,7 +664,14 @@ img[width][height] {
     }
   ]
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -464,13 +690,40 @@ img[width][height] {
     }
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2025-12-31",
+  "dateModified": "2026-03-24",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://walk.analyticszone.app/lt/formulas/"
   }
 }
-</script><script>
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Ėjimo rodiklių formulės ir lygtys | Walk Analytics",
+  "description": "Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance",
+  "url": "https://walk.analyticszone.app/lt/formulas/",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "WebBrowser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+
+  
+  
+
+  
+  <script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -484,367 +737,1549 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script></head><body><a href="#main-content" class="skip-link">Pereiti prie turinio</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/lt/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/lt/" 
+  </script>
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">Pereiti prie turinio</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/lt/" class="site-logo">
+                <picture>
+                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)">
+                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <div class="nav-group-left">
+                    <ul>
+                        
+                        <li>
+                            
+                            <a href="/lt/" 
                                 aria-current="">
                                 Pradžia
-                            </a></li><li class="has-submenu" ><a href="/lt/getting-started/" class="nav-label">Mokykis</a><ul class="submenu"><li><a href="/lt/getting-started/" 
+                            </a>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/lt/getting-started/" class="nav-label">Mokykis</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/lt/getting-started/" 
                                         aria-current="">
                                         Darbo pradžia
-                                    </a></li><li><a href="/lt/walking-zones/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/walking-zones/" 
                                         aria-current="">
                                         Pasivaikščiojimo zonos
-                                    </a></li><li><a href="/lt/gait-analysis/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/gait-analysis/" 
                                         aria-current="">
                                         Eisenos analizė
-                                    </a></li><li><a href="/lt/training-load/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/training-load/" 
                                         aria-current="">
                                         Treniruotės krūvis
-                                    </a></li><li><a href="/lt/wss-calculator/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/wss-calculator/" 
                                         aria-current="">
                                         WSS skaičiuoklė
-                                    </a></li></ul></li><li class="has-submenu" ><a href="/lt/research/" class="nav-label">Mokslas</a><ul class="submenu"><li><a href="/lt/research/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/lt/research/" class="nav-label">Mokslas</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/lt/research/" 
                                         aria-current="">
                                         Tyrimas
-                                    </a></li><li><a href="/lt/formulas/" class="active" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/formulas/" class="active" 
                                         aria-current="page">
                                         Formulės
-                                    </a></li><li><a href="/lt/gait-efficiency/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/gait-efficiency/" 
                                         aria-current="">
                                         Eisenos efektyvumas
-                                    </a></li><li><a href="/lt/stride-mechanics/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/stride-mechanics/" 
                                         aria-current="">
                                         Žingsnio mechanika
-                                    </a></li><li><a href="/lt/walking-vs-running/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/walking-vs-running/" 
                                         aria-current="">
                                         Ėjimas vs bėgimas
-                                    </a></li><li><a href="/lt/benchmarks/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/benchmarks/" 
                                         aria-current="">
                                         Etalonai
-                                    </a></li><li><a href="/lt/bibliography/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/bibliography/" 
                                         aria-current="">
                                         Bibliografija
-                                    </a></li></ul></li><li class="has-submenu" ><a href="/lt/for-health/" class="nav-label">Tau</a><ul class="submenu"><li><a href="/lt/for-health/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/lt/for-health/" class="nav-label">Tau</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/lt/for-health/" 
                                         aria-current="">
                                         Dėl sveikatos
-                                    </a></li><li><a href="/lt/for-fitness/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/for-fitness/" 
                                         aria-current="">
                                         Dėl fitneso
-                                    </a></li><li><a href="/lt/for-seniors/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/for-seniors/" 
                                         aria-current="">
                                         Senjorams
-                                    </a></li><li><a href="/lt/for-rehabilitation/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/for-rehabilitation/" 
                                         aria-current="">
                                         Reabilitacijai
-                                    </a></li></ul></li><li class="has-submenu" ><a href="/lt/cadence-calculator/" class="nav-label">Įrankiai</a><ul class="submenu"><li><a href="/lt/cadence-calculator/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/lt/cadence-calculator/" class="nav-label">Įrankiai</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/lt/cadence-calculator/" 
                                         aria-current="">
                                         Kadencijos skaičiuoklė
-                                    </a></li><li><a href="/lt/gait-assessment/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/gait-assessment/" 
                                         aria-current="">
                                         Eisenos įvertinimas
-                                    </a></li><li><a href="/lt/vo2max-calculator/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/lt/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max Skaičiuoklė
-                                    </a></li></ul></li><li><a href="/lt/contact/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li>
+                            
+                            <a href="/lt/contact/" 
                                 aria-current="">
                                 Kontaktai
-                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a>
+                            
+                            </li>
+                            
+                    </ul>
+
+                    
+                    <div class="search-container">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Pasirinkite kalbą"><option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                    </div>
+
+                    
+                    <select class="language-selector" id="language-select" aria-label="Pasirinkite kalbą">
+                        
+                        <option value="af" >
                             Afrikaans
-                        </option><option value="am" >
+                        </option>
+                        
+                        <option value="am" >
                             አမ္ဟာ
-                        </option><option value="ar" >
+                        </option>
+                        
+                        <option value="ar" >
                             العربية
-                        </option><option value="bg" >
+                        </option>
+                        
+                        <option value="bg" >
                             Български
-                        </option><option value="bn" >
+                        </option>
+                        
+                        <option value="bn" >
                             বাংলা
-                        </option><option value="ca" >
+                        </option>
+                        
+                        <option value="ca" >
                             Català
-                        </option><option value="cs" >
+                        </option>
+                        
+                        <option value="cs" >
                             Čeština
-                        </option><option value="da" >
+                        </option>
+                        
+                        <option value="da" >
                             Dansk
-                        </option><option value="de" >
+                        </option>
+                        
+                        <option value="de" >
                             Deutsch
-                        </option><option value="el" >
+                        </option>
+                        
+                        <option value="el" >
                             Ελληνικά
-                        </option><option value="en" >
+                        </option>
+                        
+                        <option value="en" >
                             English
-                        </option><option value="es" >
+                        </option>
+                        
+                        <option value="es" >
                             Español
-                        </option><option value="et" >
+                        </option>
+                        
+                        <option value="et" >
                             Eesti
-                        </option><option value="fa" >
+                        </option>
+                        
+                        <option value="fa" >
                             فارسی
-                        </option><option value="fi" >
+                        </option>
+                        
+                        <option value="fi" >
                             Suomi
-                        </option><option value="fr" >
+                        </option>
+                        
+                        <option value="fr" >
                             Français
-                        </option><option value="gu" >
+                        </option>
+                        
+                        <option value="gu" >
                             ગુજરાતી
-                        </option><option value="ha" >
+                        </option>
+                        
+                        <option value="ha" >
                             Hausa
-                        </option><option value="he" >
+                        </option>
+                        
+                        <option value="he" >
                             עברית
-                        </option><option value="hi" >
+                        </option>
+                        
+                        <option value="hi" >
                             हिन्दी
-                        </option><option value="hr" >
+                        </option>
+                        
+                        <option value="hr" >
                             Hrvatski
-                        </option><option value="hu" >
+                        </option>
+                        
+                        <option value="hu" >
                             Magyar
-                        </option><option value="id" >
+                        </option>
+                        
+                        <option value="id" >
                             Bahasa Indonesia
-                        </option><option value="is" >
+                        </option>
+                        
+                        <option value="is" >
                             Íslenska
-                        </option><option value="it" >
+                        </option>
+                        
+                        <option value="it" >
                             Italiano
-                        </option><option value="ja" >
+                        </option>
+                        
+                        <option value="ja" >
                             日本語
-                        </option><option value="km" >
+                        </option>
+                        
+                        <option value="km" >
                             ភាសាខ្មែរ
-                        </option><option value="kn" >
+                        </option>
+                        
+                        <option value="kn" >
                             ಕನ್ನಡ
-                        </option><option value="ko" >
+                        </option>
+                        
+                        <option value="ko" >
                             한국어
-                        </option><option value="lt" selected>
+                        </option>
+                        
+                        <option value="lt" selected>
                             Lietuvių
-                        </option><option value="lv" >
+                        </option>
+                        
+                        <option value="lv" >
                             Latviešu
-                        </option><option value="ms" >
+                        </option>
+                        
+                        <option value="ms" >
                             Bahasa Melayu
-                        </option><option value="my" >
+                        </option>
+                        
+                        <option value="my" >
                             မြန်မာ
-                        </option><option value="nb" >
+                        </option>
+                        
+                        <option value="nb" >
                             Norsk Bokmål
-                        </option><option value="nl" >
+                        </option>
+                        
+                        <option value="nl" >
                             Nederlands
-                        </option><option value="pl" >
+                        </option>
+                        
+                        <option value="pl" >
                             Polski
-                        </option><option value="pt" >
+                        </option>
+                        
+                        <option value="pt" >
                             Português
-                        </option><option value="pt-br" >
+                        </option>
+                        
+                        <option value="pt-br" >
                             Português (Brasil)
-                        </option><option value="ro" >
+                        </option>
+                        
+                        <option value="ro" >
                             Română
-                        </option><option value="ru" >
+                        </option>
+                        
+                        <option value="ru" >
                             Русский
-                        </option><option value="sk" >
+                        </option>
+                        
+                        <option value="sk" >
                             Slovenčina
-                        </option><option value="sl" >
+                        </option>
+                        
+                        <option value="sl" >
                             Slovenščina
-                        </option><option value="sr" >
+                        </option>
+                        
+                        <option value="sr" >
                             Српски
-                        </option><option value="sv" >
+                        </option>
+                        
+                        <option value="sv" >
                             Svenska
-                        </option><option value="sw" >
+                        </option>
+                        
+                        <option value="sw" >
                             Kiswahili
-                        </option><option value="ta" >
+                        </option>
+                        
+                        <option value="ta" >
                             தமிழ்
-                        </option><option value="te" >
+                        </option>
+                        
+                        <option value="te" >
                             తెలుగు
-                        </option><option value="th" >
+                        </option>
+                        
+                        <option value="th" >
                             ไทย
-                        </option><option value="tl" >
+                        </option>
+                        
+                        <option value="tl" >
                             Tagalog
-                        </option><option value="tr" >
+                        </option>
+                        
+                        <option value="tr" >
                             Türkçe
-                        </option><option value="uk" >
+                        </option>
+                        
+                        <option value="uk" >
                             Українська
-                        </option><option value="ur" >
+                        </option>
+                        
+                        <option value="ur" >
                             اردو
-                        </option><option value="vi" >
+                        </option>
+                        
+                        <option value="vi" >
                             Tiếng Việt
-                        </option><option value="yo" >
+                        </option>
+                        
+                        <option value="yo" >
                             Yorùbá
-                        </option><option value="zh" >
+                        </option>
+                        
+                        <option value="zh" >
                             中文
-                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor"><path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor"><path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option>
+                        
+                    </select>
+                </div>
+
+                <div class="nav-group-right">
+                    
+
+
+                    
+                    <div class="header-app-buttons">
+                        
+                        
+                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                            </svg>
+                        </a>
+                        
+
+                        
+                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
+                            </svg>
+                        </a>
+                        
+                        
+                    </div>
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="suite-menu-container">
+                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a><a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a><a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Perjungti meniu"
-                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/lt/">Pradžia</a></li><li><a href="/lt/research/">Mokslas</a></li><li><span aria-current="page">Formulės</span></li></ol></div></nav><main id="main-content" class="main-content">
+                                stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </button>
+                        <div class="suite-dropdown hidden" id="suite-dropdown">
+                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
+                            <div class="suite-apps-grid">
+                                
+                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
+                                
+                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
+                                
+                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
+                                
+                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
+                                
+                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
+                                
+                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
+                                
+                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
+                                
+                                <a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a>
+                                
+                                <a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Perjungti meniu"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+        <ol>
+            
+            <li>
+                
+                <a href="/lt/">Pradžia</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="/lt/research/">Mokslas</a>
+                
+            </li>
+            
+            <li>
+                
+                <span aria-current="page">Formulės</span>
+                
+            </li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+  
+  <main id="main-content" class="main-content">
     
     Ėjimo metrikos formulės
-<section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/lt/">Pradžia</a>/<a href="/lt/#science">Mokslas</a>/ Formulės</div><h1>Ėjimo metrikos formulės ir lygtys</h1><p class="lead">Matematiniai ėjimo analizės pagrindai – moksliškai patvirtintos intensyvumo, energijos ir našumo lygtys</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>Šiame puslapyje pateikiamos moksliškai patvirtintos formulės, naudojamos vaikščiojimo analizėje. Visos lygtys nurodytos su tyrimų nuorodomis ir patvirtintais tikslumo diapazonais.</p></div><h2 id="cadence-mets">1. Kadencija į MET konversiją</h2><div class="formula-section featured"><h3>Moore ir kt. (2021) Cadence-Based Metabolic Equation</h3><div class="formula-box primary"><p class="formula-title">Kadencija į MET</p><p class="formula-main"><strong>MET = 0,0219 × Kadencija (žingsniai/min) + 0,72</strong></p><p class="formula-meta"><span class="accuracy">Tikslumas: ±0,5 MET</span><span class="reference">Moore CC ir kt. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>Kodėl ši formulė svarbi:</strong>Ši lygtis yra<strong>23-35% tikslesnis</strong>nei tradicinės ACSM greičiu pagrįstos ėjimo lygtys. Tai veikia, nes kadencija tiesiogiai atspindi judėjimo dažnį ir energijos sąnaudas, o greitis priklauso nuo kintamo žingsnio ilgio.</p></div><h4>Pavyzdžiai:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Ėjimas 100 spm greičiu:</strong></p><p class="example-calc">MET = 0,0219 × 100 + 0,72 = 2,19 + 0,72 =<strong>2,91 MET</strong></p><p class="example-interpretation">≈ 3 MET =<strong>Vidutinio intensyvumo slenkstis</strong>✓</p></div><div class="calc-example"><p class="example-input"><strong>Ėjimas 110 spm greičiu:</strong></p><p class="example-calc">MET = 0,0219 × 110 + 0,72 = 2,409 + 0,72 =<strong>3.13 MET</strong></p><p class="example-interpretation">Kietas vidutinio intensyvumo</p></div><div class="calc-example"><p class="example-input"><strong>Ėjimas 120 spm greičiu:</strong></p><p class="example-calc">MET = 0,0219 × 120 + 0,72 = 2,628 + 0,72 =<strong>3,35 MET</strong></p><p class="example-interpretation">Vidutinis-stiprus intensyvumas</p></div><div class="calc-example"><p class="example-input"><strong>Ėjimas 130 spm greičiu:</strong></p><p class="example-calc">MET = 0,0219 × 130 + 0,72 = 2,847 + 0,72 =<strong>3,57 MET</strong></p><p class="example-interpretation"><strong>Energingo intensyvumo slenkstis</strong>(6 MET pagal CADENCE-Adults tiesioginį matavimą)</p></div></div><div class="formula-note"><p><strong>Pastaba:</strong>CADENCE-Adults tyrimas tiesiogiai matavo, kad 130 spm = 6 MET kontroliuojamomis laboratorinėmis sąlygomis. Moore'o lygtis sukurta 80–130 spm diapazonui ir gali būti neįvertinta esant labai dideliems dažniams.</p></div><h4>Patvirtinimo duomenys:</h4><ul><li><strong>Pavyzdys:</strong>76 suaugusieji 21-40 metų amžiaus</li><li><strong>Metodas:</strong>Netiesioginė kalorimetrija (aukso standartas)</li><li><strong>R² vertė:</strong>0,87 (puiki koreliacija)</li><li><strong>Vidutinė absoliuti klaida:</strong>0,47 MET</li><li><strong>Taikomas diapazonas:</strong>80-130 žingsnių/min</li></ul></div><h2 id="acsm-vo2">2. ACSM VO₂ ėjimo lygtys</h2><div class="formula-section"><h3>ACSM medžiagų apykaitos skaičiavimai</h3><div class="formula-box"><p class="formula-title">Ėjimas lygiu (0 % pažymys)</p><p class="formula-main"><strong>VO₂ (ml/kg/min) = 0,1 × greitis (m/min) + 3,5</strong></p><p class="formula-note">Greitis metrais per minutę (km/h padauginkite iš 16,67 arba mylių per valandą iš 26,82)</p></div><div class="formula-box"><p class="formula-title">Vaikščiojimas su nuolydžiu (nuolydis / nuolydis)</p><p class="formula-main"><strong>VO₂ = 0,1 (greitis) + 1,8 (greitis) (laipsnis) + 3,5</strong></p><p class="formula-note">Įvertinimas išreikštas dešimtainiu tikslumu (pvz., 5 % = 0,05)</p></div><h4>Pavyzdžiai:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Ėjimas 5 km/h (83,3 m/min) lygiu paviršiumi:</strong></p><p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 =<strong>11,83 ml/kg/min</strong></p><p class="example-conversion">Konvertuoti į MET: 11,83 / 3,5 =<strong>3,38 MET</strong></p></div><div class="calc-example"><p class="example-input"><strong>Ėjimas 5 km/h 5 % nuolydžiu:</strong></p><p class="example-calc">VO₂ = 0,1 (83,3) + 1,8 (83,3) (0,05) + 3,5</p><p class="example-calc">= 8,33 + 7,497 + 3,5 =<strong>19,33 ml/kg/min</strong></p><p class="example-conversion">= 19,33 / 3,5 =<strong>5,52 MET</strong></p><p class="example-interpretation">Nuolydis padidina intensyvumą ~64%!</p></div></div><div class="conversion-helper"><h4>Greičio konversijos:</h4><ul><li><strong>km/h iki m/min:</strong>padauginkite iš 16,67</li><li><strong>mph iki m/min:</strong>padauginkite iš 26,82</li><li><strong>m/s iki m/min:</strong>padauginti iš 60</li></ul></div></div><h2 id="energy-expenditure">3. Energijos sąnaudos ir kalorijų deginimas</h2><div class="formula-section"><h3>Tikslus kalorijų skaičiavimas</h3><div class="formula-box"><p class="formula-title">Kalorijos per minutę</p><p class="formula-main"><strong>Kal/min = (MET × 3,5 × kūno svoris kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">Bendras seanso kalorijų kiekis</p><p class="formula-main"><strong>Bendras kalorijų kiekis = Cal/min × Trukmė (minutės)</strong></p></div><h4>Pavyzdžiai:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>70 kg sveriantis žmogus, einantis 100 spm (3 MET) 45 minutes:</strong></p><p class="example-calc">Kal/min = (3 × 3,5 × 70) / 200 = 735 / 200 =<strong>3,675 cal/min</strong></p><p class="example-calc">Iš viso = 3,675 × 45 =<strong>165,4 kalorijos</strong></p></div><div class="calc-example"><p class="example-input"><strong>85 kg sveriantis žmogus, einantis 120 spm (5 MET) 30 minučių:</strong></p><p class="example-calc">Kal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 =<strong>7,44 kal/min</strong></p><p class="example-calc">Iš viso = 7,44 × 30 =<strong>223,2 kalorijos</strong></p></div></div><div class="info-box"><h4>Kodėl ši formulė?</h4><p>Ši lygtis kilusi iš MET (metabolinio užduoties ekvivalento) apibrėžimo:</p><ul><li>1 MET = 3,5 ml O₂/kg/min (metabolizmo greitis ramybės būsenoje)</li><li>1 litras O₂ sunaudojo ≈ 5 kcal</li><li>Konvertavimas: (MET × 3,5 × kg × 5) / 1000 = (MET × 3,5 × kg) / 200</li></ul></div><h3>Grynųjų kalorijų sudeginimas (tik pratimai)</h3><div class="formula-box"><p class="formula-title">Grynosios kalorijos (neįskaitant poilsio)</p><p class="formula-main"><strong>Grynoji Cal/min = [(MET – 1) × 3,5 × kūno svoris] / 200</strong></p><p class="formula-note">Atimamas 1 MET, kad neįtrauktumėte kalorijų, kurias vis tiek sudegintumėte ramybėje</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 MET, 45 min – grynosios kalorijos:</strong></p><p class="example-calc">Grynasis = [(3–1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 =<strong>110,3 grynosios kalorijos</strong></p><p class="example-interpretation">palyginti su 165,4 bendros kalorijos (55 kalorijos būtų sudegintos ramybėje)</p></div></div><h2 id="gait-symmetry">4. Eisenos simetrijos indeksas (GSI)</h2><div class="formula-section"><h3>Kairės ir dešinės asimetrijos kiekybinis įvertinimas</h3><div class="formula-box"><p class="formula-title">Eisenos simetrijos indeksas</p><p class="formula-main"><strong>GSI (%) = |Dešinė – Kairė| / [0,5 × (dešinė + kairė)] × 100</strong></p><p class="formula-note">Gali būti taikomas žingsnio ilgiui, žingsnio laikui arba kontaktiniam laikui</p></div><h4>Aiškinimas:</h4><ul><li><strong>&lt;2–3 %:</strong>Normali, simetriška eisena</li><li><strong>3–5 %:</strong>Lengva asimetrija</li><li><strong>5–10 %:</strong>Vidutinė asimetrija, monitorius</li><li><strong>&gt;10 %:</strong>Kliniškai reikšmingas, įvertinkite profesionaliai</li></ul><h4>Pavyzdžiai:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Žingsnio laikai: dešinė = 520 ms, kairė = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 =<strong>8% asimetrija</strong></p><p class="example-interpretation">Vidutinė asimetrija – apsvarstykite galimybę sustiprinti silpnąją pusę</p></div><div class="calc-example"><p class="example-input"><strong>Žingsnio ilgiai: dešinė = 1,42 m, kairė = 1,38 m</strong></p><p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p><p class="example-calc">= 0,04 / 1,4 × 100 =<strong>2,86% asimetrija</strong></p><p class="example-interpretation">Normalus, sveikas diapazonas ✓</p></div></div><div class="warning-box"><p><strong>Klinikinė pastaba:</strong>„Apple HealthKit“ vaikščiojimo asimetrija naudoja šiek tiek kitokį skaičiavimą (paprastas procentinis skirtumas tarp žingsnių laiko), tačiau aiškinimo slenksčiai yra panašūs.</p></div></div><h2 id="walk-score">5. ĖJIMO balas (Walk Analytics patentuota metrika)</h2><div class="formula-section"><h3>Ėjimo efektyvumo balas</h3><div class="formula-box"><p class="formula-title">ĖJIMO rezultatas</p><p class="formula-main"><strong>ĖJIMO rezultatas = laikas (sekundėmis) + žingsniai 100 metrų</strong></p><p class="formula-note">Mažesnis balas = didesnis efektyvumas</p></div><h4>Kaip tai veikia:</h4><p>WALK Score sujungia laiką ir žingsnių skaičių, kad įvertintų ėjimo efektyvumą. Vaikščiojo, kuris 100 m įveikia per 75 sekundes ir 140 žingsnių, ĖJIMO balas yra 215. Padidinus greitį ARBA žingsnio efektyvumą, rezultatas sumažėja.</p><h4>Pavyzdžiai:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100 m per 80 sekundžių, 120 žingsnių:</strong></p><p class="example-calc">ĖJIMO balas = 80 + 120 =<strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100 m per 70 sekundžių, 110 žingsnių:</strong></p><p class="example-calc">ĖJIMO balas = 70 + 110 =<strong>180</strong></p><p class="example-interpretation">Didesnis efektyvumas dėl geresnio greičio + žingsnio</p></div><div class="calc-example"><p class="example-input"><strong>100 m per 60 sekundžių, 130 žingsnių (lenktinis ėjimas):</strong></p><p class="example-calc">ĖJIMO balas = 60 + 130 =<strong>190</strong></p><p class="example-interpretation">Greiti, bet trumpesni žingsniai</p></div></div><h4>Tipiniai diapazonai:</h4><ul><li><strong>&gt;250:</strong>Lėta/neefektyvi eisena, galimos judėjimo problemos</li><li><strong>200–250:</strong>Atsitiktinis vaikštynė, vidutinis efektyvumas</li><li><strong>170–200:</strong>Fitneso vaikštynė, geras efektyvumas</li><li><strong>150–170:</strong>Pažangi vaikštynė, puikus efektyvumas</li><li><strong>&lt;150:</strong>Elito / lenktyninio ėjimo lygis</li></ul><div class="tip-box"><p><strong>Treniruotė su WALK Score:</strong>Kas savaitę stebėkite savo rezultatą tame pačiame 100 m trasoje. Patobulinimai rodo geresnę nervų ir raumenų koordinaciją, jėgą ir ėjimo ekonomiją.</p></div></div><h2 id="basic-metrics">6. Pagrindinės eisenos metrikos</h2><div class="formula-section"><h3>Pagrindiniai skaičiavimai</h3><div class="formula-box"><p class="formula-title">Ėjimo greitis</p><p class="formula-main"><strong>Greitis (m/s) = atstumas (m) / laikas (s)</strong></p></div><div class="formula-box"><p class="formula-title">Kadencija iš Total Steps</p><p class="formula-main"><strong>Kadencija (spm) = bendras žingsnių skaičius / laikas (minutės)</strong></p></div><div class="formula-box"><p class="formula-title">Žingsnio ilgis</p><p class="formula-main"><strong>Žingsnio ilgis (m) = atstumas (m) / (žingsniai / 2)</strong></p><p class="formula-note">Padalinkite žingsnius iš 2, nes vienas žingsnis = du žingsniai</p></div><div class="formula-box"><p class="formula-title">Žingsnio ilgis</p><p class="formula-main"><strong>Žingsnio ilgis (m) = atstumas (m) / žingsniai</strong></p></div><div class="formula-box"><p class="formula-title">Greitis nuo žingsnio ir žingsnio ilgio</p><p class="formula-main"><strong>Greitis = žingsnio ilgis × (kadence / 2) / 60</strong></p><p class="formula-note">Arba: greitis (m/s) = žingsnio ilgis × dažnis / 60</p></div><h4>Darbo eigos pavyzdys:</h4><div class="calc-example"><p class="example-input"><strong>Nueikite 1000 m per 12 minučių 1320 žingsnių:</strong></p><p><strong>Greitis:</strong>1000 m / 720 s =<strong>1,39 m/s</strong></p><p><strong>Kadencija:</strong>1320 žingsnių / 12 min =<strong>110 spm</strong></p><p><strong>Žingsnio ilgis:</strong>1000 m / (1320/2) = 1000 / 660 =<strong>1,52 m</strong></p><p><strong>Žingsnio ilgis:</strong>1000 m / 1320 =<strong>0,76 m</strong></p></div></div><h2 id="heart-rate">7. Širdies ritmo zonos skaičiavimai</h2><div class="formula-section"><h3>Tradicinis HR zonos metodas</h3><div class="formula-box"><p class="formula-title">Maksimalus širdies susitraukimų dažnio įvertinimas</p><p class="formula-main"><strong>Maksimalus ŠSD = 220 – amžius</strong></p><p class="formula-note">Paprasta, bet ±10-15 bpm individuali variacija</p></div><div class="formula-box"><p class="formula-title">Alternatyva: Tanaka formulė (tikslesnė)</p><p class="formula-main"><strong>Maksimalus ŠSD = 208 – (0,7 × amžius)</strong></p></div><div class="formula-box"><p class="formula-title">Zonos diapazono apskaičiavimas</p><p class="formula-main"><strong>Zona = maks. ŠSD × (apatinė, viršutinė %)</strong></p></div><h4>Pavyzdys: 40 metų</h4><div class="calc-example"><p><strong>Tradicinis:</strong>Maksimalus ŠSD = 220–40 =<strong>180 bpm</strong></p><p><strong>Tanaka:</strong>Maksimalus ŠSD = 208– (0,7 × 40) = 208–28 =<strong>180 bpm</strong></p><p><strong>2 zona (60–70 %):</strong>180 × 0,60 = 108 k./min. iki 180 × 0.70 = 126 k./min.</p></div><div class="info-box"><p><strong>Pastaba:</strong>Nors HR zonos yra naudingos,<strong>Kadencija pagrįstos zonos yra tikslesnės ir praktiškesnės vaikščioti</strong>(žr. vaikščiojimo zonų vadovą).</p></div></div><h2 id="cost-transport">8. Transporto ir pėsčiųjų ekonomijos kaina</h2><div class="formula-section"><h3>Energijos sąnaudos vaikščiojant</h3><div class="formula-box"><p class="formula-title">Transporto kaina (C)</p><p class="formula-main"><strong>C = sunaudota energija / (kūno masė × atstumas)</strong></p><p class="formula-note">Vienetai: J/kg/m arba ml O₂/kg/m</p></div><div class="key-insight"><p><strong>U formos kreivė:</strong>Vaikščiojimo ekonomiškumas seka U formos kreivę. Yra optimalus greitis (paprastai 1,2–1,4 m/s arba 4,3–5,0 km/h), kai transporto išlaidos yra minimalios. Einant lėčiau ARBA greičiau nei tai padidina energijos sąnaudas už nuvažiuotą atstumą.</p></div><h4>Transporto išlaidas įtakojantys veiksniai:</h4><ul><li><strong>Greitis:</strong>U formos santykis (optimalus maždaug 1,3 m/s)</li><li><strong>Gradientas:</strong>Įkalnė žymiai padidina išlaidas; nuokalne padidina ekscentrines išlaidas</li><li><strong>Kūno masė:</strong>Sunkesni asmenys turi didesnę absoliučią, bet panašią santykinę kainą</li><li><strong>Žingsnio mechanika:</strong>Optimalus žingsnio ilgis sumažina išlaidas</li><li><strong>Vietovė:</strong>Nelygus paviršius padidina išlaidas, palyginti su lygia danga</li></ul><div class="formula-box"><p class="formula-title">Pakoreguota kaina</p><p class="formula-main"><strong>Sąnaudų daugiklis = 1 + (klasė × 10)</strong></p><p class="formula-note">Apytikslis apytikslis: +10% kaina 1% klasės</p></div><h4>Pavyzdys:</h4><div class="calc-example"><p class="example-input"><strong>Ėjimas 5% nuolydžiu:</strong></p><p class="example-calc">Sąnaudų daugiklis = 1 + (0,05 × 10) =<strong>1,5×</strong></p><p class="example-interpretation">50 % didesnės energijos sąnaudos, lyginant su lygia žeme</p></div></div><h2 id="training-load">9. Treniruotės krūvis ir streso balas</h2><div class="formula-section"><h3>Ėjimo streso balas (WSS)</h3><div class="formula-box"><p class="formula-title">Zoninė WSS</p><p class="formula-main"><strong>WSS = Σ (minutės zonoje × zonos koeficientas)</strong></p><p>1 zona: × 1,0 | 2 zona: × 2,0 | 3 zona: ×3,0 | 4 zona: × 4,0 | 5 zona: × 5,0</p></div><h4>Pavyzdys: 60 minučių pėsčiomis</h4><div class="calc-example"><p>10 min. 1 zona × 1 = 10 taškų</p><p>40 min. 2 zona × 2 = 80 taškų</p><p>10 min. 3 × 3 zona = 30 taškų</p><p><strong>Iš viso WSS = 120</strong></p></div><h3>Savaitės treniruočių krūvis</h3><div class="formula-box"><p class="formula-title">Savaitės apkrova</p><p class="formula-main"><strong>Savaitės apkrova = Σ Dienos WSS (7 dienos)</strong></p></div><div class="formula-box"><p class="formula-title">Progresyvi perkrova</p><p class="formula-main"><strong>Kita savaitė = dabartinė savaitė × 1,05–1,10</strong></p><p class="formula-note">Padidinkite ne daugiau kaip 5-10% per savaitę</p></div><div class="formula-box"><p class="formula-title">Atkūrimo savaitė</p><p class="formula-main"><strong>Atkūrimo savaitė = dabartinė × 0,50–0,70</strong></p><p class="formula-note">Kas 3–4 savaites sumažinkite iki 50–70 proc.</p></div><h4>Įprastos savaitės apkrovos:</h4><ul><li><strong>Pradedantysis sveikatingumo vaikščiotojas:</strong>200-400 WSS/sav</li><li><strong>Reguliarus treniruoklis:</strong>400–700 WSS/sav</li><li><strong>Rimtas treniruoklis:</strong>700-1000 WSS/sav</li><li><strong>Varžybų lenktynininkas:</strong>1000–1500+ WSS per savaitę</li></ul></div><h2 id="predictions">10. Nuspėjamosios lygtys</h2><div class="formula-section"><h3>6 minučių ėjimo testas (6MWT) atstumo numatymas</h3><div class="formula-box"><p class="formula-title">Numatomas 6MWT atstumas (Enright ir Sherrill)</p><p><strong>Vyrai:</strong>(7,57 × ūgis cm) - (5,02 × amžius) - (1,76 × svoris kg) - 309</p><p><strong>Moterys:</strong>(2,11 × ūgis cm) - (5,78 × amžius) - (2,29 × svoris kg) + 667</p><p class="formula-note">Numato sveikų suaugusiųjų atstumą metrais</p></div><h4>Pavyzdys: 40 metų vyras, 175 cm, 75 kg</h4><div class="calc-example"><p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p><p>= 1324,75 - 200,8 - 132 - 309 =<strong>682,95 metro</strong></p><p class="example-interpretation">Geras funkcinis pajėgumas pagal amžių</p></div><div class="info-box"><p><strong>Klinikinis naudojimas:</strong>6MWT naudojamas įvertinti širdies ir plaučių pacientų funkcinį pratimų pajėgumą, įvertinti prieš ir po operacijos bei bendrą vyresnio amžiaus žmonių tinkamumą.</p></div></div><h2 id="conversions">11. Vienetų perskaičiavimas</h2><div class="formula-section"><h3>Įprastos ėjimo metrikos konversijos</h3><div class="conversion-table"><table><thead><tr><th>Nuo</th><th>Į</th><th>Formulė</th></tr></thead><tbody><tr><td>km/val</td><td>m/s</td><td>km/h ÷ 3,6</td></tr><tr><td>mph</td><td>m/s</td><td>mph × 0,447</td></tr><tr><td>m/s</td><td>km/val</td><td>m/s × 3,6</td></tr><tr><td>m/s</td><td>mph</td><td>m/s × 2,237</td></tr><tr><td>km/val</td><td>m/min</td><td>km/h × 16,67</td></tr><tr><td>mph</td><td>m/min</td><td>mylių per valandą × 26,82</td></tr><tr><td>MET</td><td>ml/kg/min</td><td>MET × 3,5</td></tr><tr><td>ml/kg/min</td><td>MET</td><td>VO₂ ÷ 3,5</td></tr></tbody></table></div><h4>Greita nuoroda:</h4><ul><li><strong>1,0 m/s =</strong>3,6 km/h = 2,24 mylios per valandą (įprastas sveiko suaugusiojo ėjimo greitis)</li><li><strong>1,4 m/s =</strong>5,0 km/h = 3,1 mylios per valandą (greitas ėjimas)</li><li><strong>1 MET =</strong>3,5 ml O₂/kg/min (metabolizmas ramybės būsenoje)</li><li><strong>3 MET =</strong>10,5 ml O₂/kg/min (vidutinio intensyvumo slenkstis)</li><li><strong>6 MET =</strong>21 ml O₂/kg/min (didelio intensyvumo slenkstis)</li></ul></div><h2 id="next-steps">Susiję ištekliai</h2><div class="next-steps-grid"><div class="next-step-card"><h3>Taikykite formules: WSS skaičiuoklė</h3><p>Naudokite mūsų interaktyvų skaičiuotuvą, kad suskaičiuotumėte savo vaikščiojimo streso balą.</p><a class="btn btn-secondary" href="/lt/wss-calculator/">Apskaičiuokite WSS →</a></div><div class="next-step-card"><h3>Ėjimo zonų supratimas</h3><p>Sužinokite, kaip treniruotėse pritaikyti ritmu pagrįstas intensyvumo zonas.</p><a class="btn btn-secondary" href="/lt/walking-zones/">Sužinokite zonas →</a></div><div class="next-step-card"><h3>Moksliniai tyrimai</h3><p>Peržiūrėkite tyrimus, kurie patvirtino šias formules.</p><a class="btn btn-secondary" href="/lt/research/">Žiūrėti tyrimą →</a></div><div class="next-step-card"><h3>Pilna bibliografija</h3><p>Pasiekite visas visų nurodytų lygčių citatas.</p><a class="btn btn-secondary" href="/lt/bibliography/">Žiūrėti bibliografiją →</a></div></div></div><aside class="sidebar"><div class="toc"><h3>Formulių indeksas</h3><ul><li><a href="#cadence-mets">1. Kadencija → MET</a></li><li><a href="#acsm-vo2">2. ACSM VO₂ lygtys</a></li><li><a href="#energy-expenditure">3. Energija ir kalorijos</a></li><li><a href="#gait-symmetry">4. Eisenos simetrijos indeksas</a></li><li><a href="#walk-score">5. ĖJIMO rezultatas</a></li><li><a href="#basic-metrics">6. Pagrindinės eisenos metrikos</a></li><li><a href="#heart-rate">7. Širdies ritmo zonos</a></li><li><a href="#cost-transport">8. Transporto kaina</a></li><li><a href="#training-load">9. Treniruotės krūvis</a></li><li><a href="#predictions">10. Nuspėjamosios lygtys</a></li><li><a href="#conversions">11. Vienetų perskaičiavimas</a></li></ul></div><div class="formula-highlight"><h3>⭐ Svarbiausia</h3><p><strong>Kadencija į MET</strong></p><p class="formula-compact">MET = 0,0219 × spm + 0,72</p><p class="small-text">Ši viena lygtis leidžia treniruotis ritmo principu pagrįstą intensyvumą be širdies ritmo monitorių.</p></div><div class="cta-box"><h3>Taikykite šias formules</h3><p>„Walk Analytics“ naudoja šias moksliškai patvirtintas lygtis jūsų pasivaikščiojimams analizuoti.</p><a class="btn btn-accent" href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">Atsisiųskite programą</a></div><div class="info-box"><h4>📐 Formulės tikslumas</h4><p>Visos šiame puslapyje pateiktos lygtys yra iš recenzuotų tyrimų. Žr<a href="/lt/bibliography/">Bibliografija</a>pilnoms citatoms.</p></div></aside></div></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Atsisiųsti</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Atsisiųskite App Store"><img src="../../assets/images/badge-app-store.svg"
+<section class="guide-hero">
+<div class="container">
+<div class="breadcrumb">
+<a href="/lt/">Pradžia</a>/<a href="/lt/#science">Mokslas</a>/ Formulės</div>
+<h1>Ėjimo metrikos formulės ir lygtys</h1>
+<p class="lead">Matematiniai ėjimo analizės pagrindai – moksliškai patvirtintos intensyvumo, energijos ir našumo lygtys</p>
+</div>
+</section>
+<section class="guide-content">
+<div class="container">
+<div class="content-grid">
+<div class="main-content">
+<div class="intro-note">
+<p>Šiame puslapyje pateikiamos moksliškai patvirtintos formulės, naudojamos vaikščiojimo analizėje. Visos lygtys nurodytos su tyrimų nuorodomis ir patvirtintais tikslumo diapazonais.</p>
+</div>
+<h2 id="cadence-mets">1. Kadencija į MET konversiją</h2>
+<div class="formula-section featured">
+<h3>Moore ir kt. (2021) Cadence-Based Metabolic Equation</h3>
+<div class="formula-box primary">
+<p class="formula-title">Kadencija į MET</p>
+<p class="formula-main"><strong>MET = 0,0219 × Kadencija (žingsniai/min) + 0,72</strong></p>
+<p class="formula-meta">
+<span class="accuracy">Tikslumas: ±0,5 MET</span>
+<span class="reference">Moore CC ir kt. (2021). Med Sci Sports Exerc 53(1):165-173</span>
+</p>
+</div>
+<div class="key-insight">
+<p><strong>Kodėl ši formulė svarbi:</strong>Ši lygtis yra<strong>23-35% tikslesnis</strong>nei tradicinės ACSM greičiu pagrįstos ėjimo lygtys. Tai veikia, nes kadencija tiesiogiai atspindi judėjimo dažnį ir energijos sąnaudas, o greitis priklauso nuo kintamo žingsnio ilgio.</p>
+</div>
+<h4>Pavyzdžiai:</h4>
+<div class="calculation-examples">
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 100 spm greičiu:</strong></p>
+<p class="example-calc">MET = 0,0219 × 100 + 0,72 = 2,19 + 0,72 =<strong>2,91 MET</strong></p>
+<p class="example-interpretation">≈ 3 MET =<strong>Vidutinio intensyvumo slenkstis</strong>✓</p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 110 spm greičiu:</strong></p>
+<p class="example-calc">MET = 0,0219 × 110 + 0,72 = 2,409 + 0,72 =<strong>3.13 MET</strong></p>
+<p class="example-interpretation">Kietas vidutinio intensyvumo</p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 120 spm greičiu:</strong></p>
+<p class="example-calc">MET = 0,0219 × 120 + 0,72 = 2,628 + 0,72 =<strong>3,35 MET</strong></p>
+<p class="example-interpretation">Vidutinis-stiprus intensyvumas</p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 130 spm greičiu:</strong></p>
+<p class="example-calc">MET = 0,0219 × 130 + 0,72 = 2,847 + 0,72 =<strong>3,57 MET</strong></p>
+<p class="example-interpretation"><strong>Energingo intensyvumo slenkstis</strong>(6 MET pagal CADENCE-Adults tiesioginį matavimą)</p>
+</div>
+</div>
+<div class="formula-note">
+<p><strong>Pastaba:</strong>CADENCE-Adults tyrimas tiesiogiai matavo, kad 130 spm = 6 MET kontroliuojamomis laboratorinėmis sąlygomis. Moore'o lygtis sukurta 80–130 spm diapazonui ir gali būti neįvertinta esant labai dideliems dažniams.</p>
+</div>
+<h4>Patvirtinimo duomenys:</h4>
+<ul>
+<li><strong>Pavyzdys:</strong>76 suaugusieji 21-40 metų amžiaus</li>
+<li><strong>Metodas:</strong>Netiesioginė kalorimetrija (aukso standartas)</li>
+<li><strong>R² vertė:</strong>0,87 (puiki koreliacija)</li>
+<li><strong>Vidutinė absoliuti klaida:</strong>0,47 MET</li>
+<li><strong>Taikomas diapazonas:</strong>80-130 žingsnių/min</li>
+</ul>
+</div>
+<h2 id="acsm-vo2">2. ACSM VO₂ ėjimo lygtys</h2>
+<div class="formula-section">
+<h3>ACSM medžiagų apykaitos skaičiavimai</h3>
+<div class="formula-box">
+<p class="formula-title">Ėjimas lygiu (0 % pažymys)</p>
+<p class="formula-main"><strong>VO₂ (ml/kg/min) = 0,1 × greitis (m/min) + 3,5</strong></p>
+<p class="formula-note">Greitis metrais per minutę (km/h padauginkite iš 16,67 arba mylių per valandą iš 26,82)</p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Vaikščiojimas su nuolydžiu (nuolydis / nuolydis)</p>
+<p class="formula-main"><strong>VO₂ = 0,1 (greitis) + 1,8 (greitis) (laipsnis) + 3,5</strong></p>
+<p class="formula-note">Įvertinimas išreikštas dešimtainiu tikslumu (pvz., 5 % = 0,05)</p>
+</div>
+<h4>Pavyzdžiai:</h4>
+<div class="calculation-examples">
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 5 km/h (83,3 m/min) lygiu paviršiumi:</strong></p>
+<p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 =<strong>11,83 ml/kg/min</strong></p>
+<p class="example-conversion">Konvertuoti į MET: 11,83 / 3,5 =<strong>3,38 MET</strong></p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 5 km/h 5 % nuolydžiu:</strong></p>
+<p class="example-calc">VO₂ = 0,1 (83,3) + 1,8 (83,3) (0,05) + 3,5</p>
+<p class="example-calc">= 8,33 + 7,497 + 3,5 =<strong>19,33 ml/kg/min</strong></p>
+<p class="example-conversion">= 19,33 / 3,5 =<strong>5,52 MET</strong></p>
+<p class="example-interpretation">Nuolydis padidina intensyvumą ~64%!</p>
+</div>
+</div>
+<div class="conversion-helper">
+<h4>Greičio konversijos:</h4>
+<ul>
+<li><strong>km/h iki m/min:</strong>padauginkite iš 16,67</li>
+<li><strong>mph iki m/min:</strong>padauginkite iš 26,82</li>
+<li><strong>m/s iki m/min:</strong>padauginti iš 60</li>
+</ul>
+</div>
+</div>
+<h2 id="energy-expenditure">3. Energijos sąnaudos ir kalorijų deginimas</h2>
+<div class="formula-section">
+<h3>Tikslus kalorijų skaičiavimas</h3>
+<div class="formula-box">
+<p class="formula-title">Kalorijos per minutę</p>
+<p class="formula-main"><strong>Kal/min = (MET × 3,5 × kūno svoris kg) / 200</strong></p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Bendras seanso kalorijų kiekis</p>
+<p class="formula-main"><strong>Bendras kalorijų kiekis = Cal/min × Trukmė (minutės)</strong></p>
+</div>
+<h4>Pavyzdžiai:</h4>
+<div class="calculation-examples">
+<div class="calc-example">
+<p class="example-input"><strong>70 kg sveriantis žmogus, einantis 100 spm (3 MET) 45 minutes:</strong></p>
+<p class="example-calc">Kal/min = (3 × 3,5 × 70) / 200 = 735 / 200 =<strong>3,675 cal/min</strong></p>
+<p class="example-calc">Iš viso = 3,675 × 45 =<strong>165,4 kalorijos</strong></p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>85 kg sveriantis žmogus, einantis 120 spm (5 MET) 30 minučių:</strong></p>
+<p class="example-calc">Kal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 =<strong>7,44 kal/min</strong></p>
+<p class="example-calc">Iš viso = 7,44 × 30 =<strong>223,2 kalorijos</strong></p>
+</div>
+</div>
+<div class="info-box">
+<h4>Kodėl ši formulė?</h4>
+<p>Ši lygtis kilusi iš MET (metabolinio užduoties ekvivalento) apibrėžimo:</p>
+<ul>
+<li>1 MET = 3,5 ml O₂/kg/min (metabolizmo greitis ramybės būsenoje)</li>
+<li>1 litras O₂ sunaudojo ≈ 5 kcal</li>
+<li>Konvertavimas: (MET × 3,5 × kg × 5) / 1000 = (MET × 3,5 × kg) / 200</li>
+</ul>
+</div>
+<h3>Grynųjų kalorijų sudeginimas (tik pratimai)</h3>
+<div class="formula-box">
+<p class="formula-title">Grynosios kalorijos (neįskaitant poilsio)</p>
+<p class="formula-main"><strong>Grynoji Cal/min = [(MET – 1) × 3,5 × kūno svoris] / 200</strong></p>
+<p class="formula-note">Atimamas 1 MET, kad neįtrauktumėte kalorijų, kurias vis tiek sudegintumėte ramybėje</p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>70 kg, 3 MET, 45 min – grynosios kalorijos:</strong></p>
+<p class="example-calc">Grynasis = [(3–1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 =<strong>110,3 grynosios kalorijos</strong></p>
+<p class="example-interpretation">palyginti su 165,4 bendros kalorijos (55 kalorijos būtų sudegintos ramybėje)</p>
+</div>
+</div>
+<h2 id="gait-symmetry">4. Eisenos simetrijos indeksas (GSI)</h2>
+<div class="formula-section">
+<h3>Kairės ir dešinės asimetrijos kiekybinis įvertinimas</h3>
+<div class="formula-box">
+<p class="formula-title">Eisenos simetrijos indeksas</p>
+<p class="formula-main"><strong>GSI (%) = |Dešinė – Kairė| / [0,5 × (dešinė + kairė)] × 100</strong></p>
+<p class="formula-note">Gali būti taikomas žingsnio ilgiui, žingsnio laikui arba kontaktiniam laikui</p>
+</div>
+<h4>Aiškinimas:</h4>
+<ul>
+<li><strong>&lt;2–3 %:</strong>Normali, simetriška eisena</li>
+<li><strong>3–5 %:</strong>Lengva asimetrija</li>
+<li><strong>5–10 %:</strong>Vidutinė asimetrija, monitorius</li>
+<li><strong>&gt;10 %:</strong>Kliniškai reikšmingas, įvertinkite profesionaliai</li>
+</ul>
+<h4>Pavyzdžiai:</h4>
+<div class="calculation-examples">
+<div class="calc-example">
+<p class="example-input"><strong>Žingsnio laikai: dešinė = 520 ms, kairė = 480 ms</strong></p>
+<p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p>
+<p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 =<strong>8% asimetrija</strong></p>
+<p class="example-interpretation">Vidutinė asimetrija – apsvarstykite galimybę sustiprinti silpnąją pusę</p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>Žingsnio ilgiai: dešinė = 1,42 m, kairė = 1,38 m</strong></p>
+<p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p>
+<p class="example-calc">= 0,04 / 1,4 × 100 =<strong>2,86% asimetrija</strong></p>
+<p class="example-interpretation">Normalus, sveikas diapazonas ✓</p>
+</div>
+</div>
+<div class="warning-box">
+<p><strong>Klinikinė pastaba:</strong>„Apple HealthKit“ vaikščiojimo asimetrija naudoja šiek tiek kitokį skaičiavimą (paprastas procentinis skirtumas tarp žingsnių laiko), tačiau aiškinimo slenksčiai yra panašūs.</p>
+</div>
+</div>
+<h2 id="walk-score">5. ĖJIMO balas (Walk Analytics patentuota metrika)</h2>
+<div class="formula-section">
+<h3>Ėjimo efektyvumo balas</h3>
+<div class="formula-box">
+<p class="formula-title">ĖJIMO rezultatas</p>
+<p class="formula-main"><strong>ĖJIMO rezultatas = laikas (sekundėmis) + žingsniai 100 metrų</strong></p>
+<p class="formula-note">Mažesnis balas = didesnis efektyvumas</p>
+</div>
+<h4>Kaip tai veikia:</h4>
+<p>WALK Score sujungia laiką ir žingsnių skaičių, kad įvertintų ėjimo efektyvumą. Vaikščiojo, kuris 100 m įveikia per 75 sekundes ir 140 žingsnių, ĖJIMO balas yra 215. Padidinus greitį ARBA žingsnio efektyvumą, rezultatas sumažėja.</p>
+<h4>Pavyzdžiai:</h4>
+<div class="calculation-examples">
+<div class="calc-example">
+<p class="example-input"><strong>100 m per 80 sekundžių, 120 žingsnių:</strong></p>
+<p class="example-calc">ĖJIMO balas = 80 + 120 =<strong>200</strong></p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>100 m per 70 sekundžių, 110 žingsnių:</strong></p>
+<p class="example-calc">ĖJIMO balas = 70 + 110 =<strong>180</strong></p>
+<p class="example-interpretation">Didesnis efektyvumas dėl geresnio greičio + žingsnio</p>
+</div>
+<div class="calc-example">
+<p class="example-input"><strong>100 m per 60 sekundžių, 130 žingsnių (lenktinis ėjimas):</strong></p>
+<p class="example-calc">ĖJIMO balas = 60 + 130 =<strong>190</strong></p>
+<p class="example-interpretation">Greiti, bet trumpesni žingsniai</p>
+</div>
+</div>
+<h4>Tipiniai diapazonai:</h4>
+<ul>
+<li><strong>&gt;250:</strong>Lėta/neefektyvi eisena, galimos judėjimo problemos</li>
+<li><strong>200–250:</strong>Atsitiktinis vaikštynė, vidutinis efektyvumas</li>
+<li><strong>170–200:</strong>Fitneso vaikštynė, geras efektyvumas</li>
+<li><strong>150–170:</strong>Pažangi vaikštynė, puikus efektyvumas</li>
+<li><strong>&lt;150:</strong>Elito / lenktyninio ėjimo lygis</li>
+</ul>
+<div class="tip-box">
+<p><strong>Treniruotė su WALK Score:</strong>Kas savaitę stebėkite savo rezultatą tame pačiame 100 m trasoje. Patobulinimai rodo geresnę nervų ir raumenų koordinaciją, jėgą ir ėjimo ekonomiją.</p>
+</div>
+</div>
+<h2 id="basic-metrics">6. Pagrindinės eisenos metrikos</h2>
+<div class="formula-section">
+<h3>Pagrindiniai skaičiavimai</h3>
+<div class="formula-box">
+<p class="formula-title">Ėjimo greitis</p>
+<p class="formula-main"><strong>Greitis (m/s) = atstumas (m) / laikas (s)</strong></p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Kadencija iš Total Steps</p>
+<p class="formula-main"><strong>Kadencija (spm) = bendras žingsnių skaičius / laikas (minutės)</strong></p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Žingsnio ilgis</p>
+<p class="formula-main"><strong>Žingsnio ilgis (m) = atstumas (m) / (žingsniai / 2)</strong></p>
+<p class="formula-note">Padalinkite žingsnius iš 2, nes vienas žingsnis = du žingsniai</p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Žingsnio ilgis</p>
+<p class="formula-main"><strong>Žingsnio ilgis (m) = atstumas (m) / žingsniai</strong></p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Greitis nuo žingsnio ir žingsnio ilgio</p>
+<p class="formula-main"><strong>Greitis = žingsnio ilgis × (kadence / 2) / 60</strong></p>
+<p class="formula-note">Arba: greitis (m/s) = žingsnio ilgis × dažnis / 60</p>
+</div>
+<h4>Darbo eigos pavyzdys:</h4>
+<div class="calc-example">
+<p class="example-input"><strong>Nueikite 1000 m per 12 minučių 1320 žingsnių:</strong></p>
+<p><strong>Greitis:</strong>1000 m / 720 s =<strong>1,39 m/s</strong></p>
+<p><strong>Kadencija:</strong>1320 žingsnių / 12 min =<strong>110 spm</strong></p>
+<p><strong>Žingsnio ilgis:</strong>1000 m / (1320/2) = 1000 / 660 =<strong>1,52 m</strong></p>
+<p><strong>Žingsnio ilgis:</strong>1000 m / 1320 =<strong>0,76 m</strong></p>
+</div>
+</div>
+<h2 id="heart-rate">7. Širdies ritmo zonos skaičiavimai</h2>
+<div class="formula-section">
+<h3>Tradicinis HR zonos metodas</h3>
+<div class="formula-box">
+<p class="formula-title">Maksimalus širdies susitraukimų dažnio įvertinimas</p>
+<p class="formula-main"><strong>Maksimalus ŠSD = 220 – amžius</strong></p>
+<p class="formula-note">Paprasta, bet ±10-15 bpm individuali variacija</p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Alternatyva: Tanaka formulė (tikslesnė)</p>
+<p class="formula-main"><strong>Maksimalus ŠSD = 208 – (0,7 × amžius)</strong></p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Zonos diapazono apskaičiavimas</p>
+<p class="formula-main"><strong>Zona = maks. ŠSD × (apatinė, viršutinė %)</strong></p>
+</div>
+<h4>Pavyzdys: 40 metų</h4>
+<div class="calc-example">
+<p><strong>Tradicinis:</strong>Maksimalus ŠSD = 220–40 =<strong>180 bpm</strong></p>
+<p><strong>Tanaka:</strong>Maksimalus ŠSD = 208– (0,7 × 40) = 208–28 =<strong>180 bpm</strong></p>
+<p><strong>2 zona (60–70 %):</strong>180 × 0,60 = 108 k./min. iki 180 × 0.70 = 126 k./min.</p>
+</div>
+<div class="info-box">
+<p><strong>Pastaba:</strong>Nors HR zonos yra naudingos,<strong>Kadencija pagrįstos zonos yra tikslesnės ir praktiškesnės vaikščioti</strong>(žr. vaikščiojimo zonų vadovą).</p>
+</div>
+</div>
+<h2 id="cost-transport">8. Transporto ir pėsčiųjų ekonomijos kaina</h2>
+<div class="formula-section">
+<h3>Energijos sąnaudos vaikščiojant</h3>
+<div class="formula-box">
+<p class="formula-title">Transporto kaina (C)</p>
+<p class="formula-main"><strong>C = sunaudota energija / (kūno masė × atstumas)</strong></p>
+<p class="formula-note">Vienetai: J/kg/m arba ml O₂/kg/m</p>
+</div>
+<div class="key-insight">
+<p><strong>U formos kreivė:</strong>Vaikščiojimo ekonomiškumas seka U formos kreivę. Yra optimalus greitis (paprastai 1,2–1,4 m/s arba 4,3–5,0 km/h), kai transporto išlaidos yra minimalios. Einant lėčiau ARBA greičiau nei tai padidina energijos sąnaudas už nuvažiuotą atstumą.</p>
+</div>
+<h4>Transporto išlaidas įtakojantys veiksniai:</h4>
+<ul>
+<li><strong>Greitis:</strong>U formos santykis (optimalus maždaug 1,3 m/s)</li>
+<li><strong>Gradientas:</strong>Įkalnė žymiai padidina išlaidas; nuokalne padidina ekscentrines išlaidas</li>
+<li><strong>Kūno masė:</strong>Sunkesni asmenys turi didesnę absoliučią, bet panašią santykinę kainą</li>
+<li><strong>Žingsnio mechanika:</strong>Optimalus žingsnio ilgis sumažina išlaidas</li>
+<li><strong>Vietovė:</strong>Nelygus paviršius padidina išlaidas, palyginti su lygia danga</li>
+</ul>
+<div class="formula-box">
+<p class="formula-title">Pakoreguota kaina</p>
+<p class="formula-main"><strong>Sąnaudų daugiklis = 1 + (klasė × 10)</strong></p>
+<p class="formula-note">Apytikslis apytikslis: +10% kaina 1% klasės</p>
+</div>
+<h4>Pavyzdys:</h4>
+<div class="calc-example">
+<p class="example-input"><strong>Ėjimas 5% nuolydžiu:</strong></p>
+<p class="example-calc">Sąnaudų daugiklis = 1 + (0,05 × 10) =<strong>1,5×</strong></p>
+<p class="example-interpretation">50 % didesnės energijos sąnaudos, lyginant su lygia žeme</p>
+</div>
+</div>
+<h2 id="training-load">9. Treniruotės krūvis ir streso balas</h2>
+<div class="formula-section">
+<h3>Ėjimo streso balas (WSS)</h3>
+<div class="formula-box">
+<p class="formula-title">Zoninė WSS</p>
+<p class="formula-main"><strong>WSS = Σ (minutės zonoje × zonos koeficientas)</strong></p>
+<p>1 zona: × 1,0 | 2 zona: × 2,0 | 3 zona: ×3,0 | 4 zona: × 4,0 | 5 zona: × 5,0</p>
+</div>
+<h4>Pavyzdys: 60 minučių pėsčiomis</h4>
+<div class="calc-example">
+<p>10 min. 1 zona × 1 = 10 taškų</p>
+<p>40 min. 2 zona × 2 = 80 taškų</p>
+<p>10 min. 3 × 3 zona = 30 taškų</p>
+<p><strong>Iš viso WSS = 120</strong></p>
+</div>
+<h3>Savaitės treniruočių krūvis</h3>
+<div class="formula-box">
+<p class="formula-title">Savaitės apkrova</p>
+<p class="formula-main"><strong>Savaitės apkrova = Σ Dienos WSS (7 dienos)</strong></p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Progresyvi perkrova</p>
+<p class="formula-main"><strong>Kita savaitė = dabartinė savaitė × 1,05–1,10</strong></p>
+<p class="formula-note">Padidinkite ne daugiau kaip 5-10% per savaitę</p>
+</div>
+<div class="formula-box">
+<p class="formula-title">Atkūrimo savaitė</p>
+<p class="formula-main"><strong>Atkūrimo savaitė = dabartinė × 0,50–0,70</strong></p>
+<p class="formula-note">Kas 3–4 savaites sumažinkite iki 50–70 proc.</p>
+</div>
+<h4>Įprastos savaitės apkrovos:</h4>
+<ul>
+<li><strong>Pradedantysis sveikatingumo vaikščiotojas:</strong>200-400 WSS/sav</li>
+<li><strong>Reguliarus treniruoklis:</strong>400–700 WSS/sav</li>
+<li><strong>Rimtas treniruoklis:</strong>700-1000 WSS/sav</li>
+<li><strong>Varžybų lenktynininkas:</strong>1000–1500+ WSS per savaitę</li>
+</ul>
+</div>
+<h2 id="predictions">10. Nuspėjamosios lygtys</h2>
+<div class="formula-section">
+<h3>6 minučių ėjimo testas (6MWT) atstumo numatymas</h3>
+<div class="formula-box">
+<p class="formula-title">Numatomas 6MWT atstumas (Enright ir Sherrill)</p>
+<p><strong>Vyrai:</strong>(7,57 × ūgis cm) - (5,02 × amžius) - (1,76 × svoris kg) - 309</p>
+<p><strong>Moterys:</strong>(2,11 × ūgis cm) - (5,78 × amžius) - (2,29 × svoris kg) + 667</p>
+<p class="formula-note">Numato sveikų suaugusiųjų atstumą metrais</p>
+</div>
+<h4>Pavyzdys: 40 metų vyras, 175 cm, 75 kg</h4>
+<div class="calc-example">
+<p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p>
+<p>= 1324,75 - 200,8 - 132 - 309 =<strong>682,95 metro</strong></p>
+<p class="example-interpretation">Geras funkcinis pajėgumas pagal amžių</p>
+</div>
+<div class="info-box">
+<p><strong>Klinikinis naudojimas:</strong>6MWT naudojamas įvertinti širdies ir plaučių pacientų funkcinį pratimų pajėgumą, įvertinti prieš ir po operacijos bei bendrą vyresnio amžiaus žmonių tinkamumą.</p>
+</div>
+</div>
+<h2 id="conversions">11. Vienetų perskaičiavimas</h2>
+<div class="formula-section">
+<h3>Įprastos ėjimo metrikos konversijos</h3>
+<div class="conversion-table">
+<table>
+<thead>
+<tr>
+<th>Nuo</th>
+<th>Į</th>
+<th>Formulė</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>km/val</td>
+<td>m/s</td>
+<td>km/h ÷ 3,6</td>
+</tr>
+<tr>
+<td>mph</td>
+<td>m/s</td>
+<td>mph × 0,447</td>
+</tr>
+<tr>
+<td>m/s</td>
+<td>km/val</td>
+<td>m/s × 3,6</td>
+</tr>
+<tr>
+<td>m/s</td>
+<td>mph</td>
+<td>m/s × 2,237</td>
+</tr>
+<tr>
+<td>km/val</td>
+<td>m/min</td>
+<td>km/h × 16,67</td>
+</tr>
+<tr>
+<td>mph</td>
+<td>m/min</td>
+<td>mylių per valandą × 26,82</td>
+</tr>
+<tr>
+<td>MET</td>
+<td>ml/kg/min</td>
+<td>MET × 3,5</td>
+</tr>
+<tr>
+<td>ml/kg/min</td>
+<td>MET</td>
+<td>VO₂ ÷ 3,5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>Greita nuoroda:</h4>
+<ul>
+<li><strong>1,0 m/s =</strong>3,6 km/h = 2,24 mylios per valandą (įprastas sveiko suaugusiojo ėjimo greitis)</li>
+<li><strong>1,4 m/s =</strong>5,0 km/h = 3,1 mylios per valandą (greitas ėjimas)</li>
+<li><strong>1 MET =</strong>3,5 ml O₂/kg/min (metabolizmas ramybės būsenoje)</li>
+<li><strong>3 MET =</strong>10,5 ml O₂/kg/min (vidutinio intensyvumo slenkstis)</li>
+<li><strong>6 MET =</strong>21 ml O₂/kg/min (didelio intensyvumo slenkstis)</li>
+</ul>
+</div>
+<h2 id="next-steps">Susiję ištekliai</h2>
+<div class="next-steps-grid">
+<div class="next-step-card">
+<h3>Taikykite formules: WSS skaičiuoklė</h3>
+<p>Naudokite mūsų interaktyvų skaičiuotuvą, kad suskaičiuotumėte savo vaikščiojimo streso balą.</p>
+<a class="btn btn-secondary" href="/lt/wss-calculator/">Apskaičiuokite WSS →</a>
+</div>
+<div class="next-step-card">
+<h3>Ėjimo zonų supratimas</h3>
+<p>Sužinokite, kaip treniruotėse pritaikyti ritmu pagrįstas intensyvumo zonas.</p>
+<a class="btn btn-secondary" href="/lt/walking-zones/">Sužinokite zonas →</a>
+</div>
+<div class="next-step-card">
+<h3>Moksliniai tyrimai</h3>
+<p>Peržiūrėkite tyrimus, kurie patvirtino šias formules.</p>
+<a class="btn btn-secondary" href="/lt/research/">Žiūrėti tyrimą →</a>
+</div>
+<div class="next-step-card">
+<h3>Pilna bibliografija</h3>
+<p>Pasiekite visas visų nurodytų lygčių citatas.</p>
+<a class="btn btn-secondary" href="/lt/bibliography/">Žiūrėti bibliografiją →</a>
+</div>
+</div>
+</div>
+<aside class="sidebar">
+<div class="toc">
+<h3>Formulių indeksas</h3>
+<ul>
+<li><a href="#cadence-mets">1. Kadencija → MET</a></li>
+<li><a href="#acsm-vo2">2. ACSM VO₂ lygtys</a></li>
+<li><a href="#energy-expenditure">3. Energija ir kalorijos</a></li>
+<li><a href="#gait-symmetry">4. Eisenos simetrijos indeksas</a></li>
+<li><a href="#walk-score">5. ĖJIMO rezultatas</a></li>
+<li><a href="#basic-metrics">6. Pagrindinės eisenos metrikos</a></li>
+<li><a href="#heart-rate">7. Širdies ritmo zonos</a></li>
+<li><a href="#cost-transport">8. Transporto kaina</a></li>
+<li><a href="#training-load">9. Treniruotės krūvis</a></li>
+<li><a href="#predictions">10. Nuspėjamosios lygtys</a></li>
+<li><a href="#conversions">11. Vienetų perskaičiavimas</a></li>
+</ul>
+</div>
+<div class="formula-highlight">
+<h3>⭐ Svarbiausia</h3>
+<p><strong>Kadencija į MET</strong></p>
+<p class="formula-compact">MET = 0,0219 × spm + 0,72</p>
+<p class="small-text">Ši viena lygtis leidžia treniruotis ritmo principu pagrįstą intensyvumą be širdies ritmo monitorių.</p>
+</div>
+<div class="cta-box">
+<h3>Taikykite šias formules</h3>
+<p>„Walk Analytics“ naudoja šias moksliškai patvirtintas lygtis jūsų pasivaikščiojimams analizuoti.</p>
+<a class="btn btn-accent" href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">Atsisiųskite programą</a>
+</div>
+<div class="info-box">
+<h4>📐 Formulės tikslumas</h4>
+<p>Visos šiame puslapyje pateiktos lygtys yra iš recenzuotų tyrimų. Žr<a href="/lt/bibliography/">Bibliografija</a>pilnoms citatoms.</p>
+</div>
+</aside>
+</div>
+</div>
+</section>
+    
+
+    
+    
+<section class="eeat-author bg-light divider-top-lg divider-bottom-lg" aria-label="Author and Reviewer Information">
+  <div class="container container-narrow">
+    <div class="eeat-card" style="display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem; background: var(--color-bg-alt, #f8f9fa); border-radius: 8px; border: 1px solid var(--color-border, #e9ecef); margin-top: 3rem; margin-bottom: 2rem;">
+      <div class="eeat-avatar" style="font-size: 2.5rem; line-height: 1; flex-shrink: 0;" aria-hidden="true">👨‍🔬</div>
+      <div class="eeat-details">
+        
+        
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
+          Expertly Reviewed by 
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">AnalyticsZone Team</span>
+          </span>
+        </h3>
+        <p style="margin: 0; font-size: 0.95rem; color: var(--color-body-text, #4a5568); line-height: 1.5;">
+          This content has been written and reviewed by a sports data metrics expert to ensure technical accuracy and adherence to the latest sports science methodologies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+    
+<section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="formulas">
+  <div class="container ai-citation-shell">
+    <h2 class="ai-citation-title">Ėjimo rodiklių formulės ir lygtys | Walk Analytics</h2>
+    <p class="ai-citation-answer">Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance</p>
+
+    <ul class="ai-citation-facts" role="list">
+      
+      <li class="ai-citation-fact">
+        <span class="ai-citation-icon" aria-hidden="true">📅</span>
+        <span>2026-03-24</span>
+      </li>
+      
+
+      
+      <li class="ai-citation-fact ai-citation-keywords">
+        <span class="ai-citation-icon" aria-hidden="true">🏷️</span>
+        <span>ėjimo formulės · WSS formulė · ėjimo rodiklių skaičiavimas · ėjimo mokslo formulės · žingsnių skaičiavimas</span>
+      </li>
+      
+
+      
+      <li class="ai-citation-fact">
+        <span class="ai-citation-icon" aria-hidden="true">🔬</span>
+        <a href="../../lt/bibliography/">
+          
+          Bibliografija
+          
+        </a>
+      </li>
+      
+    </ul>
+
+    
+  </div>
+</section>
+
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-top">
+            <div class="footer-brand-section">
+                
+                <h2>Walk Analytics</h2>
+                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+                
+            </div>
+
+            
+            <div class="footer-download">
+                <h3 class="footer-heading">Atsisiųsti</h3>
+                <div class="footer-badges">
+                    
+                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Atsisiųskite App Store">
+                        <img src="../../assets/images/badge-app-store.svg"
                             alt="Atsisiųskite App Store" width="135"
-                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Gaukite jį iš „Google Play“."><img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy">
+                    </a>
+                    
+                    
+                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Gaukite jį iš „Google Play“.">
+                        <img src="../../assets/images/badge-google-play.svg"
                             alt="Gaukite jį iš „Google Play“." width="135"
-                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Galima įsigyti</h3><div class="lang-grid"><a href="/af/" class="lang-link"
+                            height="40" loading="lazy">
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        
+        <div class="footer-languages">
+            <h3 class="footer-heading">Galima įsigyti</h3>
+            <div class="lang-grid">
+                
+                <a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a><a href="/am/" class="lang-link"
+                </a>
+                
+                <a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a><a href="/ar/" class="lang-link"
+                </a>
+                
+                <a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a><a href="/bg/" class="lang-link"
+                </a>
+                
+                <a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a><a href="/bn/" class="lang-link"
+                </a>
+                
+                <a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a><a href="/ca/" class="lang-link"
+                </a>
+                
+                <a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a><a href="/cs/" class="lang-link"
+                </a>
+                
+                <a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a><a href="/da/" class="lang-link"
+                </a>
+                
+                <a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a><a href="/de/" class="lang-link"
+                </a>
+                
+                <a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a><a href="/el/" class="lang-link"
+                </a>
+                
+                <a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a><a href="/en/" class="lang-link"
+                </a>
+                
+                <a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a><a href="/es/" class="lang-link"
+                </a>
+                
+                <a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a><a href="/et/" class="lang-link"
+                </a>
+                
+                <a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a><a href="/fa/" class="lang-link"
+                </a>
+                
+                <a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a><a href="/fi/" class="lang-link"
+                </a>
+                
+                <a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a><a href="/fr/" class="lang-link"
+                </a>
+                
+                <a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a><a href="/gu/" class="lang-link"
+                </a>
+                
+                <a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a><a href="/ha/" class="lang-link"
+                </a>
+                
+                <a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a><a href="/he/" class="lang-link"
+                </a>
+                
+                <a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a><a href="/hi/" class="lang-link"
+                </a>
+                
+                <a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a><a href="/hr/" class="lang-link"
+                </a>
+                
+                <a href="/hr/" class="lang-link"
                     hreflang="hr" >
                     Hrvatski
-                </a><a href="/hu/" class="lang-link"
+                </a>
+                
+                <a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a><a href="/id/" class="lang-link"
+                </a>
+                
+                <a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a><a href="/is/" class="lang-link"
+                </a>
+                
+                <a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a><a href="/it/" class="lang-link"
+                </a>
+                
+                <a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a><a href="/ja/" class="lang-link"
+                </a>
+                
+                <a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a><a href="/km/" class="lang-link"
+                </a>
+                
+                <a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a><a href="/kn/" class="lang-link"
+                </a>
+                
+                <a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a><a href="/ko/" class="lang-link"
+                </a>
+                
+                <a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a><a href="/lt/" class="lang-link active"
+                </a>
+                
+                <a href="/lt/" class="lang-link active"
                     hreflang="lt" >
                     Lietuvių
-                </a><a href="/lv/" class="lang-link"
+                </a>
+                
+                <a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a><a href="/ms/" class="lang-link"
+                </a>
+                
+                <a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a><a href="/my/" class="lang-link"
+                </a>
+                
+                <a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a><a href="/nb/" class="lang-link"
+                </a>
+                
+                <a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a><a href="/nl/" class="lang-link"
+                </a>
+                
+                <a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a><a href="/pl/" class="lang-link"
+                </a>
+                
+                <a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a><a href="/pt/" class="lang-link"
+                </a>
+                
+                <a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a><a href="/pt-br/" class="lang-link"
+                </a>
+                
+                <a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a><a href="/ro/" class="lang-link"
+                </a>
+                
+                <a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a><a href="/ru/" class="lang-link"
+                </a>
+                
+                <a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a><a href="/sk/" class="lang-link"
+                </a>
+                
+                <a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a><a href="/sl/" class="lang-link"
+                </a>
+                
+                <a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a><a href="/sr/" class="lang-link"
+                </a>
+                
+                <a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a><a href="/sv/" class="lang-link"
+                </a>
+                
+                <a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a><a href="/sw/" class="lang-link"
+                </a>
+                
+                <a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a><a href="/ta/" class="lang-link"
+                </a>
+                
+                <a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a><a href="/te/" class="lang-link"
+                </a>
+                
+                <a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a><a href="/th/" class="lang-link"
+                </a>
+                
+                <a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a><a href="/tl/" class="lang-link"
+                </a>
+                
+                <a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a><a href="/tr/" class="lang-link"
+                </a>
+                
+                <a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a><a href="/uk/" class="lang-link"
+                </a>
+                
+                <a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a><a href="/ur/" class="lang-link"
+                </a>
+                
+                <a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a><a href="/vi/" class="lang-link"
+                </a>
+                
+                <a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a><a href="/yo/" class="lang-link"
+                </a>
+                
+                <a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a><a href="/zh/" class="lang-link"
+                </a>
+                
+                <a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        
+        <div class="footer-bottom">
+            <p class="copyright">
                 &copy; 2026 Walk Analytics. Visos teisės saugomos
-            </p><ul class="footer-legal"><li><a href="/lt/privacy/">Privatumas</a></li><li><a href="/lt/terms/">Sąlygos</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>This website uses cookies.</p><a href="/lt/privacy/" class="text-sm">Sužinokite daugiau</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Atmesti</button><button id="cookie-accept" class="btn btn-primary btn-small">Priimti</button></div></div></div><script src="../../assets/js/core.min.js?v=635348535bde" defer></script><script src="../../assets/js/search.min.js?v=635348535bde" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>
+            </p>
+            <ul class="footer-legal">
+                <li><a href="/lt/privacy/">Privatumas</a></li>
+                <li><a href="/lt/terms/">Sąlygos</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>This website uses cookies.</p>
+            <a href="/lt/privacy/" class="text-sm">Sužinokite daugiau</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Atmesti</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Priimti</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="../../assets/js/core.min.js?v=19fdca55b3da" defer></script>
+  <script src="../../assets/js/search.min.js?v=19fdca55b3da" defer></script>
+  
+
+  
+  
+  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
+</body>
+
+</html>

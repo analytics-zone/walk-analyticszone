@@ -1,61 +1,251 @@
-<!DOCTYPE html><html lang="hr" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
-    rel="stylesheet"><title>Početak rada s Walk Analyticsom - potpuni vodič</title><meta name="description" content="Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno..."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="vodič kroz Walk Analytics, vodič za analizu hoda, vodič za aplikaciju hodanje, kako koristiti Walk Analytics, upute za analitiku hoda"><link rel="canonical" href="https://walk.analyticszone.app/hr/getting-started/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2025-12-28T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/hr/getting-started/"><meta property="og:title" content="Početak rada s Walk Analyticsom - potpuni vodič"><meta property="og:description" content="Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno..."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="hr_HR"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/hr/getting-started/"><meta name="twitter:title" content="Početak rada s Walk Analyticsom - potpuni vodič"><meta name="twitter:description" content="Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno..."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
-    href="https://walk.analyticszone.app/af/getting-started/"><link rel="alternate" hreflang="am"
-    href="https://walk.analyticszone.app/am/getting-started/"><link rel="alternate" hreflang="ar"
-    href="https://walk.analyticszone.app/ar/getting-started/"><link rel="alternate" hreflang="bg"
-    href="https://walk.analyticszone.app/bg/getting-started/"><link rel="alternate" hreflang="bn"
-    href="https://walk.analyticszone.app/bn/getting-started/"><link rel="alternate" hreflang="ca"
-    href="https://walk.analyticszone.app/ca/getting-started/"><link rel="alternate" hreflang="cs"
-    href="https://walk.analyticszone.app/cs/getting-started/"><link rel="alternate" hreflang="da"
-    href="https://walk.analyticszone.app/da/getting-started/"><link rel="alternate" hreflang="de"
-    href="https://walk.analyticszone.app/de/getting-started/"><link rel="alternate" hreflang="el"
-    href="https://walk.analyticszone.app/el/getting-started/"><link rel="alternate" hreflang="en"
-    href="https://walk.analyticszone.app/en/getting-started/"><link rel="alternate" hreflang="es"
-    href="https://walk.analyticszone.app/es/getting-started/"><link rel="alternate" hreflang="et"
-    href="https://walk.analyticszone.app/et/getting-started/"><link rel="alternate" hreflang="fa"
-    href="https://walk.analyticszone.app/fa/getting-started/"><link rel="alternate" hreflang="fi"
-    href="https://walk.analyticszone.app/fi/getting-started/"><link rel="alternate" hreflang="fr"
-    href="https://walk.analyticszone.app/fr/getting-started/"><link rel="alternate" hreflang="gu"
-    href="https://walk.analyticszone.app/gu/getting-started/"><link rel="alternate" hreflang="ha"
-    href="https://walk.analyticszone.app/ha/getting-started/"><link rel="alternate" hreflang="he"
-    href="https://walk.analyticszone.app/he/getting-started/"><link rel="alternate" hreflang="hi"
-    href="https://walk.analyticszone.app/hi/getting-started/"><link rel="alternate" hreflang="hr"
-    href="https://walk.analyticszone.app/hr/getting-started/"><link rel="alternate" hreflang="hu"
-    href="https://walk.analyticszone.app/hu/getting-started/"><link rel="alternate" hreflang="id"
-    href="https://walk.analyticszone.app/id/getting-started/"><link rel="alternate" hreflang="is"
-    href="https://walk.analyticszone.app/is/getting-started/"><link rel="alternate" hreflang="it"
-    href="https://walk.analyticszone.app/it/getting-started/"><link rel="alternate" hreflang="ja"
-    href="https://walk.analyticszone.app/ja/getting-started/"><link rel="alternate" hreflang="km"
-    href="https://walk.analyticszone.app/km/getting-started/"><link rel="alternate" hreflang="kn"
-    href="https://walk.analyticszone.app/kn/getting-started/"><link rel="alternate" hreflang="ko"
-    href="https://walk.analyticszone.app/ko/getting-started/"><link rel="alternate" hreflang="lt"
-    href="https://walk.analyticszone.app/lt/getting-started/"><link rel="alternate" hreflang="lv"
-    href="https://walk.analyticszone.app/lv/getting-started/"><link rel="alternate" hreflang="ms"
-    href="https://walk.analyticszone.app/ms/getting-started/"><link rel="alternate" hreflang="my"
-    href="https://walk.analyticszone.app/my/getting-started/"><link rel="alternate" hreflang="nb"
-    href="https://walk.analyticszone.app/nb/getting-started/"><link rel="alternate" hreflang="nl"
-    href="https://walk.analyticszone.app/nl/getting-started/"><link rel="alternate" hreflang="pl"
-    href="https://walk.analyticszone.app/pl/getting-started/"><link rel="alternate" hreflang="pt"
-    href="https://walk.analyticszone.app/pt/getting-started/"><link rel="alternate" hreflang="pt-br"
-    href="https://walk.analyticszone.app/pt-br/getting-started/"><link rel="alternate" hreflang="ro"
-    href="https://walk.analyticszone.app/ro/getting-started/"><link rel="alternate" hreflang="ru"
-    href="https://walk.analyticszone.app/ru/getting-started/"><link rel="alternate" hreflang="sk"
-    href="https://walk.analyticszone.app/sk/getting-started/"><link rel="alternate" hreflang="sl"
-    href="https://walk.analyticszone.app/sl/getting-started/"><link rel="alternate" hreflang="sr"
-    href="https://walk.analyticszone.app/sr/getting-started/"><link rel="alternate" hreflang="sv"
-    href="https://walk.analyticszone.app/sv/getting-started/"><link rel="alternate" hreflang="sw"
-    href="https://walk.analyticszone.app/sw/getting-started/"><link rel="alternate" hreflang="ta"
-    href="https://walk.analyticszone.app/ta/getting-started/"><link rel="alternate" hreflang="te"
-    href="https://walk.analyticszone.app/te/getting-started/"><link rel="alternate" hreflang="th"
-    href="https://walk.analyticszone.app/th/getting-started/"><link rel="alternate" hreflang="tl"
-    href="https://walk.analyticszone.app/tl/getting-started/"><link rel="alternate" hreflang="tr"
-    href="https://walk.analyticszone.app/tr/getting-started/"><link rel="alternate" hreflang="uk"
-    href="https://walk.analyticszone.app/uk/getting-started/"><link rel="alternate" hreflang="ur"
-    href="https://walk.analyticszone.app/ur/getting-started/"><link rel="alternate" hreflang="vi"
-    href="https://walk.analyticszone.app/vi/getting-started/"><link rel="alternate" hreflang="yo"
-    href="https://walk.analyticszone.app/yo/getting-started/"><link rel="alternate" hreflang="zh"
-    href="https://walk.analyticszone.app/zh/getting-started/"><link rel="alternate" hreflang="x-default"
-    href="https://walk.analyticszone.app/en/getting-started/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
+<!DOCTYPE html>
+<html lang="hr" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+    rel="stylesheet">
+
+  
+  <title>Početak rada s Walk Analyticsom - potpuni vodič</title>
+  <meta name="description" content="Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno...">
+  <meta name="author" content="AnalyticsZone Team">
+
+  
+  
+  <meta name="keywords" content="vodič kroz Walk Analytics, vodič za analizu hoda, vodič za aplikaciju hodanje, kako koristiti Walk Analytics, upute za analitiku hoda">
+  
+
+  
+  <link rel="canonical" href="https://walk.analyticszone.app/hr/getting-started/">
+
+  
+  
+  <meta property="article:published_time" content="2025-01-15T10:00:00Z">
+  <meta property="article:modified_time" content="2026-03-24T14:30:00Z">
+  <meta property="article:author" content="AnalyticsZone Team">
+  
+
+  
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walk.analyticszone.app/hr/getting-started/">
+  <meta property="og:title" content="Početak rada s Walk Analyticsom - potpuni vodič">
+  <meta property="og:description" content="Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno...">
+  <meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  <meta property="og:locale" content="hr_HR">
+  <meta property="og:site_name" content="Walk Analytics">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://walk.analyticszone.app/hr/getting-started/">
+  <meta name="twitter:title" content="Početak rada s Walk Analyticsom - potpuni vodič">
+  <meta name="twitter:description" content="Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno...">
+  <meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg">
+  
+  <meta name="twitter:site" content="@walkanalytics">
+  <meta name="twitter:creator" content="@walkanalytics">
+  
+
+  
+  
+  <link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/getting-started/">
+  
+  <link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/getting-started/">
+  
+  <link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/getting-started/">
+  
+  <link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/getting-started/">
+  
+  <link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/getting-started/">
+  
+  <link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/getting-started/">
+  
+  <link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/getting-started/">
+  
+  <link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/getting-started/">
+  
+  <link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/getting-started/">
+  
+  <link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/getting-started/">
+  
+  <link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/getting-started/">
+  
+  <link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/getting-started/">
+  
+  <link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/getting-started/">
+  
+  <link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/getting-started/">
+  
+  <link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/getting-started/">
+  
+  <link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/getting-started/">
+  
+  <link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/getting-started/">
+  
+  <link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/getting-started/">
+  
+  <link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/getting-started/">
+  
+  <link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/getting-started/">
+  
+  <link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/getting-started/">
+  
+  <link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/getting-started/">
+  
+  <link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/getting-started/">
+  
+  <link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/getting-started/">
+  
+  <link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/getting-started/">
+  
+  <link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/getting-started/">
+  
+  <link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/getting-started/">
+  
+  <link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/getting-started/">
+  
+  <link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/getting-started/">
+  
+  <link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/getting-started/">
+  
+  <link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/getting-started/">
+  
+  <link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/getting-started/">
+  
+  <link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/getting-started/">
+  
+  <link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/getting-started/">
+  
+  <link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/getting-started/">
+  
+  <link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/getting-started/">
+  
+  <link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/getting-started/">
+  
+  <link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/getting-started/">
+  
+  <link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/getting-started/">
+  
+  <link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/getting-started/">
+  
+  <link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/getting-started/">
+  
+  <link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/getting-started/">
+  
+  <link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/getting-started/">
+  
+  <link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/getting-started/">
+  
+  <link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/getting-started/">
+  
+  <link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/getting-started/">
+  
+  <link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/getting-started/">
+  
+  <link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/getting-started/">
+  
+  <link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/getting-started/">
+  
+  <link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/getting-started/">
+  
+  <link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/getting-started/">
+  
+  <link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/getting-started/">
+  
+  <link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/getting-started/">
+  
+  <link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/getting-started/">
+  
+  <link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/getting-started/">
+  
+  <link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/getting-started/">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../manifest.json">
+  <meta name="theme-color" content="#2563EB">
+  
+  
+  
+  
+  <meta name="robots" content="index, follow">
+  
+
+  
+  
+  
+  <meta name="apple-itunes-app" content="app-id=6755187154">
+  
+
+  
+  <style>
 /* Critical CSS - Above the fold styles for fast LCP */
 :root {
   --color-primary: #0066CC;
@@ -314,7 +504,20 @@ img[width][height] {
     transition-duration: 0.01ms !important;
   }
 }
-</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=635348535bde"><script type="application/ld+json">
+</style>
+
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  
+  <link rel="stylesheet" href="../../assets/css/main.min.css?v=19fdca55b3da">
+
+  
+  
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -349,7 +552,10 @@ img[width][height] {
     
   ]
 }
-</script><script type="application/ld+json">
+</script>
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -358,7 +564,11 @@ img[width][height] {
   "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
   "inLanguage": "hr"
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -373,7 +583,12 @@ img[width][height] {
   },
   "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -402,7 +617,11 @@ img[width][height] {
     
   ]
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -416,7 +635,7 @@ img[width][height] {
     "url": "https://walk.analyticszone.app"
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2025-12-28",
+  "dateModified": "2026-03-24",
   "keywords": ["vodič kroz Walk Analytics", "vodič za analizu hoda", "vodič za aplikaciju hodanje", "kako koristiti Walk Analytics", "upute za analitiku hoda"],
   "about": [
     {
@@ -445,7 +664,14 @@ img[width][height] {
     }
   ]
 }
-</script><script type="application/ld+json">
+</script>
+
+
+
+
+
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -464,13 +690,23 @@ img[width][height] {
     }
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2025-12-28",
+  "dateModified": "2026-03-24",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://walk.analyticszone.app/hr/getting-started/"
   }
 }
-</script><script>
+</script>
+
+
+
+
+
+  
+  
+
+  
+  <script>
     (function () {
       let theme = localStorage.getItem('theme');
       // Older builds could persist a per-subdomain `theme=light` value without a UI
@@ -484,375 +720,1237 @@ img[width][height] {
         document.documentElement.classList.add('dark-mode');
       }
     })();
-  </script></head><body><a href="#main-content" class="skip-link">Preskoči na sadržaj</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/hr/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
-                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/hr/" 
+  </script>
+</head>
+
+<body>
+  
+  <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
+
+  
+  <header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            
+            <a href="/hr/" class="site-logo">
+                <picture>
+                    <source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)">
+                    <img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56">
+                </picture>
+                <span class="logo-text">Walk Analytics</span>
+            </a>
+
+            
+            <nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation">
+                <div class="nav-group-left">
+                    <ul>
+                        
+                        <li>
+                            
+                            <a href="/hr/" 
                                 aria-current="">
                                 Početna
-                            </a></li><li class="has-submenu" ><a href="/hr/getting-started/" class="nav-label">Naučiti</a><ul class="submenu"><li><a href="/hr/getting-started/" class="active" 
+                            </a>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/hr/getting-started/" class="nav-label">Naučiti</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/hr/getting-started/" class="active" 
                                         aria-current="page">
                                         Početak rada
-                                    </a></li><li><a href="/hr/walking-zones/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/walking-zones/" 
                                         aria-current="">
                                         Zone za hodanje
-                                    </a></li><li><a href="/hr/gait-analysis/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/gait-analysis/" 
                                         aria-current="">
                                         Analiza hoda
-                                    </a></li><li><a href="/hr/training-load/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/training-load/" 
                                         aria-current="">
                                         Opterećenje treninga
-                                    </a></li><li><a href="/hr/wss-calculator/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/wss-calculator/" 
                                         aria-current="">
                                         WSS kalkulator
-                                    </a></li></ul></li><li class="has-submenu" ><a href="/hr/research/" class="nav-label">Znanost</a><ul class="submenu"><li><a href="/hr/research/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/hr/research/" class="nav-label">Znanost</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/hr/research/" 
                                         aria-current="">
                                         Istraživanje
-                                    </a></li><li><a href="/hr/formulas/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/formulas/" 
                                         aria-current="">
                                         Formule
-                                    </a></li><li><a href="/hr/gait-efficiency/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/gait-efficiency/" 
                                         aria-current="">
                                         Učinkovitost hoda
-                                    </a></li><li><a href="/hr/stride-mechanics/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/stride-mechanics/" 
                                         aria-current="">
                                         Mehanika koraka
-                                    </a></li><li><a href="/hr/walking-vs-running/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/walking-vs-running/" 
                                         aria-current="">
                                         Hodanje vs trčanje
-                                    </a></li><li><a href="/hr/benchmarks/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/benchmarks/" 
                                         aria-current="">
                                         mjerila
-                                    </a></li><li><a href="/hr/bibliography/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/bibliography/" 
                                         aria-current="">
                                         Bibliografija
-                                    </a></li></ul></li><li class="has-submenu" ><a href="/hr/for-health/" class="nav-label">Za Vas</a><ul class="submenu"><li><a href="/hr/for-health/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/hr/for-health/" class="nav-label">Za Vas</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/hr/for-health/" 
                                         aria-current="">
                                         Za zdravlje
-                                    </a></li><li><a href="/hr/for-fitness/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/for-fitness/" 
                                         aria-current="">
                                         Za fitness
-                                    </a></li><li><a href="/hr/for-seniors/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/for-seniors/" 
                                         aria-current="">
                                         Za starije osobe
-                                    </a></li><li><a href="/hr/for-rehabilitation/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/for-rehabilitation/" 
                                         aria-current="">
                                         Za rehabilitaciju
-                                    </a></li></ul></li><li class="has-submenu" ><a href="/hr/cadence-calculator/" class="nav-label">Alati</a><ul class="submenu"><li><a href="/hr/cadence-calculator/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li class="has-submenu" >
+                            
+                            
+                            <a href="/hr/cadence-calculator/" class="nav-label">Alati</a>
+                            
+                            <ul class="submenu">
+                                
+                                <li>
+                                    <a href="/hr/cadence-calculator/" 
                                         aria-current="">
                                         Kalkulator kadence
-                                    </a></li><li><a href="/hr/gait-assessment/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/gait-assessment/" 
                                         aria-current="">
                                         Procjena hoda
-                                    </a></li><li><a href="/hr/vo2max-calculator/" 
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/hr/vo2max-calculator/" 
                                         aria-current="">
                                         VO₂max Kalkulator
-                                    </a></li></ul></li><li><a href="/hr/contact/" 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            
+                            </li>
+                            
+                        <li>
+                            
+                            <a href="/hr/contact/" 
                                 aria-current="">
                                 Kontakt
-                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            </a>
+                            
+                            </li>
+                            
+                    </ul>
+
+                    
+                    <div class="search-container">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
-                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Odaberite jezik"><option value="af" >
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" />
+                        <div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div>
+                    </div>
+
+                    
+                    <select class="language-selector" id="language-select" aria-label="Odaberite jezik">
+                        
+                        <option value="af" >
                             Afrikaans
-                        </option><option value="am" >
+                        </option>
+                        
+                        <option value="am" >
                             አမ္ဟာ
-                        </option><option value="ar" >
+                        </option>
+                        
+                        <option value="ar" >
                             العربية
-                        </option><option value="bg" >
+                        </option>
+                        
+                        <option value="bg" >
                             Български
-                        </option><option value="bn" >
+                        </option>
+                        
+                        <option value="bn" >
                             বাংলা
-                        </option><option value="ca" >
+                        </option>
+                        
+                        <option value="ca" >
                             Català
-                        </option><option value="cs" >
+                        </option>
+                        
+                        <option value="cs" >
                             Čeština
-                        </option><option value="da" >
+                        </option>
+                        
+                        <option value="da" >
                             Dansk
-                        </option><option value="de" >
+                        </option>
+                        
+                        <option value="de" >
                             Deutsch
-                        </option><option value="el" >
+                        </option>
+                        
+                        <option value="el" >
                             Ελληνικά
-                        </option><option value="en" >
+                        </option>
+                        
+                        <option value="en" >
                             English
-                        </option><option value="es" >
+                        </option>
+                        
+                        <option value="es" >
                             Español
-                        </option><option value="et" >
+                        </option>
+                        
+                        <option value="et" >
                             Eesti
-                        </option><option value="fa" >
+                        </option>
+                        
+                        <option value="fa" >
                             فارسی
-                        </option><option value="fi" >
+                        </option>
+                        
+                        <option value="fi" >
                             Suomi
-                        </option><option value="fr" >
+                        </option>
+                        
+                        <option value="fr" >
                             Français
-                        </option><option value="gu" >
+                        </option>
+                        
+                        <option value="gu" >
                             ગુજરાતી
-                        </option><option value="ha" >
+                        </option>
+                        
+                        <option value="ha" >
                             Hausa
-                        </option><option value="he" >
+                        </option>
+                        
+                        <option value="he" >
                             עברית
-                        </option><option value="hi" >
+                        </option>
+                        
+                        <option value="hi" >
                             हिन्दी
-                        </option><option value="hr" selected>
+                        </option>
+                        
+                        <option value="hr" selected>
                             Hrvatski
-                        </option><option value="hu" >
+                        </option>
+                        
+                        <option value="hu" >
                             Magyar
-                        </option><option value="id" >
+                        </option>
+                        
+                        <option value="id" >
                             Bahasa Indonesia
-                        </option><option value="is" >
+                        </option>
+                        
+                        <option value="is" >
                             Íslenska
-                        </option><option value="it" >
+                        </option>
+                        
+                        <option value="it" >
                             Italiano
-                        </option><option value="ja" >
+                        </option>
+                        
+                        <option value="ja" >
                             日本語
-                        </option><option value="km" >
+                        </option>
+                        
+                        <option value="km" >
                             ភាសាខ្មែរ
-                        </option><option value="kn" >
+                        </option>
+                        
+                        <option value="kn" >
                             ಕನ್ನಡ
-                        </option><option value="ko" >
+                        </option>
+                        
+                        <option value="ko" >
                             한국어
-                        </option><option value="lt" >
+                        </option>
+                        
+                        <option value="lt" >
                             Lietuvių
-                        </option><option value="lv" >
+                        </option>
+                        
+                        <option value="lv" >
                             Latviešu
-                        </option><option value="ms" >
+                        </option>
+                        
+                        <option value="ms" >
                             Bahasa Melayu
-                        </option><option value="my" >
+                        </option>
+                        
+                        <option value="my" >
                             မြန်မာ
-                        </option><option value="nb" >
+                        </option>
+                        
+                        <option value="nb" >
                             Norsk Bokmål
-                        </option><option value="nl" >
+                        </option>
+                        
+                        <option value="nl" >
                             Nederlands
-                        </option><option value="pl" >
+                        </option>
+                        
+                        <option value="pl" >
                             Polski
-                        </option><option value="pt" >
+                        </option>
+                        
+                        <option value="pt" >
                             Português
-                        </option><option value="pt-br" >
+                        </option>
+                        
+                        <option value="pt-br" >
                             Português (Brasil)
-                        </option><option value="ro" >
+                        </option>
+                        
+                        <option value="ro" >
                             Română
-                        </option><option value="ru" >
+                        </option>
+                        
+                        <option value="ru" >
                             Русский
-                        </option><option value="sk" >
+                        </option>
+                        
+                        <option value="sk" >
                             Slovenčina
-                        </option><option value="sl" >
+                        </option>
+                        
+                        <option value="sl" >
                             Slovenščina
-                        </option><option value="sr" >
+                        </option>
+                        
+                        <option value="sr" >
                             Српски
-                        </option><option value="sv" >
+                        </option>
+                        
+                        <option value="sv" >
                             Svenska
-                        </option><option value="sw" >
+                        </option>
+                        
+                        <option value="sw" >
                             Kiswahili
-                        </option><option value="ta" >
+                        </option>
+                        
+                        <option value="ta" >
                             தமிழ்
-                        </option><option value="te" >
+                        </option>
+                        
+                        <option value="te" >
                             తెలుగు
-                        </option><option value="th" >
+                        </option>
+                        
+                        <option value="th" >
                             ไทย
-                        </option><option value="tl" >
+                        </option>
+                        
+                        <option value="tl" >
                             Tagalog
-                        </option><option value="tr" >
+                        </option>
+                        
+                        <option value="tr" >
                             Türkçe
-                        </option><option value="uk" >
+                        </option>
+                        
+                        <option value="uk" >
                             Українська
-                        </option><option value="ur" >
+                        </option>
+                        
+                        <option value="ur" >
                             اردو
-                        </option><option value="vi" >
+                        </option>
+                        
+                        <option value="vi" >
                             Tiếng Việt
-                        </option><option value="yo" >
+                        </option>
+                        
+                        <option value="yo" >
                             Yorùbá
-                        </option><option value="zh" >
+                        </option>
+                        
+                        <option value="zh" >
                             中文
-                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor"><path
-                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
-                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor"><path
-                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
-                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </option>
+                        
+                    </select>
+                </div>
+
+                <div class="nav-group-right">
+                    
+
+
+                    
+                    <div class="header-app-buttons">
+                        
+                        
+                        <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                            </svg>
+                        </a>
+                        
+
+                        
+                        <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" />
+                            </svg>
+                        </a>
+                        
+                        
+                    </div>
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="suite-menu-container">
+                        <button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a><a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a><a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Prebaci izbornik"
-                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/hr/">Početna</a></li><li><a href="/hr/getting-started/">Naučiti</a></li><li><span aria-current="page">Početak rada</span></li></ol></div></nav><main id="main-content" class="main-content">
+                                stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </button>
+                        <div class="suite-dropdown hidden" id="suite-dropdown">
+                            <div class="suite-dropdown-header">Other AnalyticsZone Apps</div>
+                            <div class="suite-apps-grid">
+                                
+                                <a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a>
+                                
+                                <a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a>
+                                
+                                <a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a>
+                                
+                                <a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a>
+                                
+                                <a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a>
+                                
+                                <a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a>
+                                
+                                <a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a>
+                                
+                                <a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a>
+                                
+                                <a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Prebaci izbornik"
+                aria-expanded="false" aria-controls="nav-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+  
+  
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+        <ol>
+            
+            <li>
+                
+                <a href="/hr/">Početna</a>
+                
+            </li>
+            
+            <li>
+                
+                <a href="/hr/getting-started/">Naučiti</a>
+                
+            </li>
+            
+            <li>
+                
+                <span aria-current="page">Početak rada</span>
+                
+            </li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+  
+  <main id="main-content" class="main-content">
     
     Početak rada s Walk Analyticsom
-<section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/hr/">Dom</a>/<a href="/hr/#learn">učiti</a>/ Početak rada</div><h1>Početak rada s Walk Analyticsom</h1><p class="lead">Potpuni vodič za postavljanje Walk Analyticsa i razumijevanje vašeg analitičkog putovanja hodanja</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><h2 id="quick-start">Kratki vodič za početak</h2><p>Dobro došli u Walk Analytics! Ovaj vodič pomoći će vam da počnete s naprednom analizom hoda i praćenjem uspješnosti hodanja u samo nekoliko minuta.</p><h3>Korak 1: Preuzmite i instalirajte</h3><ol><li>Preuzmite Walk Analytics s<a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">App Store</a></li><li>Otvorite aplikaciju na iPhone ili iPad uređaju</li><li>Odobrite dopuštenje za pristup Apple Health kada se to od vas zatraži</li><li>Započnite svoje 7-dnevno besplatno probno razdoblje (nije potrebna kreditna kartica)</li></ol><h3>Korak 2: Spojite Apple Health</h3><p>Walk Analytics analizira vaše treninge hodanja iz Apple Health:</p><ul><li><strong>Automatski uvoz:</strong>Vaši postojeći treninzi hodanja automatski se uvoze</li><li><strong>Sinkronizacija u stvarnom vremenu:</strong>Nove šetnje s Apple Watcha ili iPhone analiziraju se trenutno</li><li><strong>Privatnost na prvom mjestu:</strong>Svi podaci ostaju na vašem uređaju - nema prijenosa u oblak</li></ul><h3>Korak 3: Razumite svoju nadzornu ploču</h3><p>Glavna nadzorna ploča prikazuje vaše ključne metrike hodanja:</p><ul><li><strong>Nedavne šetnje:</strong>Vaši najnoviji treninzi hodanja s ključnim statistikama</li><li><strong>Tjedni sažetak:</strong>Ukupna udaljenost, vrijeme i rezultat stresa pri hodanju (WSS)</li><li><strong>Mjerni podaci hoda:</strong>Rezultati simetrije koraka, kadence i učinkovitosti</li><li><strong>Zone treninga:</strong>Vrijeme provedeno u svakoj zoni otkucaja srca</li></ul><h2 id="key-concepts">Ključni pojmovi</h2><h3>Analiza hoda</h3><p>Analiza hoda ispituje kako hodate. Walk Analytics prati:</p><ul><li><strong>Duljina koraka:</strong>Prijeđena udaljenost po koraku</li><li><strong>Kadenca:</strong>Broj koraka u minuti</li><li><strong>Simetrija koraka:</strong>Ravnoteža između lijeve i desne noge</li><li><strong>Vrijeme kontakta s tlom:</strong>Koliko dugo vaše stopalo dodiruje tlo</li><li><strong>Duplo vrijeme podrške:</strong>Kada su obje noge istovremeno na tlu</li></ul><p>Saznajte više o<a href="/hr/gait-analysis/">osnove analize hoda</a>.</p><h3>Zone za hodanje</h3><p>Trening u različitim zonama intenziteta pruža specifične zdravstvene prednosti:</p><ul><li><strong>Zona 1 (oporavak):</strong>Vrlo lagano hodanje za oporavak</li><li><strong>Zona 2 (sagorijevanje masti):</strong>Optimalna za sagorijevanje masti i aerobna baza</li><li><strong>Zona 3 (aerobik):</strong>Poboljšanje kardiovaskularne kondicije</li><li><strong>Zona 4 (prag):</strong>Aerobni kapacitet visokog intenziteta</li><li><strong>Zona 5 (vrhunac):</strong>Maksimalni napor za kratke rafale</li></ul><p>Istražite kompletan<a href="/hr/walking-zones/">vodič kroz pješačke zone</a>.</p><h3>Ocjena stresa pri hodanju (WSS)</h3><p>WSS kvantificira fiziološki stres svake šetnje:</p><ul><li>Na temelju intenziteta i trajanja otkucaja srca</li><li>Pomaže u ravnoteži opterećenja tijekom treninga s oporavkom</li><li>Sprječava pretreniranost i optimizira napredak</li><li>Pratite tjedne i mjesečne trendove</li></ul><p>Izračunajte svoj WSS s našim<a href="/hr/wss-calculator/">WSS kalkulator</a>.</p><h2 id="first-walk">Snimanje vaše prve šetnje</h2><h3>Korištenje Apple Watcha</h3><ol><li>Započnite vježbanje "Hodanje" na svom Apple Watchu</li><li>Hodajte prirodno - nema potrebe mijenjati formu</li><li>Završite vježbanje kada završite</li><li>Walk Analytics ga automatski uvozi i analizira</li></ol><h3>Korištenje samo iPhone</h3><ol><li>Omogućite "Praćenje fitnessa" u postavkama iPhone</li><li>Nosite iPhone tijekom šetnje</li><li>Aktivnosti hodanja automatski se bilježe</li><li>Pregledajte u Walk Analytics radi analize</li></ol><h2 id="interpreting-metrics">Tumačenje vaših mjernih podataka</h2><h3>Dobri u odnosu na zabrinjavajuće znakove</h3><table class="metrics-table"><thead><tr><th>metrički</th><th>Dobar domet</th><th>Što to znači</th></tr></thead><tbody><tr><td>Simetrija koraka</td><td>&gt; 95%</td><td>Uravnotežen hod, mali rizik od ozljeda</td></tr><tr><td>Kadenca</td><td>100-130 koraka/min</td><td>Učinkovit tempo hodanja</td></tr><tr><td>Tjedni WSS</td><td>200-500</td><td>Zdravo opterećenje treninga</td></tr><tr><td>Zona 2 Vrijeme</td><td>60-80% od ukupnog broja</td><td>Snažna aerobna baza</td></tr></tbody></table><h2 id="tips">Profesionalni savjeti za uspjeh</h2><h3>1. Započnite s osnovnom procjenom</h3><p>Prvo snimite 2-3 normalne šetnje kako biste utvrdili svoju osnovnu metriku prije nego što napravite promjene.</p><h3>2. Usredotočite se na hodanje u zoni 2</h3><p>Provedite 60-80% svog vremena hodanja u zoni 2 za optimalne zdravstvene dobrobiti i sagorijevanje masti.</p><h3>3. Pratite simetriju hoda</h3><p>Ako simetrija padne ispod 90%, razmislite o obradi ili savjetovanju sa stručnjakom kako biste spriječili ozljede.</p><h3>4. Gradite postupno</h3><p>Povećajte tjedni WSS za ne više od 10% tjedno kako biste izbjegli pretreniranost.</p><h3>5. Dosljednost iznad intenziteta</h3><p>Redovito umjereno hodanje pobjeđuje povremene intenzivne šetnje za dugoročno zdravlje.</p><h2 id="troubleshooting">Rješavanje problema</h2><h3>Mjerni podaci se ne prikazuju</h3><ul><li>Osigurajte da su dopuštenja Apple Health odobrena</li><li>Provjerite jesu li treninzi pravilno označeni kao "Hodanje" u aplikaciji Zdravlje</li><li>Za zone otkucaja srca, provjerite bilježe li se podaci o otkucajima srca</li></ul><h3>Netočna metrika koraka</h3><ul><li>Kalibrirajte Apple Watch hodajući vanjskim rutama s preciznim GPS-om</li><li>Osigurajte pravilno pristajanje sata (udoban, ali udoban)</li><li>Hodajte s prirodnim zamahom ruku za bolje otkrivanje pokreta</li></ul><h2 id="next-steps">Sljedeći koraci</h2><ul><li>Saznajte o<a href="/hr/walking-zones/">trening zone</a>za optimalan intenzitet</li><li>razumjeti<a href="/hr/gait-analysis/">metrike analize hoda</a>u dubinu</li><li>Izračunajte svoje<a href="/hr/wss-calculator/">Ocjena stresa pri hodanju</a></li><li>Istražite<a href="/hr/research/">znanost iza hodajuće analitike</a></li></ul></div><aside class="sidebar"><div class="toc"><h3>Sadržaj</h3><ul><li><a href="#quick-start">Kratki vodič za početak</a></li><li><a href="#key-concepts">Ključni pojmovi</a></li><li><a href="#first-walk">Snimanje vaše prve šetnje</a></li><li><a href="#interpreting-metrics">Tumačenje vaših mjernih podataka</a></li><li><a href="#tips">Profesionalni savjeti za uspjeh</a></li><li><a href="#troubleshooting">Rješavanje problema</a></li><li><a href="#next-steps">Sljedeći koraci</a></li></ul></div><div class="cta-box"><h3>Započnite svoje putovanje</h3><p>Preuzmite Walk Analytics i počnite pratiti svoj hod danas.</p><a class="btn btn-accent" href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">Preuzmite aplikaciju</a></div></aside></div></div></section><section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="getting-started"><div class="container ai-citation-shell"><h2 class="ai-citation-title">Početak rada s Walk Analyticsom - potpuni vodič</h2><p class="ai-citation-answer">Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno...</p><ul class="ai-citation-facts" role="list"><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">📅</span><span>2025-12-28</span></li><li class="ai-citation-fact ai-citation-keywords"><span class="ai-citation-icon" aria-hidden="true">🏷️</span><span>vodič kroz Walk Analytics · vodič za analizu hoda · vodič za aplikaciju hodanje · kako koristiti Walk Analytics · upute za analitiku hoda</span></li><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">🔬</span><a href="../../hr/bibliography/">
+<section class="guide-hero">
+<div class="container">
+<div class="breadcrumb">
+<a href="/hr/">Dom</a>/<a href="/hr/#learn">učiti</a>/ Početak rada</div>
+<h1>Početak rada s Walk Analyticsom</h1>
+<p class="lead">Potpuni vodič za postavljanje Walk Analyticsa i razumijevanje vašeg analitičkog putovanja hodanja</p>
+</div>
+</section>
+<section class="guide-content">
+<div class="container">
+<div class="content-grid">
+<div class="main-content">
+<h2 id="quick-start">Kratki vodič za početak</h2>
+<p>Dobro došli u Walk Analytics! Ovaj vodič pomoći će vam da počnete s naprednom analizom hoda i praćenjem uspješnosti hodanja u samo nekoliko minuta.</p>
+<h3>Korak 1: Preuzmite i instalirajte</h3>
+<ol>
+<li>Preuzmite Walk Analytics s<a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">App Store</a></li>
+<li>Otvorite aplikaciju na iPhone ili iPad uređaju</li>
+<li>Odobrite dopuštenje za pristup Apple Health kada se to od vas zatraži</li>
+<li>Započnite svoje 7-dnevno besplatno probno razdoblje (nije potrebna kreditna kartica)</li>
+</ol>
+<h3>Korak 2: Spojite Apple Health</h3>
+<p>Walk Analytics analizira vaše treninge hodanja iz Apple Health:</p>
+<ul>
+<li><strong>Automatski uvoz:</strong>Vaši postojeći treninzi hodanja automatski se uvoze</li>
+<li><strong>Sinkronizacija u stvarnom vremenu:</strong>Nove šetnje s Apple Watcha ili iPhone analiziraju se trenutno</li>
+<li><strong>Privatnost na prvom mjestu:</strong>Svi podaci ostaju na vašem uređaju - nema prijenosa u oblak</li>
+</ul>
+<h3>Korak 3: Razumite svoju nadzornu ploču</h3>
+<p>Glavna nadzorna ploča prikazuje vaše ključne metrike hodanja:</p>
+<ul>
+<li><strong>Nedavne šetnje:</strong>Vaši najnoviji treninzi hodanja s ključnim statistikama</li>
+<li><strong>Tjedni sažetak:</strong>Ukupna udaljenost, vrijeme i rezultat stresa pri hodanju (WSS)</li>
+<li><strong>Mjerni podaci hoda:</strong>Rezultati simetrije koraka, kadence i učinkovitosti</li>
+<li><strong>Zone treninga:</strong>Vrijeme provedeno u svakoj zoni otkucaja srca</li>
+</ul>
+<h2 id="key-concepts">Ključni pojmovi</h2>
+<h3>Analiza hoda</h3>
+<p>Analiza hoda ispituje kako hodate. Walk Analytics prati:</p>
+<ul>
+<li><strong>Duljina koraka:</strong>Prijeđena udaljenost po koraku</li>
+<li><strong>Kadenca:</strong>Broj koraka u minuti</li>
+<li><strong>Simetrija koraka:</strong>Ravnoteža između lijeve i desne noge</li>
+<li><strong>Vrijeme kontakta s tlom:</strong>Koliko dugo vaše stopalo dodiruje tlo</li>
+<li><strong>Duplo vrijeme podrške:</strong>Kada su obje noge istovremeno na tlu</li>
+</ul>
+<p>Saznajte više o<a href="/hr/gait-analysis/">osnove analize hoda</a>.</p>
+<h3>Zone za hodanje</h3>
+<p>Trening u različitim zonama intenziteta pruža specifične zdravstvene prednosti:</p>
+<ul>
+<li><strong>Zona 1 (oporavak):</strong>Vrlo lagano hodanje za oporavak</li>
+<li><strong>Zona 2 (sagorijevanje masti):</strong>Optimalna za sagorijevanje masti i aerobna baza</li>
+<li><strong>Zona 3 (aerobik):</strong>Poboljšanje kardiovaskularne kondicije</li>
+<li><strong>Zona 4 (prag):</strong>Aerobni kapacitet visokog intenziteta</li>
+<li><strong>Zona 5 (vrhunac):</strong>Maksimalni napor za kratke rafale</li>
+</ul>
+<p>Istražite kompletan<a href="/hr/walking-zones/">vodič kroz pješačke zone</a>.</p>
+<h3>Ocjena stresa pri hodanju (WSS)</h3>
+<p>WSS kvantificira fiziološki stres svake šetnje:</p>
+<ul>
+<li>Na temelju intenziteta i trajanja otkucaja srca</li>
+<li>Pomaže u ravnoteži opterećenja tijekom treninga s oporavkom</li>
+<li>Sprječava pretreniranost i optimizira napredak</li>
+<li>Pratite tjedne i mjesečne trendove</li>
+</ul>
+<p>Izračunajte svoj WSS s našim<a href="/hr/wss-calculator/">WSS kalkulator</a>.</p>
+<h2 id="first-walk">Snimanje vaše prve šetnje</h2>
+<h3>Korištenje Apple Watcha</h3>
+<ol>
+<li>Započnite vježbanje "Hodanje" na svom Apple Watchu</li>
+<li>Hodajte prirodno - nema potrebe mijenjati formu</li>
+<li>Završite vježbanje kada završite</li>
+<li>Walk Analytics ga automatski uvozi i analizira</li>
+</ol>
+<h3>Korištenje samo iPhone</h3>
+<ol>
+<li>Omogućite "Praćenje fitnessa" u postavkama iPhone</li>
+<li>Nosite iPhone tijekom šetnje</li>
+<li>Aktivnosti hodanja automatski se bilježe</li>
+<li>Pregledajte u Walk Analytics radi analize</li>
+</ol>
+<h2 id="interpreting-metrics">Tumačenje vaših mjernih podataka</h2>
+<h3>Dobri u odnosu na zabrinjavajuće znakove</h3>
+<table class="metrics-table">
+<thead>
+<tr>
+<th>metrički</th>
+<th>Dobar domet</th>
+<th>Što to znači</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simetrija koraka</td>
+<td>&gt; 95%</td>
+<td>Uravnotežen hod, mali rizik od ozljeda</td>
+</tr>
+<tr>
+<td>Kadenca</td>
+<td>100-130 koraka/min</td>
+<td>Učinkovit tempo hodanja</td>
+</tr>
+<tr>
+<td>Tjedni WSS</td>
+<td>200-500</td>
+<td>Zdravo opterećenje treninga</td>
+</tr>
+<tr>
+<td>Zona 2 Vrijeme</td>
+<td>60-80% od ukupnog broja</td>
+<td>Snažna aerobna baza</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips">Profesionalni savjeti za uspjeh</h2>
+<h3>1. Započnite s osnovnom procjenom</h3>
+<p>Prvo snimite 2-3 normalne šetnje kako biste utvrdili svoju osnovnu metriku prije nego što napravite promjene.</p>
+<h3>2. Usredotočite se na hodanje u zoni 2</h3>
+<p>Provedite 60-80% svog vremena hodanja u zoni 2 za optimalne zdravstvene dobrobiti i sagorijevanje masti.</p>
+<h3>3. Pratite simetriju hoda</h3>
+<p>Ako simetrija padne ispod 90%, razmislite o obradi ili savjetovanju sa stručnjakom kako biste spriječili ozljede.</p>
+<h3>4. Gradite postupno</h3>
+<p>Povećajte tjedni WSS za ne više od 10% tjedno kako biste izbjegli pretreniranost.</p>
+<h3>5. Dosljednost iznad intenziteta</h3>
+<p>Redovito umjereno hodanje pobjeđuje povremene intenzivne šetnje za dugoročno zdravlje.</p>
+<h2 id="troubleshooting">Rješavanje problema</h2>
+<h3>Mjerni podaci se ne prikazuju</h3>
+<ul>
+<li>Osigurajte da su dopuštenja Apple Health odobrena</li>
+<li>Provjerite jesu li treninzi pravilno označeni kao "Hodanje" u aplikaciji Zdravlje</li>
+<li>Za zone otkucaja srca, provjerite bilježe li se podaci o otkucajima srca</li>
+</ul>
+<h3>Netočna metrika koraka</h3>
+<ul>
+<li>Kalibrirajte Apple Watch hodajući vanjskim rutama s preciznim GPS-om</li>
+<li>Osigurajte pravilno pristajanje sata (udoban, ali udoban)</li>
+<li>Hodajte s prirodnim zamahom ruku za bolje otkrivanje pokreta</li>
+</ul>
+<h2 id="next-steps">Sljedeći koraci</h2>
+<ul>
+<li>Saznajte o<a href="/hr/walking-zones/">trening zone</a>za optimalan intenzitet</li>
+<li>razumjeti<a href="/hr/gait-analysis/">metrike analize hoda</a>u dubinu</li>
+<li>Izračunajte svoje<a href="/hr/wss-calculator/">Ocjena stresa pri hodanju</a></li>
+<li>Istražite<a href="/hr/research/">znanost iza hodajuće analitike</a></li>
+</ul>
+</div>
+<aside class="sidebar">
+<div class="toc">
+<h3>Sadržaj</h3>
+<ul>
+<li><a href="#quick-start">Kratki vodič za početak</a></li>
+<li><a href="#key-concepts">Ključni pojmovi</a></li>
+<li><a href="#first-walk">Snimanje vaše prve šetnje</a></li>
+<li><a href="#interpreting-metrics">Tumačenje vaših mjernih podataka</a></li>
+<li><a href="#tips">Profesionalni savjeti za uspjeh</a></li>
+<li><a href="#troubleshooting">Rješavanje problema</a></li>
+<li><a href="#next-steps">Sljedeći koraci</a></li>
+</ul>
+</div>
+<div class="cta-box">
+<h3>Započnite svoje putovanje</h3>
+<p>Preuzmite Walk Analytics i počnite pratiti svoj hod danas.</p>
+<a class="btn btn-accent" href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">Preuzmite aplikaciju</a>
+</div>
+</aside>
+</div>
+</div>
+</section>
+    
+
+    
+    
+<section class="eeat-author bg-light divider-top-lg divider-bottom-lg" aria-label="Author and Reviewer Information">
+  <div class="container container-narrow">
+    <div class="eeat-card" style="display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem; background: var(--color-bg-alt, #f8f9fa); border-radius: 8px; border: 1px solid var(--color-border, #e9ecef); margin-top: 3rem; margin-bottom: 2rem;">
+      <div class="eeat-avatar" style="font-size: 2.5rem; line-height: 1; flex-shrink: 0;" aria-hidden="true">👨‍🔬</div>
+      <div class="eeat-details">
+        
+        
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
+          Expertly Reviewed by 
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">AnalyticsZone Team</span>
+          </span>
+        </h3>
+        <p style="margin: 0; font-size: 0.95rem; color: var(--color-body-text, #4a5568); line-height: 1.5;">
+          This content has been written and reviewed by a sports data metrics expert to ensure technical accuracy and adherence to the latest sports science methodologies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+    
+<section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="getting-started">
+  <div class="container ai-citation-shell">
+    <h2 class="ai-citation-title">Početak rada s Walk Analyticsom - potpuni vodič</h2>
+    <p class="ai-citation-answer">Potpuni vodič Walk Analytics za početnike. Vodič za analizu hoda, postavljanje praćenja hodanja, objašnjenje WSS-a. Uključivanje korak po korak + 7-dnevno probno...</p>
+
+    <ul class="ai-citation-facts" role="list">
+      
+      <li class="ai-citation-fact">
+        <span class="ai-citation-icon" aria-hidden="true">📅</span>
+        <span>2026-03-24</span>
+      </li>
+      
+
+      
+      <li class="ai-citation-fact ai-citation-keywords">
+        <span class="ai-citation-icon" aria-hidden="true">🏷️</span>
+        <span>vodič kroz Walk Analytics · vodič za analizu hoda · vodič za aplikaciju hodanje · kako koristiti Walk Analytics · upute za analitiku hoda</span>
+      </li>
+      
+
+      
+      <li class="ai-citation-fact">
+        <span class="ai-citation-icon" aria-hidden="true">🔬</span>
+        <a href="../../hr/bibliography/">
           
           Bibliografija
           
-        </a></li></ul><nav class="ai-citation-links" aria-label="Početak rada s Walk Analyticsom - potpuni vodič"><a class="ai-related-link" href="../../hr/research/">
+        </a>
+      </li>
+      
+    </ul>
+
+    
+    <nav class="ai-citation-links" aria-label="Početak rada s Walk Analyticsom - potpuni vodič">
+      
+      <a class="ai-related-link" href="../../hr/research/">
         Istraživanje
-      </a><a class="ai-related-link" href="../../hr/contact/">
+      </a>
+      
+      <a class="ai-related-link" href="../../hr/contact/">
         Kontakt
-      </a></nav></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">preuzimanje</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
-                        aria-label="Preuzmite na App Store"><img src="../../assets/images/badge-app-store.svg"
+      </a>
+      
+    </nav>
+    
+  </div>
+</section>
+
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-top">
+            <div class="footer-brand-section">
+                
+                <h2>Walk Analytics</h2>
+                <p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p>
+                
+            </div>
+
+            
+            <div class="footer-download">
+                <h3 class="footer-heading">preuzimanje</h3>
+                <div class="footer-badges">
+                    
+                    <a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Preuzmite na App Store">
+                        <img src="../../assets/images/badge-app-store.svg"
                             alt="Preuzmite na App Store" width="135"
-                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
-                        aria-label="Nabavite ga na Google Playu"><img src="../../assets/images/badge-google-play.svg"
+                            height="40" loading="lazy">
+                    </a>
+                    
+                    
+                    <a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Nabavite ga na Google Playu">
+                        <img src="../../assets/images/badge-google-play.svg"
                             alt="Nabavite ga na Google Playu" width="135"
-                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Dostupno u</h3><div class="lang-grid"><a href="/af/" class="lang-link"
+                            height="40" loading="lazy">
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        
+        <div class="footer-languages">
+            <h3 class="footer-heading">Dostupno u</h3>
+            <div class="lang-grid">
+                
+                <a href="/af/" class="lang-link"
                     hreflang="af" >
                     Afrikaans
-                </a><a href="/am/" class="lang-link"
+                </a>
+                
+                <a href="/am/" class="lang-link"
                     hreflang="am" >
                     አမ္ဟာ
-                </a><a href="/ar/" class="lang-link"
+                </a>
+                
+                <a href="/ar/" class="lang-link"
                     hreflang="ar" dir="rtl" >
                     العربية
-                </a><a href="/bg/" class="lang-link"
+                </a>
+                
+                <a href="/bg/" class="lang-link"
                     hreflang="bg" >
                     Български
-                </a><a href="/bn/" class="lang-link"
+                </a>
+                
+                <a href="/bn/" class="lang-link"
                     hreflang="bn" >
                     বাংলা
-                </a><a href="/ca/" class="lang-link"
+                </a>
+                
+                <a href="/ca/" class="lang-link"
                     hreflang="ca" >
                     Català
-                </a><a href="/cs/" class="lang-link"
+                </a>
+                
+                <a href="/cs/" class="lang-link"
                     hreflang="cs" >
                     Čeština
-                </a><a href="/da/" class="lang-link"
+                </a>
+                
+                <a href="/da/" class="lang-link"
                     hreflang="da" >
                     Dansk
-                </a><a href="/de/" class="lang-link"
+                </a>
+                
+                <a href="/de/" class="lang-link"
                     hreflang="de" >
                     Deutsch
-                </a><a href="/el/" class="lang-link"
+                </a>
+                
+                <a href="/el/" class="lang-link"
                     hreflang="el" >
                     Ελληνικά
-                </a><a href="/en/" class="lang-link"
+                </a>
+                
+                <a href="/en/" class="lang-link"
                     hreflang="en" >
                     English
-                </a><a href="/es/" class="lang-link"
+                </a>
+                
+                <a href="/es/" class="lang-link"
                     hreflang="es" >
                     Español
-                </a><a href="/et/" class="lang-link"
+                </a>
+                
+                <a href="/et/" class="lang-link"
                     hreflang="et" >
                     Eesti
-                </a><a href="/fa/" class="lang-link"
+                </a>
+                
+                <a href="/fa/" class="lang-link"
                     hreflang="fa" dir="rtl" >
                     فارسی
-                </a><a href="/fi/" class="lang-link"
+                </a>
+                
+                <a href="/fi/" class="lang-link"
                     hreflang="fi" >
                     Suomi
-                </a><a href="/fr/" class="lang-link"
+                </a>
+                
+                <a href="/fr/" class="lang-link"
                     hreflang="fr" >
                     Français
-                </a><a href="/gu/" class="lang-link"
+                </a>
+                
+                <a href="/gu/" class="lang-link"
                     hreflang="gu" >
                     ગુજરાતી
-                </a><a href="/ha/" class="lang-link"
+                </a>
+                
+                <a href="/ha/" class="lang-link"
                     hreflang="ha" >
                     Hausa
-                </a><a href="/he/" class="lang-link"
+                </a>
+                
+                <a href="/he/" class="lang-link"
                     hreflang="he" dir="rtl" >
                     עברית
-                </a><a href="/hi/" class="lang-link"
+                </a>
+                
+                <a href="/hi/" class="lang-link"
                     hreflang="hi" >
                     हिन्दी
-                </a><a href="/hr/" class="lang-link active"
+                </a>
+                
+                <a href="/hr/" class="lang-link active"
                     hreflang="hr" >
                     Hrvatski
-                </a><a href="/hu/" class="lang-link"
+                </a>
+                
+                <a href="/hu/" class="lang-link"
                     hreflang="hu" >
                     Magyar
-                </a><a href="/id/" class="lang-link"
+                </a>
+                
+                <a href="/id/" class="lang-link"
                     hreflang="id" >
                     Bahasa Indonesia
-                </a><a href="/is/" class="lang-link"
+                </a>
+                
+                <a href="/is/" class="lang-link"
                     hreflang="is" >
                     Íslenska
-                </a><a href="/it/" class="lang-link"
+                </a>
+                
+                <a href="/it/" class="lang-link"
                     hreflang="it" >
                     Italiano
-                </a><a href="/ja/" class="lang-link"
+                </a>
+                
+                <a href="/ja/" class="lang-link"
                     hreflang="ja" >
                     日本語
-                </a><a href="/km/" class="lang-link"
+                </a>
+                
+                <a href="/km/" class="lang-link"
                     hreflang="km" >
                     ភាសាខ្មែរ
-                </a><a href="/kn/" class="lang-link"
+                </a>
+                
+                <a href="/kn/" class="lang-link"
                     hreflang="kn" >
                     ಕನ್ನಡ
-                </a><a href="/ko/" class="lang-link"
+                </a>
+                
+                <a href="/ko/" class="lang-link"
                     hreflang="ko" >
                     한국어
-                </a><a href="/lt/" class="lang-link"
+                </a>
+                
+                <a href="/lt/" class="lang-link"
                     hreflang="lt" >
                     Lietuvių
-                </a><a href="/lv/" class="lang-link"
+                </a>
+                
+                <a href="/lv/" class="lang-link"
                     hreflang="lv" >
                     Latviešu
-                </a><a href="/ms/" class="lang-link"
+                </a>
+                
+                <a href="/ms/" class="lang-link"
                     hreflang="ms" >
                     Bahasa Melayu
-                </a><a href="/my/" class="lang-link"
+                </a>
+                
+                <a href="/my/" class="lang-link"
                     hreflang="my" >
                     မြန်မာ
-                </a><a href="/nb/" class="lang-link"
+                </a>
+                
+                <a href="/nb/" class="lang-link"
                     hreflang="nb" >
                     Norsk Bokmål
-                </a><a href="/nl/" class="lang-link"
+                </a>
+                
+                <a href="/nl/" class="lang-link"
                     hreflang="nl" >
                     Nederlands
-                </a><a href="/pl/" class="lang-link"
+                </a>
+                
+                <a href="/pl/" class="lang-link"
                     hreflang="pl" >
                     Polski
-                </a><a href="/pt/" class="lang-link"
+                </a>
+                
+                <a href="/pt/" class="lang-link"
                     hreflang="pt" >
                     Português
-                </a><a href="/pt-br/" class="lang-link"
+                </a>
+                
+                <a href="/pt-br/" class="lang-link"
                     hreflang="pt-br" >
                     Português (Brasil)
-                </a><a href="/ro/" class="lang-link"
+                </a>
+                
+                <a href="/ro/" class="lang-link"
                     hreflang="ro" >
                     Română
-                </a><a href="/ru/" class="lang-link"
+                </a>
+                
+                <a href="/ru/" class="lang-link"
                     hreflang="ru" >
                     Русский
-                </a><a href="/sk/" class="lang-link"
+                </a>
+                
+                <a href="/sk/" class="lang-link"
                     hreflang="sk" >
                     Slovenčina
-                </a><a href="/sl/" class="lang-link"
+                </a>
+                
+                <a href="/sl/" class="lang-link"
                     hreflang="sl" >
                     Slovenščina
-                </a><a href="/sr/" class="lang-link"
+                </a>
+                
+                <a href="/sr/" class="lang-link"
                     hreflang="sr" >
                     Српски
-                </a><a href="/sv/" class="lang-link"
+                </a>
+                
+                <a href="/sv/" class="lang-link"
                     hreflang="sv" >
                     Svenska
-                </a><a href="/sw/" class="lang-link"
+                </a>
+                
+                <a href="/sw/" class="lang-link"
                     hreflang="sw" >
                     Kiswahili
-                </a><a href="/ta/" class="lang-link"
+                </a>
+                
+                <a href="/ta/" class="lang-link"
                     hreflang="ta" >
                     தமிழ்
-                </a><a href="/te/" class="lang-link"
+                </a>
+                
+                <a href="/te/" class="lang-link"
                     hreflang="te" >
                     తెలుగు
-                </a><a href="/th/" class="lang-link"
+                </a>
+                
+                <a href="/th/" class="lang-link"
                     hreflang="th" >
                     ไทย
-                </a><a href="/tl/" class="lang-link"
+                </a>
+                
+                <a href="/tl/" class="lang-link"
                     hreflang="tl" >
                     Tagalog
-                </a><a href="/tr/" class="lang-link"
+                </a>
+                
+                <a href="/tr/" class="lang-link"
                     hreflang="tr" >
                     Türkçe
-                </a><a href="/uk/" class="lang-link"
+                </a>
+                
+                <a href="/uk/" class="lang-link"
                     hreflang="uk" >
                     Українська
-                </a><a href="/ur/" class="lang-link"
+                </a>
+                
+                <a href="/ur/" class="lang-link"
                     hreflang="ur" dir="rtl" >
                     اردو
-                </a><a href="/vi/" class="lang-link"
+                </a>
+                
+                <a href="/vi/" class="lang-link"
                     hreflang="vi" >
                     Tiếng Việt
-                </a><a href="/yo/" class="lang-link"
+                </a>
+                
+                <a href="/yo/" class="lang-link"
                     hreflang="yo" >
                     Yorùbá
-                </a><a href="/zh/" class="lang-link"
+                </a>
+                
+                <a href="/zh/" class="lang-link"
                     hreflang="zh" >
                     中文
-                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        
+        <div class="footer-bottom">
+            <p class="copyright">
                 &copy; 2026 Walk Analytics. Sva prava pridržana
-            </p><ul class="footer-legal"><li><a href="/hr/privacy/">Privatnost</a></li><li><a href="/hr/terms/">Uvjeti</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>This website uses cookies.</p><a href="/hr/privacy/" class="text-sm">Saznajte više</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Pad</button><button id="cookie-accept" class="btn btn-primary btn-small">Prihvatiti</button></div></div></div><script src="../../assets/js/core.min.js?v=635348535bde" defer></script><script src="../../assets/js/search.min.js?v=635348535bde" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>
+            </p>
+            <ul class="footer-legal">
+                <li><a href="/hr/privacy/">Privatnost</a></li>
+                <li><a href="/hr/terms/">Uvjeti</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <div class="cookie-banner-content">
+        <div>
+            <p>This website uses cookies.</p>
+            <a href="/hr/privacy/" class="text-sm">Saznajte više</a>
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="btn btn-secondary btn-small">Pad</button>
+            <button id="cookie-accept" class="btn btn-primary btn-small">Prihvatiti</button>
+        </div>
+    </div>
+</div>
+
+  
+  <script src="../../assets/js/core.min.js?v=19fdca55b3da" defer></script>
+  <script src="../../assets/js/search.min.js?v=19fdca55b3da" defer></script>
+  
+
+  
+  
+  <script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script>
+  
+
+  
+  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script>
+</body>
+
+</html>
