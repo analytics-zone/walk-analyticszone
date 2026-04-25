@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/en/">
-  <script>window.location.href = "/en/";</script>
-  <style>body{font-family:system-ui,sans-serif;text-align:center;padding:3rem;background:#f8f6f1}</style>
+  <title>Page Not Found — Walk Analytics</title>
+  <meta http-equiv="refresh" content="3; url=/en/">
+  <style>body{font-family:system-ui,sans-serif;text-align:center;padding:3rem;
+    background:#f8f6f1;color:#0d0d0d}a{color:#9b59b6;font-weight:600}</style>
+  <script>
+    (function(){
+      var SUPPORTED=['af','am','ar','bg','bn','ca','cs','da','de','el','en','es','et','fa','fi','fr','gu','ha','he','hi','hr','hu','id','is','it','ja','km','kn','ko','lt','lv','ms','my','nb','nl','pl','pt','pt-br','ro','ru','sk','sl','sr','sv','sw','ta','te','th','tl','tr','uk','ur','vi','yo','zh',      ];
+      var match = window.location.pathname.match(/^\/([a-z]{2}(?:-[a-z]{2})?)(?:\/|$)/i);
+      if (match && SUPPORTED.indexOf(match[1].toLowerCase()) !== -1) {
+        window.location.replace('/' + match[1].toLowerCase() + '/'); return;
+      }
+      var prefs = (navigator.languages && navigator.languages.length)
+        ? Array.from(navigator.languages)
+        : [navigator.language || 'en'];
+      var target = 'en';
+      for (var i = 0; i < prefs.length; i++) {
+        var raw  = prefs[i].toLowerCase();
+        var base = raw.split('-')[0];
+        if (SUPPORTED.indexOf(raw)  !== -1) { target = raw;  break; }
+        if (base === 'zh')  { target = 'zh';   break; }
+        if (base === 'pt')  { target = raw.indexOf('br') !== -1 ? 'pt-br' : 'pt'; break; }
+        if (base === 'no')  { target = 'nb';   break; }
+        if (base === 'fil') { target = 'tl';   break; }
+        if (SUPPORTED.indexOf(base) !== -1) { target = base; break; }
+      }
+      window.location.replace('/' + target + '/');
+    })();
+  </script>
 </head>
-<body><p>Redirecting...</p></body>
+<body>
+  <h1 style="font-size:1.8rem;font-weight:700;margin-bottom:.75rem">Page Not Found</h1>
+  <p style="color:#888;margin-bottom:1.5rem">Redirecting to home…</p>
+  <a href="/en/">Go to English →</a>
+</body>
 </html>
