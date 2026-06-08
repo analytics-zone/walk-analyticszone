@@ -1,0 +1,920 @@
+<!DOCTYPE html><html lang="kn" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=optional"
+    rel="stylesheet"><title>ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಗೈಟ್, ಸ್ಟೆಪ್ ಟೈಮಿಂಗ್</title><meta name="description" content="ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿಯ ಆಕಾರದ ವಾಕಿಂಗ್ ಫಾರ್ಮ್ ಹೇಗೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ ಇದರಿಂದ ನೀವು ನಡಿಗೆ ಡೇಟಾವನ್ನು ಅರ್ಥೈಸಿಕೊಳ್ಳಬಹುದು ಮತ್ತು ಚಲನೆಯ ಗುಣಮಟ್ಟವನ್ನು"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ, ನಡಿಗೆ ಜೈವಿಕ ಯಂತ್ರಶಾಸ್ತ್ರ, ಹೆಜ್ಜೆ ಆಪ್ಟಿಮೈಸೇಶನ್, ವಾಕಿಂಗ್ ಕ್ಯಾಡೆನ್ಸ್, ನಡಿಗೆ ಬಯೋಮೆಕಾನಿಕ್ಸ್"><link rel="canonical" href="https://walk.analyticszone.app/kn/stride-mechanics/"><meta property="article:published_time" content="2025-01-05T10:00:00Z"><meta property="article:modified_time" content="2026-04-03T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/kn/stride-mechanics/"><meta property="og:title" content="ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಗೈಟ್, ಸ್ಟೆಪ್ ಟೈಮಿಂಗ್"><meta property="og:description" content="ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿಯ ಆಕಾರದ ವಾಕಿಂಗ್ ಫಾರ್ಮ್ ಹೇಗೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ ಇದರಿಂದ ನೀವು ನಡಿಗೆ ಡೇಟಾವನ್ನು ಅರ್ಥೈಸಿಕೊಳ್ಳಬಹುದು ಮತ್ತು ಚಲನೆಯ ಗುಣಮಟ್ಟವನ್ನು"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="kn_IN"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/kn/stride-mechanics/"><meta name="twitter:title" content="ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಗೈಟ್, ಸ್ಟೆಪ್ ಟೈಮಿಂಗ್"><meta name="twitter:description" content="ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿಯ ಆಕಾರದ ವಾಕಿಂಗ್ ಫಾರ್ಮ್ ಹೇಗೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ ಇದರಿಂದ ನೀವು ನಡಿಗೆ ಡೇಟಾವನ್ನು ಅರ್ಥೈಸಿಕೊಳ್ಳಬಹುದು ಮತ್ತು ಚಲನೆಯ ಗುಣಮಟ್ಟವನ್ನು"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="af"
+    href="https://walk.analyticszone.app/af/stride-mechanics/"><link rel="alternate" hreflang="am"
+    href="https://walk.analyticszone.app/am/stride-mechanics/"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/stride-mechanics/"><link rel="alternate" hreflang="bg"
+    href="https://walk.analyticszone.app/bg/stride-mechanics/"><link rel="alternate" hreflang="bn"
+    href="https://walk.analyticszone.app/bn/stride-mechanics/"><link rel="alternate" hreflang="ca"
+    href="https://walk.analyticszone.app/ca/stride-mechanics/"><link rel="alternate" hreflang="cs"
+    href="https://walk.analyticszone.app/cs/stride-mechanics/"><link rel="alternate" hreflang="da"
+    href="https://walk.analyticszone.app/da/stride-mechanics/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/stride-mechanics/"><link rel="alternate" hreflang="el"
+    href="https://walk.analyticszone.app/el/stride-mechanics/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/stride-mechanics/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/stride-mechanics/"><link rel="alternate" hreflang="et"
+    href="https://walk.analyticszone.app/et/stride-mechanics/"><link rel="alternate" hreflang="fa"
+    href="https://walk.analyticszone.app/fa/stride-mechanics/"><link rel="alternate" hreflang="fi"
+    href="https://walk.analyticszone.app/fi/stride-mechanics/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/stride-mechanics/"><link rel="alternate" hreflang="gu"
+    href="https://walk.analyticszone.app/gu/stride-mechanics/"><link rel="alternate" hreflang="ha"
+    href="https://walk.analyticszone.app/ha/stride-mechanics/"><link rel="alternate" hreflang="he"
+    href="https://walk.analyticszone.app/he/stride-mechanics/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/stride-mechanics/"><link rel="alternate" hreflang="hr"
+    href="https://walk.analyticszone.app/hr/stride-mechanics/"><link rel="alternate" hreflang="hu"
+    href="https://walk.analyticszone.app/hu/stride-mechanics/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/stride-mechanics/"><link rel="alternate" hreflang="is"
+    href="https://walk.analyticszone.app/is/stride-mechanics/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/stride-mechanics/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/stride-mechanics/"><link rel="alternate" hreflang="km"
+    href="https://walk.analyticszone.app/km/stride-mechanics/"><link rel="alternate" hreflang="kn"
+    href="https://walk.analyticszone.app/kn/stride-mechanics/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/stride-mechanics/"><link rel="alternate" hreflang="lt"
+    href="https://walk.analyticszone.app/lt/stride-mechanics/"><link rel="alternate" hreflang="lv"
+    href="https://walk.analyticszone.app/lv/stride-mechanics/"><link rel="alternate" hreflang="ms"
+    href="https://walk.analyticszone.app/ms/stride-mechanics/"><link rel="alternate" hreflang="my"
+    href="https://walk.analyticszone.app/my/stride-mechanics/"><link rel="alternate" hreflang="nb"
+    href="https://walk.analyticszone.app/nb/stride-mechanics/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/stride-mechanics/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/stride-mechanics/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/stride-mechanics/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/stride-mechanics/"><link rel="alternate" hreflang="ro"
+    href="https://walk.analyticszone.app/ro/stride-mechanics/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/stride-mechanics/"><link rel="alternate" hreflang="sk"
+    href="https://walk.analyticszone.app/sk/stride-mechanics/"><link rel="alternate" hreflang="sl"
+    href="https://walk.analyticszone.app/sl/stride-mechanics/"><link rel="alternate" hreflang="sr"
+    href="https://walk.analyticszone.app/sr/stride-mechanics/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/stride-mechanics/"><link rel="alternate" hreflang="sw"
+    href="https://walk.analyticszone.app/sw/stride-mechanics/"><link rel="alternate" hreflang="ta"
+    href="https://walk.analyticszone.app/ta/stride-mechanics/"><link rel="alternate" hreflang="te"
+    href="https://walk.analyticszone.app/te/stride-mechanics/"><link rel="alternate" hreflang="th"
+    href="https://walk.analyticszone.app/th/stride-mechanics/"><link rel="alternate" hreflang="tl"
+    href="https://walk.analyticszone.app/tl/stride-mechanics/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/stride-mechanics/"><link rel="alternate" hreflang="uk"
+    href="https://walk.analyticszone.app/uk/stride-mechanics/"><link rel="alternate" hreflang="ur"
+    href="https://walk.analyticszone.app/ur/stride-mechanics/"><link rel="alternate" hreflang="vi"
+    href="https://walk.analyticszone.app/vi/stride-mechanics/"><link rel="alternate" hreflang="yo"
+    href="https://walk.analyticszone.app/yo/stride-mechanics/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/stride-mechanics/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/stride-mechanics/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="index, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+main.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=62ba6be7"><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "analyticszone+walk@onmedic.org"
+  },
+  
+  "sameAs": [
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+    "https://twitter.com/walkanalytics",
+    
+    "https://apps.apple.com/us/app/walk-analytics/id6755187154",
+    
+    "https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics"
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "inLanguage": "kn"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Walk Analytics",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "url": "https://walk.analyticszone.app",
+  "applicationCategory": ["HealthApplication", "FitnessApplication"],
+  "operatingSystem": "iOS, Android",
+  "author": {
+    "@type": "Organization",
+    "name": "AnalyticsZone Team"
+  },
+  "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ಮುಖಪುಟ",
+      "item": "https://walk.analyticszone.app/kn/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ವಿಜ್ಞಾನ",
+      "item": "https://walk.analyticszone.app/kn/research/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ",
+      "item": "https://walk.analyticszone.app/kn/stride-mechanics/"
+    }
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಗೈಟ್, ಸ್ಟೆಪ್ ಟೈಮಿಂಗ್",
+  "description": "ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿಯ ಆಕಾರದ ವಾಕಿಂಗ್ ಫಾರ್ಮ್ ಹೇಗೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ ಇದರಿಂದ ನೀವು ನಡಿಗೆ ಡೇಟಾವನ್ನು ಅರ್ಥೈಸಿಕೊಳ್ಳಬಹುದು ಮತ್ತು ಚಲನೆಯ ಗುಣಮಟ್ಟವನ್ನು",
+  "url": "https://walk.analyticszone.app/kn/stride-mechanics/",
+  "inLanguage": "kn",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Walk Analytics",
+    "url": "https://walk.analyticszone.app"
+  },
+  "datePublished": "2025-01-05",
+  "dateModified": "2026-04-03",
+  "keywords": ["ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ", "ನಡಿಗೆ ಜೈವಿಕ ಯಂತ್ರಶಾಸ್ತ್ರ", "ಹೆಜ್ಜೆ ಆಪ್ಟಿಮೈಸೇಶನ್", "ವಾಕಿಂಗ್ ಕ್ಯಾಡೆನ್ಸ್", "ನಡಿಗೆ ಬಯೋಮೆಕಾನಿಕ್ಸ್"],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ನಡಿಗೆ ಜೈವಿಕ ಯಂತ್ರಶಾಸ್ತ್ರ"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ಹೆಜ್ಜೆ ಆಪ್ಟಿಮೈಸೇಶನ್"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ವಾಕಿಂಗ್ ಕ್ಯಾಡೆನ್ಸ್"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ನಡಿಗೆ ಬಯೋಮೆಕಾನಿಕ್ಸ್"
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಗೈಟ್, ಸ್ಟೆಪ್ ಟೈಮಿಂಗ್",
+  "description": "ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿಯ ಆಕಾರದ ವಾಕಿಂಗ್ ಫಾರ್ಮ್ ಹೇಗೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ ಇದರಿಂದ ನೀವು ನಡಿಗೆ ಡೇಟಾವನ್ನು ಅರ್ಥೈಸಿಕೊಳ್ಳಬಹುದು ಮತ್ತು ಚಲನೆಯ ಗುಣಮಟ್ಟವನ್ನು",
+  "author": {
+    "@type": "Person",
+    "name": "AnalyticsZone Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walk Analytics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://walk.analyticszone.app/assets/images/logo.png"
+    }
+  },
+  "datePublished": "2025-01-05",
+  "dateModified": "2026-04-03",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://walk.analyticszone.app/kn/stride-mechanics/"
+  }
+}
+</script><script>
+    (function () {
+      let theme = localStorage.getItem('theme');
+      // Older builds could persist a per-subdomain `theme=light` value without a UI
+      // to keep it consistent across apps. Treat it as stale and fall back to the OS.
+      if (theme === 'light') {
+        try { localStorage.removeItem('theme'); } catch (e) { /* ignore */ }
+        theme = null;
+      }
+
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script></head><body><a href="#main-content" class="skip-link">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/kn/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/kn/" 
+                                aria-current="">
+                                ಮುಖಪುಟ
+                            </a></li><li class="has-submenu" ><a href="/kn/getting-started/" class="nav-label">ಕಲಿಯಿರಿ</a><ul class="submenu"><li><a href="/kn/getting-started/" 
+                                        aria-current="">
+                                        ಪ್ರಾರಂಭಿಸಿ
+                                    </a></li><li><a href="/kn/walking-zones/" 
+                                        aria-current="">
+                                        ನಡಿಗೆ ವಲಯಗಳು
+                                    </a></li><li><a href="/kn/gait-analysis/" 
+                                        aria-current="">
+                                        ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ
+                                    </a></li><li><a href="/kn/training-load/" 
+                                        aria-current="">
+                                        ತರಬೇತಿ ಹೊರೆ
+                                    </a></li><li><a href="/kn/wss-calculator/" 
+                                        aria-current="">
+                                        WSS ಕ್ಯಾಲ್ಕುಲೇಟರ್
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/kn/research/" class="nav-label">ವಿಜ್ಞಾನ</a><ul class="submenu"><li><a href="/kn/research/" 
+                                        aria-current="">
+                                        ಸಂಶೋಧನೆ
+                                    </a></li><li><a href="/kn/formulas/" 
+                                        aria-current="">
+                                        ಸೂತ್ರಗಳು
+                                    </a></li><li><a href="/kn/gait-efficiency/" 
+                                        aria-current="">
+                                        ನಡಿಗೆ ದಕ್ಷತೆ
+                                    </a></li><li><a href="/kn/stride-mechanics/" class="active" 
+                                        aria-current="page">
+                                        ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ
+                                    </a></li><li><a href="/kn/walking-vs-running/" 
+                                        aria-current="">
+                                        ನಡಿಗೆ vs ಓಟ
+                                    </a></li><li><a href="/kn/benchmarks/" 
+                                        aria-current="">
+                                        ಮಾನದಂಡಗಳು
+                                    </a></li><li><a href="/kn/bibliography/" 
+                                        aria-current="">
+                                        ಗ್ರಂಥಸೂಚಿ
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/kn/for-health/" class="nav-label">ನಿಮಗಾಗಿ</a><ul class="submenu"><li><a href="/kn/for-health/" 
+                                        aria-current="">
+                                        ಆರೋಗ್ಯಕ್ಕಾಗಿ
+                                    </a></li><li><a href="/kn/for-fitness/" 
+                                        aria-current="">
+                                        ಫಿಟ್‌ನೆಸ್‌ಗಾಗಿ
+                                    </a></li><li><a href="/kn/for-seniors/" 
+                                        aria-current="">
+                                        ಹಿರಿಯರಿಗಾಗಿ
+                                    </a></li><li><a href="/kn/for-rehabilitation/" 
+                                        aria-current="">
+                                        ಪುನರ್ವಸತಿಗಾಗಿ
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/kn/cadence-calculator/" class="nav-label">ಉಪಕರಣಗಳು</a><ul class="submenu"><li><a href="/kn/cadence-calculator/" 
+                                        aria-current="">
+                                        ಕೇಡೆನ್ಸ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್
+                                    </a></li><li><a href="/kn/gait-assessment/" 
+                                        aria-current="">
+                                        ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ
+                                    </a></li><li><a href="/kn/vo2max-calculator/" 
+                                        aria-current="">
+                                        VO₂max ಕ್ಯಾಲ್ಕುಲೇಟರ್
+                                    </a></li></ul></li><li><a href="/kn/contact/" 
+                                aria-current="">
+                                ಸಂಪರ್ಕಿಸಿ
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ"><option value="af" >
+                            Afrikaans
+                        </option><option value="am" >
+                            አမ္ဟာ
+                        </option><option value="ar" >
+                            العربية
+                        </option><option value="bg" >
+                            Български
+                        </option><option value="bn" >
+                            বাংলা
+                        </option><option value="ca" >
+                            Català
+                        </option><option value="cs" >
+                            Čeština
+                        </option><option value="da" >
+                            Dansk
+                        </option><option value="de" >
+                            Deutsch
+                        </option><option value="el" >
+                            Ελληνικά
+                        </option><option value="en" >
+                            English
+                        </option><option value="es" >
+                            Español
+                        </option><option value="et" >
+                            Eesti
+                        </option><option value="fa" >
+                            فارسی
+                        </option><option value="fi" >
+                            Suomi
+                        </option><option value="fr" >
+                            Français
+                        </option><option value="gu" >
+                            ગુજરાતી
+                        </option><option value="ha" >
+                            Hausa
+                        </option><option value="he" >
+                            עברית
+                        </option><option value="hi" >
+                            हिन्दी
+                        </option><option value="hr" >
+                            Hrvatski
+                        </option><option value="hu" >
+                            Magyar
+                        </option><option value="id" >
+                            Bahasa Indonesia
+                        </option><option value="is" >
+                            Íslenska
+                        </option><option value="it" >
+                            Italiano
+                        </option><option value="ja" >
+                            日本語
+                        </option><option value="km" >
+                            ភាសាខ្មែរ
+                        </option><option value="kn" selected>
+                            ಕನ್ನಡ
+                        </option><option value="ko" >
+                            한국어
+                        </option><option value="lt" >
+                            Lietuvių
+                        </option><option value="lv" >
+                            Latviešu
+                        </option><option value="ms" >
+                            Bahasa Melayu
+                        </option><option value="my" >
+                            မြန်မာ
+                        </option><option value="nb" >
+                            Norsk Bokmål
+                        </option><option value="nl" >
+                            Nederlands
+                        </option><option value="pl" >
+                            Polski
+                        </option><option value="pt" >
+                            Português
+                        </option><option value="pt-br" >
+                            Português (Brasil)
+                        </option><option value="ro" >
+                            Română
+                        </option><option value="ru" >
+                            Русский
+                        </option><option value="sk" >
+                            Slovenčina
+                        </option><option value="sl" >
+                            Slovenščina
+                        </option><option value="sr" >
+                            Српски
+                        </option><option value="sv" >
+                            Svenska
+                        </option><option value="sw" >
+                            Kiswahili
+                        </option><option value="ta" >
+                            தமிழ்
+                        </option><option value="te" >
+                            తెలుగు
+                        </option><option value="th" >
+                            ไทย
+                        </option><option value="tl" >
+                            Tagalog
+                        </option><option value="tr" >
+                            Türkçe
+                        </option><option value="uk" >
+                            Українська
+                        </option><option value="ur" >
+                            اردو
+                        </option><option value="vi" >
+                            Tiếng Việt
+                        </option><option value="yo" >
+                            Yorùbá
+                        </option><option value="zh" >
+                            中文
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a><a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a><a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a><a href="https://paceva.analyticszone.app" class="suite-app-link">Paceva Analytics</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="ಮೆನು ಟಾಗಲ್"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/kn/">ಮುಖಪುಟ</a></li><li><a href="/kn/research/">ವಿಜ್ಞಾನ</a></li><li><span aria-current="page">ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="page-hero"><div class="container"><h1>ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಲೆಂಗ್ತ್ ಮತ್ತು ಗೈಟ್ ಟೈಮಿಂಗ್</h1><p class="lead">ವಾಕಿಂಗ್ ರೂಪವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಕೇಂದ್ರ ಮಾರ್ಗದರ್ಶಿ, ವ್ಯಾಖ್ಯಾನ <a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a>, ಸೆಟ್ಟಿಂಗ್ <a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a>, ಮತ್ತು ಮುಂದೆ ಏನನ್ನು ಸುಧಾರಿಸಬೇಕೆಂದು ನಿರ್ಧರಿಸುವುದು</p></div></section><section class="section"><div class="container container-narrow"><div class="quick-answer" itemscope="" itemtype="https://schema.org/Answer"><h2>ತ್ವರಿತ ಉತ್ತರ</h2><div itemprop="text"><p><strong>ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್</strong> ನೀವು ಪ್ರತಿ ಹಂತವನ್ನು ಹೇಗೆ ಸಂಘಟಿಸುತ್ತೀರಿ ಎಂಬುದನ್ನು ವಿವರಿಸಿ: ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟೆಪ್ ಮತ್ತು ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ನೆಲದ ಸಂಪರ್ಕ, ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿ. ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳಿಗೆ, ಪ್ರಾಯೋಗಿಕ ಗುರಿಯು ದೀರ್ಘವಾದ ದಾಪುಗಾಲು ಅಲ್ಲ. ಇದು ಎ <strong>ಪುನರಾವರ್ತಿಸಬಹುದಾದ ಮಾದರಿ</strong> ಅದು ಕಾರ್ಯಕ್ಕೆ ಹೊಂದಿಕೆಯಾಗುತ್ತದೆ, ಪರಿಣಾಮವನ್ನು ಸಮಂಜಸವಾಗಿರಿಸುತ್ತದೆ ಮತ್ತು ಸರಿಯಾದ ತೀವ್ರತೆಯನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ.</p><ul><li><strong>ಉತ್ತಮ ಬಳಕೆ:</strong> ವಾಕಿಂಗ್ ರೂಪವನ್ನು ಅರ್ಥೈಸಿಕೊಳ್ಳುವುದು, ವೇಗದ ನಡಿಗೆಗಳನ್ನು ನಡೆಸುವುದು ಮತ್ತು ಅಭ್ಯಾಸವಾಗುವ ಮೊದಲು ಅಸಮರ್ಥ ಮಾದರಿಗಳನ್ನು ಗುರುತಿಸುವುದು</li><li><strong>ಹೆಚ್ಚು ಉಪಯುಕ್ತ ಲಂಗರುಗಳು:</strong> ಕ್ಯಾಡೆನ್ಸ್, ನಡಿಗೆ ವೇಗ ಮತ್ತು ಸರಳ ಸಮ್ಮಿತಿ ಪರಿಶೀಲನೆಗಳು</li><li><strong>ಅತಿ ದೊಡ್ಡ ತಪ್ಪು:</strong> ಕ್ಯಾಡೆನ್ಸ್, ಭಂಗಿ ಮತ್ತು ಪುಶ್-ಆಫ್ ಸಮಯವನ್ನು ಸುಧಾರಿಸುವ ಬದಲು ದೀರ್ಘ ಹಂತಗಳನ್ನು ಒತ್ತಾಯಿಸುವುದು</li><li><strong>ಉತ್ತಮ ಮುಂದಿನ ಹಂತ:</strong> ಫಾರ್ಮ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ <a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a>, <a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a>, ಮತ್ತು <a href="/kn/wss-calculator/">WSS</a> ಒಂದು ಸಂಖ್ಯೆಯನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ನಿರ್ಣಯಿಸುವ ಬದಲು</li></ul></div></div><div class="callout callout-success mb-xl"><h2>ಪ್ರಮುಖ ಟೇಕ್ಅವೇಗಳು</h2><ul class="key-points"><li><strong>ಕ್ಯಾಡೆನ್ಸ್</strong> ವಾಕಿಂಗ್ ತೀವ್ರತೆಯನ್ನು ಅತಿಕ್ರಮಿಸದೆ ಬದಲಾಯಿಸಲು ಸಾಮಾನ್ಯವಾಗಿ ಸ್ವಚ್ಛವಾದ ಲಿವರ್ ಆಗಿದೆ</li><li><strong>ಸ್ಟ್ರೈಡ್ ಉದ್ದ</strong> ಉತ್ತಮ ಭಂಗಿ, ಪುಶ್-ಆಫ್ ಮತ್ತು ಹಿಪ್ ಚಲನೆಯಿಂದ ಬೆಳೆಯಬೇಕು, ಮುಂದೆ ತಲುಪುವುದಿಲ್ಲ</li><li><strong>ಡಬಲ್ ಬೆಂಬಲ</strong> ಎಚ್ಚರಿಕೆ, ಸಮತೋಲನ ಮಿತಿಗಳನ್ನು ವಿವರಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ ಮತ್ತು ಒಂದೇ ವೇಗದಲ್ಲಿ ಇಬ್ಬರು ವಾಕರ್‌ಗಳು ಏಕೆ ವಿಭಿನ್ನವಾಗಿ ಕಾಣಿಸಬಹುದು</li><li><strong>ಸಮ್ಮಿತಿ ಮತ್ತು ಸಮಯ</strong> ನೀವು ಕೇವಲ ಹಂತಗಳ ಬಗ್ಗೆ ಕಾಳಜಿ ವಹಿಸುವುದಕ್ಕಿಂತ ನೋವು, ಚೇತರಿಕೆ ಅಥವಾ ಚಲನೆಯ ಗುಣಮಟ್ಟದ ಬಗ್ಗೆ ಕಾಳಜಿ ವಹಿಸಿದಾಗ ಹೆಚ್ಚು ಮುಖ್ಯವಾಗಿದೆ</li><li><strong>ನಿಜವಾದ ಕ್ಲಸ್ಟರ್:</strong><a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a>, <a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a>, <a href="/kn/gait-efficiency/">ನಡಿಗೆ ದಕ್ಷತೆ</a>, <a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a>, ಮತ್ತು <a href="/kn/wss-calculator/">WSS</a></li></ul></div><p class="lead">ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳು ಪ್ರತಿ ನಡಿಗೆ ಹಂತವನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳುವ ಅಗತ್ಯವಿಲ್ಲ. ತಮ್ಮ ಮುಂದಿರುವ ಗುರಿಗೆ ಯಾವ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಮುಖ್ಯ ಎಂಬುದನ್ನು ಅವರು ತಿಳಿದುಕೊಳ್ಳಬೇಕು: ಆರೋಗ್ಯಕ್ಕಾಗಿ ನಡೆಯುವುದು, ಉತ್ತಮ ರೂಪದಲ್ಲಿ ವೇಗವಾಗಿ ಚಲಿಸುವುದು, ಹಿನ್ನಡೆಯ ನಂತರ ಮರುನಿರ್ಮಾಣ ಮಾಡುವುದು ಅಥವಾ ಸ್ಮಾರ್ಟ್ ವಾಚ್ ಪ್ರವೃತ್ತಿ ಏಕೆ ಬದಲಾಗಿದೆ ಎಂಬುದನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು.</p><p>ಉಪಯುಕ್ತ ಪ್ರಶ್ನೆಗಳು ಪ್ರಾಯೋಗಿಕವಾಗಿವೆ:</p><ul><li>ಕ್ಯಾಡೆನ್ಸ್ ಕಡಿಮೆ ಇರುವುದರಿಂದ, ಹೆಜ್ಜೆಗಳು ಚಿಕ್ಕದಾಗಿರುವುದರಿಂದ ಅಥವಾ ಎರಡೂ ಸೀಮಿತವಾಗಿರುವುದರಿಂದ ನಾನು ನಿಧಾನವಾಗಿ ನಡೆಯುತ್ತಿದ್ದೇನೆಯೇ?</li><li>ಇದು ಸಾಮಾನ್ಯ ಎಚ್ಚರಿಕೆಯ ಮಾದರಿಯೇ ಅಥವಾ ಸಮತೋಲನ, ನೋವು ಅಥವಾ ಆಯಾಸವು ನನ್ನ ನಡಿಗೆಯನ್ನು ಬದಲಾಯಿಸುತ್ತಿದೆ ಎಂಬುದರ ಸಂಕೇತವೇ?</li><li>ಕ್ಯಾಡೆನ್ಸ್ ಅನ್ನು ಹೆಚ್ಚಿಸುವ ಮೂಲಕ, ಭೂಪ್ರದೇಶವನ್ನು ಬದಲಾಯಿಸುವ ಮೂಲಕ ಅಥವಾ ದೀರ್ಘವಾದ ಹೆಜ್ಜೆಗಳನ್ನು ಒತ್ತಾಯಿಸುವ ಮೂಲಕ ನಾನು ತೀವ್ರತೆಯನ್ನು ಸುಧಾರಿಸಬೇಕೇ?</li><li>ನಾನು ಮುಂದಿನ ಯಾವ ಪುಟವನ್ನು ಬಳಸಬೇಕು: ವಿಶ್ಲೇಷಣೆ, ವಲಯಗಳು, ದಕ್ಷತೆ, ಮೌಲ್ಯಮಾಪನ ಅಥವಾ ತರಬೇತಿ ಹೊರೆ?</li></ul><h2>ಯಾವ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ವಾಸ್ತವವಾಗಿ ಅಳೆಯುತ್ತದೆ</h2><p><strong>ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್</strong> ಒಂದು ಹಂತದ ರಚನೆಯಾಗಿದೆ, ವ್ಯಾಯಾಮದ ಸ್ಕೋರ್ ಅಲ್ಲ. ಸಂಪರ್ಕ, ಬೆಂಬಲ, ಪುಶ್-ಆಫ್ ಮತ್ತು ಸ್ವಿಂಗ್‌ನಲ್ಲಿ ಚಲನೆಯನ್ನು ಹೇಗೆ ಆಯೋಜಿಸಲಾಗಿದೆ ಎಂದು ಅವರು ನಿಮಗೆ ತಿಳಿಸುತ್ತಾರೆ. ಆ ಯಂತ್ರಶಾಸ್ತ್ರವು ಸಮನ್ವಯಗೊಂಡಾಗ, ವಾಕಿಂಗ್ ಸುಗಮ ಮತ್ತು ಹೆಚ್ಚು ಆರ್ಥಿಕವಾಗಿ ಭಾಸವಾಗುತ್ತದೆ. ಅವರು ದಿಕ್ಚ್ಯುತಿಗೊಂಡಾಗ, ವೇಗ, ಸ್ಥಿರತೆ ಮತ್ತು ಸೌಕರ್ಯವು ಸಾಮಾನ್ಯವಾಗಿ ಅವರೊಂದಿಗೆ ಚಲಿಸುತ್ತದೆ.</p><div class="comparison-table-container"><table class="comparison-table"><thead><tr><th>ಮೆಟ್ರಿಕ್</th><th>ಅದು ಏನು ಅಳೆಯುತ್ತದೆ</th><th>ಗೆ ಉತ್ತಮ</th><th>ಸಾಮಾನ್ಯ ದುರುಪಯೋಗ</th></tr></thead><tbody><tr class="highlight-row"><td><strong>ಕ್ಯಾಡೆನ್ಸ್</strong></td><td>ನೀವು ಎಷ್ಟು ಬಾರಿ ಕ್ರಮಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತೀರಿ</td><td>ವಾಕಿಂಗ್ ತೀವ್ರತೆ ಮತ್ತು ವೇಗದ ನಡಿಗೆಯ ವೇಗವನ್ನು ನಿಯಂತ್ರಿಸುವುದು</td><td>ಆರಾಮ, ಭೂಪ್ರದೇಶ ಮತ್ತು ಉದ್ದೇಶವನ್ನು ಪರಿಶೀಲಿಸದೆಯೇ ಯಾವಾಗಲೂ ಉತ್ತಮವೆಂದು ಊಹಿಸಿ</td></tr><tr><td><strong>ಹಂತ ಮತ್ತು ಸ್ಟ್ರೈಡ್ ಉದ್ದ</strong></td><td>ಪ್ರತಿ ಹಂತದ ಚಕ್ರವು ಎಷ್ಟು ದೂರವನ್ನು ಒಳಗೊಂಡಿದೆ</td><td>ವೇಗ, ಸಮ್ಮಿತಿ ಮತ್ತು ಮಿತಿಮೀರಿದ ಅಪಾಯವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</td><td>ದೇಹದ ಮುಂದೆ ಹೆಚ್ಚು ದೂರ ತಲುಪುವ ಮೂಲಕ ವೇಗವಾಗಿ ಪಡೆಯಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ</td></tr><tr><td><strong>ಡಬಲ್ ಬೆಂಬಲ</strong></td><td>ಎರಡೂ ಪಾದಗಳನ್ನು ನೆಲದ ಮೇಲೆ ಇಟ್ಟುಕೊಂಡು ನಡಿಗೆ ಚಕ್ರದ ಪಾಲು</td><td>ಸಮತೋಲನ ವ್ಯಾಖ್ಯಾನ, ಎಚ್ಚರಿಕೆಯ ನಡಿಗೆ ಮತ್ತು ವೈದ್ಯಕೀಯ ಸಂದರ್ಭ</td><td>ಪ್ರತಿ ದೀರ್ಘವಾದ ಡಬಲ್-ಬೆಂಬಲ ಹಂತವನ್ನು ಸಂದರ್ಭವಿಲ್ಲದೆ ರೋಗಶಾಸ್ತ್ರ ಎಂದು ಕರೆಯುವುದು</td></tr><tr><td><strong>ನಡಿಗೆ ವೇಗ</strong></td><td>ನೀವು ಒಟ್ಟಾರೆ ದೂರವನ್ನು ಎಷ್ಟು ವೇಗವಾಗಿ ಕ್ರಮಿಸುತ್ತೀರಿ</td><td>ಕ್ರಿಯಾತ್ಮಕ ಸ್ಥಿತಿ, ಪ್ರಗತಿ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ವಿಶಾಲವಾದ ವ್ಯಾಖ್ಯಾನ</td><td>ವೇಗವನ್ನು ಸುಧಾರಿಸಲು ಯೋಗ್ಯವಾದ ಏಕೈಕ ಮಾರ್ಕರ್ ಆಗಿ ಪರಿಗಣಿಸುವುದು</td></tr><tr><td><strong>ಸಮ್ಮಿತಿ</strong></td><td>ಬಲ ಮತ್ತು ಎಡ ಹಂತಗಳು ಎಷ್ಟು ಸಮವಾಗಿ ಹೊಂದಾಣಿಕೆಯಾಗುತ್ತವೆ</td><td>ರಿಹ್ಯಾಬ್, ನೋವು ಮೇಲ್ವಿಚಾರಣೆ ಮತ್ತು ಚಲನೆಯ ಗುಣಮಟ್ಟದ ತಪಾಸಣೆ</td><td>ಸಾಮಾನ್ಯ ದಿನದಿಂದ ದಿನಕ್ಕೆ ವ್ಯತ್ಯಾಸವು ಅಸ್ತಿತ್ವದಲ್ಲಿದ್ದಾಗ ಪರಿಪೂರ್ಣ ಸಮ್ಮಿತಿಯನ್ನು ಬೆನ್ನಟ್ಟುವುದು</td></tr></tbody></table></div><div class="callout callout-info"><h3>ಉಪಯುಕ್ತ ಮಾನಸಿಕ ಮಾದರಿ</h3><p>ಯೋಚಿಸಿ <strong>ಲಯವಾಗಿ ಲಯ</strong>, <strong>ಕವರೇಜ್ ಆಗಿ ಸ್ಟ್ರೈಡ್ ಉದ್ದ</strong>, <strong>ಎಚ್ಚರಿಕೆ ಮತ್ತು ಸ್ಥಿರತೆಯಾಗಿ ಡಬಲ್ ಬೆಂಬಲ</strong>, ಮತ್ತು <strong>ಚಲನೆಯ ಸಮತೋಲನವಾಗಿ ಸಮ್ಮಿತಿ</strong>. ನಡಿಗೆಯು ಏಕೆ ನಯವಾದ, ಕಠಿಣ ಅಥವಾ ವಿಚಿತ್ರವಾದ ಭಾವನೆಯನ್ನು ನೀಡುತ್ತದೆ ಎಂಬುದನ್ನು ಅವರು ಒಟ್ಟಾಗಿ ವಿವರಿಸುತ್ತಾರೆ.</p></div><h2>ಅಲ್ಲಿ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಹೆಚ್ಚು ಸಹಾಯ ಮಾಡುತ್ತದೆ</h2><div class="application-grid"><div class="application-item"><h3>ಆರೋಗ್ಯಕ್ಕಾಗಿ ವಾಕಿಂಗ್</h3><p>"ನಡಿಗೆ" ಎಂಬುದು ಗುರಿಯಾಗಿರುವಾಗ ಮಧ್ಯಮ ತೀವ್ರತೆಯನ್ನು ತಲುಪುತ್ತಿದೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ಕ್ಯಾಡೆನ್ಸ್ ಮತ್ತು ನಡಿಗೆ ವೇಗವನ್ನು ಬಳಸಿ. ನಂತರ ಬಳಸಿ <a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a> ರಚನೆಯ ಪ್ರಯತ್ನಕ್ಕೆ.</p></div><div class="application-item"><h3>ಚಲನೆಯ ಗುಣಮಟ್ಟ</h3><p>ನಿಮ್ಮ ಡೀಫಾಲ್ಟ್ ನಡಿಗೆಯಾಗುವ ಮೊದಲು ರಕ್ಷಣಾತ್ಮಕ ಮಾದರಿಗಳು, ಆಯಾಸ ಅಥವಾ ಪರಿಹಾರವನ್ನು ಗಮನಿಸಲು ಸಮ್ಮಿತಿ, ಹಂತದ ಉದ್ದ ಮತ್ತು ಡಬಲ್ ಬೆಂಬಲವನ್ನು ಬಳಸಿ.</p></div><div class="application-item"><h3>ಪೋಸ್ಟ್-ರೈಡ್ ಅಥವಾ ಡೈಲಿ ರಿವ್ಯೂ</h3><p>ಬಳಸಿ <a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a> ನಿಮಗೆ ವ್ಯಾಖ್ಯಾನದ ಅಗತ್ಯವಿದ್ದಾಗ, ಕೇವಲ ಕಚ್ಚಾ HealthKit ಮೆಟ್ರಿಕ್ಸ್ ಅಲ್ಲ. ಡೇಟಾವನ್ನು ನಿರ್ಧಾರಗಳಾಗಿ ಭಾಷಾಂತರಿಸುವುದು ಕೆಲಸ.</p></div><div class="application-item"><h3>ತರಬೇತಿ ಲೋಡ್</h3><p>ಸರಿಯಾದ ಸೆಷನ್ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಫಾರ್ಮ್ ಮೆಟ್ರಿಕ್‌ಗಳನ್ನು ಬಳಸಿ, ನಂತರ ಬಳಸಿ <a href="/kn/wss-calculator/">WSS</a> ಕಾಲಾನಂತರದಲ್ಲಿ ಆ ನಡಿಗೆಗಳ ತರಬೇತಿ ಒತ್ತಡವನ್ನು ಹೋಲಿಸಲು.</p></div></div><div class="warning-box"><strong>ನಿರ್ಣಾಯಕ ಅವಲಂಬನೆ:</strong> ವೇಗವಾಗಿ ನಡೆಯುವುದು ಯಾವಾಗಲೂ ಉತ್ತಮ ನಡಿಗೆಯಲ್ಲ. ಕ್ಯಾಡೆನ್ಸ್ ಏರಿದರೆ ಆದರೆ ಭಂಗಿ ಕುಸಿದರೆ, ಹಂತಗಳು ತುಂಬಾ ಮುಂದಕ್ಕೆ ತಲುಪಿದರೆ ಅಥವಾ ಅಸಿಮ್ಮೆಟ್ರಿ ಬೆಳೆಯುತ್ತಿದ್ದರೆ, ನೀವು ವೇಗಕ್ಕಾಗಿ ವ್ಯಾಪಾರದ ಗುಣಮಟ್ಟವನ್ನು ಹೊಂದಿರಬಹುದು.
+    </div><h2>ವೀಕ್ಷಿಸಲು ಕೋರ್ ಮೆಕ್ಯಾನಿಕ್ಸ್</h2><h3>ವಾಕಿಂಗ್ ಗೈಟ್ ಸೈಕಲ್</h3><p>ಪೂರ್ಣ ನಡಿಗೆ ಚಕ್ರವು ಒಂದು ಹಿಮ್ಮಡಿ ಸ್ಟ್ರೈಕ್‌ನಿಂದ ಅದೇ ಪಾದದ ಮುಂದಿನ ಹೀಲ್ ಸ್ಟ್ರೈಕ್‌ಗೆ ಸಾಗುತ್ತದೆ. ಓಟಕ್ಕಿಂತ ಭಿನ್ನವಾಗಿ, ವಾಕಿಂಗ್ ನೆಲದೊಂದಿಗೆ ನಿರಂತರ ಸಂಪರ್ಕವನ್ನು ಇಟ್ಟುಕೊಳ್ಳುತ್ತದೆ ಮತ್ತು a ಅನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ <strong>ಡಬಲ್-ಬೆಂಬಲ ಹಂತ</strong> ಅಲ್ಲಿ ಎರಡೂ ಪಾದಗಳು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಭಾರವನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತವೆ.</p><div class="data-table"><table><thead><tr><th>ಹಂತ</th><th>ಚಕ್ರದ ವಿಶಿಷ್ಟ ಪಾಲು</th><th>ಅದು ಏಕೆ ಮುಖ್ಯವಾಗಿದೆ</th></tr></thead><tbody><tr><td><strong>ನಿಲುವು</strong></td><td>ಸುಮಾರು 60%</td><td>ಅಲ್ಲಿ ಬೆಂಬಲ, ಬ್ರೇಕಿಂಗ್ ಮತ್ತು ಪುಶ್-ಆಫ್ ಸಂಭವಿಸುತ್ತದೆ</td></tr><tr><td><strong>ಸ್ವಿಂಗ್</strong></td><td>ಸುಮಾರು 40%</td><td>ಅಲ್ಲಿ ಕಾಲು ಚೇತರಿಸಿಕೊಳ್ಳುತ್ತದೆ ಮತ್ತು ಮುಂದಿನ ಸಂಪರ್ಕಕ್ಕೆ ಸಿದ್ಧವಾಗುತ್ತದೆ</td></tr><tr><td><strong>ಡಬಲ್ ಬೆಂಬಲ</strong></td><td>ಸುಮಾರು 20-30%</td><td>ವಾಕಿಂಗ್ ಮತ್ತು ಓಟದ ನಡುವಿನ ಪ್ರಮುಖ ವ್ಯತ್ಯಾಸ</td></tr></tbody></table></div><h3>ಕ್ಯಾಡೆನ್ಸ್ ಮತ್ತು ತೀವ್ರತೆ</h3><p>ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳಿಗೆ, ತೀವ್ರತೆಯನ್ನು ಅಳೆಯಲು ಕ್ಯಾಡೆನ್ಸ್ ಸರಳವಾದ ಮಾರ್ಗವಾಗಿದೆ. ಸಂಶೋಧನೆಯು ನಿರಂತರವಾಗಿ ಬೆಂಬಲಿಸುತ್ತದೆ <strong>ನಿಮಿಷಕ್ಕೆ ಸುಮಾರು 100 ಹೆಜ್ಜೆಗಳು</strong> ಅನೇಕ ವಯಸ್ಕರಲ್ಲಿ ಮಧ್ಯಮ-ತೀವ್ರತೆಯ ನಡಿಗೆಗೆ ಪ್ರಾಯೋಗಿಕ ಮಿತಿಯಾಗಿ.</p><div class="data-table"><table><thead><tr><th>ಕ್ಯಾಡೆನ್ಸ್</th><th>ವಿಶಿಷ್ಟ ಬಳಕೆ</th><th>ವ್ಯಾಖ್ಯಾನ</th></tr></thead><tbody><tr><td>&lt;100 spm</td><td>ಸುಲಭ ಚಟುವಟಿಕೆ ಅಥವಾ ಚೇತರಿಕೆ</td><td>ದೈನಂದಿನ ಚಲನೆಗೆ ಉಪಯುಕ್ತವಾಗಿದೆ, ಸಾಮಾನ್ಯವಾಗಿ ಮಧ್ಯಮ ತೀವ್ರತೆಯ ಕೆಳಗೆ</td></tr><tr class="highlight-row"><td><strong>100-110 spm</strong></td><td><strong>ಬ್ರಿಸ್ಕ್ ವಾಕಿಂಗ್ ಬೇಸ್‌ಲೈನ್</strong></td><td><strong>ಮಧ್ಯಮ ತೀವ್ರತೆಗೆ ಪ್ರಬಲ ಆರಂಭಿಕ ಶ್ರೇಣಿ</strong></td></tr><tr><td>110-120 spm</td><td>ವೇಗದ ನಡಿಗೆ</td><td>ಫಿಟ್ನೆಸ್-ಕೇಂದ್ರಿತ ಅವಧಿಗಳು ಮತ್ತು ಬೆಟ್ಟಗಳಿಗೆ ಉಪಯುಕ್ತವಾಗಿದೆ</td></tr><tr><td>120+ spm</td><td>ಅತಿ ವೇಗದ ನಡಿಗೆ</td><td>ಸಾಮಾನ್ಯವಾಗಿ ಉತ್ತಮ ಯಂತ್ರಶಾಸ್ತ್ರದ ಅಗತ್ಯವಿರುತ್ತದೆ, ಕೇವಲ ಹೆಚ್ಚಿನ ಪ್ರಯತ್ನವಲ್ಲ</td></tr></tbody></table></div><h3>ಸ್ಟೆಪ್ ಲೆಂತ್ ವರ್ಸಸ್ ಸ್ಟ್ರೈಡ್ ಲೆಂತ್</h3><p><strong>ಹಂತದ ಉದ್ದ</strong> ಒಂದು ಪಾದದಿಂದ ಇನ್ನೊಂದಕ್ಕೆ ಹಿಮ್ಮಡಿಯಿಂದ ಹಿಮ್ಮಡಿಯಾಗಿದೆ. <strong>ಸ್ಟ್ರೈಡ್ ಉದ್ದ</strong> ಎರಡು ಹಂತಗಳು: ಹೀಲ್ ಸ್ಟ್ರೈಕ್ ಅದೇ ಪಾದದ ಮುಂದಿನ ಹೀಲ್ ಸ್ಟ್ರೈಕ್. ವೇಗವು ಕ್ಯಾಡೆನ್ಸ್ ಮತ್ತು ಸ್ಟ್ರೈಡ್ ಉದ್ದದ ಉತ್ಪನ್ನವಾಗಿದೆ, ಆದರೆ ನೀವು ಸ್ಟ್ರೈಡ್ ಉದ್ದವನ್ನು ಹಸ್ತಚಾಲಿತವಾಗಿ ಒತ್ತಾಯಿಸಬೇಕು ಎಂದರ್ಥವಲ್ಲ.</p><ul><li><strong>ಉತ್ತಮ ಸ್ಟ್ರೈಡ್ ಉದ್ದ</strong> ಸಾಮಾನ್ಯವಾಗಿ ಭಂಗಿ, ಹಿಪ್ ವಿಸ್ತರಣೆ ಮತ್ತು ಕ್ಲೀನರ್ ಪುಶ್-ಆಫ್ ನಿಂದ ಬರುತ್ತದೆ</li><li><strong>ಅತಿಕ್ರಮಿಸುವುದು</strong> ಪಾದವು ದ್ರವ್ಯರಾಶಿಯ ಕೇಂದ್ರದ ಮುಂದೆ ತುಂಬಾ ದೂರ ಬಂದಾಗ ಸಂಭವಿಸುತ್ತದೆ</li><li><strong>ಅತಿಕ್ರಮಿಸುವುದು ಸಾಮಾನ್ಯವಾಗಿ ವೇಗವಾಗಿ ಕಾಣುತ್ತದೆ</strong> ಆದರೆ ಸಾಮಾನ್ಯವಾಗಿ ಬ್ರೇಕಿಂಗ್ ಪಡೆಗಳನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆ ಮತ್ತು ಶಕ್ತಿಯನ್ನು ವ್ಯರ್ಥ ಮಾಡುತ್ತದೆ</li><li><strong>ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳಿಗೆ</strong>, ಒಂದು ಸಣ್ಣ ಕ್ಯಾಡೆನ್ಸ್ ಹೆಚ್ಚಳವು ಮುಂದೆ ತಲುಪಲು ಪ್ರಯತ್ನಿಸುವುದಕ್ಕಿಂತ ಸುರಕ್ಷಿತವಾಗಿದೆ</li></ul><h3>ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ಎಚ್ಚರಿಕೆಯ ನಡಿಗೆ</h3><p>ನೀವು ಹೆಚ್ಚು ಸ್ಥಿರತೆಯನ್ನು ಬಯಸಿದಾಗ ಡಬಲ್ ಬೆಂಬಲವು ಹೆಚ್ಚಾಗುತ್ತದೆ. ಅಸಮ ಭೂಪ್ರದೇಶದಲ್ಲಿ, ಭಾರವನ್ನು ಹೊತ್ತಾಗ ಅಥವಾ ಎಚ್ಚರಿಕೆಯಿಂದ ನಡೆಯುವಾಗ ಅದು ಸಾಮಾನ್ಯವಾಗಿರುತ್ತದೆ. ಇದು ನಿಧಾನವಾದ ನಡಿಗೆ ವೇಗ, ಕಡಿಮೆ ಹೆಜ್ಜೆಗಳು ಅಥವಾ ಸ್ಪಷ್ಟವಾದ ಅಸಿಮ್ಮೆಟ್ರಿಯೊಂದಿಗೆ ಏರಿದಾಗ ಎಚ್ಚರಿಕೆಯ ಸಂಕೇತವಾಗಿ ಹೆಚ್ಚು ಉಪಯುಕ್ತವಾಗುತ್ತದೆ.</p><div class="data-table"><table><thead><tr><th>ಡಬಲ್ ಬೆಂಬಲ</th><th>ವ್ಯಾಖ್ಯಾನ</th><th>ವಿಶಿಷ್ಟ ಮುಂದಿನ ಹಂತ</th></tr></thead><tbody><tr><td>15-20%</td><td>ವೇಗದ, ಆತ್ಮವಿಶ್ವಾಸದ ನಡಿಗೆ</td><td>ಆರೋಗ್ಯಕರ ವೇಗದ ನಡಿಗೆಗೆ ಸಾಮಾನ್ಯವಾಗಿ ಸೂಕ್ತವಾಗಿದೆ</td></tr><tr class="highlight-row"><td><strong>20-30%</strong></td><td><strong>ವಿಶಿಷ್ಟ ವಾಕಿಂಗ್ ಶ್ರೇಣಿ</strong></td><td><strong>ಅನೇಕ ವಾಕರ್‌ಗಳಿಗೆ ಸಾಮಾನ್ಯ ಉಲ್ಲೇಖ ವಲಯ</strong></td></tr><tr><td>30-35%</td><td>ಎಚ್ಚರಿಕೆಯ ಮಾದರಿ</td><td>ಭೂಪ್ರದೇಶ, ಆಯಾಸ, ಆತ್ಮವಿಶ್ವಾಸ ಮತ್ತು ಇತ್ತೀಚಿನ ನೋವನ್ನು ಪರಿಶೀಲಿಸಿ</td></tr><tr><td>&gt;35%</td><td>ಗಮನಾರ್ಹವಾಗಿ ಎಚ್ಚರಿಕೆಯ ಅಥವಾ ಅಸ್ಥಿರ ಮಾದರಿ</td><td>ಬಳಸಿ <a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a> ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ಸಂದರ್ಭವನ್ನು ಪರಿಗಣಿಸಿ</td></tr></tbody></table></div><h3>ಸಮ್ಮಿತಿ ಮತ್ತು ಸಮಯ</h3><p>ಸಣ್ಣ ಎಡ-ಬಲ ವ್ಯತ್ಯಾಸಗಳು ಸಹಜ. ಅಸಿಮ್ಮೆಟ್ರಿಯು ಸ್ಥಿರವಾಗಿದೆಯೇ, ಸುಧಾರಿಸುತ್ತಿದೆಯೇ ಅಥವಾ ಕಾಲಾನಂತರದಲ್ಲಿ ವಿಸ್ತರಿಸುತ್ತಿದೆಯೇ ಎಂಬುದು ಮುಖ್ಯವಾದುದು. ನೀವು ಸಮಸ್ಯೆಯನ್ನು ಪುನರ್ವಸತಿ ಮಾಡುವಾಗ, ನೋವನ್ನು ನಿರ್ವಹಿಸುವಾಗ ಅಥವಾ ವಾರಗಳಲ್ಲಿ ಚಲನೆಯ ಗುಣಮಟ್ಟವನ್ನು ಹೋಲಿಸಿದಾಗ ಸಮ್ಮಿತಿ ಹೆಚ್ಚು ಮುಖ್ಯವಾಗುತ್ತದೆ.</p><h2>ಅಲ್ಲಿ ವಾಕರ್ಸ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಅನ್ನು ದುರುಪಯೋಗಪಡಿಸಿಕೊಳ್ಳುತ್ತಾರೆ</h2><div class="grid grid-2"><div class="protocol-card"><h3>ಸಾಮಾನ್ಯ ತಪ್ಪುಗಳು</h3><ul><li>ಪ್ರತಿ ಹೆಜ್ಜೆಗೂ ಹೆಚ್ಚು ಮುಂದಕ್ಕೆ ತಲುಪುವ ಮೂಲಕ ವೇಗವಾಗಿ ಪಡೆಯಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ</li><li>ಭೂಪ್ರದೇಶ, ಇಳಿಜಾರು ಅಥವಾ ವಾಕರ್ ಎತ್ತರವನ್ನು ಪರಿಶೀಲಿಸದೆ ಕ್ಯಾಡೆನ್ಸ್ ಅನ್ನು ನಿರ್ಣಯಿಸುವುದು</li><li>ಒಂದು ಪ್ರತ್ಯೇಕವಾದ ಅಸಿಮ್ಮೆಟ್ರಿ ಮೌಲ್ಯವನ್ನು ರೋಗನಿರ್ಣಯವಾಗಿ ಪರಿಗಣಿಸುವುದು</li><li>ನಡಿಗೆಯ ವೇಗವನ್ನು ಮಾತ್ರ ಬಳಸುವುದು ಮತ್ತು ವೇಗವನ್ನು ಹೇಗೆ ಉತ್ಪಾದಿಸಲಾಯಿತು ಎಂಬುದನ್ನು ನಿರ್ಲಕ್ಷಿಸುವುದು</li><li>ಆರೋಗ್ಯ, ಪುನರ್ವಸತಿ ಮತ್ತು ಫಿಟ್‌ನೆಸ್ ಸಂದರ್ಭಗಳಲ್ಲಿ ಸ್ಮಾರ್ಟ್‌ವಾಚ್ ನಡಿಗೆ ಮೆಟ್ರಿಕ್‌ಗಳು ಸಮಾನವಾಗಿ ಮುಖ್ಯವೆಂದು ಭಾವಿಸುವುದು</li></ul></div><div class="protocol-card"><h3>ಉತ್ತಮ ವ್ಯಾಖ್ಯಾನ ನಿಯಮಗಳು</h3><ul><li>ಗುರಿಯೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ: ಆರೋಗ್ಯ ನಡಿಗೆ, ಚುರುಕಾದ ಫಿಟ್ನೆಸ್ ವಾಕ್, ರಿಹ್ಯಾಬ್ ಅಥವಾ ಕಾರ್ಯಕ್ಷಮತೆ</li><li>ಗುರಿಯು ತೀವ್ರತೆಯ ನಿಯಂತ್ರಣವಾಗಿರುವಾಗ ಮೊದಲು ಕ್ಯಾಡೆನ್ಸ್ ಅನ್ನು ಬಳಸಿ</li><li>ಗುರಿಯು ಚಲನೆಯ ಗುಣಮಟ್ಟವಾಗಿದ್ದಾಗ ಮೊದಲು ಸಮ್ಮಿತಿ ಮತ್ತು ಡಬಲ್ ಬೆಂಬಲವನ್ನು ಬಳಸಿ</li><li>ಬಳಸಿ <a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a> ವ್ಯಾಖ್ಯಾನಕ್ಕಾಗಿ, ಕೇವಲ ಕಚ್ಚಾ ಸಂಖ್ಯೆಗಳಲ್ಲ</li><li>ಒಂದು ಓದುವಿಕೆಗೆ ಅತಿಯಾಗಿ ಪ್ರತಿಕ್ರಿಯಿಸುವ ಬದಲು ದಿನಗಳು ಮತ್ತು ವಾರಗಳಲ್ಲಿ ಟ್ರೆಂಡ್‌ಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ</li></ul></div></div><h2>ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ವಾಕ್ ಕ್ಲಸ್ಟರ್‌ಗೆ ಹೇಗೆ ಸಂಪರ್ಕಿಸುತ್ತದೆ</h2><p>ಈ ಪುಟವು ಪ್ರವೇಶ ಬಿಂದುವಾಗಿದೆ. ಕ್ಲಸ್ಟರ್‌ನ ಉಳಿದ ಭಾಗವು ಸ್ಟ್ರೈಡ್ ಅವಲೋಕನಗಳನ್ನು ನಿರ್ಧಾರಗಳಾಗಿ ಪರಿವರ್ತಿಸುತ್ತದೆ:</p><ul><li><strong><a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a></strong> ಕ್ಯಾಡೆನ್ಸ್, ಸಮ್ಮಿತಿ, ವೇಗ ಮತ್ತು ಸಂಪರ್ಕ ಮೆಟ್ರಿಕ್‌ಗಳನ್ನು ಒಟ್ಟಿಗೆ ಅರ್ಥೈಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ</li><li><strong><a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a></strong> ಕ್ಯಾಡೆನ್ಸ್ ಮತ್ತು ತೀವ್ರತೆಯನ್ನು ಪ್ರಾಯೋಗಿಕ ಅಧಿವೇಶನ ಗುರಿಗಳಾಗಿ ಪರಿವರ್ತಿಸಿ</li><li><strong><a href="/kn/gait-efficiency/">ನಡಿಗೆ ದಕ್ಷತೆ</a></strong> ಕೆಲವು ಮಾದರಿಗಳು ಇತರರಿಗಿಂತ ಹೆಚ್ಚಿನ ಶಕ್ತಿಯನ್ನು ಏಕೆ ವೆಚ್ಚ ಮಾಡುತ್ತವೆ ಎಂಬುದನ್ನು ವಿವರಿಸುತ್ತದೆ</li><li><strong><a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a></strong> ವೇಗ, ಕ್ಯಾಡೆನ್ಸ್ ಮತ್ತು ಸಮ್ಮಿತಿಗಾಗಿ ತ್ವರಿತ ಸ್ವಯಂ ಪರೀಕ್ಷೆಗಳನ್ನು ನೀಡುತ್ತದೆ</li><li><strong><a href="/kn/wss-calculator/">WSS</a></strong> ಫಾರ್ಮ್ ಮತ್ತು ತೀವ್ರತೆಯನ್ನು ಹೊಂದಿಸಿದ ನಂತರ ಸೆಶನ್ ಅನ್ನು ಬಳಸಬಹುದಾದ ತರಬೇತಿ-ಲೋಡ್ ಸ್ಕೋರ್ ಆಗಿ ಪರಿವರ್ತಿಸುತ್ತದೆ</li></ul><div class="comparison-box"><div class="comparison-item"><h3>ಆರೋಗ್ಯವೇ ಗುರಿಯಾದಾಗ</h3><p><strong>ಆದ್ಯತೆಯ ಮೆಟ್ರಿಕ್‌ಗಳು:</strong> ಕ್ಯಾಡೆನ್ಸ್, ನಡಿಗೆ ವೇಗ ಮತ್ತು ಸಮರ್ಥನೀಯ ಮಧ್ಯಮ ತೀವ್ರತೆ</p><p><strong>ಉತ್ತಮ ಮುಂದಿನ ಪುಟಗಳು:</strong><a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a> ಮತ್ತು <a href="/kn/wss-calculator/">WSS</a></p></div><div class="comparison-item"><h3>ಗುರಿಯು ಚಲನೆಯ ಗುಣಮಟ್ಟವಾದಾಗ</h3><p><strong>ಆದ್ಯತೆಯ ಮೆಟ್ರಿಕ್‌ಗಳು:</strong> ಸಮ್ಮಿತಿ, ಡಬಲ್ ಬೆಂಬಲ, ಹಂತದ ಮಾದರಿ ಮತ್ತು ಸೌಕರ್ಯ</p><p><strong>ಉತ್ತಮ ಮುಂದಿನ ಪುಟಗಳು:</strong><a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a> ಮತ್ತು <a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a></p></div></div></div></section><section class="section section-alt"><div class="container"><h2 class="text-center mb-xl">ಕೆಲಸ ಮಾಡಿದ ಉದಾಹರಣೆಗಳು</h2><div class="grid grid-2"><div class="example-box"><h3>ಬ್ರಿಸ್ಕ್ ಹೆಲ್ತ್ ವಾಕ್ ಉದಾಹರಣೆ</h3><ul><li><strong>ಕ್ಯಾಡೆನ್ಸ್:</strong> 104 spm</li><li><strong>ನಡಿಗೆ ವೇಗ:</strong> 1.28 ಮೀ/ಸೆ</li><li><strong>ಡಬಲ್ ಬೆಂಬಲ:</strong> 24%</li><li><strong>ಸಮ್ಮಿತಿ:</strong> ಸ್ಥಿರ, ಸಣ್ಣ ಎಡ-ಬಲ ವ್ಯತ್ಯಾಸ</li></ul><p><strong>ವ್ಯಾಖ್ಯಾನ:</strong> ಇದು ಪ್ರಾಯೋಗಿಕ ಮಧ್ಯಮ-ತೀವ್ರತೆಯ ಮಾದರಿಯಾಗಿದೆ. ಚುರುಕಾದ ಪ್ರಯತ್ನಕ್ಕೆ ಕ್ಯಾಡೆನ್ಸ್ ಸಾಕಷ್ಟು ಹೆಚ್ಚಾಗಿರುತ್ತದೆ, ನಡಿಗೆ ವೇಗವು ಕ್ರಿಯಾತ್ಮಕ ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಕೂಡಿರುತ್ತದೆ ಮತ್ತು ಸಾಮಾನ್ಯ ವಾಕಿಂಗ್ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಡಬಲ್ ಬೆಂಬಲ ಇರುತ್ತದೆ. ಸರಿಯಾದ ಮುಂದಿನ ಪುಟ <a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a>, ದೀರ್ಘ ದಾಪುಗಾಲು ಬೇಟೆಯಲ್ಲ.</p></div><div class="example-box"><h3>ಎಚ್ಚರಿಕೆಯ ರಿಕವರಿ ವಾಕ್ ಉದಾಹರಣೆ</h3><ul><li><strong>ಕ್ಯಾಡೆನ್ಸ್:</strong> 92 spm</li><li><strong>ನಡಿಗೆ ವೇಗ:</strong> 0.94 ಮೀ/ಸೆ</li><li><strong>ಡಬಲ್ ಬೆಂಬಲ:</strong> 34%</li><li><strong>ಹಂತದ ಮಾದರಿ:</strong> ಒಂದು ಬದಿಯಲ್ಲಿ ಕಡಿಮೆ ಹೆಜ್ಜೆ</li></ul><p><strong>ವ್ಯಾಖ್ಯಾನ:</strong> ಸಮಸ್ಯೆ "ಕೆಟ್ಟ ಪ್ರಯತ್ನ" ಅಲ್ಲ. ಇದು ಎಚ್ಚರಿಕೆಯ ನಡಿಗೆ ಮಾದರಿಯಾಗಿದೆ. ಉದ್ದವಾದ ಡಬಲ್ ಬೆಂಬಲ ಮತ್ತು ನಿಧಾನವಾದ ವೇಗವು ವಾಕರ್ ಸ್ಥಿರತೆ ಅಥವಾ ಸೌಕರ್ಯವನ್ನು ರಕ್ಷಿಸುತ್ತದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಉತ್ತಮ ಮುಂದಿನ ಹಂತವಾಗಿದೆ <a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a> ಮತ್ತು <a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a>, ಗಟ್ಟಿಯಾದ ತೀವ್ರತೆಯಲ್ಲ.</p></div></div><div class="callout callout-science mt-xl"><h3>ಈ ಉದಾಹರಣೆಗಳು ಏಕೆ ಮುಖ್ಯ</h3><p>ಅದೇ ವಾಕಿಂಗ್ ವೇಗವು ವಿಭಿನ್ನ ಯಂತ್ರಶಾಸ್ತ್ರದಿಂದ ಬರಬಹುದು. ಒಂದು ಮಾದರಿಯು ನಯವಾದ ಮತ್ತು ಆರ್ಥಿಕವಾಗಿರಬಹುದು. ಇನ್ನೊಂದು ಎಚ್ಚರಿಕೆ, ಅಸಮಪಾರ್ಶ್ವ ಅಥವಾ ಅಸಮರ್ಥವಾಗಿರಬಹುದು. ನೀವು ಏನು ತರಬೇತಿ ನೀಡಬೇಕೆಂದು ನಿರ್ಧರಿಸುವ ಮೊದಲು ವ್ಯತ್ಯಾಸವನ್ನು ವಿವರಿಸಲು ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಸಹಾಯ ಮಾಡುತ್ತದೆ.</p></div></div></section><section class="section"><div class="container container-narrow"><h2>ಕ್ಲಸ್ಟರ್‌ನಲ್ಲಿ ಉತ್ತಮ ಮುಂದಿನ ಪುಟಗಳು</h2><div class="grid grid-2"><div class="protocol-card"><h3><a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a></h3><p>ಕ್ಯಾಡೆನ್ಸ್, ವೇಗ, ಸಮ್ಮಿತಿ ಮತ್ತು ಸಮತೋಲನ-ಸಂಬಂಧಿತ ಮೆಟ್ರಿಕ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸುವ ವ್ಯಾಖ್ಯಾನ ಪದರವನ್ನು ನೀವು ಬಯಸಿದರೆ ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ.</p></div><div class="protocol-card"><h3><a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a></h3><p>ಆರೋಗ್ಯ, ಫಿಟ್ನೆಸ್ ಅಥವಾ ರಚನಾತ್ಮಕ ಅವಧಿಗಳಿಗಾಗಿ ನಡೆಯುವುದು ಎಷ್ಟು ಕಷ್ಟ ಎಂಬುದು ನಿಮ್ಮ ಮುಂದಿನ ಪ್ರಶ್ನೆಯಾಗಿದ್ದರೆ ಇಲ್ಲಿಗೆ ಹೋಗಿ.</p></div><div class="protocol-card"><h3><a href="/kn/gait-efficiency/">ನಡಿಗೆ ದಕ್ಷತೆ</a></h3><p>ಕೆಲವು ವಾಕಿಂಗ್ ಮಾದರಿಗಳು ಇತರರಿಗಿಂತ ಹೆಚ್ಚಿನ ಶಕ್ತಿಯನ್ನು ಏಕೆ ವೆಚ್ಚ ಮಾಡುತ್ತವೆ ಎಂಬುದನ್ನು ನೀವು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಬಯಸಿದರೆ ಇದನ್ನು ಮುಂದೆ ಓದಿ.</p></div><div class="protocol-card"><h3><a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a></h3><p>ದೀರ್ಘವಾದ ಸಿದ್ಧಾಂತದ ಪುಟದ ಬದಲಿಗೆ ವೇಗ, ಕ್ಯಾಡೆನ್ಸ್ ಮತ್ತು ಸಮ್ಮಿತಿಗಾಗಿ ನಿಮಗೆ ಸರಳವಾದ ಸ್ವಯಂ-ಪರೀಕ್ಷೆಗಳ ಅಗತ್ಯವಿರುವಾಗ ಇದನ್ನು ಬಳಸಿ.</p></div></div><div class="callout callout-primary mt-xl"><h3><a href="/kn/wss-calculator/">WSS ಕ್ಯಾಲ್ಕುಲೇಟರ್</a></h3><p>ರೂಪ ಮತ್ತು ತೀವ್ರತೆಯು ಅರ್ಥಪೂರ್ಣವಾಗಿದ್ದರೆ, ಮುಂದಿನ ಪ್ರಾಯೋಗಿಕ ಹಂತವು ವಾಕಿಂಗ್ ಸ್ಟ್ರೆಸ್ ಸ್ಕೋರ್‌ನೊಂದಿಗೆ ಆ ನಡಿಗೆಗಳ ಹೊರೆಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುವುದು.</p></div><h2>ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು</h2><div class="faq-item"><h3>ನಾನು ವೇಗವಾಗಿ ನಡೆಯಲು ಸ್ಟ್ರೈಡ್ ಉದ್ದವನ್ನು ಹೆಚ್ಚಿಸಲು ಪ್ರಯತ್ನಿಸಬೇಕೇ?</h3><p>ಸಾಮಾನ್ಯವಾಗಿ ಇಲ್ಲ. ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳು ಕ್ಯಾಡೆನ್ಸ್, ಭಂಗಿ ಮತ್ತು ಪುಶ್-ಆಫ್ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸುವ ಮೂಲಕ ಉತ್ತಮವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾರೆ. ದೀರ್ಘವಾದ ಹೆಜ್ಜೆಯನ್ನು ಒತ್ತಾಯಿಸುವುದು ಸಾಮಾನ್ಯವಾಗಿ ಓವರ್‌ಸ್ಟ್ರೈಡಿಂಗ್ ಮತ್ತು ಹೆಚ್ಚುವರಿ ಬ್ರೇಕಿಂಗ್ ಆಗಿ ಬದಲಾಗುತ್ತದೆ.</p></div><div class="faq-item"><h3>ವೇಗದ ನಡಿಗೆ ಎಂದು ಯಾವ ಕ್ಯಾಡೆನ್ಸ್ ಎಣಿಕೆ ಮಾಡುತ್ತದೆ?</h3><p>ಅನೇಕ ವಯಸ್ಕರಿಗೆ, ಪ್ರತಿ ನಿಮಿಷಕ್ಕೆ ಸುಮಾರು 100 ಹಂತಗಳು ಪ್ರಾಯೋಗಿಕ ಮಧ್ಯಮ-ತೀವ್ರತೆಯ ಮಾನದಂಡವಾಗಿದೆ. ವೈಯಕ್ತಿಕ ಸಂದರ್ಭವು ಇನ್ನೂ ಮುಖ್ಯವಾಗಿದೆ, ಆದರೆ ಇದು ಉಪಯುಕ್ತ ಆರಂಭಿಕ ಉಲ್ಲೇಖವಾಗಿದೆ.</p></div><div class="faq-item"><h3>ನಡಿಗೆಗೆ ಡಬಲ್ ಬೆಂಬಲ ಏಕೆ ಮುಖ್ಯ?</h3><p>ಸ್ಥಿರತೆಗಾಗಿ ನೀವು ಎರಡೂ ಪಾದಗಳನ್ನು ನೆಲದ ಮೇಲೆ ಎಷ್ಟು ಸಮಯವನ್ನು ಇಟ್ಟುಕೊಳ್ಳುತ್ತೀರಿ ಎಂಬುದನ್ನು ಇದು ಪ್ರತಿಬಿಂಬಿಸುತ್ತದೆ. ಹೆಚ್ಚಿನ ಮೌಲ್ಯಗಳು ಒರಟಾದ ಭೂಪ್ರದೇಶದಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಬಹುದು, ಆದರೆ ನಿಧಾನಗತಿಯ ವೇಗ ಅಥವಾ ಅಸಿಮ್ಮೆಟ್ರಿಯೊಂದಿಗೆ ಜೋಡಿಸಿದಾಗ ಅವು ಹೆಚ್ಚು ಎಚ್ಚರಿಕೆಯ ನಡಿಗೆ ಮಾದರಿಯನ್ನು ಸಹ ಸೂಚಿಸಬಹುದು.</p></div><div class="faq-item"><h3>ಸಮ್ಮಿತಿಯ ಬಗ್ಗೆ ನಾನು ಯಾವಾಗ ಹೆಚ್ಚು ಕಾಳಜಿ ವಹಿಸಬೇಕು?</h3><p>ನೀವು ನೋವು, ಇತ್ತೀಚಿನ ಗಾಯ, ಪುನರ್ವಸತಿ ಅಥವಾ ಚಲನೆಯ ಗುಣಮಟ್ಟದಲ್ಲಿ ಗಮನಾರ್ಹ ಬದಲಾವಣೆಯೊಂದಿಗೆ ವ್ಯವಹರಿಸುವಾಗ ಸಮ್ಮಿತಿಯು ಹೆಚ್ಚು ಮುಖ್ಯವಾಗಿದೆ. ದೈನಂದಿನ ನಡಿಗೆಗೆ, ಸಣ್ಣ ಎಡ-ಬಲ ವ್ಯತ್ಯಾಸಗಳು ಸಹಜ.</p></div><div class="faq-item"><h3>ಇದರ ನಂತರ ಉತ್ತಮ ಒಡನಾಡಿ ಪುಟ ಯಾವುದು?</h3><p>ನೀವು ವ್ಯಾಖ್ಯಾನವನ್ನು ಬಯಸಿದರೆ, ಓದಿ <a href="/kn/gait-analysis/">ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</a>. ನೀವು ಅಧಿವೇಶನ ಗುರಿಗಳನ್ನು ಬಯಸಿದರೆ, ಓದಿ <a href="/kn/walking-zones/">ವಾಕಿಂಗ್ ವಲಯಗಳು</a>. ನೀವು ತ್ವರಿತ ಸ್ವಯಂ ಪರಿಶೀಲನೆಯನ್ನು ಬಯಸಿದರೆ, ಬಳಸಿ <a href="/kn/gait-assessment/">ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನ</a>.</p></div><h2>ವೈಜ್ಞಾನಿಕ ಉಲ್ಲೇಖಗಳು</h2><p>ಈ ಪುಟವು ಸಾಕ್ಷ್ಯ ಆಧಾರಿತ ವಾಕಿಂಗ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಅನ್ನು ಸಾರಾಂಶಗೊಳಿಸುತ್ತದೆ. ವಿಶಾಲವಾದ ಉಲ್ಲೇಖಗಳು ಮತ್ತು ಪೋಷಕ ಅಧ್ಯಯನಗಳಿಗಾಗಿ, ನೋಡಿ <a href="/kn/bibliography/">ಗ್ರಂಥಸೂಚಿ</a> ಮತ್ತು <a href="/kn/research/">ಇತ್ತೀಚಿನ ವಾಕಿಂಗ್ ಸಂಶೋಧನೆ</a>.</p><ul><li>ಟ್ಯೂಡರ್-ಲಾಕ್ ಸಿ, ಮತ್ತು ಇತರರು. CADENCE-ವಯಸ್ಕರು ಮತ್ತು ಕ್ಯಾಡೆನ್ಸ್-ತೀವ್ರತೆಯ ಅಧ್ಯಯನಗಳು.</li><li>ಸ್ಟುಡೆನ್ಸ್ಕಿ ಎಸ್, ಮತ್ತು ಇತರರು. ವಯಸ್ಸಾದ ವಯಸ್ಕರಲ್ಲಿ ನಡಿಗೆ ವೇಗ ಮತ್ತು ಬದುಕುಳಿಯುವಿಕೆ. <em>ಜಮಾ</em> 2011.</li><li>ವಿಟ್ಲ್ ಮೆ.ವ್ಯಾ. <em>ವಿಟಲ್ ನ ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ</em>.</li><li>ಫುಕುಚಿ RK, ಮತ್ತು ಇತರರು. ನಡಿಗೆ ಬಯೋಮೆಕಾನಿಕ್ಸ್ ಮೇಲೆ ವಾಕಿಂಗ್ ವೇಗದ ಪರಿಣಾಮಗಳು.</li><li>ಕಾಲಿನ್ಸ್ SH, ಮತ್ತು ಇತರರು. ವಾಕಿಂಗ್ ಸಮಯದಲ್ಲಿ ನೈಸರ್ಗಿಕ ತೋಳಿನ ಸ್ವಿಂಗ್‌ನಿಂದ ಶಕ್ತಿಯ ಉಳಿತಾಯ.</li></ul></div></section><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಲೆಂಗ್ತ್ ಮತ್ತು ಗೈಟ್ ಟೈಮಿಂಗ್",
+  "description": "ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಸಮ್ಮಿತಿ, ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆ, ವಾಕಿಂಗ್ ವಲಯಗಳು ಮತ್ತು WSS ಅನ್ನು ಹೇಗೆ ಸಂಪರ್ಕಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ.",
+  "author": {
+    "@type": "Organization",
+    "name": "ವಾಕ್ ಅನಾಲಿಟಿಕ್ಸ್"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ವಾಕ್ ಅನಾಲಿಟಿಕ್ಸ್"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://walk.analyticszone.app/kn/stride-mechanics/"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-04-03"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ನಾನು ವೇಗವಾಗಿ ನಡೆಯಲು ಸ್ಟ್ರೈಡ್ ಉದ್ದವನ್ನು ಹೆಚ್ಚಿಸಲು ಪ್ರಯತ್ನಿಸಬೇಕೇ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ಸಾಮಾನ್ಯವಾಗಿ ಇಲ್ಲ. ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳು ಕ್ಯಾಡೆನ್ಸ್, ಭಂಗಿ ಮತ್ತು ಪುಶ್-ಆಫ್ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸುವ ಮೂಲಕ ಉತ್ತಮವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾರೆ. ದೀರ್ಘವಾದ ಹೆಜ್ಜೆಯನ್ನು ಒತ್ತಾಯಿಸುವುದು ಸಾಮಾನ್ಯವಾಗಿ ಓವರ್‌ಸ್ಟ್ರೈಡಿಂಗ್ ಮತ್ತು ಹೆಚ್ಚುವರಿ ಬ್ರೇಕಿಂಗ್ ಆಗಿ ಬದಲಾಗುತ್ತದೆ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ವೇಗದ ನಡಿಗೆ ಎಂದು ಯಾವ ಕ್ಯಾಡೆನ್ಸ್ ಎಣಿಕೆ ಮಾಡುತ್ತದೆ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ಅನೇಕ ವಯಸ್ಕರಿಗೆ, ಪ್ರತಿ ನಿಮಿಷಕ್ಕೆ ಸುಮಾರು 100 ಹಂತಗಳು ಪ್ರಾಯೋಗಿಕ ಮಧ್ಯಮ-ತೀವ್ರತೆಯ ಮಾನದಂಡವಾಗಿದೆ. ವೈಯಕ್ತಿಕ ಸಂದರ್ಭವು ಇನ್ನೂ ಮುಖ್ಯವಾಗಿದೆ, ಆದರೆ ಇದು ಉಪಯುಕ್ತ ಆರಂಭಿಕ ಉಲ್ಲೇಖವಾಗಿದೆ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ನಡಿಗೆಗೆ ಡಬಲ್ ಬೆಂಬಲ ಏಕೆ ಮುಖ್ಯ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ಸ್ಥಿರತೆಗಾಗಿ ನೀವು ಎರಡೂ ಪಾದಗಳನ್ನು ನೆಲದ ಮೇಲೆ ಎಷ್ಟು ಸಮಯವನ್ನು ಇಟ್ಟುಕೊಳ್ಳುತ್ತೀರಿ ಎಂಬುದನ್ನು ಇದು ಪ್ರತಿಬಿಂಬಿಸುತ್ತದೆ. ಹೆಚ್ಚಿನ ಮೌಲ್ಯಗಳು ಒರಟಾದ ಭೂಪ್ರದೇಶದಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಬಹುದು, ಆದರೆ ನಿಧಾನಗತಿಯ ವೇಗ ಅಥವಾ ಅಸಿಮ್ಮೆಟ್ರಿಯೊಂದಿಗೆ ಜೋಡಿಸಿದಾಗ ಅವು ಹೆಚ್ಚು ಎಚ್ಚರಿಕೆಯ ನಡಿಗೆ ಮಾದರಿಯನ್ನು ಸಹ ಸೂಚಿಸಬಹುದು."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ಸಮ್ಮಿತಿಯ ಬಗ್ಗೆ ನಾನು ಯಾವಾಗ ಹೆಚ್ಚು ಕಾಳಜಿ ವಹಿಸಬೇಕು?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ನೀವು ನೋವು, ಇತ್ತೀಚಿನ ಗಾಯ, ಪುನರ್ವಸತಿ ಅಥವಾ ಚಲನೆಯ ಗುಣಮಟ್ಟದಲ್ಲಿ ಗಮನಾರ್ಹ ಬದಲಾವಣೆಯೊಂದಿಗೆ ವ್ಯವಹರಿಸುವಾಗ ಸಮ್ಮಿತಿಯು ಹೆಚ್ಚು ಮುಖ್ಯವಾಗಿದೆ. ದೈನಂದಿನ ನಡಿಗೆಗೆ, ಸಣ್ಣ ಎಡ-ಬಲ ವ್ಯತ್ಯಾಸಗಳು ಸಹಜ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ಇದರ ನಂತರ ಉತ್ತಮ ಒಡನಾಡಿ ಪುಟ ಯಾವುದು?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ನೀವು ವ್ಯಾಖ್ಯಾನವನ್ನು ಬಯಸಿದರೆ, ನಡಿಗೆ ವಿಶ್ಲೇಷಣೆಯನ್ನು ಓದಿ. ನೀವು ಅಧಿವೇಶನ ಗುರಿಗಳನ್ನು ಬಯಸಿದರೆ, ವಾಕಿಂಗ್ ವಲಯಗಳನ್ನು ಓದಿ. ನೀವು ತ್ವರಿತ ಸ್ವಯಂ-ಪರೀಕ್ಷೆಯನ್ನು ಬಯಸಿದರೆ, ನಡಿಗೆ ಮೌಲ್ಯಮಾಪನವನ್ನು ಬಳಸಿ."
+      }
+    }
+  ]
+}</script><section class="eeat-author bg-light divider-top-lg divider-bottom-lg" aria-label="Author and Reviewer Information"><div class="container container-narrow"><div class="eeat-card" style="display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem; background: var(--color-bg-alt, #f8f9fa); border-radius: 8px; border: 1px solid var(--color-border, #e9ecef); margin-top: 3rem; margin-bottom: 2rem;"><div class="eeat-avatar" style="font-size: 2.5rem; line-height: 1; flex-shrink: 0;" aria-hidden="true">👨‍🔬</div><div class="eeat-details"><h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
+          Expertly Reviewed by 
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">AnalyticsZone Team</span></span></h3><p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: var(--color-body-text, #4a5568); line-height: 1.5;">
+          This content has been written and reviewed by a sports data metrics expert to ensure technical accuracy and adherence to the latest sports science methodologies.
+        </p></div></div></div></section><section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="stride-mechanics"><div class="container ai-citation-shell"><h2 class="ai-citation-title">ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್: ಕ್ಯಾಡೆನ್ಸ್, ಗೈಟ್, ಸ್ಟೆಪ್ ಟೈಮಿಂಗ್</h2><p class="ai-citation-answer">ವಾಕಿಂಗ್ ಸ್ಟ್ರೈಡ್ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಪ್ರತಿ ಹಂತವನ್ನು ಕ್ಯಾಡೆನ್ಸ್, ಸ್ಟ್ರೈಡ್ ಉದ್ದ, ಬೆಂಬಲ ಮತ್ತು ಸಮ್ಮಿತಿಯ ಮೂಲಕ ಹೇಗೆ ಆಯೋಜಿಸಲಾಗಿದೆ ಎಂಬುದನ್ನು ವಿವರಿಸುತ್ತದೆ. ಹೆಚ್ಚಿನ ವಾಕರ್‌ಗಳಿಗೆ, ಉತ್ತಮ ಮೆಕ್ಯಾನಿಕ್ಸ್ ಕ್ಲೀನರ್ ರಿದಮ್, ಭಂಗಿ ಮತ್ತು ಪುಶ್-ಆಫ್‌ನಿಂದ ದೀರ್ಘ ಹೆಜ್ಜೆಗಳನ್ನು ಒತ್ತಾಯಿಸುವ ಬದಲು ಬರುತ್ತದೆ.</p><ul class="ai-citation-facts" role="list"><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">📅</span><span>2026-04-03</span></li><li class="ai-citation-fact ai-citation-keywords"><span class="ai-citation-icon" aria-hidden="true">🏷️</span><span>ಹೆಜ್ಜೆ ಯಂತ್ರಶಾಸ್ತ್ರ · ನಡಿಗೆ ಜೈವಿಕ ಯಂತ್ರಶಾಸ್ತ್ರ · ಹೆಜ್ಜೆ ಆಪ್ಟಿಮೈಸೇಶನ್ · ವಾಕಿಂಗ್ ಕ್ಯಾಡೆನ್ಸ್ · ನಡಿಗೆ ಬಯೋಮೆಕಾನಿಕ್ಸ್</span></li><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">🔬</span><a href="../../kn/bibliography/">
+          
+          ಗ್ರಂಥಸೂಚಿ
+          
+        </a></li></ul></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="App Store ನಲ್ಲಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"><img src="../../assets/images/badge-app-store.svg"
+                            alt="App Store ನಲ್ಲಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ" width="135"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="ಅದನ್ನು Google Play ನಲ್ಲಿ ಪಡೆಯಿರಿ"><img src="../../assets/images/badge-google-play.svg"
+                            alt="ಅದನ್ನು Google Play ನಲ್ಲಿ ಪಡೆಯಿರಿ" width="135"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">ನಲ್ಲಿ ಲಭ್ಯವಿದೆ</h3><div class="lang-grid"><a href="/af/" class="lang-link"
+                    hreflang="af" >
+                    Afrikaans
+                </a><a href="/am/" class="lang-link"
+                    hreflang="am" >
+                    አမ္ဟာ
+                </a><a href="/ar/" class="lang-link"
+                    hreflang="ar" dir="rtl" >
+                    العربية
+                </a><a href="/bg/" class="lang-link"
+                    hreflang="bg" >
+                    Български
+                </a><a href="/bn/" class="lang-link"
+                    hreflang="bn" >
+                    বাংলা
+                </a><a href="/ca/" class="lang-link"
+                    hreflang="ca" >
+                    Català
+                </a><a href="/cs/" class="lang-link"
+                    hreflang="cs" >
+                    Čeština
+                </a><a href="/da/" class="lang-link"
+                    hreflang="da" >
+                    Dansk
+                </a><a href="/de/" class="lang-link"
+                    hreflang="de" >
+                    Deutsch
+                </a><a href="/el/" class="lang-link"
+                    hreflang="el" >
+                    Ελληνικά
+                </a><a href="/en/" class="lang-link"
+                    hreflang="en" >
+                    English
+                </a><a href="/es/" class="lang-link"
+                    hreflang="es" >
+                    Español
+                </a><a href="/et/" class="lang-link"
+                    hreflang="et" >
+                    Eesti
+                </a><a href="/fa/" class="lang-link"
+                    hreflang="fa" dir="rtl" >
+                    فارسی
+                </a><a href="/fi/" class="lang-link"
+                    hreflang="fi" >
+                    Suomi
+                </a><a href="/fr/" class="lang-link"
+                    hreflang="fr" >
+                    Français
+                </a><a href="/gu/" class="lang-link"
+                    hreflang="gu" >
+                    ગુજરાતી
+                </a><a href="/ha/" class="lang-link"
+                    hreflang="ha" >
+                    Hausa
+                </a><a href="/he/" class="lang-link"
+                    hreflang="he" dir="rtl" >
+                    עברית
+                </a><a href="/hi/" class="lang-link"
+                    hreflang="hi" >
+                    हिन्दी
+                </a><a href="/hr/" class="lang-link"
+                    hreflang="hr" >
+                    Hrvatski
+                </a><a href="/hu/" class="lang-link"
+                    hreflang="hu" >
+                    Magyar
+                </a><a href="/id/" class="lang-link"
+                    hreflang="id" >
+                    Bahasa Indonesia
+                </a><a href="/is/" class="lang-link"
+                    hreflang="is" >
+                    Íslenska
+                </a><a href="/it/" class="lang-link"
+                    hreflang="it" >
+                    Italiano
+                </a><a href="/ja/" class="lang-link"
+                    hreflang="ja" >
+                    日本語
+                </a><a href="/km/" class="lang-link"
+                    hreflang="km" >
+                    ភាសាខ្មែរ
+                </a><a href="/kn/" class="lang-link active"
+                    hreflang="kn" >
+                    ಕನ್ನಡ
+                </a><a href="/ko/" class="lang-link"
+                    hreflang="ko" >
+                    한국어
+                </a><a href="/lt/" class="lang-link"
+                    hreflang="lt" >
+                    Lietuvių
+                </a><a href="/lv/" class="lang-link"
+                    hreflang="lv" >
+                    Latviešu
+                </a><a href="/ms/" class="lang-link"
+                    hreflang="ms" >
+                    Bahasa Melayu
+                </a><a href="/my/" class="lang-link"
+                    hreflang="my" >
+                    မြန်မာ
+                </a><a href="/nb/" class="lang-link"
+                    hreflang="nb" >
+                    Norsk Bokmål
+                </a><a href="/nl/" class="lang-link"
+                    hreflang="nl" >
+                    Nederlands
+                </a><a href="/pl/" class="lang-link"
+                    hreflang="pl" >
+                    Polski
+                </a><a href="/pt/" class="lang-link"
+                    hreflang="pt" >
+                    Português
+                </a><a href="/pt-br/" class="lang-link"
+                    hreflang="pt-br" >
+                    Português (Brasil)
+                </a><a href="/ro/" class="lang-link"
+                    hreflang="ro" >
+                    Română
+                </a><a href="/ru/" class="lang-link"
+                    hreflang="ru" >
+                    Русский
+                </a><a href="/sk/" class="lang-link"
+                    hreflang="sk" >
+                    Slovenčina
+                </a><a href="/sl/" class="lang-link"
+                    hreflang="sl" >
+                    Slovenščina
+                </a><a href="/sr/" class="lang-link"
+                    hreflang="sr" >
+                    Српски
+                </a><a href="/sv/" class="lang-link"
+                    hreflang="sv" >
+                    Svenska
+                </a><a href="/sw/" class="lang-link"
+                    hreflang="sw" >
+                    Kiswahili
+                </a><a href="/ta/" class="lang-link"
+                    hreflang="ta" >
+                    தமிழ்
+                </a><a href="/te/" class="lang-link"
+                    hreflang="te" >
+                    తెలుగు
+                </a><a href="/th/" class="lang-link"
+                    hreflang="th" >
+                    ไทย
+                </a><a href="/tl/" class="lang-link"
+                    hreflang="tl" >
+                    Tagalog
+                </a><a href="/tr/" class="lang-link"
+                    hreflang="tr" >
+                    Türkçe
+                </a><a href="/uk/" class="lang-link"
+                    hreflang="uk" >
+                    Українська
+                </a><a href="/ur/" class="lang-link"
+                    hreflang="ur" dir="rtl" >
+                    اردو
+                </a><a href="/vi/" class="lang-link"
+                    hreflang="vi" >
+                    Tiếng Việt
+                </a><a href="/yo/" class="lang-link"
+                    hreflang="yo" >
+                    Yorùbá
+                </a><a href="/zh/" class="lang-link"
+                    hreflang="zh" >
+                    中文
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
+                &copy; 2026 Walk Analytics. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ
+            </p><ul class="footer-legal"><li><a href="/kn/privacy/">ಗೌಪ್ಯತೆ</a></li><li><a href="/kn/terms/">ನಿಯಮಗಳು</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>ಈ ವೆಬ್‌ಸೈಟ್ ನಿಮ್ಮ ಅನುಭವವನ್ನು ಸುಧಾರಿಸಲು ಕುಕೀಗಳನ್ನು ಬಳಸುತ್ತದೆ.</p><a href="/kn/privacy/" class="text-sm">ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">ನಿರಾಕರಿಸಿ</button><button id="cookie-accept" class="btn btn-primary btn-small">ಒಪ್ಪಿಕೊಳ್ಳಿ</button></div></div></div><script src="../../assets/js/core.min.js?v=62ba6be7" defer></script><script src="../../assets/js/search.min.js?v=62ba6be7" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>
