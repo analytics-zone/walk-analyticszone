@@ -1,0 +1,972 @@
+<!DOCTYPE html><html lang="lt" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=optional"
+    rel="stylesheet"><title>Eisenos efektyvumas: vaikščiojimo ekonomiškumas, CoT, geresnė forma</title><meta name="description" content="Supraskite vaikščiojimo ekonomiją, transporto išlaidas ir kodėl kai kurie žingsnių modeliai kainuoja daugiau energijos, kad galėtumėte pagerinti efektyvumą nedidindami"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="ėjimo efektyvumo rodikliai, ėjimo ekonomiškumas, efektyvumo balas, žingsnio efektyvumas, ėjimo našumas"><link rel="canonical" href="https://walk.analyticszone.app/lt/gait-efficiency/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-03-24T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/lt/gait-efficiency/"><meta property="og:title" content="Eisenos efektyvumas: vaikščiojimo ekonomiškumas, CoT, geresnė forma"><meta property="og:description" content="Supraskite vaikščiojimo ekonomiją, transporto išlaidas ir kodėl kai kurie žingsnių modeliai kainuoja daugiau energijos, kad galėtumėte pagerinti efektyvumą nedidindami"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="lt_LT"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/lt/gait-efficiency/"><meta name="twitter:title" content="Eisenos efektyvumas: vaikščiojimo ekonomiškumas, CoT, geresnė forma"><meta name="twitter:description" content="Supraskite vaikščiojimo ekonomiją, transporto išlaidas ir kodėl kai kurie žingsnių modeliai kainuoja daugiau energijos, kad galėtumėte pagerinti efektyvumą nedidindami"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/gait-efficiency/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/gait-efficiency/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/gait-efficiency/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/gait-efficiency/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/gait-efficiency/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/gait-efficiency/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/gait-efficiency/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/gait-efficiency/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/gait-efficiency/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/gait-efficiency/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/gait-efficiency/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/gait-efficiency/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/gait-efficiency/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/gait-efficiency/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/gait-efficiency/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/gait-efficiency/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/gait-efficiency/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/gait-efficiency/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/gait-efficiency/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="noindex, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+main.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=1c7ace58"><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "analyticszone+walk@onmedic.org"
+  },
+  
+  "sameAs": [
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+    "https://twitter.com/walkanalytics",
+    
+    "https://apps.apple.com/us/app/walk-analytics/id6755187154",
+    
+    "https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics"
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "inLanguage": "lt"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Walk Analytics",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "url": "https://walk.analyticszone.app",
+  "applicationCategory": ["HealthApplication", "FitnessApplication"],
+  "operatingSystem": "iOS, Android",
+  "author": {
+    "@type": "Organization",
+    "name": "AnalyticsZone Team"
+  },
+  "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Pradžia",
+      "item": "https://walk.analyticszone.app/lt/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mokslas",
+      "item": "https://walk.analyticszone.app/lt/research/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Eisenos efektyvumas",
+      "item": "https://walk.analyticszone.app/lt/gait-efficiency/"
+    }
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Eisenos efektyvumas: vaikščiojimo ekonomiškumas, CoT, geresnė forma",
+  "description": "Supraskite vaikščiojimo ekonomiją, transporto išlaidas ir kodėl kai kurie žingsnių modeliai kainuoja daugiau energijos, kad galėtumėte pagerinti efektyvumą nedidindami",
+  "url": "https://walk.analyticszone.app/lt/gait-efficiency/",
+  "inLanguage": "lt",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Walk Analytics",
+    "url": "https://walk.analyticszone.app"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-24",
+  "keywords": ["ėjimo efektyvumo rodikliai", "ėjimo ekonomiškumas", "efektyvumo balas", "žingsnio efektyvumas", "ėjimo našumas"],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "ėjimo efektyvumo rodikliai"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ėjimo ekonomiškumas"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "efektyvumo balas"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "žingsnio efektyvumas"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ėjimo našumas"
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Eisenos efektyvumas: vaikščiojimo ekonomiškumas, CoT, geresnė forma",
+  "description": "Supraskite vaikščiojimo ekonomiją, transporto išlaidas ir kodėl kai kurie žingsnių modeliai kainuoja daugiau energijos, kad galėtumėte pagerinti efektyvumą nedidindami",
+  "author": {
+    "@type": "Person",
+    "name": "AnalyticsZone Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walk Analytics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://walk.analyticszone.app/assets/images/logo.png"
+    }
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://walk.analyticszone.app/lt/gait-efficiency/"
+  }
+}
+</script><script>
+    (function () {
+      let theme = localStorage.getItem('theme');
+      // Older builds could persist a per-subdomain `theme=light` value without a UI
+      // to keep it consistent across apps. Treat it as stale and fall back to the OS.
+      if (theme === 'light') {
+        try { localStorage.removeItem('theme'); } catch (e) { /* ignore */ }
+        theme = null;
+      }
+
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script></head><body><a href="#main-content" class="skip-link">Pereiti prie turinio</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/lt/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/lt/" 
+                                aria-current="">
+                                Pradžia
+                            </a></li><li class="has-submenu" ><a href="/lt/getting-started/" class="nav-label">Mokykis</a><ul class="submenu"><li><a href="/lt/getting-started/" 
+                                        aria-current="">
+                                        Darbo pradžia
+                                    </a></li><li><a href="/lt/walking-zones/" 
+                                        aria-current="">
+                                        Pasivaikščiojimo zonos
+                                    </a></li><li><a href="/lt/gait-analysis/" 
+                                        aria-current="">
+                                        Eisenos analizė
+                                    </a></li><li><a href="/lt/training-load/" 
+                                        aria-current="">
+                                        Treniruotės krūvis
+                                    </a></li><li><a href="/lt/wss-calculator/" 
+                                        aria-current="">
+                                        WSS skaičiuoklė
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/lt/research/" class="nav-label">Mokslas</a><ul class="submenu"><li><a href="/lt/research/" 
+                                        aria-current="">
+                                        Tyrimas
+                                    </a></li><li><a href="/lt/formulas/" 
+                                        aria-current="">
+                                        Formulės
+                                    </a></li><li><a href="/lt/gait-efficiency/" class="active" 
+                                        aria-current="page">
+                                        Eisenos efektyvumas
+                                    </a></li><li><a href="/lt/stride-mechanics/" 
+                                        aria-current="">
+                                        Žingsnio mechanika
+                                    </a></li><li><a href="/lt/walking-vs-running/" 
+                                        aria-current="">
+                                        Ėjimas vs bėgimas
+                                    </a></li><li><a href="/lt/benchmarks/" 
+                                        aria-current="">
+                                        Etalonai
+                                    </a></li><li><a href="/lt/bibliography/" 
+                                        aria-current="">
+                                        Bibliografija
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/lt/for-health/" class="nav-label">Tau</a><ul class="submenu"><li><a href="/lt/for-health/" 
+                                        aria-current="">
+                                        Dėl sveikatos
+                                    </a></li><li><a href="/lt/for-fitness/" 
+                                        aria-current="">
+                                        Dėl fitneso
+                                    </a></li><li><a href="/lt/for-seniors/" 
+                                        aria-current="">
+                                        Senjorams
+                                    </a></li><li><a href="/lt/for-rehabilitation/" 
+                                        aria-current="">
+                                        Reabilitacijai
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/lt/cadence-calculator/" class="nav-label">Įrankiai</a><ul class="submenu"><li><a href="/lt/cadence-calculator/" 
+                                        aria-current="">
+                                        Kadencijos skaičiuoklė
+                                    </a></li><li><a href="/lt/gait-assessment/" 
+                                        aria-current="">
+                                        Eisenos įvertinimas
+                                    </a></li><li><a href="/lt/vo2max-calculator/" 
+                                        aria-current="">
+                                        VO₂max Skaičiuoklė
+                                    </a></li></ul></li><li><a href="/lt/contact/" 
+                                aria-current="">
+                                Kontaktai
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Pasirinkite kalbą"><option value="af" >
+                            Afrikaans
+                        </option><option value="am" >
+                            አမ္ဟာ
+                        </option><option value="ar" >
+                            العربية
+                        </option><option value="bg" >
+                            Български
+                        </option><option value="bn" >
+                            বাংলা
+                        </option><option value="ca" >
+                            Català
+                        </option><option value="cs" >
+                            Čeština
+                        </option><option value="da" >
+                            Dansk
+                        </option><option value="de" >
+                            Deutsch
+                        </option><option value="el" >
+                            Ελληνικά
+                        </option><option value="en" >
+                            English
+                        </option><option value="es" >
+                            Español
+                        </option><option value="et" >
+                            Eesti
+                        </option><option value="fa" >
+                            فارسی
+                        </option><option value="fi" >
+                            Suomi
+                        </option><option value="fr" >
+                            Français
+                        </option><option value="gu" >
+                            ગુજરાતી
+                        </option><option value="ha" >
+                            Hausa
+                        </option><option value="he" >
+                            עברית
+                        </option><option value="hi" >
+                            हिन्दी
+                        </option><option value="hr" >
+                            Hrvatski
+                        </option><option value="hu" >
+                            Magyar
+                        </option><option value="id" >
+                            Bahasa Indonesia
+                        </option><option value="is" >
+                            Íslenska
+                        </option><option value="it" >
+                            Italiano
+                        </option><option value="ja" >
+                            日本語
+                        </option><option value="km" >
+                            ភាសាខ្មែរ
+                        </option><option value="kn" >
+                            ಕನ್ನಡ
+                        </option><option value="ko" >
+                            한국어
+                        </option><option value="lt" selected>
+                            Lietuvių
+                        </option><option value="lv" >
+                            Latviešu
+                        </option><option value="ms" >
+                            Bahasa Melayu
+                        </option><option value="my" >
+                            မြန်မာ
+                        </option><option value="nb" >
+                            Norsk Bokmål
+                        </option><option value="nl" >
+                            Nederlands
+                        </option><option value="pl" >
+                            Polski
+                        </option><option value="pt" >
+                            Português
+                        </option><option value="pt-br" >
+                            Português (Brasil)
+                        </option><option value="ro" >
+                            Română
+                        </option><option value="ru" >
+                            Русский
+                        </option><option value="sk" >
+                            Slovenčina
+                        </option><option value="sl" >
+                            Slovenščina
+                        </option><option value="sr" >
+                            Српски
+                        </option><option value="sv" >
+                            Svenska
+                        </option><option value="sw" >
+                            Kiswahili
+                        </option><option value="ta" >
+                            தமிழ்
+                        </option><option value="te" >
+                            తెలుగు
+                        </option><option value="th" >
+                            ไทย
+                        </option><option value="tl" >
+                            Tagalog
+                        </option><option value="tr" >
+                            Türkçe
+                        </option><option value="uk" >
+                            Українська
+                        </option><option value="ur" >
+                            اردو
+                        </option><option value="vi" >
+                            Tiếng Việt
+                        </option><option value="yo" >
+                            Yorùbá
+                        </option><option value="zh" >
+                            中文
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a><a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a><a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a><a href="https://paceva.analyticszone.app" class="suite-app-link">Paceva Analytics</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Perjungti meniu"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/lt/">Pradžia</a></li><li><a href="/lt/research/">Mokslas</a></li><li><span aria-current="page">Eisenos efektyvumas</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/lt/">Pradžia</a>/<a href="/lt/#science">Mokslas</a>/ Eisenos efektyvumas</div><h1>Ėjimo eisenos efektyvumas ir ekonomiškumas</h1><p class="lead">Ėjimo energijos sąnaudų supratimas ir optimizavimas</p></div></section><section class="guide-content"><div class="container">
+Įvadas
+<h2>Kas yra eisenos efektyvumas?</h2><p><strong>Eisenos efektyvumas</strong>(taip pat vadinamas<strong>vaikščiojimo ekonomika</strong>) nurodo energijos sąnaudas
+      vaikščioti nurodytu greičiu. Veiksmingesni vaikštynės sunaudoja mažiau energijos – matuojant deguonies suvartojimu, kalorijomis arba
+      medžiagų apykaitos ekvivalentai – išlaikyti tą patį tempą.</p><p>Skirtingai nuo eisenos kokybės (simetrijos, kintamumo) ar eisenos greičio, efektyvumas iš esmės yra apie<strong>energijos
+        išlaidas</strong>. Du žmonės gali vaikščioti tuo pačiu greičiu su panašia biomechanika, tačiau vienam gali prireikti
+      žymiai daugiau energijos dėl kūno rengybos, technikos ar antropometrijos skirtumų.</p><div class="key-finding"><strong>Kodėl efektyvumas svarbus:</strong><ul><li><strong>Našumas:</strong>Geresnė ekonomika = didesnis greitis ir mažesnis nuovargis</li><li><strong>Ištvermė:</strong>Mažesnės energijos sąnaudos = galimybė nueiti didesnius atstumus</li><li><strong>Sveikata:</strong>Padidėjęs efektyvumas rodo geresnę širdies ir kraujagyslių bei raumenų ir kaulų sistemos būklę</li><li><strong>Svorio valdymas:</strong>Paradoksalu, bet labai didelis efektyvumas gali reikšti mažesnį kalorijų sudeginimą</li></ul></div>
+Transporto kaina
+<h2>Transporto kaina (CoT)</h2><p>The<strong>Transporto kaina</strong>yra auksinis standartinis judėjimo efektyvumo matas, atspindintis
+      energijos, reikalingos vienam kūno masės vienetui perkelti per vieną atstumo vienetą.</p><h3>Vienetai ir skaičiavimas</h3><p>CoT gali būti išreikštas keliais lygiaverčiais vienetais:</p><div class="formula-box"><pre><strong>1. Metabolinės transporto išlaidos (J/kg/m arba kcal/kg/km):</strong>
+
+CoT = Energy Expenditure / (Body Mass × Distance)
+
+Units: Joules per kilogram per meter (J/kg/m)
+       OR kilocalories per kilogram per kilometer (kcal/kg/km)
+
+Conversion: 1 kcal/kg/km = 4.184 J/kg/m
+
+
+<strong>2. Grynoji transporto kaina (be matmenų):</strong>
+
+Net CoT = (Gross VO₂ - Resting VO₂) / Speed
+
+Units: mL O₂/kg/m
+
+<strong>Santykiai:</strong> 1 L O₂ ≈ 5 kcal ≈ 20.9 kJ</pre></div><h3>Tipiškos vaikščiojančios CoT reikšmės</h3><div class="data-table"><table><thead><tr><th>Būklė</th><th>Grynasis CoT (J/kg/m)</th><th>Grynasis CoT (kcal/kg/km)</th><th>Bendroji energija (kcal/km) 70 kg žmogui</th></tr></thead><tbody><tr><td><strong>Optimalus greitis ėjimas (~1,3 m/s)</strong></td><td>2,0-2,3</td><td>0,48-0,55</td><td>50-60 kcal/km</td></tr><tr><td><strong>Lėtas ėjimas (0,8 m/s)</strong></td><td>2,5-3,0</td><td>0,60-0,72</td><td>60-75 kcal/km</td></tr><tr><td><strong>Greitas ėjimas (1,8 m/s)</strong></td><td>2,8-3,5</td><td>0,67-0,84</td><td>70-90 kcal/km</td></tr><tr><td><strong>Labai greitas / lenktyninis ėjimas (2,2+ m/s)</strong></td><td>3,5-4,5</td><td>0,84-1,08</td><td>90-115 kcal/km</td></tr><tr><td><strong>Bėgimas (2,5 m/s)</strong></td><td>3,8-4,2</td><td>0,91-1,00</td><td>95-110 kcal/km</td></tr></tbody></table></div><p><strong>Pagrindinė įžvalga:</strong>Ėjimas turi U formos sąnaudų ir greičio santykį – yra optimalus greitis (apie 1,3
+      m/s arba 4,7 km/h), kai CoT yra sumažintas iki minimumo. Vaikščiojimas lėčiau ar greičiau nei šis optimalus greitis padidina energiją
+      kilometro kaina.</p><h3>U formos ekonomikos kreivė</h3><p>Ryšys tarp ėjimo greičio ir energijos taupymo sudaro būdingą U formos kreivę:</p><ul><li><strong>Per lėtas (&lt;1,0 m/s):</strong>Prasta raumenų ekonomika, neefektyvi švytuoklės mechanika, padidėjo
+        santykinis stovėjimo laikas</li><li><strong>Optimalus (1,2–1,4 m/s):</strong>Sumažina energijos sąnaudas dėl efektyvios apverstos švytuoklės mechanikos</li><li><strong>Per greitai (&gt;1,8 m/s):</strong>Padidėjęs raumenų aktyvumas, aukštesnė kadencija, artėja
+        vaikščiojimo biomechaninės ribos</li><li><strong>Labai greitas (&gt;2,0 m/s):</strong>Ėjimas tampa mažiau ekonomiškas nei bėgimas; natūralus perėjimas
+        tašką</li></ul><div class="key-finding"><strong>Tyrimo išvados:</strong>Pageidaujamas žmonių ėjimo greitis (~1,3 m/s) labai atitinka greitį
+      minimalios energijos sąnaudos, o tai rodo, kad natūrali atranka optimizavo vaikščiojimo efektyvumą (Ralston, 1958; Zarrugh ir kt.,
+      1974).</div>
+Apverstos švytuoklės modelis
+<h2>Apverstos švytuoklės ėjimo modelis</h2><p>Ėjimas iš esmės skiriasi nuo bėgimo energijos taupymo mechanizmu. Vaikščiojant naudojamas an<strong>apversta
+        švytuoklė</strong>modelis, kuriame mechaninė energija svyruoja tarp kinetinės ir gravitacinės potencialios energijos.</p><h3>Kaip veikia švytuoklė</h3><ol><li><strong>Susisiekimo etapas:</strong><ul><li>Koja veikia kaip standi apversta švytuoklė</li><li>Kūno skliautai virš pasodintos pėdos</li><li>Kinetinė energija virsta gravitacine potencialia energija (kūnas pakyla)</li></ul></li><li><strong>Lanko viršūnė:</strong><ul><li>Kūnas pasiekia maksimalų aukštį</li><li>Greitis laikinai sumažėja (minimali kinetinė energija)</li><li>Maksimali potenciali energija</li></ul></li><li><strong>Nusileidimo fazė:</strong><ul><li>Kūnas nusileidžia ir įsibėgėja į priekį</li><li>Potenciali energija vėl virsta kinetine energija</li><li>Švytuoklė pasisuka į priekį</li></ul></li></ol><h3>Energijos atkūrimo procentas</h3><p><strong>Mechaninis energijos atgavimas</strong>kiekybiškai įvertina, kiek energijos pasikeičia kinetinė ir potencialinė
+      formuojasi, o ne generuoja / įsisavina raumenys:</p><div class="data-table"><table><thead><tr><th>Ėjimo greitis</th><th>Energijos atgavimas (%)</th><th>Interpretacija</th></tr></thead><tbody><tr><td>Lėtas (0,8 m/s)</td><td>~50%</td><td>Prasta švytuoklės mechanika</td></tr><tr><td>Optimalus (1,3 m/s)</td><td>~65-70 proc.</td><td>Maksimalus švytuoklės efektyvumas</td></tr><tr><td>Greitas (1,8 m/s)</td><td>~55 %</td><td>Mažėjanti švytuoklės funkcija</td></tr><tr><td>Bėgimas (bet kokiu greičiu)</td><td>~5-10%</td><td>Spyruoklės masės sistema, o ne švytuoklė</td></tr></tbody></table></div><p><strong>Kodėl atsigavimas mažėja dideliu greičiu:</strong>Ėjimo greičiui padidėjus daugiau nei ~1,8 m/s, apversta
+      švytuoklė tampa mechaniškai nestabili. Kūnas natūraliai pereina prie bėgimo, kuris naudoja elastinę energiją
+      saugojimas (spyruoklės masės sistema), o ne švytuoklinis keitimas.</p>
+Froude numeris
+<h2>Froude skaičius ir bematis greitis</h2><p>The<strong>Froude numeris</strong>yra bematis parametras, normalizuojantis ėjimo greitį kojos atžvilgiu
+      ilgis ir gravitacija, leidžiantys teisingai palyginti skirtingo ūgio asmenis.</p><h3>Formulė ir aiškinimas</h3><div class="formula-box"><pre>Froude Number (Fr) = v² / (g × L)
+
+Where:
+  v = walking speed (m/s)
+  g = acceleration due to gravity (9.81 m/s²)
+  L = leg length (m, approximately 0.53 × height)
+
+<strong>Pavyzdys:</strong>
+  Height: 1.75 m
+  Leg length: 0.53 × 1.75 = 0.93 m
+  Walking speed: 1.3 m/s
+  Fr = (1.3)² / (9.81 × 0.93) = 1.69 / 9.12 = 0.185
+
+<strong>Kritinės ribos:</strong>
+  Fr &lt; 0.15: Slow walking
+  Fr 0.15-0.30: Normal comfortable walking
+  Fr 0.30-0.50: Fast walking
+  Fr &gt; 0.50: Walk-to-run transition (unstable walking)</pre></div><p><strong>Tyrimų programos:</strong>Froudo skaičius paaiškina, kodėl aukštesni asmenys natūraliai vaikšto greičiau
+      pasiekti tą patį bematį greitį (taigi ir optimalų ekonomiškumą), ilgesnėms kojoms reikia didesnio absoliutaus greičio.
+      Vaikai su trumpesnėmis kojomis turi proporcingai lėtesnį patogų ėjimo greitį.</p><div class="key-finding"><strong>Perėjimas prie bėgimo:</strong>Įvairių rūšių ir dydžių perėjimas prie bėgimo vyksta esant Fr ≈ 0,5.
+      Šis universalus slenkstis reiškia tašką, kuriame apverstos švytuoklės mechanika tampa mechaniškai nestabili
+      (Aleksandras, 1989).</div>
+Veiksniai, turintys įtakos efektyvumui
+<h2>Ėjimo efektyvumą įtakojantys veiksniai</h2><h3>1. Antropometriniai veiksniai</h3><p><strong>Kojos ilgis:</strong></p><ul><li>Ilgesnės kojos → ilgesnis optimalus žingsnis → mažesnis ritmas tuo pačiu greičiu</li><li>Aukštesni asmenys turi 5–10 % geresnę ekonomiją pasirinktu greičiu</li><li>Froude skaičius normalizuoja šį poveikį</li></ul><p><strong>Kūno masė:</strong></p><ul><li>Sunkesni asmenys turi didesnes absoliučios energijos sąnaudas (kcal/km)</li><li>Tačiau pagal masę normalizuotas CoT (kcal/kg/km) gali būti panašus, jei liesos masės santykis yra geras</li><li>Kiekvienas 10 kg perteklinis svoris padidina energijos sąnaudas ~7-10%</li></ul><p><strong>Kūno sudėtis:</strong></p><ul><li>Didesnis raumenų ir riebalų santykis pagerina ekonomiškumą (raumenys yra metaboliškai efektyvus audinys)</li><li>Per didelis riebumas padidina mechaninį darbą be funkcinės naudos</li><li>Centrinis nutukimas veikia laikyseną ir eisenos mechaniką</li></ul><h3>2. Biomechaniniai veiksniai</h3><p><strong>Žingsnio ilgio ir žingsnio optimizavimas:</strong></p><div class="data-table"><table><thead><tr><th>strategija</th><th>Poveikis CoT</th><th>Paaiškinimas</th></tr></thead><tbody><tr><td><strong>Pageidautina kadencija</strong></td><td>Optimalus</td><td>Savarankiškai pasirinktas ritmas sumažina energijos sąnaudas</td></tr><tr><td><strong>±10 % kadencijos pokytis</strong></td><td>+3-5% CoT</td><td>Priverstinis nukrypimas nuo optimalaus padidina išlaidas</td></tr><tr><td><strong>±20 % kadencijos pokytis</strong></td><td>+8-12% CoT</td><td>Žymiai mažiau ekonomiškas</td></tr><tr><td><strong>Persistengimas</strong></td><td>+5-15% CoT</td><td>Stabdymo jėgos, padidėjęs raumenų darbas</td></tr></tbody></table></div><div class="key-finding"><strong>Tyrimo išvados:</strong>Žmonės natūraliai pasirenka ritmą, kuris bet kuriuo atveju sumažina medžiagų apykaitos išlaidas
+      greitis (Holt ir kt., 1991). Priverstinis ±10–20 % nuokrypis nuo pageidaujamo ritmo padidina energijos sąnaudas
+      3-12 proc.</div><p><strong>Vertikalus svyravimas:</strong></p><ul><li>Per didelis vertikalus poslinkis (&gt;8-10 cm) eikvoja energiją nejudant į priekį</li><li>Kiekvienas papildomas svyravimų cm padidina CoT ~0,5-1%</li><li>Lenktynių vaikštynės sumažina svyravimus iki 3–5 cm dėl klubų mobilumo ir technikos</li></ul><p><strong>Rankų siūbavimas:</strong></p><ul><li>Natūralus rankų siūbavimas sumažina medžiagų apykaitos išlaidas 10–12 % (Collins ir kt., 2009)</li><li>Rankos atsveria kojų judesius, sumažindamos kamieno sukimosi energiją</li><li>Ginklų suvaržymas (pvz., sunkių krepšių nešiojimas) žymiai padidina energijos sąnaudas</li></ul><h3>3. Fiziologiniai veiksniai</h3><p><strong>Aerobinis fitnesas (VO₂max):</strong></p><ul><li>Didesnis VO₂max koreliuoja su ~15-20% geresne ėjimo ekonomija</li><li>Treniruotų vaikščiotojų ŠSD ir VO₂ yra mažesni nei maksimalaus tempo</li><li>Treniruojant ištvermę pagerėja mitochondrijų tankis ir oksidacinių fermentų pajėgumas</li></ul><p><strong>Raumenų jėga ir galia:</strong></p><ul><li>Stipresni klubų tiesikliai (sėdmenys) ir kulkšnies padų lenkiamieji raumenys (blauzdos) pagerina varymo efektyvumą</li><li>8–12 savaičių pasipriešinimo treniruotės gali pagerinti ėjimo ekonomiją 5–10 %</li><li>Ypač svarbu vyresnio amžiaus žmonėms, kenčiantiems nuo sarkopenijos</li></ul><p><strong>Neuromuskulinis koordinavimas:</strong></p><ul><li>Veiksmingi motorinių blokų įdarbinimo modeliai sumažina nereikalingą susitraukimą</li><li>Praktikuojami judesių modeliai tampa automatiškesni, sumažinant žievės pastangas</li><li>Patobulinta propriocepcija leidžia tiksliau kontroliuoti laikyseną ir pusiausvyrą</li></ul><h3>4. Aplinkos ir išorės veiksniai</h3><p><strong>Gradientas (įkalnėn / žemyn):</strong></p><div class="data-table"><table><thead><tr><th>Gradientas</th><th>Poveikis CoT</th><th>Energijos sąnaudų daugiklis</th></tr></thead><tbody><tr><td><strong>Lygis (0 %)</strong></td><td>Bazinė linija</td><td>1,0 ×</td></tr><tr><td><strong>+5% įkalnėn</strong></td><td>+45-50% padidėjimas</td><td>1,45–1,50 ×</td></tr><tr><td><strong>+10% įkalnėn</strong></td><td>+90-100% padidėjimas</td><td>1,90-2,00×</td></tr><tr><td><strong>+15% įkalnėn</strong></td><td>+140-160% padidėjimas</td><td>2,40-2,60×</td></tr><tr><td><strong>-5% nuokalnėn</strong></td><td>-20–10% (nedidelis sutaupymas)</td><td>0,80–0,90×</td></tr><tr><td><strong>-10% nuokalnėn</strong></td><td>-15–5% (mažėja santaupos)</td><td>0,85–0,95 ×</td></tr><tr><td><strong>-15% nuokalnėn</strong></td><td>+0–+10 % (ekscentrinis mokestis)</td><td>1,00-1,10×</td></tr></tbody></table></div><p><strong>Kodėl nuokalnė nėra „nemokama“:</strong>Norint kontroliuoti stačius nuokalnius, reikia ekscentriško raumenų susitraukimo
+      nusileidimas, kuris yra metaboliškai brangus ir sukelia raumenų pažeidimus. Daugiau nei -10%, vaikščiojimas nuokalne iš tikrųjų gali kainuoti
+      daugiau energijos nei lygiu vaikščiojimu dėl stabdymo jėgų.</p><p><strong>Krovinio nešimas (kuprinė, sveriama liemenė):</strong></p><div class="formula-box"><pre>Energy Cost Increase ≈ 1% per 1 kg of load
+
+Example: 70 kg person with 10 kg backpack
+  Baseline CoT: 0.50 kcal/kg/km
+  Loaded CoT: 0.50 × (1 + 0.10) = 0.55 kcal/kg/km
+  Increase: +10% energy cost
+
+<strong>Krovinio paskirstymo dalykai:</strong>
+  - Hip belt pack: Minimal penalty (~8% for 10 kg)
+  - Backpack (well-fitted): Moderate penalty (~10% for 10 kg)
+  - Poorly fitted pack: High penalty (~15-20% for 10 kg)
+  - Ankle weights: Severe penalty (~5-6% per 1 kg at ankles!)</pre></div><p><strong>Vietovė ir paviršius:</strong></p><ul><li><strong>Asfaltas/betonas:</strong>Pradinė linija (tvirčiausias, žemiausias CoT)</li><li><strong>Žolė:</strong>+3-5% CoT dėl atitikties ir trinties</li><li><strong>Takas (purvas/žvyras):</strong>+5-10% CoT dėl nelygumo</li><li><strong>Smėlis:</strong>+20-50% CoT (minkštas smėlis ypač brangus)</li><li><strong>Sniegas:</strong>+15-40% CoT priklausomai nuo gylio ir kietumo</li></ul>
+Ėjimas prieš bėgimą ekonomika
+<h2>Ėjimas prieš bėgimą: ekonomiškas krosoveris</h2><p>Svarbus lokomotyvo mokslo klausimas:<strong>Kada bėgimas tampa ekonomiškesnis nei
+        vaikščioti?</strong></p><h3>Crossover greitis</h3><div class="data-table"><table><thead><tr><th>Greitis (m/s)</th><th>Greitis (km/h)</th><th>Ėjimas CoT (kcal/kg/km)</th><th>Bėgimas CoT (kcal/kg/km)</th><th>Ekonomiškiausias</th></tr></thead><tbody><tr><td>1.3</td><td>4.7</td><td>0.48</td><td>N/A (per lėtai važiuoti)</td><td><strong>Vaikščioti</strong></td></tr><tr><td>1.8</td><td>6.5</td><td>0,67</td><td>0,95</td><td><strong>Vaikščioti</strong></td></tr><tr><td>2.0</td><td>7.2</td><td>0,80</td><td>0,95</td><td><strong>Vaikščioti</strong></td></tr><tr><td>2.2</td><td>7.9</td><td>0,95</td><td>0,95</td><td><strong>Lygus</strong>(perėjimo taškas)</td></tr><tr><td>2.5</td><td>9.0</td><td>1.15+</td><td>0,96</td><td><strong>Bėk</strong></td></tr><tr><td>3.0</td><td>10.8</td><td>Labai aukštas</td><td>0,97</td><td><strong>Bėk</strong></td></tr></tbody></table></div><p><strong>Pagrindinės įžvalgos:</strong></p><ul><li><strong>Perėjimo greitis pėsčiomis:</strong>~2,0-2,2 m/s (7-8 km/h) daugumai žmonių</li><li><strong>Vaikščiojantis CoT didėja eksponentiškai</strong>virš 1,8 m/s</li><li><strong>Veikiant CoT išlieka palyginti plokščia</strong>skersinis greitis (šiek tiek padidėjimas)</li><li><strong>Žmonės spontaniškai pereina</strong>netoli ekonomiško perėjimo taško</li></ul><div class="key-finding"><strong>Tyrimo išvados:</strong>Pageidaujamas ėjimo ir bėgimo perėjimo greitis (~2,0 m/s) yra maždaug
+      toks pat greitis, kai bėgimas tampa ekonomiškesnis nei ėjimas, todėl medžiagų apykaitos optimizavimas yra pagrindinis
+      eisenos pasirinkimą lemiantis veiksnys (Margaria ir kt., 1963; Hreljac, 1993).</div>
+Efektyvumo metrika ir stebėjimas
+<h2>Praktinės efektyvumo metrikos</h2><h3>1. Vertikalus santykis</h3><p>The<strong>Vertikalus santykis</strong>yra vienas geriausių mechaninio ėjimo efektyvumo rodiklių. Tai matuoja
+      kiek vertikalių svyravimų („atšokimas“ jūsų žingsnyje) atsiranda, palyginti su jūsų žingsnio ilgiu.</p><div class="formula-box"><pre>Vertical Ratio (%) = (Vertical Oscillation / Stride Length) × 100
+
+<strong>Pavyzdys:</strong>
+  Vertical Oscillation: 5 cm
+  Stride Length: 140 cm
+  Vertical Ratio = (5 / 140) × 100 = 3.57%
+
+<strong>Mažesnės vertės = geresnė ekonomika</strong></pre></div><p><strong>Kodėl tai svarbu:</strong>Didelis vertikalus santykis reiškia, kad eikvojate energiją, judindami savo masės centrą aukštyn
+      ir žemyn, o ne į priekį. Elitiniai vaikštynės sumažina šį santykį, kad taupytų energiją.</p><h3>2. Efektyvumo koeficientas (EF)</h3><p>The<strong>Efektyvumo faktorius</strong>(anksčiau WEI) koreliuoja greitį su fiziologinėmis pastangomis (širdies ritmu). Tai
+      rodo, kiek greičio galite sukurti kiekvienam širdies plakimui.</p><div class="formula-box"><pre>EF = (Speed in m/s / Heart Rate in bpm) × 1000
+
+<strong>Pavyzdys:</strong>
+  Speed: 1.4 m/s (5.0 km/h)
+  Heart Rate: 110 bpm
+  EF = (1.4 / 110) × 1000 = 12.7
+
+<strong>Bendrieji gairės:</strong>
+  &lt;8: Below average efficiency
+  8-12: Average
+  12-16: Good
+  16-20: Very good
+  &gt;20: Excellent (elite fitness)</pre></div><p><strong>Apribojimai:</strong>WEI reikalingas širdies ritmo monitorius ir jį veikia ne tik efektyvumas (karštis,
+      stresas, kofeinas, ligos). Geriausia naudoti kaip išilginę sekimo metriką tame pačiame maršrute/sąlygomis.</p><h3>3. Numatomos transporto išlaidos pagal greitį ir HR</h3><p>Tiems, kurie neturi medžiagų apykaitos matavimo įrangos:</p><div class="formula-box"><pre>Approximate Net CoT (kcal/kg/km) from HR:
+
+1. Estimate VO₂ from HR:
+   VO₂ (mL/kg/min) ≈ 0.4 × (HR - HRrest) × (VO₂max / (HRmax - HRrest))
+
+2. Convert to energy:
+   Energy (kcal/min) = VO₂ (L/min) × 5 kcal/L × Body Weight (kg)
+
+3. Calculate CoT:
+   CoT = Energy (kcal/min) / [Speed (km/h) / 60] / Body Weight (kg)
+
+<strong>Paprastesnis aproksimavimas:</strong>
+   For walking 4-6 km/h at moderate intensity:
+   Net CoT ≈ 0.50-0.65 kcal/kg/km (typical range for most people)</pre></div><h3>4. Deguonies kaina vienam kilometrui</h3><p>Turintiems prieigą prie VO₂ matavimo:</p><div class="formula-box"><pre>VO₂ Cost per km = Net VO₂ (mL/kg/min) / Speed (km/h) × 60
+
+<strong>Pavyzdys:</strong>
+  Walking at 5 km/h
+  Net VO₂ = 12 mL/kg/min
+  VO₂ cost = 12 / 5 × 60 = 144 mL O₂/kg/km
+
+<strong>Etalonai (vidutiniam greičiui ~5 km/h):</strong>
+  &gt;180 mL/kg/km: Poor economy
+  150-180: Below average
+  130-150: Average
+  110-130: Good economy
+  &lt;110: Excellent economy</pre></div>
+Efektyvumo gerinimas
+<h2>Mokymai, skirti pagerinti ėjimo efektyvumą</h2><h3>1. Optimizuokite žingsnio mechaniką</h3><p><strong>Raskite savo optimalų ritmą:</strong></p><ul><li>Vaikščiokite tiksliniu greičiu, kai metronomas nustatytas skirtingoms dažnėms (95, 100, 105, 110, 115 sp./min.)</li><li>Stebėkite širdies susitraukimų dažnį arba suvokiamą krūvį per kiekvieną 5 minutes</li><li>Mažiausias HR arba RPE = jūsų optimalus ritmas tokiu greičiu</li><li>Paprastai optimalus ritmas yra ±5 % pageidaujamo ritmo</li></ul><p><strong>Sumažinti viršijimą:</strong></p><ul><li>Užuomina: „Žemė su koja po klubu“</li><li>Padidinkite ritmą 5–10%, kad natūraliai sutrumpintumėte žingsnį</li><li>Sutelkite dėmesį į greitą pėdų sukimąsi, o ne siekimą į priekį</li><li>Vaizdo įrašo analizė gali nustatyti pernelyg didelį kulno smūgį prieš kūną</li></ul><p><strong>Sumažinkite vertikalius virpesius:</strong></p><ul><li>Eikite pro horizontalią atskaitos liniją (tvorą, sienos žymes), kad patikrintumėte atšokimą</li><li>Užuomina: „Slyskite į priekį, o ne šokinėkite aukštyn“</li><li>Sustiprinkite klubų tiesiamuosius raumenis, kad išlaikytumėte klubų tiesimą per laikyseną</li><li>Pagerinkite kulkšnies mobilumą, kad būtų sklandesnis perėjimas nuo kulno iki kojų pirštų</li></ul><h3>2. Sukurkite aerobinę bazę</h3><p><strong>2 zonos treniruotės (100–110 spm):</strong></p><ul><li>60–80% savaitės vaikščiojimo apimties lengvu, pokalbio tempu</li><li>Pagerina mitochondrijų tankį ir riebalų oksidacijos pajėgumą</li><li>Pagerina širdies ir kraujagyslių sistemos efektyvumą (mažesnis ŠSD tuo pačiu tempu)</li><li>12–16 savaičių nuoseklus 2 zonos mokymas pagerina ekonomiškumą 10–15 %</li></ul><p><strong>Ilgi pasivaikščiojimai (90–120 minučių):</strong></p><ul><li>Ugdykite vaikščiojimui būdingą raumenų ištvermę</li><li>Pagerinti riebalų apykaitą ir glikogeno taupymą</li><li>Treniruokite nervų ir raumenų sistemą nuolatiniam pasikartojančiam judesiui</li><li>Kartą per savaitę ilgas pasivaikščiojimas lengvu tempu</li></ul><h3>3. Intervalinis mokymas ekonomikai</h3><p><strong>Greito ėjimo intervalai:</strong></p><ul><li>5–8 × 3–5 minutės esant 115–125 spm ir 2–3 min.</li><li>Pagerina laktato slenkstį ir gebėjimą išlaikyti didesnį greitį</li><li>Pagerina raumenų jėgą ir koordinaciją greitesniu ritmu</li><li>1-2 kartus per savaitę tinkamai atsigaunant</li></ul><p><strong>Hill pakartoja:</strong></p><ul><li>6–10 × 1–2 minutės įkalnėn (5–8 % nuolydis) esant stiprioms pastangoms</li><li>Didina klubo tiesiamąją ir padų lenkiamąją jėgą</li><li>Pagerina ekonomiškumą padidindama varomąją galią</li><li>Vaikščiokite arba bėgiokite, kad atsigautumėte</li></ul><h3>4. Jėgos ir mobilumo lavinimas</h3><p><strong>Pagrindiniai vaikščiojimo ekonomikos pratimai:</strong></p><ol><li><strong>Klubo tiesimo stiprumas (sėdmenys):</strong><ul><li>Vienos kojos rumunų trauka</li><li>Klubų smūgiai</li><li>Žingsniai</li><li>2-3 kartus per savaitę, 3 rinkiniai po 8-12 pakartojimų</li></ul></li><li><strong>Padų lenkimo jėga (veršeliai):</strong><ul><li>Vienos kojos blauzdos pakėlimas</li><li>Ekscentriški blauzdos lašai</li><li>3 rinkiniai po 15-20 pakartojimų vienai kojai</li></ul></li><li><strong>Pagrindinis stabilumas:</strong><ul><li>Lentos (priekyje ir šonuose)</li><li>Negyvos klaidos</li><li>Pallof presas</li><li>3 rinkiniai po 30-60 sekundžių</li></ul></li><li><strong>Klubo judrumas:</strong><ul><li>Klubo lenkiamųjų raumenų tempimas (padidinamas žingsnio ilgis)</li><li>Klubų sukimosi pratimai (sumažinti virpesius)</li><li>Kasdien 10-15 min</li></ul></li></ol><h3>5. Technika Grąžtai</h3><p><strong>Rankų sukimosi grąžtai:</strong></p><ul><li>5 minutės vaikščiojimas perdėtai pasukant rankas (alkūnės 90°, rankos iki krūtinės aukščio)</li><li>Treniruokitės laikyti rankas lygiagrečiai kūnui, o ne kirsti vidurio liniją</li><li>Sutelkite dėmesį į alkūnių judėjimą atgal, o ne į priekį</li></ul><p><strong>Didelės kadencijos praktika:</strong></p><ul><li>3 × 5 minutės 130–140 spm (naudokite metronomą)</li><li>Moko nervų ir raumenų sistemą valdyti greitą apykaitą</li><li>Pagerina koordinaciją ir sumažina polinkį persistengti</li></ul><p><strong>Formos fokusavimo intervalai:</strong></p><ul><li>10 × 1 minutė, sutelkiant dėmesį į vieną elementą: laikyseną, pėdos smūgį, ritmą, rankų siūbavimą ir kt.</li><li>Išskiria technikos komponentus apgalvotai praktikai</li><li>Ugdo kinestetinį suvokimą</li></ul><h3>6. Svorio valdymas</h3><p>Tiems, kurie turi antsvorio:</p><ul><li>Kiekvienas svorio netekimas 5 kg sumažina energijos sąnaudas ~3-5%</li><li>Svorio metimas pagerina ekonomiją net ir nedidinant kūno rengybos</li><li>Derinkite vaikščiojimą su kalorijų trūkumu ir baltymų vartojimu</li><li>Palaipsniui mažinant svorį (0,5-1 kg/sav.) išsaugoma liesa masė</li></ul>
+Efektyvumo stebėjimas laikui bėgant
+<h2>Stebėjimo efektyvumo patobulinimai</h2><h3>Standartinis efektyvumo bandymo protokolas</h3><p><strong>Mėnesinis įvertinimas:</strong></p><ol><li><strong>Standartizuoti sąlygas:</strong>Tas pats paros laikas, tas pats maršrutas, panašus oras, pasninkas arba tas pats valgis
+        laiko nustatymas</li><li><strong>Apšilimas:</strong>10 minučių lengvas pėsčiomis</li><li><strong>Testas:</strong>20–30 minučių standartiniu tempu (pvz., 5,0 km/h arba 120 sp.min.)</li><li><strong>Įrašas:</strong>Vidutinis širdies susitraukimų dažnis, jaučiamas krūvis (RPE 1-10), efektyvumo koeficientas (EF), vertikalus
+        Santykis</li><li><strong>Apskaičiuokite WEI:</strong>(Greitis / HR) × 1000</li><li><strong>Stebėkite tendencijas:</strong>Didėjantis efektyvumas rodomas kaip mažesnis ŠSD, mažesnis RPE arba didesnis greitis
+        pastangų</li></ol><h3>Ilgalaikiai efektyvumo pritaikymai</h3><p><strong>Tikėtini patobulinimai nuosekliai treniruojant (12–24 savaites):</strong></p><ul><li><strong>Širdies ritmas standartiniu tempu:</strong>-5–15 dūžių per minutę</li><li><strong>Ekonomika pėsčiomis:</strong>+8–15 % pagerėjimas (mažesnis VO₂ esant tuo pačiu greičiu)</li><li><strong>WEI rezultatas:</strong>+15-25% padidėjimas</li><li><strong>Vertikalus santykis:</strong>-0,5% iki -1,0% sumažėjimas (stabilesnė eisena)</li><li><strong>Tvarus ėjimo greitis:</strong>+0,1-0,3 m/s esant tokioms pat pastangoms</li></ul><h3>Stebėjimas naudojant technologijas</h3><p><strong>„Walk Analytics“ automatiškai stebi:</strong></p><ul><li>Vertikalus santykis kiekvienam 100 m segmentui</li><li>Ėjimo efektyvumo indeksas (WEI) kiekvienai treniruotei</li><li>Ekonomikos tendencijų analizė per savaites ir mėnesius</li><li>Kadencijos optimizavimo pasiūlymai</li><li>Efektyvumo standartai, palyginti su jūsų istorija ir gyventojų normomis</li></ul>
+Santrauka
+<h2>Santrauka: Pagrindiniai efektyvumo principai</h2><div class="key-finding"><strong>Penki vaikščiojimo efektyvumo ramsčiai:</strong><ol><li><strong>Optimalus greitis:</strong>Eikite ~1,3 m/s (4,7 km/h) greičiu, kad transporto kaina būtų minimali</li><li><strong>Natūralus ritmas:</strong>Pasitikėkite savo pasirinktu ritmu; priverstiniai nukrypimai padidina išlaidas 3-12 proc.</li><li><strong>Apversta švytuoklė:</strong>Maksimaliai padidinkite energijos atgavimą (65–70 %) naudodami tinkamą biomechaniką</li><li><strong>Minimaliai švaistomas judesys:</strong>Sumažinkite vertikalius svyravimus, venkite persistengti, išlaikykite natūralumą
+          rankos siūbavimas</li><li><strong>Sukūrimo pajėgumas:</strong>Ilgainiui gerinkite ekonomiją aerobinėmis treniruotėmis, jėgos treniruotėmis ir
+          technikos tobulinimas</li></ol></div><p><strong>Prisiminkite:</strong></p><ul><li>Efektyvumas svarbiausias einant ilgus atstumus arba esant nuolatiniam intensyvumui</li><li>Dėl sveikatos ir svorio metimo,<em>žemesnė</em>efektyvumas gali reikšti daugiau sudegintų kalorijų (ypatybė, o ne klaida!)</li><li>Sutelkite dėmesį į tvarią, natūralią mechaniką, o ne priversdami „tobulą“ techniką</li><li>Nuoseklumas treniruotėse pranoksta bet kurio vieno efektyvumo koeficiento optimizavimą</li></ul>
+Mokslinės nuorodos
+<h2>Mokslinės nuorodos</h2><p>Šiame vadove apibendrinami biomechanikos, pratimų fiziologijos ir lyginamojo judėjimo tyrimai:</p><ul><li><strong>Ralstonas HJ. (1958).</strong>"Energijos ir greičio santykis ir optimalus greitis vaikščiojant lygiu."<em>Internationale Zeitschrift für angewandte Physiologie</em>17:277-283. [U formos ekonomikos kreivė]</li><li><strong>Zarrugh MY ir kt. (1974).</strong>"Energijos sąnaudų optimizavimas vaikščiojant lygiu."<em>Europos taikomosios fiziologijos žurnalas</em>33:293-306. [Pageidaujamas greitis = optimalus ekonomiškumas]</li><li><strong>Cavagna GA, Kaneko M. (1977).</strong>"Mechaninis darbas ir efektyvumas lygiu vaikščiojimu ir bėgimu."<em>Fiziologijos žurnalas</em>268:467-481. [Apverstos švytuoklės modelis, energijos atgavimas]</li><li><strong>Aleksandras R. M. (1989).</strong>„Stuburinių gyvūnų judėjimo optimizavimas ir eisena“.<em>Fiziologinės apžvalgos</em>69:1199-1227. [Froudo numeris, perėjimas vaikščiojant]</li><li><strong>Margaria R ir kt. (1963).</strong>„Energijos sąnaudos eksploatuojant“.<em>Taikomosios fiziologijos žurnalas</em>18:367-370. [Ekonominis kryžminis važiavimas ir bėgimas]</li><li><strong>Holt KG ir kt. (1991).</strong>„Energijos sąnaudos ir stabilumas žmogui vaikštant, pageidautina
+        žingsnio dažnis“.<em>Motorinio elgesio žurnalas</em>23:474-485. [Savarankiškai pasirinktas ritmas optimizuoja ekonomiškumą]</li><li><strong>Collins SH ir kt. (2009).</strong>"Riedančios pėdos pranašumas žmogaus vaikštant."<em>žurnalas
+          Eksperimentinė biologija</em>212:2555-2559. [rankų siūbavimo ekonomika]</li><li><strong>Hreljac A. (1993).</strong>„Pageidaujamas ir energetiškai optimalus žmogaus eisenos perėjimo greitis
+        judėjimas“.<em>Medicina ir mokslas sporte ir mankštoje</em>25:1158-1162. [Bėgimo perėjimą lemiantys veiksniai]</li><li><strong>Pandolf KB ir kt.(1977).</strong>„Energijos sąnaudų numatymas su apkrovomis stovint arba
+        vaikščioti labai lėtai“.<em>Taikomosios fiziologijos žurnalas</em>43:577-581. [Krovinio pernešimo efektai]</li><li><strong>Minetti AE ir kt. (2002).</strong>„Energijos sąnaudos vaikščiojant ir bėgiojant ekstremaliose įkalnėse ir nuokalnėse
+        šlaitai“.<em>Taikomosios fiziologijos žurnalas</em>93:1039-1046. [Gradiento poveikis CoT]</li></ul><p><strong>Norėdami gauti daugiau tyrimų:</strong></p><ul><li><a href="/lt/bibliography/">Pilna mokslinė bibliografija</a></li><li><a href="/lt/research/">Naujausi vaikščiojimo tyrimai</a></li><li><a href="/lt/formulas/">Vaikščiojimo ekonomikos lygtys</a></li></ul>
+Kiti žingsniai
+<h2>Kiti žingsniai</h2><ul><li><a href="/lt/stride-mechanics/">Optimizuokite savo ėjimo biomechaniką</a></li><li><a href="/lt/walking-zones/">Sužinokite apie intensyvumu pagrįstą treniruotę</a></li><li><a href="/lt/training-load/">Valdykite savo treniruočių krūvį, kad padidintumėte efektyvumą</a></li><li><a href="/lt/formulas/">Išnagrinėkite transporto išlaidų skaičiavimus</a></li></ul></div></section><section class="eeat-author bg-light divider-top-lg divider-bottom-lg" aria-label="Author and Reviewer Information"><div class="container container-narrow"><div class="eeat-card" style="display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem; background: var(--color-bg-alt, #f8f9fa); border-radius: 8px; border: 1px solid var(--color-border, #e9ecef); margin-top: 3rem; margin-bottom: 2rem;"><div class="eeat-avatar" style="font-size: 2.5rem; line-height: 1; flex-shrink: 0;" aria-hidden="true">👨‍🔬</div><div class="eeat-details"><h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
+          Expertly Reviewed by 
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">AnalyticsZone Team</span></span></h3><p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: var(--color-body-text, #4a5568); line-height: 1.5;">
+          This content has been written and reviewed by a sports data metrics expert to ensure technical accuracy and adherence to the latest sports science methodologies.
+        </p></div></div></div></section><section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="gait-efficiency"><div class="container ai-citation-shell"><h2 class="ai-citation-title">Eisenos efektyvumas: vaikščiojimo ekonomiškumas, CoT, geresnė forma</h2><p class="ai-citation-answer">Eisenos efektyvumas apibūdina, kiek energijos kainuoja vaikščiojimo modelis esant tam tikram greičiui. Tai svarbu, nes sklandesnis laikas, geresnė laikysena ir švaresnis atsistūmimas gali padėti jaustis lengviau ir tvariau.</p><ul class="ai-citation-facts" role="list"><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">📅</span><span>2026-03-24</span></li><li class="ai-citation-fact ai-citation-keywords"><span class="ai-citation-icon" aria-hidden="true">🏷️</span><span>ėjimo efektyvumo rodikliai · ėjimo ekonomiškumas · efektyvumo balas · žingsnio efektyvumas · ėjimo našumas</span></li><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">🔬</span><a href="../../lt/bibliography/">
+          
+          Bibliografija
+          
+        </a></li></ul></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Atsisiųsti</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Atsisiųskite App Store"><img src="../../assets/images/badge-app-store.svg"
+                            alt="Atsisiųskite App Store" width="135"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Gaukite jį iš „Google Play“."><img src="../../assets/images/badge-google-play.svg"
+                            alt="Gaukite jį iš „Google Play“." width="135"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Galima įsigyti</h3><div class="lang-grid"><a href="/af/" class="lang-link"
+                    hreflang="af" >
+                    Afrikaans
+                </a><a href="/am/" class="lang-link"
+                    hreflang="am" >
+                    አမ္ဟာ
+                </a><a href="/ar/" class="lang-link"
+                    hreflang="ar" dir="rtl" >
+                    العربية
+                </a><a href="/bg/" class="lang-link"
+                    hreflang="bg" >
+                    Български
+                </a><a href="/bn/" class="lang-link"
+                    hreflang="bn" >
+                    বাংলা
+                </a><a href="/ca/" class="lang-link"
+                    hreflang="ca" >
+                    Català
+                </a><a href="/cs/" class="lang-link"
+                    hreflang="cs" >
+                    Čeština
+                </a><a href="/da/" class="lang-link"
+                    hreflang="da" >
+                    Dansk
+                </a><a href="/de/" class="lang-link"
+                    hreflang="de" >
+                    Deutsch
+                </a><a href="/el/" class="lang-link"
+                    hreflang="el" >
+                    Ελληνικά
+                </a><a href="/en/" class="lang-link"
+                    hreflang="en" >
+                    English
+                </a><a href="/es/" class="lang-link"
+                    hreflang="es" >
+                    Español
+                </a><a href="/et/" class="lang-link"
+                    hreflang="et" >
+                    Eesti
+                </a><a href="/fa/" class="lang-link"
+                    hreflang="fa" dir="rtl" >
+                    فارسی
+                </a><a href="/fi/" class="lang-link"
+                    hreflang="fi" >
+                    Suomi
+                </a><a href="/fr/" class="lang-link"
+                    hreflang="fr" >
+                    Français
+                </a><a href="/gu/" class="lang-link"
+                    hreflang="gu" >
+                    ગુજરાતી
+                </a><a href="/ha/" class="lang-link"
+                    hreflang="ha" >
+                    Hausa
+                </a><a href="/he/" class="lang-link"
+                    hreflang="he" dir="rtl" >
+                    עברית
+                </a><a href="/hi/" class="lang-link"
+                    hreflang="hi" >
+                    हिन्दी
+                </a><a href="/hr/" class="lang-link"
+                    hreflang="hr" >
+                    Hrvatski
+                </a><a href="/hu/" class="lang-link"
+                    hreflang="hu" >
+                    Magyar
+                </a><a href="/id/" class="lang-link"
+                    hreflang="id" >
+                    Bahasa Indonesia
+                </a><a href="/is/" class="lang-link"
+                    hreflang="is" >
+                    Íslenska
+                </a><a href="/it/" class="lang-link"
+                    hreflang="it" >
+                    Italiano
+                </a><a href="/ja/" class="lang-link"
+                    hreflang="ja" >
+                    日本語
+                </a><a href="/km/" class="lang-link"
+                    hreflang="km" >
+                    ភាសាខ្មែរ
+                </a><a href="/kn/" class="lang-link"
+                    hreflang="kn" >
+                    ಕನ್ನಡ
+                </a><a href="/ko/" class="lang-link"
+                    hreflang="ko" >
+                    한국어
+                </a><a href="/lt/" class="lang-link active"
+                    hreflang="lt" >
+                    Lietuvių
+                </a><a href="/lv/" class="lang-link"
+                    hreflang="lv" >
+                    Latviešu
+                </a><a href="/ms/" class="lang-link"
+                    hreflang="ms" >
+                    Bahasa Melayu
+                </a><a href="/my/" class="lang-link"
+                    hreflang="my" >
+                    မြန်မာ
+                </a><a href="/nb/" class="lang-link"
+                    hreflang="nb" >
+                    Norsk Bokmål
+                </a><a href="/nl/" class="lang-link"
+                    hreflang="nl" >
+                    Nederlands
+                </a><a href="/pl/" class="lang-link"
+                    hreflang="pl" >
+                    Polski
+                </a><a href="/pt/" class="lang-link"
+                    hreflang="pt" >
+                    Português
+                </a><a href="/pt-br/" class="lang-link"
+                    hreflang="pt-br" >
+                    Português (Brasil)
+                </a><a href="/ro/" class="lang-link"
+                    hreflang="ro" >
+                    Română
+                </a><a href="/ru/" class="lang-link"
+                    hreflang="ru" >
+                    Русский
+                </a><a href="/sk/" class="lang-link"
+                    hreflang="sk" >
+                    Slovenčina
+                </a><a href="/sl/" class="lang-link"
+                    hreflang="sl" >
+                    Slovenščina
+                </a><a href="/sr/" class="lang-link"
+                    hreflang="sr" >
+                    Српски
+                </a><a href="/sv/" class="lang-link"
+                    hreflang="sv" >
+                    Svenska
+                </a><a href="/sw/" class="lang-link"
+                    hreflang="sw" >
+                    Kiswahili
+                </a><a href="/ta/" class="lang-link"
+                    hreflang="ta" >
+                    தமிழ்
+                </a><a href="/te/" class="lang-link"
+                    hreflang="te" >
+                    తెలుగు
+                </a><a href="/th/" class="lang-link"
+                    hreflang="th" >
+                    ไทย
+                </a><a href="/tl/" class="lang-link"
+                    hreflang="tl" >
+                    Tagalog
+                </a><a href="/tr/" class="lang-link"
+                    hreflang="tr" >
+                    Türkçe
+                </a><a href="/uk/" class="lang-link"
+                    hreflang="uk" >
+                    Українська
+                </a><a href="/ur/" class="lang-link"
+                    hreflang="ur" dir="rtl" >
+                    اردو
+                </a><a href="/vi/" class="lang-link"
+                    hreflang="vi" >
+                    Tiếng Việt
+                </a><a href="/yo/" class="lang-link"
+                    hreflang="yo" >
+                    Yorùbá
+                </a><a href="/zh/" class="lang-link"
+                    hreflang="zh" >
+                    中文
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
+                &copy; 2026 Walk Analytics. Visos teisės saugomos
+            </p><ul class="footer-legal"><li><a href="/lt/privacy/">Privatumas</a></li><li><a href="/lt/terms/">Sąlygos</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>This website uses cookies.</p><a href="/lt/privacy/" class="text-sm">Sužinokite daugiau</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Atmesti</button><button id="cookie-accept" class="btn btn-primary btn-small">Priimti</button></div></div></div><script src="../../assets/js/core.min.js?v=1c7ace58" defer></script><script src="../../assets/js/search.min.js?v=1c7ace58" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html><html lang="hr" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=optional"
+    rel="stylesheet"><title>Formule i jednadžbe metrika hodanja | Walk Analytics</title><meta name="description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance"><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="formule hodanja, WSS formula, izračun metrika hoda, znanstvene formule hodanja, izračun koraka"><link rel="canonical" href="https://walk.analyticszone.app/hr/formulas/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-03-24T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/hr/formulas/"><meta property="og:title" content="Formule i jednadžbe metrika hodanja | Walk Analytics"><meta property="og:description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance"><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="hr_HR"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/hr/formulas/"><meta name="twitter:title" content="Formule i jednadžbe metrika hodanja | Walk Analytics"><meta name="twitter:description" content="Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance"><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/formulas/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/formulas/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/formulas/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/formulas/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/formulas/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/formulas/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/formulas/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/formulas/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/formulas/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/formulas/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/formulas/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/formulas/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/formulas/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/formulas/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/formulas/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/formulas/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/formulas/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/formulas/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="noindex, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+main.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=1c7ace58"><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "analyticszone+walk@onmedic.org"
+  },
+  
+  "sameAs": [
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+    "https://twitter.com/walkanalytics",
+    
+    "https://apps.apple.com/us/app/walk-analytics/id6755187154",
+    
+    "https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics"
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "inLanguage": "hr"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Walk Analytics",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "url": "https://walk.analyticszone.app",
+  "applicationCategory": ["HealthApplication", "FitnessApplication"],
+  "operatingSystem": "iOS, Android",
+  "author": {
+    "@type": "Organization",
+    "name": "AnalyticsZone Team"
+  },
+  "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Početna",
+      "item": "https://walk.analyticszone.app/hr/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Znanost",
+      "item": "https://walk.analyticszone.app/hr/research/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Formule",
+      "item": "https://walk.analyticszone.app/hr/formulas/"
+    }
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Formule i jednadžbe metrika hodanja | Walk Analytics",
+  "description": "Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance",
+  "url": "https://walk.analyticszone.app/hr/formulas/",
+  "inLanguage": "hr",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Walk Analytics",
+    "url": "https://walk.analyticszone.app"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-24",
+  "keywords": ["formule hodanja", "WSS formula", "izračun metrika hoda", "znanstvene formule hodanja", "izračun koraka"],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "formule hodanja"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "WSS formula"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "izračun metrika hoda"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "znanstvene formule hodanja"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "izračun koraka"
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Formule i jednadžbe metrika hodanja | Walk Analytics",
+  "description": "Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance",
+  "author": {
+    "@type": "Person",
+    "name": "AnalyticsZone Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walk Analytics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://walk.analyticszone.app/assets/images/logo.png"
+    }
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://walk.analyticszone.app/hr/formulas/"
+  }
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Formule i jednadžbe metrika hodanja | Walk Analytics",
+  "description": "Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance",
+  "url": "https://walk.analyticszone.app/hr/formulas/",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "WebBrowser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script><script>
+    (function () {
+      let theme = localStorage.getItem('theme');
+      // Older builds could persist a per-subdomain `theme=light` value without a UI
+      // to keep it consistent across apps. Treat it as stale and fall back to the OS.
+      if (theme === 'light') {
+        try { localStorage.removeItem('theme'); } catch (e) { /* ignore */ }
+        theme = null;
+      }
+
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script></head><body><a href="#main-content" class="skip-link">Preskoči na sadržaj</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/hr/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/hr/" 
+                                aria-current="">
+                                Početna
+                            </a></li><li class="has-submenu" ><a href="/hr/getting-started/" class="nav-label">Naučiti</a><ul class="submenu"><li><a href="/hr/getting-started/" 
+                                        aria-current="">
+                                        Početak rada
+                                    </a></li><li><a href="/hr/walking-zones/" 
+                                        aria-current="">
+                                        Zone za hodanje
+                                    </a></li><li><a href="/hr/gait-analysis/" 
+                                        aria-current="">
+                                        Analiza hoda
+                                    </a></li><li><a href="/hr/training-load/" 
+                                        aria-current="">
+                                        Opterećenje treninga
+                                    </a></li><li><a href="/hr/wss-calculator/" 
+                                        aria-current="">
+                                        WSS kalkulator
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/hr/research/" class="nav-label">Znanost</a><ul class="submenu"><li><a href="/hr/research/" 
+                                        aria-current="">
+                                        Istraživanje
+                                    </a></li><li><a href="/hr/formulas/" class="active" 
+                                        aria-current="page">
+                                        Formule
+                                    </a></li><li><a href="/hr/gait-efficiency/" 
+                                        aria-current="">
+                                        Učinkovitost hoda
+                                    </a></li><li><a href="/hr/stride-mechanics/" 
+                                        aria-current="">
+                                        Mehanika koraka
+                                    </a></li><li><a href="/hr/walking-vs-running/" 
+                                        aria-current="">
+                                        Hodanje vs trčanje
+                                    </a></li><li><a href="/hr/benchmarks/" 
+                                        aria-current="">
+                                        mjerila
+                                    </a></li><li><a href="/hr/bibliography/" 
+                                        aria-current="">
+                                        Bibliografija
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/hr/for-health/" class="nav-label">Za Vas</a><ul class="submenu"><li><a href="/hr/for-health/" 
+                                        aria-current="">
+                                        Za zdravlje
+                                    </a></li><li><a href="/hr/for-fitness/" 
+                                        aria-current="">
+                                        Za fitness
+                                    </a></li><li><a href="/hr/for-seniors/" 
+                                        aria-current="">
+                                        Za starije osobe
+                                    </a></li><li><a href="/hr/for-rehabilitation/" 
+                                        aria-current="">
+                                        Za rehabilitaciju
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/hr/cadence-calculator/" class="nav-label">Alati</a><ul class="submenu"><li><a href="/hr/cadence-calculator/" 
+                                        aria-current="">
+                                        Kalkulator kadence
+                                    </a></li><li><a href="/hr/gait-assessment/" 
+                                        aria-current="">
+                                        Procjena hoda
+                                    </a></li><li><a href="/hr/vo2max-calculator/" 
+                                        aria-current="">
+                                        VO₂max Kalkulator
+                                    </a></li></ul></li><li><a href="/hr/contact/" 
+                                aria-current="">
+                                Kontakt
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Odaberite jezik"><option value="af" >
+                            Afrikaans
+                        </option><option value="am" >
+                            አမ္ဟာ
+                        </option><option value="ar" >
+                            العربية
+                        </option><option value="bg" >
+                            Български
+                        </option><option value="bn" >
+                            বাংলা
+                        </option><option value="ca" >
+                            Català
+                        </option><option value="cs" >
+                            Čeština
+                        </option><option value="da" >
+                            Dansk
+                        </option><option value="de" >
+                            Deutsch
+                        </option><option value="el" >
+                            Ελληνικά
+                        </option><option value="en" >
+                            English
+                        </option><option value="es" >
+                            Español
+                        </option><option value="et" >
+                            Eesti
+                        </option><option value="fa" >
+                            فارسی
+                        </option><option value="fi" >
+                            Suomi
+                        </option><option value="fr" >
+                            Français
+                        </option><option value="gu" >
+                            ગુજરાતી
+                        </option><option value="ha" >
+                            Hausa
+                        </option><option value="he" >
+                            עברית
+                        </option><option value="hi" >
+                            हिन्दी
+                        </option><option value="hr" selected>
+                            Hrvatski
+                        </option><option value="hu" >
+                            Magyar
+                        </option><option value="id" >
+                            Bahasa Indonesia
+                        </option><option value="is" >
+                            Íslenska
+                        </option><option value="it" >
+                            Italiano
+                        </option><option value="ja" >
+                            日本語
+                        </option><option value="km" >
+                            ភាសាខ្មែរ
+                        </option><option value="kn" >
+                            ಕನ್ನಡ
+                        </option><option value="ko" >
+                            한국어
+                        </option><option value="lt" >
+                            Lietuvių
+                        </option><option value="lv" >
+                            Latviešu
+                        </option><option value="ms" >
+                            Bahasa Melayu
+                        </option><option value="my" >
+                            မြန်မာ
+                        </option><option value="nb" >
+                            Norsk Bokmål
+                        </option><option value="nl" >
+                            Nederlands
+                        </option><option value="pl" >
+                            Polski
+                        </option><option value="pt" >
+                            Português
+                        </option><option value="pt-br" >
+                            Português (Brasil)
+                        </option><option value="ro" >
+                            Română
+                        </option><option value="ru" >
+                            Русский
+                        </option><option value="sk" >
+                            Slovenčina
+                        </option><option value="sl" >
+                            Slovenščina
+                        </option><option value="sr" >
+                            Српски
+                        </option><option value="sv" >
+                            Svenska
+                        </option><option value="sw" >
+                            Kiswahili
+                        </option><option value="ta" >
+                            தமிழ்
+                        </option><option value="te" >
+                            తెలుగు
+                        </option><option value="th" >
+                            ไทย
+                        </option><option value="tl" >
+                            Tagalog
+                        </option><option value="tr" >
+                            Türkçe
+                        </option><option value="uk" >
+                            Українська
+                        </option><option value="ur" >
+                            اردو
+                        </option><option value="vi" >
+                            Tiếng Việt
+                        </option><option value="yo" >
+                            Yorùbá
+                        </option><option value="zh" >
+                            中文
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a><a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a><a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a><a href="https://paceva.analyticszone.app" class="suite-app-link">Paceva Analytics</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Prebaci izbornik"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/hr/">Početna</a></li><li><a href="/hr/research/">Znanost</a></li><li><span aria-current="page">Formule</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/hr/">Dom</a>/<a href="/hr/#science">Znanost</a>/ Formule</div><h1>Formule i jednadžbe hodajuće metrike</h1><p class="lead">Matematičke osnove analitike hodanja – znanstveno potvrđene jednadžbe za intenzitet, energiju i performanse</p></div></section><section class="guide-content"><div class="container"><div class="content-grid"><div class="main-content"><div class="intro-note"><p>Ova stranica predstavlja znanstveno potvrđene formule koje se koriste u analitici hodanja. Sve jednadžbe su navedene s referencama istraživanja i potvrđenim rasponima točnosti.</p></div><h2 id="cadence-mets">1. Pretvorba ritma u MET</h2><div class="formula-section featured"><h3>Moore i sur. (2021) Metabolička jednadžba temeljena na kadenci</h3><div class="formula-box primary"><p class="formula-title">Kadenca za MET</p><p class="formula-main"><strong>MET = 0,0219 × kadenca (koraci/min) + 0,72</strong></p><p class="formula-meta"><span class="accuracy">Točnost: ±0,5 METs</span><span class="reference">Moore CC, et al. (2021). Med Sci Sports Exerc 53(1):165-173</span></p></div><div class="key-insight"><p><strong>Zašto je ova formula važna:</strong>Ova jednadžba je<strong>23-35% precizniji</strong>nego tradicionalne ACSM jednadžbe za hodanje temeljene na brzini. Djeluje jer kadenca izravno odražava frekvenciju pokreta i potrošnju energije, dok brzina ovisi o varijabilnoj duljini koraka.</p></div><h4>Primjeri:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Hodanje brzinom od 100 spm:</strong></p><p class="example-calc">MET = 0,0219 × 100 + 0,72 = 2,19 + 0,72 =<strong>2.91 MET</strong></p><p class="example-interpretation">≈ 3 MET =<strong>Prag umjerenog intenziteta</strong>✓</p></div><div class="calc-example"><p class="example-input"><strong>Hodanje brzinom od 110 spm:</strong></p><p class="example-calc">MET = 0,0219 × 110 + 0,72 = 2,409 + 0,72 =<strong>3.13 MET</strong></p><p class="example-interpretation">Solidan umjereni intenzitet</p></div><div class="calc-example"><p class="example-input"><strong>Hodanje brzinom od 120 spm:</strong></p><p class="example-calc">MET = 0,0219 × 120 + 0,72 = 2,628 + 0,72 =<strong>3.35 MET</strong></p><p class="example-interpretation">Umjereno jak intenzitet</p></div><div class="calc-example"><p class="example-input"><strong>Hodanje brzinom od 130 spm:</strong></p><p class="example-calc">MET = 0,0219 × 130 + 0,72 = 2,847 + 0,72 =<strong>3.57 MET</strong></p><p class="example-interpretation"><strong>Prag snažnog intenziteta</strong>(6 MET-ova pomoću CADENCE-izravnog mjerenja za odrasle)</p></div></div><div class="formula-note"><p><strong>Napomena:</strong>Studija CADENCE-Adults izravno je izmjerila da je 130 spm = 6 MET-ova u kontroliranim laboratorijskim uvjetima. Mooreova jednadžba dizajnirana je za raspon 80-130 spm i može biti podcijenjena pri vrlo visokim kadencama.</p></div><h4>Podaci o potvrdi:</h4><ul><li><strong>Uzorak:</strong>76 odraslih od 21-40 godina</li><li><strong>metoda:</strong>Indirektna kalorimetrija (zlatni standard)</li><li><strong>R² vrijednost:</strong>0,87 (izvrsna korelacija)</li><li><strong>Srednja apsolutna greška:</strong>0,47 MET</li><li><strong>Primjenjivi raspon:</strong>80-130 koraka/min</li></ul></div><h2 id="acsm-vo2">2. ACSM VO₂ jednadžbe za hodanje</h2><div class="formula-section"><h3>ACSM metabolički izračuni</h3><div class="formula-box"><p class="formula-title">Ravno hodanje (nagib 0%)</p><p class="formula-main"><strong>VO₂ (mL/kg/min) = 0,1 × brzina (m/min) + 3,5</strong></p><p class="formula-note">Brzina u metrima u minuti (pomnožite km/h sa 16,67 ili mph sa 26,82)</p></div><div class="formula-box"><p class="formula-title">Hodanje s nagibom (uspon/pad)</p><p class="formula-main"><strong>VO₂ = 0,1 (brzina) + 1,8 (brzina) (razred) + 3,5</strong></p><p class="formula-note">Ocjena izražena decimalno (npr. 5% = 0,05)</p></div><h4>Primjeri:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Hodanje 5 km/h (83,3 m/min) na ravnoj podlozi:</strong></p><p class="example-calc">VO₂ = 0,1 × 83,3 + 3,5 = 8,33 + 3,5 =<strong>11,83 ml/kg/min</strong></p><p class="example-conversion">Pretvori u MET: 11,83 / 3,5 =<strong>3.38 MET</strong></p></div><div class="calc-example"><p class="example-input"><strong>Hodanje 5 km/h na usponu od 5 %:</strong></p><p class="example-calc">VO₂ = 0,1(83,3) + 1,8(83,3)(0,05) + 3,5</p><p class="example-calc">= 8,33 + 7,497 + 3,5 =<strong>19,33 ml/kg/min</strong></p><p class="example-conversion">= 19,33 / 3,5 =<strong>5.52 MET</strong></p><p class="example-interpretation">Nagib povećava intenzitet za ~64%!</p></div></div><div class="conversion-helper"><h4>Pretvorbe brzine:</h4><ul><li><strong>km/h do m/min:</strong>pomnožite sa 16,67</li><li><strong>mph u m/min:</strong>pomnožite sa 26,82</li><li><strong>m/s do m/min:</strong>pomnožiti sa 60</li></ul></div></div><h2 id="energy-expenditure">3. Potrošnja energije i sagorijevanje kalorija</h2><div class="formula-section"><h3>Precizan izračun kalorija</h3><div class="formula-box"><p class="formula-title">Kalorije po minuti</p><p class="formula-main"><strong>Kal/min = (MET × 3,5 × tjelesna težina kg) / 200</strong></p></div><div class="formula-box"><p class="formula-title">Ukupne kalorije za sesiju</p><p class="formula-main"><strong>Ukupne kalorije = kal/min × trajanje (minute)</strong></p></div><h4>Primjeri:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Osoba od 70 kg hoda 100 spm (3 MET) 45 minuta:</strong></p><p class="example-calc">Kal/min = (3 × 3,5 × 70) / 200 = 735 / 200 =<strong>3,675 kal/min</strong></p><p class="example-calc">Ukupno = 3,675 × 45 =<strong>165,4 kalorija</strong></p></div><div class="calc-example"><p class="example-input"><strong>Osoba od 85 kg koja hoda 120 spm (5 MET) 30 minuta:</strong></p><p class="example-calc">Kal/min = (5 × 3,5 × 85) / 200 = 1487,5 / 200 =<strong>7,44 kal/min</strong></p><p class="example-calc">Ukupno = 7,44 × 30 =<strong>223,2 kalorija</strong></p></div></div><div class="info-box"><h4>Zašto ova formula?</h4><p>Ova jednadžba dolazi iz definicije MET (metabolički ekvivalent zadatka):</p><ul><li>1 MET = 3,5 mL O₂/kg/min (stopa metabolizma u mirovanju)</li><li>1 litra utrošenog O₂ ≈ 5 sagorjelih kcal</li><li>Pretvaranje: (MET × 3,5 × kg × 5) / 1000 = (MET × 3,5 × kg) / 200</li></ul></div><h3>Neto sagorijevanje kalorija (samo tjelovježba)</h3><div class="formula-box"><p class="formula-title">Neto kalorije (isključujući odmor)</p><p class="formula-main"><strong>Neto kal/min = [(MET - 1) × 3,5 × tjelesna težina] / 200</strong></p><p class="formula-note">Oduzima 1 MET kako bi isključio kalorije koje biste ionako sagorjeli u mirovanju</p></div><div class="calc-example"><p class="example-input"><strong>70 kg, 3 MET-a, 45 min – Neto kalorije:</strong></p><p class="example-calc">Neto = [(3 - 1) × 3,5 × 70] / 200 × 45 = 2,45 × 45 =<strong>110,3 neto kalorija</strong></p><p class="example-interpretation">u odnosu na 165,4 ukupnih kalorija (55 kalorija bi se sagorjelo u mirovanju)</p></div></div><h2 id="gait-symmetry">4. Indeks simetrije hoda (GSI)</h2><div class="formula-section"><h3>Kvantificiranje lijevo-desne asimetrije</h3><div class="formula-box"><p class="formula-title">Indeks simetrije hoda</p><p class="formula-main"><strong>GSI (%) = |desno - lijevo| / [0,5 × (desno + lijevo)] × 100</strong></p><p class="formula-note">Može se primijeniti na duljinu koraka, vrijeme koraka ili vrijeme kontakta</p></div><h4>Tumačenje:</h4><ul><li><strong>&lt;2-3%:</strong>Normalan, simetričan hod</li><li><strong>3-5%:</strong>Blaga asimetrija</li><li><strong>5-10%:</strong>Umjerena asimetrija, monitor</li><li><strong>&gt;10%:</strong>Klinički značajno, procijenite profesionalno</li></ul><h4>Primjeri:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>Vremena koraka: desno = 520 ms, lijevo = 480 ms</strong></p><p class="example-calc">GSI = |520 - 480| / [0,5 × (520 + 480)] × 100</p><p class="example-calc">= 40 / [0,5 × 1000] × 100 = 40 / 500 × 100 =<strong>8% asimetrija</strong></p><p class="example-interpretation">Umjerena asimetrija - razmislite o jačanju slabije strane</p></div><div class="calc-example"><p class="example-input"><strong>Duljine koraka: desno = 1,42 m, lijevo = 1,38 m</strong></p><p class="example-calc">GSI = |1,42 - 1,38| / [0,5 × (1,42 + 1,38)] × 100</p><p class="example-calc">= 0,04 / 1,4 × 100 =<strong>2,86% asimetrija</strong></p><p class="example-interpretation">Normalan, zdrav raspon ✓</p></div></div><div class="warning-box"><p><strong>Klinička bilješka:</strong>Apple HealthKit Walking Asymmetry koristi malo drugačiji izračun (jednostavna postotna razlika između vremena koraka), ali su pragovi tumačenja slični.</p></div></div><h2 id="walk-score">5. WALK rezultat (Vlasnička metrika Walk Analyticsa)</h2><div class="formula-section"><h3>Ocjena učinkovitosti hodanja</h3><div class="formula-box"><p class="formula-title">HOD Rezultat</p><p class="formula-main"><strong>Rezultat HODANJA = vrijeme (sekunde) + koraci na 100 metara</strong></p><p class="formula-note">Niži rezultat = bolja učinkovitost</p></div><h4>Kako radi:</h4><p>WALK Score kombinira vrijeme i broj koraka za kvantificiranje učinkovitosti hodanja. Hodač koji prijeđe 100 m u 75 sekundi sa 140 koraka ima rezultat HODANJA 215. Poboljšanje učinkovitosti brzine ILI koraka smanjuje rezultat.</p><h4>Primjeri:</h4><div class="calculation-examples"><div class="calc-example"><p class="example-input"><strong>100m za 80 sekundi, 120 koraka:</strong></p><p class="example-calc">HOD Rezultat = 80 + 120 =<strong>200</strong></p></div><div class="calc-example"><p class="example-input"><strong>100m za 70 sekundi, 110 koraka:</strong></p><p class="example-calc">HOD Rezultat = 70 + 110 =<strong>180</strong></p><p class="example-interpretation">Bolja učinkovitost kroz poboljšanu brzinu + korak</p></div><div class="calc-example"><p class="example-input"><strong>100m za 60 sekundi, 130 koraka (trkačko hodanje):</strong></p><p class="example-calc">HOD Rezultat = 60 + 130 =<strong>190</strong></p><p class="example-interpretation">Brzi ali kraći koraci</p></div></div><h4>Tipični rasponi:</h4><ul><li><strong>&gt;250:</strong>Spor/neučinkovit hod, mogući problemi s pokretljivošću</li><li><strong>200-250:</strong>Povremeni hodač, prosječna učinkovitost</li><li><strong>170-200:</strong>Fitnes hodalica, dobre učinkovitosti</li><li><strong>150-170:</strong>Napredna hodalica, izvrsna učinkovitost</li><li><strong>&lt;150:</strong>Elitna/trkaća razina hodanja</li></ul><div class="tip-box"><p><strong>Vježbanje s WALK rezultatom:</strong>Pratite svoj rezultat na istoj stazi od 100 metara tjedno. Poboljšanja pokazuju poboljšanu neuromuskularnu koordinaciju, snagu i ekonomičnost hodanja.</p></div></div><h2 id="basic-metrics">6. Osnovna metrika hoda</h2><div class="formula-section"><h3>Temeljni izračuni</h3><div class="formula-box"><p class="formula-title">Brzina hoda</p><p class="formula-main"><strong>Brzina (m/s) = Udaljenost (m) / Vrijeme (s)</strong></p></div><div class="formula-box"><p class="formula-title">Kadenca od ukupnog broja koraka</p><p class="formula-main"><strong>Kadenca (spm) = ukupni koraci / vrijeme (minute)</strong></p></div><div class="formula-box"><p class="formula-title">Duljina koraka</p><p class="formula-main"><strong>Duljina koraka (m) = Udaljenost (m) / (Koraci / 2)</strong></p><p class="formula-note">Podijelite korake sa 2 jer jedan korak = dva koraka</p></div><div class="formula-box"><p class="formula-title">Duljina koraka</p><p class="formula-main"><strong>Duljina koraka (m) = Udaljenost (m) / Koraci</strong></p></div><div class="formula-box"><p class="formula-title">Brzina iz kadence i duljine koraka</p><p class="formula-main"><strong>Brzina = duljina koraka × (kadenca / 2) / 60</strong></p><p class="formula-note">Ili: Brzina (m/s) = Duljina koraka × Kadenca / 60</p></div><h4>Primjer tijeka rada:</h4><div class="calc-example"><p class="example-input"><strong>Hodajte 1000m za 12 minuta sa 1320 koraka:</strong></p><p><strong>Brzina:</strong>1000m / 720s =<strong>1,39 m/s</strong></p><p><strong>Kadenca:</strong>1320 koraka / 12 min =<strong>110 spm</strong></p><p><strong>Duljina koraka:</strong>1000m / (1320/2) = 1000 / 660 =<strong>1,52 m</strong></p><p><strong>Duljina koraka:</strong>1000m / 1320 =<strong>0,76 m</strong></p></div></div><h2 id="heart-rate">7. Izračuni zona otkucaja srca</h2><div class="formula-section"><h3>Tradicionalna HR zona metoda</h3><div class="formula-box"><p class="formula-title">Procjena maksimalnog broja otkucaja srca</p><p class="formula-main"><strong>Max HR = 220 - Dob</strong></p><p class="formula-note">Jednostavna, ali ±10-15 bpm individualna varijacija</p></div><div class="formula-box"><p class="formula-title">Alternativa: Tanaka formula (točnija)</p><p class="formula-main"><strong>Maks. HR = 208 - (0,7 × dob)</strong></p></div><div class="formula-box"><p class="formula-title">Izračun raspona zona</p><p class="formula-main"><strong>Zona = Max HR × (Donji%, Gornji%)</strong></p></div><h4>Primjer: 40-godišnjak</h4><div class="calc-example"><p><strong>tradicionalno:</strong>Max HR = 220 - 40 =<strong>180 otkucaja u minuti</strong></p><p><strong>Tanaka:</strong>Maks. HR = 208 - (0,7 × 40) = 208 - 28 =<strong>180 otkucaja u minuti</strong></p><p><strong>Zona 2 (60-70%):</strong>180 × 0,60 = 108 otkucaja u minuti do 180 × 0,70 = 126 otkucaja u minuti</p></div><div class="info-box"><p><strong>Napomena:</strong>Iako su HR zone korisne,<strong>zone temeljene na kadenci točnije su i praktičnije za hodanje</strong>(vidi Vodič za pješačke zone).</p></div></div><h2 id="cost-transport">8. Troškovi prijevoza i ekonomija hodanja</h2><div class="formula-section"><h3>Energetski trošak hodanja</h3><div class="formula-box"><p class="formula-title">Trošak prijevoza (C)</p><p class="formula-main"><strong>C = potrošena energija / (tjelesna masa × udaljenost)</strong></p><p class="formula-note">Jedinice: J/kg/m ili mL O₂/kg/m</p></div><div class="key-insight"><p><strong>Krivulja u obliku slova U:</strong>Ekonomija hodanja slijedi krivulju u obliku slova U. Postoji optimalna brzina (obično 1,2-1,4 m/s ili 4,3-5,0 km/h) pri kojoj je trošak prijevoza sveden na minimum. Hodanje sporije ILI brže od ovoga povećava trošak energije po prijeđenoj udaljenosti.</p></div><h4>Čimbenici koji utječu na cijenu prijevoza:</h4><ul><li><strong>Brzina:</strong>Odnos u obliku slova U (optimalno oko 1,3 m/s)</li><li><strong>Gradijent:</strong>Uzbrdo značajno povećava trošak; nizbrdo povećava ekscentrični trošak</li><li><strong>Tjelesna masa:</strong>Teži pojedinci imaju veći apsolutni, ali sličan relativni trošak</li><li><strong>Mehanika koraka:</strong>Optimalna duljina koraka smanjuje troškove</li><li><strong>Teren:</strong>Neravne površine povećavaju troškove u odnosu na glatke kolnike</li></ul><div class="formula-box"><p class="formula-title">Troškovi prilagođeni ocjeni</p><p class="formula-main"><strong>Množitelj troškova = 1 + (Ocjena × 10)</strong></p><p class="formula-note">Gruba procjena: +10% troškova po 1% ocjene</p></div><h4>Primjer:</h4><div class="calc-example"><p class="example-input"><strong>Hodanje na nagibu od 5%:</strong></p><p class="example-calc">Multiplikator troškova = 1 + (0,05 × 10) =<strong>1,5×</strong></p><p class="example-interpretation">50% povećanje troškova energije u usporedbi s ravnim tlom</p></div></div><h2 id="training-load">9. Ocjena opterećenja i stresa tijekom treninga</h2><div class="formula-section"><h3>Ocjena stresa pri hodanju (WSS)</h3><div class="formula-box"><p class="formula-title">Zonski WSS</p><p class="formula-main"><strong>WSS = Σ (minute u zoni × faktor zone)</strong></p><p>Zona 1: ×1,0 | Zona 2: ×2,0 | Zona 3: ×3,0 | Zona 4: ×4,0 | Zona 5: ×5,0</p></div><h4>Primjer: 60 minuta hoda</h4><div class="calc-example"><p>10 min Zona 1 × 1 = 10 bodova</p><p>40 min Zona 2 × 2 = 80 bodova</p><p>10 min Zona 3 × 3 = 30 bodova</p><p><strong>Ukupni WSS = 120</strong></p></div><h3>Tjedno opterećenje treninga</h3><div class="formula-box"><p class="formula-title">Tjedno opterećenje</p><p class="formula-main"><strong>Tjedno opterećenje = Σ dnevno WSS (7 dana)</strong></p></div><div class="formula-box"><p class="formula-title">Progresivno preopterećenje</p><p class="formula-main"><strong>Sljedeći tjedan = Trenutni tjedan × 1,05-1,10</strong></p><p class="formula-note">Povećajte 5-10% maksimalno tjedno</p></div><div class="formula-box"><p class="formula-title">Tjedan oporavka</p><p class="formula-main"><strong>Tjedan oporavka = trenutni × 0,50-0,70</strong></p><p class="formula-note">Svaka 3-4 tjedna smanjite na 50-70%</p></div><h4>Tipična tjedna opterećenja:</h4><ul><li><strong>Šetač zdravlja početnik:</strong>200-400 WSS/tjedan</li><li><strong>Obični fitness hodač:</strong>400-700 WSS/tjedan</li><li><strong>Ozbiljan fitness hodač:</strong>700-1000 WSS/tjedan</li><li><strong>Natjecateljski hodač:</strong>1000-1500+ WSS/tjedan</li></ul></div><h2 id="predictions">10. Prediktivne jednadžbe</h2><div class="formula-section"><h3>6-minutni test hoda (6MWT) Predviđanje udaljenosti</h3><div class="formula-box"><p class="formula-title">Predviđena udaljenost od 6 MWT (Enright &amp; Sherrill)</p><p><strong>muškarci:</strong>(7,57 × Visina cm) - (5,02 × Dob) - (1,76 × Težina kg) - 309</p><p><strong>žene:</strong>(2,11 × visina cm) - (5,78 × dob) - (2,29 × težina kg) + 667</p><p class="formula-note">Predviđa udaljenost u metrima za zdrave odrasle osobe</p></div><h4>Primjer: 40-godišnji muškarac, 175 cm, 75 kg</h4><div class="calc-example"><p class="example-calc">6MWT = (7,57 × 175) - (5,02 × 40) - (1,76 × 75) - 309</p><p>= 1324,75 - 200,8 - 132 - 309 =<strong>682,95 metara</strong></p><p class="example-interpretation">Dobra funkcionalna sposobnost za dob</p></div><div class="info-box"><p><strong>Klinička upotreba:</strong>6MWT se koristi za procjenu funkcionalnog kapaciteta vježbanja kod kardiopulmonalnih pacijenata, procjenu prije/poslije operacije i opću kondiciju kod starijih osoba.</p></div></div><h2 id="conversions">11. Pretvorbe jedinica</h2><div class="formula-section"><h3>Uobičajene pretvorbe mjerenja hoda</h3><div class="conversion-table"><table><thead><tr><th>Od</th><th>Za</th><th>Formula</th></tr></thead><tbody><tr><td>km/h</td><td>m/s</td><td>km/h ÷ 3,6</td></tr><tr><td>mph</td><td>m/s</td><td>mph × 0,447</td></tr><tr><td>m/s</td><td>km/h</td><td>m/s × 3,6</td></tr><tr><td>m/s</td><td>mph</td><td>m/s × 2,237</td></tr><tr><td>km/h</td><td>m/min</td><td>km/h × 16,67</td></tr><tr><td>mph</td><td>m/min</td><td>mph × 26,82</td></tr><tr><td>MET-ovi</td><td>mL/kg/min</td><td>MET × 3,5</td></tr><tr><td>mL/kg/min</td><td>MET-ovi</td><td>VO₂ ÷ 3,5</td></tr></tbody></table></div><h4>Brza referenca:</h4><ul><li><strong>1,0 m/s =</strong>3,6 km/h = 2,24 mph (uobičajena brzina hoda zdrave odrasle osobe)</li><li><strong>1,4 m/s =</strong>5,0 km/h = 3,1 mph (brzo hodanje)</li><li><strong>1 MET =</strong>3,5 mL O₂/kg/min (metabolizam u mirovanju)</li><li><strong>3 MET =</strong>10,5 mL O₂/kg/min (umjereni prag intenziteta)</li><li><strong>6 MET =</strong>21 mL O₂/kg/min (prag snažnog intenziteta)</li></ul></div><h2 id="next-steps">Povezani resursi</h2><div class="next-steps-grid"><div class="next-step-card"><h3>Primijenite formule: WSS kalkulator</h3><p>Upotrijebite naš interaktivni kalkulator da izračunate svoju ocjenu stresa pri hodanju.</p><a class="btn btn-secondary" href="/hr/wss-calculator/">Izračunajte WSS →</a></div><div class="next-step-card"><h3>Razumijevanje zona hodanja</h3><p>Naučite kako primijeniti zone intenziteta temeljene na kadenci u treningu.</p><a class="btn btn-secondary" href="/hr/walking-zones/">Naučite zone →</a></div><div class="next-step-card"><h3>Znanstvena istraživanja</h3><p>Pregledajte studije koje su potvrdile ove formule.</p><a class="btn btn-secondary" href="/hr/research/">Pogledajte istraživanje →</a></div><div class="next-step-card"><h3>Potpuna bibliografija</h3><p>Pristup cjelovitim citatima za sve navedene jednadžbe.</p><a class="btn btn-secondary" href="/hr/bibliography/">Pogledaj bibliografiju →</a></div></div></div><aside class="sidebar"><div class="toc"><h3>Indeks formula</h3><ul><li><a href="#cadence-mets">1. Kadenca → METs</a></li><li><a href="#acsm-vo2">2. ACSM VO₂ jednadžbe</a></li><li><a href="#energy-expenditure">3. Energija i kalorije</a></li><li><a href="#gait-symmetry">4. Indeks simetrije hoda</a></li><li><a href="#walk-score">5. HOD Ocjena</a></li><li><a href="#basic-metrics">6. Osnovna metrika hoda</a></li><li><a href="#heart-rate">7. Zone otkucaja srca</a></li><li><a href="#cost-transport">8. Troškovi prijevoza</a></li><li><a href="#training-load">9. Opterećenje treninga</a></li><li><a href="#predictions">10. Prediktivne jednadžbe</a></li><li><a href="#conversions">11. Pretvorbe jedinica</a></li></ul></div><div class="formula-highlight"><h3>⭐ Najvažnije</h3><p><strong>Kadenca za MET</strong></p><p class="formula-compact">MET = 0,0219 × spm + 0,72</p><p class="small-text">Ova jedna jednadžba omogućuje trening intenziteta temeljen na kadenci bez monitora otkucaja srca.</p></div><div class="cta-box"><h3>Primijenite ove formule</h3><p>Walk Analytics koristi ove znanstveno potvrđene jednadžbe za analizu vaših šetnji.</p><a class="btn btn-accent" href="https://apps.apple.com/us/app/walk-analytics/id6755187154" rel="noopener" target="_blank">Preuzmite aplikaciju</a></div><div class="info-box"><h4>📐 Točnost formule</h4><p>Sve jednadžbe na ovoj stranici su iz recenziranih istraživanja. vidjeti<a href="/hr/bibliography/">Bibliografija</a>za pune citate.</p></div></aside></div></div></section><section class="eeat-author bg-light divider-top-lg divider-bottom-lg" aria-label="Author and Reviewer Information"><div class="container container-narrow"><div class="eeat-card" style="display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem; background: var(--color-bg-alt, #f8f9fa); border-radius: 8px; border: 1px solid var(--color-border, #e9ecef); margin-top: 3rem; margin-bottom: 2rem;"><div class="eeat-avatar" style="font-size: 2.5rem; line-height: 1; flex-shrink: 0;" aria-hidden="true">👨‍🔬</div><div class="eeat-details"><h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
+          Expertly Reviewed by 
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">AnalyticsZone Team</span></span></h3><p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: var(--color-body-text, #4a5568); line-height: 1.5;">
+          This content has been written and reviewed by a sports data metrics expert to ensure technical accuracy and adherence to the latest sports science methodologies.
+        </p></div></div></div></section><section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="formulas"><div class="container ai-citation-shell"><h2 class="ai-citation-title">Formule i jednadžbe metrika hodanja | Walk Analytics</h2><p class="ai-citation-answer">Mathematical foundations of walking analytics – scientifically validated equations for intensity, energy, and performance</p><ul class="ai-citation-facts" role="list"><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">📅</span><span>2026-03-24</span></li><li class="ai-citation-fact ai-citation-keywords"><span class="ai-citation-icon" aria-hidden="true">🏷️</span><span>formule hodanja · WSS formula · izračun metrika hoda · znanstvene formule hodanja · izračun koraka</span></li><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">🔬</span><a href="../../hr/bibliography/">
+          
+          Bibliografija
+          
+        </a></li></ul></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">preuzimanje</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Preuzmite na App Store"><img src="../../assets/images/badge-app-store.svg"
+                            alt="Preuzmite na App Store" width="135"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Nabavite ga na Google Playu"><img src="../../assets/images/badge-google-play.svg"
+                            alt="Nabavite ga na Google Playu" width="135"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Dostupno u</h3><div class="lang-grid"><a href="/af/" class="lang-link"
+                    hreflang="af" >
+                    Afrikaans
+                </a><a href="/am/" class="lang-link"
+                    hreflang="am" >
+                    አမ္ဟာ
+                </a><a href="/ar/" class="lang-link"
+                    hreflang="ar" dir="rtl" >
+                    العربية
+                </a><a href="/bg/" class="lang-link"
+                    hreflang="bg" >
+                    Български
+                </a><a href="/bn/" class="lang-link"
+                    hreflang="bn" >
+                    বাংলা
+                </a><a href="/ca/" class="lang-link"
+                    hreflang="ca" >
+                    Català
+                </a><a href="/cs/" class="lang-link"
+                    hreflang="cs" >
+                    Čeština
+                </a><a href="/da/" class="lang-link"
+                    hreflang="da" >
+                    Dansk
+                </a><a href="/de/" class="lang-link"
+                    hreflang="de" >
+                    Deutsch
+                </a><a href="/el/" class="lang-link"
+                    hreflang="el" >
+                    Ελληνικά
+                </a><a href="/en/" class="lang-link"
+                    hreflang="en" >
+                    English
+                </a><a href="/es/" class="lang-link"
+                    hreflang="es" >
+                    Español
+                </a><a href="/et/" class="lang-link"
+                    hreflang="et" >
+                    Eesti
+                </a><a href="/fa/" class="lang-link"
+                    hreflang="fa" dir="rtl" >
+                    فارسی
+                </a><a href="/fi/" class="lang-link"
+                    hreflang="fi" >
+                    Suomi
+                </a><a href="/fr/" class="lang-link"
+                    hreflang="fr" >
+                    Français
+                </a><a href="/gu/" class="lang-link"
+                    hreflang="gu" >
+                    ગુજરાતી
+                </a><a href="/ha/" class="lang-link"
+                    hreflang="ha" >
+                    Hausa
+                </a><a href="/he/" class="lang-link"
+                    hreflang="he" dir="rtl" >
+                    עברית
+                </a><a href="/hi/" class="lang-link"
+                    hreflang="hi" >
+                    हिन्दी
+                </a><a href="/hr/" class="lang-link active"
+                    hreflang="hr" >
+                    Hrvatski
+                </a><a href="/hu/" class="lang-link"
+                    hreflang="hu" >
+                    Magyar
+                </a><a href="/id/" class="lang-link"
+                    hreflang="id" >
+                    Bahasa Indonesia
+                </a><a href="/is/" class="lang-link"
+                    hreflang="is" >
+                    Íslenska
+                </a><a href="/it/" class="lang-link"
+                    hreflang="it" >
+                    Italiano
+                </a><a href="/ja/" class="lang-link"
+                    hreflang="ja" >
+                    日本語
+                </a><a href="/km/" class="lang-link"
+                    hreflang="km" >
+                    ភាសាខ្មែរ
+                </a><a href="/kn/" class="lang-link"
+                    hreflang="kn" >
+                    ಕನ್ನಡ
+                </a><a href="/ko/" class="lang-link"
+                    hreflang="ko" >
+                    한국어
+                </a><a href="/lt/" class="lang-link"
+                    hreflang="lt" >
+                    Lietuvių
+                </a><a href="/lv/" class="lang-link"
+                    hreflang="lv" >
+                    Latviešu
+                </a><a href="/ms/" class="lang-link"
+                    hreflang="ms" >
+                    Bahasa Melayu
+                </a><a href="/my/" class="lang-link"
+                    hreflang="my" >
+                    မြန်မာ
+                </a><a href="/nb/" class="lang-link"
+                    hreflang="nb" >
+                    Norsk Bokmål
+                </a><a href="/nl/" class="lang-link"
+                    hreflang="nl" >
+                    Nederlands
+                </a><a href="/pl/" class="lang-link"
+                    hreflang="pl" >
+                    Polski
+                </a><a href="/pt/" class="lang-link"
+                    hreflang="pt" >
+                    Português
+                </a><a href="/pt-br/" class="lang-link"
+                    hreflang="pt-br" >
+                    Português (Brasil)
+                </a><a href="/ro/" class="lang-link"
+                    hreflang="ro" >
+                    Română
+                </a><a href="/ru/" class="lang-link"
+                    hreflang="ru" >
+                    Русский
+                </a><a href="/sk/" class="lang-link"
+                    hreflang="sk" >
+                    Slovenčina
+                </a><a href="/sl/" class="lang-link"
+                    hreflang="sl" >
+                    Slovenščina
+                </a><a href="/sr/" class="lang-link"
+                    hreflang="sr" >
+                    Српски
+                </a><a href="/sv/" class="lang-link"
+                    hreflang="sv" >
+                    Svenska
+                </a><a href="/sw/" class="lang-link"
+                    hreflang="sw" >
+                    Kiswahili
+                </a><a href="/ta/" class="lang-link"
+                    hreflang="ta" >
+                    தமிழ்
+                </a><a href="/te/" class="lang-link"
+                    hreflang="te" >
+                    తెలుగు
+                </a><a href="/th/" class="lang-link"
+                    hreflang="th" >
+                    ไทย
+                </a><a href="/tl/" class="lang-link"
+                    hreflang="tl" >
+                    Tagalog
+                </a><a href="/tr/" class="lang-link"
+                    hreflang="tr" >
+                    Türkçe
+                </a><a href="/uk/" class="lang-link"
+                    hreflang="uk" >
+                    Українська
+                </a><a href="/ur/" class="lang-link"
+                    hreflang="ur" dir="rtl" >
+                    اردو
+                </a><a href="/vi/" class="lang-link"
+                    hreflang="vi" >
+                    Tiếng Việt
+                </a><a href="/yo/" class="lang-link"
+                    hreflang="yo" >
+                    Yorùbá
+                </a><a href="/zh/" class="lang-link"
+                    hreflang="zh" >
+                    中文
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
+                &copy; 2026 Walk Analytics. Sva prava pridržana
+            </p><ul class="footer-legal"><li><a href="/hr/privacy/">Privatnost</a></li><li><a href="/hr/terms/">Uvjeti</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>This website uses cookies.</p><a href="/hr/privacy/" class="text-sm">Saznajte više</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Pad</button><button id="cookie-accept" class="btn btn-primary btn-small">Prihvatiti</button></div></div></div><script src="../../assets/js/core.min.js?v=1c7ace58" defer></script><script src="../../assets/js/search.min.js?v=1c7ace58" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>

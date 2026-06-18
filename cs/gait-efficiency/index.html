@@ -1,0 +1,972 @@
+<!DOCTYPE html><html lang="cs" dir="ltr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=optional"
+    rel="stylesheet"><title>Efektivita chůze: Ekonomická chůze, CoT, lepší forma</title><meta name="description" content="Pochopte ekonomiku chůze, náklady na dopravu a proč některé kroky stojí více energie, abyste mohli zvýšit efektivitu bez nuceného tempa."><meta name="author" content="AnalyticsZone Team"><meta name="keywords" content="metriky efektivity chůze, ekonomika chůze, skóre účinnosti, efektivita kroku, výkonnost při chůzi"><link rel="canonical" href="https://walk.analyticszone.app/cs/gait-efficiency/"><meta property="article:published_time" content="2025-01-15T10:00:00Z"><meta property="article:modified_time" content="2026-03-24T14:30:00Z"><meta property="article:author" content="AnalyticsZone Team"><meta property="og:type" content="article"><meta property="og:url" content="https://walk.analyticszone.app/cs/gait-efficiency/"><meta property="og:title" content="Efektivita chůze: Ekonomická chůze, CoT, lepší forma"><meta property="og:description" content="Pochopte ekonomiku chůze, náklady na dopravu a proč některé kroky stojí více energie, abyste mohli zvýšit efektivitu bez nuceného tempa."><meta property="og:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta property="og:locale" content="cs_CZ"><meta property="og:site_name" content="Walk Analytics"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://walk.analyticszone.app/cs/gait-efficiency/"><meta name="twitter:title" content="Efektivita chůze: Ekonomická chůze, CoT, lepší forma"><meta name="twitter:description" content="Pochopte ekonomiku chůze, náklady na dopravu a proč některé kroky stojí více energie, abyste mohli zvýšit efektivitu bez nuceného tempa."><meta name="twitter:image" content="https://walk.analyticszone.app/assets/images/og-image.svg"><meta name="twitter:site" content="@walkanalytics"><meta name="twitter:creator" content="@walkanalytics"><link rel="alternate" hreflang="ar"
+    href="https://walk.analyticszone.app/ar/gait-efficiency/"><link rel="alternate" hreflang="de"
+    href="https://walk.analyticszone.app/de/gait-efficiency/"><link rel="alternate" hreflang="en"
+    href="https://walk.analyticszone.app/en/gait-efficiency/"><link rel="alternate" hreflang="es"
+    href="https://walk.analyticszone.app/es/gait-efficiency/"><link rel="alternate" hreflang="fr"
+    href="https://walk.analyticszone.app/fr/gait-efficiency/"><link rel="alternate" hreflang="hi"
+    href="https://walk.analyticszone.app/hi/gait-efficiency/"><link rel="alternate" hreflang="id"
+    href="https://walk.analyticszone.app/id/gait-efficiency/"><link rel="alternate" hreflang="it"
+    href="https://walk.analyticszone.app/it/gait-efficiency/"><link rel="alternate" hreflang="ja"
+    href="https://walk.analyticszone.app/ja/gait-efficiency/"><link rel="alternate" hreflang="ko"
+    href="https://walk.analyticszone.app/ko/gait-efficiency/"><link rel="alternate" hreflang="nl"
+    href="https://walk.analyticszone.app/nl/gait-efficiency/"><link rel="alternate" hreflang="pl"
+    href="https://walk.analyticszone.app/pl/gait-efficiency/"><link rel="alternate" hreflang="pt"
+    href="https://walk.analyticszone.app/pt/gait-efficiency/"><link rel="alternate" hreflang="pt-br"
+    href="https://walk.analyticszone.app/pt-br/gait-efficiency/"><link rel="alternate" hreflang="ru"
+    href="https://walk.analyticszone.app/ru/gait-efficiency/"><link rel="alternate" hreflang="sv"
+    href="https://walk.analyticszone.app/sv/gait-efficiency/"><link rel="alternate" hreflang="tr"
+    href="https://walk.analyticszone.app/tr/gait-efficiency/"><link rel="alternate" hreflang="zh"
+    href="https://walk.analyticszone.app/zh/gait-efficiency/"><link rel="alternate" hreflang="x-default"
+    href="https://walk.analyticszone.app/en/gait-efficiency/"><link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/icons/apple-touch-icon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#2563EB"><meta name="robots" content="noindex, follow"><meta name="apple-itunes-app" content="app-id=6755187154"><style>
+/* Critical CSS - Above the fold styles for fast LCP */
+:root {
+  --color-primary: #0066CC;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header - Critical for LCP */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.site-logo img, .site-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navigation */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main content */
+main.main-content {
+  flex: 1;
+}
+
+/* Hero section - Critical for LCP */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero .lead, .hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Buttons - Critical for CTA */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Images - prevent CLS with aspect-ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.lazy-image {
+  background: var(--color-bg-alt);
+  transition: opacity 0.3s;
+}
+
+.lazy-image:not(.loaded) {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* App badges - fixed dimensions to prevent CLS */
+.app-badge img {
+  width: 140px;
+  height: 42px;
+}
+
+/* Logo - fixed dimensions */
+.site-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="../../assets/css/main.min.css?v=1c7ace58"><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "logo": "https://walk.analyticszone.app/assets/images/logo.png",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "analyticszone+walk@onmedic.org"
+  },
+  
+  "sameAs": [
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+    "https://twitter.com/walkanalytics",
+    
+    "https://apps.apple.com/us/app/walk-analytics/id6755187154",
+    
+    "https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics"
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Walk Analytics",
+  "url": "https://walk.analyticszone.app",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "inLanguage": "cs"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Walk Analytics",
+  "description": "Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.",
+  "url": "https://walk.analyticszone.app",
+  "applicationCategory": ["HealthApplication", "FitnessApplication"],
+  "operatingSystem": "iOS, Android",
+  "author": {
+    "@type": "Organization",
+    "name": "AnalyticsZone Team"
+  },
+  "downloadUrl": "https://apps.apple.com/us/app/walk-analytics/id6755187154"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domov",
+      "item": "https://walk.analyticszone.app/cs/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Věda",
+      "item": "https://walk.analyticszone.app/cs/research/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Efektivita chůze",
+      "item": "https://walk.analyticszone.app/cs/gait-efficiency/"
+    }
+    
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Efektivita chůze: Ekonomická chůze, CoT, lepší forma",
+  "description": "Pochopte ekonomiku chůze, náklady na dopravu a proč některé kroky stojí více energie, abyste mohli zvýšit efektivitu bez nuceného tempa.",
+  "url": "https://walk.analyticszone.app/cs/gait-efficiency/",
+  "inLanguage": "cs",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Walk Analytics",
+    "url": "https://walk.analyticszone.app"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-24",
+  "keywords": ["metriky efektivity chůze", "ekonomika chůze", "skóre účinnosti", "efektivita kroku", "výkonnost při chůzi"],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "metriky efektivity chůze"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "ekonomika chůze"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "skóre účinnosti"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "efektivita kroku"
+    }, 
+  
+    {
+      "@type": "Thing",
+      "name": "výkonnost při chůzi"
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Efektivita chůze: Ekonomická chůze, CoT, lepší forma",
+  "description": "Pochopte ekonomiku chůze, náklady na dopravu a proč některé kroky stojí více energie, abyste mohli zvýšit efektivitu bez nuceného tempa.",
+  "author": {
+    "@type": "Person",
+    "name": "AnalyticsZone Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walk Analytics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://walk.analyticszone.app/assets/images/logo.png"
+    }
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://walk.analyticszone.app/cs/gait-efficiency/"
+  }
+}
+</script><script>
+    (function () {
+      let theme = localStorage.getItem('theme');
+      // Older builds could persist a per-subdomain `theme=light` value without a UI
+      // to keep it consistent across apps. Treat it as stale and fall back to the OS.
+      if (theme === 'light') {
+        try { localStorage.removeItem('theme'); } catch (e) { /* ignore */ }
+        theme = null;
+      }
+
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script></head><body><a href="#main-content" class="skip-link">Přejít na obsah</a><header class="site-header"><div class="container"><div class="header-inner"><a href="/cs/" class="site-logo"><picture><source srcset="../../assets/images/logo-dark.png" type="image/png"
+                        media="(prefers-color-scheme: dark)"><img src="../../assets/images/logo.png" alt="Walk Analytics - Walking Analytics App | Gait Analysis, Walking Zones &amp; Health Metrics for iOS" width="56" height="56"></picture><span class="logo-text">Walk Analytics</span></a><nav class="nav-primary" id="nav-primary" role="navigation" aria-label="Main navigation"><div class="nav-group-left"><ul><li><a href="/cs/" 
+                                aria-current="">
+                                Domov
+                            </a></li><li class="has-submenu" ><a href="/cs/getting-started/" class="nav-label">Učit se</a><ul class="submenu"><li><a href="/cs/getting-started/" 
+                                        aria-current="">
+                                        Začínáme
+                                    </a></li><li><a href="/cs/walking-zones/" 
+                                        aria-current="">
+                                        Pěší zóny
+                                    </a></li><li><a href="/cs/gait-analysis/" 
+                                        aria-current="">
+                                        Analýza chůze
+                                    </a></li><li><a href="/cs/training-load/" 
+                                        aria-current="">
+                                        Tréninkové zatížení
+                                    </a></li><li><a href="/cs/wss-calculator/" 
+                                        aria-current="">
+                                        WSS kalkulačka
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/cs/research/" class="nav-label">Věda</a><ul class="submenu"><li><a href="/cs/research/" 
+                                        aria-current="">
+                                        Výzkum
+                                    </a></li><li><a href="/cs/formulas/" 
+                                        aria-current="">
+                                        Vzorce
+                                    </a></li><li><a href="/cs/gait-efficiency/" class="active" 
+                                        aria-current="page">
+                                        Efektivita chůze
+                                    </a></li><li><a href="/cs/stride-mechanics/" 
+                                        aria-current="">
+                                        Mechanika kroku
+                                    </a></li><li><a href="/cs/walking-vs-running/" 
+                                        aria-current="">
+                                        Chůze vs běh
+                                    </a></li><li><a href="/cs/benchmarks/" 
+                                        aria-current="">
+                                        Srovnávací hodnoty
+                                    </a></li><li><a href="/cs/bibliography/" 
+                                        aria-current="">
+                                        Bibliografie
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/cs/for-health/" class="nav-label">Pro vás</a><ul class="submenu"><li><a href="/cs/for-health/" 
+                                        aria-current="">
+                                        Pro zdraví
+                                    </a></li><li><a href="/cs/for-fitness/" 
+                                        aria-current="">
+                                        Pro Fitness
+                                    </a></li><li><a href="/cs/for-seniors/" 
+                                        aria-current="">
+                                        Pro seniory
+                                    </a></li><li><a href="/cs/for-rehabilitation/" 
+                                        aria-current="">
+                                        Na rehabilitaci
+                                    </a></li></ul></li><li class="has-submenu" ><a href="/cs/cadence-calculator/" class="nav-label">Nástroje</a><ul class="submenu"><li><a href="/cs/cadence-calculator/" 
+                                        aria-current="">
+                                        Kalkulačka kadence
+                                    </a></li><li><a href="/cs/gait-assessment/" 
+                                        aria-current="">
+                                        Hodnocení chůze
+                                    </a></li><li><a href="/cs/vo2max-calculator/" 
+                                        aria-current="">
+                                        VO₂max Kalkulačka
+                                    </a></li></ul></li><li><a href="/cs/contact/" 
+                                aria-current="">
+                                Kontakt
+                            </a></li></ul><div class="search-container"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input type="search" id="site-search" class="search-input" aria-expanded="false"
+                            aria-haspopup="listbox" aria-autocomplete="list" autocomplete="off" spellcheck="false" /><div id="search-results" class="search-results hidden" role="region" aria-live="polite"></div></div><select class="language-selector" id="language-select" aria-label="Vyberte jazyk"><option value="af" >
+                            Afrikaans
+                        </option><option value="am" >
+                            አမ္ဟာ
+                        </option><option value="ar" >
+                            العربية
+                        </option><option value="bg" >
+                            Български
+                        </option><option value="bn" >
+                            বাংলা
+                        </option><option value="ca" >
+                            Català
+                        </option><option value="cs" selected>
+                            Čeština
+                        </option><option value="da" >
+                            Dansk
+                        </option><option value="de" >
+                            Deutsch
+                        </option><option value="el" >
+                            Ελληνικά
+                        </option><option value="en" >
+                            English
+                        </option><option value="es" >
+                            Español
+                        </option><option value="et" >
+                            Eesti
+                        </option><option value="fa" >
+                            فارسی
+                        </option><option value="fi" >
+                            Suomi
+                        </option><option value="fr" >
+                            Français
+                        </option><option value="gu" >
+                            ગુજરાતી
+                        </option><option value="ha" >
+                            Hausa
+                        </option><option value="he" >
+                            עברית
+                        </option><option value="hi" >
+                            हिन्दी
+                        </option><option value="hr" >
+                            Hrvatski
+                        </option><option value="hu" >
+                            Magyar
+                        </option><option value="id" >
+                            Bahasa Indonesia
+                        </option><option value="is" >
+                            Íslenska
+                        </option><option value="it" >
+                            Italiano
+                        </option><option value="ja" >
+                            日本語
+                        </option><option value="km" >
+                            ភាសាខ្មែរ
+                        </option><option value="kn" >
+                            ಕನ್ನಡ
+                        </option><option value="ko" >
+                            한국어
+                        </option><option value="lt" >
+                            Lietuvių
+                        </option><option value="lv" >
+                            Latviešu
+                        </option><option value="ms" >
+                            Bahasa Melayu
+                        </option><option value="my" >
+                            မြန်မာ
+                        </option><option value="nb" >
+                            Norsk Bokmål
+                        </option><option value="nl" >
+                            Nederlands
+                        </option><option value="pl" >
+                            Polski
+                        </option><option value="pt" >
+                            Português
+                        </option><option value="pt-br" >
+                            Português (Brasil)
+                        </option><option value="ro" >
+                            Română
+                        </option><option value="ru" >
+                            Русский
+                        </option><option value="sk" >
+                            Slovenčina
+                        </option><option value="sl" >
+                            Slovenščina
+                        </option><option value="sr" >
+                            Српски
+                        </option><option value="sv" >
+                            Svenska
+                        </option><option value="sw" >
+                            Kiswahili
+                        </option><option value="ta" >
+                            தமிழ்
+                        </option><option value="te" >
+                            తెలుగు
+                        </option><option value="th" >
+                            ไทย
+                        </option><option value="tl" >
+                            Tagalog
+                        </option><option value="tr" >
+                            Türkçe
+                        </option><option value="uk" >
+                            Українська
+                        </option><option value="ur" >
+                            اردو
+                        </option><option value="vi" >
+                            Tiếng Việt
+                        </option><option value="yo" >
+                            Yorùbá
+                        </option><option value="zh" >
+                            中文
+                        </option></select></div><div class="nav-group-right"><div class="header-app-buttons"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Download on App Store" title="Download on App Store"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" /></svg></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" class="header-download-btn" target="_blank"
+                            rel="noopener" aria-label="Get it on Google Play" title="Get it on Google Play"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor"><path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" /></svg></a></div><div class="suite-menu-container"><button class="suite-menu-toggle" id="suite-menu-toggle" aria-label="See other apps"
+                            aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button><div class="suite-dropdown hidden" id="suite-dropdown"><div class="suite-dropdown-header">Other AnalyticsZone Apps</div><div class="suite-apps-grid"><a href="https://analyticszone.app" class="suite-app-link">AnalyticsZone</a><a href="https://run.analyticszone.app" class="suite-app-link">Run Analytics</a><a href="https://swim.analyticszone.app" class="suite-app-link">Swim Analytics</a><a href="https://bike.analyticszone.app" class="suite-app-link">Bike Analytics</a><a href="https://cardio.analyticszone.app" class="suite-app-link">Cardio Analytics</a><a href="https://health.analyticszone.app" class="suite-app-link">Health Analytics</a><a href="https://swimtrainer.analyticszone.app" class="suite-app-link">Swim Trainer</a><a href="https://hike.analyticszone.app" class="suite-app-link">Hike Analytics</a><a href="https://sleep.analyticszone.app" class="suite-app-link">Sleep Analytics</a><a href="https://paceva.analyticszone.app" class="suite-app-link">Paceva Analytics</a></div></div></div></div></nav><button class="menu-toggle" id="menu-toggle" aria-label="Přepnout nabídku"
+                aria-expanded="false" aria-controls="nav-primary"><span></span><span></span><span></span></button></div></div></header><nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/cs/">Domov</a></li><li><a href="/cs/research/">Věda</a></li><li><span aria-current="page">Efektivita chůze</span></li></ol></div></nav><main id="main-content" class="main-content"><section class="guide-hero"><div class="container"><div class="breadcrumb"><a href="/cs/">Domů</a>/<a href="/cs/#science">Věda</a>/ Efektivita chůze</div><h1>Efektivita a hospodárnost chůze</h1><p class="lead">Pochopení a optimalizace energetických nákladů chůze</p></div></section><section class="guide-content"><div class="container">
+Úvod
+<h2>Co je efektivita chůze?</h2><p><strong>Účinnost chůze</strong>(také nazývaný<strong>ekonomika chůze</strong>) se týká nákladů na energii
+      chůze danou rychlostí. Efektivnější chodci spotřebují méně energie – měřeno jako spotřeba kyslíku, kalorie nebo
+      metabolické ekvivalenty – udržet stejné tempo.</p><p>Na rozdíl od kvality chůze (symetrie, variabilita) nebo rychlosti chůze jde v podstatě o efektivitu<strong>energie
+        výdaje</strong>. Dva lidé mohou chodit stejnou rychlostí s podobnou biomechanikou, ale jeden to může vyžadovat
+      výrazně více energie kvůli rozdílům ve fitness, technice nebo antropometrii.</p><div class="key-finding"><strong>Proč na efektivitě záleží:</strong><ul><li><strong>Výkon:</strong>Lepší hospodárnost = vyšší rychlost s menší únavou</li><li><strong>Výdrž:</strong>Nižší náklady na energii = schopnost ujít delší vzdálenosti</li><li><strong>zdraví:</strong>Zlepšená účinnost ukazuje na lepší kardiovaskulární a muskuloskeletální zdatnost</li><li><strong>Řízení hmotnosti:</strong>Paradoxně velmi vysoká účinnost může znamenat nižší spalování kalorií</li></ul></div>
+Náklady na dopravu
+<h2>Náklady na dopravu (CoT)</h2><p>The<strong>Náklady na dopravu</strong>je zlatým standardním měřítkem lokomotorické účinnosti, představující
+      energie potřebná k přesunu jedné jednotky tělesné hmotnosti na jednu jednotku vzdálenosti.</p><h3>Jednotky a výpočty</h3><p>CoT lze vyjádřit v několika ekvivalentních jednotkách:</p><div class="formula-box"><pre><strong>1. Metabolické náklady na dopravu (J/kg/m nebo kcal/kg/km):</strong>
+
+CoT = Energy Expenditure / (Body Mass × Distance)
+
+Units: Joules per kilogram per meter (J/kg/m)
+       OR kilocalories per kilogram per kilometer (kcal/kg/km)
+
+Conversion: 1 kcal/kg/km = 4.184 J/kg/m
+
+
+<strong>2. Čisté náklady na dopravu (bez rozměrů):</strong>
+
+Net CoT = (Gross VO₂ - Resting VO₂) / Speed
+
+Units: mL O₂/kg/m
+
+<strong>vztah:</strong> 1 L O₂ ≈ 5 kcal ≈ 20.9 kJ</pre></div><h3>Typické hodnoty Walking CoT</h3><div class="data-table"><table><thead><tr><th>Podmínka</th><th>Čistá CoT (J/kg/m)</th><th>Čistá CoT (kcal/kg/km)</th><th>Hrubá energie (kcal/km) na osobu 70 kg</th></tr></thead><tbody><tr><td><strong>Optimální rychlost chůze (~1,3 m/s)</strong></td><td>2,0-2,3</td><td>0,48-0,55</td><td>50-60 kcal/km</td></tr><tr><td><strong>Pomalá chůze (0,8 m/s)</strong></td><td>2,5-3,0</td><td>0,60-0,72</td><td>60-75 kcal/km</td></tr><tr><td><strong>Rychlá chůze (1,8 m/s)</strong></td><td>2,8-3,5</td><td>0,67-0,84</td><td>70-90 kcal/km</td></tr><tr><td><strong>Velmi rychlá/závodní chůze (2,2+ m/s)</strong></td><td>3,5-4,5</td><td>0,84-1,08</td><td>90-115 kcal/km</td></tr><tr><td><strong>Běh (2,5 m/s)</strong></td><td>3,8-4,2</td><td>0,91-1,00</td><td>95-110 kcal/km</td></tr></tbody></table></div><p><strong>Klíčové informace:</strong>Chůze má poměr nákladů a rychlosti ve tvaru písmene U – existuje optimální rychlost (kolem 1,3
+      m/s nebo 4,7 km/h), kde je CoT minimalizováno. Chůze pomaleji nebo rychleji, než je tato optimální rychlost, zvyšuje energii
+      náklady na kilometr.</p><h3>Ekonomická křivka ve tvaru U</h3><p>Vztah mezi rychlostí chůze a úsporou energie tvoří charakteristickou křivku ve tvaru písmene U:</p><ul><li><strong>Příliš pomalé (&lt;1,0 m/s):</strong>Špatná ekonomika svalů, neefektivní mechanika kyvadla, zvýšená
+        doba relativního postoje</li><li><strong>Optimální (1,2–1,4 m/s):</strong>Minimalizuje náklady na energii díky účinné mechanice obráceného kyvadla</li><li><strong>Příliš rychle (&gt;1,8 m/s):</strong>Zvýšená aktivace svalů, vyšší kadence, přiblížení
+        biomechanické limity chůze</li><li><strong>Velmi rychlé (&gt;2,0 m/s):</strong>Chůze se stává méně ekonomickou než běh; přirozený přechod
+        bod</li></ul><div class="key-finding"><strong>Zjištění výzkumu:</strong>Upřednostňovaná rychlost chůze lidí (~1,3 m/s) těsně odpovídá rychlosti
+      minimální náklady na energii, což naznačuje, že přírodní výběr optimalizuje efektivitu chůze (Ralston, 1958; Zarrugh et al.,
+      1974).</div>
+Model obráceného kyvadla
+<h2>Model chůze s obráceným kyvadlem</h2><p>Chůze se od běhu zásadně liší mechanismem úspory energie. Chůze využívá an<strong>obrácený
+        kyvadlo</strong>model, kde mechanická energie osciluje mezi kinetickou a gravitační potenciální energií.</p><h3>Jak funguje kyvadlo</h3><ol><li><strong>Kontaktní fáze:</strong><ul><li>Noha působí jako tuhé obrácené kyvadlo</li><li>Klenby těla přes vysazenou nohu</li><li>Kinetická energie se přeměňuje na gravitační potenciální energii (tělo stoupá)</li></ul></li><li><strong>Vrchol oblouku:</strong><ul><li>Tělo dosahuje maximální výšky</li><li>Rychlost dočasně klesá (minimální kinetická energie)</li><li>Potenciální energie na maximum</li></ul></li><li><strong>Fáze sestupu:</strong><ul><li>Tělo klesá a zrychluje vpřed</li><li>Potenciální energie se přemění zpět na kinetickou energii</li><li>Kyvadlo se houpe dopředu</li></ul></li></ol><h3>Procento využití energie</h3><p><strong>Mechanická rekuperace energie</strong>kvantifikuje, kolik energie se vymění mezi kinetickou a potenciální
+      spíše tvoří, než aby je svaly generovaly/absorbovaly:</p><div class="data-table"><table><thead><tr><th>Rychlost chůze</th><th>Rekuperace energie (%)</th><th>Výklad</th></tr></thead><tbody><tr><td>Pomalé (0,8 m/s)</td><td>~50 %</td><td>Špatná mechanika kyvadla</td></tr><tr><td>Optimální (1,3 m/s)</td><td>~65–70 %</td><td>Maximální kyvadlová účinnost</td></tr><tr><td>Rychlé (1,8 m/s)</td><td>~55 %</td><td>Klesající funkce kyvadla</td></tr><tr><td>Běh (jakákoli rychlost)</td><td>~5–10 %</td><td>Systém pružina-hmotnost, ne kyvadlo</td></tr></tbody></table></div><p><strong>Proč zotavení klesá při vysoké rychlosti:</strong>Když se rychlost chůze zvýší nad ~1,8 m/s, dojde k převrácení
+      kyvadlo se stává mechanicky nestabilním. Tělo přirozeně přechází do běhu, který využívá elastickou energii
+      uložení (systém pružina-hmotnost) namísto kyvadlové výměny.</p>
+Froude číslo
+<h2>Froude číslo a bezrozměrná rychlost</h2><p>The<strong>Froude číslo</strong>je bezrozměrný parametr, který normalizuje rychlost chůze vzhledem k noze
+      délka a gravitace, což umožňuje spravedlivé srovnání mezi jednotlivci různých výšek.</p><h3>Vzorec a výklad</h3><div class="formula-box"><pre>Froude Number (Fr) = v² / (g × L)
+
+Where:
+  v = walking speed (m/s)
+  g = acceleration due to gravity (9.81 m/s²)
+  L = leg length (m, approximately 0.53 × height)
+
+<strong>Příklad:</strong>
+  Height: 1.75 m
+  Leg length: 0.53 × 1.75 = 0.93 m
+  Walking speed: 1.3 m/s
+  Fr = (1.3)² / (9.81 × 0.93) = 1.69 / 9.12 = 0.185
+
+<strong>Kritické prahy:</strong>
+  Fr &lt; 0.15: Slow walking
+  Fr 0.15-0.30: Normal comfortable walking
+  Fr 0.30-0.50: Fast walking
+  Fr &gt; 0.50: Walk-to-run transition (unstable walking)</pre></div><p><strong>Výzkumné aplikace:</strong>Froudeho číslo vysvětluje, proč vyšší jedinci přirozeně chodí rychleji – do
+      dosáhnout stejné bezrozměrné rychlosti (a tím i optimální hospodárnosti), delší nohy vyžadují vyšší absolutní rychlosti.
+      Děti s kratšíma nohama mají úměrně pomalejší pohodlnou rychlost chůze.</p><div class="key-finding"><strong>Přechod z chůze do běhu:</strong>U různých druhů a velikostí se přechod z chůze do běhu vyskytuje při Fr ≈ 0,5.
+      Tento univerzální práh představuje bod, kdy se mechanika obráceného kyvadla stává mechanicky nestabilní
+      (Alexander, 1989).</div>
+Faktory ovlivňující efektivitu
+<h2>Faktory ovlivňující efektivitu chůze</h2><h3>1. Antropometrické faktory</h3><p><strong>Délka nohou:</strong></p><ul><li>Delší nohy → delší optimální krok → nižší kadence při stejné rychlosti</li><li>Vyšší jedinci mají o 5–10 % lepší hospodárnost při preferované rychlosti</li><li>Froudeho číslo tento efekt normalizuje</li></ul><p><strong>Tělesná hmotnost:</strong></p><ul><li>Těžší jedinci mají vyšší absolutní energetický výdej (kcal/km)</li><li>Ale hmotnostně normalizovaná CoT (kcal/kg/km) může být podobná, pokud je poměr chudé hmoty dobrý</li><li>Každých 10 kg nadváhy zvyšuje náklady na energii o ~7-10%</li></ul><p><strong>Složení těla:</strong></p><ul><li>Vyšší poměr svalů k tuku zlepšuje ekonomiku (sval je metabolicky účinná tkáň)</li><li>Nadměrná adipozita zvyšuje mechanickou práci bez funkčního přínosu</li><li>Centrální adipozita ovlivňuje držení těla a mechaniku chůze</li></ul><h3>2. Biomechanické faktory</h3><p><strong>Optimalizace délky kroku a kadence:</strong></p><div class="data-table"><table><thead><tr><th>strategie</th><th>Vliv na CoT</th><th>Vysvětlení</th></tr></thead><tbody><tr><td><strong>Preferovaná kadence</strong></td><td>Optimální</td><td>Samovolná kadence minimalizuje náklady na energii</td></tr><tr><td><strong>±10% změna kadence</strong></td><td>+3-5% CoT</td><td>Vynucená odchylka od optima zvyšuje náklady</td></tr><tr><td><strong>±20% změna kadence</strong></td><td>+8-12% CoT</td><td>Podstatně méně ekonomické</td></tr><tr><td><strong>Překročení</strong></td><td>+5-15% CoT</td><td>Brzdné síly, zvýšená svalová práce</td></tr></tbody></table></div><div class="key-finding"><strong>Zjištění výzkumu:</strong>Lidé si přirozeně vybírají kadenci, která v každém případě minimalizuje metabolické náklady
+      rychlost (Holt a kol., 1991). Vynucené odchylky ±10-20% od preferované kadence zvyšují energetický výdej
+      3-12 %.</div><p><strong>Vertikální oscilace:</strong></p><ul><li>Nadměrné vertikální posunutí (&gt;8-10 cm) plýtvá energií na pohyb, který není vpřed</li><li>Každý další cm oscilace zvyšuje CoT o ~0,5-1%</li><li>Závodní chodci minimalizují oscilaci na 3-5 cm díky pohyblivosti kyčle a technice</li></ul><p><strong>Swing paže:</strong></p><ul><li>Přirozený pohyb paží snižuje metabolické náklady o 10–12 % (Collins et al., 2009)</li><li>Paže vyvažují pohyb nohou a minimalizují rotační energii trupu</li><li>Omezovací ramena (např. nošení těžkých tašek) podstatně zvyšují náklady na energii</li></ul><h3>3. Fyziologické faktory</h3><p><strong>Aerobic Fitness (VO₂max):</strong></p><ul><li>Vyšší VO₂max koreluje s ~15-20% lepší hospodárností chůze</li><li>Trénovaní chodci mají nižší submaximální HR a VO₂ při stejném tempu</li><li>Mitochondriální hustota a kapacita oxidačních enzymů se zlepšují vytrvalostním tréninkem</li></ul><p><strong>Svalová síla a síla:</strong></p><ul><li>Silnější extenzory kyčle (hýždě) a plantarflexory kotníku (lýtka) zlepšují účinnost pohonu</li><li>8-12 týdnů silového tréninku může zlepšit ekonomiku chůze o 5-10 %</li><li>Zvláště důležité pro starší dospělé trpící sarkopenií</li></ul><p><strong>Neuromuskulární koordinace:</strong></p><ul><li>Účinné vzorce náboru motorických jednotek snižují zbytečné kokontrakce</li><li>Nacvičené pohybové vzorce se stávají více automatickými, což snižuje námahu mozkové kůry</li><li>Zlepšená propriocepce umožňuje jemnější kontrolu držení těla a rovnováhy</li></ul><h3>4. Environmentální a vnější faktory</h3><p><strong>Přechod (do kopce/z kopce):</strong></p><div class="data-table"><table><thead><tr><th>Gradient</th><th>Vliv na CoT</th><th>Násobitel nákladů na energii</th></tr></thead><tbody><tr><td><strong>Úroveň (0 %)</strong></td><td>Základní linie</td><td>1,0×</td></tr><tr><td><strong>+5% do kopce</strong></td><td>+45-50% nárůst</td><td>1,45-1,50×</td></tr><tr><td><strong>+10% do kopce</strong></td><td>+90-100% nárůst</td><td>1,90–2,00×</td></tr><tr><td><strong>+15 % do kopce</strong></td><td>+140-160% nárůst</td><td>2,40-2,60×</td></tr><tr><td><strong>-5% z kopce</strong></td><td>-20 až -10 % (mírné úspory)</td><td>0,80-0,90×</td></tr><tr><td><strong>-10% z kopce</strong></td><td>-15 až -5 % (klesající úspory)</td><td>0,85-0,95×</td></tr><tr><td><strong>-15% z kopce</strong></td><td>+0 až +10 % (excentrické náklady)</td><td>1,00-1,10×</td></tr></tbody></table></div><p><strong>Proč sjezd není "zdarma":</strong>Strmé sjezdy vyžadují k ovládání excentrickou svalovou kontrakci
+      sestup, který je metabolicky nákladný a způsobuje poškození svalů. Za -10 % může chůze z kopce skutečně stát
+      více energie než vodorovná chůze díky brzdným silám.</p><p><strong>Nošení nákladu (batoh, vážená vesta):</strong></p><div class="formula-box"><pre>Energy Cost Increase ≈ 1% per 1 kg of load
+
+Example: 70 kg person with 10 kg backpack
+  Baseline CoT: 0.50 kcal/kg/km
+  Loaded CoT: 0.50 × (1 + 0.10) = 0.55 kcal/kg/km
+  Increase: +10% energy cost
+
+<strong>Na rozložení zátěže záleží:</strong>
+  - Hip belt pack: Minimal penalty (~8% for 10 kg)
+  - Backpack (well-fitted): Moderate penalty (~10% for 10 kg)
+  - Poorly fitted pack: High penalty (~15-20% for 10 kg)
+  - Ankle weights: Severe penalty (~5-6% per 1 kg at ankles!)</pre></div><p><strong>Terén a povrch:</strong></p><ul><li><strong>Asfalt/beton:</strong>Základní linie (nejvyšší, nejnižší CoT)</li><li><strong>tráva:</strong>+3-5% CoT kvůli poddajnosti a tření</li><li><strong>Stezka (hlína/štěrk):</strong>+5-10% CoT kvůli nepravidelnosti</li><li><strong>písek:</strong>+20-50% CoT (měkký písek je obzvláště drahý)</li><li><strong>Sníh:</strong>+15-40% CoT v závislosti na hloubce a tvrdosti</li></ul>
+Ekonomika chůze vs běh
+<h2>Chůze vs běh: Ekonomický crossover</h2><p>Kritická otázka ve vědě o pohybu:<strong>Kdy se běhání stává ekonomičtějším než
+        chůze?</strong></p><h3>Přechodová rychlost</h3><div class="data-table"><table><thead><tr><th>Rychlost (m/s)</th><th>Rychlost (km/h)</th><th>Pěší CoT (kcal/kg/km)</th><th>Běžecká CoT (kcal/kg/km)</th><th>Nejhospodárnější</th></tr></thead><tbody><tr><td>1.3</td><td>4.7</td><td>0,48</td><td>N/A (příliš pomalé na běh)</td><td><strong>Procházka</strong></td></tr><tr><td>1.8</td><td>6.5</td><td>0,67</td><td>0,95</td><td><strong>Procházka</strong></td></tr><tr><td>2,0</td><td>7.2</td><td>0,80</td><td>0,95</td><td><strong>Procházka</strong></td></tr><tr><td>2.2</td><td>7.9</td><td>0,95</td><td>0,95</td><td><strong>rovná se</strong>(bod křížení)</td></tr><tr><td>2.5</td><td>9,0</td><td>1,15+</td><td>0,96</td><td><strong>Spustit</strong></td></tr><tr><td>3.0</td><td>10.8</td><td>Velmi vysoká</td><td>0,97</td><td><strong>Spustit</strong></td></tr></tbody></table></div><p><strong>Klíčové statistiky:</strong></p><ul><li><strong>Rychlost přechodu chůze-běh:</strong>~2,0-2,2 m/s (7-8 km/h) pro většinu lidí</li><li><strong>Walking CoT se exponenciálně zvyšuje</strong>nad 1,8 m/s</li><li><strong>Running CoT zůstává relativně plochý</strong>napříč rychlostmi (mírný nárůst)</li><li><strong>Lidé spontánně přecházejí</strong>blízko bodu ekonomického přechodu</li></ul><div class="key-finding"><strong>Zjištění výzkumu:</strong>Preferovaná rychlost přechodu z chůze do běhu (~2,0 m/s) nastává přibližně
+      stejnou rychlostí, při které se běh stává ekonomičtějším než chůze, a jako klíč podporuje metabolickou optimalizaci
+      determinant výběru chůze (Margaria et al., 1963; Hreljac, 1993).</div>
+Metriky a sledování účinnosti
+<h2>Praktické metriky účinnosti</h2><h3>1. Vertikální poměr</h3><p>The<strong>Vertikální poměr</strong>je jedním z nejlepších ukazatelů účinnosti mechanické chůze. Měří
+      jak velká vertikální oscilace ("odskok" ve vašem kroku) nastane vzhledem k délce vašeho kroku.</p><div class="formula-box"><pre>Vertical Ratio (%) = (Vertical Oscillation / Stride Length) × 100
+
+<strong>Příklad:</strong>
+  Vertical Oscillation: 5 cm
+  Stride Length: 140 cm
+  Vertical Ratio = (5 / 140) × 100 = 3.57%
+
+<strong>Nižší hodnoty = lepší hospodárnost</strong></pre></div><p><strong>Proč na tom záleží:</strong>Vysoký vertikální poměr znamená, že plýtváte energií přesunem těžiště nahoru
+      a spíše dolů než dopředu. Elitní chodci tento poměr minimalizují, aby šetřili energií.</p><h3>2. Faktor účinnosti (EF)</h3><p>The<strong>Faktor účinnosti</strong>(dříve WEI) koreluje rychlost s fyziologickou námahou (srdeční frekvence). to
+      představuje, jakou rychlost můžete generovat pro každý tep srdce.</p><div class="formula-box"><pre>EF = (Speed in m/s / Heart Rate in bpm) × 1000
+
+<strong>Příklad:</strong>
+  Speed: 1.4 m/s (5.0 km/h)
+  Heart Rate: 110 bpm
+  EF = (1.4 / 110) × 1000 = 12.7
+
+<strong>Obecná srovnávací kritéria:</strong>
+  &lt;8: Below average efficiency
+  8-12: Average
+  12-16: Good
+  16-20: Very good
+  &gt;20: Excellent (elite fitness)</pre></div><p><strong>Omezení:</strong>WEI vyžaduje monitor srdečního tepu a je ovlivněn faktory mimo účinnost (teplo,
+      stres, kofein, nemoc). Nejlépe se používá jako metrika podélného sledování na stejné trase/podmínkách.</p><h3>3. Odhadované náklady na dopravu z rychlosti a lidských zdrojů</h3><p>Pro ty, kteří nemají zařízení pro měření metabolismu:</p><div class="formula-box"><pre>Approximate Net CoT (kcal/kg/km) from HR:
+
+1. Estimate VO₂ from HR:
+   VO₂ (mL/kg/min) ≈ 0.4 × (HR - HRrest) × (VO₂max / (HRmax - HRrest))
+
+2. Convert to energy:
+   Energy (kcal/min) = VO₂ (L/min) × 5 kcal/L × Body Weight (kg)
+
+3. Calculate CoT:
+   CoT = Energy (kcal/min) / [Speed (km/h) / 60] / Body Weight (kg)
+
+<strong>Jednodušší přiblížení:</strong>
+   For walking 4-6 km/h at moderate intensity:
+   Net CoT ≈ 0.50-0.65 kcal/kg/km (typical range for most people)</pre></div><h3>4. Náklady na kyslík za kilometr</h3><p>Pro ty, kteří mají přístup k měření VO₂:</p><div class="formula-box"><pre>VO₂ Cost per km = Net VO₂ (mL/kg/min) / Speed (km/h) × 60
+
+<strong>Příklad:</strong>
+  Walking at 5 km/h
+  Net VO₂ = 12 mL/kg/min
+  VO₂ cost = 12 / 5 × 60 = 144 mL O₂/kg/km
+
+<strong>Referenční hodnoty (pro střední rychlost ~5 km/h):</strong>
+  &gt;180 mL/kg/km: Poor economy
+  150-180: Below average
+  130-150: Average
+  110-130: Good economy
+  &lt;110: Excellent economy</pre></div>
+Zlepšení účinnosti
+<h2>Školení pro zlepšení účinnosti chůze</h2><h3>1. Optimalizujte mechaniku kroku</h3><p><strong>Najděte svou optimální kadenci:</strong></p><ul><li>Choďte cílovou rychlostí s metronomem nastaveným na různé kadence (95, 100, 105, 110, 115 spm)</li><li>Sledujte srdeční frekvenci nebo vnímanou námahu pro každý 5minutový zápas</li><li>Nejnižší HR nebo RPE = vaše optimální kadence při této rychlosti</li><li>Obecně je optimální kadence v rozmezí ±5 % preferované kadence</li></ul><p><strong>Snížit překročení:</strong></p><ul><li>Tágo: "Země s nohou pod boky"</li><li>Zvyšte kadenci o 5-10%, abyste přirozeně zkrátili krok</li><li>Zaměřte se spíše na rychlý obrat nohou než na dosahování vpřed</li><li>Video analýza může identifikovat nadměrný úder paty před tělo</li></ul><p><strong>Minimalizace vertikální oscilace:</strong></p><ul><li>Projděte kolem vodorovné referenční čáry (plot, značky zdi) a zkontrolujte odskok</li><li>Nápověda: "Klouzejte dopředu, ne odrazte se nahoru"</li><li>Posilujte extenzory kyčle, abyste udrželi extenzi kyčle prostřednictvím postoje</li><li>Zlepšete pohyblivost kotníku pro hladší přechod mezi patou a špičkou</li></ul><h3>2. Vybudujte si aerobní základnu</h3><p><strong>Trénink zóny 2 (100-110 spm):</strong></p><ul><li>60-80 % týdenního objemu chůze snadným, konverzačním tempem</li><li>Zlepšuje mitochondriální hustotu a oxidační kapacitu tuků</li><li>Zvyšuje kardiovaskulární účinnost (nižší HR při stejném tempu)</li><li>12-16 týdnů konzistentního tréninku zóny 2 zlepšuje hospodárnost o 10-15 %</li></ul><p><strong>Dlouhé procházky (90–120 minut):</strong></p><ul><li>Vybudujte si svalovou vytrvalost specifickou pro chůzi</li><li>Zlepšit metabolismus tuků a šetřit glykogen</li><li>Trénujte nervosvalový systém pro trvalý opakovaný pohyb</li><li>Jednou týdně dlouhá procházka snadným tempem</li></ul><h3>3. Intervalový trénink pro ekonomiku</h3><p><strong>Intervaly rychlé chůze:</strong></p><ul><li>5-8 × 3-5 minut při 115-125 spm s 2-3 minutami zotavení</li><li>Zlepšuje laktátový práh a schopnost udržet vyšší rychlost</li><li>Zvyšuje svalovou sílu a koordinaci při rychlejších kadencích</li><li>1-2× týdně s dostatečnou regenerací</li></ul><p><strong>Hill se opakuje:</strong></p><ul><li>6-10 × 1-2 minuty do kopce (5-8% sklon) při intenzivním úsilí</li><li>Vytváří sílu extenzoru kyčle a plantarflexoru</li><li>Zlepšuje hospodárnost díky zvýšenému pohonu</li><li>Chůze nebo běhání dolů pro zotavení</li></ul><h3>4. Trénink síly a mobility</h3><p><strong>Klíčová cvičení pro ekonomiku chůze:</strong></p><ol><li><strong>Síla prodloužení kyčle (hýždě):</strong><ul><li>Rumunské mrtvé tahy jednou nohou</li><li>Nárazy kyčlí</li><li>Step-ups</li><li>2–3× týdně, 3 série po 8–12 opakováních</li></ul></li><li><strong>Síla plantarflexoru (lýtka):</strong><ul><li>Zvedání lýtek na jedné noze</li><li>Excentrické lýtkové kapky</li><li>3 sady po 15-20 opakováních na nohu</li></ul></li><li><strong>Stabilita jádra:</strong><ul><li>Prkna (přední a boční)</li><li>Mrtví brouci</li><li>Pallofův lis</li><li>3 sady po 30-60 sekundách</li></ul></li><li><strong>Mobilita kyčle:</strong><ul><li>Protažení flexorů kyčle (zlepšení délky kroku)</li><li>Cvičení na rotaci kyčle (snížení oscilace)</li><li>Denně 10-15 minut</li></ul></li></ol><h3>5. Technika Vrtáky</h3><p><strong>Vrtáky s výkyvným ramenem:</strong></p><ul><li>5 minut chůze s přehnaným švihem paží (lokty 90°, ruce do výšky hrudníku)</li><li>Procvičte si držení paží rovnoběžně s tělem, nepřekračujte střední čáru</li><li>Zaměřte se spíše na posunutí loktů dozadu než na kývání rukou dopředu</li></ul><p><strong>Trénink vysoké kadence:</strong></p><ul><li>3 × 5 minut při 130-140 spm (použijte metronom)</li><li>Učí nervosvalový systém zvládat rychlý obrat</li><li>Zlepšuje koordinaci a snižuje tendenci k překračování</li></ul><p><strong>Intervaly zaměření formuláře:</strong></p><ul><li>10 × 1 minuta se zaměřením na jeden prvek: držení těla, úder nohou, kadence, švih paží atd.</li><li>Izoluje komponenty techniky pro záměrné procvičování</li><li>Buduje kinestetické povědomí</li></ul><h3>6. Řízení hmotnosti</h3><p>Pro osoby s nadváhou:</p><ul><li>Každý úbytek 5 kg snižuje náklady na energii o ~3-5%</li><li>Hubnutí zlepšuje ekonomiku i bez nárůstu kondice</li><li>Spojte trénink chůze s kalorickým deficitem a příjmem bílkovin</li><li>Postupný úbytek hmotnosti (0,5-1 kg/týden) zachovává libovou hmotu</li></ul>
+Sledování účinnosti v průběhu času
+<h2>Zlepšení účinnosti sledování</h2><h3>Standardní zkušební protokol účinnosti</h3><p><strong>Měsíční hodnocení:</strong></p><ol><li><strong>Standardizovat podmínky:</strong>Stejná denní doba, stejná trasa, podobné počasí, půst nebo stejné jídlo
+        načasování</li><li><strong>Zahřát se:</strong>10 minut snadné chůze</li><li><strong>Test:</strong>20–30 minut standardním tempem (např. 5,0 km/h nebo 120 spm)</li><li><strong>Záznam:</strong>Průměrná srdeční frekvence, vnímaná námaha (RPE 1-10), faktor účinnosti (EF), vertikální
+        Poměr</li><li><strong>Vypočítejte WEI:</strong>(Rychlost / HR) × 1000</li><li><strong>Sledovat trendy:</strong>Zlepšení účinnosti se projeví jako nižší HR, nižší RPE nebo vyšší rychlost současně
+        úsilí</li></ol><h3>Adaptace na dlouhodobou účinnost</h3><p><strong>Očekávaná zlepšení s konzistentním tréninkem (12-24 týdnů):</strong></p><ul><li><strong>Srdeční frekvence při standardním tempu:</strong>-5 až -15 úderů za minutu</li><li><strong>Pěší ekonomika:</strong>+8-15% zlepšení (nižší VO₂ při stejné rychlosti)</li><li><strong>WEI skóre:</strong>+15-25% nárůst</li><li><strong>Vertikální poměr:</strong>-0,5% až -1,0% snížení (stabilnější chůze)</li><li><strong>Udržitelná rychlost chůze:</strong>+0,1-0,3 m/s při stejném vnímaném úsilí</li></ul><h3>Technologie asistované sledování</h3><p><strong>Walk Analytics automaticky sleduje:</strong></p><ul><li>Vertikální poměr pro každý 100m segment</li><li>Index účinnosti chůze (WEI) pro každý trénink</li><li>Analýza trendů ekonomiky v průběhu týdnů a měsíců</li><li>Návrhy na optimalizaci kadence</li><li>Srovnávací hodnoty účinnosti vzhledem k vaší historii a populačním normám</li></ul>
+Shrnutí
+<h2>Shrnutí: Klíčové principy účinnosti</h2><div class="key-finding"><strong>Pět pilířů účinnosti chůze:</strong><ol><li><strong>Optimální rychlost:</strong>Chůze rychlostí ~1,3 m/s (4,7 km/h) s minimálními náklady na dopravu</li><li><strong>Přirozená kadence:</strong>Důvěřujte své kadenci, kterou si sami zvolíte; vynucené odchylky zvyšují náklady o 3–12 %</li><li><strong>Obrácené kyvadlo:</strong>Maximalizujte využití energie (65-70 %) pomocí správné biomechaniky</li><li><strong>Minimální zbytečný pohyb:</strong>Snižte vertikální oscilaci, vyhněte se překračování, udržujte přirozené
+          švih paže</li><li><strong>Kapacita sestavení:</strong>Zlepšete ekonomiku dlouhodobě pomocí aerobního tréninku, silové práce a
+          zdokonalení techniky</li></ol></div><p><strong>Pamatujte:</strong></p><ul><li>Na účinnosti záleží nejvíce při chůzi na dlouhé vzdálenosti nebo při trvalé vysoké intenzitě</li><li>Pro zdraví a hubnutí,<em>nižší</em>účinnost může znamenat více spálených kalorií (funkce, ne chyba!)</li><li>Zaměřte se spíše na udržitelnou přirozenou mechaniku než na vynucování "dokonalé" techniky</li><li>Důslednost v tréninku trumfuje optimalizaci jakéhokoli jednotlivého faktoru efektivity</li></ul>
+Vědecké odkazy
+<h2>Vědecké odkazy</h2><p>Tato příručka syntetizuje výzkum z biomechaniky, fyziologie cvičení a srovnávací lokomoce:</p><ul><li><strong>Ralston HJ. (1958).</strong>"Vztah energie-rychlost a optimální rychlost při rovné chůzi."<em>Internationale Zeitschrift für angewandte Physiologie</em>17:277-283. [ekonomická křivka ve tvaru U]</li><li><strong>Zarrugh MY a kol. (1974).</strong>"Optimalizace energetického výdeje při chůzi po rovině."<em>European Journal of Applied Physiology</em>33:293-306. [Preferovaná rychlost = optimální hospodárnost]</li><li><strong>Cavagna GA, Kaneko M. (1977).</strong>"Mechanická práce a efektivita při rovné chůzi a běhu."<em>Journal of Physiology</em>268:467-481. [Model obráceného kyvadla, rekuperace energie]</li><li><strong>Alexander RM. (1989).</strong>"Optimalizace a chůze v lokomoci obratlovců."<em>Fyziologické recenze</em>69:1199-1227. [Froude číslo, přechod pěšky]</li><li><strong>Margaria R, a kol. (1963).</strong>"Energetické náklady na provoz."<em>Journal of Applied Physiology</em>18:367-370. [Ekonomický přechod chůze vs běh]</li><li><strong>Holt KG a kol. (1991).</strong>„Energetické náklady a stabilita během lidské chůze jsou preferovány
+        frekvence kroku."<em>Journal of Motor Behavior</em>23:474-485. [Samostatně zvolená kadence optimalizuje hospodárnost]</li><li><strong>Collins SH a kol. (2009).</strong>"Výhoda valivé nohy při lidské chůzi."<em>Journal of
+          Experimentální biologie</em>212:2555-2559. [Ekonomika švihu paže]</li><li><strong>Hreljac A. (1993).</strong>"Preferované a energeticky optimální rychlosti přechodu chůze u člověka."
+        lokomoce."<em>Medicína a věda ve sportu a cvičení</em>25:1158-1162. [determinanty přechodu chůze-běh]</li><li><strong>Pandolf KB a kol.(1977).</strong>„Předpovídání energetického výdeje se zátěžemi ve stoje resp
+        chodit velmi pomalu."<em>Journal of Applied Physiology</em>43:577-581. [Efekty přenášející zatížení]</li><li><strong>Minetti AE a kol. (2002).</strong>„Energetické náklady při chůzi a běhu při extrémním stoupání a klesání
+        svahy."<em>Journal of Applied Physiology</em>93:1039-1046. [Efekty přechodu na CoT]</li></ul><p><strong>Další výzkum:</strong></p><ul><li><a href="/cs/bibliography/">Kompletní vědecká bibliografie</a></li><li><a href="/cs/research/">Nejnovější výzkum chůze</a></li><li><a href="/cs/formulas/">Chodící ekonomické rovnice</a></li></ul>
+Další kroky
+<h2>Další kroky</h2><ul><li><a href="/cs/stride-mechanics/">Optimalizujte svou biomechaniku chůze</a></li><li><a href="/cs/walking-zones/">Přečtěte si o tréninku založeném na intenzitě</a></li><li><a href="/cs/training-load/">Spravujte svou tréninkovou zátěž pro zvýšení efektivity</a></li><li><a href="/cs/formulas/">Prozkoumejte kalkulace nákladů na dopravu</a></li></ul></div></section><section class="eeat-author bg-light divider-top-lg divider-bottom-lg" aria-label="Author and Reviewer Information"><div class="container container-narrow"><div class="eeat-card" style="display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem; background: var(--color-bg-alt, #f8f9fa); border-radius: 8px; border: 1px solid var(--color-border, #e9ecef); margin-top: 3rem; margin-bottom: 2rem;"><div class="eeat-avatar" style="font-size: 2.5rem; line-height: 1; flex-shrink: 0;" aria-hidden="true">👨‍🔬</div><div class="eeat-details"><h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
+          Expertly Reviewed by 
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">AnalyticsZone Team</span></span></h3><p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: var(--color-body-text, #4a5568); line-height: 1.5;">
+          This content has been written and reviewed by a sports data metrics expert to ensure technical accuracy and adherence to the latest sports science methodologies.
+        </p></div></div></div></section><section class="ai-citation-block divider-top-xl" data-ai-ready="true" data-ai-page="gait-efficiency"><div class="container ai-citation-shell"><h2 class="ai-citation-title">Efektivita chůze: Ekonomická chůze, CoT, lepší forma</h2><p class="ai-citation-answer">Efektivita chůze popisuje, kolik energie stojí vzor chůze při dané rychlosti. Záleží na tom, protože hladší načasování, lepší držení těla a čistší odraz mohou způsobit, že stejné tempo bude snazší a udržitelnější.</p><ul class="ai-citation-facts" role="list"><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">📅</span><span>2026-03-24</span></li><li class="ai-citation-fact ai-citation-keywords"><span class="ai-citation-icon" aria-hidden="true">🏷️</span><span>metriky efektivity chůze · ekonomika chůze · skóre účinnosti · efektivita kroku · výkonnost při chůzi</span></li><li class="ai-citation-fact"><span class="ai-citation-icon" aria-hidden="true">🔬</span><a href="../../cs/bibliography/">
+          
+          Bibliografie
+          
+        </a></li></ul></div></section></main><footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand-section"><h2>Walk Analytics</h2><p>Track gait metrics, walking zones, and health analytics with Walk Analytics. Science-based iOS app for walkers, hikers &amp; health enthusiasts. 7-day free trial.</p></div><div class="footer-download"><h3 class="footer-heading">Stáhnout</h3><div class="footer-badges"><a href="https://apps.apple.com/us/app/walk-analytics/id6755187154" target="_blank" rel="noopener"
+                        aria-label="Stáhněte si na App Store"><img src="../../assets/images/badge-app-store.svg"
+                            alt="Stáhněte si na App Store" width="135"
+                            height="40" loading="lazy"></a><a href="https://play.google.com/store/apps/details?id=com.arnohealth.walkanalytics" target="_blank" rel="noopener"
+                        aria-label="Získejte ji na Google Play"><img src="../../assets/images/badge-google-play.svg"
+                            alt="Získejte ji na Google Play" width="135"
+                            height="40" loading="lazy"></a></div></div></div><div class="footer-languages"><h3 class="footer-heading">Dostupné v</h3><div class="lang-grid"><a href="/af/" class="lang-link"
+                    hreflang="af" >
+                    Afrikaans
+                </a><a href="/am/" class="lang-link"
+                    hreflang="am" >
+                    አမ္ဟာ
+                </a><a href="/ar/" class="lang-link"
+                    hreflang="ar" dir="rtl" >
+                    العربية
+                </a><a href="/bg/" class="lang-link"
+                    hreflang="bg" >
+                    Български
+                </a><a href="/bn/" class="lang-link"
+                    hreflang="bn" >
+                    বাংলা
+                </a><a href="/ca/" class="lang-link"
+                    hreflang="ca" >
+                    Català
+                </a><a href="/cs/" class="lang-link active"
+                    hreflang="cs" >
+                    Čeština
+                </a><a href="/da/" class="lang-link"
+                    hreflang="da" >
+                    Dansk
+                </a><a href="/de/" class="lang-link"
+                    hreflang="de" >
+                    Deutsch
+                </a><a href="/el/" class="lang-link"
+                    hreflang="el" >
+                    Ελληνικά
+                </a><a href="/en/" class="lang-link"
+                    hreflang="en" >
+                    English
+                </a><a href="/es/" class="lang-link"
+                    hreflang="es" >
+                    Español
+                </a><a href="/et/" class="lang-link"
+                    hreflang="et" >
+                    Eesti
+                </a><a href="/fa/" class="lang-link"
+                    hreflang="fa" dir="rtl" >
+                    فارسی
+                </a><a href="/fi/" class="lang-link"
+                    hreflang="fi" >
+                    Suomi
+                </a><a href="/fr/" class="lang-link"
+                    hreflang="fr" >
+                    Français
+                </a><a href="/gu/" class="lang-link"
+                    hreflang="gu" >
+                    ગુજરાતી
+                </a><a href="/ha/" class="lang-link"
+                    hreflang="ha" >
+                    Hausa
+                </a><a href="/he/" class="lang-link"
+                    hreflang="he" dir="rtl" >
+                    עברית
+                </a><a href="/hi/" class="lang-link"
+                    hreflang="hi" >
+                    हिन्दी
+                </a><a href="/hr/" class="lang-link"
+                    hreflang="hr" >
+                    Hrvatski
+                </a><a href="/hu/" class="lang-link"
+                    hreflang="hu" >
+                    Magyar
+                </a><a href="/id/" class="lang-link"
+                    hreflang="id" >
+                    Bahasa Indonesia
+                </a><a href="/is/" class="lang-link"
+                    hreflang="is" >
+                    Íslenska
+                </a><a href="/it/" class="lang-link"
+                    hreflang="it" >
+                    Italiano
+                </a><a href="/ja/" class="lang-link"
+                    hreflang="ja" >
+                    日本語
+                </a><a href="/km/" class="lang-link"
+                    hreflang="km" >
+                    ភាសាខ្មែរ
+                </a><a href="/kn/" class="lang-link"
+                    hreflang="kn" >
+                    ಕನ್ನಡ
+                </a><a href="/ko/" class="lang-link"
+                    hreflang="ko" >
+                    한국어
+                </a><a href="/lt/" class="lang-link"
+                    hreflang="lt" >
+                    Lietuvių
+                </a><a href="/lv/" class="lang-link"
+                    hreflang="lv" >
+                    Latviešu
+                </a><a href="/ms/" class="lang-link"
+                    hreflang="ms" >
+                    Bahasa Melayu
+                </a><a href="/my/" class="lang-link"
+                    hreflang="my" >
+                    မြန်မာ
+                </a><a href="/nb/" class="lang-link"
+                    hreflang="nb" >
+                    Norsk Bokmål
+                </a><a href="/nl/" class="lang-link"
+                    hreflang="nl" >
+                    Nederlands
+                </a><a href="/pl/" class="lang-link"
+                    hreflang="pl" >
+                    Polski
+                </a><a href="/pt/" class="lang-link"
+                    hreflang="pt" >
+                    Português
+                </a><a href="/pt-br/" class="lang-link"
+                    hreflang="pt-br" >
+                    Português (Brasil)
+                </a><a href="/ro/" class="lang-link"
+                    hreflang="ro" >
+                    Română
+                </a><a href="/ru/" class="lang-link"
+                    hreflang="ru" >
+                    Русский
+                </a><a href="/sk/" class="lang-link"
+                    hreflang="sk" >
+                    Slovenčina
+                </a><a href="/sl/" class="lang-link"
+                    hreflang="sl" >
+                    Slovenščina
+                </a><a href="/sr/" class="lang-link"
+                    hreflang="sr" >
+                    Српски
+                </a><a href="/sv/" class="lang-link"
+                    hreflang="sv" >
+                    Svenska
+                </a><a href="/sw/" class="lang-link"
+                    hreflang="sw" >
+                    Kiswahili
+                </a><a href="/ta/" class="lang-link"
+                    hreflang="ta" >
+                    தமிழ்
+                </a><a href="/te/" class="lang-link"
+                    hreflang="te" >
+                    తెలుగు
+                </a><a href="/th/" class="lang-link"
+                    hreflang="th" >
+                    ไทย
+                </a><a href="/tl/" class="lang-link"
+                    hreflang="tl" >
+                    Tagalog
+                </a><a href="/tr/" class="lang-link"
+                    hreflang="tr" >
+                    Türkçe
+                </a><a href="/uk/" class="lang-link"
+                    hreflang="uk" >
+                    Українська
+                </a><a href="/ur/" class="lang-link"
+                    hreflang="ur" dir="rtl" >
+                    اردو
+                </a><a href="/vi/" class="lang-link"
+                    hreflang="vi" >
+                    Tiếng Việt
+                </a><a href="/yo/" class="lang-link"
+                    hreflang="yo" >
+                    Yorùbá
+                </a><a href="/zh/" class="lang-link"
+                    hreflang="zh" >
+                    中文
+                </a></div></div><div class="footer-divider"></div><div class="footer-bottom"><p class="copyright">
+                &copy; 2026 Walk Analytics. Všechna práva vyhrazena
+            </p><ul class="footer-legal"><li><a href="/cs/privacy/">Soukromí</a></li><li><a href="/cs/terms/">Podmínky</a></li></ul></div></div></footer><div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite"><div class="cookie-banner-content"><div><p>Tento web používá soubory cookie ke zlepšení vašeho zážitku.</p><a href="/cs/privacy/" class="text-sm">Zjistěte více</a></div><div class="cookie-banner-actions"><button id="cookie-decline" class="btn btn-secondary btn-small">Pokles</button><button id="cookie-accept" class="btn btn-primary btn-small">Přijmout</button></div></div></div><script src="../../assets/js/core.min.js?v=1c7ace58" defer></script><script src="../../assets/js/search.min.js?v=1c7ace58" defer></script><script src="../../assets/js/analytics.min.js" data-ga-id="G-RT5MRMWZ82" defer></script><script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('../../sw.js') }</script></body></html>
